@@ -205,3 +205,29 @@ def test_run_catalogues_profile_workbooks(tmp_path: Path) -> None:
         assert len(list(csv.DictReader(fh))) == 2
     probes = json.loads((out / "tableau_probes.json").read_text(encoding="utf-8"))
     assert "workbooks" not in probes["profiles"][0]
+
+
+def test_inspect_twb_merges_repeated_datasource() -> None:
+    xml = b"""<workbook><datasources>
+      <datasource name='d1' caption='Heide'><column name='[a]'/><column name='[b]'/></datasource>
+    </datasources><worksheets><worksheet name='W'><table><view><datasources>
+      <datasource name='d1'><column name='[a]'/></datasource>
+    </datasources></view></table></worksheet></worksheets></workbook>"""
+    info = t.inspect_twb(xml)
+    (ds,) = info["datasources"]
+    assert ds["caption"] == "Heide" and len(ds["fields"]) == 2
+
+
+def test_http_get_retries_429(monkeypatch: pytest.MonkeyPatch) -> None:
+    seq = iter([t.Response(429, "", b"", retry_after="7"), t.Response(200, "x", b"ok")])
+    monkeypatch.setattr(t, "_http_get_once", lambda *_a: next(seq))
+    waits: list[float] = []
+    resp = t.http_get("https://x", sleep=waits.append)
+    assert resp.status == 200 and waits == [7.0]
+
+
+def test_http_get_gives_up_after_retries(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setattr(t, "_http_get_once", lambda *_a: t.Response(429, "", b""))
+    waits: list[float] = []
+    assert t.http_get("https://x", retries=2, sleep=waits.append).status == 429
+    assert waits == [15.0, 30.0]

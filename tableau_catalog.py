@@ -95,10 +95,31 @@ class Response:
     body: bytes
     truncated: bool = False
     error: str = ""
+    retry_after: str = ""
 
 
-def http_get(url: str, timeout: float = 120.0, max_bytes: int = MAX_BYTES) -> Response:
-    """GET ``url`` with a size cap; never raises for HTTP/network errors."""
+def http_get(
+    url: str,
+    timeout: float = 120.0,
+    max_bytes: int = MAX_BYTES,
+    retries: int = 3,
+    sleep: Callable[[float], None] = time.sleep,
+) -> Response:
+    """GET ``url`` with a size cap; never raises for HTTP/network errors.
+
+    HTTP 429 is retried up to ``retries`` times, honouring ``Retry-After`` (seconds) when given.
+    """
+    for attempt in range(retries + 1):
+        resp = _http_get_once(url, timeout, max_bytes)
+        if resp.status != 429 or attempt == retries:
+            return resp
+        wait = min(float(resp.retry_after or 0) or 15.0 * (attempt + 1), 120.0)
+        LOG.warning("429 for %s, waiting %.0fs (retry %d/%d)", url, wait, attempt + 1, retries)
+        sleep(wait)
+    return resp
+
+
+def _http_get_once(url: str, timeout: float, max_bytes: int) -> Response:
     req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
     try:
         with urllib.request.urlopen(req, timeout=timeout) as resp:
@@ -110,7 +131,14 @@ def http_get(url: str, timeout: float = 120.0, max_bytes: int = MAX_BYTES) -> Re
                 truncated=len(body) > max_bytes,
             )
     except urllib.error.HTTPError as exc:
-        return Response(exc.code, exc.headers.get("Content-Type", ""), b"", error=str(exc))
+        retry_after = exc.headers.get("Retry-After", "") if exc.headers else ""
+        return Response(
+            exc.code,
+            exc.headers.get("Content-Type", "") if exc.headers else "",
+            b"",
+            error=str(exc),
+            retry_after=retry_after if retry_after.isdigit() else "",
+        )
     except (urllib.error.URLError, TimeoutError, OSError) as exc:
         return Response(0, "", b"", error=str(exc))
 
@@ -236,7 +264,7 @@ def inspect_twb(xml_bytes: bytes) -> dict[str, Any]:
     """Extract structure (sheets, dashboards, datasources, fields) from Tableau workbook XML."""
     root = ET.fromstring(xml_bytes)
     sheets: list[tuple[str, str]] = []
-    datasources: list[dict[str, Any]] = []
+    by_name: dict[str, dict[str, Any]] = {}
     for el in root.iter():
         tag = local(el.tag)
         if tag in ("worksheet", "dashboard") and el.get("name"):
@@ -254,16 +282,25 @@ def inspect_twb(xml_bytes: bytes) -> dict[str, Any]:
                 for c in el
                 if local(c.tag) == "column"
             ]
-            datasources.append(
-                {
-                    "name": el.get("name", ""),
-                    "caption": el.get("caption", ""),
-                    "connection": "|".join(x for x in conns if x),
-                    "fields": fields,
-                }
-            )
-    # Worksheets also appear nested inside dashboards as <zone name=..>; only top-level counted.
-    return {"sheets": sorted(set(sheets)), "datasources": datasources}
+            cand: dict[str, Any] = {
+                "name": el.get("name", ""),
+                "caption": el.get("caption", ""),
+                "connection": "|".join(x for x in conns if x),
+                "fields": fields,
+            }
+            # A datasource is repeated inside every worksheet that uses it (usually with fewer
+            # fields); keep the fullest definition and fill gaps from the others.
+            prev = by_name.get(cand["name"])
+            if prev is None:
+                by_name[cand["name"]] = cand
+            else:
+                best, other = (
+                    (cand, prev) if len(cand["fields"]) > len(prev["fields"]) else (prev, cand)
+                )
+                for k in ("caption", "connection"):
+                    best[k] = best[k] or other[k]
+                by_name[cand["name"]] = best
+    return {"sheets": sorted(set(sheets)), "datasources": list(by_name.values())}
 
 
 def twb_from_package(body: bytes) -> bytes:

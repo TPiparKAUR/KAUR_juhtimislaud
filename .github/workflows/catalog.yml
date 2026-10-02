@@ -1,16 +1,18 @@
-name: Tableau data catalogue
+name: Data catalogue
 
-# Probes Tableau Public (profile + every known view) and the public side of tableau.envir.ee and
-# records which data is reachable and its schema (columns, row counts).  No credentials are used.
-# Results are force-pushed as one commit to the `catalog-results` branch; `main` stays clean.
+# Probes everything KAUR publishes as data and records its structure (never data values):
+#   * Tableau Public profile + workbook packages + anonymous vizql field discovery
+#   * tableau.envir.ee public views (anonymous; the REST inventory needs a PAT, see docs)
+#   * open data APIs listed in TPiparKAUR/kaur-api-status (PostgREST OpenAPI, Swagger, samples)
+# No credentials are used.  Results are force-pushed as one commit to `catalog-results`.
 
 on:
   workflow_dispatch:
     inputs:
       delay:
-        description: "Seconds between requests"
+        description: "Seconds between Tableau requests"
         required: false
-        default: "1.0"
+        default: "3.0"
 
 permissions:
   contents: write
@@ -22,11 +24,15 @@ concurrency:
 jobs:
   catalog:
     runs-on: ubuntu-latest
-    timeout-minutes: 180
+    timeout-minutes: 240
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      - uses: actions/checkout@v4
+        with:
+          repository: TPiparKAUR/kaur-api-status
+          path: api-status
       - uses: astral-sh/setup-uv@v5
       - run: uv sync --frozen
 
@@ -39,24 +45,36 @@ jobs:
           fi
           echo "ARGS=${args[*]}" >> "$GITHUB_ENV"
 
-      - name: Probe
+      - name: Tableau views and workbooks
         env:
-          DELAY: ${{ inputs.delay || '1.0' }}
+          DELAY: ${{ inputs.delay || '3.0' }}
         run: uv run python tableau_catalog.py $ARGS --out out --delay "$DELAY"
+
+      - name: Tableau anonymous vizql field discovery
+        continue-on-error: true
+        env:
+          DELAY: ${{ inputs.delay || '3.0' }}
+        run: uv run python tableau_vizql.py $ARGS --out out --delay "$DELAY"
+
+      - name: Open data APIs
+        continue-on-error: true
+        run: uv run python api_catalog.py --endpoints api-status/config/endpoints.toml --out out --delay 1.0
 
       - name: Summary
         run: |
+          count() { [ -f "out/$1" ] && echo $(($(wc -l < "out/$1") - 1)) || echo "missing"; }
           {
-            echo "## Tableau catalogue"
-            echo "- Views probed: $(($(wc -l < out/tableau_catalog.csv) - 1))"
-            echo "- Views with CSV data: $(awk -F, 'NR>1 && $5==200' out/tableau_catalog.csv | wc -l)"
-            echo "- Columns catalogued: $(($(wc -l < out/tableau_columns.csv) - 1))"
-            echo '```json'; head -c 3000 out/tableau_probes.json; echo; echo '```'
+            echo "## Data catalogue"
+            echo "- Tableau views probed: $(count tableau_catalog.csv)"
+            echo "- Tableau Public workbooks: $(count tableau_public_workbooks.csv); fields from packages: $(count tableau_public_fields.csv)"
+            echo "- vizql names: $(count tableau_vizql_names.csv)"
+            echo "- API endpoints: $(count api_endpoints.csv); tables: $(count api_tables.csv); columns: $(count api_columns.csv); operations: $(count api_operations.csv)"
+            echo '```json'; head -c 3000 out/tableau_probes.json; echo; head -c 1000 out/api_probes.json; echo; echo '```'
           } >> "$GITHUB_STEP_SUMMARY"
 
       - uses: actions/upload-artifact@v4
         with:
-          name: tableau-catalog
+          name: data-catalog
           path: out/
           retention-days: 90
 
@@ -67,8 +85,10 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout --orphan catalog-results
           git rm -rf --quiet .
-          cp "$RUNNER_TEMP"/out/tableau_*.csv "$RUNNER_TEMP"/out/tableau_probes.json \
-            "$RUNNER_TEMP"/out/profile_*.json .
-          git add -- tableau_*.csv tableau_probes.json profile_*.json
-          git commit -m "Tableau catalogue $(date -u +%Y-%m-%dT%H:%MZ)"
+          cd "$RUNNER_TEMP/out"
+          files=$(ls tableau_*.csv tableau_probes.json profile_*.json api_*.csv api_probes.json 2>/dev/null)
+          cd "$GITHUB_WORKSPACE"
+          for f in $files; do cp "$RUNNER_TEMP/out/$f" .; done
+          git add -- $files
+          git commit -m "Data catalogue $(date -u +%Y-%m-%dT%H:%MZ)"
           git push --force origin catalog-results
