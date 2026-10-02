@@ -1,0 +1,477 @@
+{
+ "table": "f_veekogumid_koormus",
+ "total_rows": 9070,
+ "sample_rows": 2000,
+ "columns": {
+  "koormus_id": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2000,
+   "min": -2136650696,
+   "max": 2142378128
+  },
+  "koormus_kood": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2000,
+   "min": "1000100_1/4.1.2/2025",
+   "max": "EE_9/4.1.3/Veeliiklusalad/2025"
+  },
+  "koormus_nimi": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 1990,
+   "min": "Ahelo 1157400_1/8. Survetegur teadmata/2",
+   "max": "Õhne Jõku jõest suudmeni 1013700_3/8. Su"
+  },
+  "koormus_tyyp": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 52,
+   "min": "1.1",
+   "max": "III.4.4.a"
+  },
+  "koormus_tyyp_selg": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 52,
+   "min": "1.1 - Punktkoormus – Asulate heitvesi",
+   "max": "Paisrajatised - Eelis otstarbeta ja pais"
+  },
+  "hinnang_moju": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 7,
+   "top_values": [
+    [
+     "5",
+     656
+    ],
+    [
+     "2",
+     566
+    ],
+    [
+     "12",
+     438
+    ],
+    [
+     "4",
+     187
+    ],
+    [
+     "18",
+     108
+    ],
+    [
+     "13",
+     39
+    ],
+    [
+     "14",
+     5
+    ]
+   ]
+  },
+  "hinnang_moju_selg": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 7,
+   "top_values": [
+    [
+     "Morfoloogiliste tingimuste tõttu muutunud elupaigad (sh tõkestamatus)",
+     656
+    ],
+    [
+     "Keemiline saastus",
+     566
+    ],
+    [
+     "Saastus toitainetega",
+     438
+    ],
+    [
+     "Hüdroloogiliste tingimuste tõttu muutunud elupaigad",
+     187
+    ],
+    [
+     "Mõju teadmata",
+     108
+    ],
+    [
+     "Orgaaniline saastus",
+     39
+    ],
+    [
+     "Muu oluline mõju",
+     5
+    ]
+   ]
+  },
+  "koormus_veekogum_id": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 668,
+   "min": -2144227904,
+   "max": 2146827904
+  },
+  "naitaja": {
+   "non_null_share": 0.943,
+   "n_distinct_in_sample": 7,
+   "top_values": [
+    [
+     "K",
+     566
+    ],
+    [
+     "FK",
+     477
+    ],
+    [
+     "B3",
+     306
+    ],
+    [
+     "H",
+     271
+    ],
+    [
+     "H1",
+     196
+    ],
+    [
+     "H3",
+     68
+    ],
+    [
+     "F1",
+     2
+    ]
+   ]
+  },
+  "naitaja_selg": {
+   "non_null_share": 0.943,
+   "n_distinct_in_sample": 7,
+   "top_values": [
+    [
+     "K Ohtlikud saasteained",
+     566
+    ],
+    [
+     "FK Füüsikalis-keemilised kvaliteedinäitajad",
+     477
+    ],
+    [
+     "B3 Suurselgrootud",
+     306
+    ],
+    [
+     "H Hüdromorfoloogilised kvaliteedinäitajad",
+     271
+    ],
+    [
+     "H1 Hüdroloogiline rezhiim (vooluhulk ning selle dünaamika madalvee perioodil ja väljaspool madalvee perioodi)",
+     196
+    ],
+    [
+     "H3 Morfoloogilised tingimused (jõe lang, jõe põhja iseloom, jõe laius, jõe kalda iseloom , jõe kaldavööndi ulatus, jõe lamm)",
+     68
+    ],
+    [
+     "F1 Läbipaistvus ja setted",
+     2
+    ]
+   ]
+  },
+  "olulisus": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 5,
+   "top_values": [
+    [
+     "2",
+     1248
+    ],
+    [
+     "1",
+     544
+    ],
+    [
+     "5",
+     155
+    ],
+    [
+     "6",
+     44
+    ],
+    [
+     "4",
+     8
+    ]
+   ]
+  },
+  "olulisus_selg": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 5,
+   "top_values": [
+    [
+     "Oluline",
+     1248
+    ],
+    [
+     "Väheoluline",
+     544
+    ],
+    [
+     "Koormus puudub",
+     155
+    ],
+    [
+     "Ei hinnatud",
+     44
+    ],
+    [
+     "Oluline leevendusmeetmega",
+     8
+    ]
+   ]
+  },
+  "pohjus": {
+   "non_null_share": 0.994,
+   "n_distinct_in_sample": 10,
+   "top_values": [
+    [
+     "8",
+     552
+    ],
+    [
+     "11",
+     442
+    ],
+    [
+     "1",
+     398
+    ],
+    [
+     "9",
+     176
+    ],
+    [
+     "12",
+     131
+    ],
+    [
+     "5",
+     101
+    ],
+    [
+     "7",
+     100
+    ],
+    [
+     "3",
+     48
+    ]
+   ]
+  },
+  "pohjus_selg": {
+   "non_null_share": 0.994,
+   "n_distinct_in_sample": 10,
+   "top_values": [
+    [
+     "Tööstus",
+     552
+    ],
+    [
+     "Linnaline areng",
+     442
+    ],
+    [
+     "Põllumajandus",
+     398
+    ],
+    [
+     "Turism ja rekreatsioon",
+     176
+    ],
+    [
+     "Teadmata",
+     131
+    ],
+    [
+     "Kalandus ja vesiviljelus",
+     101
+    ],
+    [
+     "Metsandus",
+     100
+    ],
+    [
+     "Energeetika - hüdroenergia",
+     48
+    ]
+   ]
+  },
+  "koormus_staatus": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 1,
+   "top_values": [
+    [
+     "2",
+     1999
+    ]
+   ]
+  },
+  "koormus_staatus_selg": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 1,
+   "top_values": [
+    [
+     "Survetegur on aktuaalne",
+     1999
+    ]
+   ]
+  },
+  "koormus_alg_aasta": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 5,
+   "min": 2015,
+   "max": 2026
+  },
+  "koormus_lopp_aasta": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 7,
+   "min": 2018,
+   "max": 2032
+  },
+  "koormus_tx_meede": {
+   "non_null_share": 0.002,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "1055670297",
+     1
+    ],
+    [
+     "1058690102",
+     1
+    ],
+    [
+     "1083470098",
+     1
+    ]
+   ]
+  },
+  "koormus_tx_lisainfo": {
+   "non_null_share": 0.844,
+   "n_distinct_in_sample": 1012,
+   "min": "2025 aasta koormuste analüüs: Ohtlike ai",
+   "max": "Hinnang paisu avamise vajadusele 2"
+  },
+  "koormus_obj_tyyp": {
+   "non_null_share": 0.432,
+   "n_distinct_in_sample": 5,
+   "top_values": [
+    [
+     "jaakreostusala",
+     462
+    ],
+    [
+     "pais",
+     298
+    ],
+    [
+     "veelase",
+     85
+    ],
+    [
+     "veehaare",
+     18
+    ],
+    [
+     "jaatmekoht",
+     1
+    ]
+   ]
+  },
+  "koormus_obj_id": {
+   "non_null_share": 0.432,
+   "n_distinct_in_sample": 561,
+   "min": -2144014542,
+   "max": 2137496064
+  },
+  "koormus_ly": {
+   "non_null_share": 0.0,
+   "n_distinct_in_sample": 0
+  },
+  "koormus_min_ha": {
+   "non_null_share": 0.0,
+   "n_distinct_in_sample": 0
+  },
+  "koormus_max_ha": {
+   "non_null_share": 0.0,
+   "n_distinct_in_sample": 0
+  },
+  "tx_hajureostus": {
+   "non_null_share": 0.0,
+   "n_distinct_in_sample": 0
+  },
+  "koormus_muut_aeg": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 1541,
+   "min": "2016-04-14T02:26:01.534873",
+   "max": "2026-07-10T10:19:51.850964"
+  }
+ },
+ "head": [
+  {
+   "koormus_id": 1875549748,
+   "koormus_kood": "1000200_2/4.2.8.1/PAIS026260/2016",
+   "koormus_nimi": "Piusa Kiviojast suudmeni 1000200_2/Mäe-Kunnu pais/2016",
+   "koormus_tyyp": "4.2.8.1",
+   "koormus_tyyp_selg": "Paisrajatised",
+   "hinnang_moju": "5",
+   "hinnang_moju_selg": "Morfoloogiliste tingimuste tõttu muutunud elupaigad (sh tõkestamatus)",
+   "koormus_veekogum_id": 2111027904,
+   "naitaja": "H",
+   "naitaja_selg": "H Hüdromorfoloogilised kvaliteedinäitajad",
+   "olulisus": "2",
+   "olulisus_selg": "Oluline",
+   "pohjus": "5",
+   "pohjus_selg": "Kalandus ja vesiviljelus",
+   "koormus_staatus": "2",
+   "koormus_staatus_selg": "Survetegur on aktuaalne",
+   "koormus_alg_aasta": 2016,
+   "koormus_lopp_aasta": 2021,
+   "koormus_tx_meede": null,
+   "koormus_tx_lisainfo": null,
+   "koormus_obj_tyyp": "pais",
+   "koormus_obj_id": -1045869274,
+   "koormus_ly": null,
+   "koormus_min_ha": null,
+   "koormus_max_ha": null,
+   "tx_hajureostus": null,
+   "koormus_muut_aeg": "2016-04-14T02:44:29.802814"
+  },
+  {
+   "koormus_id": 1659334228,
+   "koormus_kood": "2099400_1/8/2016",
+   "koormus_nimi": "Veisjärv 2099400_1/8. Survetegur teadmata/2016",
+   "koormus_tyyp": "8",
+   "koormus_tyyp_selg": "8. Survetegur teadmata",
+   "hinnang_moju": "18",
+   "hinnang_moju_selg": "Mõju teadmata",
+   "koormus_veekogum_id": -1914930792,
+   "naitaja": null,
+   "naitaja_selg": null,
+   "olulisus": "2",
+   "olulisus_selg": "Oluline",
+   "pohjus": "12",
+   "pohjus_selg": "Teadmata",
+   "koormus_staatus": "2",
+   "koormus_staatus_selg": "Survetegur on aktuaalne",
+   "koormus_alg_aasta": 2016,
+   "koormus_lopp_aasta": 2020,
+   "koormus_tx_meede": null,
+   "koormus_tx_lisainfo": null,
+   "koormus_obj_tyyp": null,
+   "koormus_obj_id": null,
+   "koormus_ly": null,
+   "koormus_min_ha": null,
+   "koormus_max_ha": null,
+   "tx_hajureostus": null,
+   "koormus_muut_aeg": "2016-04-14T02:26:13.830262"
+  }
+ ]
+}

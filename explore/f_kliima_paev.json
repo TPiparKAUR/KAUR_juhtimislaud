@@ -1,0 +1,221 @@
+{
+ "table": "f_kliima_paev",
+ "total_rows": 2887639,
+ "sample_rows": 2000,
+ "columns": {
+  "jaam_kood": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 15,
+   "top_values": [
+    [
+     "AJHARK01",
+     281
+    ],
+    [
+     "AJSORV01",
+     268
+    ],
+    [
+     "AJVIRT01",
+     201
+    ],
+    [
+     "AJPARN01",
+     197
+    ],
+    [
+     "AJVILJ01",
+     174
+    ],
+    [
+     "AJPAKR01",
+     160
+    ],
+    [
+     "AJJOGE01",
+     158
+    ],
+    [
+     "AJRUHN01",
+     140
+    ]
+   ]
+  },
+  "jaam_nimi": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 15,
+   "top_values": [
+    [
+     "Tallinn-Harku",
+     281
+    ],
+    [
+     "Sõrve",
+     268
+    ],
+    [
+     "Virtsu",
+     201
+    ],
+    [
+     "Pärnu",
+     197
+    ],
+    [
+     "Viljandi",
+     174
+    ],
+    [
+     "Pakri",
+     160
+    ],
+    [
+     "Jõgeva",
+     158
+    ],
+    [
+     "Ruhnu",
+     140
+    ]
+   ]
+  },
+  "aasta": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 7,
+   "min": 1991,
+   "max": 2020
+  },
+  "kuu": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 12,
+   "min": 1,
+   "max": 12
+  },
+  "paev": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 31,
+   "min": 1,
+   "max": 31
+  },
+  "vaartus": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 587,
+   "min": -25.3,
+   "max": 1048.3
+  },
+  "element_kood": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 6,
+   "top_values": [
+    [
+     "DTA08",
+     798
+    ],
+    [
+     "DPA008",
+     400
+    ],
+    [
+     "DTAX",
+     400
+    ],
+    [
+     "DTAN",
+     357
+    ],
+    [
+     "DSND",
+     24
+    ],
+    [
+     "DRH08",
+     21
+    ]
+   ]
+  },
+  "element_nimi_eng": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 6,
+   "top_values": [
+    [
+     "Air temperature (daily avg)",
+     798
+    ],
+    [
+     "Air pressure at sea level (daily avg)",
+     400
+    ],
+    [
+     "Air temperature (daily max)",
+     400
+    ],
+    [
+     "Air temperature (daily min)",
+     357
+    ],
+    [
+     "Snow depth (at 06:00UTC)",
+     24
+    ],
+    [
+     "Relative humidity (daily avg)",
+     21
+    ]
+   ]
+  },
+  "element_yhik_eng": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 4,
+   "top_values": [
+    [
+     "°C",
+     1555
+    ],
+    [
+     "hPa",
+     400
+    ],
+    [
+     "cm",
+     24
+    ],
+    [
+     "%",
+     21
+    ]
+   ]
+  },
+  "avaandmed_ts": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2000,
+   "min": "2024-01-09T16:40:37.88228+02:00",
+   "max": "2024-01-15T10:31:38.5546+02:00"
+  }
+ },
+ "head": [
+  {
+   "jaam_kood": "AJVORU01",
+   "jaam_nimi": "Võru",
+   "aasta": 1991,
+   "kuu": 5,
+   "paev": 26,
+   "vaartus": 1023.1,
+   "element_kood": "DPA008",
+   "element_nimi_eng": "Air pressure at sea level (daily avg)",
+   "element_yhik_eng": "hPa",
+   "avaandmed_ts": "2024-01-09T16:40:38.279898+02:00"
+  },
+  {
+   "jaam_kood": "AJVORU01",
+   "jaam_nimi": "Võru",
+   "aasta": 1991,
+   "kuu": 5,
+   "paev": 27,
+   "vaartus": 1021.3,
+   "element_kood": "DPA008",
+   "element_nimi_eng": "Air pressure at sea level (daily avg)",
+   "element_yhik_eng": "hPa",
+   "avaandmed_ts": "2024-01-09T16:40:38.279979+02:00"
+  }
+ ]
+}

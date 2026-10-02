@@ -1,0 +1,277 @@
+{
+ "table": "f_hydroseire",
+ "total_rows": 74208793,
+ "sample_rows": 2000,
+ "columns": {
+  "jaam_kood": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 16,
+   "min": 26227,
+   "max": 86110
+  },
+  "jaam_nimi": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 16,
+   "top_values": [
+    [
+     "Vanaküla",
+     321
+    ],
+    [
+     "Tori",
+     243
+    ],
+    [
+     "Ruhnu",
+     239
+    ],
+    [
+     "Varangu",
+     120
+    ],
+    [
+     "Tartu",
+     120
+    ],
+    [
+     "Kasari",
+     120
+    ],
+    [
+     "Arbavere",
+     97
+    ],
+    [
+     "Tõrva",
+     96
+    ]
+   ]
+  },
+  "valgala_nimi": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 11,
+   "top_values": [
+    [
+     "Pärnu jõgi",
+     415
+    ],
+    [
+     "---",
+     335
+    ],
+    [
+     "Valgejõgi",
+     321
+    ],
+    [
+     "Emajõgi",
+     216
+    ],
+    [
+     "Seljajõgi",
+     120
+    ],
+    [
+     "Kasari jõgi",
+     120
+    ],
+    [
+     "Loobu jõgi",
+     97
+    ],
+    [
+     "Narva jõgi",
+     96
+    ]
+   ]
+  },
+  "valgala_suurus_km2": {
+   "non_null_share": 0.833,
+   "n_distinct_in_sample": 14,
+   "min": 84.0,
+   "max": 56047.0
+  },
+  "kaugus_suudmest_km": {
+   "non_null_share": 0.833,
+   "n_distinct_in_sample": 14,
+   "min": 2.4,
+   "max": 41.5
+  },
+  "jaam_laiuskraad": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 16,
+   "min": 57.781036,
+   "max": 59.508708
+  },
+  "jaam_pikkuskraad": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 16,
+   "min": 23.27048,
+   "max": 28.206653
+  },
+  "jaam_taisnimi": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 16,
+   "top_values": [
+    [
+     "Vanaküla hüdromeetriajaam",
+     321
+    ],
+    [
+     "Tori hüdromeetriajaam",
+     243
+    ],
+    [
+     "Ruhnu rannikujaam",
+     239
+    ],
+    [
+     "Varangu hüdromeetriajaam",
+     120
+    ],
+    [
+     "Tartu hüdromeetriajaam",
+     120
+    ],
+    [
+     "Kasari hüdromeetriajaam",
+     120
+    ],
+    [
+     "Arbavere hüdromeetriajaam",
+     97
+    ],
+    [
+     "Tõrva hüdromeetriajaam",
+     96
+    ]
+   ]
+  },
+  "veekogu_nimi": {
+   "non_null_share": 0.833,
+   "n_distinct_in_sample": 14,
+   "top_values": [
+    [
+     "Valgejõgi",
+     321
+    ],
+    [
+     "Prandi",
+     243
+    ],
+    [
+     "Selja",
+     120
+    ],
+    [
+     "Emajõgi",
+     120
+    ],
+    [
+     "Kasari j.",
+     120
+    ],
+    [
+     "Loobu j.",
+     97
+    ],
+    [
+     "Õhne j.",
+     96
+    ],
+    [
+     "Narva",
+     96
+    ]
+   ]
+  },
+  "timeline_ts_utc": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 480,
+   "min": "2013-12-27T00:00:00",
+   "max": "2023-01-11T23:00:00"
+  },
+  "timeline_ts_local": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 480,
+   "min": "2013-12-27T02:00:00",
+   "max": "2023-01-12T01:00:00"
+  },
+  "aegrida_nimi": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 8,
+   "top_values": [
+    [
+     "Äravool max",
+     507
+    ],
+    [
+     "WT avg",
+     456
+    ],
+    [
+     "WT max",
+     333
+    ],
+    [
+     "Äravool avg",
+     216
+    ],
+    [
+     "WL min",
+     190
+    ],
+    [
+     "Äravool min",
+     184
+    ],
+    [
+     "WT min",
+     96
+    ],
+    [
+     "WL max",
+     18
+    ]
+   ]
+  },
+  "vaartus": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 898,
+   "min": 0.0,
+   "max": 151.9
+  }
+ },
+ "head": [
+  {
+   "jaam_kood": 41133,
+   "jaam_nimi": "Tori",
+   "valgala_nimi": "Pärnu jõgi",
+   "valgala_suurus_km2": 284.0,
+   "kaugus_suudmest_km": 5.0,
+   "jaam_laiuskraad": 58.799416,
+   "jaam_pikkuskraad": 25.476489,
+   "jaam_taisnimi": "Tori hüdromeetriajaam",
+   "veekogu_nimi": "Prandi",
+   "timeline_ts_utc": "2023-01-08T14:00:00",
+   "timeline_ts_local": "2023-01-08T16:00:00",
+   "aegrida_nimi": "Äravool max",
+   "vaartus": 1.745
+  },
+  {
+   "jaam_kood": 41133,
+   "jaam_nimi": "Tori",
+   "valgala_nimi": "Pärnu jõgi",
+   "valgala_suurus_km2": 284.0,
+   "kaugus_suudmest_km": 5.0,
+   "jaam_laiuskraad": 58.799416,
+   "jaam_pikkuskraad": 25.476489,
+   "jaam_taisnimi": "Tori hüdromeetriajaam",
+   "veekogu_nimi": "Prandi",
+   "timeline_ts_utc": "2023-01-08T15:00:00",
+   "timeline_ts_local": "2023-01-08T17:00:00",
+   "aegrida_nimi": "Äravool max",
+   "vaartus": 1.746
+  }
+ ]
+}

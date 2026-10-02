@@ -1,0 +1,237 @@
+{
+ "table": "f_kliima_kuu",
+ "total_rows": 81713,
+ "sample_rows": 2000,
+ "columns": {
+  "jaam_kood": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 25,
+   "top_values": [
+    [
+     "AJPAKR01",
+     106
+    ],
+    [
+     "AJHARK01",
+     105
+    ],
+    [
+     "AJKIHN01",
+     97
+    ],
+    [
+     "AJJOGE01",
+     94
+    ],
+    [
+     "AJJOHV01",
+     94
+    ],
+    [
+     "AJKUUS01",
+     94
+    ],
+    [
+     "AJNIGU01",
+     94
+    ],
+    [
+     "AJKUND01",
+     93
+    ]
+   ]
+  },
+  "jaam_nimi": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 25,
+   "top_values": [
+    [
+     "Pakri",
+     106
+    ],
+    [
+     "Tallinn-Harku",
+     105
+    ],
+    [
+     "Kihnu",
+     97
+    ],
+    [
+     "Jõgeva",
+     94
+    ],
+    [
+     "Jõhvi",
+     94
+    ],
+    [
+     "Kuusiku",
+     94
+    ],
+    [
+     "Lääne-Nigula",
+     94
+    ],
+    [
+     "Kunda",
+     93
+    ]
+   ]
+  },
+  "aasta": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 9,
+   "min": 1998,
+   "max": 2023
+  },
+  "kuu": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 12,
+   "min": 1,
+   "max": 12
+  },
+  "vaartus": {
+   "non_null_share": 0.997,
+   "n_distinct_in_sample": 760,
+   "min": -27.8,
+   "max": 1023.1
+  },
+  "element_kood": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 8,
+   "top_values": [
+    [
+     "DTAN",
+     593
+    ],
+    [
+     "DTA08",
+     525
+    ],
+    [
+     "DPA008",
+     250
+    ],
+    [
+     "DRH08",
+     215
+    ],
+    [
+     "DTAX",
+     207
+    ],
+    [
+     "DPREC",
+     149
+    ],
+    [
+     "DRQS",
+     60
+    ],
+    [
+     "DWS08",
+     1
+    ]
+   ]
+  },
+  "element_nimi_eng": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 8,
+   "top_values": [
+    [
+     "Air temperature (daily min)",
+     593
+    ],
+    [
+     "Air temperature (daily avg)",
+     525
+    ],
+    [
+     "Air pressure at sea level (daily avg)",
+     250
+    ],
+    [
+     "Relative humidity (daily avg)",
+     215
+    ],
+    [
+     "Air temperature (daily max)",
+     207
+    ],
+    [
+     "Precipitation (daily sum)",
+     149
+    ],
+    [
+     "Global radiation (daily sum)",
+     60
+    ],
+    [
+     "Wind speed (daily avg)",
+     1
+    ]
+   ]
+  },
+  "element_yhik_eng": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 6,
+   "top_values": [
+    [
+     "°C",
+     1325
+    ],
+    [
+     "hPa",
+     250
+    ],
+    [
+     "%",
+     215
+    ],
+    [
+     "mm",
+     149
+    ],
+    [
+     "MJ/m2",
+     60
+    ],
+    [
+     "m/s",
+     1
+    ]
+   ]
+  },
+  "avaandmed_ts": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2000,
+   "min": "2024-01-02T16:42:02.109606+02:00",
+   "max": "2024-01-12T15:42:58.998274+02:00"
+  }
+ },
+ "head": [
+  {
+   "jaam_kood": "AJHELT01",
+   "jaam_nimi": "Heltermaa",
+   "aasta": 2023,
+   "kuu": 11,
+   "vaartus": 70.5,
+   "element_kood": "DPREC",
+   "element_nimi_eng": "Precipitation (daily sum)",
+   "element_yhik_eng": "mm",
+   "avaandmed_ts": "2024-01-08T11:56:35.126947+02:00"
+  },
+  {
+   "jaam_kood": "AJJOGE01",
+   "jaam_nimi": "Jõgeva",
+   "aasta": 2023,
+   "kuu": 11,
+   "vaartus": 61.4,
+   "element_kood": "DPREC",
+   "element_nimi_eng": "Precipitation (daily sum)",
+   "element_yhik_eng": "mm",
+   "avaandmed_ts": "2024-01-08T11:56:35.129592+02:00"
+  }
+ ]
+}

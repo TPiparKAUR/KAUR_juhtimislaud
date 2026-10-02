@@ -1,0 +1,1333 @@
+{
+ "table": "f_pohjaveekogumi_seisud",
+ "total_rows": 70,
+ "sample_rows": 70,
+ "columns": {
+  "id": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 70,
+   "min": -2058770452,
+   "max": 2128051518
+  },
+  "aasta": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2,
+   "min": 2014,
+   "max": 2020
+  },
+  "pohjaveekogum_id": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 70,
+   "min": -2136627166,
+   "max": 1972152354
+  },
+  "kood": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 70,
+   "min": "01§2013-S2014",
+   "max": "39§2013-S2014"
+  },
+  "seis": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "1",
+     41
+    ],
+    [
+     "3",
+     16
+    ],
+    [
+     "2",
+     13
+    ]
+   ]
+  },
+  "pvkseis_seis_selg": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "Hea",
+     41
+    ],
+    [
+     "Halb",
+     16
+    ],
+    [
+     "Ohustatud",
+     13
+    ]
+   ]
+  },
+  "seis_kem": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "1",
+     43
+    ],
+    [
+     "3",
+     16
+    ],
+    [
+     "2",
+     11
+    ]
+   ]
+  },
+  "pvkseis_seis_kem_selg": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "Hea",
+     43
+    ],
+    [
+     "Halb",
+     16
+    ],
+    [
+     "Ohustatud",
+     11
+    ]
+   ]
+  },
+  "seis_kem1": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "1",
+     64
+    ],
+    [
+     "2",
+     3
+    ],
+    [
+     "3",
+     3
+    ]
+   ]
+  },
+  "pvkseis_seis_kem1_selg": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "Hea",
+     64
+    ],
+    [
+     "Ohustatud",
+     3
+    ],
+    [
+     "Halb",
+     3
+    ]
+   ]
+  },
+  "seis_kem2": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "1",
+     66
+    ],
+    [
+     "2",
+     2
+    ],
+    [
+     "3",
+     2
+    ]
+   ]
+  },
+  "pvkseis_seis_kem2_selg": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "Hea",
+     66
+    ],
+    [
+     "Ohustatud",
+     2
+    ],
+    [
+     "Halb",
+     2
+    ]
+   ]
+  },
+  "seis_kem3": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 1,
+   "top_values": [
+    [
+     "1",
+     70
+    ]
+   ]
+  },
+  "pvkseis_seis_kem3_selg": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 1,
+   "top_values": [
+    [
+     "Hea",
+     70
+    ]
+   ]
+  },
+  "seis_kem4": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "1",
+     66
+    ],
+    [
+     "3",
+     3
+    ],
+    [
+     "2",
+     1
+    ]
+   ]
+  },
+  "pvkseis_seis_kem4_selg": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "Hea",
+     66
+    ],
+    [
+     "Halb",
+     3
+    ],
+    [
+     "Ohustatud",
+     1
+    ]
+   ]
+  },
+  "seis_kem5": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "1",
+     54
+    ],
+    [
+     "3",
+     15
+    ],
+    [
+     "2",
+     1
+    ]
+   ]
+  },
+  "pvkseis_seis_kem5_selg": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "Hea",
+     54
+    ],
+    [
+     "Halb",
+     15
+    ],
+    [
+     "Ohustatud",
+     1
+    ]
+   ]
+  },
+  "seis_kog": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "1",
+     63
+    ],
+    [
+     "2",
+     4
+    ],
+    [
+     "3",
+     3
+    ]
+   ]
+  },
+  "pvkseis_seis_kog_selg": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "Hea",
+     63
+    ],
+    [
+     "Ohustatud",
+     4
+    ],
+    [
+     "Halb",
+     3
+    ]
+   ]
+  },
+  "seis_kog1": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "1",
+     68
+    ],
+    [
+     "2",
+     1
+    ],
+    [
+     "3",
+     1
+    ]
+   ]
+  },
+  "pvkseis_seis_kog1_selg": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "Hea",
+     68
+    ],
+    [
+     "Ohustatud",
+     1
+    ],
+    [
+     "Halb",
+     1
+    ]
+   ]
+  },
+  "seis_kog2": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "1",
+     68
+    ],
+    [
+     "3",
+     2
+    ]
+   ]
+  },
+  "pvkseis_seis_kog2_selg": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Hea",
+     68
+    ],
+    [
+     "Halb",
+     2
+    ]
+   ]
+  },
+  "seis_kog3": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "1",
+     68
+    ],
+    [
+     "2",
+     1
+    ],
+    [
+     "3",
+     1
+    ]
+   ]
+  },
+  "pvkseis_seis_kog3_selg": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "Hea",
+     68
+    ],
+    [
+     "Ohustatud",
+     1
+    ],
+    [
+     "Halb",
+     1
+    ]
+   ]
+  },
+  "seis_kog4": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "1",
+     68
+    ],
+    [
+     "3",
+     2
+    ]
+   ]
+  },
+  "pvkseis_seis_kog4_selg": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Hea",
+     68
+    ],
+    [
+     "Halb",
+     2
+    ]
+   ]
+  },
+  "usald": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "M",
+     56
+    ],
+    [
+     "K",
+     14
+    ]
+   ]
+  },
+  "pvkseis_usald_selg": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Madal",
+     56
+    ],
+    [
+     "Kõrge",
+     14
+    ]
+   ]
+  },
+  "usald_kem": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "M",
+     55
+    ],
+    [
+     "K",
+     15
+    ]
+   ]
+  },
+  "pvkseis_usald_kem_selg": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Madal",
+     55
+    ],
+    [
+     "Kõrge",
+     15
+    ]
+   ]
+  },
+  "usald_kem1": {
+   "non_null_share": 0.671,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "M",
+     31
+    ],
+    [
+     "K",
+     16
+    ]
+   ]
+  },
+  "pvkseis_usald_kem1_selg": {
+   "non_null_share": 0.671,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Madal",
+     31
+    ],
+    [
+     "Kõrge",
+     16
+    ]
+   ]
+  },
+  "usald_kem2": {
+   "non_null_share": 0.671,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "M",
+     36
+    ],
+    [
+     "K",
+     11
+    ]
+   ]
+  },
+  "pvkseis_usald_kem2_selg": {
+   "non_null_share": 0.671,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Madal",
+     36
+    ],
+    [
+     "Kõrge",
+     11
+    ]
+   ]
+  },
+  "usald_kem3": {
+   "non_null_share": 0.671,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "M",
+     35
+    ],
+    [
+     "K",
+     12
+    ]
+   ]
+  },
+  "pvkseis_usald_kem3_selg": {
+   "non_null_share": 0.671,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Madal",
+     35
+    ],
+    [
+     "Kõrge",
+     12
+    ]
+   ]
+  },
+  "usald_kem4": {
+   "non_null_share": 0.671,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "M",
+     34
+    ],
+    [
+     "K",
+     13
+    ]
+   ]
+  },
+  "pvkseis_usald_kem4_selg": {
+   "non_null_share": 0.671,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Madal",
+     34
+    ],
+    [
+     "Kõrge",
+     13
+    ]
+   ]
+  },
+  "usald_kem5": {
+   "non_null_share": 0.671,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "M",
+     36
+    ],
+    [
+     "K",
+     11
+    ]
+   ]
+  },
+  "pvkseis_usald_kem5_selg": {
+   "non_null_share": 0.671,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Madal",
+     36
+    ],
+    [
+     "Kõrge",
+     11
+    ]
+   ]
+  },
+  "usald_kog": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "M",
+     44
+    ],
+    [
+     "K",
+     26
+    ]
+   ]
+  },
+  "pvkseis_usald_kog_selg": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Madal",
+     44
+    ],
+    [
+     "Kõrge",
+     26
+    ]
+   ]
+  },
+  "usald_kog1": {
+   "non_null_share": 0.671,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "M",
+     27
+    ],
+    [
+     "K",
+     20
+    ]
+   ]
+  },
+  "pvkseis_usald_kog1_selg": {
+   "non_null_share": 0.671,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Madal",
+     27
+    ],
+    [
+     "Kõrge",
+     20
+    ]
+   ]
+  },
+  "usald_kog2": {
+   "non_null_share": 0.671,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "M",
+     35
+    ],
+    [
+     "K",
+     12
+    ]
+   ]
+  },
+  "pvkseis_usald_kog2_selg": {
+   "non_null_share": 0.671,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Madal",
+     35
+    ],
+    [
+     "Kõrge",
+     12
+    ]
+   ]
+  },
+  "usald_kog3": {
+   "non_null_share": 0.671,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "M",
+     34
+    ],
+    [
+     "K",
+     13
+    ]
+   ]
+  },
+  "pvkseis_usald_kog3_selg": {
+   "non_null_share": 0.671,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Madal",
+     34
+    ],
+    [
+     "Kõrge",
+     13
+    ]
+   ]
+  },
+  "usald_kog4": {
+   "non_null_share": 0.671,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "K",
+     45
+    ],
+    [
+     "M",
+     2
+    ]
+   ]
+  },
+  "pvkseis_usald_kog4_selg": {
+   "non_null_share": 0.671,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Kõrge",
+     45
+    ],
+    [
+     "Madal",
+     2
+    ]
+   ]
+  },
+  "tx_seis": {
+   "non_null_share": 0.557,
+   "n_distinct_in_sample": 39,
+   "top_values": [
+    [
+     "Kesk-Devoni põhjaveekogumi Ida-Eesti vesikonnas keemiline seisund on hea ja koguseline seisund hea ning seega on põhjaveekogumi üldine seisund hea. Veetaset on süstemaatiliselt mõõdetud kolmes seirekaevus: 8730, 7598, 7590. Koguselise seirega on katmata vähese asustusega põhjaveekogumi põhjaosa, mis siiski ei kahanda koguselise seisundi hindamise üldist usaldusväärsust. Keemilise seisundi hindamise joogivee testi jaoks lähteandmed puuduvad, seepärast on ka testi tulemus madala usaldusväärsusega. Soolase või muu vee sissetungi hindamise usaldusväärsus on madal, sest keemilise ja koguselise seire puurkaevud ei ole põhjaveekogumi piires ühtlaselt jaotunud. Vajalik on keemilise seire teostamine näitajate osas, millele on määratud läviväärtused.",
+     1
+    ],
+    [
+     "Kvaternaari Laiuse põhjaveekogumi keemiline seisund on hea ja koguseline seisund hea ning seega on põhjaveekogumi üldine seisund hea. Veetaset ei ole süstemaatiliselt mõõdetud üheski seirekaevus. Keemilise seisundi hindamise joogivee testi jaoks lähteandmed puuduvad, seepärast on ka testi tulemus madala usaldusväärsusega.",
+     1
+    ],
+    [
+     "Siluri–Ordoviitsiumi Pandivere  põhjaveekogumi Ida-Eesti vesikonnas keemiline seisund on halb ja koguseline seisund on hea ning seega on ka põhjaveekogumi üldine seisund halb. Põhjaveekogumi keemilise seisundi hindamine kõikide testide järgi on madala usaldusväärsusega, sest paljudes seirekaevudes puuduvad veeanalüüside tulemused näitajate osas, millele on määratud läviväärtused (PAH, benseen, naftasaadused) ning ainete sisalduse kasvusuundumusi seirekaevudes ei olnud võimalik määrata andmete lünklikkuse tõttu. Ohtlike ainete uuringute käigus on leitud pestitsiidide jääke (Metabolit-B, Spiroxamine, DMST, Bentazone, Oxadixyl, Carbendazim), millele tuleb teha kordusuuringud ning uurida reostuse levikut ja põhjusi põhjavees ja põhjaveest otseselt sõltuvates pinnaveekogudes ja maismaaökosüsteemides. Sulfaatide, kloriidide, pH, nitraatide, vees lahustunud hapniku ja PHT seireandmete read katkevad ja ei võimalda arvutada lähtetaset ja kasvusuundumusi. Samuti on madala usaldusväärsusega keemilise seisundi hindamine joogiveest lähtuvalt, kuna suuremate veetootjate veeanalüüside tulemusi kasutada ei olnud.",
+     1
+    ],
+    [
+     "Kvaternaari Kuusalu põhjaveekogumi keemiline seisund on hea ja koguseline seisund hea ning seega on põhjaveekogumi üldine seisund hea. Veetaset ei ole süstemaatiliselt mõõdetud üheski seirekaevus. Keemilise seisundi hindamise joogivee testi jaoks lähteandmed puuduvad, seepärast on ka testi tulemus madala usaldusväärsusega.",
+     1
+    ],
+    [
+     "Kvaternaari Vasavere põhjaveekogumi keemiline seisund on halb ja koguseline seisund hea ning seega on ka põhjaveekogumi üldine seisund halb. Veevõtu edasine intensiivistamine võib põhjustada veetaseme alanemist, sulfaatide ja muu vee sissetungi ohtu ning halvendada veevarustuse olukorda. Alates 2010 aastast on seirekaevudes katkenud lahustunud hapniku sisalduse mõõtmine ja elektrijuhtivuse määramine, mistõttu ei ole võimalik määrata kasvusuundumusi. Vajalik on taastada seirekaevud 4713 ja 5070 keemilise hindamise usaldusväärsuse tõstmiseks. Naftasaaduste sisaldusi on alates 2009 aastast, eelmise kahe aasta kohta andmed puuduvad, mis põhjustab põhjaveekogumi kui terviku üldise keemilise seisundi hindamise madala usaldusväärsuse. Madala usaldusväärsusega on keemilise seisundi hindamine joogiveest lähtuvalt, kuna joogivee kontrolli keemiliste analüüside tulemused ei olnud Terviseameti andmebaasidest kättesaadavad. Ka põhjaveekogumi tervikliku üldise keemilise seisundi hindamine on madala usaldusväärsusega, sest seireandmete lünklikkus ei võimalda arvutada usaldusväärseid näitajate aasta keskmisi sisaldusi, nende muutusi ja kasvusuundumusi. Vajalik on uurimusliku seire, et selgitada läviväärtuste ja piirväärtuste ületamise põhjused, kui need teada pole ja põhjused, miks tõenäoliselt püstitatud keskkonnaeesmärki ei saavutata. Uurimuslik seire on vajalik põhjaveekogumi ja pinnaveekogumite ning maismaaökosüsteemide omavaheliste seoste kindlakstegemiseks.",
+     1
+    ],
+    [
+     "Ordoviitsiumi-Kambriumi põhjaveekogumi Ida-Eesti vesikonnas põhjaveekogumi keemiline ja koguseline seisund on hea ja seega on ka põhjaveekogumi üldine seisund hea. Kuid veevõtu intensiivistamine võib põhjustada veetaseme alanemist, sulfaatide ja kloriidide sisalduse suurenemist ning halvendada veevarustuse olukorda ning seepärast on põhjaveekogumi hea seisund ohustatud. Madala usaldusväärsuse põhjuseks on seireandmete lünklikkus, mis ei võimalda arvutada usaldusväärseid näitajate aasta keskmisi sisaldusi, nende muutusi ja kasvusuundumusi.",
+     1
+    ],
+    [
+     "Kvaternaari Meltsiveski põhjaveekogumi keemiline seisund on halb ja koguseline seisund hea ning seega on ka põhjaveekogumi üldine seisund halb. Veevõtu edasine intensiivistamine võib põhjustada veetaseme alanemist, nitraatide, fenoolide ja pestitsiidide sisalduse tõusu ning halvendada veevarustuse olukorda. Alates 2010 aastast on seirekaevudes katkenud lahustunud hapniku sisalduse mõõtmine ja elektrijuhtivuse määramine, mistõttu ei ole võimalik määrata kasvusuundumusi. Vajalik on taastada või lisada keemilise seire puurkaeve keemilise hindamise usaldusväärsuse tõstmiseks, et oleks võimalik hinnata kogu põhjaveekogumi seisundit, mitte ainult ühe piirkonna. Enamus ohtlike ainete määrangud seirekaevudes on alates 2010 aastast, mis ei võimalda arvutada lähtetaset. Vajalik on edaspidi mitte katkestada ohtlike ainete määranguid seirekaevudes, kus on piirsisalduse ületamisi, eriti ühealuseliste fenoolide osas. Põhjaveekogumi halba keemilist seisundit põhjustavate ühealuseliste fenoolide sisaldused on määratud alates 2010 aastast, mis põhjustab põhjaveekogumi kui terviku üldise keemilise seisundi hindamise madala usaldusväärsuse. Madala usaldusväärsusega on keemilise seisundi hindamine joogiveest lähtuvalt, kuna joogivee kontrolli keemiliste analüüside tulemused ei olnud Terviseameti andmebaasidest kättesaadavad. Ka põhjaveekogumi tervikliku üldise keemilise seisundi hindamine on madala usaldusväärsusega, sest seireandmete lünklikkus (lahustunud hapniku sisaldus, elektrijuhtivus) ei võimalda arvutada kõikide vajalike näitajate aasta keskmisi sisaldusi ja kasvusuundumusi. Ühealuseliste fenoolide seiret on vaja jätkata kõigis keemilise seire kaevudes, sest kasvusuundumuste usaldusväärseks kindlakstegemiseks käesoleval ajal on andmed puudulikud. Põhjaveekogumis kui tervikus fenoolide sisalduse hindamiseks on vaja lisada seirekaeve ja väga oluline on iga-aastaselt jätkata fenoolide määranguid, et andmeread ei katkeks. Vajalik on uurimuslik seire, et selgitada läviväärtuste ja piirväärtuste ületamise põhjused, et selgitada keskkonnaeesmärkide mittesaavutamist. Uurimuslik seire on vajalik põhjaveekogumi ja pinnaveekogumite ning võimalike maismaaökosüsteemide omavaheliste seoste kindlakstegemiseks.",
+     1
+    ],
+    [
+     "Kesk–Alam-Devoni põhjaveekogumi Ida-Eesti vesikonnas keemiline seisund on hea ja koguseline seisund hea ning seega on põhjaveekogumi üldine seisund hea.",
+     1
+    ]
+   ]
+  },
+  "tx_seis_kem": {
+   "non_null_share": 0.557,
+   "n_distinct_in_sample": 39,
+   "top_values": [
+    [
+     "Kesk-Devoni põhjaveekogumi Ida-Eesti vesikonnas kümnest seirekaevust vastab kõigis põhjavee kvaliteet etteantud kvaliteedinõuetele. Seega on kvaliteedinõuetele vastava põhjaveega seirekaeve 100% ja põhjaveekogumi keemiline seisund on hea.",
+     1
+    ],
+    [
+     "Kvaternaari Laiuse põhjaveekogumi ühest seirekaevust vastab põhjavee kvaliteet etteantud kvaliteedinõuetele. Seega on kvaliteedinõuetele vastava põhjaveega seirekaeve 100% ja põhjaveekogumi keemiline seisund on hea.",
+     1
+    ],
+    [
+     "Siluri–Ordoviitsiumi Adavere-Põltsamaa põhjaveekogumis on kvaliteedinõuetele vastava põhjaveega seirekaeve 75% ja arvestades nitraatide kasvusuundumust on põhjaveekogumi keemiline seisund halb. Pestitsiide piirväärtust on ületatud seirejaamades SJA3299000 ja SJA1743000, naftasaaduste piirväärtust seirekaevus 7579 ja nitraatide seitsme aasta keskmine sisaldus ületas piirväärtust seirekaevus SJA7906000.",
+     1
+    ],
+    [
+     "Kvaternaari Kuusalu põhjaveekogumi ühes seirekaevus vastab põhjavee kvaliteet etteantud kvaliteedinõuetele. Seega on kvaliteedinõuetele vastava põhjaveega seirekaeve 100% ja põhjaveekogumi keemiline seisund on hea.",
+     1
+    ],
+    [
+     "Kvaternaari Vasavere põhjaveekogumi naftasaaduste ja ühealuseliste fenoolide keskmised sisaldused ületavad läviväärtusi kõigis kolmes seirekaevus. Viimasel kahel aastal on kasvusuundumused PHT, nitraatide ja ammooniumi osas. Seega on põhjaveekogumi keemiline seisund halb.",
+     1
+    ],
+    [
+     "Ordoviitsiumi-Kambriumi põhjaveekogumi Ida-Eesti vesikonnas sulfaatide sisaldus üheski seirekaevus läviväärtust ei ületanud, kuid esineb üksikuid kasvusuundumusi seirekaevudes. Lisaks on kahel viimasel aastal PHT ja nitraatide kasvusuundumus. Seega võib põhjaveekogumi keemilise seisundi  lugeda heaks.",
+     1
+    ],
+    [
+     "Kvaternaari Meltsiveski põhjaveekogumi ühealuseliste fenoolide seitsme aasta keskmised sisaldused ületavad läviväärtusi mõlemas seirekaevus – 4280 (3,8 µg/l) ja 4307 (1,6 µg/l). Ka joogivee testi tulemusel on põhjaveekogumi seisund halb. Seega on põhjaveekogumi keemiline seisund halb.",
+     1
+    ],
+    [
+     "Kesk–Alam-Devoni põhjaveekogumi Ida-Eesti vesikonnas kuuest seirekaevust vastab kõigis põhjavee kvaliteet etteantud kvaliteedinõuetele. Seega on kvaliteedinõuetele vastava põhjaveega seirekaeve 100% ja põhjaveekogumi keemiline seisund on hea.",
+     1
+    ]
+   ]
+  },
+  "tx_seis_kem1": {
+   "non_null_share": 0.586,
+   "n_distinct_in_sample": 39,
+   "top_values": [
+    [
+     "Põhjavee keemilist koostist (eriti kloriidide sisaldust) arvesse võttes ei ole põhjaveekogumi seisund tervikuna mõjutatud soolase vee sissetungist ning läviväärtusi määratud ei ole. Andmed on katkendlikud, ei ole võimalik jälgida kasvusuundumusi.",
+     2
+    ],
+    [
+     "Osades seirepunktides on vaatlused katkestatud ja kasutusele on võetud uusi seirepunkte, mille kohta hindamise jaoks eelmise kuue aasta keemiliste analüüside teave puudub või ei ole kättesaadav.",
+     2
+    ],
+    [
+     "Põhjaveekogumi vesi ei ole mõjutatud soolase vee sissetungist. Põhjaveekogumi kloriidide aasta keskmine sisaldus on aastatel 2007–2013 olnud vahemikus 11–17mg/l ja on väikese langustrendiga. Langustrendiga on põhjaveekogumis olnud ka sulfaatide aasta keskmine sisaldus.",
+     1
+    ],
+    [
+     "Põhjaveekogumi vesi ei ole mõjutatud soolase vee sissetungist. Kvaternaari Laiuse põhjaveekogumis oli sulfaatide 2013. aasta sisaldus 80–91 mg/l.",
+     1
+    ],
+    [
+     "Põhjaveekogumi vesi ei ole mõjutatud soolase vee sissetungist. Põhjaveekogumi kloriidide aasta keskmine sisaldus oli aastatel 2007–2013 vahemikus 18–33mg/l ja on väikese langustrendiga. Põhjaveekogumis on sulfaatide aasta keskmine sisaldus tõusutrendiga.",
+     1
+    ],
+    [
+     "Põhjaveekogumi põhjavesi on valdavalt HCO3-Ca-Mg-tüüpi, vees lahustunud mineraalainete sisaldusega 0,2–0,5 g/l. Suur on ka NH4+-sisaldus (kuni 1,2 mg/l) ja oksüdeeritavus (kuni 36,5 mg/l O2), mis on tingitud põhjavee anaeroobsest veekeskkonnast ja laialdasest soode mõjust.",
+     1
+    ],
+    [
+     "Põhjast lõuna suunas veetüüp muutub: Cl-HCO3-Na- kuni Cl-Na-tüüpi, kuivjääk suureneb kuni 750mg/l. Kloriidide sisaldus suureneb lõuna suunas kuni 250–350mg/l. Naatriumisisaldus on põhjaveekogumi lõunaosas enam kui 200 mg/l, mis samuti ületab joogivee lubatud piirsisaldust. Põhjavee kvaliteet on jäänud stabiilseks, sest põhjaveekogum on pindmise reostuse ja ilmastikumõjude eest kaitstud. Tartus on kuivjäägi muutuste põhjuseks veetaseme alanduslehtri areng, mis tõi endaga kaasa magedama vee.",
+     1
+    ],
+    [
+     "Põhjaveekogumi põhjavesi on valdavalt HCO3-SO4-Cl-Ca-Mg-tüüpi, vähese vees lahustunud mineraalainete sisaldusega 0,7–0,8 g/l. Aastatel 2010-2013 on täheldatav väike kloriidide keskmise sisalduse langus, soolase või muu vee sissetungi oht põhjaveekogumisse ei ole olulise tähtsusega.",
+     1
+    ]
+   ]
+  },
+  "tx_seis_kem2": {
+   "non_null_share": 0.6,
+   "n_distinct_in_sample": 38,
+   "top_values": [
+    [
+     "Põhjaveekogum ei ole seotud pinnaveega.",
+     3
+    ],
+    [
+     "Põhjaveekogumil puudub vahetu seos pinnaveega.",
+     2
+    ],
+    [
+     "Põhjavee kontseptuaalses mudelis seoseid ei ole kirjeldatud, viidatakse, et põhjaveekogum toitub Kvaternaari setete veest. Täpsemate seoste kindlakstegemiseks tuleb teha uuringud ning kavandada seire.",
+     2
+    ],
+    [
+     "Põhjavee kontseptuaalses mudelis seoseid ei ole kirjeldatud, viidatakse, et on pinnaveega vähe seotud. Põhjuseks on paks pinnakate, mis vahetud vastastikused seosed välistab. Põuastel suvedel, kui maapinnalähedane veetase alaneb, saab pinnavesi täiendavat toitumist Kesk-Devoni põhjaveekogumist läbi Kvaternaari setete. Täpsemate seoste kindlakstegemiseks tuleb teha uuringud ning kavandada seire.",
+     1
+    ],
+    [
+     "Kvaternaari Laiuse kogumi eraldamisel põhjavee kontseptuaalses mudelis on arvestatud osaliselt põhjaveelise toitumisega Kuremaa järvega, mis on põhjaveekogumist välja arvatud. Piiratud leviku tõttu on seosed pinna- ja põhjavee vahel väikesed ja avalduvad Pedja jõe ja Kuremaa järve mõningases toitumises põhjaveekogumi veega. Täpsemate seoste kindlakstegemiseks tuleb teha uuringud ning kavandada seire.",
+     1
+    ],
+    [
+     "Eelnevate uuringute põhjal on põhjaveekogum on pinnaveega seotud, kuid põhjaveekogumi ja pinnaveekogumite vahelised seosed vajavad täpsustamist vastavate uuringute ja seirega.",
+     1
+    ],
+    [
+     "Põhjavee kontseptuaalses mudelis seoseid ei ole kirjeldatud. Viidatakse, et põhjaveekogumi piiratud leviku tõttu ei ole pinna- ja põhjavee seoseid täheldatud. Täpsemate seoste kindlakstegemiseks tuleb teha uuringud ning kavandada seire.",
+     1
+    ],
+    [
+     "Põhjaveekogum on seotud pinnaveega, kuid seosed Vasavere põhjaveekogumiga vajavad uuringute ja seirega täpsustamist. Veevõtu ülemäära suurendamine võib põhjustada  põhjaveekogumiga seotud ökosüsteemide (Natura järved) seisundi halvenemist. Põhjaveekogumi piiritlemisel on arvestatud ka Kurtna maastikukaitsealal paiknevate Natura 2000 järvede ja veest sõltuvate ökosüsteemide esinemisega (Kuradijärv, Martiska järv).",
+     1
+    ]
+   ]
+  },
+  "tx_seis_kem3": {
+   "non_null_share": 0.557,
+   "n_distinct_in_sample": 28,
+   "top_values": [
+    [
+     "Põhjavee kontseptuaalses mudelis seoseid põhjaveekogumi ja maismaaökosüsteemide vahel ei ole kirjeldatud. Täpsemate seoste kindlakstegemiseks tuleb teha uuringud ning kavandada seire.",
+     5
+    ],
+    [
+     "Põhjaveekogum ei ole seotud maismaaökosüsteemidega.",
+     3
+    ],
+    [
+     "Põhjavee kontseptuaalses mudelis seoseid põhjaveekogumi ja maismaaökosüsteemide vahel ei ole kirjeldatud, viidatakse veerikastele allikatele. Täpsemate seoste kindlakstegemiseks tuleb teha uuringud ning kavandada seire.",
+     3
+    ],
+    [
+     "Põhjavee kontseptuaalses mudelis seoseid põhjaveekogumi ja maismaaökosüsteemide vahel ei ole kirjeldatud, viidatakse, et seos puudub. Täpsemate seoste kindlakstegemiseks tuleb teha uuringud ning kavandada seire.",
+     2
+    ],
+    [
+     "Põhjaveekogumil puudub vahetu seos maismaaökosüsteemidega.",
+     2
+    ],
+    [
+     "Põhjavee kontseptuaalses mudelis põhjaveekogumi ja maismaaökosüsteemide vahel seos puudub. Täpsemate seoste kindlakstegemiseks tuleb teha uuringud ning kavandada seire.",
+     2
+    ],
+    [
+     "Põhjavee kontseptuaalses mudelis ei ole seosed põhjaveekogumi ja maismaaökosüsteemide vahel põhjaveekogumi piiritlemisel eristatavad. Seos maismaaökosüsteemidega puudub. Mõningad allikad avanevad Halliste jõe ürgorus. Täpsemate seoste kindlakstegemiseks tuleb teha uuringud ning kavandada seire.",
+     1
+    ],
+    [
+     "Põhjavee kontseptuaalses mudelis seoseid põhjaveekogumi ja maismaaökosüsteemide vahel ei ole kirjeldatud, andmed puuduvad. Täpsemate seoste kindlakstegemiseks tuleb teha uuringud ning kavandada seire.",
+     1
+    ]
+   ]
+  },
+  "tx_seis_kem4": {
+   "non_null_share": 0.571,
+   "n_distinct_in_sample": 38,
+   "top_values": [
+    [
+     "Hea keemilise seisundi tingimused on täidetud, kuna veevõtu punktides ei esine ühe või mitme põhilise näitaja osas märkimisväärset kasvusuundumust, mis oleks sundinud vee-ettevõtjat veehaarete asukohti või efektiivsemaid veetöötlusmeetodeid rakendama.",
+     2
+    ],
+    [
+     "Veetöötlusseadmeid põhjaveekogumi veehaaretel Terviseameti puhastusseadmete andmebaasi andmetel paigaldatud ei ole. Põhjaveekogumi keemilist seisundit joogiveest lähtuvalt on vaja täpsustada seire ja uuringutega.",
+     2
+    ],
+    [
+     "Terviseameti tervisele ohutu joogivee andmebaasis on info kaheksateistkümne veehaarde puukaevude veeanalüüside kohta. Kesk-Devoni põhjaveekogumisse Ida-Eesti vesikonnas jäävatest veehaaretest 249-s vett töödeldakse. Veetöötlusseadmete abil eemaldatakse veehaarete põhjaveest rauda, fluori ja mangaani, mis esinevad põhjavees looduslikult ning ei ole põhjustatud inimmõjust. Hea keemilise seisundi tingimused on täidetud, kuna veevõtupunktides ei esine ühe või mitme põhilise näitaja osas märkimisväärset kasvusuundumust, mis oleks sundinud vee-ettevõtjat veehaarete asukohti muutma või efektiivsemaid veetöötlusmeetodeid rakendama. Puudub vajadus veepuhastustoimingute ulatuse edasise suurendamise järele.",
+     1
+    ],
+    [
+     "Terviseameti tervisele ohutu joogivee andmebaasis uuritud puurkaeve ei ole. Kvaternaari Laiuse põhjaveekogumisse jäävatest veehaaretest 2-s toimub pumbatava põhjavee töötlemine. Veetöötlusseadmetega eemaldatakse põhjaveest rauda, mis esineb põhjavees looduslikult ja ei ole põhjustatud inimmõjust. Hea keemilise seisundi tingimused on täidetud, kuna veevõtupunktides ei esine ühe või mitme põhilise näitaja osas märkimisväärset kasvusuundumust, mis oleks sundinud vee-ettevõtjat veehaarete asukohti või efektiivsemaid veetöötlusmeetodeid rakendama.",
+     1
+    ],
+    [
+     "Siluri-Ordoviitsiumi Adavere-Põltsamaa põhjaveekogumisse jäävatest veehaaretest 11-s vett töödeldakse. Veehaaretes eemaldatakse veetöötlusseadmetega põhjaveest rauda, mangaani ja ammooniumi, mis esinevad põhjavees looduslikult ning ei ole põhjustatud inimmõjust. Hea keemilise seisundi tingimused on täidetud, kuna veevõtu punktides ei esine ühe või mitme põhilise näitaja osas märkimisväärset kasvusuundumust, mis oleks sundinud vee-ettevõtjat veehaarete asukohti või efektiivsemaid veetöötlusmeetodeid rakendama.",
+     1
+    ],
+    [
+     "Kvaternaari Kuusalu põhjaveekogumi hea keemilise seisundi tingimused on täidetud, kuna veevõtu-punktides ei esine ühe või mitme põhilise näitaja osas märkimisväärset kasvusuundumust. Kvaternaari Kuusalu põhjaveekogumisse jäävatest veehaaretest 7-s toimub pumbatava põhjavee töötlemine. Hea keemilise seisundi tingimused on täidetud, kuna veevõtupunktides ei esine ühe või mitme põhilise näitaja osas märkimisväärset kasvusuundumust, mis oleks sundinud vee-ettevõtjat veehaarete asukohti või efektiivsemaid veetöötlusmeetodeid rakendama.",
+     1
+    ],
+    [
+     "Vasavere veehaarde põhjavesi suunatakse Ahtme veetöötlusjaama, kus toimub raua ja mangaani eraldamine. Raud ja mangaan esinevad põhjavees looduslikult ja ei ole põhjustatud inimmõjust. Hea keemilise seisundi tingimused on täidetud, kuna veevõtu punktides ei esine ühe või mitme põhilise näitaja osas märkimisväärset kasvusuundumust, mis oleks sundinud vee-ettevõtjat veehaarete asukohti muutma või efektiivsemaid veetöötlusmeetodeid rakendama. Puudub vajadus veepuhastustoimingute ulatuse edasise suurendamise järele.",
+     1
+    ],
+    [
+     "Ordoviitsiumi-Kambriumi põhjaveekogumisse Ida-Eesti vesikonnas jäävatest veehaaretest  61-s toimub pumbatava põhjavee töötlemine. Veetöötlusseadmetega eemaldatakse põhjaveest rauda,  mangaani ja väävelvesinikku, mis esinevad põhjavees looduslikult ja ei ole põhjustatud inimmõjust. Hea keemilise seisundi tingimused on täidetud, kuna veevõtu punktides ei esine ühe või mitme põhilise näitaja osas märkimisväärset kasvusuundumust, mis oleks sundinud vee-ettevõtjat veehaarete asukohti muutma või efektiivsemaid veetöötlusmeetodeid rakendama. Puudub vajadus veepuhastustoimingute ulatuse edasise suurendamise järele.",
+     1
+    ]
+   ]
+  },
+  "tx_seis_kem5": {
+   "non_null_share": 0.671,
+   "n_distinct_in_sample": 47,
+   "min": "Cl piirväärtus (10938) üle 20% - tõus ko",
+   "max": "kloriidi kasvutrend, vajalik kaevude vah"
+  },
+  "tx_seis_kog": {
+   "non_null_share": 0.557,
+   "n_distinct_in_sample": 38,
+   "top_values": [
+    [
+     "Peamiselt on veetaseme muutused seotud põhjavee loodusliku toitumise muutustega ja puudub oluline inimmõjust tulenev veetaseme alanemine. Veetaseme muutused ei põhjusta soolase ja muu vee sissetungi põhjaveekogumisse tervikuna. Soolaka vee sissetungist suureneva veevõtu tingimustes on ohustatud mereäärsed alad. Seega võib koguselise seisundi hindamise testide põhjal põhjaveekogumi koguselise seisundi lugeda heaks.",
+     2
+    ],
+    [
+     "Kesk-Devoni põhjaveekogumi Ida-Eesti vesikonnas seirekaevude  vähene veetaseme muutus näitab, et veevõtt ei ole põhjustanud negatiivseid muutusi põhjavee koguselises seisundis ja põhjaveekogumi looduslik ressurss on suurem kui põhjaveevõtt. Seega võib koguselise seisundi hindamise testide põhjal põhjaveekogumi koguselise seisundi lugeda heaks.",
+     1
+    ],
+    [
+     "Kvaternaari Laiuse põhjaveekogumi koguselise seisundi hindamine põhineb käesoleval ajal ainult põhjavee loodusliku ressursi arvutusel. Kvaternaari Sadala põhjaveekogumi põhjavee koguselises seisundis ei ole olulisi muutusi aset leidnud. Seega võib koguselise seisundi hindamise testide põhjal põhjaveekogumi koguselise seisundi lugeda heaks.",
+     1
+    ],
+    [
+     "Koguselise hinnangu testide põhjal võib Siluri–Ordoviitsiumi Adavere-Põltsamaa põhjaveekogumi koguselise seisundi lugeda heaks. Põhjavee looduslik ressurss on oluliselt suurem veevõtust ja põhjaveekogumis ei esine inimtegevusest põhjustatud veetaseme alanemist.",
+     1
+    ],
+    [
+     "Kvaternaari Kuusalu põhjaveekogumi koguselise seisundi hindamine põhineb käesoleval ajal ainult põhjavee loodusliku ressursi arvutusel. Kvaternaari Kuusalu põhjaveekogumi põhjavee koguselises seisundis ei ole olulisi muutusi aset leidnud. Põhjaveevõtt on rohkem kui kaks korda väiksem kinnitatud põhjaveevarust. Seega võib koguselise seisundi hindamise testide põhjal põhjaveekogumi koguselise seisundi lugeda heaks.",
+     1
+    ],
+    [
+     "Koguselise seisundi hindamise testide põhjal võib Kvaternaari Vasavere põhjaveekogumi koguselise seisundi lugeda heaks, kuid ohustatuks.",
+     1
+    ],
+    [
+     "Koguselise seisundi hinnangu testide põhjal võib Ordoviitsiumi-Kambriumi põhjaveekogumi Ida-Eesti vesikonnas koguselise seisundi lugeda heaks, kuid ohustatuks.",
+     1
+    ],
+    [
+     "Koguselise seisundi hindamise testide põhjal võib Kvaternaari Meltsiveski põhjaveekogumi koguselise seisundi lugeda heaks, kuid ohustatuks.",
+     1
+    ]
+   ]
+  },
+  "tx_seis_kog1": {
+   "non_null_share": 0.557,
+   "n_distinct_in_sample": 34,
+   "top_values": [
+    [
+     "Kuigi põhjavesi on kaitsmata, ei ole maapinnal asuvad reostusobjektid seni põhjavee seisundile mõju avaldanud.",
+     6
+    ],
+    [
+     "Kuna põhjavesi on hästi kaitstud, siis maapinnal asuvad reostusobjektid mõju ei avalda. Peamiselt on veetaseme muutused seotud põhjavee loodusliku toitumise muutustega ja puudub oluline inimmõjust tulenev  veetaseme alanemine.",
+     1
+    ],
+    [
+     "Kinnitatud põhjaveevarudega seotud puurkaevudest on veevõtt vähenenud. Soolase või muu vee sissetung põhjaveekogumisse teistest veekihtidest ei ole tõenäoline, kuna veetase ei ole alanenud.",
+     1
+    ],
+    [
+     "Kuigi põhjavesi on kaitsmata, ei ole maapinnal asuvad reostusobjektid seni põhjavee seisundile mõju avaldanud. Kuna veevõtt on loodusliku ressursiga võrreldes väga väike ja ei põhjusta veetaseme langust põhjaveekogumis, siis puudub soolase või muu vee sissetungi oht teistest veekihtidest.",
+     1
+    ],
+    [
+     "Enamuses vaadeldud puurkaevudes on alates 2007. aastast põhjaveetase stabiilne. Aastatel 2007-2013 on suurenenud PHT, samal ajal on pH langenud, ammooniumi ja nitraatide sisaldused suurenenud. Alates 2013. aastast on põhjaveekogumist võetav põhjaveekogus kasvanud ja jääb samale tasemele ilmselt ka edaspidi. Samaaegselt veevõtu suurenemisega on kõigis seirekaevudes toimunud 2013 a. veetaseme alanemine. Nende andmete põhjal võib arvata, et muutused põhjavee keemilises koostises on seotud veetaseme alanemisega. Kuid hindamise aja seisuga võib väita, et enamuses koguselise seisundi seire puurkaevudes ei ole veetaseme muutused ja veevõtt põhjustanud soolase vee või muu vee sissetungi olulisel määral.",
+     1
+    ],
+    [
+     "Enamuses koguselise seisundi seire puurkaevudes ei ole veetaseme muutused ja veevõtt põhjustanud soolase vee või muu vee sissetungi olulisel määral.",
+     1
+    ],
+    [
+     "Vaadeldud seirekaevudes ei ole alates 2007. aastast toimunud olulist veetaseme langust, kahjuks on veetaseme mõõtmised seirekaevudes katkendlikud ja ei võimalda usaldusväärselt hinnata kõikide koguselise seire kaevude veetasemete muutusi. Kui võtta arvesse põhjaveevõtu andmed, siis alates 2010. aastast on põhjaveekogumist võetav põhjaveekogus jäänud vahemikku 5975-6544 m3/ööpäevas. Aastatel 2007-2013 ei ole toimunud veetaseme langust ja kloriidide ja sulfaatide sisaldused on põhjaveekogumis väikese langustrendiga. Veetaseme muutused ja veevõtt ei ole põhjustanud soolase või muu vee sissetungi.",
+     1
+    ],
+    [
+     "Kuna põhjavesi on hästi kaitstud, siis maapinnal asuvad reostusobjektid mõju ei avalda. Peamiselt on veetaseme muutused seotud põhjavee loodusliku toitumise muutustega ja puudub oluline inimmõjust tulenev veetaseme alanemine.",
+     1
+    ]
+   ]
+  },
+  "tx_seis_kog2": {
+   "non_null_share": 0.557,
+   "n_distinct_in_sample": 24,
+   "top_values": [
+    [
+     "Põhjavee kontseptuaalses mudelis seoseid ei ole kirjeldatud. Kuna põhjavesi on pinnaveekogumitest veepidemega eraldatud, siis pinnaveekogumid põhjavee koguselisele seisundile mõju ei avalda.",
+     9
+    ],
+    [
+     "Põhjaveekogum ei ole seotud pinnaveekogumitega.",
+     5
+    ],
+    [
+     "Põhjavee kontseptuaalses mudelis seoseid ei ole kirjeldatud, viidatakse, et suvisel madalveeperioodil toituvad jõed eelkõige põhjaveest. Täpsemate seoste kindlakstegemiseks tuleb teha uuringud ning kavandada seire.",
+     2
+    ],
+    [
+     "Põhjavee kontseptuaalses mudelis seoseid ei ole kirjeldatud. Pinnaveekogumid põhjavee koguselisele seisundile olulist mõju ei avalda.",
+     2
+    ],
+    [
+     "Põhjavee kontseptuaalses mudelis seoseid ei ole kirjeldatud. Pinnaveekogumid põhjavee koguselisele seisundile mõju ei avalda.",
+     2
+    ],
+    [
+     "Põhjavee kontseptuaalses mudelis seoseid ei ole kirjeldatud. Pinnaveekogumid põhjavee koguselisele seisundile olulist mõju ei avalda. Mõningane põhjavee toitumine võib toimuda läbi Kuremaa järve.",
+     1
+    ],
+    [
+     "Eelnevate uuringute põhjal on põhjaveekogum on pinnaveega seotud, kuid põhjaveekogumi ja pinnaveekogumite vahelised seosed vajavad täpsustamist vastavate uuringute ja seirega.",
+     1
+    ],
+    [
+     "Põhjavee kontseptuaalses mudelis ei ole seoseid kirjeldatud. Põhjaveekogumi seosed pinnaveekogudega vajavad uuringute ja seirega täpsustamist.",
+     1
+    ]
+   ]
+  },
+  "tx_seis_kog3": {
+   "non_null_share": 0.557,
+   "n_distinct_in_sample": 19,
+   "top_values": [
+    [
+     "Põhjavee kontseptuaalses mudelis seoseid põhjaveekogumi ja maismaaökosüsteemide vahel ei ole kirjeldatud. Kuna põhjavesi on maismaaökosüsteemidest veepidemega eraldatud, siis põhjavee koguselisele seisundile need mõju ei avalda.",
+     10
+    ],
+    [
+     "Põhjaveekogum ei ole seotud maismaaökosüsteemidega.",
+     5
+    ],
+    [
+     "Põhjavee kontseptuaalses mudelis seoseid põhjaveekogumi ja maismaaökosüsteemide vahel ei ole kirjeldatud, kuid põhjavee koguselisele seisundile need mõju ei avalda. Põhjaveega seotud pinnavee objektid ning põhjaveega seotud maismaaökosüsteemid puuduvad.",
+     4
+    ],
+    [
+     "Põhjavee kontseptuaalses mudelis seoseid põhjaveekogumi ja maismaaökosüsteemide vahel ei ole kirjeldatud, viidatakse veerikastele allikatele. Täpsemate seoste kindlakstegemiseks tuleb teha uuringud ning kavandada seire.",
+     4
+    ],
+    [
+     "Põhjavee kontseptuaalses mudelis seoseid põhjaveekogumi ja maismaaökosüsteemide vahel ei ole kirjeldatud, kuid põhjavee koguselisele seisundile need mõju ei avalda.",
+     2
+    ],
+    [
+     "Vesi neeldub lõhedesse ja kurisutesse, väljudes hiljem uuesti allikatena (Sulustvere kurisud, Lustivere karstiala). Põhjaveekogumi ja maismaaökosüsteemide vahelised seosed vajavad täpsustamist vastavate uuringute ja seirega.",
+     1
+    ],
+    [
+     "Põhjavee kontseptuaalses mudelis seoseid põhjaveekogumi ja maismaaökosüsteemide vahel ei ole kirjeldatud, kuid vee kvaliteedi halvenemine võib põhjustada seotud pinnaveekogumite ja maismaaökosüsteemide halvenemist. Põhjaveekogumi seosed maismaa-ökosüsteemidega vajavad uuringute ja seirega täpsustamist.",
+     1
+    ],
+    [
+     "Põhjaveekogum on seotud maismaaökosüsteemidega, kuid need seosed vajavad uuringute ja seirega täpsustamist.",
+     1
+    ]
+   ]
+  },
+  "tx_seis_kog4": {
+   "non_null_share": 0.557,
+   "n_distinct_in_sample": 39,
+   "top_values": [
+    [
+     "Kesk-Devoni põhjaveekogumi Ida-Eesti vesikonnas looduslik ressurss on 115 725 000m3/aastas ehk 317055m3/ööpäevas ja veevõtt puurkaevudest oli 2013.a 4822m3/ööpäevas. Seega on looduslik ressurss suurem kui veevõtt.",
+     1
+    ],
+    [
+     "Kvaternaari Laiuse põhjaveekogumi looduslik ressurss on 7708720m3/aastas ehk 21120m3/ööpäevas. Põhjaveekogumis puuduvad kinnitatud põhjaveevaruga veehaarded. Registreeritud veevõtt puurkaevudest moodustas 2013. aastal vähem kui 50 m3/ööpäevas.",
+     1
+    ],
+    [
+     "Siluri–Ordoviitsiumi Adavere-Põltsamaa põhjaveekogumi looduslik ressurss on 41589 680m3aastas ehk 113 944m3/ööpäevas. Veevõtt kinnitatud varude piires oli 2012a. 899m3/ööpäevas. Seega on looduslik ressurss suurem kui veevõtt. Ka kinnitatud põhjaveevarud ja veevõtt varude piires on tasakaalus.",
+     1
+    ],
+    [
+     "Kvaternaari Kuusalu põhjaveekogumi looduslik ressurss on 96460 m3/aastas ehk 264 m3/ööpäevas. Põhjaveekogumisse jääb AS Balti Spoon kinnitatud põhjaveevaruga (800 m3/ööpäevas) veehaare. Registreeritud veevõtt on kolmes puurkaevus, mis 2013.a moodustas kokku 305,5m3/ööpäevas. See tähendab, et osa põhjaveevõttu kaetakse Ordoviitsiumi põhjaveekogumi transiitveest.",
+     1
+    ],
+    [
+     "Põhjavett kasutatakse   ̴ 28% looduslikust ressursist. Ka kinnitatud põhjaveevarud ja veevõtt varude piires on tasakaalus.",
+     1
+    ],
+    [
+     "Looduslik ressurss on   ̴ 99% suurem kui veevõtt. Ka kinnitatud põhjaveevarud ja veevõtt varude piires on tasakaalus.",
+     1
+    ],
+    [
+     "Kvaternaari Meltsiveski põhjaveekogumi looduslik põhjaveeressurss on kontseptuaalse mudeli järgi 579 675m³/aastas (1588m³/d). Kuna tegelik veevõtt põhjaveekogumist on tunduvalt suurem, siis on selge, et põhjaveekogumi põhiline veeressurss tuleb transiitvooluna Kesk-Devoni põhjaveekogumist. Veemajanduskava järgi on põhjaveekogumi looduslik põhjaveeressurss 3650000m3/aastas (10000m³/d). Põhjaveekogumi kinnitatud põhjaveevaru Meltsiveski veehaardel on 12 000m³/d. Põhjaveevõtt on ligikaudu 2309 355 m³ aastas. Seega kasutatakse põhjavett   ̴ 63% looduslikust ressursist. Ka kinnitatud põhjaveevarud ja veevõtt varude piires on tasakaalus.",
+     1
+    ],
+    [
+     "Kesk–Alam-Devoni põhjaveekogumi Ida-Eesti vesikonnas looduslik ressurss on 115725000m3/aastas ehk 317055m3/ööpäevas. Põhjaveekogumisse ei jää kinnitatud põhjaveevarusid. Registreeritud veevõtt on vähestes puurkaevudes. Seega võib kinnitada, et põhjavee looduslik ressurss ületab paljukordselt tegeliku veevõtu.",
+     1
+    ]
+   ]
+  },
+  "muut_aeg": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 70,
+   "min": "2020-03-09T11:14:46.535612",
+   "max": "2024-04-25T16:23:56.860386"
+  }
+ },
+ "head": [
+  {
+   "id": -35476080,
+   "aasta": 2020,
+   "pohjaveekogum_id": -79704874,
+   "kood": "05b§2019-S2020",
+   "seis": "1",
+   "pvkseis_seis_selg": "Hea",
+   "seis_kem": "1",
+   "pvkseis_seis_kem_selg": "Hea",
+   "seis_kem1": "1",
+   "pvkseis_seis_kem1_selg": "Hea",
+   "seis_kem2": "1",
+   "pvkseis_seis_kem2_selg": "Hea",
+   "seis_kem3": "1",
+   "pvkseis_seis_kem3_selg": "Hea",
+   "seis_kem4": "1",
+   "pvkseis_seis_kem4_selg": "Hea",
+   "seis_kem5": "1",
+   "pvkseis_seis_kem5_selg": "Hea",
+   "seis_kog": "1",
+   "pvkseis_seis_kog_selg": "Hea",
+   "seis_kog1": "1",
+   "pvkseis_seis_kog1_selg": "Hea",
+   "seis_kog2": "1",
+   "pvkseis_seis_kog2_selg": "Hea",
+   "seis_kog3": "1",
+   "pvkseis_seis_kog3_selg": "Hea",
+   "seis_kog4": "1",
+   "pvkseis_seis_kog4_selg": "Hea",
+   "usald": "K",
+   "pvkseis_usald_selg": "Kõrge",
+   "usald_kem": "K",
+   "pvkseis_usald_kem_selg": "Kõrge",
+   "usald_kem1": "K",
+   "pvkseis_usald_kem1_selg": "Kõrge",
+   "usald_kem2": "K",
+   "pvkseis_usald_kem2_selg": "Kõrge",
+   "usald_kem3": "K",
+   "pvkseis_usald_kem3_selg": "Kõrge",
+   "usald_kem4": "K",
+   "pvkseis_usald_kem4_selg": "Kõrge",
+   "usald_kem5": "K",
+   "pvkseis_usald_kem5_selg": "Kõrge",
+   "usald_kog": "K",
+   "pvkseis_usald_kog_selg": "Kõrge",
+   "usald_kog1": "K",
+   "pvkseis_usald_kog1_selg": "Kõrge",
+   "usald_kog2": "K",
+   "pvkseis_usald_kog2_selg": "Kõrge",
+   "usald_kog3": "K",
+   "pvkseis_usald_kog3_selg": "Kõrge",
+   "usald_kog4": "K",
+   "pvkseis_usald_kog4_selg": "Kõrge",
+   "tx_seis": null,
+   "tx_seis_kem": null,
+   "tx_seis_kem1": null,
+   "tx_seis_kem2": null,
+   "tx_seis_kem3": null,
+   "tx_seis_kem4": null,
+   "tx_seis_kem5": null,
+   "tx_seis_kog": null,
+   "tx_seis_kog1": null,
+   "tx_seis_kog2": null,
+   "tx_seis_kog3": null,
+   "tx_seis_kog4": null,
+   "muut_aeg": "2020-09-14T17:25:42.986256"
+  },
+  {
+   "id": -978473572,
+   "aasta": 2020,
+   "pohjaveekogum_id": -1630731774,
+   "kood": "23§2019-S2020",
+   "seis": "1",
+   "pvkseis_seis_selg": "Hea",
+   "seis_kem": "1",
+   "pvkseis_seis_kem_selg": "Hea",
+   "seis_kem1": "1",
+   "pvkseis_seis_kem1_selg": "Hea",
+   "seis_kem2": "1",
+   "pvkseis_seis_kem2_selg": "Hea",
+   "seis_kem3": "1",
+   "pvkseis_seis_kem3_selg": "Hea",
+   "seis_kem4": "1",
+   "pvkseis_seis_kem4_selg": "Hea",
+   "seis_kem5": "1",
+   "pvkseis_seis_kem5_selg": "Hea",
+   "seis_kog": "1",
+   "pvkseis_seis_kog_selg": "Hea",
+   "seis_kog1": "1",
+   "pvkseis_seis_kog1_selg": "Hea",
+   "seis_kog2": "1",
+   "pvkseis_seis_kog2_selg": "Hea",
+   "seis_kog3": "1",
+   "pvkseis_seis_kog3_selg": "Hea",
+   "seis_kog4": "1",
+   "pvkseis_seis_kog4_selg": "Hea",
+   "usald": "M",
+   "pvkseis_usald_selg": "Madal",
+   "usald_kem": "M",
+   "pvkseis_usald_kem_selg": "Madal",
+   "usald_kem1": null,
+   "pvkseis_usald_kem1_selg": null,
+   "usald_kem2": null,
+   "pvkseis_usald_kem2_selg": null,
+   "usald_kem3": null,
+   "pvkseis_usald_kem3_selg": null,
+   "usald_kem4": null,
+   "pvkseis_usald_kem4_selg": null,
+   "usald_kem5": null,
+   "pvkseis_usald_kem5_selg": null,
+   "usald_kog": "K",
+   "pvkseis_usald_kog_selg": "Kõrge",
+   "usald_kog1": null,
+   "pvkseis_usald_kog1_selg": null,
+   "usald_kog2": null,
+   "pvkseis_usald_kog2_selg": null,
+   "usald_kog3": null,
+   "pvkseis_usald_kog3_selg": null,
+   "usald_kog4": null,
+   "pvkseis_usald_kog4_selg": null,
+   "tx_seis": null,
+   "tx_seis_kem": null,
+   "tx_seis_kem1": null,
+   "tx_seis_kem2": null,
+   "tx_seis_kem3": null,
+   "tx_seis_kem4": null,
+   "tx_seis_kem5": null,
+   "tx_seis_kog": null,
+   "tx_seis_kog1": null,
+   "tx_seis_kog2": null,
+   "tx_seis_kog3": null,
+   "tx_seis_kog4": null,
+   "muut_aeg": "2024-04-25T11:58:59.229327"
+  }
+ ]
+}

@@ -1,0 +1,889 @@
+{
+ "table": "stat_t_heitkogus_allikas_curr",
+ "total_rows": 343919,
+ "sample_rows": 2000,
+ "columns": {
+  "aruanne_id": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 113,
+   "min": 1610,
+   "max": 104805
+  },
+  "cas_kood": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 103,
+   "min": "0",
+   "max": "VOC-com"
+  },
+  "heiteallikas_kood": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 285,
+   "min": "HEIT0000078",
+   "max": "HEIT0011621"
+  },
+  "heiteallikas_kood_nimetus": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 278,
+   "min": "AHI 13 sinkide ja vorstide suitsuahi (Su",
+   "max": "Ülejõe lüpsikoja katel (K1)"
+  },
+  "kytus_kn_kood": {
+   "non_null_share": 0.6,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "27112100",
+     401
+    ],
+    [
+     "2711",
+     400
+    ],
+    [
+     "27101947",
+     399
+    ]
+   ]
+  },
+  "kytus_kood": {
+   "non_null_share": 0.6,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "301",
+     401
+    ],
+    [
+     "303",
+     400
+    ],
+    [
+     "204",
+     399
+    ]
+   ]
+  },
+  "kytus_nimetus": {
+   "non_null_share": 0.6,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "Maagaas (välja arvatud vedelal kujul)",
+     401
+    ],
+    [
+     "Vedeldatud naftagaas (LPG)",
+     400
+    ],
+    [
+     "Kerge kütteõli",
+     399
+    ]
+   ]
+  },
+  "kytus_kogus": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 57,
+   "min": "0.000",
+   "max": "98.063"
+  },
+  "kytus_yhik": {
+   "non_null_share": 0.6,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "tonni",
+     799
+    ],
+    [
+     "tuh. Nm³",
+     401
+    ]
+   ]
+  },
+  "kytus_alumine_kyttevaartus": {
+   "non_null_share": 0.6,
+   "n_distinct_in_sample": 25,
+   "min": 33.0,
+   "max": 46.19
+  },
+  "kytus_vaavli_sisaldus_prots": {
+   "non_null_share": 0.6,
+   "n_distinct_in_sample": 10,
+   "min": 0.0,
+   "max": 1.0
+  },
+  "aine_nimetus": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 104,
+   "min": "0",
+   "max": "n-Heksaan"
+  },
+  "aine_kogus_maarus_yhik": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 747,
+   "min": 0.0,
+   "max": 2086.401
+  },
+  "aine_yhik_maarus": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "t",
+     1290
+    ],
+    [
+     "kg",
+     670
+    ],
+    [
+     "mg",
+     39
+    ]
+   ]
+  },
+  "aine_stat_grupp": {
+   "non_null_share": 0.994,
+   "n_distinct_in_sample": 31,
+   "top_values": [
+    [
+     "LOÜ",
+     424
+    ],
+    [
+     "metaan",
+     125
+    ],
+    [
+     "NH3",
+     124
+    ],
+    [
+     "tahked_kokku_va_PM10_PM2.5_BC",
+     105
+    ],
+    [
+     "NO2",
+     83
+    ],
+    [
+     "CO",
+     82
+    ],
+    [
+     "CO2",
+     75
+    ],
+    [
+     "Pb",
+     59
+    ]
+   ]
+  },
+  "aine_arvestus_meetod": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 4,
+   "top_values": [
+    [
+     "AS",
+     1380
+    ],
+    [
+     "A",
+     450
+    ],
+    [
+     "D",
+     108
+    ],
+    [
+     "M+A",
+     62
+    ]
+   ]
+  },
+  "heiteallikas_nr_plaanil": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 134,
+   "min": "1",
+   "max": "v-3"
+  },
+  "heiteallikas_x_lest97": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 274,
+   "min": 6403634,
+   "max": 6600886
+  },
+  "heiteallikas_y_lest97": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 267,
+   "min": 397016,
+   "max": 736939
+  },
+  "valjumiskorgus_m": {
+   "non_null_share": 0.979,
+   "n_distinct_in_sample": 76,
+   "min": 0.2,
+   "max": 200.0
+  },
+  "ava_labimoot_m": {
+   "non_null_share": 0.974,
+   "n_distinct_in_sample": 125,
+   "min": 0.05,
+   "max": 75.74
+  },
+  "joonkiirus_ms": {
+   "non_null_share": 0.967,
+   "n_distinct_in_sample": 196,
+   "min": 0.01,
+   "max": 6736.0
+  },
+  "temperatuur_c": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 50,
+   "min": 1.0,
+   "max": 454.0
+  },
+  "aruanne_aasta": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 6,
+   "min": 2019,
+   "max": 2025
+  },
+  "allikas": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 1,
+   "top_values": [
+    [
+     "KOTKAS",
+     2000
+    ]
+   ]
+  },
+  "luba_number": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 107,
+   "min": " KKL/324580",
+   "max": "PHRR/515132"
+  },
+  "luba_versioon": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 111,
+   "min": 100030,
+   "max": 155140
+  },
+  "luba_liik": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "Keskkonnaluba",
+     1367
+    ],
+    [
+     "Keskkonnakompleksluba",
+     610
+    ],
+    [
+     "Paikse heiteallika käitaja registreering",
+     23
+    ]
+   ]
+  },
+  "luba_algus": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 109,
+   "min": "01.01.2006",
+   "max": "31.07.2014"
+  },
+  "luba_lopp": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 11,
+   "top_values": [
+    [
+     "...",
+     1423
+    ],
+    [
+     "None",
+     514
+    ],
+    [
+     "31.07.2023",
+     26
+    ],
+    [
+     "31.12.2022",
+     15
+    ],
+    [
+     "31.12.2023",
+     10
+    ],
+    [
+     "06.11.2023",
+     5
+    ],
+    [
+     "2021-06-30",
+     3
+    ],
+    [
+     "2019-07-23",
+     1
+    ]
+   ]
+  },
+  "luba_versioon_algus": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 102,
+   "min": "2005-06-17",
+   "max": "2025-07-11"
+  },
+  "luba_versioon_lopp": {
+   "non_null_share": 0.434,
+   "n_distinct_in_sample": 65,
+   "min": "2019-01-01",
+   "max": "2026-06-10"
+  },
+  "kaitaja_nimi": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 101,
+   "min": "ARS Sisustus OÜ",
+   "max": "osaühing Põrguvälja Soojus"
+  },
+  "kaitaja_registrikood": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 96,
+   "min": "10000811",
+   "max": "80177965"
+  },
+  "aruande_esitaja_emtak_kood": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 70,
+   "min": "01111",
+   "max": "96011"
+  },
+  "aruande_esitaja_emtak_nimetus": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 70,
+   "min": "Auru ja konditsioneeritud õhuga varustam",
+   "max": "Ülikoolide tegevus - EMTAK 2008"
+  },
+  "kaitis_nimetus": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 107,
+   "min": "A.Lauteri 5",
+   "max": "Ülgase broilerifarm"
+  },
+  "tegevuskoht_aadress": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 106,
+   "min": "(Biogaasi) Tehase tn 8, Ebavere küla, Vä",
+   "max": "Õlleköögi põik 1, Kurna küla, Rae vald, "
+  },
+  "tegevuskoht_asula_kood_curr": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 76,
+   "min": "0265",
+   "max": "9838"
+  },
+  "tegevuskoht_asula_nimi_curr": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 76,
+   "min": "Aakre küla",
+   "max": "Ülgase küla"
+  },
+  "tegevuskoht_kov_kood_curr": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 44,
+   "min": "0145",
+   "max": "0928"
+  },
+  "tegevuskoht_kov_nimi_curr": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 44,
+   "min": "Antsla vald",
+   "max": "Võru vald"
+  },
+  "tegevuskoht_maakond_kood_curr": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 14,
+   "top_values": [
+    [
+     "0037",
+     636
+    ],
+    [
+     "0052",
+     244
+    ],
+    [
+     "0060",
+     172
+    ],
+    [
+     "0079",
+     147
+    ],
+    [
+     "0068",
+     134
+    ],
+    [
+     "0087",
+     129
+    ],
+    [
+     "0064",
+     116
+    ],
+    [
+     "0084",
+     112
+    ]
+   ]
+  },
+  "tegevuskoht_maakond_nimi_curr": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 14,
+   "top_values": [
+    [
+     "Harju maakond",
+     636
+    ],
+    [
+     "Järva maakond",
+     244
+    ],
+    [
+     "Lääne-Viru maakond",
+     172
+    ],
+    [
+     "Tartu maakond",
+     147
+    ],
+    [
+     "Pärnu maakond",
+     134
+    ],
+    [
+     "Võru maakond",
+     129
+    ],
+    [
+     "Põlva maakond",
+     116
+    ],
+    [
+     "Viljandi maakond",
+     112
+    ]
+   ]
+  },
+  "tegevuskoht_x_lest97": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 109,
+   "min": 6403720,
+   "max": 6600894
+  },
+  "tegevuskoht_y_lest97": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 109,
+   "min": 397060,
+   "max": 737746
+  },
+  "tegevust_ei_toimunud": {
+   "non_null_share": 0.0,
+   "n_distinct_in_sample": 0
+  },
+  "tegevust_ei_toimunud_selgitus": {
+   "non_null_share": 0.0,
+   "n_distinct_in_sample": 0
+  },
+  "kaitis_pohitegevus_emtak": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 60,
+   "min": "0141",
+   "max": "96011"
+  },
+  "kaitis_pohitegevus_emtak_nimetus": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 59,
+   "min": "Auru ja konditsioneeritud õhuga varustam",
+   "max": "Ülikoolide tegevus - EMTAK 2008"
+  },
+  "kaitis_lisategevus_emtak_loend": {
+   "non_null_share": 0.325,
+   "n_distinct_in_sample": 12,
+   "top_values": [
+    [
+     "35301",
+     533
+    ],
+    [
+     "23991",
+     24
+    ],
+    [
+     "33171",
+     22
+    ],
+    [
+     "25991, 25291",
+     21
+    ],
+    [
+     "46411",
+     11
+    ],
+    [
+     "18129",
+     8
+    ],
+    [
+     "35301, 16102",
+     7
+    ],
+    [
+     "35301, 22211",
+     7
+    ]
+   ]
+  },
+  "kaitis_lisategevus_emtak_nimetus_loend": {
+   "non_null_share": 0.325,
+   "n_distinct_in_sample": 13,
+   "top_values": [
+    [
+     "Auru ja konditsioneeritud õhuga varustamine - EMTAK 2008",
+     279
+    ],
+    [
+     "Auru ja konditsioneeritud õhuga varustamine - EMTAK 2025",
+     254
+    ],
+    [
+     "Mujal liigitamata muude mittemetalsetest mineraalidest toodete tootmine - EMTAK 2008",
+     24
+    ],
+    [
+     "Muude tsiviiltranspordivahendite remont ja hooldus - EMTAK 2025",
+     22
+    ],
+    [
+     "Mujal liigitamata metalltoodete tootmine - EMTAK 2008, Muude metallpaakide, -reservuaaride ja -mahutite tootmine - EMTAK 2008",
+     21
+    ],
+    [
+     "Kangaste, kodutekstiili ja õmblustarvete hulgimüük - EMTAK 2008",
+     11
+    ],
+    [
+     "Mujal liigitamata trükkimine, k.a siiditrükk - EMTAK 2008",
+     8
+    ],
+    [
+     "Auru ja konditsioneeritud õhuga varustamine - EMTAK 2008, Puidu kuivatus, immutamine ja keemiline töötlus - EMTAK 2008",
+     7
+    ]
+   ]
+  },
+  "ets_kohuslane": {
+   "non_null_share": 0.861,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Ei",
+     1669
+    ],
+    [
+     "Jah",
+     52
+    ]
+   ]
+  },
+  "ets_tegevusala": {
+   "non_null_share": 0.024,
+   "n_distinct_in_sample": 1,
+   "top_values": [
+    [
+     "Jah",
+     48
+    ]
+   ]
+  },
+  "eprtr_kohuslane": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Ei",
+     1812
+    ],
+    [
+     "Jah",
+     188
+    ]
+   ]
+  },
+  "heiteallikas_arv": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 6,
+   "min": 0,
+   "max": 17
+  },
+  "kaitis_tootajate_arv": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 5,
+   "min": 0,
+   "max": 800
+  },
+  "emaettevote_nimi": {
+   "non_null_share": 0.068,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Maag Food OÜ",
+     100
+    ],
+    [
+     "Eesti Energia",
+     35
+    ]
+   ]
+  },
+  "emaettevote_riik": {
+   "non_null_share": 0.068,
+   "n_distinct_in_sample": 1,
+   "top_values": [
+    [
+     "EST",
+     135
+    ]
+   ]
+  },
+  "tegevusala_snap": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 52,
+   "min": "010101",
+   "max": "100903"
+  },
+  "tegevusala_snap_name": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 52,
+   "min": "Bensiini jaotamine - tanklad (sh autode ",
+   "max": "Äri- ja avaliku teeninduse sektori katla"
+  },
+  "kytus_kood_val": {
+   "non_null_share": 0.6,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "301",
+     401
+    ],
+    [
+     "303",
+     400
+    ],
+    [
+     "204",
+     399
+    ]
+   ]
+  },
+  "kytus_nimetus_val": {
+   "non_null_share": 0.6,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "Maagaas (välja arvatud vedelal kujul)",
+     401
+    ],
+    [
+     "Vedeldatud naftagaas (LPG)",
+     400
+    ],
+    [
+     "Kerge kütteõli",
+     399
+    ]
+   ]
+  },
+  "tegevusala_nfr": {
+   "non_null_share": 0.944,
+   "n_distinct_in_sample": 33,
+   "top_values": [
+    [
+     "1A2b",
+     295
+    ],
+    [
+     "1A4ai",
+     281
+    ],
+    [
+     "1A2gviii",
+     238
+    ],
+    [
+     "1A4ci",
+     195
+    ],
+    [
+     "2D3d",
+     170
+    ],
+    [
+     "1A1a",
+     91
+    ],
+    [
+     "1A2f",
+     89
+    ],
+    [
+     "3B1b",
+     65
+    ]
+   ]
+  }
+ },
+ "head": [
+  {
+   "aruanne_id": 1764,
+   "cas_kood": "57-13-6",
+   "heiteallikas_kood": "HEIT0000149",
+   "heiteallikas_kood_nimetus": "Mineraalväetiste laadimine laevadele",
+   "kytus_kn_kood": null,
+   "kytus_kood": null,
+   "kytus_nimetus": null,
+   "kytus_kogus": "0.000",
+   "kytus_yhik": null,
+   "kytus_alumine_kyttevaartus": null,
+   "kytus_vaavli_sisaldus_prots": null,
+   "aine_nimetus": "Karbamiid ja ammofoss",
+   "aine_kogus_maarus_yhik": 0.033,
+   "aine_yhik_maarus": "t",
+   "aine_stat_grupp": "tahked_kokku_va_PM10_PM2.5_BC",
+   "aine_arvestus_meetod": "A",
+   "heiteallikas_nr_plaanil": "1",
+   "heiteallikas_x_lest97": 6591871,
+   "heiteallikas_y_lest97": 540466,
+   "valjumiskorgus_m": 10.0,
+   "ava_labimoot_m": 0.5,
+   "joonkiirus_ms": 5.1,
+   "temperatuur_c": 20.0,
+   "aruanne_aasta": 2019,
+   "allikas": "KOTKAS",
+   "luba_number": "L.ÕV.HA-149556",
+   "luba_versioon": 103266,
+   "luba_liik": "Keskkonnaluba",
+   "luba_algus": "2007-05-07",
+   "luba_lopp": "None",
+   "luba_versioon_algus": "2007-05-07",
+   "luba_versioon_lopp": "2024-08-29",
+   "kaitaja_nimi": "M.R.Partners OÜ",
+   "kaitaja_registrikood": "11553446",
+   "aruande_esitaja_emtak_kood": "52241",
+   "aruande_esitaja_emtak_nimetus": "Laadungikäitlus - EMTAK 2008",
+   "kaitis_nimetus": "M.R.Partners OÜ",
+   "tegevuskoht_aadress": "Paljassaare tee 28e, Põhja-Tallinna linnaosa, Tallinn, Harju maakond",
+   "tegevuskoht_asula_kood_curr": "0614",
+   "tegevuskoht_asula_nimi_curr": "Põhja-Tallinna linnaosa",
+   "tegevuskoht_kov_kood_curr": "0784",
+   "tegevuskoht_kov_nimi_curr": "Tallinn",
+   "tegevuskoht_maakond_kood_curr": "0037",
+   "tegevuskoht_maakond_nimi_curr": "Harju maakond",
+   "tegevuskoht_x_lest97": 6591900,
+   "tegevuskoht_y_lest97": 540476,
+   "tegevust_ei_toimunud": null,
+   "tegevust_ei_toimunud_selgitus": null,
+   "kaitis_pohitegevus_emtak": "52241",
+   "kaitis_pohitegevus_emtak_nimetus": "Laadungikäitlus - EMTAK 2008",
+   "kaitis_lisategevus_emtak_loend": null,
+   "kaitis_lisategevus_emtak_nimetus_loend": null,
+   "ets_kohuslane": "Ei",
+   "ets_tegevusala": null,
+   "eprtr_kohuslane": "Ei",
+   "heiteallikas_arv": 0,
+   "kaitis_tootajate_arv": 0,
+   "emaettevote_nimi": null,
+   "emaettevote_riik": null,
+   "tegevusala_snap": "040900",
+   "tegevusala_snap_name": "Mineraaltoodete ladustamine, käitlemine ja transportimine",
+   "kytus_kood_val": null,
+   "kytus_nimetus_val": null,
+   "tegevusala_nfr": "2A5c"
+  },
+  {
+   "aruanne_id": 1764,
+   "cas_kood": "PM-sum",
+   "heiteallikas_kood": "HEIT0000151",
+   "heiteallikas_kood_nimetus": "Kivisöe laadimine laevadele",
+   "kytus_kn_kood": null,
+   "kytus_kood": null,
+   "kytus_nimetus": null,
+   "kytus_kogus": "0.000",
+   "kytus_yhik": null,
+   "kytus_alumine_kyttevaartus": null,
+   "kytus_vaavli_sisaldus_prots": null,
+   "aine_nimetus": "Tahked osakesed, summaarsed",
+   "aine_kogus_maarus_yhik": 0.017,
+   "aine_yhik_maarus": "t",
+   "aine_stat_grupp": "tahked_kokku_va_PM10_PM2.5_BC",
+   "aine_arvestus_meetod": "A",
+   "heiteallikas_nr_plaanil": "3",
+   "heiteallikas_x_lest97": 6591474,
+   "heiteallikas_y_lest97": 540147,
+   "valjumiskorgus_m": 15.0,
+   "ava_labimoot_m": 1.0,
+   "joonkiirus_ms": 1.53,
+   "temperatuur_c": 20.0,
+   "aruanne_aasta": 2019,
+   "allikas": "KOTKAS",
+   "luba_number": "L.ÕV.HA-149556",
+   "luba_versioon": 103266,
+   "luba_liik": "Keskkonnaluba",
+   "luba_algus": "2007-05-07",
+   "luba_lopp": "None",
+   "luba_versioon_algus": "2007-05-07",
+   "luba_versioon_lopp": "2024-08-29",
+   "kaitaja_nimi": "M.R.Partners OÜ",
+   "kaitaja_registrikood": "11553446",
+   "aruande_esitaja_emtak_kood": "52241",
+   "aruande_esitaja_emtak_nimetus": "Laadungikäitlus - EMTAK 2008",
+   "kaitis_nimetus": "M.R.Partners OÜ",
+   "tegevuskoht_aadress": "Paljassaare tee 28e, Põhja-Tallinna linnaosa, Tallinn, Harju maakond",
+   "tegevuskoht_asula_kood_curr": "0614",
+   "tegevuskoht_asula_nimi_curr": "Põhja-Tallinna linnaosa",
+   "tegevuskoht_kov_kood_curr": "0784",
+   "tegevuskoht_kov_nimi_curr": "Tallinn",
+   "tegevuskoht_maakond_kood_curr": "0037",
+   "tegevuskoht_maakond_nimi_curr": "Harju maakond",
+   "tegevuskoht_x_lest97": 6591900,
+   "tegevuskoht_y_lest97": 540476,
+   "tegevust_ei_toimunud": null,
+   "tegevust_ei_toimunud_selgitus": null,
+   "kaitis_pohitegevus_emtak": "52241",
+   "kaitis_pohitegevus_emtak_nimetus": "Laadungikäitlus - EMTAK 2008",
+   "kaitis_lisategevus_emtak_loend": null,
+   "kaitis_lisategevus_emtak_nimetus_loend": null,
+   "ets_kohuslane": "Ei",
+   "ets_tegevusala": null,
+   "eprtr_kohuslane": "Ei",
+   "heiteallikas_arv": 0,
+   "kaitis_tootajate_arv": 0,
+   "emaettevote_nimi": null,
+   "emaettevote_riik": null,
+   "tegevusala_snap": "040900",
+   "tegevusala_snap_name": "Mineraaltoodete ladustamine, käitlemine ja transportimine",
+   "kytus_kood_val": null,
+   "kytus_nimetus_val": null,
+   "tegevusala_nfr": "2A5c"
+  }
+ ]
+}

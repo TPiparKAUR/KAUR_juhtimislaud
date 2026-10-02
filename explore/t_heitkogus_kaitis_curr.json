@@ -1,0 +1,617 @@
+{
+ "table": "t_heitkogus_kaitis_curr",
+ "total_rows": 151333,
+ "sample_rows": 2000,
+ "columns": {
+  "aruanne_id": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 948,
+   "min": 1610,
+   "max": 106234
+  },
+  "aruanne_aasta": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 7,
+   "min": 2019,
+   "max": 2025
+  },
+  "luba_number": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 482,
+   "min": "1",
+   "max": "PHRR/520354"
+  },
+  "luba_versioon": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 513,
+   "min": 100084,
+   "max": 158652
+  },
+  "luba_liik": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "Keskkonnaluba",
+     1628
+    ],
+    [
+     "Keskkonnakompleksluba",
+     300
+    ],
+    [
+     "Paikse heiteallika käitaja registreering",
+     72
+    ]
+   ]
+  },
+  "luba_algus": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 493,
+   "min": "01.01.2006",
+   "max": "31.12.2008"
+  },
+  "luba_lopp": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 62,
+   "min": "...",
+   "max": "None"
+  },
+  "luba_versioon_algus": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 436,
+   "min": "2004-11-20",
+   "max": "2025-12-30"
+  },
+  "luba_versioon_lopp": {
+   "non_null_share": 0.531,
+   "n_distinct_in_sample": 245,
+   "min": "2017-11-23",
+   "max": "2036-01-27"
+  },
+  "kaitaja_nimi": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 378,
+   "min": "\"HORIZON\" TSELLULOOSI JA PABERI AKTSIASE",
+   "max": "sihtasutus Taheva Sanatoorium"
+  },
+  "kaitaja_registrikood": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 370,
+   "min": "10000018",
+   "max": "90013035"
+  },
+  "aruande_esitaja_emtak_kood": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 194,
+   "min": "0111",
+   "max": "96011"
+  },
+  "aruande_esitaja_emtak_nimetus": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 215,
+   "min": "Alkoholivaba joogi tootmine; mineraalvee",
+   "max": "Ülikoolide tegevus - EMTAK 2008"
+  },
+  "kaitis_nimetus": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 499,
+   "min": " Viru vangla värvitsehh",
+   "max": "Ülgase broilerifarm"
+  },
+  "tegevuskoht_aadress": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 482,
+   "min": "(Abja vald) Töökoja, Kamara küla, Mulgi ",
+   "max": "Ülesõidu tn 1, Jõhvi linn, Jõhvi vald, I"
+  },
+  "tegevuskoht_asula_kood_curr": {
+   "non_null_share": 0.999,
+   "n_distinct_in_sample": 275,
+   "min": "0120",
+   "max": "9838"
+  },
+  "tegevuskoht_asula_nimi_curr": {
+   "non_null_share": 0.999,
+   "n_distinct_in_sample": 271,
+   "min": "Aarna küla",
+   "max": "Ülgase küla"
+  },
+  "tegevuskoht_kov_kood_curr": {
+   "non_null_share": 0.999,
+   "n_distinct_in_sample": 72,
+   "min": "0130",
+   "max": "0928"
+  },
+  "tegevuskoht_kov_nimi_curr": {
+   "non_null_share": 0.999,
+   "n_distinct_in_sample": 72,
+   "min": "Alutaguse vald",
+   "max": "Võru vald"
+  },
+  "tegevuskoht_maakond_kood_curr": {
+   "non_null_share": 0.999,
+   "n_distinct_in_sample": 15,
+   "top_values": [
+    [
+     "0037",
+     650
+    ],
+    [
+     "0079",
+     199
+    ],
+    [
+     "0068",
+     182
+    ],
+    [
+     "0060",
+     155
+    ],
+    [
+     "0045",
+     124
+    ],
+    [
+     "0052",
+     108
+    ],
+    [
+     "0050",
+     97
+    ],
+    [
+     "0071",
+     93
+    ]
+   ]
+  },
+  "tegevuskoht_maakond_nimi_curr": {
+   "non_null_share": 0.999,
+   "n_distinct_in_sample": 15,
+   "top_values": [
+    [
+     "Harju maakond",
+     650
+    ],
+    [
+     "Tartu maakond",
+     199
+    ],
+    [
+     "Pärnu maakond",
+     182
+    ],
+    [
+     "Lääne-Viru maakond",
+     155
+    ],
+    [
+     "Ida-Viru maakond",
+     124
+    ],
+    [
+     "Järva maakond",
+     108
+    ],
+    [
+     "Jõgeva maakond",
+     97
+    ],
+    [
+     "Rapla maakond",
+     93
+    ]
+   ]
+  },
+  "tegevuskoht_x_lest97": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 571,
+   "min": 6382922,
+   "max": 6600713
+  },
+  "tegevuskoht_y_lest97": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 571,
+   "min": 397490,
+   "max": 738002
+  },
+  "tegevust_ei_toimunud": {
+   "non_null_share": 0.0,
+   "n_distinct_in_sample": 0
+  },
+  "tegevust_ei_toimunud_selgitus": {
+   "non_null_share": 0.0,
+   "n_distinct_in_sample": 0
+  },
+  "kaitis_pohitegevus_emtak": {
+   "non_null_share": 0.992,
+   "n_distinct_in_sample": 181,
+   "min": "0111",
+   "max": "96011"
+  },
+  "kaitis_pohitegevus_emtak_nimetus": {
+   "non_null_share": 0.992,
+   "n_distinct_in_sample": 198,
+   "min": "Abrasiivtoodete tootmine - EMTAK 2008",
+   "max": "Ülikoolide tegevus - EMTAK 2008"
+  },
+  "kaitis_lisategevus_emtak_loend": {
+   "non_null_share": 0.346,
+   "n_distinct_in_sample": 47,
+   "min": "0111",
+   "max": "95311"
+  },
+  "kaitis_lisategevus_emtak_nimetus_loend": {
+   "non_null_share": 0.346,
+   "n_distinct_in_sample": 50,
+   "min": "Auru ja konditsioneeritud õhuga varustam",
+   "max": "Vedelike ja gaaside ladustamine - EMTAK "
+  },
+  "ets_kohuslane": {
+   "non_null_share": 0.917,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Ei",
+     1799
+    ],
+    [
+     "Jah",
+     35
+    ]
+   ]
+  },
+  "ets_tegevusala": {
+   "non_null_share": 0.018,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Jah",
+     32
+    ],
+    [
+     "Ei",
+     4
+    ]
+   ]
+  },
+  "eprtr_kohuslane": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Ei",
+     1882
+    ],
+    [
+     "Jah",
+     118
+    ]
+   ]
+  },
+  "heiteallikas_arv": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 14,
+   "min": 0,
+   "max": 59
+  },
+  "kaitis_tootajate_arv": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 19,
+   "min": 0,
+   "max": 800
+  },
+  "emaettevote_nimi": {
+   "non_null_share": 0.041,
+   "n_distinct_in_sample": 7,
+   "top_values": [
+    [
+     "Maag Food OÜ",
+     66
+    ],
+    [
+     "VNK AS",
+     9
+    ],
+    [
+     "Viru Keemia Grupp AS",
+     2
+    ],
+    [
+     "Tolaram Industries PTE Ltd.",
+     2
+    ],
+    [
+     "HKScan Oy",
+     1
+    ],
+    [
+     "OÜ Utilitas",
+     1
+    ],
+    [
+     "Latvija Finieris AS",
+     1
+    ]
+   ]
+  },
+  "emaettevote_riik": {
+   "non_null_share": 0.043,
+   "n_distinct_in_sample": 5,
+   "top_values": [
+    [
+     "EST",
+     81
+    ],
+    [
+     "SGP",
+     2
+    ],
+    [
+     "FIN",
+     1
+    ],
+    [
+     "AUT",
+     1
+    ],
+    [
+     "LVA",
+     1
+    ]
+   ]
+  },
+  "cas_kood": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 85,
+   "min": "100-41-4",
+   "max": "VOC-com"
+  },
+  "aine_nimetus": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 86,
+   "min": "1,6-Heksametüleendiisotsüanaat (HMDI)",
+   "max": "Äädikhape (Etaanhape)"
+  },
+  "aine_kogus_maarus_yhik": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 1279,
+   "min": 0.0,
+   "max": 25950.431878
+  },
+  "aine_yhik_maarus": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "t",
+     1357
+    ],
+    [
+     "kg",
+     612
+    ],
+    [
+     "mg",
+     30
+    ]
+   ]
+  },
+  "eelmine_aasta_vordlus_aruanne": {
+   "non_null_share": 0.552,
+   "n_distinct_in_sample": 834,
+   "min": -2505.788976,
+   "max": 11893.582073
+  },
+  "lubatud_kogus_vordlus_aruanne": {
+   "non_null_share": 0.552,
+   "n_distinct_in_sample": 958,
+   "min": -166519.025165,
+   "max": 8432.811238
+  },
+  "deklareeritud_kogus_aruanne": {
+   "non_null_share": 0.602,
+   "n_distinct_in_sample": 760,
+   "min": 0,
+   "max": 25950.431872
+  },
+  "lubatud_kogus_aruanne": {
+   "non_null_share": 0.645,
+   "n_distinct_in_sample": 903,
+   "min": 0,
+   "max": 311040
+  },
+  "lubatud_yhik_aruanne": {
+   "non_null_share": 0.691,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "t",
+     1205
+    ],
+    [
+     "kg",
+     175
+    ],
+    [
+     "mg",
+     1
+    ]
+   ]
+  },
+  "aine_arvestus_meetod": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 6,
+   "top_values": [
+    [
+     "Süsteemi poolt arvutatud",
+     1236
+    ],
+    [
+     "Arvutuslik meetod",
+     493
+    ],
+    [
+     "Hübriid (eri meetodid kokkuliidetud)",
+     167
+    ],
+    [
+     "Laaditud deklaratsioonilt",
+     65
+    ],
+    [
+     "Mõõtmine ja arvutamine",
+     38
+    ],
+    [
+     "Saasteaine sisalduse mõõtmine väljuvates gaasides",
+     1
+    ]
+   ]
+  },
+  "mootmine_tyyp": {
+   "non_null_share": 0.003,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Paikne",
+     4
+    ],
+    [
+     "Indikatoorne",
+     1
+    ]
+   ]
+  },
+  "mootmine_sagedus": {
+   "non_null_share": 0.013,
+   "n_distinct_in_sample": 5,
+   "top_values": [
+    [
+     "Kord kvartalis",
+     12
+    ],
+    [
+     "Muu sagedus",
+     11
+    ],
+    [
+     "Kord aastas",
+     2
+    ],
+    [
+     "Kord nädalas",
+     1
+    ],
+    [
+     "Pidev",
+     1
+    ]
+   ]
+  }
+ },
+ "head": [
+  {
+   "aruanne_id": 8441,
+   "aruanne_aasta": 2019,
+   "luba_number": "L.ÕV.LV-175424",
+   "luba_versioon": 103656,
+   "luba_liik": "Keskkonnaluba",
+   "luba_algus": "2008-04-01",
+   "luba_lopp": "None",
+   "luba_versioon_algus": "2008-04-01",
+   "luba_versioon_lopp": "2019-08-07",
+   "kaitaja_nimi": "N.R. Energy Osaühing",
+   "kaitaja_registrikood": "12364776",
+   "aruande_esitaja_emtak_kood": "35301",
+   "aruande_esitaja_emtak_nimetus": "Auru ja konditsioneeritud õhuga varustamine - EMTAK 2008",
+   "kaitis_nimetus": "N.R. Energy Osaühing",
+   "tegevuskoht_aadress": "Leina tn 14a, Tapa linn, Tapa vald, Lääne-Viru maakond",
+   "tegevuskoht_asula_kood_curr": "8140",
+   "tegevuskoht_asula_nimi_curr": "Tapa linn",
+   "tegevuskoht_kov_kood_curr": "0792",
+   "tegevuskoht_kov_nimi_curr": "Tapa vald",
+   "tegevuskoht_maakond_kood_curr": "0060",
+   "tegevuskoht_maakond_nimi_curr": "Lääne-Viru maakond",
+   "tegevuskoht_x_lest97": 6571836,
+   "tegevuskoht_y_lest97": 611296,
+   "tegevust_ei_toimunud": null,
+   "tegevust_ei_toimunud_selgitus": null,
+   "kaitis_pohitegevus_emtak": "35301",
+   "kaitis_pohitegevus_emtak_nimetus": "Auru ja konditsioneeritud õhuga varustamine - EMTAK 2008",
+   "kaitis_lisategevus_emtak_loend": null,
+   "kaitis_lisategevus_emtak_nimetus_loend": null,
+   "ets_kohuslane": "Ei",
+   "ets_tegevusala": null,
+   "eprtr_kohuslane": "Ei",
+   "heiteallikas_arv": 0,
+   "kaitis_tootajate_arv": 0,
+   "emaettevote_nimi": null,
+   "emaettevote_riik": null,
+   "cas_kood": "PM-sum",
+   "aine_nimetus": "Tahked osakesed, summaarsed",
+   "aine_kogus_maarus_yhik": 0.154161,
+   "aine_yhik_maarus": "t",
+   "eelmine_aasta_vordlus_aruanne": null,
+   "lubatud_kogus_vordlus_aruanne": -7.945839,
+   "deklareeritud_kogus_aruanne": 0.685,
+   "lubatud_kogus_aruanne": 8.1,
+   "lubatud_yhik_aruanne": "t",
+   "aine_arvestus_meetod": "Süsteemi poolt arvutatud",
+   "mootmine_tyyp": null,
+   "mootmine_sagedus": null
+  },
+  {
+   "aruanne_id": 8441,
+   "aruanne_aasta": 2019,
+   "luba_number": "L.ÕV.LV-175424",
+   "luba_versioon": 103656,
+   "luba_liik": "Keskkonnaluba",
+   "luba_algus": "2008-04-01",
+   "luba_lopp": "None",
+   "luba_versioon_algus": "2008-04-01",
+   "luba_versioon_lopp": "2019-08-07",
+   "kaitaja_nimi": "N.R. Energy Osaühing",
+   "kaitaja_registrikood": "12364776",
+   "aruande_esitaja_emtak_kood": "35301",
+   "aruande_esitaja_emtak_nimetus": "Auru ja konditsioneeritud õhuga varustamine - EMTAK 2008",
+   "kaitis_nimetus": "N.R. Energy Osaühing",
+   "tegevuskoht_aadress": "Leina tn 14a, Tapa linn, Tapa vald, Lääne-Viru maakond",
+   "tegevuskoht_asula_kood_curr": "8140",
+   "tegevuskoht_asula_nimi_curr": "Tapa linn",
+   "tegevuskoht_kov_kood_curr": "0792",
+   "tegevuskoht_kov_nimi_curr": "Tapa vald",
+   "tegevuskoht_maakond_kood_curr": "0060",
+   "tegevuskoht_maakond_nimi_curr": "Lääne-Viru maakond",
+   "tegevuskoht_x_lest97": 6571836,
+   "tegevuskoht_y_lest97": 611296,
+   "tegevust_ei_toimunud": null,
+   "tegevust_ei_toimunud_selgitus": null,
+   "kaitis_pohitegevus_emtak": "35301",
+   "kaitis_pohitegevus_emtak_nimetus": "Auru ja konditsioneeritud õhuga varustamine - EMTAK 2008",
+   "kaitis_lisategevus_emtak_loend": null,
+   "kaitis_lisategevus_emtak_nimetus_loend": null,
+   "ets_kohuslane": "Ei",
+   "ets_tegevusala": null,
+   "eprtr_kohuslane": "Ei",
+   "heiteallikas_arv": 0,
+   "kaitis_tootajate_arv": 0,
+   "emaettevote_nimi": null,
+   "emaettevote_riik": null,
+   "cas_kood": "7440-66-6",
+   "aine_nimetus": "Tsingiühendid, ümberarvutatuna tsingiks",
+   "aine_kogus_maarus_yhik": 0.061664,
+   "aine_yhik_maarus": "kg",
+   "eelmine_aasta_vordlus_aruanne": null,
+   "lubatud_kogus_vordlus_aruanne": null,
+   "deklareeritud_kogus_aruanne": 0.0004,
+   "lubatud_kogus_aruanne": 0.012,
+   "lubatud_yhik_aruanne": "t",
+   "aine_arvestus_meetod": "Süsteemi poolt arvutatud",
+   "mootmine_tyyp": null,
+   "mootmine_sagedus": null
+  }
+ ]
+}

@@ -1,0 +1,939 @@
+{
+ "table": "f_veenaitajad_W10_W1_public",
+ "total_rows": 103279,
+ "sample_rows": 2000,
+ "columns": {
+  "kohustus_staatus": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "ACTIVE",
+     1928
+    ],
+    [
+     "INACTIVE",
+     72
+    ]
+   ]
+  },
+  "loa_nr": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 75,
+   "min": "18399",
+   "max": "L.VV332289"
+  },
+  "kohustus_liik": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "WATER_10",
+     1595
+    ],
+    [
+     "WATER_1",
+     405
+    ]
+   ]
+  },
+  "andmete_sisu": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 74,
+   "min": "Anded esitada vastavalt tabelis V3 toodu",
+   "max": "vastavalt tabelis nr V3 toodule"
+  },
+  "kohustuse_sagedus": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 7,
+   "top_values": [
+    [
+     "TRIENNIAL",
+     1059
+    ],
+    [
+     "ANNUAL",
+     704
+    ],
+    [
+     "QUARTER",
+     119
+    ],
+    [
+     "QUINQUENNIAL",
+     58
+    ],
+    [
+     "SEMIANNUAL",
+     32
+    ],
+    [
+     "MONTH",
+     22
+    ],
+    [
+     "SEXENNIAL",
+     6
+    ]
+   ]
+  },
+  "kohustuse_algus": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 32,
+   "top_values": [
+    [
+     "2019-01-01",
+     657
+    ],
+    [
+     "2020-01-01",
+     377
+    ],
+    [
+     "2021-01-01",
+     129
+    ],
+    [
+     "2021-04-16",
+     92
+    ],
+    [
+     "2016-01-01",
+     88
+    ],
+    [
+     "2017-01-01",
+     87
+    ],
+    [
+     "2015-01-01",
+     81
+    ],
+    [
+     "2018-01-01",
+     59
+    ]
+   ]
+  },
+  "kohustuse_lopp": {
+   "non_null_share": 0.273,
+   "n_distinct_in_sample": 18,
+   "top_values": [
+    [
+     "2041-12-31",
+     92
+    ],
+    [
+     "2030-12-31",
+     88
+    ],
+    [
+     "2020-12-31",
+     87
+    ],
+    [
+     "2020-07-20",
+     52
+    ],
+    [
+     "2024-12-31",
+     38
+    ],
+    [
+     "2024-02-04",
+     29
+    ],
+    [
+     "2025-03-07",
+     27
+    ],
+    [
+     "2020-09-30",
+     22
+    ]
+   ]
+  },
+  "seire_sagedus": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 7,
+   "top_values": [
+    [
+     "Üks kord kolme aasta jooksul",
+     1059
+    ],
+    [
+     "Üks kord aastas",
+     525
+    ],
+    [
+     "Üks kord kvartalis",
+     282
+    ],
+    [
+     "Üks kord viie aasta jooksul",
+     58
+    ],
+    [
+     "Üks kord kuus",
+     38
+    ],
+    [
+     "Üks kord poolaastas",
+     32
+    ],
+    [
+     "Üks kord kuue aasta jooksul",
+     6
+    ]
+   ]
+  },
+  "seire_tyyp_as": {
+   "non_null_share": 0.999,
+   "n_distinct_in_sample": 1,
+   "top_values": [
+    [
+     "SELF",
+     1997
+    ]
+   ]
+  },
+  "aruanne_vers_nr": {
+   "non_null_share": 0.999,
+   "n_distinct_in_sample": 4,
+   "min": 1,
+   "max": 4
+  },
+  "luba_versioon_nr_as": {
+   "non_null_share": 0.999,
+   "n_distinct_in_sample": 74,
+   "min": 100129,
+   "max": 143326
+  },
+  "aruanne_staatus_as": {
+   "non_null_share": 0.999,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "CONFIRMED",
+     1995
+    ],
+    [
+     "SUBMITTED",
+     2
+    ]
+   ]
+  },
+  "esitamine_kuupaev_as": {
+   "non_null_share": 0.999,
+   "n_distinct_in_sample": 87,
+   "min": "2019-07-18T09:35:33.583956",
+   "max": "2025-02-25T14:03:03.238685"
+  },
+  "aruandlusperiood_algus_as": {
+   "non_null_share": 0.999,
+   "n_distinct_in_sample": 31,
+   "top_values": [
+    [
+     "2019-01-01",
+     638
+    ],
+    [
+     "2023-01-01",
+     228
+    ],
+    [
+     "2021-01-01",
+     187
+    ],
+    [
+     "2023-04-01",
+     124
+    ],
+    [
+     "2020-01-01",
+     119
+    ],
+    [
+     "2018-01-01",
+     112
+    ],
+    [
+     "2021-04-16",
+     92
+    ],
+    [
+     "2022-01-01",
+     79
+    ]
+   ]
+  },
+  "aruandlusperiood_lopp_as": {
+   "non_null_share": 0.999,
+   "n_distinct_in_sample": 20,
+   "top_values": [
+    [
+     "2023-12-31",
+     509
+    ],
+    [
+     "2021-12-31",
+     373
+    ],
+    [
+     "2019-12-31",
+     296
+    ],
+    [
+     "2020-12-31",
+     294
+    ],
+    [
+     "2023-06-30",
+     124
+    ],
+    [
+     "2022-12-31",
+     90
+    ],
+    [
+     "2024-03-31",
+     59
+    ],
+    [
+     "2023-03-31",
+     54
+    ]
+   ]
+  },
+  "analyys_number": {
+   "non_null_share": 0.416,
+   "n_distinct_in_sample": 74,
+   "min": " Akt 17.12.2019",
+   "max": "leia failist"
+  },
+  "analyysiloppaeg": {
+   "non_null_share": 0.192,
+   "n_distinct_in_sample": 25,
+   "top_values": [
+    [
+     "2019-10-21T14:45:00",
+     52
+    ],
+    [
+     "2019-11-12T17:49:00",
+     29
+    ],
+    [
+     "2019-04-26T07:40:00",
+     27
+    ],
+    [
+     "2018-10-26T00:00:00",
+     20
+    ],
+    [
+     "2019-05-27T12:22:00",
+     19
+    ],
+    [
+     "2019-05-27T12:21:00",
+     19
+    ],
+    [
+     "2019-06-17T00:00:00",
+     19
+    ],
+    [
+     "2019-08-15T14:05:00",
+     18
+    ]
+   ]
+  },
+  "proov_algus": {
+   "non_null_share": 0.999,
+   "n_distinct_in_sample": 94,
+   "min": "01.01.2019",
+   "max": "31.12.2023"
+  },
+  "proov_lopp": {
+   "non_null_share": 0.866,
+   "n_distinct_in_sample": 81,
+   "min": "01.01.2019",
+   "max": "31.12.2023"
+  },
+  "proov_sygavus": {
+   "non_null_share": 0.027,
+   "n_distinct_in_sample": 2,
+   "min": 0.0,
+   "max": 0.1
+  },
+  "proovikoht_koordinaat_lest97": {
+   "non_null_share": 0.889,
+   "n_distinct_in_sample": 120,
+   "min": "6413810,680453",
+   "max": "6601967,588047"
+  },
+  "proovikoht_koordinaat_long": {
+   "non_null_share": 0.889,
+   "n_distinct_in_sample": 120,
+   "min": 22.06453647792454,
+   "max": 27.90465537849292
+  },
+  "proovikoht_koordinaat_lat": {
+   "non_null_share": 0.889,
+   "n_distinct_in_sample": 120,
+   "min": 57.82930041451203,
+   "max": 59.54605202345024
+  },
+  "proovikoht_nimi": {
+   "non_null_share": 0.796,
+   "n_distinct_in_sample": 118,
+   "min": "Aardla PK",
+   "max": "Ülde (6081)"
+  },
+  "katastri_number": {
+   "non_null_share": 0.75,
+   "n_distinct_in_sample": 111,
+   "min": "10006",
+   "max": "96"
+  },
+  "seire_liik": {
+   "non_null_share": 0.202,
+   "n_distinct_in_sample": 1,
+   "top_values": [
+    [
+     "Pinnaveeseire",
+     404
+    ]
+   ]
+  },
+  "proov_liik": {
+   "non_null_share": 0.202,
+   "n_distinct_in_sample": 1,
+   "top_values": [
+    [
+     "Üksikproov",
+     404
+    ]
+   ]
+  },
+  "labor_aeg": {
+   "non_null_share": 0.192,
+   "n_distinct_in_sample": 27,
+   "top_values": [
+    [
+     "2019-10-16 11:10:00",
+     52
+    ],
+    [
+     "2019-06-18 10:00:00",
+     32
+    ],
+    [
+     "2019-11-01 08:30:00",
+     29
+    ],
+    [
+     "2019-04-24 08:30:00",
+     27
+    ],
+    [
+     "2019-05-16 15:00:00",
+     19
+    ],
+    [
+     "2019-05-16 15:30:00",
+     19
+    ],
+    [
+     "2019-06-14 12:36:00",
+     19
+    ],
+    [
+     "2019-08-07 12:00:00",
+     18
+    ]
+   ]
+  },
+  "markus": {
+   "non_null_share": 0.369,
+   "n_distinct_in_sample": 23,
+   "top_values": [
+    [
+     "Lõhavere sigala veeanalüüs on jäänud tegemata.",
+     191
+    ],
+    [
+     "Tavaliselt on olnud selline nimekiri, aga igaaastaselt pole mõtet efektiivdoosi mõõta.",
+     92
+    ],
+    [
+     "Keemiline hapnikutarve (permanganaatne) ei analüüsitud",
+     90
+    ],
+    [
+     "Lüganuse 2332 ei olnud võimalik proove võtta, kuna seadmed on demonteeritud",
+     76
+    ],
+    [
+     "märkus salvestamisel on arusaamatu?!\nkui labor annab sellise tulemuse, siis väätused 20 ja alla 20 on erinevad, minu arvates?\nAndmevälja 'Mõõtmistulemus' väärtus '≤20' ei ole sobiv number andmetüübi jaoks!",
+     40
+    ],
+    [
+     "Aardla puurkaevu staatiline põhjavee tase on 7,6 m. Mõõtmine toimus 19.11.2024. Maapinna absoluutkõrgus on 46 m. Puurkaev seisis ennem mõõtmist 30 minutit.\nIgnase puurkaevu staatiline põhjavee tase on 9,5 m. Mõõtmine toimus 23.10.2024. Maapinna absoluutkõrgus on 74 m. Puurkaev seisis ennem mõõtmist 30 minutit.\nRoiu puurkaevu staatiline põhjavee tase on 1,3 m. Mõõtmine toimus 07.02.2024. Maapinna absoluutkõrgus on 47,5 m. Puurkaev seisis ennem mõõtmist 30 minutit.\nHaaslava Laane puurkaevu staatiline põhjavee tase on 3,7 m. Mõõtmine toimus 07.02.2024. Maapinna absoluutkõrgus on 37 m. Puurkaev seisis ennem mõõtmist 30 minutit.\nHaaslava Nurme PK puurkaevu staatiline põhjavee tase on 3,7 m. Mõõtmine toimus 07.02.2024. Maapinna absoluutkõrgus on 40,5 m. Puurkaev seisis ennem mõõtmist 30 minutit.\nHaaslava Nurme PK-2 puurkaevu põhjaveetaset ei mõõdetud sellel seireperioodil. Puurkaev valmis 2024. aastal. Põhjaveetaset mõõdetakse järgmisel seireperioodil.",
+     40
+    ],
+    [
+     "Tehnovõrkude Ehituse OÜ annab teada, et 2023.a. Sooranna 12 ja Vana-Rannamõisa 12f veepumplatest veetarbimist ei toimunud. Veepumplad vajavad renoveerimist.\nVeepumplate renoveerimiseks on käesoleval ajal käimas ettevalmistustööd selleks, et tulevikus saaks veepumplad kasutusele võtta. Piirkond pidevalt areneb ja on vajadus kaasaegsete veepumplatele. Lisatud veeanalüüsid, mis on tehtud jaanuar 2020.a.\nLugupidamisega,\nAndres Davõdov\nTehnovõrkude Ehituse OÜ",
+     38
+    ],
+    [
+     "Holstre pk (6422) põhjavee seire esitamise tähtaeg on 2024. aastal.\nKüsite 2-he valentset rauda, vee-erikasutusloas nõutakse üldraua näitajat.",
+     34
+    ]
+   ]
+  },
+  "lisainfo": {
+   "non_null_share": 0.0,
+   "n_distinct_in_sample": 0
+  },
+  "veehaare_kood": {
+   "non_null_share": 0.796,
+   "n_distinct_in_sample": 115,
+   "min": "-",
+   "max": "POH0024076"
+  },
+  "veehaare_nimi": {
+   "non_null_share": 0.997,
+   "n_distinct_in_sample": 137,
+   "min": "Aardla PK",
+   "max": "Ülemiste HR002"
+  },
+  "pohjaveekiht_kood": {
+   "non_null_share": 0.738,
+   "n_distinct_in_sample": 10,
+   "top_values": [
+    [
+     "S",
+     339
+    ],
+    [
+     "D2",
+     251
+    ],
+    [
+     "O-C",
+     231
+    ],
+    [
+     "C-V",
+     201
+    ],
+    [
+     "S-O",
+     167
+    ],
+    [
+     "V2vr",
+     104
+    ],
+    [
+     "D2-1",
+     74
+    ],
+    [
+     "O",
+     51
+    ]
+   ]
+  },
+  "pohjaveekiht_nimi": {
+   "non_null_share": 0.738,
+   "n_distinct_in_sample": 10,
+   "top_values": [
+    [
+     "Silur (S)",
+     339
+    ],
+    [
+     "Kesk-Devon (D2)",
+     251
+    ],
+    [
+     "Ordoviitsiumi-Kambriumi (O-Cm)",
+     231
+    ],
+    [
+     "Kambriumi-Vendi (Cm-V)",
+     201
+    ],
+    [
+     "Siluri-Ordoviitsiumi (S-O)",
+     167
+    ],
+    [
+     "Voronka (V2vr)",
+     104
+    ],
+    [
+     "Kesk-Alam-Devon (D₂₋₁)",
+     74
+    ],
+    [
+     "Ordoviitsium (O)",
+     51
+    ]
+   ]
+  },
+  "pohjaveekogum_kood": {
+   "non_null_share": 0.601,
+   "n_distinct_in_sample": 17,
+   "top_values": [
+    [
+     "O-Cm_Laane",
+     193
+    ],
+    [
+     "Cm-V",
+     192
+    ],
+    [
+     "S-O_D-all, Lääne-Eesti vesikond",
+     172
+    ],
+    [
+     "D2_I",
+     133
+    ],
+    [
+     "S-O_D-all, Ida-Eesti vesikond",
+     97
+    ],
+    [
+     "S-O_Parnu",
+     81
+    ],
+    [
+     "D2-1_L",
+     65
+    ],
+    [
+     "S-O_Harju",
+     61
+    ]
+   ]
+  },
+  "pohjaveekogum_nimi": {
+   "non_null_share": 0.601,
+   "n_distinct_in_sample": 17,
+   "top_values": [
+    [
+     "Ordoviitsiumi-Kambriumi põhjaveekogum Lääne-Eesti vesikonnas (O-Cm_Laane)",
+     193
+    ],
+    [
+     "Kambriumi-Vendi põhjaveekogum (Cm-V)",
+     192
+    ],
+    [
+     "Siluri-Ordoviitsiumi põhjaveekogum Devoni kihtide all Lääne-Eesti vesikonnas (S-O_D-all, Lääne-Eesti",
+     172
+    ],
+    [
+     "Kesk-Devoni põhjaveekogum Ida-Eesti vesikonnas (D₂_I)",
+     133
+    ],
+    [
+     "Siluri-Ordoviitsiumi põhjaveekogum Devoni kihtide all Ida-Eesti vesikonnas (S-O_D-all, Ida-Eesti ves",
+     97
+    ],
+    [
+     "Siluri-Ordoviitsiumi Pärnu põhjaveekogum (S-O_Parnu)",
+     81
+    ],
+    [
+     "Kesk-Alam-Devoni põhjaveekogum Lääne-Eesti vesikonnas (D₂₋₁_L)",
+     65
+    ],
+    [
+     "Siluri-Ordoviitsiumi Harju põhjaveekogum (S-O_Harju)",
+     61
+    ]
+   ]
+  },
+  "veekogum_kood": {
+   "non_null_share": 0.057,
+   "n_distinct_in_sample": 7,
+   "top_values": [
+    [
+     "2031910_1",
+     37
+    ],
+    [
+     "2005900_1",
+     28
+    ],
+    [
+     "EE_10",
+     22
+    ],
+    [
+     "103020_1",
+     8
+    ],
+    [
+     "NÕM",
+     8
+    ],
+    [
+     "1123500_3",
+     6
+    ],
+    [
+     "1063800_1",
+     4
+    ]
+   ]
+  },
+  "veekogum_nimi": {
+   "non_null_share": 0.052,
+   "n_distinct_in_sample": 6,
+   "top_values": [
+    [
+     "Paunküla veehoidla",
+     37
+    ],
+    [
+     "Ülemiste järv",
+     28
+    ],
+    [
+     "Soela väina rannikuvesi",
+     22
+    ],
+    [
+     "Nõmme jõgi Nõmme veskijärve paisuni",
+     8
+    ],
+    [
+     "Pärnu Käru jõest suudmeni",
+     6
+    ],
+    [
+     "Mustajõgi",
+     4
+    ]
+   ]
+  },
+  "veetase": {
+   "non_null_share": 0.075,
+   "n_distinct_in_sample": 22,
+   "min": 0.0,
+   "max": 76.0
+  },
+  "veetase_mootmine": {
+   "non_null_share": 0.477,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Ei",
+     810
+    ],
+    [
+     "Jah",
+     144
+    ]
+   ]
+  },
+  "naitaja_kood": {
+   "non_null_share": 0.996,
+   "n_distinct_in_sample": 74,
+   "min": "129-00-0",
+   "max": "Üldkaredus"
+  },
+  "naitaja_nimi": {
+   "non_null_share": 0.996,
+   "n_distinct_in_sample": 79,
+   "min": "Alumiinium (Al)",
+   "max": "Üldraud (Fe)"
+  },
+  "naitaja_tulem": {
+   "non_null_share": 0.996,
+   "n_distinct_in_sample": 581,
+   "min": 0.0,
+   "max": 11170.0
+  },
+  "naitaja_yhik": {
+   "non_null_share": 0.996,
+   "n_distinct_in_sample": 26,
+   "top_values": [
+    [
+     "mg/l",
+     883
+    ],
+    [
+     "µg/l",
+     222
+    ],
+    [
+     "PMÜ/100 ml",
+     209
+    ],
+    [
+     "pH",
+     128
+    ],
+    [
+     "NTU",
+     74
+    ],
+    [
+     "µS/cm",
+     73
+    ],
+    [
+     "mg/l Pt",
+     68
+    ],
+    [
+     "PMÜ/1 ml",
+     66
+    ]
+   ]
+  },
+  "pohjaveekogum_kood_maarus": {
+   "non_null_share": 0.601,
+   "n_distinct_in_sample": 17,
+   "top_values": [
+    [
+     "04§2019",
+     193
+    ],
+    [
+     "03§2019",
+     192
+    ],
+    [
+     "17§2019",
+     172
+    ],
+    [
+     "24§2019",
+     133
+    ],
+    [
+     "18§2019",
+     97
+    ],
+    [
+     "12§2019",
+     81
+    ],
+    [
+     "21§2019",
+     65
+    ],
+    [
+     "10§2019",
+     61
+    ]
+   ]
+  }
+ },
+ "head": [
+  {
+   "kohustus_staatus": "ACTIVE",
+   "loa_nr": "KKL/318317",
+   "kohustus_liik": "WATER_10",
+   "andmete_sisu": "Esitada põhjaveehaarde(te) kohta seire vastavalt keskkonnakompleksloa tabelis V3 ja V17 määratud tingimustele. Põhjavee seire on soovitav teha, vähemalt kolm nädalat enne kohustuse tähtaja saabumist, kui keskkonnakompleksloas ei ole määratud kindlat aega.",
+   "kohustuse_sagedus": "TRIENNIAL",
+   "kohustuse_algus": "2016-01-01",
+   "kohustuse_lopp": null,
+   "seire_sagedus": "Üks kord kolme aasta jooksul",
+   "seire_tyyp_as": "SELF",
+   "aruanne_vers_nr": 1,
+   "luba_versioon_nr_as": 100157,
+   "aruanne_staatus_as": "CONFIRMED",
+   "esitamine_kuupaev_as": "2021-02-17T09:58:11.754424",
+   "aruandlusperiood_algus_as": "2016-01-01",
+   "aruandlusperiood_lopp_as": "2018-12-31",
+   "analyys_number": "J-347",
+   "analyysiloppaeg": null,
+   "proov_algus": "04.09.2018",
+   "proov_lopp": "04.09.2018",
+   "proov_sygavus": null,
+   "proovikoht_koordinaat_lest97": "6467654,596786",
+   "proovikoht_koordinaat_long": 25.65263941818175,
+   "proovikoht_koordinaat_lat": 58.338728820324405,
+   "proovikoht_nimi": "proovikraan",
+   "katastri_number": "7232",
+   "seire_liik": null,
+   "proov_liik": null,
+   "labor_aeg": null,
+   "markus": null,
+   "lisainfo": null,
+   "veehaare_kood": "POH0003105",
+   "veehaare_nimi": "Hoovi (7232)",
+   "pohjaveekiht_kood": "S-O",
+   "pohjaveekiht_nimi": "Siluri-Ordoviitsiumi (S-O)",
+   "pohjaveekogum_kood": null,
+   "pohjaveekogum_nimi": null,
+   "veekogum_kood": null,
+   "veekogum_nimi": null,
+   "veetase": null,
+   "veetase_mootmine": null,
+   "naitaja_kood": "Cl",
+   "naitaja_nimi": "Kloriid (CL)",
+   "naitaja_tulem": 8.0,
+   "naitaja_yhik": "mg/l",
+   "pohjaveekogum_kood_maarus": null
+  },
+  {
+   "kohustus_staatus": "ACTIVE",
+   "loa_nr": "KKL/318317",
+   "kohustus_liik": "WATER_10",
+   "andmete_sisu": "Esitada põhjaveehaarde(te) kohta seire vastavalt keskkonnakompleksloa tabelis V3 ja V17 määratud tingimustele. Põhjavee seire on soovitav teha, vähemalt kolm nädalat enne kohustuse tähtaja saabumist, kui keskkonnakompleksloas ei ole määratud kindlat aega.",
+   "kohustuse_sagedus": "TRIENNIAL",
+   "kohustuse_algus": "2016-01-01",
+   "kohustuse_lopp": null,
+   "seire_sagedus": "Üks kord kolme aasta jooksul",
+   "seire_tyyp_as": "SELF",
+   "aruanne_vers_nr": 1,
+   "luba_versioon_nr_as": 100157,
+   "aruanne_staatus_as": "CONFIRMED",
+   "esitamine_kuupaev_as": "2021-02-17T09:58:11.754424",
+   "aruandlusperiood_algus_as": "2016-01-01",
+   "aruandlusperiood_lopp_as": "2018-12-31",
+   "analyys_number": "J-347",
+   "analyysiloppaeg": null,
+   "proov_algus": "04.09.2018",
+   "proov_lopp": "04.09.2018",
+   "proov_sygavus": null,
+   "proovikoht_koordinaat_lest97": "6467654,596786",
+   "proovikoht_koordinaat_long": 25.65263941818175,
+   "proovikoht_koordinaat_lat": 58.338728820324405,
+   "proovikoht_nimi": "proovikraan",
+   "katastri_number": "7232",
+   "seire_liik": null,
+   "proov_liik": null,
+   "labor_aeg": null,
+   "markus": null,
+   "lisainfo": null,
+   "veehaare_kood": "POH0003105",
+   "veehaare_nimi": "Hoovi (7232)",
+   "pohjaveekiht_kood": "S-O",
+   "pohjaveekiht_nimi": "Siluri-Ordoviitsiumi (S-O)",
+   "pohjaveekogum_kood": null,
+   "pohjaveekogum_nimi": null,
+   "veekogum_kood": null,
+   "veekogum_nimi": null,
+   "veetase": null,
+   "veetase_mootmine": null,
+   "naitaja_kood": "Fe+2",
+   "naitaja_nimi": "Raud (Fe)",
+   "naitaja_tulem": 620.0,
+   "naitaja_yhik": "µg/l",
+   "pohjaveekogum_kood_maarus": null
+  }
+ ]
+}

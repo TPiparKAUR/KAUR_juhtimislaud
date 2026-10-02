@@ -1,0 +1,253 @@
+{
+ "table": "f_kliima_element",
+ "total_rows": 25,
+ "sample_rows": 25,
+ "columns": {
+  "element_kood": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 25,
+   "top_values": [
+    [
+     "DPA008",
+     1
+    ],
+    [
+     "DPREC",
+     1
+    ],
+    [
+     "DRH08",
+     1
+    ],
+    [
+     "DRQS",
+     1
+    ],
+    [
+     "DSDUR",
+     1
+    ],
+    [
+     "DSND",
+     1
+    ],
+    [
+     "DTAN",
+     1
+    ],
+    [
+     "DTAX",
+     1
+    ]
+   ]
+  },
+  "element_nimi": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 23,
+   "top_values": [
+    [
+     "Tuule suund (10 min keskmine)",
+     2
+    ],
+    [
+     "Tuule kiirus (10 min keskmine)",
+     2
+    ],
+    [
+     "Õhurõhk merepinnal (ööpäeva keskmine)",
+     1
+    ],
+    [
+     "Sademed (ööpäeva summa)",
+     1
+    ],
+    [
+     "Suhteline õhuniiskus (ööpäeva keskmine)",
+     1
+    ],
+    [
+     "Summaarne kiirgus (ööpäeva summa)",
+     1
+    ],
+    [
+     "Päikesepaiste kestus (ööpäeva summa)",
+     1
+    ],
+    [
+     "Lumikatte paksus (kell 06:00UTC)",
+     1
+    ]
+   ]
+  },
+  "element_nimi_eng": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 23,
+   "top_values": [
+    [
+     "Wind direction (10 min avg)",
+     2
+    ],
+    [
+     "Wind speed (10 min avg)",
+     2
+    ],
+    [
+     "Air pressure at sea level (daily avg)",
+     1
+    ],
+    [
+     "Precipitation (daily sum)",
+     1
+    ],
+    [
+     "Relative humidity (daily avg)",
+     1
+    ],
+    [
+     "Global radiation (daily sum)",
+     1
+    ],
+    [
+     "Sunshine duration (daily sum)",
+     1
+    ],
+    [
+     "Snow depth (at 06:00UTC)",
+     1
+    ]
+   ]
+  },
+  "element_yhik": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 10,
+   "top_values": [
+    [
+     "° C",
+     6
+    ],
+    [
+     "m/s",
+     6
+    ],
+    [
+     "mm",
+     3
+    ],
+    [
+     "hPa",
+     2
+    ],
+    [
+     "%",
+     2
+    ],
+    [
+     "kraadi",
+     2
+    ],
+    [
+     "MJ/m2",
+     1
+    ],
+    [
+     "tundi",
+     1
+    ]
+   ]
+  },
+  "element_yhik_eng": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 10,
+   "top_values": [
+    [
+     "°C",
+     6
+    ],
+    [
+     "m/s",
+     6
+    ],
+    [
+     "mm",
+     3
+    ],
+    [
+     "hPa",
+     2
+    ],
+    [
+     "%",
+     2
+    ],
+    [
+     "°",
+     2
+    ],
+    [
+     "MJ/m2",
+     1
+    ],
+    [
+     "h",
+     1
+    ]
+   ]
+  },
+  "avaandmed_ts": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 25,
+   "top_values": [
+    [
+     "2026-04-22T08:50:16.293344",
+     1
+    ],
+    [
+     "2026-04-22T08:50:16.425507",
+     1
+    ],
+    [
+     "2026-04-22T08:50:16.42562",
+     1
+    ],
+    [
+     "2026-04-22T08:50:16.425679",
+     1
+    ],
+    [
+     "2026-04-22T08:50:16.425734",
+     1
+    ],
+    [
+     "2026-04-22T08:50:16.425787",
+     1
+    ],
+    [
+     "2026-04-22T08:50:16.425839",
+     1
+    ],
+    [
+     "2026-04-22T08:50:16.42589",
+     1
+    ]
+   ]
+  }
+ },
+ "head": [
+  {
+   "element_kood": "DPA008",
+   "element_nimi": "Õhurõhk merepinnal (ööpäeva keskmine)",
+   "element_nimi_eng": "Air pressure at sea level (daily avg)",
+   "element_yhik": "hPa",
+   "element_yhik_eng": "hPa",
+   "avaandmed_ts": "2026-04-22T08:50:16.293344"
+  },
+  {
+   "element_kood": "DPREC",
+   "element_nimi": "Sademed (ööpäeva summa)",
+   "element_nimi_eng": "Precipitation (daily sum)",
+   "element_yhik": "mm",
+   "element_yhik_eng": "mm",
+   "avaandmed_ts": "2026-04-22T08:50:16.425507"
+  }
+ ]
+}

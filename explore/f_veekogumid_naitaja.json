@@ -1,0 +1,179 @@
+{
+ "table": "f_veekogumid_naitaja",
+ "total_rows": 349,
+ "sample_rows": 349,
+ "columns": {
+  "vkmn_id": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 349,
+   "min": -2143087558,
+   "max": 2109455592
+  },
+  "veekogum_id": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 321,
+   "min": -2144227904,
+   "max": 2146827904
+  },
+  "aasta": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2,
+   "min": 2015,
+   "max": 2027
+  },
+  "vkmn_tyyp": {
+   "non_null_share": 0.169,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "KESE",
+     50
+    ],
+    [
+     "KALA",
+     5
+    ],
+    [
+     "ÖSE",
+     4
+    ]
+   ]
+  },
+  "vkmn_tyyp_selg": {
+   "non_null_share": 0.169,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "KESE - keemiline seisund",
+     50
+    ],
+    [
+     "KALA - kalastiku seisund",
+     5
+    ],
+    [
+     "ÖSE - ökoloogiline seisund",
+     4
+    ]
+   ]
+  },
+  "vkmn_staatus": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "1",
+     334
+    ],
+    [
+     "2",
+     15
+    ]
+   ]
+  },
+  "vkmn_staatus_selg": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "1. VRD art 4(4) Edasilükatud eesmärk",
+     334
+    ],
+    [
+     "2. VRD art 4(5) Leebem eesmärk",
+     15
+    ]
+   ]
+  },
+  "exemption": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 10,
+   "top_values": [
+    [
+     "VRD44a",
+     163
+    ],
+    [
+     "VRD44b,VRD44a",
+     48
+    ],
+    [
+     "VRD44c,VRD44a",
+     41
+    ],
+    [
+     "VRD44a,VRD44b,VRD44c,VRD45a,VRD45b",
+     41
+    ],
+    [
+     "VRD44a,VRD44b,VRD45a,VRD45b",
+     18
+    ],
+    [
+     "VRD45a,VRD45b",
+     14
+    ],
+    [
+     "VRD44c",
+     12
+    ],
+    [
+     "VRD44b",
+     9
+    ]
+   ]
+  },
+  "exemption_selg": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 56,
+   "min": "VRD art4(4) Looduslikud tingimused (edas",
+   "max": "VRD art4(5) Ülemäärane kulu (leebem), VR"
+  },
+  "vkm_naitaja_koormus": {
+   "non_null_share": 0.0,
+   "n_distinct_in_sample": 0
+  },
+  "vkmn_tx_lisainfo": {
+   "non_null_share": 0.215,
+   "n_distinct_in_sample": 61,
+   "min": "Erand Hg kalas - halb. \n\nHg kalas - kaug",
+   "max": "ÖSE - KALA - kesine.\n\nHea seisundi saavu"
+  },
+  "vkmn_muut_aeg": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 349,
+   "min": "2016-04-15T16:11:41.826759",
+   "max": "2023-11-16T18:36:18.139535"
+  }
+ },
+ "head": [
+  {
+   "vkmn_id": -1947896652,
+   "veekogum_id": -2144227904,
+   "aasta": 2015,
+   "vkmn_tyyp": null,
+   "vkmn_tyyp_selg": null,
+   "vkmn_staatus": "1",
+   "vkmn_staatus_selg": "1. VRD art 4(4) Edasilükatud eesmärk",
+   "exemption": "VRD44a",
+   "exemption_selg": "VRD art4(4) Tehniliselt teostamatu (edasilükatud)",
+   "vkm_naitaja_koormus": null,
+   "vkmn_tx_lisainfo": null,
+   "vkmn_muut_aeg": "2016-04-15T16:11:43.141898"
+  },
+  {
+   "vkmn_id": 477911677,
+   "veekogum_id": -2019627904,
+   "aasta": 2027,
+   "vkmn_tyyp": "KESE",
+   "vkmn_tyyp_selg": "KESE - keemiline seisund",
+   "vkmn_staatus": "1",
+   "vkmn_staatus_selg": "1. VRD art 4(4) Edasilükatud eesmärk",
+   "exemption": "VRD44a,VRD44b,VRD45a,VRD45b",
+   "exemption_selg": "VRD art4(4) Tehniliselt teostamatu (edasilükatud), VRD art4(4) Ülemäärane kulu (edasilükatud), VRD art4(5) Ülemäärane kulu (leebem), VRD art4(5) Tehniliselt teostamatu (leebem)",
+   "vkm_naitaja_koormus": null,
+   "vkmn_tx_lisainfo": "KESE halb (Hg kalas)\n\nHg kalas - kaugkanne, sadenemine atmosfäärist. Hea seisundi saavutamise tähtaja pikendamine.  Meetmete rakendamine veninud ehnilistel põhjuste ja ebaproportsionaalse kulukuse tõttu.",
+   "vkmn_muut_aeg": "2023-11-16T16:55:51.310821"
+  }
+ ]
+}

@@ -1,0 +1,693 @@
+{
+ "table": "f_alad",
+ "total_rows": 10383,
+ "sample_rows": 2000,
+ "columns": {
+  "id": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2000,
+   "min": -2147437145,
+   "max": 2129459282
+  },
+  "id_text": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2000,
+   "min": "-1001443402",
+   "max": "990534274"
+  },
+  "nimi": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 1919,
+   "min": "Aandu LKA, Aandu skv.",
+   "max": "Ülgase merikotka püsielupaik"
+  },
+  "tyyp": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 11,
+   "top_values": [
+    [
+     "PY",
+     1119
+    ],
+    [
+     "KLKA",
+     325
+    ],
+    [
+     "Y",
+     256
+    ],
+    [
+     "KMKA",
+     111
+    ],
+    [
+     "KRP",
+     61
+    ],
+    [
+     "H",
+     55
+    ],
+    [
+     "PYLJ",
+     21
+    ],
+    [
+     "KP",
+     20
+    ]
+   ]
+  },
+  "tyyp_selg": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 11,
+   "top_values": [
+    [
+     "püsielupaik",
+     1119
+    ],
+    [
+     "looduskaitseala",
+     325
+    ],
+    [
+     "üksikobjekt",
+     256
+    ],
+    [
+     "maastikukaitseala, looduspark",
+     111
+    ],
+    [
+     "rahvuspark",
+     61
+    ],
+    [
+     "hoiuala",
+     55
+    ],
+    [
+     "kudemis- ja elupaik",
+     21
+    ],
+    [
+     "kaitsealune park",
+     20
+    ]
+   ]
+  },
+  "kuulub_id": {
+   "non_null_share": 0.51,
+   "n_distinct_in_sample": 824,
+   "min": -2144399312,
+   "max": 2144672000
+  },
+  "kuulub_selg": {
+   "non_null_share": 0.51,
+   "n_distinct_in_sample": 770,
+   "min": "Aandu looduskaitseala",
+   "max": "Õunaku merikotka püsielupaik"
+  },
+  "on_regobj": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2
+  },
+  "kkr_kood": {
+   "non_null_share": 0.945,
+   "n_distinct_in_sample": 1889,
+   "min": "KLO1000017",
+   "max": "PLO2002745"
+  },
+  "cdda_kood": {
+   "non_null_share": 0.86,
+   "n_distinct_in_sample": 1719,
+   "min": "101225",
+   "max": "555775189"
+  },
+  "iucn_tyyp": {
+   "non_null_share": 0.615,
+   "n_distinct_in_sample": 6,
+   "top_values": [
+    [
+     "2",
+     405
+    ],
+    [
+     "4",
+     295
+    ],
+    [
+     "3",
+     245
+    ],
+    [
+     "6",
+     156
+    ],
+    [
+     "5",
+     122
+    ],
+    [
+     "1",
+     6
+    ]
+   ]
+  },
+  "iucn_tyyp_selg": {
+   "non_null_share": 0.615,
+   "n_distinct_in_sample": 6,
+   "top_values": [
+    [
+     "Ib - Kõnnumaa",
+     405
+    ],
+    [
+     "IV - Elupaiga- või liigikaitseala",
+     295
+    ],
+    [
+     "III - Kaitstav loodusmälestis",
+     245
+    ],
+    [
+     "VI - Piiratud looduskasutusega kaitseala",
+     156
+    ],
+    [
+     "V - Maastikukaitseala",
+     122
+    ],
+    [
+     "Ia - Loodusreservaat",
+     6
+    ]
+   ]
+  },
+  "al_yksiktyyp": {
+   "non_null_share": 0.131,
+   "n_distinct_in_sample": 15,
+   "top_values": [
+    [
+     "301",
+     141
+    ],
+    [
+     "201",
+     79
+    ],
+    [
+     "302",
+     11
+    ],
+    [
+     "402",
+     9
+    ],
+    [
+     "202",
+     4
+    ],
+    [
+     "113",
+     4
+    ],
+    [
+     "111",
+     3
+    ],
+    [
+     "106",
+     2
+    ]
+   ]
+  },
+  "al_yksiktyyp_selg": {
+   "non_null_share": 0.131,
+   "n_distinct_in_sample": 15,
+   "top_values": [
+    [
+     "üksikpuu (puu)",
+     141
+    ],
+    [
+     "rändrahn (rändrahn)",
+     79
+    ],
+    [
+     "puuderühm, salu (puu)",
+     11
+    ],
+    [
+     "paljand (paljand)",
+     9
+    ],
+    [
+     "kivikülv (rändrahn)",
+     4
+    ],
+    [
+     "allikas (pinnavorm)",
+     4
+    ],
+    [
+     "karst (pinnavorm)",
+     3
+    ],
+    [
+     "kuppelmaastiku element (pinnavorm)",
+     2
+    ]
+   ]
+  },
+  "yksikobj_seisund": {
+   "non_null_share": 0.03,
+   "n_distinct_in_sample": 5,
+   "top_values": [
+    [
+     "HE",
+     26
+    ],
+    [
+     "RA",
+     10
+    ],
+    [
+     "VH",
+     9
+    ],
+    [
+     "HA",
+     9
+    ],
+    [
+     "HÄ",
+     6
+    ]
+   ]
+  },
+  "yksikobj_seisund_selg": {
+   "non_null_share": 0.03,
+   "n_distinct_in_sample": 5,
+   "top_values": [
+    [
+     "Hea",
+     26
+    ],
+    [
+     "Rahuldav",
+     10
+    ],
+    [
+     "Väga hea",
+     9
+    ],
+    [
+     "Halb",
+     9
+    ],
+    [
+     "Hävinud",
+     6
+    ]
+   ]
+  },
+  "al_voondtyyp": {
+   "non_null_share": 0.525,
+   "n_distinct_in_sample": 6,
+   "top_values": [
+    [
+     "PYS",
+     525
+    ],
+    [
+     "H",
+     216
+    ],
+    [
+     "P",
+     131
+    ],
+    [
+     "PYP",
+     93
+    ],
+    [
+     "S",
+     80
+    ],
+    [
+     "R",
+     6
+    ]
+   ]
+  },
+  "al_voondtyyp_selg": {
+   "non_null_share": 0.525,
+   "n_distinct_in_sample": 6,
+   "top_values": [
+    [
+     "püsielupaiga sihtkaitsevöönd",
+     525
+    ],
+    [
+     "hooldatav sihtkaitsevöönd",
+     216
+    ],
+    [
+     "piiranguvöönd",
+     131
+    ],
+    [
+     "püsielupaiga piiranguvöönd",
+     93
+    ],
+    [
+     "looduslik sihtkaitsevöönd",
+     80
+    ],
+    [
+     "loodusreservaat",
+     6
+    ]
+   ]
+  },
+  "al_staatus": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "K",
+     1715
+    ],
+    [
+     "P",
+     225
+    ],
+    [
+     "JK",
+     60
+    ]
+   ]
+  },
+  "al_staatus_selg": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "kaitsealune",
+     1715
+    ],
+    [
+     "kavandatav kaitstav ala",
+     225
+    ],
+    [
+     "kaitsealune - jääb kaitstavale alale",
+     60
+    ]
+   ]
+  },
+  "kaitsekorra_alus_id": {
+   "non_null_share": 0.885,
+   "n_distinct_in_sample": 227,
+   "min": -2116051556,
+   "max": 2142441958
+  },
+  "pindala_maa": {
+   "non_null_share": 0.872,
+   "n_distinct_in_sample": 992,
+   "min": 0,
+   "max": 9676.8
+  },
+  "pindala_vesi": {
+   "non_null_share": 0.371,
+   "n_distinct_in_sample": 182,
+   "min": 0,
+   "max": 486.4
+  },
+  "pindala_meri": {
+   "non_null_share": 0.308,
+   "n_distinct_in_sample": 82,
+   "min": 0,
+   "max": 101142.8
+  },
+  "veekogu_id": {
+   "non_null_share": 0.011,
+   "n_distinct_in_sample": 21,
+   "min": -2030091607,
+   "max": 2108790212
+  },
+  "on_msoodust": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2
+  },
+  "msoodust_prots": {
+   "non_null_share": 0.597,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "0",
+     718
+    ],
+    [
+     "50",
+     475
+    ]
+   ]
+  },
+  "tx_kirjeldus": {
+   "non_null_share": 0.159,
+   "n_distinct_in_sample": 316,
+   "min": "                                        ",
+   "max": "Ärnu jõgi Valtina paisust suubumiseni Vä"
+  },
+  "tx_eesmark": {
+   "non_null_share": 0.154,
+   "n_distinct_in_sample": 250,
+   "min": " Loodusreservaadi kaitse-eesmärk on ökos",
+   "max": "Õru hoiuala kaitse-eesmärk on EÜ nõukogu"
+  },
+  "kesk_x": {
+   "non_null_share": 0.455,
+   "n_distinct_in_sample": 880,
+   "min": 343606.4310072931,
+   "max": 728016.1388464794
+  },
+  "kesk_y": {
+   "non_null_share": 0.455,
+   "n_distinct_in_sample": 882,
+   "min": 6385114.028379622,
+   "max": 6633476.3915
+  },
+  "muut_aeg": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 1948,
+   "min": "2010-12-08T14:07:04.766",
+   "max": "2026-09-30T13:28:53.639649"
+  },
+  "keht_staatus": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 1,
+   "top_values": [
+    [
+     "Kehtiv",
+     2000
+    ]
+   ]
+  },
+  "valitseja_reg_kood": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 11,
+   "top_values": [
+    [
+     "70008658",
+     1980
+    ],
+    [
+     "75021250",
+     4
+    ],
+    [
+     "75011211",
+     4
+    ],
+    [
+     "75012802",
+     2
+    ],
+    [
+     "75007586",
+     2
+    ],
+    [
+     "75015456",
+     2
+    ],
+    [
+     "75032325",
+     2
+    ],
+    [
+     "75004524",
+     1
+    ]
+   ]
+  },
+  "valitseja_nimetus": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 14,
+   "top_values": [
+    [
+     "Keskkonnaamet",
+     1933
+    ],
+    [
+     "Keskkonnaameti Põhja regioon",
+     24
+    ],
+    [
+     "Keskkonnaameti Lääne regioon",
+     12
+    ],
+    [
+     "Keskkonnaameti Lõuna regioon",
+     11
+    ],
+    [
+     "Viimsi Vallavalitsus",
+     4
+    ],
+    [
+     "Käina Vallavalitsus",
+     4
+    ],
+    [
+     "Haapsalu Linnavalitsus",
+     2
+    ],
+    [
+     "Palupera Vallavalitsus",
+     2
+    ]
+   ]
+  },
+  "ehak_tekst": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 1438,
+   "min": "Harju maakond, Anija vald, Aegviidu alev",
+   "max": "Võru maakond, Võru vald, Võrumõisa küla"
+  },
+  "ehak_kood1": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 48,
+   "min": "0037",
+   "max": "0087"
+  },
+  "ehak_kood2": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 196,
+   "min": "0130",
+   "max": "0928"
+  },
+  "ehak_kood3": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 1438,
+   "min": "0176",
+   "max": "9838"
+  },
+  "on_seotud_ala": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2,
+   "min": 0,
+   "max": 1
+  }
+ },
+ "head": [
+  {
+   "id": 1030045370,
+   "id_text": "1030045370",
+   "nimi": "Linnuraba looduskaitseala, Linnuraba piiranguvöönd",
+   "tyyp": "KLKA",
+   "tyyp_selg": "looduskaitseala",
+   "kuulub_id": -1734882396,
+   "kuulub_selg": "Linnuraba looduskaitseala",
+   "on_regobj": false,
+   "kkr_kood": null,
+   "cdda_kood": null,
+   "iucn_tyyp": null,
+   "iucn_tyyp_selg": null,
+   "al_yksiktyyp": null,
+   "al_yksiktyyp_selg": null,
+   "yksikobj_seisund": null,
+   "yksikobj_seisund_selg": null,
+   "al_voondtyyp": "P",
+   "al_voondtyyp_selg": "piiranguvöönd",
+   "al_staatus": "P",
+   "al_staatus_selg": "kavandatav kaitstav ala",
+   "kaitsekorra_alus_id": null,
+   "pindala_maa": 99.63,
+   "pindala_vesi": 0.88,
+   "pindala_meri": null,
+   "veekogu_id": null,
+   "on_msoodust": false,
+   "msoodust_prots": null,
+   "tx_kirjeldus": null,
+   "tx_eesmark": null,
+   "kesk_x": 533780.7669356732,
+   "kesk_y": 6550939.565928004,
+   "muut_aeg": "2025-04-07T08:37:02.67396",
+   "keht_staatus": "Kehtiv",
+   "valitseja_reg_kood": "70008658",
+   "valitseja_nimetus": "Keskkonnaamet",
+   "ehak_tekst": "Harju maakond, Saue vald, Kustja küla;Rapla maakond, Kohila vald, Pihali küla;Rapla maakond, Rapla vald, Kelba küla;Rapla maakond, Rapla vald, Ohulepa küla",
+   "ehak_kood1": "0037;0071",
+   "ehak_kood2": "0317;0668;0725",
+   "ehak_kood3": "2933;3705;5634;6140",
+   "on_seotud_ala": 1
+  },
+  {
+   "id": -1596274514,
+   "id_text": "-1596274514",
+   "nimi": "Alekvere hariliku kobarpea püsielupaiga sihtkaitsevöönd",
+   "tyyp": "PY",
+   "tyyp_selg": "püsielupaik",
+   "kuulub_id": -1170506285,
+   "kuulub_selg": "Alekvere hariliku kobarpea püsielupaik",
+   "on_regobj": true,
+   "kkr_kood": "KLO3103673",
+   "cdda_kood": null,
+   "iucn_tyyp": null,
+   "iucn_tyyp_selg": null,
+   "al_yksiktyyp": null,
+   "al_yksiktyyp_selg": null,
+   "yksikobj_seisund": null,
+   "yksikobj_seisund_selg": null,
+   "al_voondtyyp": "PYS",
+   "al_voondtyyp_selg": "püsielupaiga sihtkaitsevöönd",
+   "al_staatus": "K",
+   "al_staatus_selg": "kaitsealune",
+   "kaitsekorra_alus_id": 1138954032,
+   "pindala_maa": 4.03,
+   "pindala_vesi": null,
+   "pindala_meri": null,
+   "veekogu_id": null,
+   "on_msoodust": true,
+   "msoodust_prots": null,
+   "tx_kirjeldus": null,
+   "tx_eesmark": null,
+   "kesk_x": null,
+   "kesk_y": null,
+   "muut_aeg": "2026-09-29T08:29:35.272016",
+   "keht_staatus": "Kehtiv",
+   "valitseja_reg_kood": "70008658",
+   "valitseja_nimetus": "Keskkonnaamet",
+   "ehak_tekst": "Lääne-Viru maakond, Vinni vald, Alekvere küla",
+   "ehak_kood1": "0060",
+   "ehak_kood2": "0901",
+   "ehak_kood3": "1193",
+   "on_seotud_ala": 1
+  }
+ ]
+}

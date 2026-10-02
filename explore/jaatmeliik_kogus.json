@@ -1,0 +1,101 @@
+{
+ "table": "jaatmeliik_kogus",
+ "total_rows": 7702,
+ "sample_rows": 2000,
+ "columns": {
+  "kaitluskoha_nimi": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 47,
+   "min": "Aegna saare jäätmete kogumispunkt",
+   "max": "Võru linna keskkonnajaam"
+  },
+  "loa_number": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 35,
+   "top_values": [
+    [
+     "KKL/326557",
+     400
+    ],
+    [
+     "L.JÄ/329000",
+     183
+    ],
+    [
+     "KL-515446",
+     157
+    ],
+    [
+     "L.JÄ/332257",
+     113
+    ],
+    [
+     "RE.JÄ/522663",
+     78
+    ],
+    [
+     "RE.JÄ/514064",
+     70
+    ],
+    [
+     "RE.JÄ/516698",
+     66
+    ],
+    [
+     "L.JÄ/332202",
+     63
+    ]
+   ]
+  },
+  "jaatmeliik_kood": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 614,
+   "min": "01 01 02",
+   "max": "20 03 99"
+  },
+  "jaatmeliik_nimetus_est": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 511,
+   "min": "Absorbendid, puhastuskaltsud, filtermate",
+   "max": "Ühekorrafotoaparaadid, mis sisaldavad ko"
+  },
+  "sissetulek_kokku": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 87,
+   "min": 0,
+   "max": 100000
+  },
+  "sissetulek_saadakseteistel": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 68,
+   "min": 0,
+   "max": 40000
+  },
+  "kogus_kogumine": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 27,
+   "min": 0,
+   "max": 1200
+  }
+ },
+ "head": [
+  {
+   "kaitluskoha_nimi": "Kadaka jäätmemaja",
+   "loa_number": "RE.JÄ/522663",
+   "jaatmeliik_kood": "15 01 07",
+   "jaatmeliik_nimetus_est": "Klaaspakendid",
+   "sissetulek_kokku": 0,
+   "sissetulek_saadakseteistel": 0,
+   "kogus_kogumine": 1000
+  },
+  {
+   "kaitluskoha_nimi": "Kadaka jäätmemaja",
+   "loa_number": "RE.JÄ/522663",
+   "jaatmeliik_kood": "15 01 06",
+   "jaatmeliik_nimetus_est": "Segapakendid",
+   "sissetulek_kokku": 0,
+   "sissetulek_saadakseteistel": 0,
+   "kogus_kogumine": 1000
+  }
+ ]
+}

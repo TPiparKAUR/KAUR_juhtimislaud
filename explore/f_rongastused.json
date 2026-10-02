@@ -1,0 +1,249 @@
+{
+ "table": "f_rongastused",
+ "total_rows": 1321727,
+ "sample_rows": 2000,
+ "columns": {
+  "vaatlus_platvorm": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 1,
+   "top_values": [
+    [
+     "EELIS1 - RÕNGASTAMINE",
+     2000
+    ]
+   ]
+  },
+  "vaatlus_id": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2000,
+   "min": -2147480958,
+   "max": 1338608670
+  },
+  "vaatlus_kp": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 1254,
+   "min": "1971-06-18",
+   "max": "2026-06-02"
+  },
+  "lnim_id": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 110,
+   "min": -2137205646,
+   "max": 2052435087
+  },
+  "lnim_estnimi": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 109,
+   "min": "aed-lepalind",
+   "max": "öösorr"
+  },
+  "lnim_ladnimi": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 110,
+   "min": "Acanthis flammea",
+   "max": "Turdus sp."
+  },
+  "lnim_tyyp_kood": {
+   "non_null_share": 0.103,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "KL",
+     201
+    ],
+    [
+     "VL",
+     5
+    ],
+    [
+     "TK",
+     1
+    ]
+   ]
+  },
+  "lnim_tyyp_selgitus": {
+   "non_null_share": 0.103,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "Kaitsealune liik",
+     201
+    ],
+    [
+     "Võõrliik",
+     5
+    ],
+    [
+     "Täpsustamata liik (nt. segapaar)",
+     1
+    ]
+   ]
+  },
+  "lnim_kaitsekategooria_kood": {
+   "non_null_share": 0.101,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "3",
+     161
+    ],
+    [
+     "2",
+     21
+    ],
+    [
+     "1",
+     19
+    ]
+   ]
+  },
+  "lnim_kaitsekategooria_selgitus": {
+   "non_null_share": 0.101,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "III kategooria",
+     161
+    ],
+    [
+     "II kategooria",
+     21
+    ],
+    [
+     "I kategooria",
+     19
+    ]
+   ]
+  },
+  "lnim_ryhm_kood": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "424",
+     1998
+    ],
+    [
+     "425",
+     2
+    ]
+   ]
+  },
+  "lnim_ryhm_selg": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Linnud",
+     1998
+    ],
+    [
+     "Imetajad",
+     2
+    ]
+   ]
+  },
+  "maakond": {
+   "non_null_share": 0.876,
+   "n_distinct_in_sample": 14,
+   "top_values": [
+    [
+     "Pärnu maakond",
+     1013
+    ],
+    [
+     "Viljandi maakond",
+     306
+    ],
+    [
+     "Tartu maakond",
+     134
+    ],
+    [
+     "Saare maakond",
+     100
+    ],
+    [
+     "Lääne maakond",
+     50
+    ],
+    [
+     "Lääne-Viru maakond",
+     40
+    ],
+    [
+     "Põlva maakond",
+     36
+    ],
+    [
+     "Harju maakond",
+     33
+    ]
+   ]
+  },
+  "kov": {
+   "non_null_share": 0.876,
+   "n_distinct_in_sample": 50,
+   "min": "-",
+   "max": "Võru vald"
+  },
+  "asula": {
+   "non_null_share": 0.876,
+   "n_distinct_in_sample": 172,
+   "min": "Aardla",
+   "max": "Ülgase"
+  },
+  "utm_ruut": {
+   "non_null_share": 0.935,
+   "n_distinct_in_sample": 137,
+   "min": "EK61",
+   "max": "NF44"
+  },
+  "rong_muut_aeg": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 394,
+   "min": "2019-06-20T19:38:12.720826",
+   "max": "2026-09-21T11:08:22.687741"
+  }
+ },
+ "head": [
+  {
+   "vaatlus_platvorm": "EELIS1 - RÕNGASTAMINE",
+   "vaatlus_id": -2147480958,
+   "vaatlus_kp": "2013-06-19",
+   "lnim_id": 1862199302,
+   "lnim_estnimi": "hõbekajakas",
+   "lnim_ladnimi": "Larus argentatus",
+   "lnim_tyyp_kood": null,
+   "lnim_tyyp_selgitus": null,
+   "lnim_kaitsekategooria_kood": null,
+   "lnim_kaitsekategooria_selgitus": null,
+   "lnim_ryhm_kood": "424",
+   "lnim_ryhm_selg": "Linnud",
+   "maakond": "Pärnu maakond",
+   "kov": "Lääneranna vald",
+   "asula": "Kadaka",
+   "utm_ruut": "FK58",
+   "rong_muut_aeg": "2019-06-20T19:38:12.720826"
+  },
+  {
+   "vaatlus_platvorm": "EELIS1 - RÕNGASTAMINE",
+   "vaatlus_id": -2147478514,
+   "vaatlus_kp": "2022-10-22",
+   "lnim_id": -1243273421,
+   "lnim_estnimi": "rasvatihane",
+   "lnim_ladnimi": "Parus major",
+   "lnim_tyyp_kood": null,
+   "lnim_tyyp_selgitus": null,
+   "lnim_kaitsekategooria_kood": null,
+   "lnim_kaitsekategooria_selgitus": null,
+   "lnim_ryhm_kood": "424",
+   "lnim_ryhm_selg": "Linnud",
+   "maakond": "Pärnu maakond",
+   "kov": "Häädemeeste vald",
+   "asula": "Kabli",
+   "utm_ruut": "LE43",
+   "rong_muut_aeg": "2023-03-21T11:05:14.700358"
+  }
+ ]
+}

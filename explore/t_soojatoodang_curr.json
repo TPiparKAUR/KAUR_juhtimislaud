@@ -1,0 +1,653 @@
+{
+ "table": "t_soojatoodang_curr",
+ "total_rows": 10984,
+ "sample_rows": 2000,
+ "columns": {
+  "aruanne_aasta": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 7,
+   "min": 2019,
+   "max": 2025
+  },
+  "aruanne_id": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 1503,
+   "min": 1575,
+   "max": 101120
+  },
+  "luba_number": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 1025,
+   "min": " KKL/300456",
+   "max": "ÕL-32-2"
+  },
+  "luba_versioon": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 1169,
+   "min": 100001,
+   "max": 153544
+  },
+  "luba_liik": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "Keskkonnaluba",
+     1654
+    ],
+    [
+     "Keskkonnakompleksluba",
+     230
+    ],
+    [
+     "Paikse heiteallika käitaja registreering",
+     116
+    ]
+   ]
+  },
+  "luba_algus": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 956,
+   "min": "01.01.2006",
+   "max": "31.12.2008"
+  },
+  "luba_lopp": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 62,
+   "min": "...",
+   "max": "None"
+  },
+  "luba_versioon_algus": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 864,
+   "min": "2004-05-12",
+   "max": "2025-04-28"
+  },
+  "luba_versioon_lopp": {
+   "non_null_share": 0.589,
+   "n_distinct_in_sample": 459,
+   "min": "2017-02-08",
+   "max": "2040-12-16"
+  },
+  "kaitaja_nimi": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 744,
+   "min": " Osaühing VKG Energia ",
+   "max": "Öpiku Majad OÜ"
+  },
+  "kaitaja_registrikood": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 707,
+   "min": "10000018",
+   "max": "90013035"
+  },
+  "aruande_esitaja_emtak_kood": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 243,
+   "min": "0111",
+   "max": "96011"
+  },
+  "aruande_esitaja_emtak_nimetus": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 280,
+   "min": "Algkoolide tegevus - EMTAK 2008",
+   "max": "Ülikoolide tegevus - EMTAK 2008"
+  },
+  "kaitis_nimetus": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 1026,
+   "min": " AS Muuga Betoonelement",
+   "max": "Ülgase broilerifarm"
+  },
+  "tegevuskoht_aadress": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 1025,
+   "min": "(A. Weizenbergi tn 34) Valge tn 1, Keskl",
+   "max": "Üleviste tn 5, Tapa linn, Tapa vald, Lää"
+  },
+  "tegevuskoht_asula_kood_curr": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 410,
+   "min": "0120",
+   "max": "9838"
+  },
+  "tegevuskoht_asula_nimi_curr": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 406,
+   "min": "Aakre küla",
+   "max": "Ülgase küla"
+  },
+  "tegevuskoht_kov_kood_curr": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 75,
+   "min": "0130",
+   "max": "0928"
+  },
+  "tegevuskoht_kov_nimi_curr": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 75,
+   "min": "Alutaguse vald",
+   "max": "Võru vald"
+  },
+  "tegevuskoht_maakond_kood_curr": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 15,
+   "top_values": [
+    [
+     "0037",
+     693
+    ],
+    [
+     "0079",
+     201
+    ],
+    [
+     "0045",
+     157
+    ],
+    [
+     "0060",
+     153
+    ],
+    [
+     "0084",
+     123
+    ],
+    [
+     "0052",
+     113
+    ],
+    [
+     "0087",
+     102
+    ],
+    [
+     "0068",
+     99
+    ]
+   ]
+  },
+  "tegevuskoht_maakond_nimi_curr": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 15,
+   "top_values": [
+    [
+     "Harju maakond",
+     693
+    ],
+    [
+     "Tartu maakond",
+     201
+    ],
+    [
+     "Ida-Viru maakond",
+     157
+    ],
+    [
+     "Lääne-Viru maakond",
+     153
+    ],
+    [
+     "Viljandi maakond",
+     123
+    ],
+    [
+     "Järva maakond",
+     113
+    ],
+    [
+     "Võru maakond",
+     102
+    ],
+    [
+     "Pärnu maakond",
+     99
+    ]
+   ]
+  },
+  "tegevuskoht_x_lest97": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 1204,
+   "min": 6386873,
+   "max": 6613349
+  },
+  "tegevuskoht_y_lest97": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 1213,
+   "min": 396971,
+   "max": 738399
+  },
+  "kaitis_pohitegevus_emtak": {
+   "non_null_share": 0.996,
+   "n_distinct_in_sample": 249,
+   "min": "0111",
+   "max": "96101"
+  },
+  "kaitis_pohitegevus_emtak_nimetus": {
+   "non_null_share": 0.996,
+   "n_distinct_in_sample": 285,
+   "min": "Algkoolide tegevus - EMTAK 2008",
+   "max": "Ülikoolide tegevus - EMTAK 2008"
+  },
+  "kaitis_lisategevus_emtak_loend": {
+   "non_null_share": 0.348,
+   "n_distinct_in_sample": 94,
+   "min": "01111",
+   "max": "96011"
+  },
+  "kaitis_lisategevus_emtak_nimetus_loend": {
+   "non_null_share": 0.348,
+   "n_distinct_in_sample": 105,
+   "min": "Auru ja konditsioneeritud õhuga varustam",
+   "max": "Valmissööda tootmine loomakasvatusele - "
+  },
+  "ets_kohuslane": {
+   "non_null_share": 0.866,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Ei",
+     1678
+    ],
+    [
+     "Jah",
+     54
+    ]
+   ]
+  },
+  "ets_tegevusala": {
+   "non_null_share": 0.027,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Jah",
+     49
+    ],
+    [
+     "Ei",
+     5
+    ]
+   ]
+  },
+  "eprtr_kohuslane": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Ei",
+     1917
+    ],
+    [
+     "Jah",
+     83
+    ]
+   ]
+  },
+  "heiteallikas_arv": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 22,
+   "min": 0,
+   "max": 59
+  },
+  "kaitis_tootajate_arv": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 28,
+   "min": 0,
+   "max": 1500
+  },
+  "emaettevote_nimi": {
+   "non_null_share": 0.029,
+   "n_distinct_in_sample": 12,
+   "top_values": [
+    [
+     "Tolaram Industries PTE Ltd.",
+     13
+    ],
+    [
+     "Eesti energia",
+     10
+    ],
+    [
+     "Viru Keemia Grupp AS",
+     10
+    ],
+    [
+     "Maag Food OÜ",
+     6
+    ],
+    [
+     "Eesti Energia AS",
+     5
+    ],
+    [
+     "Eesti Energia",
+     5
+    ],
+    [
+     "OÜ Utilitas",
+     3
+    ],
+    [
+     "HKScan Oy",
+     2
+    ]
+   ]
+  },
+  "emaettevote_riik": {
+   "non_null_share": 0.031,
+   "n_distinct_in_sample": 4,
+   "top_values": [
+    [
+     "EST",
+     44
+    ],
+    [
+     "SGP",
+     13
+    ],
+    [
+     "FIN",
+     3
+    ],
+    [
+     "AUT",
+     2
+    ]
+   ]
+  },
+  "snap": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 42,
+   "min": "010101",
+   "max": "091006"
+  },
+  "kytus_liik": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "Gaaskütus",
+     743
+    ],
+    [
+     "Tahke kütus",
+     634
+    ],
+    [
+     "Vedelkütus",
+     623
+    ]
+   ]
+  },
+  "kytus_kn_kood": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 33,
+   "top_values": [
+    [
+     "27112100",
+     563
+    ],
+    [
+     "440139",
+     349
+    ],
+    [
+     "27101964",
+     212
+    ],
+    [
+     "2711 21 00",
+     133
+    ],
+    [
+     "27101943",
+     119
+    ],
+    [
+     "4401 39",
+     89
+    ],
+    [
+     "27101947",
+     71
+    ],
+    [
+     "2711",
+     70
+    ]
+   ]
+  },
+  "kytus_kood": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 33,
+   "top_values": [
+    [
+     "301",
+     696
+    ],
+    [
+     "116A",
+     309
+    ],
+    [
+     "205",
+     145
+    ],
+    [
+     "211A",
+     141
+    ],
+    [
+     "116B",
+     127
+    ],
+    [
+     "211B",
+     111
+    ],
+    [
+     "204",
+     100
+    ],
+    [
+     "303",
+     70
+    ]
+   ]
+  },
+  "soojus_kokku": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 1671,
+   "min": 0,
+   "max": 18418990.738
+  },
+  "soojus_omatarve": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 1086,
+   "min": 0,
+   "max": 8246946.92
+  },
+  "soojus_myyk": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 590,
+   "min": 0,
+   "max": 9097844.994
+  },
+  "elekter_kokku": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 53,
+   "min": 0,
+   "max": 1659360
+  },
+  "elekter_omatarve": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 50,
+   "min": 0,
+   "max": 252803
+  },
+  "elekter_myyk": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 39,
+   "min": 0,
+   "max": 1406557
+  },
+  "kytus_kogus": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 1653,
+   "min": 0,
+   "max": 2622407.08
+  },
+  "kytus_yhik": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "tonni",
+     1273
+    ],
+    [
+     "tuh. Nm³",
+     727
+    ]
+   ]
+  },
+  "kytus_nimetus_val": {
+   "non_null_share": 0.998,
+   "n_distinct_in_sample": 32,
+   "top_values": [
+    [
+     "Maagaas (välja arvatud vedelal kujul)",
+     696
+    ],
+    [
+     "Puiduhake",
+     309
+    ],
+    [
+     "Diislikütus",
+     145
+    ],
+    [
+     "Põlevkiviõli (raske fraktsioon)",
+     141
+    ],
+    [
+     "Puidujäätmed",
+     127
+    ],
+    [
+     "Põlevkiviõli (kerge fraktsioon)",
+     111
+    ],
+    [
+     "Kerge kütteõli",
+     100
+    ],
+    [
+     "Vedeldatud naftagaas (LPG)",
+     70
+    ]
+   ]
+  }
+ },
+ "head": [
+  {
+   "aruanne_aasta": 2019,
+   "aruanne_id": 1575,
+   "luba_number": "L.ÕV/300521",
+   "luba_versioon": 103746,
+   "luba_liik": "Keskkonnaluba",
+   "luba_algus": "2009-04-13",
+   "luba_lopp": "None",
+   "luba_versioon_algus": "2009-04-13",
+   "luba_versioon_lopp": "2021-11-03",
+   "kaitaja_nimi": "Riigi Kaitseinvesteeringute Keskus",
+   "kaitaja_registrikood": "70009764",
+   "aruande_esitaja_emtak_kood": "84221",
+   "aruande_esitaja_emtak_nimetus": "Riigikaitse - EMTAK 2008",
+   "kaitis_nimetus": "Sõjaväeosad Tapa linnas",
+   "tegevuskoht_aadress": "Loode tn 35, Tapa linn, Tapa vald, Lääne-Viru maakond",
+   "tegevuskoht_asula_kood_curr": "8140",
+   "tegevuskoht_asula_nimi_curr": "Tapa linn",
+   "tegevuskoht_kov_kood_curr": "0792",
+   "tegevuskoht_kov_nimi_curr": "Tapa vald",
+   "tegevuskoht_maakond_kood_curr": "0060",
+   "tegevuskoht_maakond_nimi_curr": "Lääne-Viru maakond",
+   "tegevuskoht_x_lest97": 6568523,
+   "tegevuskoht_y_lest97": 611460,
+   "kaitis_pohitegevus_emtak": "84221",
+   "kaitis_pohitegevus_emtak_nimetus": "Riigikaitse - EMTAK 2008",
+   "kaitis_lisategevus_emtak_loend": null,
+   "kaitis_lisategevus_emtak_nimetus_loend": null,
+   "ets_kohuslane": "Ei",
+   "ets_tegevusala": null,
+   "eprtr_kohuslane": "Ei",
+   "heiteallikas_arv": 0,
+   "kaitis_tootajate_arv": 0,
+   "emaettevote_nimi": null,
+   "emaettevote_riik": null,
+   "snap": "020103b",
+   "kytus_liik": "Vedelkütus",
+   "kytus_kn_kood": "2710 19 43",
+   "kytus_kood": "205",
+   "soojus_kokku": 4109.079,
+   "soojus_omatarve": 4109.079,
+   "soojus_myyk": 0,
+   "elekter_kokku": 0,
+   "elekter_omatarve": 0,
+   "elekter_myyk": 0,
+   "kytus_kogus": 127.229,
+   "kytus_yhik": "tonni",
+   "kytus_nimetus_val": "Diislikütus"
+  },
+  {
+   "aruanne_aasta": 2019,
+   "aruanne_id": 1575,
+   "luba_number": "L.ÕV/300521",
+   "luba_versioon": 103746,
+   "luba_liik": "Keskkonnaluba",
+   "luba_algus": "2009-04-13",
+   "luba_lopp": "None",
+   "luba_versioon_algus": "2009-04-13",
+   "luba_versioon_lopp": "2021-11-03",
+   "kaitaja_nimi": "Riigi Kaitseinvesteeringute Keskus",
+   "kaitaja_registrikood": "70009764",
+   "aruande_esitaja_emtak_kood": "84221",
+   "aruande_esitaja_emtak_nimetus": "Riigikaitse - EMTAK 2008",
+   "kaitis_nimetus": "Sõjaväeosad Tapa linnas",
+   "tegevuskoht_aadress": "Loode tn 35, Tapa linn, Tapa vald, Lääne-Viru maakond",
+   "tegevuskoht_asula_kood_curr": "8140",
+   "tegevuskoht_asula_nimi_curr": "Tapa linn",
+   "tegevuskoht_kov_kood_curr": "0792",
+   "tegevuskoht_kov_nimi_curr": "Tapa vald",
+   "tegevuskoht_maakond_kood_curr": "0060",
+   "tegevuskoht_maakond_nimi_curr": "Lääne-Viru maakond",
+   "tegevuskoht_x_lest97": 6568523,
+   "tegevuskoht_y_lest97": 611460,
+   "kaitis_pohitegevus_emtak": "84221",
+   "kaitis_pohitegevus_emtak_nimetus": "Riigikaitse - EMTAK 2008",
+   "kaitis_lisategevus_emtak_loend": null,
+   "kaitis_lisategevus_emtak_nimetus_loend": null,
+   "ets_kohuslane": "Ei",
+   "ets_tegevusala": null,
+   "eprtr_kohuslane": "Ei",
+   "heiteallikas_arv": 0,
+   "kaitis_tootajate_arv": 0,
+   "emaettevote_nimi": null,
+   "emaettevote_riik": null,
+   "snap": "020103b",
+   "kytus_liik": "Vedelkütus",
+   "kytus_kn_kood": "2710 19 64",
+   "kytus_kood": "211B",
+   "soojus_kokku": 0,
+   "soojus_omatarve": 0,
+   "soojus_myyk": 0,
+   "elekter_kokku": 0,
+   "elekter_omatarve": 0,
+   "elekter_myyk": 0,
+   "kytus_kogus": 0,
+   "kytus_yhik": "tonni",
+   "kytus_nimetus_val": "Põlevkiviõli (kerge fraktsioon)"
+  }
+ ]
+}

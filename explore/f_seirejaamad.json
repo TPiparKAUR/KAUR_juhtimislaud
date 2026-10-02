@@ -1,0 +1,1275 @@
+{
+ "table": "f_seirejaamad",
+ "total_rows": 28340,
+ "sample_rows": 2000,
+ "columns": {
+  "id": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2000,
+   "min": -2147090784,
+   "max": 2146749704
+  },
+  "id_text": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2000,
+   "min": "-1004155308",
+   "max": "999725016"
+  },
+  "kood": {
+   "non_null_share": 0.186,
+   "n_distinct_in_sample": 306,
+   "min": "0-20000-0-26046",
+   "max": "Ääsmäe"
+  },
+  "nimi": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 1955,
+   "min": "011-Altküla",
+   "max": "Želtša suudme alal"
+  },
+  "tyyp": {
+   "non_null_share": 0.026,
+   "n_distinct_in_sample": 7,
+   "top_values": [
+    [
+     "PYSI",
+     28
+    ],
+    [
+     "juhukoht",
+     15
+    ],
+    [
+     "Avam_trans",
+     3
+    ],
+    [
+     "Rannikum_trans",
+     2
+    ],
+    [
+     "PYSI_endine",
+     2
+    ],
+    [
+     "Rannikum_trans_pysi",
+     2
+    ],
+    [
+     "NTA_ext",
+     1
+    ]
+   ]
+  },
+  "seirejaam_tyyp_selg": {
+   "non_null_share": 0.026,
+   "n_distinct_in_sample": 7,
+   "top_values": [
+    [
+     "Püsiseirekoht",
+     28
+    ],
+    [
+     "Juhuseirekoht",
+     15
+    ],
+    [
+     "Avamere transekt",
+     3
+    ],
+    [
+     "Rannikumere põhjakoosluste transekt",
+     2
+    ],
+    [
+     "Püsiseirekoht (endine)",
+     2
+    ],
+    [
+     "Rannikumere põhjakoosluste püsiseire transekt",
+     2
+    ],
+    [
+     "Väljapoole Pandivere ja Adevere-Põltsamaa nitraaditundlikku ala jääv võrdluspunkt",
+     1
+    ]
+   ]
+  },
+  "staatus": {
+   "non_null_share": 0.345,
+   "n_distinct_in_sample": 1,
+   "top_values": [
+    [
+     "A",
+     690
+    ]
+   ]
+  },
+  "staatus_selg": {
+   "non_null_share": 0.345,
+   "n_distinct_in_sample": 1,
+   "top_values": [
+    [
+     "Arhiveeritud",
+     690
+    ]
+   ]
+  },
+  "keht_staatus": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 1,
+   "top_values": [
+    [
+     "Kehtiv",
+     2000
+    ]
+   ]
+  },
+  "seisund": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Kasutusel",
+     1310
+    ],
+    [
+     "Peatatud",
+     690
+    ]
+   ]
+  },
+  "seiretyyp": {
+   "non_null_share": 0.203,
+   "n_distinct_in_sample": 48,
+   "min": "BOMBUS",
+   "max": "Vjo-Y"
+  },
+  "seiretyyp_selg": {
+   "non_null_share": 0.201,
+   "n_distinct_in_sample": 47,
+   "min": "Hallhülge sigimisedukuse seire",
+   "max": "Väikejõgede seire: ülevaateseire"
+  },
+  "kkr_kood": {
+   "non_null_share": 0.91,
+   "n_distinct_in_sample": 1820,
+   "min": "SAA6343208",
+   "max": "SJB5495000"
+  },
+  "sj_tase": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "sj",
+     1108
+    ],
+    [
+     "mk",
+     892
+    ]
+   ]
+  },
+  "sj_tase_nimi": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "seirejaam või seireala",
+     1108
+    ],
+    [
+     "mõõtekoht",
+     892
+    ]
+   ]
+  },
+  "kuulub_id": {
+   "non_null_share": 0.447,
+   "n_distinct_in_sample": 485,
+   "min": -2146323170,
+   "max": 2142027474
+  },
+  "asendatud_id": {
+   "non_null_share": 0.004,
+   "n_distinct_in_sample": 8,
+   "min": -2112539142,
+   "max": 1930697712
+  },
+  "on_kitsendus": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2
+  },
+  "merepinnast": {
+   "non_null_share": 0.009,
+   "n_distinct_in_sample": 18,
+   "min": -44,
+   "max": 72.68
+  },
+  "utm_kood": {
+   "non_null_share": 0.047,
+   "n_distinct_in_sample": 86,
+   "min": "EK52+EK62",
+   "max": "NF58"
+  },
+  "pindala": {
+   "non_null_share": 0.017,
+   "n_distinct_in_sample": 30,
+   "min": 0.02,
+   "max": 25000
+  },
+  "ehak_id": {
+   "non_null_share": 0.905,
+   "n_distinct_in_sample": 1059,
+   "min": -2143815778,
+   "max": 2143016380
+  },
+  "ala_id": {
+   "non_null_share": 0.0,
+   "n_distinct_in_sample": 0
+  },
+  "ala_nimi": {
+   "non_null_share": 0.0,
+   "n_distinct_in_sample": 0
+  },
+  "ala_tyyp": {
+   "non_null_share": 0.0,
+   "n_distinct_in_sample": 0
+  },
+  "ala_tyyp_selg": {
+   "non_null_share": 0.0,
+   "n_distinct_in_sample": 0
+  },
+  "ala_kkr_kood": {
+   "non_null_share": 0.0,
+   "n_distinct_in_sample": 0
+  },
+  "ala_staatus": {
+   "non_null_share": 0.0,
+   "n_distinct_in_sample": 0
+  },
+  "lkoht_id": {
+   "non_null_share": 0.003,
+   "n_distinct_in_sample": 6,
+   "min": -2002973952,
+   "max": 1361371733
+  },
+  "lkoht_nimi": {
+   "non_null_share": 0.003,
+   "n_distinct_in_sample": 6,
+   "top_values": [
+    [
+     "Kerissaare",
+     1
+    ],
+    [
+     "Paasvere (Aadumäe) astmelaud",
+     1
+    ],
+    [
+     "Kaukvere PEP",
+     1
+    ],
+    [
+     "Tärivere mägi",
+     1
+    ],
+    [
+     "Jalastu 2",
+     1
+    ],
+    [
+     "Müüri",
+     1
+    ]
+   ]
+  },
+  "lkoht_tyyp": {
+   "non_null_share": 0.003,
+   "n_distinct_in_sample": 1,
+   "top_values": [
+    [
+     "K",
+     6
+    ]
+   ]
+  },
+  "lkoht_tyyp_selg": {
+   "non_null_share": 0.003,
+   "n_distinct_in_sample": 1,
+   "top_values": [
+    [
+     "kaitsealuse liigi leiukoht",
+     6
+    ]
+   ]
+  },
+  "lkoht_kkr_kood": {
+   "non_null_share": 0.003,
+   "n_distinct_in_sample": 6,
+   "top_values": [
+    [
+     "KLO9102396",
+     1
+    ],
+    [
+     "KLO9104277",
+     1
+    ],
+    [
+     "KLO9102018",
+     1
+    ],
+    [
+     "KLO9100954",
+     1
+    ],
+    [
+     "KLO9102031",
+     1
+    ],
+    [
+     "KLO9102009",
+     1
+    ]
+   ]
+  },
+  "tundlik_ala_id": {
+   "non_null_share": 0.001,
+   "n_distinct_in_sample": 1,
+   "min": -1425405501,
+   "max": -1425405501
+  },
+  "tundlik_ala_nimi": {
+   "non_null_share": 0.001,
+   "n_distinct_in_sample": 1,
+   "top_values": [
+    [
+     "Järsi karstijärvik 1",
+     1
+    ]
+   ]
+  },
+  "tundlik_ala_tyyp": {
+   "non_null_share": 0.001,
+   "n_distinct_in_sample": 1,
+   "top_values": [
+    [
+     "KA_JV",
+     1
+    ]
+   ]
+  },
+  "tundlik_ala_tyyp_selg": {
+   "non_null_share": 0.001,
+   "n_distinct_in_sample": 1,
+   "top_values": [
+    [
+     "Karstijärvik",
+     1
+    ]
+   ]
+  },
+  "tundlik_ala_kkr_kood": {
+   "non_null_share": 0.001,
+   "n_distinct_in_sample": 1,
+   "top_values": [
+    [
+     "LTA1000734",
+     1
+    ]
+   ]
+  },
+  "tundlik_ala_keht_staatus": {
+   "non_null_share": 0.001,
+   "n_distinct_in_sample": 1,
+   "top_values": [
+    [
+     "Kehtiv",
+     1
+    ]
+   ]
+  },
+  "veekogu_id": {
+   "non_null_share": 0.245,
+   "n_distinct_in_sample": 289,
+   "min": -2087813252,
+   "max": 2126517571
+  },
+  "veekogu_nimi": {
+   "non_null_share": 0.245,
+   "n_distinct_in_sample": 287,
+   "min": "Aa rand",
+   "max": "Ördi peakraav"
+  },
+  "veekogu_tyyp": {
+   "non_null_share": 0.245,
+   "n_distinct_in_sample": 15,
+   "top_values": [
+    [
+     "12",
+     192
+    ],
+    [
+     "22",
+     65
+    ],
+    [
+     "30",
+     43
+    ],
+    [
+     "11",
+     40
+    ],
+    [
+     "306",
+     34
+    ],
+    [
+     "303",
+     24
+    ],
+    [
+     "300",
+     23
+    ],
+    [
+     "304",
+     18
+    ]
+   ]
+  },
+  "veekogu_tyyp_selg": {
+   "non_null_share": 0.245,
+   "n_distinct_in_sample": 15,
+   "top_values": [
+    [
+     "Jõgi",
+     192
+    ],
+    [
+     "Looduslik järv",
+     65
+    ],
+    [
+     "Meri",
+     43
+    ],
+    [
+     "Oja",
+     40
+    ],
+    [
+     "Lahe osa",
+     34
+    ],
+    [
+     "Rannamadal",
+     24
+    ],
+    [
+     "Avameri",
+     23
+    ],
+    [
+     "Lihtlaht",
+     18
+    ]
+   ]
+  },
+  "veekogu_kkr_kood": {
+   "non_null_share": 0.245,
+   "n_distinct_in_sample": 288,
+   "min": "VEE1000200",
+   "max": "VEE4711700"
+  },
+  "veekogu_keht_staatus": {
+   "non_null_share": 0.245,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Kehtiv",
+     490
+    ],
+    [
+     "Kehtetu",
+     1
+    ]
+   ]
+  },
+  "veekogum_id": {
+   "non_null_share": 0.22,
+   "n_distinct_in_sample": 200,
+   "min": -2144227904,
+   "max": 2128327904
+  },
+  "veekogum_nimi": {
+   "non_null_share": 0.217,
+   "n_distinct_in_sample": 199,
+   "min": "Aavoja",
+   "max": "Ördi"
+  },
+  "veekogum_tyyp": {
+   "non_null_share": 0.093,
+   "n_distinct_in_sample": 5,
+   "top_values": [
+    [
+     "MR",
+     124
+    ],
+    [
+     "M_MSRD",
+     25
+    ],
+    [
+     "M_HELCOM",
+     25
+    ],
+    [
+     "MSP",
+     11
+    ],
+    [
+     "VVP",
+     1
+    ]
+   ]
+  },
+  "veekogum_tyyp_selg": {
+   "non_null_share": 0.093,
+   "n_distinct_in_sample": 5,
+   "top_values": [
+    [
+     "Rannikuveekogum",
+     124
+    ],
+    [
+     "Mereala MSRD hindamisüksus",
+     25
+    ],
+    [
+     "Mereala HELCOMi hindamisüksus",
+     25
+    ],
+    [
+     "Maismaa seisuveekogum (piiriülene)",
+     11
+    ],
+    [
+     "Vooluveekogum (piiriülene)",
+     1
+    ]
+   ]
+  },
+  "veekogum_keht_staatus": {
+   "non_null_share": 0.22,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Kehtiv",
+     433
+    ],
+    [
+     "Kehtetu",
+     7
+    ]
+   ]
+  },
+  "suudmest": {
+   "non_null_share": 0.006,
+   "n_distinct_in_sample": 13,
+   "min": 0,
+   "max": 42
+  },
+  "puurauk_id": {
+   "non_null_share": 0.118,
+   "n_distinct_in_sample": 236,
+   "min": -2145394740,
+   "max": 2144039462
+  },
+  "puurauk_nimi": {
+   "non_null_share": 0.007,
+   "n_distinct_in_sample": 14,
+   "top_values": [
+    [
+     "Adavere piirkonna kontrollseire kaev nr 1400 ",
+     1
+    ],
+    [
+     "PA79",
+     1
+    ],
+    [
+     "PAA1013: Valgma allikas",
+     1
+    ],
+    [
+     "Vaivara ohtlike jäätmete käitluskeskus: SPA2",
+     1
+    ],
+    [
+     "Lüganuse tee 36 puurkaev",
+     1
+    ],
+    [
+     "Lüganuse tee 3 salvkaev",
+     1
+    ],
+    [
+     "3",
+     1
+    ],
+    [
+     "PA78",
+     1
+    ]
+   ]
+  },
+  "puurauk_kkr_kood": {
+   "non_null_share": 0.078,
+   "n_distinct_in_sample": 156,
+   "min": "PRK0000214",
+   "max": "PRK0063134"
+  },
+  "puurauk_tyyp": {
+   "non_null_share": 0.118,
+   "n_distinct_in_sample": 8,
+   "top_values": [
+    [
+     "07",
+     89
+    ],
+    [
+     "13",
+     75
+    ],
+    [
+     "04",
+     59
+    ],
+    [
+     "02",
+     5
+    ],
+    [
+     "12",
+     4
+    ],
+    [
+     "01",
+     2
+    ],
+    [
+     "06",
+     1
+    ],
+    [
+     "03",
+     1
+    ]
+   ]
+  },
+  "puurauk_tyyp_selg": {
+   "non_null_share": 0.118,
+   "n_distinct_in_sample": 8,
+   "top_values": [
+    [
+     "hüdrogeoloogilise uuringu puurkaev",
+     89
+    ],
+    [
+     "riikliku keskkonnaseire kaev",
+     75
+    ],
+    [
+     "puurkaev olmevee saamiseks",
+     59
+    ],
+    [
+     "ühisveevärgi puurkaev olmevee saamiseks",
+     5
+    ],
+    [
+     "kaevanduse puurkaev",
+     4
+    ],
+    [
+     "salvkaev",
+     2
+    ],
+    [
+     "hüdrogeoloogilise uuringu puurauk",
+     1
+    ],
+    [
+     "ühisveevärgi puurkaev olmevee saamiseks (O-Cm, Cm-V põhjaveekihist)",
+     1
+    ]
+   ]
+  },
+  "puurauk_keht_staatus": {
+   "non_null_share": 0.078,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Kehtiv",
+     136
+    ],
+    [
+     "Kehtetu",
+     20
+    ]
+   ]
+  },
+  "saar_id": {
+   "non_null_share": 0.024,
+   "n_distinct_in_sample": 46,
+   "min": -2102753708,
+   "max": 2100833716
+  },
+  "saar_nimi": {
+   "non_null_share": 0.024,
+   "n_distinct_in_sample": 33,
+   "top_values": [
+    [
+     "nimetu",
+     14
+    ],
+    [
+     "Saaremaa",
+     2
+    ],
+    [
+     "Tarjamaa",
+     1
+    ],
+    [
+     "Naistekivimaa",
+     1
+    ],
+    [
+     "Väike Ulkkari",
+     1
+    ],
+    [
+     "Sääri",
+     1
+    ],
+    [
+     "Vormsi saar / Ormsö",
+     1
+    ],
+    [
+     "Pauvanasu",
+     1
+    ]
+   ]
+  },
+  "saar_tyyp": {
+   "non_null_share": 0.0,
+   "n_distinct_in_sample": 0
+  },
+  "saar_tyyp_selg": {
+   "non_null_share": 0.0,
+   "n_distinct_in_sample": 0
+  },
+  "saar_kkr_kood": {
+   "non_null_share": 0.024,
+   "n_distinct_in_sample": 46,
+   "min": "SAA0000001",
+   "max": "SAA0002651"
+  },
+  "saar_keht_staatus": {
+   "non_null_share": 0.024,
+   "n_distinct_in_sample": 1,
+   "top_values": [
+    [
+     "Kehtiv",
+     47
+    ]
+   ]
+  },
+  "jahiala_id": {
+   "non_null_share": 0.015,
+   "n_distinct_in_sample": 28,
+   "min": -2118975496,
+   "max": 1896333285
+  },
+  "jahiala_nimi": {
+   "non_null_share": 0.015,
+   "n_distinct_in_sample": 28,
+   "top_values": [
+    [
+     "Puka",
+     2
+    ],
+    [
+     "Riidaja",
+     1
+    ],
+    [
+     "Kõo",
+     1
+    ],
+    [
+     "Mõniste",
+     1
+    ],
+    [
+     "Heimtali",
+     1
+    ],
+    [
+     "Koeru",
+     1
+    ],
+    [
+     "Peipsiääre",
+     1
+    ],
+    [
+     "Imavere",
+     1
+    ]
+   ]
+  },
+  "jahiala_tyyp": {
+   "non_null_share": 0.015,
+   "n_distinct_in_sample": 1,
+   "top_values": [
+    [
+     "2",
+     29
+    ]
+   ]
+  },
+  "jahiala_tyyp_selg": {
+   "non_null_share": 0.015,
+   "n_distinct_in_sample": 1,
+   "top_values": [
+    [
+     "Jahipiirkond",
+     29
+    ]
+   ]
+  },
+  "jahiala_kkr_kood": {
+   "non_null_share": 0.015,
+   "n_distinct_in_sample": 28,
+   "top_values": [
+    [
+     "JAH1000034",
+     2
+    ],
+    [
+     "JAH1000195",
+     1
+    ],
+    [
+     "JAH1000145",
+     1
+    ],
+    [
+     "JAH1000183",
+     1
+    ],
+    [
+     "JAH1000173",
+     1
+    ],
+    [
+     "JAH1000059",
+     1
+    ],
+    [
+     "JAH1000089",
+     1
+    ],
+    [
+     "JAH1000053",
+     1
+    ]
+   ]
+  },
+  "jahiala_keht_staatus": {
+   "non_null_share": 0.015,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Kehtiv",
+     28
+    ],
+    [
+     "Endine",
+     1
+    ]
+   ]
+  },
+  "tx_asukoht": {
+   "non_null_share": 0.221,
+   "n_distinct_in_sample": 87,
+   "min": "32 püügiruut ka väljaspool Eesti mereala",
+   "max": "raba"
+  },
+  "tx_markus": {
+   "non_null_share": 0.574,
+   "n_distinct_in_sample": 397,
+   "min": ".",
+   "max": "Ääsmäe (seirekoha tekstiline nimetus). S"
+  },
+  "tx_arhiiv": {
+   "non_null_share": 0.227,
+   "n_distinct_in_sample": 40,
+   "top_values": [
+    [
+     "arhiveeritud mõõtekoht, sest tegemist eelmise seirekorra mõõtekohaga",
+     118
+    ],
+    [
+     "arhiveeritud, kuna seirekohtade loogika muutus, edaspidi sisestatakse leiukoha koodiga",
+     94
+    ],
+    [
+     "seirekoht arhiveeritakse, sest ei ole aktiivses seires/uuringus kasutusel",
+     92
+    ],
+    [
+     "arhiveeritud, kuna seirekohtade loogika muutus, edaspidi sisestatakse inventeeritud elupaiga koodiga",
+     56
+    ],
+    [
+     "seirekoht arhiveeritakse, sest puudub kehtiva programmi seos ja seirekohad pole enam aktiivses seires",
+     14
+    ],
+    [
+     "Kirje arhiveeritakse, sest selle kirjega ei ole KESEsse andmesisestust jaan 2026 seisuga toimunud ning hetkel ei ole enam jaam aktiivses seires.",
+     11
+    ],
+    [
+     "seirekoht arhiveeriti, sest seda kasutati vana nimega \"Haruldaste ja ohustatud taimekoosluste seire\" seiretöödes, aga enam selle loogikaga seiretöid ei tellita",
+     10
+    ],
+    [
+     "Jaam ei ole enam aktiivses seires.",
+     8
+    ]
+   ]
+  },
+  "alg_kpv": {
+   "non_null_share": 0.097,
+   "n_distinct_in_sample": 83,
+   "min": "1866-09-01T00:00:00",
+   "max": "2020-09-23T00:00:00"
+  },
+  "lopp_kpv": {
+   "non_null_share": 0.005,
+   "n_distinct_in_sample": 9,
+   "top_values": [
+    [
+     "2012-11-14T16:49:08",
+     2
+    ],
+    [
+     "1977-06-30T00:00:00",
+     1
+    ],
+    [
+     "1953-06-30T00:00:00",
+     1
+    ],
+    [
+     "2018-03-01T00:00:00",
+     1
+    ],
+    [
+     "1989-12-31T00:00:00",
+     1
+    ],
+    [
+     "1954-12-31T00:00:00",
+     1
+    ],
+    [
+     "1987-01-01T00:00:00",
+     1
+    ],
+    [
+     "1997-12-31T00:00:00",
+     1
+    ]
+   ]
+  },
+  "aastad": {
+   "non_null_share": 0.667,
+   "n_distinct_in_sample": 512,
+   "min": "1900, 2009, 2010, 2011, 2012, 2013, 2014",
+   "max": "2025"
+  },
+  "kesk_x": {
+   "non_null_share": 0.848,
+   "n_distinct_in_sample": 1677,
+   "min": 319526.4952380845,
+   "max": 742798
+  },
+  "kesk_y": {
+   "non_null_share": 0.848,
+   "n_distinct_in_sample": 1676,
+   "min": 6380100.220661671,
+   "max": 6721586
+  },
+  "muut_aeg": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 1855,
+   "min": "2010-09-28T08:35:27",
+   "max": "2026-09-28T16:01:40.671954"
+  },
+  "ehak_tekst": {
+   "non_null_share": 0.971,
+   "n_distinct_in_sample": 1237,
+   "min": "Harju maakond, Anija vald, Kehra linn",
+   "max": "Võru maakond, Võru vald, Võrumõisa küla"
+  },
+  "ehak_kood1": {
+   "non_null_share": 0.971,
+   "n_distinct_in_sample": 38,
+   "top_values": [
+    [
+     "0068",
+     250
+    ],
+    [
+     "0037",
+     249
+    ],
+    [
+     "0060",
+     178
+    ],
+    [
+     "0074",
+     178
+    ],
+    [
+     "0045",
+     164
+    ],
+    [
+     "0050",
+     132
+    ],
+    [
+     "0079",
+     129
+    ],
+    [
+     "0056",
+     118
+    ]
+   ]
+  },
+  "ehak_kood2": {
+   "non_null_share": 0.971,
+   "n_distinct_in_sample": 150,
+   "min": "0130",
+   "max": "0928"
+  },
+  "ehak_kood3": {
+   "non_null_share": 0.971,
+   "n_distinct_in_sample": 1237,
+   "min": "0120",
+   "max": "9838"
+  },
+  "sr_programm_nimi": {
+   "non_null_share": 0.997,
+   "n_distinct_in_sample": 217,
+   "min": "Apteegikaani seire",
+   "max": "Ööliblikate koosluste seire"
+  },
+  "on_regobj": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2
+  },
+  "on_salastatud": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2
+  }
+ },
+ "head": [
+  {
+   "id": -120050659,
+   "id_text": "-120050659",
+   "kood": null,
+   "nimi": "Rooma: trass a1 (2008)",
+   "tyyp": null,
+   "seirejaam_tyyp_selg": null,
+   "staatus": "A",
+   "staatus_selg": "Arhiveeritud",
+   "keht_staatus": "Kehtiv",
+   "seisund": "Peatatud",
+   "seiretyyp": null,
+   "seiretyyp_selg": null,
+   "kkr_kood": "SJA3734005",
+   "sj_tase": "mk",
+   "sj_tase_nimi": "mõõtekoht",
+   "kuulub_id": 1186053236,
+   "asendatud_id": null,
+   "on_kitsendus": false,
+   "merepinnast": null,
+   "utm_kood": null,
+   "pindala": null,
+   "ehak_id": -1682585136,
+   "ala_id": null,
+   "ala_nimi": null,
+   "ala_tyyp": null,
+   "ala_tyyp_selg": null,
+   "ala_kkr_kood": null,
+   "ala_staatus": null,
+   "lkoht_id": null,
+   "lkoht_nimi": null,
+   "lkoht_tyyp": null,
+   "lkoht_tyyp_selg": null,
+   "lkoht_kkr_kood": null,
+   "tundlik_ala_id": null,
+   "tundlik_ala_nimi": null,
+   "tundlik_ala_tyyp": null,
+   "tundlik_ala_tyyp_selg": null,
+   "tundlik_ala_kkr_kood": null,
+   "tundlik_ala_keht_staatus": null,
+   "veekogu_id": null,
+   "veekogu_nimi": null,
+   "veekogu_tyyp": null,
+   "veekogu_tyyp_selg": null,
+   "veekogu_kkr_kood": null,
+   "veekogu_keht_staatus": null,
+   "veekogum_id": null,
+   "veekogum_nimi": null,
+   "veekogum_tyyp": null,
+   "veekogum_tyyp_selg": null,
+   "veekogum_keht_staatus": null,
+   "suudmest": null,
+   "puurauk_id": null,
+   "puurauk_nimi": null,
+   "puurauk_kkr_kood": null,
+   "puurauk_tyyp": null,
+   "puurauk_tyyp_selg": null,
+   "puurauk_keht_staatus": null,
+   "saar_id": null,
+   "saar_nimi": null,
+   "saar_tyyp": null,
+   "saar_tyyp_selg": null,
+   "saar_kkr_kood": null,
+   "saar_keht_staatus": null,
+   "jahiala_id": null,
+   "jahiala_nimi": null,
+   "jahiala_tyyp": null,
+   "jahiala_tyyp_selg": null,
+   "jahiala_kkr_kood": null,
+   "jahiala_keht_staatus": null,
+   "tx_asukoht": "Põld",
+   "tx_markus": "Seirejaam ja koordinaadid 2008. a. mullaseire aruandest.\n",
+   "tx_arhiiv": "arhiveeritud mõõtekoht, sest tegemist eelmise seirekorra mõõtekohaga",
+   "alg_kpv": "2008-10-10T00:00:00",
+   "lopp_kpv": null,
+   "aastad": null,
+   "kesk_x": 650157.804,
+   "kesk_y": 6473415.987,
+   "muut_aeg": "2024-02-07T16:48:54.805024",
+   "ehak_tekst": "Tartu maakond, Tartu linn, Tüki küla",
+   "ehak_kood1": "0079",
+   "ehak_kood2": "0793",
+   "ehak_kood3": "8590",
+   "sr_programm_nimi": "Põllumuldade seire",
+   "on_regobj": true,
+   "on_salastatud": false
+  },
+  {
+   "id": -1263584616,
+   "id_text": "-1263584616",
+   "kood": "44",
+   "nimi": "Kaagvere 44",
+   "tyyp": null,
+   "seirejaam_tyyp_selg": null,
+   "staatus": null,
+   "staatus_selg": null,
+   "keht_staatus": "Kehtiv",
+   "seisund": "Kasutusel",
+   "seiretyyp": null,
+   "seiretyyp_selg": null,
+   "kkr_kood": "SJA6412044",
+   "sj_tase": "mk",
+   "sj_tase_nimi": "mõõtekoht",
+   "kuulub_id": 1333799770,
+   "asendatud_id": null,
+   "on_kitsendus": false,
+   "merepinnast": null,
+   "utm_kood": null,
+   "pindala": null,
+   "ehak_id": -1317157563,
+   "ala_id": null,
+   "ala_nimi": null,
+   "ala_tyyp": null,
+   "ala_tyyp_selg": null,
+   "ala_kkr_kood": null,
+   "ala_staatus": null,
+   "lkoht_id": null,
+   "lkoht_nimi": null,
+   "lkoht_tyyp": null,
+   "lkoht_tyyp_selg": null,
+   "lkoht_kkr_kood": null,
+   "tundlik_ala_id": null,
+   "tundlik_ala_nimi": null,
+   "tundlik_ala_tyyp": null,
+   "tundlik_ala_tyyp_selg": null,
+   "tundlik_ala_kkr_kood": null,
+   "tundlik_ala_keht_staatus": null,
+   "veekogu_id": null,
+   "veekogu_nimi": null,
+   "veekogu_tyyp": null,
+   "veekogu_tyyp_selg": null,
+   "veekogu_kkr_kood": null,
+   "veekogu_keht_staatus": null,
+   "veekogum_id": null,
+   "veekogum_nimi": null,
+   "veekogum_tyyp": null,
+   "veekogum_tyyp_selg": null,
+   "veekogum_keht_staatus": null,
+   "suudmest": null,
+   "puurauk_id": null,
+   "puurauk_nimi": null,
+   "puurauk_kkr_kood": null,
+   "puurauk_tyyp": null,
+   "puurauk_tyyp_selg": null,
+   "puurauk_keht_staatus": null,
+   "saar_id": null,
+   "saar_nimi": null,
+   "saar_tyyp": null,
+   "saar_tyyp_selg": null,
+   "saar_kkr_kood": null,
+   "saar_keht_staatus": null,
+   "jahiala_id": null,
+   "jahiala_nimi": null,
+   "jahiala_tyyp": null,
+   "jahiala_tyyp_selg": null,
+   "jahiala_kkr_kood": null,
+   "jahiala_keht_staatus": null,
+   "tx_asukoht": null,
+   "tx_markus": null,
+   "tx_arhiiv": null,
+   "alg_kpv": null,
+   "lopp_kpv": null,
+   "aastad": null,
+   "kesk_x": 655676,
+   "kesk_y": 6431993,
+   "muut_aeg": "2021-03-12T20:14:56.263858",
+   "ehak_tekst": "Põlva maakond, Kanepi vald, Kaagvere küla",
+   "ehak_kood1": "0064",
+   "ehak_kood2": "0284",
+   "ehak_kood3": "2392",
+   "sr_programm_nimi": "Rähniliste koosluste seire",
+   "on_regobj": true,
+   "on_salastatud": false
+  }
+ ]
+}

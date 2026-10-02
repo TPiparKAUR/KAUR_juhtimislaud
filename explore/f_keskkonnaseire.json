@@ -1,0 +1,2653 @@
+{
+ "table": "f_keskkonnaseire",
+ "total_rows": 10010081,
+ "sample_rows": 2000,
+ "columns": {
+  "seiretoo_seotud_programmi_kood_i": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "PR0001",
+     1775
+    ],
+    [
+     "PR0001, PR0078",
+     130
+    ],
+    [
+     "PR0078",
+     95
+    ]
+   ]
+  },
+  "seiretoo_seotud_programmi_nimi_i": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "Riiklik keskkonnaseire programm",
+     1775
+    ],
+    [
+     "Keskkonnaseire uuringud, projektid, Riiklik keskkonnaseire programm",
+     130
+    ],
+    [
+     "Keskkonnaseire uuringud, projektid",
+     95
+    ]
+   ]
+  },
+  "seiretoo_seotud_programmi_kood_ii": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 9,
+   "top_values": [
+    [
+     "PR0004",
+     1342
+    ],
+    [
+     "PR0007",
+     268
+    ],
+    [
+     "PR0009",
+     150
+    ],
+    [
+     "PR0006, PR0017",
+     130
+    ],
+    [
+     "PR0016",
+     77
+    ],
+    [
+     "PR0080",
+     18
+    ],
+    [
+     "PR0006",
+     9
+    ],
+    [
+     "PR0003",
+     4
+    ]
+   ]
+  },
+  "seiretoo_seotud_programmi_nimi_ii": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 9,
+   "top_values": [
+    [
+     "Põhjavee seire",
+     1342
+    ],
+    [
+     "Siseveekogude seire",
+     268
+    ],
+    [
+     "Elustiku mitmekesisuse seire",
+     150
+    ],
+    [
+     "Mereseire, Mereuuringud",
+     130
+    ],
+    [
+     "Põhjavee uuringud",
+     77
+    ],
+    [
+     "Reostusobjektide uuringud",
+     18
+    ],
+    [
+     "Mereseire",
+     9
+    ],
+    [
+     "Metsaseire",
+     4
+    ]
+   ]
+  },
+  "seiretoo_seotud_programmi_kood_iii": {
+   "non_null_share": 0.962,
+   "n_distinct_in_sample": 13,
+   "top_values": [
+    [
+     "PR0047",
+     688
+    ],
+    [
+     "PR0076",
+     654
+    ],
+    [
+     "PR0061",
+     189
+    ],
+    [
+     "PR0144",
+     145
+    ],
+    [
+     "PR0052",
+     139
+    ],
+    [
+     "PR0051",
+     65
+    ],
+    [
+     "PR0091",
+     18
+    ],
+    [
+     "PR0022",
+     14
+    ]
+   ]
+  },
+  "seiretoo_seotud_programmi_nimi_iii": {
+   "non_null_share": 0.962,
+   "n_distinct_in_sample": 13,
+   "top_values": [
+    [
+     "Põhjaveekogumite seire",
+     688
+    ],
+    [
+     "Nitraaditundliku ala põhjavee seire",
+     654
+    ],
+    [
+     "Väikejärvede seire",
+     189
+    ],
+    [
+     "Loomakoosluste seire",
+     145
+    ],
+    [
+     "Avamere seire",
+     139
+    ],
+    [
+     "Jõgede seire",
+     65
+    ],
+    [
+     "Vaivara ohtlike jäätmete käitluskeskuse seire",
+     18
+    ],
+    [
+     "Peipsi järve seire",
+     14
+    ]
+   ]
+  },
+  "seiretoo_seotud_programmi_kood_iv": {
+   "non_null_share": 0.616,
+   "n_distinct_in_sample": 12,
+   "top_values": [
+    [
+     "PR0127",
+     633
+    ],
+    [
+     "PR0139",
+     189
+    ],
+    [
+     "PR0098, PR0133, PR0135",
+     139
+    ],
+    [
+     "PR0065",
+     71
+    ],
+    [
+     "PR0042",
+     69
+    ],
+    [
+     "PR0142",
+     64
+    ],
+    [
+     "PR0128",
+     55
+    ],
+    [
+     "PR0062, PR0175",
+     5
+    ]
+   ]
+  },
+  "seiretoo_seotud_programmi_nimi_iv": {
+   "non_null_share": 0.616,
+   "n_distinct_in_sample": 12,
+   "top_values": [
+    [
+     "Põhjaveekogumite keemiline seire",
+     633
+    ],
+    [
+     "Väikejärvede hüdrobioloogiline seire",
+     189
+    ],
+    [
+     "Avamere hüdrobioloogiline seire, Avamere hüdrokeemiline seire, Ferrybox seire",
+     139
+    ],
+    [
+     "Haudelinnustiku punktloendused",
+     71
+    ],
+    [
+     "Talilinnuloendus",
+     69
+    ],
+    [
+     "Jõgede hüdrobioloogiline seire",
+     64
+    ],
+    [
+     "Põhjaveekogumite koguseline seire",
+     55
+    ],
+    [
+     "Maismaalimuste koosluste seire, Pisitigude liigiseire",
+     5
+    ]
+   ]
+  },
+  "seiretoo_vastutav_partner": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 13,
+   "top_values": [
+    [
+     "Eesti Geoloogiakeskus OÜ",
+     633
+    ],
+    [
+     "AS Maves",
+     372
+    ],
+    [
+     "Eesti Keskkonnauuringute Keskus OÜ",
+     359
+    ],
+    [
+     "EMÜ Põllumajandus- ja keskkonnainstituut",
+     253
+    ],
+    [
+     "Eesti Ornitoloogiaühing",
+     140
+    ],
+    [
+     "TÜ Eesti Mereinstituut",
+     139
+    ],
+    [
+     "TTÜ Geoloogia Instituut",
+     67
+    ],
+    [
+     "Teadmata organisatsioon",
+     23
+    ]
+   ]
+  },
+  "seiretoo_kood": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 42,
+   "min": "ST00000047",
+   "max": "ST00003661"
+  },
+  "seiretoo_nimetus": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 42,
+   "min": "Avamere seire 2013. a.",
+   "max": "Väikejärvede hüdrobioloogiline seire 201"
+  },
+  "seiretoo_staatus": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "ENDED",
+     1988
+    ],
+    [
+     "CORRECT",
+     12
+    ]
+   ]
+  },
+  "seiretoo_staatus_selg": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Lõpetatud",
+     1988
+    ],
+    [
+     "Täiendamisel",
+     12
+    ]
+   ]
+  },
+  "seiretoo_liik": {
+   "non_null_share": 0.819,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "10",
+     888
+    ],
+    [
+     "20",
+     731
+    ],
+    [
+     "30",
+     18
+    ]
+   ]
+  },
+  "seiretoo_liik_selg": {
+   "non_null_share": 0.819,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "Ülevaateseire",
+     888
+    ],
+    [
+     "Operatiivseire",
+     731
+    ],
+    [
+     "Uurimuslik seire",
+     18
+    ]
+   ]
+  },
+  "seiretoo_taitmise_viis": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "CONTRACT",
+     1923
+    ],
+    [
+     "PROJECT",
+     77
+    ]
+   ]
+  },
+  "seiretoo_algusaasta": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 25,
+   "min": 1949,
+   "max": 2025
+  },
+  "seiretoo_loppaasta": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 25,
+   "min": 1957,
+   "max": 2025
+  },
+  "naitaja_grupp": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 9,
+   "top_values": [
+    [
+     "FYKE_V",
+     1387
+    ],
+    [
+     "SUSE",
+     253
+    ],
+    [
+     "Biota",
+     149
+    ],
+    [
+     "OA_V",
+     106
+    ],
+    [
+     "HYMO",
+     58
+    ],
+    [
+     "FYPLA",
+     38
+    ],
+    [
+     "FYKE_õ",
+     4
+    ],
+    [
+     "Puistu",
+     4
+    ]
+   ]
+  },
+  "naitaja_grupp_selg": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 9,
+   "top_values": [
+    [
+     "Füüsikalis-keemilised näitajad vees",
+     1387
+    ],
+    [
+     "Suurselgrootud",
+     253
+    ],
+    [
+     "Elustik",
+     149
+    ],
+    [
+     "Ohtlikud ained vees",
+     106
+    ],
+    [
+     "Hüdromorfoloogia ja vee koguselised näitajad",
+     58
+    ],
+    [
+     "Fütoplankton",
+     38
+    ],
+    [
+     "Füüsikalis-keemilised näitajad välisõhus",
+     4
+    ],
+    [
+     "Puistu ja puude näitajad",
+     4
+    ]
+   ]
+  },
+  "naitaja_alamgrupp": {
+   "non_null_share": 0.044,
+   "n_distinct_in_sample": 9,
+   "top_values": [
+    [
+     "PEST",
+     42
+    ],
+    [
+     "PAH",
+     15
+    ],
+    [
+     "MET",
+     11
+    ],
+    [
+     "VOC",
+     7
+    ],
+    [
+     "PCB",
+     7
+    ],
+    [
+     "PHTHA",
+     3
+    ],
+    [
+     "PBDE",
+     2
+    ],
+    [
+     "1_a PHL",
+     1
+    ]
+   ]
+  },
+  "naitaja_alamgrupp_selg": {
+   "non_null_share": 0.044,
+   "n_distinct_in_sample": 9,
+   "top_values": [
+    [
+     "Pestitsiidid",
+     42
+    ],
+    [
+     "PAH",
+     15
+    ],
+    [
+     "Metallid",
+     11
+    ],
+    [
+     "Lenduvad orgaanilised ühendid (VOC)",
+     7
+    ],
+    [
+     "PCB",
+     7
+    ],
+    [
+     "Ftalaadid",
+     3
+    ],
+    [
+     "PBDE",
+     2
+    ],
+    [
+     "Ühealuselised fenoolid",
+     1
+    ]
+   ]
+  },
+  "naitaja_kood": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 144,
+   "min": "N100000079",
+   "max": "N100006617"
+  },
+  "naitaja_nimetus": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 136,
+   "min": "1,2,3-triklorobenseen",
+   "max": "Üldraud"
+  },
+  "naitaja_lyhend": {
+   "non_null_share": 0.568,
+   "n_distinct_in_sample": 50,
+   "min": "Al",
+   "max": "tyhjade kodade arv/5 ruudus"
+  },
+  "naitaja_cas_nr": {
+   "non_null_share": 0.604,
+   "n_distinct_in_sample": 74,
+   "min": "1024-57-3",
+   "max": "959-98-8"
+  },
+  "naitaja_einecs_kood": {
+   "non_null_share": 0.198,
+   "n_distinct_in_sample": 52,
+   "min": "200-024-3",
+   "max": "604-622-9"
+  },
+  "naitaja_proovimaatriks": {
+   "non_null_share": 0.895,
+   "n_distinct_in_sample": 6,
+   "top_values": [
+    [
+     "120",
+     1364
+    ],
+    [
+     "240",
+     253
+    ],
+    [
+     "70",
+     139
+    ],
+    [
+     "100",
+     29
+    ],
+    [
+     "220",
+     4
+    ],
+    [
+     "150",
+     2
+    ]
+   ]
+  },
+  "naitaja_proovimaatriks_nimi": {
+   "non_null_share": 0.895,
+   "n_distinct_in_sample": 6,
+   "top_values": [
+    [
+     "Põhjavesi",
+     1364
+    ],
+    [
+     "Põhjakooslus",
+     253
+    ],
+    [
+     "Merevesi",
+     139
+    ],
+    [
+     "Pinnavesi",
+     29
+    ],
+    [
+     "Välisõhk",
+     4
+    ],
+    [
+     "Sademete vesi",
+     2
+    ]
+   ]
+  },
+  "seotud_2_taseme_naitajate_koodid": {
+   "non_null_share": 0.764,
+   "n_distinct_in_sample": 102,
+   "min": "N2000106",
+   "max": "N2002413 # N2002414"
+  },
+  "vaartus_staatus": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 1,
+   "top_values": [
+    [
+     "VALID",
+     2000
+    ]
+   ]
+  },
+  "vaartus_arv_moodetud": {
+   "non_null_share": 0.98,
+   "n_distinct_in_sample": 798,
+   "min": -320,
+   "max": 31710
+  },
+  "vaartus_erimark": {
+   "non_null_share": 0.103,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     " <",
+     174
+    ],
+    [
+     "JAH/EI",
+     20
+    ],
+    [
+     " >",
+     12
+    ]
+   ]
+  },
+  "naitaja_abr_unit": {
+   "non_null_share": 0.953,
+   "n_distinct_in_sample": 27,
+   "top_values": [
+    [
+     "mg/l",
+     1047
+    ],
+    [
+     "is",
+     262
+    ],
+    [
+     "µS/cm",
+     82
+    ],
+    [
+     "µg/l",
+     78
+    ],
+    [
+     "paari",
+     71
+    ],
+    [
+     "°C",
+     63
+    ],
+    [
+     "m",
+     59
+    ],
+    [
+     "%",
+     49
+    ]
+   ]
+  },
+  "naitaja_abr_unit_selg": {
+   "non_null_share": 0.953,
+   "n_distinct_in_sample": 27,
+   "top_values": [
+    [
+     "Milligrammi liitri kohta",
+     1047
+    ],
+    [
+     "Isend",
+     262
+    ],
+    [
+     "Mikrosiimensit sentimeetri kohta",
+     82
+    ],
+    [
+     "Mikrogrammi liitri kohta",
+     78
+    ],
+    [
+     "Paari",
+     71
+    ],
+    [
+     "Kraadi Celsiuse järgi",
+     63
+    ],
+    [
+     "Meeter",
+     59
+    ],
+    [
+     "Protsent",
+     49
+    ]
+   ]
+  },
+  "vaartus_muu": {
+   "non_null_share": 0.021,
+   "n_distinct_in_sample": 10,
+   "top_values": [
+    [
+     "JAH",
+     20
+    ],
+    [
+     "ei ole",
+     8
+    ],
+    [
+     "oranž hägu",
+     4
+    ],
+    [
+     "kollane hägu",
+     3
+    ],
+    [
+     "kollane sade",
+     1
+    ],
+    [
+     ">15-20%",
+     1
+    ],
+    [
+     "Võra neli külge märkimisväärselt varjutatud",
+     1
+    ],
+    [
+     "tuulevaikne",
+     1
+    ]
+   ]
+  },
+  "vaartus_muu_tapsustus": {
+   "non_null_share": 0.0,
+   "n_distinct_in_sample": 0
+  },
+  "vaartus_tapsustus_extra_arv": {
+   "non_null_share": 0.0,
+   "n_distinct_in_sample": 0
+  },
+  "vaartus_tapsustus_extra_tekst": {
+   "non_null_share": 0.0,
+   "n_distinct_in_sample": 0
+  },
+  "vaartus_maaramistapsus": {
+   "non_null_share": 0.0,
+   "n_distinct_in_sample": 0
+  },
+  "vaartus_mootmata": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 1
+  },
+  "vaartus_meetod_tapsustus": {
+   "non_null_share": 0.444,
+   "n_distinct_in_sample": 15,
+   "top_values": [
+    [
+     "Väärtus imporditud EELISEst, meetod teadmata",
+     632
+    ],
+    [
+     "Kuresoo 1991, Nellis 2010",
+     71
+    ],
+    [
+     "transektloendus",
+     69
+    ],
+    [
+     "Väärtus imporditud EELISEst, meetod teadmata. Standard: EVS-EN ISO 10304-1",
+     35
+    ],
+    [
+     "Väärtus imporditud EELISEst, meetod teadmata. Standard: ISO 10304",
+     26
+    ],
+    [
+     "Väärtus imporditud EELISEst, meetod teadmata. Standard: EVS-EN ISO 13395",
+     16
+    ],
+    [
+     "Väärtus imporditud EELISEst, meetod teadmata. Standard: EVS-EN ISO 11732",
+     11
+    ],
+    [
+     "Väärtus imporditud EELISEst, meetod teadmata. Standard: EVS-EN 27888",
+     11
+    ]
+   ]
+  },
+  "vaartus_muutmise_kpv": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 19,
+   "top_values": [
+    [
+     "2017-07-13",
+     672
+    ],
+    [
+     "2016-12-12",
+     264
+    ],
+    [
+     "2016-12-13",
+     221
+    ],
+    [
+     "2016-03-02",
+     189
+    ],
+    [
+     "2016-12-09",
+     166
+    ],
+    [
+     "2023-03-23",
+     130
+    ],
+    [
+     "2017-07-14",
+     128
+    ],
+    [
+     "2016-12-16",
+     71
+    ]
+   ]
+  },
+  "vaartus_maaramispiir": {
+   "non_null_share": 0.001,
+   "n_distinct_in_sample": 1,
+   "min": 0.0003,
+   "max": 0.0003
+  },
+  "proovi_vaatluse_kood": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 1565,
+   "min": "P0000014369",
+   "max": "xxxx"
+  },
+  "seireaeg_algus": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 569,
+   "min": "1950-09-28T09:10:00",
+   "max": "2025-08-06T09:15:00"
+  },
+  "seireaeg_lopp": {
+   "non_null_share": 0.071,
+   "n_distinct_in_sample": 60,
+   "min": "2010-12-24T00:00:00",
+   "max": "2020-11-27T00:00:00"
+  },
+  "seireaeg_tapsustus": {
+   "non_null_share": 0.0,
+   "n_distinct_in_sample": 0
+  },
+  "proov_vaatlus_koordx": {
+   "non_null_share": 0.966,
+   "n_distinct_in_sample": 666,
+   "min": 6386105.02,
+   "max": 99999999.99
+  },
+  "proov_vaatlus_koordy": {
+   "non_null_share": 0.966,
+   "n_distinct_in_sample": 668,
+   "min": 237227.228,
+   "max": 99999999.99
+  },
+  "proovi_vaatluse_doknr": {
+   "non_null_share": 0.08,
+   "n_distinct_in_sample": 28,
+   "top_values": [
+    [
+     "Proov 4",
+     18
+    ],
+    [
+     "Proov 2",
+     17
+    ],
+    [
+     "Proov nr 2",
+     16
+    ],
+    [
+     "Proov nr 5",
+     16
+    ],
+    [
+     "Proov 5",
+     16
+    ],
+    [
+     "Proov nr 1",
+     14
+    ],
+    [
+     "Proov 1",
+     13
+    ],
+    [
+     "Proov nr 3",
+     9
+    ]
+   ]
+  },
+  "proov_vaatlus_kirjeldus": {
+   "non_null_share": 0.001,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Mõõdukas kuni tugev lainetus.",
+     1
+    ],
+    [
+     "Veetase kõrge.",
+     1
+    ]
+   ]
+  },
+  "proov_vaatlus_mullatyyp": {
+   "non_null_share": 0.0,
+   "n_distinct_in_sample": 0
+  },
+  "proov_vaatlus_mullatyyp_selg": {
+   "non_null_share": 0.0,
+   "n_distinct_in_sample": 0
+  },
+  "proov_vaatlus_mullahorisont": {
+   "non_null_share": 0.0,
+   "n_distinct_in_sample": 0
+  },
+  "mullaproov_sygavus": {
+   "non_null_share": 0.0,
+   "n_distinct_in_sample": 0
+  },
+  "proovivotu_sygavus": {
+   "non_null_share": 0.073,
+   "n_distinct_in_sample": 90,
+   "min": "0,1",
+   "max": "V/0,3"
+  },
+  "proovivott_meetod_kood": {
+   "non_null_share": 0.895,
+   "n_distinct_in_sample": 12,
+   "top_values": [
+    [
+     "PM00000043",
+     1364
+    ],
+    [
+     "PM00000058",
+     233
+    ],
+    [
+     "PM00000104",
+     130
+    ],
+    [
+     "PM00000060",
+     20
+    ],
+    [
+     "PM00000046",
+     19
+    ],
+    [
+     "PM00000094",
+     9
+    ],
+    [
+     "PM00000024",
+     6
+    ],
+    [
+     "PM00000288",
+     4
+    ]
+   ]
+  },
+  "proovivotu_meetod": {
+   "non_null_share": 0.895,
+   "n_distinct_in_sample": 12,
+   "top_values": [
+    [
+     "Veeproovide võtmine põhjaveest (ISO)",
+     1364
+    ],
+    [
+     "Suurselgrootute kahvaproovid (kvantitatiivne)",
+     233
+    ],
+    [
+     "Mereveest proovivõtul määratavad näitajad",
+     130
+    ],
+    [
+     "Suurselgrootute kahvaproovid (kvalitatiivne)",
+     20
+    ],
+    [
+     "Veeproovide võtmine jõgedest",
+     19
+    ],
+    [
+     "Pinnaveest proovivõtul määratavad näitajad",
+     9
+    ],
+    [
+     "Ferrybox seire",
+     6
+    ],
+    [
+     "Välisõhu proovivõtt Peipsi akvatooriumi seirel",
+     4
+    ]
+   ]
+  },
+  "proovivott_meetod_allikas": {
+   "non_null_share": 0.88,
+   "n_distinct_in_sample": 6,
+   "top_values": [
+    [
+     "Standard kehtiv alates 1993.",
+     1364
+    ],
+    [
+     "Timm H. & Vilbaste S., 2010. Pinnavee ökoloogilise seisundi hindamise metoodika bioloogiliste kvaliteedielementide alusel. Bentiliste ränivetikate kooslus jões. Suurselgrootute põhjaloomade kooslus jões ja järves. Lepingu 4-1.1/166 aruanne. Standard kehtiv 1999 - 05.09.2012.",
+     253
+    ],
+    [
+     "KeM määrus nr 30 \"Proovivõtumeetodid\"",
+     130
+    ],
+    [
+     "KeM määrus nr 30 ja 49 \"Proovivõtumeetodid\"",
+     9
+    ],
+    [
+     "EMEP Manual for Sampling and Chemical Analysis: https://projects.nilu.no/ccc/manual/download/cccr1-95rev.pdf; fail manustatud ka failina \"cccr1-95rev.pdf\", https://projects.nilu.no/ccc/manual/index.html. Manual for Integrated Monitoring. 1998. Finnish Environment Institute, ICP IM Programme Centre, fail manustatud ka failina \"ICP IM Manual - August 1998.pdf\"",
+     2
+    ],
+    [
+     "Manual for Marine Monitoring in the COMBINE. Programme of HELCOM. Annex C-6: Guidelines concerning phytoplankton species composition, abundance and biomass",
+     2
+    ]
+   ]
+  },
+  "proovivott_meetod_toojuhend_nr": {
+   "non_null_share": 0.001,
+   "n_distinct_in_sample": 1,
+   "top_values": [
+    [
+     "STJnrP06 (EMEP 2001)",
+     2
+    ]
+   ]
+  },
+  "proovivott_meetod_toojuhend_nimi": {
+   "non_null_share": 0.002,
+   "n_distinct_in_sample": 1,
+   "top_values": [
+    [
+     "Majasisene tööjuhend",
+     4
+    ]
+   ]
+  },
+  "proovivott_meetod_proovivotu_sygavus": {
+   "non_null_share": 0.011,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "10",
+     19
+    ],
+    [
+     "50",
+     3
+    ],
+    [
+     "30",
+     1
+    ]
+   ]
+  },
+  "proovivott_meetod_proovivotu_liik": {
+   "non_null_share": 0.895,
+   "n_distinct_in_sample": 6,
+   "top_values": [
+    [
+     "10",
+     1523
+    ],
+    [
+     "80",
+     233
+    ],
+    [
+     "70",
+     20
+    ],
+    [
+     "40",
+     7
+    ],
+    [
+     "50",
+     4
+    ],
+    [
+     "170",
+     4
+    ]
+   ]
+  },
+  "proovivott_meetod_proovivotu_liik_selg": {
+   "non_null_share": 0.895,
+   "n_distinct_in_sample": 6,
+   "top_values": [
+    [
+     "Punktproov",
+     1523
+    ],
+    [
+     "Elustiku kvantitatiivne proov",
+     233
+    ],
+    [
+     "Elustiku kvalitatiivne proov",
+     20
+    ],
+    [
+     "Sariproov",
+     7
+    ],
+    [
+     "Keskmistatud proov",
+     4
+    ],
+    [
+     "Õhuproov, pistelised mõõtmised",
+     4
+    ]
+   ]
+  },
+  "proovivott_meetod_kirjeldus": {
+   "non_null_share": 0.893,
+   "n_distinct_in_sample": 11,
+   "top_values": [
+    [
+     "Kui pole tarbekaev, tehakse puhastuspumpamine seisva vee eemaldamiseks kaevust ning veeproov võetakse pärast indikaatornäitajate (pH, O2, el.juhtivus) stabiliseerumist kaevu valgunud värskest põhjaveest.",
+     1364
+    ],
+    [
+     "Proov võetakse veekogu põhjast nelinurkse standardkahvaga (serva pikkus 25 cm, sõelaava 0,5 mm, varre pikkus 1 m) enamasti jalaproovide abil. Jalaproov seisneb põhja jalaga segamises vertikaalselt asetatud kahva ees ja järgnevas järsus kahvatõmbes.",
+     233
+    ],
+    [
+     "Enne veeproovi võtmist mõõta kohapeal (in situ) pinnavee temperatuur, elektrijuhtivus, gaaside (O2 vm) sisaldus, pH, läbipaistvus, soolsus ja tihedus",
+     130
+    ],
+    [
+     "Kvalitatiivne proov kogutakse prooviala võimalikult erinevatest elupaikadest: erinevad põhjatüübid, taimestik, kivid, oksad jne. Selle proovi pindala pole kindlaks määratud.",
+     20
+    ],
+    [
+     "Veeproov võetakse kuni 0,3m sügavuselt ülemisest hästisegunenud veekihist voolu keskelt.",
+     19
+    ],
+    [
+     "Enne veeproovi võtmist mõõta kohapeal (in situ) pinnavee temperatuur, elektrijuhtivus, gaaside (O2 vm) sisaldus, pH, läbipaistvus. Järvedes sügavusprofiilina.",
+     9
+    ],
+    [
+     "Ferrybox on läbivoolumeetodil põhinev automaatne mõõtmis- ja proovikogumissüsteem. Merevett mõõdetakse ja kogutakse 4 – 5 m sügavuselt.",
+     6
+    ],
+    [
+     "Koguja asub ~2m kõrgusel. Proove kogutakse ööpäev või kuu ja analüüsitakse kas päeva, nädala(te) või 1 kuu kohta (oleneb näitajast, proovi hulgast). Kogunenud veest võetakse keskm. proov, mis läheb laborisse. Tulemus on 1 kuu keskm. väärtus.",
+     2
+    ]
+   ]
+  },
+  "proovivott_meetod_standardi_nr": {
+   "non_null_share": 0.892,
+   "n_distinct_in_sample": 5,
+   "top_values": [
+    [
+     "ISO 5667-11",
+     1364
+    ],
+    [
+     "EVS-EN 27828",
+     253
+    ],
+    [
+     "EVS-ISO 5667-9",
+     139
+    ],
+    [
+     "EVS-ISO 5667-6",
+     19
+    ],
+    [
+     "EVS-ISO 5667-4",
+     10
+    ]
+   ]
+  },
+  "analyys_meetod_kood": {
+   "non_null_share": 0.523,
+   "n_distinct_in_sample": 26,
+   "top_values": [
+    [
+     "AM00000355",
+     588
+    ],
+    [
+     "AM00000279",
+     253
+    ],
+    [
+     "AM00000627",
+     100
+    ],
+    [
+     "AM00000628",
+     30
+    ],
+    [
+     "AM00000072",
+     18
+    ],
+    [
+     "AM00000184",
+     11
+    ],
+    [
+     "AM00000205",
+     9
+    ],
+    [
+     "AM00000278",
+     8
+    ]
+   ]
+  },
+  "analyys_meetod_nimi": {
+   "non_null_share": 0.523,
+   "n_distinct_in_sample": 26,
+   "top_values": [
+    [
+     "Teadmata",
+     588
+    ],
+    [
+     "Suurselgrootute analüüs siseveekogudes (Timm, jt)",
+     253
+    ],
+    [
+     "HELCOM Monitoring Guidelines, CTD (EC)",
+     100
+    ],
+    [
+     "HELCOM Monitoring Guidelines, Chl a (UV-VIS)",
+     30
+    ],
+    [
+     "STJnrU63 (GC)",
+     18
+    ],
+    [
+     "ISO 28540 (GC-MS)",
+     11
+    ],
+    [
+     "EVS-EN ISO 17294-2 (ICP-MS)",
+     9
+    ],
+    [
+     "Fütoplanktoni analüüs",
+     8
+    ]
+   ]
+  },
+  "analyys_meetod_tyyp": {
+   "non_null_share": 0.523,
+   "n_distinct_in_sample": 13,
+   "top_values": [
+    [
+     "200",
+     588
+    ],
+    [
+     "190",
+     261
+    ],
+    [
+     "40",
+     104
+    ],
+    [
+     "230",
+     33
+    ],
+    [
+     "80",
+     21
+    ],
+    [
+     "90",
+     18
+    ],
+    [
+     "130",
+     9
+    ],
+    [
+     "240",
+     4
+    ]
+   ]
+  },
+  "analyys_meetod_tyyp_selg": {
+   "non_null_share": 0.523,
+   "n_distinct_in_sample": 13,
+   "top_values": [
+    [
+     "Muu",
+     588
+    ],
+    [
+     "Mikroskoopuurimine ja -menetlemine (MIKROSK)",
+     261
+    ],
+    [
+     "Elektrokeemilised määramised (EC)",
+     104
+    ],
+    [
+     "Ultraviolett-spektrofotomeetria (UV-VIS)",
+     33
+    ],
+    [
+     "Gaasikromatograafia (GC)",
+     21
+    ],
+    [
+     "Gaasikromatograafia-massispektromeetria (GC-MS)",
+     18
+    ],
+    [
+     "Induktiivsidestusega plasma mass-spektromeetria (ICP-MS)",
+     9
+    ],
+    [
+     "Vedelikkromatograafia (HPLC)",
+     4
+    ]
+   ]
+  },
+  "analyys_meetod_toojuhend_nr": {
+   "non_null_share": 0.077,
+   "n_distinct_in_sample": 5,
+   "top_values": [
+    [
+     "HELCOM Monitoring Guidelines, CTD",
+     100
+    ],
+    [
+     "HELCOM Monitoring Guidelines, Chl a",
+     30
+    ],
+    [
+     "STJnrU63",
+     18
+    ],
+    [
+     "STJnrU12",
+     4
+    ],
+    [
+     "In-house",
+     2
+    ]
+   ]
+  },
+  "analyys_meetod_toojuhend_nimi": {
+   "non_null_share": 0.081,
+   "n_distinct_in_sample": 6,
+   "top_values": [
+    [
+     "Guidelines for monitoring S and T using CTD",
+     100
+    ],
+    [
+     "Guidelines for monitoring of chlorophyll a",
+     30
+    ],
+    [
+     "Kloororgaaniliste pestitsiidide sisalduse määramin",
+     18
+    ],
+    [
+     "Guidelines for monitoring of phytoplankton ...",
+     8
+    ],
+    [
+     "EKUK laborisisene tööjuhend",
+     4
+    ],
+    [
+     "RA4039",
+     2
+    ]
+   ]
+  },
+  "analyys_meetod_allikas": {
+   "non_null_share": 0.498,
+   "n_distinct_in_sample": 6,
+   "top_values": [
+    [
+     "Teadmata",
+     588
+    ],
+    [
+     "Timm H. & Vilbaste S., 2010. Pinnavee ökoloogilise seisundi hindamise metoodika bioloogiliste kvaliteedielementide alusel. Bentiliste ränivetikate kooslus jões. Suurselgrootute põhjaloomade kooslus jões ja järves. Aruanne EV keskkonnaministeeriumile.",
+     253
+    ],
+    [
+     "HELCOM Monitoring Guidelines. Guidelines for determination of salinity and temperature using CTD",
+     100
+    ],
+    [
+     "HELCOM Monitoring Guidelines. Guidelines for monitoring of chlorophyll a",
+     30
+    ],
+    [
+     "Kloororgaaniliste pestitsiidide, polüklooritud bifenüülide ja klorobenseenide sisalduse määramine vees ja pinnases",
+     18
+    ],
+    [
+     "HELCOM Monitoring Guidelines. Guidelines for monitoring of phytoplankton species composition, \nabundance and biomass (https://helcom.fi/wp-content/uploads/2023/05/Guidelines-for-monitoring-of-phytoplankton-species-composition-abundance-and-biomass-1.pdf)",
+     8
+    ]
+   ]
+  },
+  "analyys_meetod_standardi_nr": {
+   "non_null_share": 0.025,
+   "n_distinct_in_sample": 18,
+   "top_values": [
+    [
+     "ISO 28540",
+     11
+    ],
+    [
+     "EVS-EN ISO 17294-2",
+     9
+    ],
+    [
+     "EVS-EN 15204",
+     8
+    ],
+    [
+     "EVS-EN ISO 10301",
+     3
+    ],
+    [
+     "EN ISO 22032",
+     3
+    ],
+    [
+     "ISO 10523",
+     2
+    ],
+    [
+     "EVS-EN ISO 11885",
+     2
+    ],
+    [
+     "EVS-EN 25814",
+     1
+    ]
+   ]
+  },
+  "analyys_aeg": {
+   "non_null_share": 0.421,
+   "n_distinct_in_sample": 164,
+   "min": "2009-06-18T00:00:00",
+   "max": "2025-08-06T14:45:00"
+  },
+  "proovi_seos_vaatlusega": {
+   "non_null_share": 0.002,
+   "n_distinct_in_sample": 1,
+   "top_values": [
+    [
+     "xxxx",
+     4
+    ]
+   ]
+  },
+  "seotud_vaatluse_kood": {
+   "non_null_share": 0.002,
+   "n_distinct_in_sample": 1,
+   "top_values": [
+    [
+     "xxxx",
+     4
+    ]
+   ]
+  },
+  "vaatlusgrupp": {
+   "non_null_share": 0.104,
+   "n_distinct_in_sample": 4,
+   "top_values": [
+    [
+     "120",
+     149
+    ],
+    [
+     "460",
+     55
+    ],
+    [
+     "470",
+     4
+    ],
+    [
+     "20",
+     1
+    ]
+   ]
+  },
+  "vaatlusgrupp_selg": {
+   "non_null_share": 0.104,
+   "n_distinct_in_sample": 4,
+   "top_values": [
+    [
+     "Loendus",
+     149
+    ],
+    [
+     "Põhjaveetaseme mõõtmine",
+     55
+    ],
+    [
+     "Visuaalne puude võra seisundi hindamine",
+     4
+    ],
+    [
+     "Seirekoha, olude kirjeldus",
+     1
+    ]
+   ]
+  },
+  "seirekoht_kood": {
+   "non_null_share": 0.994,
+   "n_distinct_in_sample": 669,
+   "min": "SJA0006000",
+   "max": "xxxx"
+  },
+  "seirekoht_ehak": {
+   "non_null_share": 0.922,
+   "n_distinct_in_sample": 403,
+   "min": "0120",
+   "max": "xxxx"
+  },
+  "seirekoht_ehak_tekst": {
+   "non_null_share": 0.922,
+   "n_distinct_in_sample": 403,
+   "min": "Harju maakond, Anija vald, Kehra linn",
+   "max": "xxxx"
+  },
+  "seirekoht_nimi": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 672,
+   "min": "10",
+   "max": "Ördi järve SUSE mõõtekoht"
+  },
+  "seirekoht_eelis_id": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 677,
+   "min": -2136118418,
+   "max": 2147266398
+  },
+  "seirekoht_tase": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "sj",
+     1746
+    ],
+    [
+     "mk",
+     250
+    ],
+    [
+     "xxxx",
+     4
+    ]
+   ]
+  },
+  "seirekoht_tase_selg": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "seirejaam või seireala",
+     1746
+    ],
+    [
+     "mõõtekoht",
+     250
+    ],
+    [
+     "xxxx",
+     4
+    ]
+   ]
+  },
+  "seirekoht_staatus": {
+   "non_null_share": 0.238,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "A",
+     472
+    ],
+    [
+     "xxxx",
+     4
+    ]
+   ]
+  },
+  "seirekoht_staatus_selg": {
+   "non_null_share": 0.238,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Arhiveeritud",
+     472
+    ],
+    [
+     "xxxx",
+     4
+    ]
+   ]
+  },
+  "seirekoht_koordx": {
+   "non_null_share": 0.973,
+   "n_distinct_in_sample": 640,
+   "min": 6387615,
+   "max": 99999999.99
+  },
+  "seirekoht_koordy": {
+   "non_null_share": 0.973,
+   "n_distinct_in_sample": 644,
+   "min": 230334,
+   "max": 99999999.99
+  },
+  "seirekoht_seotud_seirejaam_kood": {
+   "non_null_share": 0.127,
+   "n_distinct_in_sample": 74,
+   "min": "SJA0014000",
+   "max": "xxxx"
+  },
+  "seirekoht_seotud_seirejaam_eelis_id": {
+   "non_null_share": 0.127,
+   "n_distinct_in_sample": 74,
+   "min": -2078596582,
+   "max": 2125434946
+  },
+  "seirekoht_seotud_seirejaam_ehak_tekst": {
+   "non_null_share": 0.127,
+   "n_distinct_in_sample": 72,
+   "min": "Harju maakond, Kose vald, Rõõsa küla",
+   "max": "xxxx"
+  },
+  "seirekoht_seotud_seirejaam_nimi": {
+   "non_null_share": 0.127,
+   "n_distinct_in_sample": 73,
+   "min": "Aardla",
+   "max": "Ördi järv"
+  },
+  "seirekoht_seotud_seirejaam_koordx": {
+   "non_null_share": 0.093,
+   "n_distinct_in_sample": 53,
+   "min": 6387598,
+   "max": 99999999.99
+  },
+  "seirekoht_seotud_seirejaam_koordy": {
+   "non_null_share": 0.093,
+   "n_distinct_in_sample": 53,
+   "min": 391532,
+   "max": 99999999.99
+  },
+  "veekogu_kood": {
+   "non_null_share": 0.275,
+   "n_distinct_in_sample": 108,
+   "min": "VEE1003000",
+   "max": "VEE4802900"
+  },
+  "veekogu_nimi": {
+   "non_null_share": 0.275,
+   "n_distinct_in_sample": 108,
+   "min": "(Mõdrikumõisa järved)",
+   "max": "Ördi järv"
+  },
+  "veekogu_eelis_id": {
+   "non_null_share": 0.275,
+   "n_distinct_in_sample": 108,
+   "min": -2119097071,
+   "max": 2082940734
+  },
+  "veekogum_kood": {
+   "non_null_share": 0.197,
+   "n_distinct_in_sample": 84,
+   "min": "1003000_5",
+   "max": "SEA-013"
+  },
+  "veekogum_nimi": {
+   "non_null_share": 0.197,
+   "n_distinct_in_sample": 85,
+   "min": "Amme Kaiavere järvest suudmeni",
+   "max": "Õhne Käärikmäe-Koorküla maantee Koorküla"
+  },
+  "veekogum_eelis_id": {
+   "non_null_share": 0.197,
+   "n_distinct_in_sample": 85,
+   "min": -2110430792,
+   "max": 2117430792
+  },
+  "seirekogum_kood": {
+   "non_null_share": 0.663,
+   "n_distinct_in_sample": 108,
+   "min": "01§2019",
+   "max": "29§2019"
+  },
+  "seirekogum_nimi": {
+   "non_null_share": 0.663,
+   "n_distinct_in_sample": 108,
+   "min": "Amme Kaiavere järvest suudmeni",
+   "max": "Ülem-Devoni põhjaveekogum"
+  },
+  "seirekogum_eelis_id": {
+   "non_null_share": 0.663,
+   "n_distinct_in_sample": 108,
+   "min": -2110430792,
+   "max": 2117430792
+  },
+  "seirekogum_tyyp": {
+   "non_null_share": 0.663,
+   "n_distinct_in_sample": 15,
+   "top_values": [
+    [
+     "PV1",
+     1063
+    ],
+    [
+     "S2",
+     68
+    ],
+    [
+     "S3",
+     48
+    ],
+    [
+     "V2B",
+     29
+    ],
+    [
+     "S5",
+     21
+    ],
+    [
+     "S8",
+     19
+    ],
+    [
+     "V1B-KaVo",
+     16
+    ],
+    [
+     "S4",
+     16
+    ]
+   ]
+  },
+  "liik_eelis_id": {
+   "non_null_share": 0.162,
+   "n_distinct_in_sample": 151,
+   "min": -2137205646,
+   "max": 2068931963
+  },
+  "liik_est": {
+   "non_null_share": 0.15,
+   "n_distinct_in_sample": 134,
+   "min": "aed-põõsalind",
+   "max": "võsaraat"
+  },
+  "liik_lad": {
+   "non_null_share": 0.162,
+   "n_distinct_in_sample": 151,
+   "min": "Acrocephalus palustris",
+   "max": "Viviparus contectus"
+  },
+  "liik_kategooria": {
+   "non_null_share": 0.007,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "3",
+     11
+    ],
+    [
+     "2",
+     4
+    ]
+   ]
+  },
+  "takson_eelis_id": {
+   "non_null_share": 0.034,
+   "n_distinct_in_sample": 32,
+   "min": -2129843909,
+   "max": 2093943909
+  },
+  "takson_est": {
+   "non_null_share": 0.026,
+   "n_distinct_in_sample": 21,
+   "top_values": [
+    [
+     "Surusääsklased",
+     22
+    ],
+    [
+     "herneskarp",
+     5
+    ],
+    [
+     "pulkvana",
+     4
+    ],
+    [
+     "järvevana",
+     3
+    ],
+    [
+     "Habesääsklased",
+     2
+    ],
+    [
+     "salekevik",
+     2
+    ],
+    [
+     "silm",
+     1
+    ],
+    [
+     "pisiehmeslane",
+     1
+    ]
+   ]
+  },
+  "takson_lad": {
+   "non_null_share": 0.034,
+   "n_distinct_in_sample": 32,
+   "top_values": [
+    [
+     "Chironomidae",
+     22
+    ],
+    [
+     "Pisidium",
+     5
+    ],
+    [
+     "Mystacides",
+     4
+    ],
+    [
+     "Limnephilus",
+     3
+    ],
+    [
+     "Ceratopogonidae",
+     2
+    ],
+    [
+     "Leuctra",
+     2
+    ],
+    [
+     "Baetis",
+     2
+    ],
+    [
+     "Spongilla",
+     2
+    ]
+   ]
+  },
+  "takson_tyyp": {
+   "non_null_share": 0.034,
+   "n_distinct_in_sample": 4,
+   "top_values": [
+    [
+     "60",
+     34
+    ],
+    [
+     "50",
+     29
+    ],
+    [
+     "40",
+     2
+    ],
+    [
+     "33",
+     2
+    ]
+   ]
+  },
+  "takson_tyyp_selg": {
+   "non_null_share": 0.034,
+   "n_distinct_in_sample": 4,
+   "top_values": [
+    [
+     "Perekond",
+     34
+    ],
+    [
+     "Sugukond",
+     29
+    ],
+    [
+     "Selts",
+     2
+    ],
+    [
+     "Alamklass",
+     2
+    ]
+   ]
+  },
+  "puurauk_kood": {
+   "non_null_share": 0.412,
+   "n_distinct_in_sample": 225,
+   "min": "PRK0000020",
+   "max": "PRK0065260"
+  },
+  "puurauk_eelis_id": {
+   "non_null_share": 0.701,
+   "n_distinct_in_sample": 445,
+   "min": -2140747711,
+   "max": 2133177281
+  },
+  "puurauk_staatus": {
+   "non_null_share": 0.412,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "K",
+     817
+    ],
+    [
+     "A",
+     7
+    ]
+   ]
+  },
+  "puurauk_staatus_selg": {
+   "non_null_share": 0.412,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "5. Kehtiv",
+     817
+    ],
+    [
+     "6. Arhiivis",
+     7
+    ]
+   ]
+  },
+  "puurauk_sygavus": {
+   "non_null_share": 0.701,
+   "n_distinct_in_sample": 195,
+   "min": 0,
+   "max": 436.5
+  },
+  "puurauk_pohjaveekiht": {
+   "non_null_share": 0.092,
+   "n_distinct_in_sample": 7,
+   "top_values": [
+    [
+     "V2vr",
+     82
+    ],
+    [
+     "V2gd",
+     46
+    ],
+    [
+     "O2",
+     30
+    ],
+    [
+     "D2pr",
+     13
+    ],
+    [
+     "Q",
+     7
+    ],
+    [
+     "O2rk",
+     5
+    ],
+    [
+     "D2ar",
+     2
+    ]
+   ]
+  },
+  "pohjaveekogum_kood": {
+   "non_null_share": 0.603,
+   "n_distinct_in_sample": 31,
+   "top_values": [
+    [
+     "15§2019",
+     213
+    ],
+    [
+     "14§2019",
+     198
+    ],
+    [
+     "10§2011",
+     124
+    ],
+    [
+     "03§2019",
+     117
+    ],
+    [
+     "07§2019",
+     49
+    ],
+    [
+     "13§2019",
+     47
+    ],
+    [
+     "10§2019",
+     46
+    ],
+    [
+     "06§2019",
+     40
+    ]
+   ]
+  },
+  "pohjaveekogum_nimi": {
+   "non_null_share": 0.603,
+   "n_distinct_in_sample": 29,
+   "top_values": [
+    [
+     "Siluri-Ordoviitsiumi Pandivere põhjaveekogum Ida-Eesti vesikonnas",
+     213
+    ],
+    [
+     "Siluri-Ordoviitsiumi Pandivere põhjaveekogum Lääne-Eesti vesikonnas",
+     198
+    ],
+    [
+     "Siluri-Ordoviitsiumi põhjaveekogum Lääne-Eesti alal",
+     124
+    ],
+    [
+     "Kambriumi-Vendi põhjaveekogum",
+     123
+    ],
+    [
+     "Ordoviitsiumi Ida-Viru põlevkivibasseini põhjaveekogum",
+     49
+    ],
+    [
+     "Siluri-Ordoviitsiumi põhjaveekogum Ida-Eesti vesikonnas",
+     47
+    ],
+    [
+     "Siluri-Ordoviitsiumi Harju põhjaveekogum",
+     46
+    ],
+    [
+     "Ordoviitsiumi Ida-Viru põhjaveekogum",
+     40
+    ]
+   ]
+  },
+  "pohjaveekogum_eelis_id": {
+   "non_null_share": 0.603,
+   "n_distinct_in_sample": 31,
+   "min": -1872198586,
+   "max": 1961122910
+  },
+  "isend_nr": {
+   "non_null_share": 0.0,
+   "n_distinct_in_sample": 0
+  },
+  "labor_dok_nr": {
+   "non_null_share": 0.0,
+   "n_distinct_in_sample": 0
+  },
+  "proovivotuseade": {
+   "non_null_share": 0.0,
+   "n_distinct_in_sample": 0
+  },
+  "proovivott_meetod_proovivotu_sygavus_selg": {
+   "non_null_share": 0.011,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "Pinnakihist (kuni 30 cm)",
+     19
+    ],
+    [
+     "Kindlalt sügavuselt (1, 5, 10 m ja/või põhjalähedasest kihist)",
+     3
+    ],
+    [
+     "Pinna- ja põhjalähedasest kihist (kuni 30 cm, kuni 30 cm veekogu põhjast)",
+     1
+    ]
+   ]
+  },
+  "pyygivahend_silmasuurus": {
+   "non_null_share": 0.0,
+   "n_distinct_in_sample": 0
+  },
+  "osa_saagist": {
+   "non_null_share": 0.0,
+   "n_distinct_in_sample": 0
+  },
+  "pyygireis_nr": {
+   "non_null_share": 0.0,
+   "n_distinct_in_sample": 0
+  },
+  "traal_tombe_nr": {
+   "non_null_share": 0.0,
+   "n_distinct_in_sample": 0
+  },
+  "traal_tombe_kestvus": {
+   "non_null_share": 0.0,
+   "n_distinct_in_sample": 0
+  },
+  "kordsus": {
+   "non_null_share": 0.0,
+   "n_distinct_in_sample": 0
+  },
+  "seireala_pindala": {
+   "non_null_share": 0.0,
+   "n_distinct_in_sample": 0
+  },
+  "mootemaaramatus": {
+   "non_null_share": 0.001,
+   "n_distinct_in_sample": 1,
+   "min": 50,
+   "max": 50
+  },
+  "maaramatus_kommentaar": {
+   "non_null_share": 0.0,
+   "n_distinct_in_sample": 0
+  },
+  "viimane_kommentaar_vaartuse_juures": {
+   "non_null_share": 0.002,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Tegemist on agregeeritud väärtusega",
+     3
+    ],
+    [
+     "Varem karjatataval alal (5.-12. lõik) veiseid pole. Lõikudel 1.-4. karjatamise koormus väike, üksikud loomarajad.",
+     1
+    ]
+   ]
+  },
+  "analyys_meetod_standard": {
+   "non_null_share": 0.025,
+   "n_distinct_in_sample": 18,
+   "top_values": [
+    [
+     "Water quality - Determination of 16 polycyclic aromatic hydrocarbons (PAH) in water - Method using gas chromatography with mass spectrometric detection (GC-MS)",
+     11
+    ],
+    [
+     "Water quality - Application of inductively coupled plasma mass spectrometry (ICP-MS) - Part 2: Determination of 62 elements",
+     9
+    ],
+    [
+     "Water quality - Guidance standard on the enumeration of phytoplankton using inverted microscopy (Utermöhl technique)",
+     8
+    ],
+    [
+     "Vee kvaliteet. Kergeltlenduvate halogeenitud süsivesinike sisalduse määramine. Gaaskromatograafilised meetodid",
+     3
+    ],
+    [
+     "Water quality - Determination of selected polybrominated diphenyl ethers in sediment and sewage sludge - Method using extraction and gas chromatography/mass spectrometry",
+     3
+    ],
+    [
+     "Water quality - Determination of pH",
+     2
+    ],
+    [
+     "Water quality - Determination of selected elements by inductively coupled plasma optical emission spectrometry (ICP-OES)",
+     2
+    ],
+    [
+     "Vee kvaliteet. Lahustunud hapniku sisalduse määramine. Elektrokeemiline analüüsimeetod",
+     1
+    ]
+   ]
+  },
+  "vaatleja_eelis_id": {
+   "non_null_share": 0.104,
+   "n_distinct_in_sample": 54,
+   "min": "-1100260719",
+   "max": "786400377"
+  },
+  "vastutav_isik": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 16,
+   "top_values": [
+    [
+     " ",
+     932
+    ],
+    [
+     "Merle Truu",
+     467
+    ],
+    [
+     "Rein Perens",
+     166
+    ],
+    [
+     "Georg Martin",
+     130
+    ],
+    [
+     "Katri Vooro",
+     73
+    ],
+    [
+     "Renno Nellis",
+     71
+    ],
+    [
+     "Jaanus Elts",
+     69
+    ],
+    [
+     "Peeter Pall",
+     64
+    ]
+   ]
+  },
+  "proovivotja_vaatleja": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 66,
+   "min": "Agu Leivits",
+   "max": "Õie Leis"
+  },
+  "analyys_teostaja": {
+   "non_null_share": 0.0,
+   "n_distinct_in_sample": 0
+  }
+ },
+ "head": [
+  {
+   "seiretoo_seotud_programmi_kood_i": "PR0001",
+   "seiretoo_seotud_programmi_nimi_i": "Riiklik keskkonnaseire programm",
+   "seiretoo_seotud_programmi_kood_ii": "PR0007",
+   "seiretoo_seotud_programmi_nimi_ii": "Siseveekogude seire",
+   "seiretoo_seotud_programmi_kood_iii": "PR0051",
+   "seiretoo_seotud_programmi_nimi_iii": "Jõgede seire",
+   "seiretoo_seotud_programmi_kood_iv": "PR0142",
+   "seiretoo_seotud_programmi_nimi_iv": "Jõgede hüdrobioloogiline seire",
+   "seiretoo_vastutav_partner": "EMÜ Põllumajandus- ja keskkonnainstituut",
+   "seiretoo_kood": "ST00000430",
+   "seiretoo_nimetus": "Jõgede hüdrobioloogiline seire ja uuringud 2014. a.",
+   "seiretoo_staatus": "ENDED",
+   "seiretoo_staatus_selg": "Lõpetatud",
+   "seiretoo_liik": "10",
+   "seiretoo_liik_selg": "Ülevaateseire",
+   "seiretoo_taitmise_viis": "CONTRACT",
+   "seiretoo_algusaasta": 2014,
+   "seiretoo_loppaasta": 2014,
+   "naitaja_grupp": "SUSE",
+   "naitaja_grupp_selg": "Suurselgrootud",
+   "naitaja_alamgrupp": null,
+   "naitaja_alamgrupp_selg": null,
+   "naitaja_kood": "N100002615",
+   "naitaja_nimetus": "SUSE liigi isendite arv osaproovis",
+   "naitaja_lyhend": "",
+   "naitaja_cas_nr": null,
+   "naitaja_einecs_kood": null,
+   "naitaja_proovimaatriks": "240",
+   "naitaja_proovimaatriks_nimi": "Põhjakooslus",
+   "seotud_2_taseme_naitajate_koodid": null,
+   "vaartus_staatus": "VALID",
+   "vaartus_arv_moodetud": 1,
+   "vaartus_erimark": null,
+   "naitaja_abr_unit": "is",
+   "naitaja_abr_unit_selg": "Isend",
+   "vaartus_muu": null,
+   "vaartus_muu_tapsustus": null,
+   "vaartus_tapsustus_extra_arv": null,
+   "vaartus_tapsustus_extra_tekst": null,
+   "vaartus_maaramistapsus": null,
+   "vaartus_mootmata": false,
+   "vaartus_meetod_tapsustus": null,
+   "vaartus_muutmise_kpv": "2017-07-14",
+   "vaartus_maaramispiir": null,
+   "proovi_vaatluse_kood": "P0000150509",
+   "seireaeg_algus": "2014-05-23T00:00:00",
+   "seireaeg_lopp": null,
+   "seireaeg_tapsustus": null,
+   "proov_vaatlus_koordx": 6494603,
+   "proov_vaatlus_koordy": 412139,
+   "proovi_vaatluse_doknr": "Proov nr 1",
+   "proov_vaatlus_kirjeldus": null,
+   "proov_vaatlus_mullatyyp": null,
+   "proov_vaatlus_mullatyyp_selg": null,
+   "proov_vaatlus_mullahorisont": null,
+   "mullaproov_sygavus": null,
+   "proovivotu_sygavus": null,
+   "proovivott_meetod_kood": "PM00000058",
+   "proovivotu_meetod": "Suurselgrootute kahvaproovid (kvantitatiivne)",
+   "proovivott_meetod_allikas": "Timm H. & Vilbaste S., 2010. Pinnavee ökoloogilise seisundi hindamise metoodika bioloogiliste kvaliteedielementide alusel. Bentiliste ränivetikate kooslus jões. Suurselgrootute põhjaloomade kooslus jões ja järves. Lepingu 4-1.1/166 aruanne. Standard kehtiv 1999 - 05.09.2012.",
+   "proovivott_meetod_toojuhend_nr": null,
+   "proovivott_meetod_toojuhend_nimi": null,
+   "proovivott_meetod_proovivotu_sygavus": null,
+   "proovivott_meetod_proovivotu_liik": "80",
+   "proovivott_meetod_proovivotu_liik_selg": "Elustiku kvantitatiivne proov",
+   "proovivott_meetod_kirjeldus": "Proov võetakse veekogu põhjast nelinurkse standardkahvaga (serva pikkus 25 cm, sõelaava 0,5 mm, varre pikkus 1 m) enamasti jalaproovide abil. Jalaproov seisneb põhja jalaga segamises vertikaalselt asetatud kahva ees ja järgnevas järsus kahvatõmbes.",
+   "proovivott_meetod_standardi_nr": "EVS-EN 27828",
+   "analyys_meetod_kood": "AM00000279",
+   "analyys_meetod_nimi": "Suurselgrootute analüüs siseveekogudes (Timm, jt)",
+   "analyys_meetod_tyyp": "190",
+   "analyys_meetod_tyyp_selg": "Mikroskoopuurimine ja -menetlemine (MIKROSK)",
+   "analyys_meetod_toojuhend_nr": null,
+   "analyys_meetod_toojuhend_nimi": null,
+   "analyys_meetod_allikas": "Timm H. & Vilbaste S., 2010. Pinnavee ökoloogilise seisundi hindamise metoodika bioloogiliste kvaliteedielementide alusel. Bentiliste ränivetikate kooslus jões. Suurselgrootute põhjaloomade kooslus jões ja järves. Aruanne EV keskkonnaministeeriumile.",
+   "analyys_meetod_standardi_nr": null,
+   "analyys_aeg": null,
+   "proovi_seos_vaatlusega": null,
+   "seotud_vaatluse_kood": null,
+   "vaatlusgrupp": null,
+   "vaatlusgrupp_selg": null,
+   "seirekoht_kood": "SJA5192000",
+   "seirekoht_ehak": "6312",
+   "seirekoht_ehak_tekst": "Saare maakond, Saaremaa vald, Poka küla",
+   "seirekoht_nimi": "Punabe jõgi: Poka",
+   "seirekoht_eelis_id": 829044576,
+   "seirekoht_tase": "sj",
+   "seirekoht_tase_selg": "seirejaam või seireala",
+   "seirekoht_staatus": null,
+   "seirekoht_staatus_selg": null,
+   "seirekoht_koordx": 6494603,
+   "seirekoht_koordy": 412139,
+   "seirekoht_seotud_seirejaam_kood": null,
+   "seirekoht_seotud_seirejaam_eelis_id": null,
+   "seirekoht_seotud_seirejaam_ehak_tekst": null,
+   "seirekoht_seotud_seirejaam_nimi": null,
+   "seirekoht_seotud_seirejaam_koordx": null,
+   "seirekoht_seotud_seirejaam_koordy": null,
+   "veekogu_kood": "VEE1170500",
+   "veekogu_nimi": "Punabe jõgi",
+   "veekogu_eelis_id": 1403344795,
+   "veekogum_kood": "1170500_1",
+   "veekogum_nimi": "Punabe",
+   "veekogum_eelis_id": -1949227904,
+   "seirekogum_kood": "1170500_1",
+   "seirekogum_nimi": "Punabe",
+   "seirekogum_eelis_id": -1949227904,
+   "seirekogum_tyyp": "V1B",
+   "liik_eelis_id": -1463952168,
+   "liik_est": null,
+   "liik_lad": "Oulimnius tuberculatus",
+   "liik_kategooria": null,
+   "takson_eelis_id": null,
+   "takson_est": null,
+   "takson_lad": null,
+   "takson_tyyp": null,
+   "takson_tyyp_selg": null,
+   "puurauk_kood": null,
+   "puurauk_eelis_id": null,
+   "puurauk_staatus": null,
+   "puurauk_staatus_selg": null,
+   "puurauk_sygavus": null,
+   "puurauk_pohjaveekiht": null,
+   "pohjaveekogum_kood": null,
+   "pohjaveekogum_nimi": null,
+   "pohjaveekogum_eelis_id": null,
+   "isend_nr": null,
+   "labor_dok_nr": "",
+   "proovivotuseade": null,
+   "proovivott_meetod_proovivotu_sygavus_selg": null,
+   "pyygivahend_silmasuurus": null,
+   "osa_saagist": null,
+   "pyygireis_nr": null,
+   "traal_tombe_nr": null,
+   "traal_tombe_kestvus": null,
+   "kordsus": null,
+   "seireala_pindala": null,
+   "mootemaaramatus": null,
+   "maaramatus_kommentaar": null,
+   "viimane_kommentaar_vaartuse_juures": null,
+   "analyys_meetod_standard": null,
+   "vaatleja_eelis_id": null,
+   "vastutav_isik": "Peeter Pall",
+   "proovivotja_vaatleja": "Teadmata",
+   "analyys_teostaja": null
+  },
+  {
+   "seiretoo_seotud_programmi_kood_i": "PR0001",
+   "seiretoo_seotud_programmi_nimi_i": "Riiklik keskkonnaseire programm",
+   "seiretoo_seotud_programmi_kood_ii": "PR0007",
+   "seiretoo_seotud_programmi_nimi_ii": "Siseveekogude seire",
+   "seiretoo_seotud_programmi_kood_iii": "PR0051",
+   "seiretoo_seotud_programmi_nimi_iii": "Jõgede seire",
+   "seiretoo_seotud_programmi_kood_iv": "PR0142",
+   "seiretoo_seotud_programmi_nimi_iv": "Jõgede hüdrobioloogiline seire",
+   "seiretoo_vastutav_partner": "EMÜ Põllumajandus- ja keskkonnainstituut",
+   "seiretoo_kood": "ST00000430",
+   "seiretoo_nimetus": "Jõgede hüdrobioloogiline seire ja uuringud 2014. a.",
+   "seiretoo_staatus": "ENDED",
+   "seiretoo_staatus_selg": "Lõpetatud",
+   "seiretoo_liik": "10",
+   "seiretoo_liik_selg": "Ülevaateseire",
+   "seiretoo_taitmise_viis": "CONTRACT",
+   "seiretoo_algusaasta": 2014,
+   "seiretoo_loppaasta": 2014,
+   "naitaja_grupp": "SUSE",
+   "naitaja_grupp_selg": "Suurselgrootud",
+   "naitaja_alamgrupp": null,
+   "naitaja_alamgrupp_selg": null,
+   "naitaja_kood": "N100002615",
+   "naitaja_nimetus": "SUSE liigi isendite arv osaproovis",
+   "naitaja_lyhend": "",
+   "naitaja_cas_nr": null,
+   "naitaja_einecs_kood": null,
+   "naitaja_proovimaatriks": "240",
+   "naitaja_proovimaatriks_nimi": "Põhjakooslus",
+   "seotud_2_taseme_naitajate_koodid": null,
+   "vaartus_staatus": "VALID",
+   "vaartus_arv_moodetud": 25,
+   "vaartus_erimark": null,
+   "naitaja_abr_unit": "is",
+   "naitaja_abr_unit_selg": "Isend",
+   "vaartus_muu": null,
+   "vaartus_muu_tapsustus": null,
+   "vaartus_tapsustus_extra_arv": null,
+   "vaartus_tapsustus_extra_tekst": null,
+   "vaartus_maaramistapsus": null,
+   "vaartus_mootmata": false,
+   "vaartus_meetod_tapsustus": null,
+   "vaartus_muutmise_kpv": "2017-07-14",
+   "vaartus_maaramispiir": null,
+   "proovi_vaatluse_kood": "P0000150677",
+   "seireaeg_algus": "2014-04-26T00:00:00",
+   "seireaeg_lopp": null,
+   "seireaeg_tapsustus": null,
+   "proov_vaatlus_koordx": 6598921,
+   "proov_vaatlus_koordy": 632282,
+   "proovi_vaatluse_doknr": "Proov nr 1",
+   "proov_vaatlus_kirjeldus": null,
+   "proov_vaatlus_mullatyyp": null,
+   "proov_vaatlus_mullatyyp_selg": null,
+   "proov_vaatlus_mullahorisont": null,
+   "mullaproov_sygavus": null,
+   "proovivotu_sygavus": null,
+   "proovivott_meetod_kood": "PM00000058",
+   "proovivotu_meetod": "Suurselgrootute kahvaproovid (kvantitatiivne)",
+   "proovivott_meetod_allikas": "Timm H. & Vilbaste S., 2010. Pinnavee ökoloogilise seisundi hindamise metoodika bioloogiliste kvaliteedielementide alusel. Bentiliste ränivetikate kooslus jões. Suurselgrootute põhjaloomade kooslus jões ja järves. Lepingu 4-1.1/166 aruanne. Standard kehtiv 1999 - 05.09.2012.",
+   "proovivott_meetod_toojuhend_nr": null,
+   "proovivott_meetod_toojuhend_nimi": null,
+   "proovivott_meetod_proovivotu_sygavus": null,
+   "proovivott_meetod_proovivotu_liik": "80",
+   "proovivott_meetod_proovivotu_liik_selg": "Elustiku kvantitatiivne proov",
+   "proovivott_meetod_kirjeldus": "Proov võetakse veekogu põhjast nelinurkse standardkahvaga (serva pikkus 25 cm, sõelaava 0,5 mm, varre pikkus 1 m) enamasti jalaproovide abil. Jalaproov seisneb põhja jalaga segamises vertikaalselt asetatud kahva ees ja järgnevas järsus kahvatõmbes.",
+   "proovivott_meetod_standardi_nr": "EVS-EN 27828",
+   "analyys_meetod_kood": "AM00000279",
+   "analyys_meetod_nimi": "Suurselgrootute analüüs siseveekogudes (Timm, jt)",
+   "analyys_meetod_tyyp": "190",
+   "analyys_meetod_tyyp_selg": "Mikroskoopuurimine ja -menetlemine (MIKROSK)",
+   "analyys_meetod_toojuhend_nr": null,
+   "analyys_meetod_toojuhend_nimi": null,
+   "analyys_meetod_allikas": "Timm H. & Vilbaste S., 2010. Pinnavee ökoloogilise seisundi hindamise metoodika bioloogiliste kvaliteedielementide alusel. Bentiliste ränivetikate kooslus jões. Suurselgrootute põhjaloomade kooslus jões ja järves. Aruanne EV keskkonnaministeeriumile.",
+   "analyys_meetod_standardi_nr": null,
+   "analyys_aeg": null,
+   "proovi_seos_vaatlusega": null,
+   "seotud_vaatluse_kood": null,
+   "vaatlusgrupp": null,
+   "vaatlusgrupp_selg": null,
+   "seirekoht_kood": "SJA5485000",
+   "seirekoht_ehak": "6093",
+   "seirekoht_ehak_tekst": "Lääne-Viru maakond, Haljala vald, Pehka küla",
+   "seirekoht_nimi": "Selja jõgi: Jõekääru",
+   "seirekoht_eelis_id": -684140669,
+   "seirekoht_tase": "sj",
+   "seirekoht_tase_selg": "seirejaam või seireala",
+   "seirekoht_staatus": null,
+   "seirekoht_staatus_selg": null,
+   "seirekoht_koordx": 6598881,
+   "seirekoht_koordy": 632307,
+   "seirekoht_seotud_seirejaam_kood": null,
+   "seirekoht_seotud_seirejaam_eelis_id": null,
+   "seirekoht_seotud_seirejaam_ehak_tekst": null,
+   "seirekoht_seotud_seirejaam_nimi": null,
+   "seirekoht_seotud_seirejaam_koordx": null,
+   "seirekoht_seotud_seirejaam_koordy": null,
+   "veekogu_kood": "VEE1074600",
+   "veekogu_nimi": "Selja jõgi",
+   "veekogu_eelis_id": 113373011,
+   "veekogum_kood": "1074600_4",
+   "veekogum_nimi": "Selja Varangu mnt sillast suudmeni",
+   "veekogum_eelis_id": -455527904,
+   "seirekogum_kood": "1074600_4",
+   "seirekogum_nimi": "Selja Varangu mnt sillast suudmeni",
+   "seirekogum_eelis_id": -455527904,
+   "seirekogum_tyyp": "V2B",
+   "liik_eelis_id": -1899252168,
+   "liik_est": "karvapea",
+   "liik_lad": "Cheumatopsyche lepida",
+   "liik_kategooria": null,
+   "takson_eelis_id": null,
+   "takson_est": null,
+   "takson_lad": null,
+   "takson_tyyp": null,
+   "takson_tyyp_selg": null,
+   "puurauk_kood": null,
+   "puurauk_eelis_id": null,
+   "puurauk_staatus": null,
+   "puurauk_staatus_selg": null,
+   "puurauk_sygavus": null,
+   "puurauk_pohjaveekiht": null,
+   "pohjaveekogum_kood": null,
+   "pohjaveekogum_nimi": null,
+   "pohjaveekogum_eelis_id": null,
+   "isend_nr": null,
+   "labor_dok_nr": "",
+   "proovivotuseade": null,
+   "proovivott_meetod_proovivotu_sygavus_selg": null,
+   "pyygivahend_silmasuurus": null,
+   "osa_saagist": null,
+   "pyygireis_nr": null,
+   "traal_tombe_nr": null,
+   "traal_tombe_kestvus": null,
+   "kordsus": null,
+   "seireala_pindala": null,
+   "mootemaaramatus": null,
+   "maaramatus_kommentaar": null,
+   "viimane_kommentaar_vaartuse_juures": null,
+   "analyys_meetod_standard": null,
+   "vaatleja_eelis_id": null,
+   "vastutav_isik": "Peeter Pall",
+   "proovivotja_vaatleja": "Teadmata",
+   "analyys_teostaja": null
+  }
+ ]
+}

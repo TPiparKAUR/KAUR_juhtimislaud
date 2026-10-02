@@ -1,0 +1,157 @@
+{
+ "table": "stat_t_awtabel004_curr",
+ "total_rows": 6784,
+ "sample_rows": 2000,
+ "columns": {
+  "aruandeaasta": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 4,
+   "min": 2022,
+   "max": 2025
+  },
+  "annual_report_id": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 1255,
+   "min": 40200,
+   "max": 92682
+  },
+  "kasutuspiirkond": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 935,
+   "min": "Aa küla, Lüganuse vald, Ida-Viru maakond",
+   "max": "Ülgase küla, Jõelähtme vald, Harju maako"
+  },
+  "veeliik": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 8,
+   "top_values": [
+    [
+     "Põhjavesi",
+     1815
+    ],
+    [
+     "Pinnavesi (jõed, järved)",
+     127
+    ],
+    [
+     "Karjäärivesi",
+     27
+    ],
+    [
+     "Kaevandusvesi",
+     14
+    ],
+    [
+     "Merevesi",
+     6
+    ],
+    [
+     "Mineraalvesi",
+     5
+    ],
+    [
+     "Veevärgivesi (põhja-ja pinnavee segu)",
+     4
+    ],
+    [
+     "Tehnoloogiline vesi",
+     2
+    ]
+   ]
+  },
+  "markus_v4": {
+   "non_null_share": 0.082,
+   "n_distinct_in_sample": 48,
+   "min": "\"Muu\"vee hulka arvestatud reoveejaama ja",
+   "max": "Õuna küla kajastub Jõgeva linna all"
+  },
+  "kokku": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 1873,
+   "min": 0,
+   "max": 246636269
+  },
+  "olme": {
+   "non_null_share": 0.654,
+   "n_distinct_in_sample": 1194,
+   "min": 0,
+   "max": 15343037
+  },
+  "toostus": {
+   "non_null_share": 0.264,
+   "n_distinct_in_sample": 386,
+   "min": 0,
+   "max": 20065611
+  },
+  "jahutus": {
+   "non_null_share": 0.106,
+   "n_distinct_in_sample": 37,
+   "min": 0,
+   "max": 246410523
+  },
+  "energeetika": {
+   "non_null_share": 0.112,
+   "n_distinct_in_sample": 58,
+   "min": 0,
+   "max": 1466564
+  },
+  "pollumajandus": {
+   "non_null_share": 0.286,
+   "n_distinct_in_sample": 411,
+   "min": 0,
+   "max": 175333
+  },
+  "niisutus": {
+   "non_null_share": 0.115,
+   "n_distinct_in_sample": 55,
+   "min": 0,
+   "max": 111321
+  },
+  "muu": {
+   "non_null_share": 0.215,
+   "n_distinct_in_sample": 248,
+   "min": 0,
+   "max": 8829639
+  },
+  "veekadu": {
+   "non_null_share": 0.382,
+   "n_distinct_in_sample": 589,
+   "min": 0,
+   "max": 5420199
+  }
+ },
+ "head": [
+  {
+   "aruandeaasta": 2025,
+   "annual_report_id": 87913,
+   "kasutuspiirkond": "Tallinn, Harju maakond",
+   "veeliik": "Põhjavesi",
+   "markus_v4": null,
+   "kokku": 327,
+   "olme": null,
+   "toostus": null,
+   "jahutus": null,
+   "energeetika": null,
+   "pollumajandus": null,
+   "niisutus": null,
+   "muu": 327,
+   "veekadu": null
+  },
+  {
+   "aruandeaasta": 2022,
+   "annual_report_id": 46816,
+   "kasutuspiirkond": "Tallinn, Harju maakond",
+   "veeliik": "Põhjavesi",
+   "markus_v4": null,
+   "kokku": 2031,
+   "olme": 2031,
+   "toostus": null,
+   "jahutus": null,
+   "energeetika": null,
+   "pollumajandus": null,
+   "niisutus": null,
+   "muu": null,
+   "veekadu": null
+  }
+ ]
+}

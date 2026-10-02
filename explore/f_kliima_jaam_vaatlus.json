@@ -1,0 +1,421 @@
+{
+ "table": "f_kliima_jaam_vaatlus",
+ "total_rows": 2140,
+ "sample_rows": 2000,
+ "columns": {
+  "jaam_kood": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 25,
+   "top_values": [
+    [
+     "AJSORV01",
+     104
+    ],
+    [
+     "AJKIHN01",
+     101
+    ],
+    [
+     "AJVORU01",
+     96
+    ],
+    [
+     "AJPAKR01",
+     93
+    ],
+    [
+     "AJV-MA01",
+     90
+    ],
+    [
+     "AJJOHV01",
+     88
+    ],
+    [
+     "AJHARK01",
+     85
+    ],
+    [
+     "AJTOOM01",
+     85
+    ]
+   ]
+  },
+  "jaam_nimi": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 25,
+   "top_values": [
+    [
+     "Sõrve",
+     104
+    ],
+    [
+     "Kihnu",
+     101
+    ],
+    [
+     "Võru",
+     96
+    ],
+    [
+     "Pakri",
+     93
+    ],
+    [
+     "Väike-Maarja",
+     90
+    ],
+    [
+     "Jõhvi",
+     88
+    ],
+    [
+     "Tallinn-Harku",
+     85
+    ],
+    [
+     "Tooma",
+     85
+    ]
+   ]
+  },
+  "jaam_nimi_eng": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 25,
+   "top_values": [
+    [
+     "Sorve",
+     104
+    ],
+    [
+     "Kihnu",
+     101
+    ],
+    [
+     "Voru",
+     96
+    ],
+    [
+     "Pakri",
+     93
+    ],
+    [
+     "Vaike-Maarja",
+     90
+    ],
+    [
+     "Johvi",
+     88
+    ],
+    [
+     "Tallinn-Harku",
+     85
+    ],
+    [
+     "Tooma",
+     85
+    ]
+   ]
+  },
+  "jaam_periood_algus": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 12,
+   "top_values": [
+    [
+     "1991-01-01T00:00:00",
+     1530
+    ],
+    [
+     "2003-09-01T00:00:00",
+     82
+    ],
+    [
+     "2013-12-19T00:00:00",
+     70
+    ],
+    [
+     "2007-12-04T00:00:00",
+     64
+    ],
+    [
+     "2003-11-01T00:00:00",
+     57
+    ],
+    [
+     "2013-11-01T00:00:00",
+     54
+    ],
+    [
+     "2018-04-01T00:00:00",
+     51
+    ],
+    [
+     "2011-09-06T00:00:00",
+     44
+    ]
+   ]
+  },
+  "jaam_periood_lopp": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 10,
+   "top_values": [
+    [
+     "3999-12-31T23:59:00",
+     1847
+    ],
+    [
+     "2019-08-21T23:59:00",
+     60
+    ],
+    [
+     "2013-10-31T23:59:00",
+     28
+    ],
+    [
+     "2011-09-05T23:59:00",
+     18
+    ],
+    [
+     "2000-10-31T23:59:00",
+     12
+    ],
+    [
+     "2003-08-31T23:59:00",
+     11
+    ],
+    [
+     "2003-10-31T23:59:00",
+     10
+    ],
+    [
+     "2004-12-22T23:59:00",
+     9
+    ]
+   ]
+  },
+  "pikkuskraad": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 34,
+   "min": 21.814233,
+   "max": 28.114167
+  },
+  "laiuskraad": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 34,
+   "min": 57.782988,
+   "max": 59.521374
+  },
+  "korgus_merepinnast_m": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 31,
+   "min": 1.0,
+   "max": 120.7
+  },
+  "element_kood": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 25,
+   "top_values": [
+    [
+     "PR1H",
+     202
+    ],
+    [
+     "RH",
+     126
+    ],
+    [
+     "DSND",
+     118
+    ],
+    [
+     "DRH08",
+     116
+    ],
+    [
+     "WS10M",
+     116
+    ],
+    [
+     "DPREC",
+     94
+    ],
+    [
+     "WSX1H",
+     89
+    ],
+    [
+     "TA",
+     86
+    ]
+   ]
+  },
+  "element_nimi": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 23,
+   "top_values": [
+    [
+     "Sademed (tunni summa)",
+     202
+    ],
+    [
+     "Tuule kiirus (10 min keskmine)",
+     180
+    ],
+    [
+     "Suhteline õhuniiskus",
+     126
+    ],
+    [
+     "Lumikatte paksus (kell 06:00UTC)",
+     118
+    ],
+    [
+     "Tuule suund (10 min keskmine)",
+     118
+    ],
+    [
+     "Suhteline õhuniiskus (ööpäeva keskmine)",
+     116
+    ],
+    [
+     "Sademed (ööpäeva summa)",
+     94
+    ],
+    [
+     "Tuule kiirus (tunni maksimum)",
+     89
+    ]
+   ]
+  },
+  "element_nimi_eng": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 23,
+   "top_values": [
+    [
+     "Precipitation (hourly sum)",
+     202
+    ],
+    [
+     "Wind speed (10 min avg)",
+     180
+    ],
+    [
+     "Relative humidity",
+     126
+    ],
+    [
+     "Snow depth (at 06:00UTC)",
+     118
+    ],
+    [
+     "Wind direction (10 min avg)",
+     118
+    ],
+    [
+     "Relative humidity (daily avg)",
+     116
+    ],
+    [
+     "Precipitation (daily sum)",
+     94
+    ],
+    [
+     "Wind gust (hourly max)",
+     89
+    ]
+   ]
+  },
+  "element_yhik_eng": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 10,
+   "top_values": [
+    [
+     "°C",
+     458
+    ],
+    [
+     "m/s",
+     453
+    ],
+    [
+     "mm",
+     329
+    ],
+    [
+     "%",
+     242
+    ],
+    [
+     "hPa",
+     165
+    ],
+    [
+     "cm",
+     118
+    ],
+    [
+     "°",
+     118
+    ],
+    [
+     "h",
+     48
+    ]
+   ]
+  },
+  "vaatlus_periood_algus": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 555,
+   "min": "1991-01-01T00:00:00",
+   "max": "2025-11-15T06:00:00"
+  },
+  "vaatlus_periood_lopp": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 501,
+   "min": "1991-05-31T18:00:00",
+   "max": "3999-12-31T23:59:00"
+  },
+  "avaandmed_ts": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2000,
+   "min": "2025-12-17T21:26:00.754541+02:00",
+   "max": "2025-12-17T21:26:00.836455+02:00"
+  }
+ },
+ "head": [
+  {
+   "jaam_kood": "AJHARK01",
+   "jaam_nimi": "Tallinn-Harku",
+   "jaam_nimi_eng": "Tallinn-Harku",
+   "jaam_periood_algus": "1991-01-01T00:00:00",
+   "jaam_periood_lopp": "3999-12-31T23:59:00",
+   "pikkuskraad": 24.60287,
+   "laiuskraad": 59.398122,
+   "korgus_merepinnast_m": 33.16,
+   "element_kood": "DPA008",
+   "element_nimi": "Õhurõhk merepinnal (ööpäeva keskmine)",
+   "element_nimi_eng": "Air pressure at sea level (daily avg)",
+   "element_yhik_eng": "hPa",
+   "vaatlus_periood_algus": "1991-01-01T00:00:00",
+   "vaatlus_periood_lopp": "2003-10-31T23:59:00",
+   "avaandmed_ts": "2025-12-17T21:26:00.754541+02:00"
+  },
+  {
+   "jaam_kood": "AJHARK01",
+   "jaam_nimi": "Tallinn-Harku",
+   "jaam_nimi_eng": "Tallinn-Harku",
+   "jaam_periood_algus": "1991-01-01T00:00:00",
+   "jaam_periood_lopp": "3999-12-31T23:59:00",
+   "pikkuskraad": 24.60287,
+   "laiuskraad": 59.398122,
+   "korgus_merepinnast_m": 33.16,
+   "element_kood": "DPA008",
+   "element_nimi": "Õhurõhk merepinnal (ööpäeva keskmine)",
+   "element_nimi_eng": "Air pressure at sea level (daily avg)",
+   "element_yhik_eng": "hPa",
+   "vaatlus_periood_algus": "2003-11-01T00:00:00",
+   "vaatlus_periood_lopp": "2015-05-03T23:59:00",
+   "avaandmed_ts": "2025-12-17T21:26:00.75509+02:00"
+  }
+ ]
+}

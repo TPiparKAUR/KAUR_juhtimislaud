@@ -1,0 +1,1605 @@
+{
+ "table": "f_veekogumi_seisundid",
+ "total_rows": 7041,
+ "sample_rows": 2000,
+ "columns": {
+  "id": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2000,
+   "min": -2143499434,
+   "max": 2146403948
+  },
+  "vkm_id": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 747,
+   "min": -2144227904,
+   "max": 2146827904
+  },
+  "vkm_nimi": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 739,
+   "min": "Aavoja",
+   "max": "Ülemiste järv"
+  },
+  "aasta": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 19,
+   "top_values": [
+    [
+     "2015",
+     385
+    ],
+    [
+     "2021",
+     268
+    ],
+    [
+     "2014",
+     217
+    ],
+    [
+     "2010",
+     197
+    ],
+    [
+     "2012",
+     196
+    ],
+    [
+     "2013",
+     192
+    ],
+    [
+     "2024",
+     116
+    ],
+    [
+     "2027",
+     68
+    ]
+   ]
+  },
+  "kood": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 1982,
+   "min": "1000100_1-2012-S",
+   "max": "TEW-2024-S"
+  },
+  "tyyp": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "S",
+     1528
+    ],
+    [
+     "E",
+     472
+    ]
+   ]
+  },
+  "vkmseis_tyyp_selg": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Seisund",
+     1528
+    ],
+    [
+     "Eesmärk",
+     472
+    ]
+   ]
+  },
+  "staatus": {
+   "non_null_share": 0.099,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "saavutatud",
+     120
+    ],
+    [
+     "saavutamata",
+     78
+    ]
+   ]
+  },
+  "vkmseis_staatus_selg": {
+   "non_null_share": 0.099,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Saavutatud",
+     120
+    ],
+    [
+     "Saavutamata",
+     78
+    ]
+   ]
+  },
+  "usaldus_kese": {
+   "non_null_share": 0.045,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "3",
+     70
+    ],
+    [
+     "2",
+     18
+    ],
+    [
+     "0",
+     2
+    ]
+   ]
+  },
+  "vkmseis_usaldus_kese_selg": {
+   "non_null_share": 0.045,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "Kõrge usaldusväärsus",
+     70
+    ],
+    [
+     "Keskmine usaldusväärsus",
+     18
+    ],
+    [
+     "Info puudub",
+     2
+    ]
+   ]
+  },
+  "usaldus_ose": {
+   "non_null_share": 0.455,
+   "n_distinct_in_sample": 4,
+   "top_values": [
+    [
+     "3",
+     483
+    ],
+    [
+     "1",
+     258
+    ],
+    [
+     "2",
+     153
+    ],
+    [
+     "0",
+     15
+    ]
+   ]
+  },
+  "vkmseis_usaldus_ose_selg": {
+   "non_null_share": 0.455,
+   "n_distinct_in_sample": 4,
+   "top_values": [
+    [
+     "3 - Kõrge",
+     483
+    ],
+    [
+     "1 - Madal",
+     258
+    ],
+    [
+     "2 - Keskmine",
+     153
+    ],
+    [
+     "0 - Info puudub",
+     15
+    ]
+   ]
+  },
+  "seis": {
+   "non_null_share": 0.993,
+   "n_distinct_in_sample": 6,
+   "top_values": [
+    [
+     "2",
+     1147
+    ],
+    [
+     "3",
+     546
+    ],
+    [
+     "4",
+     268
+    ],
+    [
+     "5",
+     11
+    ],
+    [
+     "1",
+     9
+    ],
+    [
+     "U",
+     4
+    ]
+   ]
+  },
+  "seis_selg": {
+   "non_null_share": 0.993,
+   "n_distinct_in_sample": 6,
+   "top_values": [
+    [
+     "2. Hea",
+     1147
+    ],
+    [
+     "3. Kesine",
+     546
+    ],
+    [
+     "4. Halb",
+     268
+    ],
+    [
+     "5. Väga halb",
+     11
+    ],
+    [
+     "1. Väga hea",
+     9
+    ],
+    [
+     "Hindamata",
+     4
+    ]
+   ]
+  },
+  "seis_ose": {
+   "non_null_share": 0.649,
+   "n_distinct_in_sample": 8,
+   "top_values": [
+    [
+     "2",
+     653
+    ],
+    [
+     "3",
+     503
+    ],
+    [
+     "4",
+     104
+    ],
+    [
+     "U",
+     18
+    ],
+    [
+     "5",
+     10
+    ],
+    [
+     "1",
+     6
+    ],
+    [
+     "N",
+     3
+    ],
+    [
+     "6",
+     2
+    ]
+   ]
+  },
+  "seis_ose_selg": {
+   "non_null_share": 0.649,
+   "n_distinct_in_sample": 8,
+   "top_values": [
+    [
+     "2. Hea",
+     653
+    ],
+    [
+     "3. Kesine",
+     503
+    ],
+    [
+     "4. Halb",
+     104
+    ],
+    [
+     "Hindamata",
+     18
+    ],
+    [
+     "5. Väga halb",
+     10
+    ],
+    [
+     "1. Väga hea",
+     6
+    ],
+    [
+     "Mitteasjakohane",
+     3
+    ],
+    [
+     "Hea ÖP",
+     2
+    ]
+   ]
+  },
+  "seis_kese": {
+   "non_null_share": 0.621,
+   "n_distinct_in_sample": 5,
+   "top_values": [
+    [
+     "U",
+     960
+    ],
+    [
+     "2",
+     136
+    ],
+    [
+     "4",
+     126
+    ],
+    [
+     "O",
+     18
+    ],
+    [
+     "3",
+     1
+    ]
+   ]
+  },
+  "seis_kese_selg": {
+   "non_null_share": 0.621,
+   "n_distinct_in_sample": 5,
+   "top_values": [
+    [
+     "Hindamata",
+     960
+    ],
+    [
+     "2. Hea",
+     136
+    ],
+    [
+     "4. Halb",
+     126
+    ],
+    [
+     "Osaliselt seiratud",
+     18
+    ],
+    [
+     "3. Kesine",
+     1
+    ]
+   ]
+  },
+  "seis_hymo": {
+   "non_null_share": 0.383,
+   "n_distinct_in_sample": 7,
+   "top_values": [
+    [
+     "U",
+     463
+    ],
+    [
+     "3",
+     131
+    ],
+    [
+     "2",
+     60
+    ],
+    [
+     "4",
+     59
+    ],
+    [
+     "1",
+     35
+    ],
+    [
+     "5",
+     12
+    ],
+    [
+     "N",
+     6
+    ]
+   ]
+  },
+  "seis_hymo_selg": {
+   "non_null_share": 0.383,
+   "n_distinct_in_sample": 7,
+   "top_values": [
+    [
+     "Hindamata",
+     463
+    ],
+    [
+     "3. Kesine",
+     131
+    ],
+    [
+     "2. Hea",
+     60
+    ],
+    [
+     "4. Halb",
+     59
+    ],
+    [
+     "1. Väga hea",
+     35
+    ],
+    [
+     "5. Väga halb",
+     12
+    ],
+    [
+     "Mitteasjakohane",
+     6
+    ]
+   ]
+  },
+  "seis_hymo_reziim": {
+   "non_null_share": 0.007,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "2",
+     9
+    ],
+    [
+     "1",
+     3
+    ],
+    [
+     "3",
+     3
+    ]
+   ]
+  },
+  "seis_hymo_reziim_selg": {
+   "non_null_share": 0.007,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "2 hea",
+     9
+    ],
+    [
+     "1 väga hea",
+     3
+    ],
+    [
+     "3 kesine",
+     3
+    ]
+   ]
+  },
+  "seis_hymo_tokestatus": {
+   "non_null_share": 0.097,
+   "n_distinct_in_sample": 5,
+   "top_values": [
+    [
+     "1",
+     96
+    ],
+    [
+     "3",
+     56
+    ],
+    [
+     "2",
+     22
+    ],
+    [
+     "4",
+     17
+    ],
+    [
+     "5",
+     3
+    ]
+   ]
+  },
+  "seis_hymo_tokestatus_selg": {
+   "non_null_share": 0.097,
+   "n_distinct_in_sample": 5,
+   "top_values": [
+    [
+     "1 väga hea",
+     96
+    ],
+    [
+     "3 kesine",
+     56
+    ],
+    [
+     "2 hea",
+     22
+    ],
+    [
+     "4 halb",
+     17
+    ],
+    [
+     "5 väga halb",
+     3
+    ]
+   ]
+  },
+  "seis_hymo_looklevus": {
+   "non_null_share": 0.084,
+   "n_distinct_in_sample": 5,
+   "top_values": [
+    [
+     "4",
+     40
+    ],
+    [
+     "3",
+     40
+    ],
+    [
+     "1",
+     35
+    ],
+    [
+     "2",
+     30
+    ],
+    [
+     "5",
+     23
+    ]
+   ]
+  },
+  "seis_hymo_looklevus_selg": {
+   "non_null_share": 0.084,
+   "n_distinct_in_sample": 5,
+   "top_values": [
+    [
+     "4 halb",
+     40
+    ],
+    [
+     "3 kesine",
+     40
+    ],
+    [
+     "1 väga hea",
+     35
+    ],
+    [
+     "2 hea",
+     30
+    ],
+    [
+     "5 väga halb",
+     23
+    ]
+   ]
+  },
+  "seis_fyke": {
+   "non_null_share": 0.403,
+   "n_distinct_in_sample": 6,
+   "top_values": [
+    [
+     "1",
+     297
+    ],
+    [
+     "U",
+     221
+    ],
+    [
+     "2",
+     157
+    ],
+    [
+     "3",
+     102
+    ],
+    [
+     "5",
+     17
+    ],
+    [
+     "4",
+     12
+    ]
+   ]
+  },
+  "seis_fyke_selg": {
+   "non_null_share": 0.403,
+   "n_distinct_in_sample": 6,
+   "top_values": [
+    [
+     "1. Väga hea",
+     297
+    ],
+    [
+     "Hindamata",
+     221
+    ],
+    [
+     "2. Hea",
+     157
+    ],
+    [
+     "3. Kesine",
+     102
+    ],
+    [
+     "5. Väga halb",
+     17
+    ],
+    [
+     "4. Halb",
+     12
+    ]
+   ]
+  },
+  "seis_fyke_nyld": {
+   "non_null_share": 0.115,
+   "n_distinct_in_sample": 8,
+   "top_values": [
+    [
+     "2",
+     93
+    ],
+    [
+     "1",
+     67
+    ],
+    [
+     "3",
+     44
+    ],
+    [
+     "4",
+     11
+    ],
+    [
+     "5",
+     6
+    ],
+    [
+     "M",
+     5
+    ],
+    [
+     "N",
+     2
+    ],
+    [
+     "U",
+     1
+    ]
+   ]
+  },
+  "seis_fyke_nyld_selg": {
+   "non_null_share": 0.115,
+   "n_distinct_in_sample": 8,
+   "top_values": [
+    [
+     "2. Hea",
+     93
+    ],
+    [
+     "1. Väga hea",
+     67
+    ],
+    [
+     "3. Kesine",
+     44
+    ],
+    [
+     "4. Halb",
+     11
+    ],
+    [
+     "5. Väga halb",
+     6
+    ],
+    [
+     "Seiratud, kuid standard puudub ja/või seisundi hindamisel ei kasutata",
+     5
+    ],
+    [
+     "Mitteasjakohane",
+     2
+    ],
+    [
+     "Hindamata",
+     1
+    ]
+   ]
+  },
+  "seis_fyke_pyld": {
+   "non_null_share": 0.115,
+   "n_distinct_in_sample": 6,
+   "top_values": [
+    [
+     "1",
+     113
+    ],
+    [
+     "2",
+     84
+    ],
+    [
+     "3",
+     20
+    ],
+    [
+     "4",
+     6
+    ],
+    [
+     "5",
+     6
+    ],
+    [
+     "U",
+     1
+    ]
+   ]
+  },
+  "seis_fyke_pyld_selg": {
+   "non_null_share": 0.115,
+   "n_distinct_in_sample": 6,
+   "top_values": [
+    [
+     "1. Väga hea",
+     113
+    ],
+    [
+     "2. Hea",
+     84
+    ],
+    [
+     "3. Kesine",
+     20
+    ],
+    [
+     "4. Halb",
+     6
+    ],
+    [
+     "5. Väga halb",
+     6
+    ],
+    [
+     "Hindamata",
+     1
+    ]
+   ]
+  },
+  "seis_spets": {
+   "non_null_share": 0.305,
+   "n_distinct_in_sample": 6,
+   "top_values": [
+    [
+     "U",
+     374
+    ],
+    [
+     "2",
+     124
+    ],
+    [
+     "4",
+     47
+    ],
+    [
+     "N",
+     36
+    ],
+    [
+     "O",
+     17
+    ],
+    [
+     "1",
+     13
+    ]
+   ]
+  },
+  "seis_spets_selg": {
+   "non_null_share": 0.305,
+   "n_distinct_in_sample": 6,
+   "top_values": [
+    [
+     "Hindamata",
+     374
+    ],
+    [
+     "2. Hea",
+     124
+    ],
+    [
+     "4. Halb",
+     47
+    ],
+    [
+     "Mitteasjakohane",
+     36
+    ],
+    [
+     "Osaliselt seiratud",
+     17
+    ],
+    [
+     "1. Väga hea",
+     13
+    ]
+   ]
+  },
+  "seis_kala": {
+   "non_null_share": 0.347,
+   "n_distinct_in_sample": 8,
+   "top_values": [
+    [
+     "U",
+     335
+    ],
+    [
+     "2",
+     129
+    ],
+    [
+     "3",
+     92
+    ],
+    [
+     "N",
+     74
+    ],
+    [
+     "1",
+     30
+    ],
+    [
+     "4",
+     21
+    ],
+    [
+     "M",
+     13
+    ],
+    [
+     "5",
+     1
+    ]
+   ]
+  },
+  "seis_kala_selg": {
+   "non_null_share": 0.347,
+   "n_distinct_in_sample": 8,
+   "top_values": [
+    [
+     "Hindamata",
+     335
+    ],
+    [
+     "2. Hea",
+     129
+    ],
+    [
+     "3. Kesine",
+     92
+    ],
+    [
+     "Mitteasjakohane",
+     74
+    ],
+    [
+     "1. Väga hea",
+     30
+    ],
+    [
+     "4. Halb",
+     21
+    ],
+    [
+     "Seiratud, kuid standard puudub ja/või seisundi hindamisel ei kasutata",
+     13
+    ],
+    [
+     "5. Väga halb",
+     1
+    ]
+   ]
+  },
+  "seis_suse": {
+   "non_null_share": 0.362,
+   "n_distinct_in_sample": 7,
+   "top_values": [
+    [
+     "U",
+     330
+    ],
+    [
+     "1",
+     176
+    ],
+    [
+     "2",
+     134
+    ],
+    [
+     "3",
+     64
+    ],
+    [
+     "4",
+     12
+    ],
+    [
+     "5",
+     6
+    ],
+    [
+     "M",
+     2
+    ]
+   ]
+  },
+  "seis_suse_selg": {
+   "non_null_share": 0.362,
+   "n_distinct_in_sample": 7,
+   "top_values": [
+    [
+     "Hindamata",
+     330
+    ],
+    [
+     "1. Väga hea",
+     176
+    ],
+    [
+     "2. Hea",
+     134
+    ],
+    [
+     "3. Kesine",
+     64
+    ],
+    [
+     "4. Halb",
+     12
+    ],
+    [
+     "5. Väga halb",
+     6
+    ],
+    [
+     "Seiratud, kuid standard puudub ja/või seisundi hindamisel ei kasutata",
+     2
+    ]
+   ]
+  },
+  "seis_fybe": {
+   "non_null_share": 0.353,
+   "n_distinct_in_sample": 7,
+   "top_values": [
+    [
+     "U",
+     325
+    ],
+    [
+     "1",
+     184
+    ],
+    [
+     "2",
+     101
+    ],
+    [
+     "N",
+     77
+    ],
+    [
+     "3",
+     14
+    ],
+    [
+     "M",
+     5
+    ],
+    [
+     "4",
+     1
+    ]
+   ]
+  },
+  "seis_fybe_selg": {
+   "non_null_share": 0.353,
+   "n_distinct_in_sample": 7,
+   "top_values": [
+    [
+     "Hindamata",
+     325
+    ],
+    [
+     "1. Väga hea",
+     184
+    ],
+    [
+     "2. Hea",
+     101
+    ],
+    [
+     "Mitteasjakohane",
+     77
+    ],
+    [
+     "3. Kesine",
+     14
+    ],
+    [
+     "Seiratud, kuid standard puudub ja/või seisundi hindamisel ei kasutata",
+     5
+    ],
+    [
+     "4. Halb",
+     1
+    ]
+   ]
+  },
+  "seis_fypla": {
+   "non_null_share": 0.35,
+   "n_distinct_in_sample": 7,
+   "top_values": [
+    [
+     "N",
+     515
+    ],
+    [
+     "2",
+     75
+    ],
+    [
+     "3",
+     38
+    ],
+    [
+     "1",
+     34
+    ],
+    [
+     "U",
+     28
+    ],
+    [
+     "4",
+     9
+    ],
+    [
+     "5",
+     1
+    ]
+   ]
+  },
+  "seis_fypla_selg": {
+   "non_null_share": 0.35,
+   "n_distinct_in_sample": 7,
+   "top_values": [
+    [
+     "Mitteasjakohane",
+     515
+    ],
+    [
+     "2. Hea",
+     75
+    ],
+    [
+     "3. Kesine",
+     38
+    ],
+    [
+     "1. Väga hea",
+     34
+    ],
+    [
+     "Hindamata",
+     28
+    ],
+    [
+     "4. Halb",
+     9
+    ],
+    [
+     "5. Väga halb",
+     1
+    ]
+   ]
+  },
+  "seis_mafy": {
+   "non_null_share": 0.345,
+   "n_distinct_in_sample": 7,
+   "top_values": [
+    [
+     "U",
+     337
+    ],
+    [
+     "2",
+     166
+    ],
+    [
+     "1",
+     109
+    ],
+    [
+     "3",
+     60
+    ],
+    [
+     "M",
+     13
+    ],
+    [
+     "4",
+     4
+    ],
+    [
+     "N",
+     1
+    ]
+   ]
+  },
+  "seis_mafy_selg": {
+   "non_null_share": 0.345,
+   "n_distinct_in_sample": 7,
+   "top_values": [
+    [
+     "Hindamata",
+     337
+    ],
+    [
+     "2. Hea",
+     166
+    ],
+    [
+     "1. Väga hea",
+     109
+    ],
+    [
+     "3. Kesine",
+     60
+    ],
+    [
+     "Seiratud, kuid standard puudub ja/või seisundi hindamisel ei kasutata",
+     13
+    ],
+    [
+     "4. Halb",
+     4
+    ],
+    [
+     "Mitteasjakohane",
+     1
+    ]
+   ]
+  },
+  "seis_mafy_fybe": {
+   "non_null_share": 0.101,
+   "n_distinct_in_sample": 7,
+   "top_values": [
+    [
+     "U",
+     72
+    ],
+    [
+     "1",
+     56
+    ],
+    [
+     "2",
+     55
+    ],
+    [
+     "3",
+     8
+    ],
+    [
+     "N",
+     8
+    ],
+    [
+     "4",
+     2
+    ],
+    [
+     "M",
+     1
+    ]
+   ]
+  },
+  "seis_mafy_fybe_selg": {
+   "non_null_share": 0.101,
+   "n_distinct_in_sample": 7,
+   "top_values": [
+    [
+     "Hindamata",
+     72
+    ],
+    [
+     "1. Väga hea",
+     56
+    ],
+    [
+     "2. Hea",
+     55
+    ],
+    [
+     "3. Kesine",
+     8
+    ],
+    [
+     "Mitteasjakohane",
+     8
+    ],
+    [
+     "4. Halb",
+     2
+    ],
+    [
+     "Seiratud, kuid standard puudub ja/või seisundi hindamisel ei kasutata",
+     1
+    ]
+   ]
+  },
+  "ose_naitaja": {
+   "non_null_share": 0.154,
+   "n_distinct_in_sample": 170,
+   "min": "-,JKI,tinaorgaanilised,ühendid",
+   "max": "tähk-vesikuusk"
+  },
+  "ose_naitaja_selg": {
+   "non_null_share": 0.153,
+   "n_distinct_in_sample": 162,
+   "min": "1-aluselised fenoolid",
+   "max": "tähk-vesikuusk"
+  },
+  "ose_pohjus": {
+   "non_null_share": 0.153,
+   "n_distinct_in_sample": 90,
+   "min": "Reostus",
+   "max": "veevool_aeglane"
+  },
+  "ose_pohjus_selg": {
+   "non_null_share": 0.123,
+   "n_distinct_in_sample": 88,
+   "min": "Kõrge veeseis, seirelõik maaparandustööd",
+   "max": "veevool väga aeglane"
+  },
+  "kese_naitaja": {
+   "non_null_share": 0.044,
+   "n_distinct_in_sample": 35,
+   "top_values": [
+    [
+     "HgElus",
+     35
+    ],
+    [
+     "HgElus,TBT",
+     5
+    ],
+    [
+     "Hg",
+     4
+    ],
+    [
+     "Cd,Hg",
+     4
+    ],
+    [
+     "heptakloor,HgElus",
+     3
+    ],
+    [
+     "BDFE,Cd",
+     3
+    ],
+    [
+     "BDFE,HgElus",
+     3
+    ],
+    [
+     "BDFE,Cd,HgElus",
+     2
+    ]
+   ]
+  },
+  "kese_naitaja_selg": {
+   "non_null_share": 0.044,
+   "n_distinct_in_sample": 35,
+   "top_values": [
+    [
+     "Hg elustikus",
+     35
+    ],
+    [
+     "Hg elustikus, Tributüültina ühendid (TBT)",
+     5
+    ],
+    [
+     "Elavhõbe ja selle ühendid",
+     4
+    ],
+    [
+     "Kaadmium ja selle ühendid, Elavhõbe ja selle ühendid",
+     4
+    ],
+    [
+     "Heptakloor ja heptakloorepoksiid, Hg elustikus",
+     3
+    ],
+    [
+     "bromodifenüüleetrid, Kaadmium ja selle ühendid",
+     3
+    ],
+    [
+     "bromodifenüüleetrid, Hg elustikus",
+     3
+    ],
+    [
+     "bromodifenüüleetrid, Kaadmium ja selle ühendid, Hg elustikus",
+     2
+    ]
+   ]
+  },
+  "kese_pohjus": {
+   "non_null_share": 0.011,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "MAC",
+     9
+    ],
+    [
+     "AAC",
+     7
+    ],
+    [
+     "AAC,MAC",
+     5
+    ]
+   ]
+  },
+  "kese_pohjus_selg": {
+   "non_null_share": 0.011,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "Suurima lubatud piirväärtuse ületamine",
+     9
+    ],
+    [
+     "Aasta keskmise piirväärtuse ületamine",
+     7
+    ],
+    [
+     "Aasta keskmise piirväärtuse ületamine, Suurima lubatud piirväärtuse ületamine",
+     5
+    ]
+   ]
+  },
+  "fyke_nyld": {
+   "non_null_share": 0.09,
+   "n_distinct_in_sample": 100,
+   "min": 0.37,
+   "max": 16
+  },
+  "fyke_pyld": {
+   "non_null_share": 0.091,
+   "n_distinct_in_sample": 73,
+   "min": 0.01,
+   "max": 0.78
+  },
+  "tx_lisainfo": {
+   "non_null_share": 0.305,
+   "n_distinct_in_sample": 579,
+   "min": " Kärkna seirelõik ei sobib sobivus kalas",
+   "max": "Üld-P järgi oli seisund varasemate aasta"
+  },
+  "keht_staatus": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Kehtiv",
+     1993
+    ],
+    [
+     "Kehtetu",
+     7
+    ]
+   ]
+  },
+  "muut_staatus": {
+   "non_null_share": 0.087,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "K",
+     168
+    ],
+    [
+     "A",
+     7
+    ]
+   ]
+  },
+  "vmkseis_muut_staatus_selg": {
+   "non_null_share": 0.087,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Kinnitatud",
+     168
+    ],
+    [
+     "Arhiveeritud",
+     7
+    ]
+   ]
+  },
+  "muut_aeg": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 1394,
+   "min": "2015-05-29T21:45:54.189714",
+   "max": "2026-09-10T17:02:52.425007"
+  }
+ },
+ "head": [
+  {
+   "id": -883486902,
+   "vkm_id": -1107027904,
+   "vkm_nimi": "Lehtma",
+   "aasta": "2018",
+   "kood": "1163700_1-2018-S",
+   "tyyp": "S",
+   "vkmseis_tyyp_selg": "Seisund",
+   "staatus": null,
+   "vkmseis_staatus_selg": null,
+   "usaldus_kese": null,
+   "vkmseis_usaldus_kese_selg": null,
+   "usaldus_ose": "3",
+   "vkmseis_usaldus_ose_selg": "3 - Kõrge",
+   "seis": "5",
+   "seis_selg": "5. Väga halb",
+   "seis_ose": "5",
+   "seis_ose_selg": "5. Väga halb",
+   "seis_kese": "U",
+   "seis_kese_selg": "Hindamata",
+   "seis_hymo": "2",
+   "seis_hymo_selg": "2. Hea",
+   "seis_hymo_reziim": null,
+   "seis_hymo_reziim_selg": null,
+   "seis_hymo_tokestatus": null,
+   "seis_hymo_tokestatus_selg": null,
+   "seis_hymo_looklevus": null,
+   "seis_hymo_looklevus_selg": null,
+   "seis_fyke": "3",
+   "seis_fyke_selg": "3. Kesine",
+   "seis_fyke_nyld": null,
+   "seis_fyke_nyld_selg": null,
+   "seis_fyke_pyld": null,
+   "seis_fyke_pyld_selg": null,
+   "seis_spets": "U",
+   "seis_spets_selg": "Hindamata",
+   "seis_kala": "N",
+   "seis_kala_selg": "Mitteasjakohane",
+   "seis_suse": "5",
+   "seis_suse_selg": "5. Väga halb",
+   "seis_fybe": "2",
+   "seis_fybe_selg": "2. Hea",
+   "seis_fypla": "N",
+   "seis_fypla_selg": "Mitteasjakohane",
+   "seis_mafy": "U",
+   "seis_mafy_selg": "Hindamata",
+   "seis_mafy_fybe": null,
+   "seis_mafy_fybe_selg": null,
+   "ose_naitaja": "ASPT,DSFI,EPT,H,NH4,P-üld,SUSE_ÖKS,T",
+   "ose_naitaja_selg": "SUSE taksoni keskmine tundlikkus (ASPT), SUSE Taani vooluvete fauna indeks (DSFI), SUSE vooluvete tundlike taksonite arv EPT, SUSE Shannoni taksonierisus (H), NH4, P-üld, SUSE ÖKS, SUSE taksonirikkus (T)",
+   "ose_pohjus": "ose35,ose6",
+   "ose_pohjus_selg": "toitained, ebasobiv elupaik",
+   "kese_naitaja": null,
+   "kese_naitaja_selg": null,
+   "kese_pohjus": null,
+   "kese_pohjus_selg": null,
+   "fyke_nyld": null,
+   "fyke_pyld": null,
+   "tx_lisainfo": "Elustikule ebasobiv elupaik (sobimatu kraav).\n\nLehtma kogumi madal hapnikusisaldus võib olla valdavalt looduslik, seotud rabaveelise valgala, suure orgaanilise aine sisalduse, aeglase voolu ja vähese õhustumisega. Seda toetab hapnikusisalduse paranemine allavoolu.",
+   "keht_staatus": "Kehtiv",
+   "muut_staatus": null,
+   "vmkseis_muut_staatus_selg": null,
+   "muut_aeg": "2026-09-10T17:02:52.425007"
+  },
+  {
+   "id": -451631574,
+   "vkm_id": -1548927904,
+   "vkm_nimi": "Pedeli Pika tn sillast suudmeni",
+   "aasta": "2007",
+   "kood": "1012100_3-2007-S",
+   "tyyp": "S",
+   "vkmseis_tyyp_selg": "Seisund",
+   "staatus": null,
+   "vkmseis_staatus_selg": null,
+   "usaldus_kese": null,
+   "vkmseis_usaldus_kese_selg": null,
+   "usaldus_ose": null,
+   "vkmseis_usaldus_ose_selg": null,
+   "seis": "3",
+   "seis_selg": "3. Kesine",
+   "seis_ose": "3",
+   "seis_ose_selg": "3. Kesine",
+   "seis_kese": null,
+   "seis_kese_selg": null,
+   "seis_hymo": null,
+   "seis_hymo_selg": null,
+   "seis_hymo_reziim": null,
+   "seis_hymo_reziim_selg": null,
+   "seis_hymo_tokestatus": null,
+   "seis_hymo_tokestatus_selg": null,
+   "seis_hymo_looklevus": null,
+   "seis_hymo_looklevus_selg": null,
+   "seis_fyke": "2",
+   "seis_fyke_selg": "2. Hea",
+   "seis_fyke_nyld": null,
+   "seis_fyke_nyld_selg": null,
+   "seis_fyke_pyld": null,
+   "seis_fyke_pyld_selg": null,
+   "seis_spets": null,
+   "seis_spets_selg": null,
+   "seis_kala": "2",
+   "seis_kala_selg": "2. Hea",
+   "seis_suse": "2",
+   "seis_suse_selg": "2. Hea",
+   "seis_fybe": "3",
+   "seis_fybe_selg": "3. Kesine",
+   "seis_fypla": null,
+   "seis_fypla_selg": null,
+   "seis_mafy": "M",
+   "seis_mafy_selg": "Seiratud, kuid standard puudub ja/või seisundi hindamisel ei kasutata",
+   "seis_mafy_fybe": null,
+   "seis_mafy_fybe_selg": null,
+   "ose_naitaja": "IPS",
+   "ose_naitaja_selg": "FYBE_IPS",
+   "ose_pohjus": "ose35",
+   "ose_pohjus_selg": "toitained",
+   "kese_naitaja": null,
+   "kese_naitaja_selg": null,
+   "kese_pohjus": null,
+   "kese_pohjus_selg": null,
+   "fyke_nyld": null,
+   "fyke_pyld": null,
+   "tx_lisainfo": "Pedeli jõe mõlemas vaatluslõigus oli suurtaimestiku katvus sarnane: Jaanikese teeotsa lähistel 50% ja alamjooksul 53%. Ka dominantliik oli ühine: jõgi-kõõlusleht (Sagittaria sagittifolia). Kraavitatud ja sirgendatud Jaanikese lõigus oli suurtaimi 6 liiki, loodusliku ilmega alamjooksul aga 18 liiki.",
+   "keht_staatus": "Kehtiv",
+   "muut_staatus": null,
+   "vmkseis_muut_staatus_selg": null,
+   "muut_aeg": "2026-06-08T11:52:37.397895"
+  }
+ ]
+}

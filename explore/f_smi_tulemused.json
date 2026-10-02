@@ -1,0 +1,597 @@
+{
+ "table": "f_smi_tulemused",
+ "total_rows": 332433,
+ "sample_rows": 2000,
+ "columns": {
+  "tabeli_number": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 6,
+   "min": 6,
+   "max": 18
+  },
+  "aruande_nimi": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 6,
+   "top_values": [
+    [
+     "Boniteediklassid",
+     400
+    ],
+    [
+     "Vanuseklassid",
+     400
+    ],
+    [
+     "Takseernäitajad",
+     400
+    ],
+    [
+     "Kasvukohatüübid",
+     400
+    ],
+    [
+     "Täius ja rinnaspindala",
+     398
+    ],
+    [
+     "Maht arenguklassiti",
+     2
+    ]
+   ]
+  },
+  "tunnus": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 5,
+   "top_values": [
+    [
+     "Kasvavate puude maht",
+     800
+    ],
+    [
+     "Pindala",
+     800
+    ],
+    [
+     "Rinnaspindala",
+     278
+    ],
+    [
+     "Täius",
+     120
+    ],
+    [
+     "Juurdekasv",
+     2
+    ]
+   ]
+  },
+  "maakategooria_kood": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "M",
+     1598
+    ],
+    [
+     "M,MM",
+     402
+    ]
+   ]
+  },
+  "maakategooria": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Metsaga metsamaa",
+     1598
+    ],
+    [
+     "Metsamaa",
+     402
+    ]
+   ]
+  },
+  "omand_kood": {
+   "non_null_share": 0.934,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "1",
+     1150
+    ],
+    [
+     "-1,0,3,4,5,8,9",
+     719
+    ]
+   ]
+  },
+  "omand": {
+   "non_null_share": 0.934,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Riigimetsamaa",
+     1150
+    ],
+    [
+     "Teised maaomanikud",
+     719
+    ]
+   ]
+  },
+  "maakond_kood": {
+   "non_null_share": 0.0,
+   "n_distinct_in_sample": 0
+  },
+  "maakond": {
+   "non_null_share": 0.0,
+   "n_distinct_in_sample": 0
+  },
+  "majandkategooria_kood": {
+   "non_null_share": 0.702,
+   "n_distinct_in_sample": 4,
+   "top_values": [
+    [
+     "0",
+     614
+    ],
+    [
+     "0,1",
+     393
+    ],
+    [
+     "1",
+     230
+    ],
+    [
+     "2",
+     167
+    ]
+   ]
+  },
+  "majandkategooria": {
+   "non_null_share": 0.702,
+   "n_distinct_in_sample": 4,
+   "top_values": [
+    [
+     "Majandusmets",
+     614
+    ],
+    [
+     "Majandatavad mets",
+     393
+    ],
+    [
+     "Majanduspiiranguga mets",
+     230
+    ],
+    [
+     "Rangelt kaitstav mets",
+     167
+    ]
+   ]
+  },
+  "enampl_kood": {
+   "non_null_share": 0.638,
+   "n_distinct_in_sample": 8,
+   "top_values": [
+    [
+     "LV",
+     246
+    ],
+    [
+     "XX",
+     219
+    ],
+    [
+     "LM",
+     211
+    ],
+    [
+     "KU",
+     133
+    ],
+    [
+     "KS",
+     129
+    ],
+    [
+     "MA,KU,KS,HB,LM,LV,XX",
+     128
+    ],
+    [
+     "MA",
+     122
+    ],
+    [
+     "HB",
+     88
+    ]
+   ]
+  },
+  "enamuspuuliik": {
+   "non_null_share": 0.638,
+   "n_distinct_in_sample": 8,
+   "top_values": [
+    [
+     "Hall lepp",
+     246
+    ],
+    [
+     "Teised puuliigid",
+     219
+    ],
+    [
+     "Sanglepp",
+     211
+    ],
+    [
+     "Kuusk",
+     133
+    ],
+    [
+     "Kask",
+     129
+    ],
+    [
+     "Puistud",
+     128
+    ],
+    [
+     "Mänd",
+     122
+    ],
+    [
+     "Haab",
+     88
+    ]
+   ]
+  },
+  "filtri_tunnus1": {
+   "non_null_share": 0.2,
+   "n_distinct_in_sample": 1,
+   "top_values": [
+    [
+     "Metsakasvukohatüüp",
+     400
+    ]
+   ]
+  },
+  "filter1_kood": {
+   "non_null_share": 0.2,
+   "n_distinct_in_sample": 36,
+   "top_values": [
+    [
+     "LU",
+     12
+    ],
+    [
+     "KL,LL,LU",
+     12
+    ],
+    [
+     "LL",
+     12
+    ],
+    [
+     "KL",
+     12
+    ],
+    [
+     "PU,LP,TP,MP,KP,SP",
+     12
+    ],
+    [
+     "LD",
+     11
+    ],
+    [
+     "JO,MO,KS",
+     11
+    ],
+    [
+     "MO",
+     11
+    ]
+   ]
+  },
+  "filter1": {
+   "non_null_share": 0.2,
+   "n_distinct_in_sample": 36,
+   "top_values": [
+    [
+     "Lubikaloo",
+     12
+    ],
+    [
+     "Loomets",
+     12
+    ],
+    [
+     "Leesikaloo",
+     12
+    ],
+    [
+     "Kastikuloo",
+     12
+    ],
+    [
+     "Puistang",
+     12
+    ],
+    [
+     "Lodu",
+     11
+    ],
+    [
+     "Kõdusoomets",
+     11
+    ],
+    [
+     "Mustika-kõdusoo",
+     11
+    ]
+   ]
+  },
+  "filtri_tunnus2": {
+   "non_null_share": 0.6,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "Arenguklass",
+     400
+    ],
+    [
+     "Boniteediklass",
+     400
+    ],
+    [
+     "Vanus",
+     400
+    ]
+   ]
+  },
+  "filter2_kood": {
+   "non_null_share": 0.6,
+   "n_distinct_in_sample": 17,
+   "top_values": [
+    [
+     "4,5,6,7",
+     398
+    ],
+    [
+     "6",
+     85
+    ],
+    [
+     "1",
+     84
+    ],
+    [
+     "5",
+     84
+    ],
+    [
+     "2",
+     83
+    ],
+    [
+     "4",
+     82
+    ],
+    [
+     "3",
+     82
+    ],
+    [
+     "0",
+     58
+    ]
+   ]
+  },
+  "filter2": {
+   "non_null_share": 0.6,
+   "n_distinct_in_sample": 32,
+   "top_values": [
+    [
+     "Keskealised ja vanemad puistud",
+     398
+    ],
+    [
+     "1A",
+     58
+    ],
+    [
+     "5A-5B",
+     57
+    ],
+    [
+     "5",
+     57
+    ],
+    [
+     "4",
+     57
+    ],
+    [
+     "3",
+     57
+    ],
+    [
+     "2",
+     57
+    ],
+    [
+     "1",
+     57
+    ]
+   ]
+  },
+  "filtri_tunnus3": {
+   "non_null_share": 0.199,
+   "n_distinct_in_sample": 1,
+   "top_values": [
+    [
+     "Proovitüki liik",
+     398
+    ]
+   ]
+  },
+  "filter3_kood": {
+   "non_null_share": 0.199,
+   "n_distinct_in_sample": 1,
+   "top_values": [
+    [
+     "1",
+     398
+    ]
+   ]
+  },
+  "filter3": {
+   "non_null_share": 0.199,
+   "n_distinct_in_sample": 1,
+   "top_values": [
+    [
+     "Tagavara proovitükk",
+     398
+    ]
+   ]
+  },
+  "arvutus": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Summa",
+     1001
+    ],
+    [
+     "Keskmine",
+     999
+    ]
+   ]
+  },
+  "periood": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 1,
+   "top_values": [
+    [
+     "5",
+     2000
+    ]
+   ]
+  },
+  "usaldusnivoo": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 1,
+   "min": 0,
+   "max": 0
+  },
+  "ainult_tagavaraprtd": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "0",
+     1602
+    ],
+    [
+     "1",
+     398
+    ]
+   ]
+  },
+  "suhteline_viga": {
+   "non_null_share": 0.92,
+   "n_distinct_in_sample": 1806,
+   "min": 0,
+   "max": 1.1180145968019
+  },
+  "ajatempel": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 422,
+   "min": "2025-11-14 12:58:46",
+   "max": "2025-11-14 18:52:52"
+  },
+  "aasta": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 26,
+   "min": 1999,
+   "max": 2024
+  },
+  "arvvaartus": {
+   "non_null_share": 0.993,
+   "n_distinct_in_sample": 1795,
+   "min": 0,
+   "max": 98838.1157118734
+  }
+ },
+ "head": [
+  {
+   "tabeli_number": 9,
+   "aruande_nimi": "Täius ja rinnaspindala",
+   "tunnus": "Rinnaspindala",
+   "maakategooria_kood": "M",
+   "maakategooria": "Metsaga metsamaa",
+   "omand_kood": "1",
+   "omand": "Riigimetsamaa",
+   "maakond_kood": "",
+   "maakond": null,
+   "majandkategooria_kood": "",
+   "majandkategooria": null,
+   "enampl_kood": "XX",
+   "enamuspuuliik": "Teised puuliigid",
+   "filtri_tunnus1": null,
+   "filter1_kood": "",
+   "filter1": null,
+   "filtri_tunnus2": "Arenguklass",
+   "filter2_kood": "4,5,6,7",
+   "filter2": "Keskealised ja vanemad puistud",
+   "filtri_tunnus3": "Proovitüki liik",
+   "filter3_kood": "1",
+   "filter3": "Tagavara proovitükk",
+   "arvutus": "Keskmine",
+   "periood": "5",
+   "usaldusnivoo": 0,
+   "ainult_tagavaraprtd": "1",
+   "suhteline_viga": 0.133769032525099,
+   "ajatempel": "2025-11-14 13:57:36",
+   "aasta": 2002,
+   "arvvaartus": 16.4330216695894
+  },
+  {
+   "tabeli_number": 9,
+   "aruande_nimi": "Täius ja rinnaspindala",
+   "tunnus": "Rinnaspindala",
+   "maakategooria_kood": "M",
+   "maakategooria": "Metsaga metsamaa",
+   "omand_kood": "1",
+   "omand": "Riigimetsamaa",
+   "maakond_kood": "",
+   "maakond": null,
+   "majandkategooria_kood": "",
+   "majandkategooria": null,
+   "enampl_kood": "XX",
+   "enamuspuuliik": "Teised puuliigid",
+   "filtri_tunnus1": null,
+   "filter1_kood": "",
+   "filter1": null,
+   "filtri_tunnus2": "Arenguklass",
+   "filter2_kood": "4,5,6,7",
+   "filter2": "Keskealised ja vanemad puistud",
+   "filtri_tunnus3": "Proovitüki liik",
+   "filter3_kood": "1",
+   "filter3": "Tagavara proovitükk",
+   "arvutus": "Keskmine",
+   "periood": "5",
+   "usaldusnivoo": 0,
+   "ainult_tagavaraprtd": "1",
+   "suhteline_viga": 0.185267692034204,
+   "ajatempel": "2025-11-14 13:57:32",
+   "aasta": 2001,
+   "arvvaartus": 16.109467278412
+  }
+ ]
+}

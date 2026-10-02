@@ -1,0 +1,685 @@
+{
+ "table": "f_rahvalad_lkohtstat",
+ "total_rows": 21088,
+ "sample_rows": 2000,
+ "columns": {
+  "lkohtst_id": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2000,
+   "min": -2143153430,
+   "max": 2144748108
+  },
+  "lkohtst_tyyp": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 5,
+   "top_values": [
+    [
+     "2023",
+     519
+    ],
+    [
+     "2010",
+     432
+    ],
+    [
+     "2014",
+     363
+    ],
+    [
+     "2016",
+     358
+    ],
+    [
+     "2012",
+     328
+    ]
+   ]
+  },
+  "lkohtst_tyyp_selg": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 5,
+   "top_values": [
+    [
+     "2026 Natura standardbaas",
+     519
+    ],
+    [
+     "2010 Natura standardbaas",
+     432
+    ],
+    [
+     "2015 Natura standardbaas",
+     363
+    ],
+    [
+     "2017 Natura standardbaas",
+     358
+    ],
+    [
+     "2012 Natura standardbaas",
+     328
+    ]
+   ]
+  },
+  "lkohtst_obj_id": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 353,
+   "min": -2139839623,
+   "max": 2121175489
+  },
+  "lkohtst_lnim_id": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 340,
+   "min": -2116845812,
+   "max": 2146329601
+  },
+  "ladnimi": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 340,
+   "min": "Accipiter gentilis",
+   "max": "Zootoca vivipara"
+  },
+  "estnimi": {
+   "non_null_share": 0.997,
+   "n_distinct_in_sample": 333,
+   "min": "Brauni astelsõnajalg",
+   "max": "öösorr"
+  },
+  "ryhm": {
+   "non_null_share": 0.99,
+   "n_distinct_in_sample": 18,
+   "top_values": [
+    [
+     "424",
+     976
+    ],
+    [
+     "113",
+     525
+    ],
+    [
+     "425",
+     135
+    ],
+    [
+     "421",
+     133
+    ],
+    [
+     "414",
+     49
+    ],
+    [
+     "418",
+     34
+    ],
+    [
+     "123",
+     26
+    ],
+    [
+     "111",
+     23
+    ]
+   ]
+  },
+  "ryhm_selg": {
+   "non_null_share": 0.99,
+   "n_distinct_in_sample": 18,
+   "top_values": [
+    [
+     "Linnud",
+     976
+    ],
+    [
+     "Katteseemnetaimed",
+     525
+    ],
+    [
+     "Imetajad",
+     135
+    ],
+    [
+     "Kalad",
+     133
+    ],
+    [
+     "Limused",
+     49
+    ],
+    [
+     "Putukad",
+     34
+    ],
+    [
+     "Lehtsamblad",
+     26
+    ],
+    [
+     "Sõnajalgtaimed",
+     23
+    ]
+   ]
+  },
+  "kaitsekategooria": {
+   "non_null_share": 0.781,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "3",
+     768
+    ],
+    [
+     "2",
+     611
+    ],
+    [
+     "1",
+     184
+    ]
+   ]
+  },
+  "kaitsekategooria_selg": {
+   "non_null_share": 0.781,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "III kategooria",
+     768
+    ],
+    [
+     "II kategooria",
+     611
+    ],
+    [
+     "I kategooria",
+     184
+    ]
+   ]
+  },
+  "tyyp": {
+   "non_null_share": 0.791,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "KL",
+     1557
+    ],
+    [
+     "TK",
+     13
+    ],
+    [
+     "VL",
+     12
+    ]
+   ]
+  },
+  "liigi_tyyp_selg": {
+   "non_null_share": 0.791,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "Kaitsealune liik",
+     1557
+    ],
+    [
+     "Täpsustamata liik (nt. segapaar)",
+     13
+    ],
+    [
+     "Võõrliik",
+     12
+    ]
+   ]
+  },
+  "voorliik_tyyp": {
+   "non_null_share": 0.0,
+   "n_distinct_in_sample": 0
+  },
+  "voorliik_tyyp_selg": {
+   "non_null_share": 0.0,
+   "n_distinct_in_sample": 0
+  },
+  "on_dir_liik": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2
+  },
+  "arvukus_tyyp": {
+   "non_null_share": 0.671,
+   "n_distinct_in_sample": 4,
+   "top_values": [
+    [
+     "p",
+     592
+    ],
+    [
+     "r",
+     503
+    ],
+    [
+     "c",
+     223
+    ],
+    [
+     "w",
+     25
+    ]
+   ]
+  },
+  "arvukus_tyyp_selg": {
+   "non_null_share": 0.671,
+   "n_distinct_in_sample": 4,
+   "top_values": [
+    [
+     "Paikne",
+     592
+    ],
+    [
+     "Pesitsev/paljunev",
+     503
+    ],
+    [
+     "Peatuv",
+     223
+    ],
+    [
+     "Talvituv",
+     25
+    ]
+   ]
+  },
+  "arvukus_min": {
+   "non_null_share": 0.361,
+   "n_distinct_in_sample": 118,
+   "min": 0,
+   "max": 700000
+  },
+  "arvukus_max": {
+   "non_null_share": 0.344,
+   "n_distinct_in_sample": 120,
+   "min": 1,
+   "max": 700000
+  },
+  "arvukus_yhik": {
+   "non_null_share": 0.376,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "p",
+     485
+    ],
+    [
+     "i",
+     266
+    ]
+   ]
+  },
+  "arvukus_yhik_selg": {
+   "non_null_share": 0.376,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Paarid",
+     485
+    ],
+    [
+     "Üksikisendid",
+     266
+    ]
+   ]
+  },
+  "arvukus_kategooria": {
+   "non_null_share": 0.33,
+   "n_distinct_in_sample": 4,
+   "top_values": [
+    [
+     "P",
+     490
+    ],
+    [
+     "C",
+     89
+    ],
+    [
+     "R",
+     71
+    ],
+    [
+     "V",
+     10
+    ]
+   ]
+  },
+  "arvukus_kategooria_selg": {
+   "non_null_share": 0.33,
+   "n_distinct_in_sample": 4,
+   "top_values": [
+    [
+     "Esineb",
+     490
+    ],
+    [
+     "Tavaline",
+     89
+    ],
+    [
+     "Haruldane",
+     71
+    ],
+    [
+     "Väga haruldane",
+     10
+    ]
+   ]
+  },
+  "arvukus_olulisus": {
+   "non_null_share": 0.546,
+   "n_distinct_in_sample": 4,
+   "top_values": [
+    [
+     "C",
+     698
+    ],
+    [
+     "B",
+     295
+    ],
+    [
+     "A",
+     85
+    ],
+    [
+     "D",
+     14
+    ]
+   ]
+  },
+  "arvukus_olulisus_selg": {
+   "non_null_share": 0.546,
+   "n_distinct_in_sample": 4,
+   "top_values": [
+    [
+     "2% > p > 0%",
+     698
+    ],
+    [
+     "15% > p > 2%",
+     295
+    ],
+    [
+     "100% > p > 15%",
+     85
+    ],
+    [
+     "Ebaoluline populatsioon",
+     14
+    ]
+   ]
+  },
+  "lkohtst_kaitse": {
+   "non_null_share": 0.541,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "B",
+     528
+    ],
+    [
+     "A",
+     302
+    ],
+    [
+     "C",
+     253
+    ]
+   ]
+  },
+  "lkohtst_kaitse_selg": {
+   "non_null_share": 0.541,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "Hea kaitsestaatus",
+     528
+    ],
+    [
+     "Kaitsestaatus eeskujulik",
+     302
+    ],
+    [
+     "Keskmine või vähenenud kaitsestaatus",
+     253
+    ]
+   ]
+  },
+  "eraldatus": {
+   "non_null_share": 0.539,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "C",
+     676
+    ],
+    [
+     "B",
+     324
+    ],
+    [
+     "A",
+     78
+    ]
+   ]
+  },
+  "eraldatus_selg": {
+   "non_null_share": 0.539,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "Populatsioon ei ole eraldatud kogu liigi loodusliku leviku alal",
+     676
+    ],
+    [
+     "Populatsioon ei ole eraldatud, kuid asub oma levikuala äärel",
+     324
+    ],
+    [
+     "Populatsioon (peaaegu) eraldatud",
+     78
+    ]
+   ]
+  },
+  "vaartus": {
+   "non_null_share": 0.541,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "B",
+     432
+    ],
+    [
+     "C",
+     360
+    ],
+    [
+     "A",
+     290
+    ]
+   ]
+  },
+  "vaartus_selg": {
+   "non_null_share": 0.541,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "Väärtuslik",
+     432
+    ],
+    [
+     "Küllaltki väärtuslik",
+     360
+    ],
+    [
+     "Üliväärtuslik",
+     290
+    ]
+   ]
+  },
+  "lkohtst_andmekvaliteet": {
+   "non_null_share": 0.582,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "M",
+     669
+    ],
+    [
+     "P",
+     495
+    ]
+   ]
+  },
+  "lkohtst_andmekvaliteet_selg": {
+   "non_null_share": 0.582,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Keskmine",
+     669
+    ],
+    [
+     "Kehv",
+     495
+    ]
+   ]
+  },
+  "pohjendus": {
+   "non_null_share": 0.326,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "A",
+     575
+    ],
+    [
+     "C",
+     56
+    ],
+    [
+     "D",
+     21
+    ]
+   ]
+  },
+  "pohjendus_selg": {
+   "non_null_share": 0.326,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "Siseriikliku punase raamatu andmed",
+     575
+    ],
+    [
+     "Rahvusvahelised konventsioonid",
+     56
+    ],
+    [
+     "Muud põhjused",
+     21
+    ]
+   ]
+  },
+  "lkohtst_muutaeg": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 310,
+   "min": "2011-11-18T18:56:14.314",
+   "max": "2026-08-04T13:44:29.199099"
+  },
+  "lkohtst_on_endine": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 1
+  }
+ },
+ "head": [
+  {
+   "lkohtst_id": 1110300734,
+   "lkohtst_tyyp": "2023",
+   "lkohtst_tyyp_selg": "2026 Natura standardbaas",
+   "lkohtst_obj_id": -335063695,
+   "lkohtst_lnim_id": -1424869972,
+   "ladnimi": "Botaurus stellaris",
+   "estnimi": "hüüp",
+   "ryhm": "424",
+   "ryhm_selg": "Linnud",
+   "kaitsekategooria": "2",
+   "kaitsekategooria_selg": "II kategooria",
+   "tyyp": "KL",
+   "liigi_tyyp_selg": "Kaitsealune liik",
+   "voorliik_tyyp": null,
+   "voorliik_tyyp_selg": null,
+   "on_dir_liik": true,
+   "arvukus_tyyp": "r",
+   "arvukus_tyyp_selg": "Pesitsev/paljunev",
+   "arvukus_min": 3,
+   "arvukus_max": 3,
+   "arvukus_yhik": "p",
+   "arvukus_yhik_selg": "Paarid",
+   "arvukus_kategooria": null,
+   "arvukus_kategooria_selg": null,
+   "arvukus_olulisus": "C",
+   "arvukus_olulisus_selg": "2% > p > 0%",
+   "lkohtst_kaitse": "A",
+   "lkohtst_kaitse_selg": "Kaitsestaatus eeskujulik",
+   "eraldatus": "C",
+   "eraldatus_selg": "Populatsioon ei ole eraldatud kogu liigi loodusliku leviku alal",
+   "vaartus": "A",
+   "vaartus_selg": "Üliväärtuslik",
+   "lkohtst_andmekvaliteet": "M",
+   "lkohtst_andmekvaliteet_selg": "Keskmine",
+   "pohjendus": null,
+   "pohjendus_selg": null,
+   "lkohtst_muutaeg": "2021-04-19T15:37:51.037228",
+   "lkohtst_on_endine": false
+  },
+  {
+   "lkohtst_id": 1110803272,
+   "lkohtst_tyyp": "2023",
+   "lkohtst_tyyp_selg": "2026 Natura standardbaas",
+   "lkohtst_obj_id": -335063695,
+   "lkohtst_lnim_id": -1953458723,
+   "ladnimi": "Bucephala clangula",
+   "estnimi": "sõtkas",
+   "ryhm": "424",
+   "ryhm_selg": "Linnud",
+   "kaitsekategooria": null,
+   "kaitsekategooria_selg": null,
+   "tyyp": null,
+   "liigi_tyyp_selg": null,
+   "voorliik_tyyp": null,
+   "voorliik_tyyp_selg": null,
+   "on_dir_liik": true,
+   "arvukus_tyyp": "c",
+   "arvukus_tyyp_selg": "Peatuv",
+   "arvukus_min": 10410,
+   "arvukus_max": 10410,
+   "arvukus_yhik": "i",
+   "arvukus_yhik_selg": "Üksikisendid",
+   "arvukus_kategooria": null,
+   "arvukus_kategooria_selg": null,
+   "arvukus_olulisus": "B",
+   "arvukus_olulisus_selg": "15% > p > 2%",
+   "lkohtst_kaitse": "B",
+   "lkohtst_kaitse_selg": "Hea kaitsestaatus",
+   "eraldatus": "C",
+   "eraldatus_selg": "Populatsioon ei ole eraldatud kogu liigi loodusliku leviku alal",
+   "vaartus": "A",
+   "vaartus_selg": "Üliväärtuslik",
+   "lkohtst_andmekvaliteet": "M",
+   "lkohtst_andmekvaliteet_selg": "Keskmine",
+   "pohjendus": null,
+   "pohjendus_selg": null,
+   "lkohtst_muutaeg": "2021-04-19T15:37:51.037228",
+   "lkohtst_on_endine": false
+  }
+ ]
+}

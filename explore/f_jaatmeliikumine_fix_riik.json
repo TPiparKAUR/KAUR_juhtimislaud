@@ -1,0 +1,473 @@
+{
+ "table": "f_jaatmeliikumine_fix_riik",
+ "total_rows": 20139963,
+ "sample_rows": 2000,
+ "columns": {
+  "aasta": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 18,
+   "min": 2004,
+   "max": 2025
+  },
+  "pohigrupp": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 16,
+   "top_values": [
+    [
+     "20",
+     963
+    ],
+    [
+     "15",
+     665
+    ],
+    [
+     "17",
+     133
+    ],
+    [
+     "16",
+     112
+    ],
+    [
+     "19",
+     36
+    ],
+    [
+     "13",
+     22
+    ],
+    [
+     "08",
+     13
+    ],
+    [
+     "10",
+     13
+    ]
+   ]
+  },
+  "alamgrupp": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 40,
+   "top_values": [
+    [
+     "20 03",
+     761
+    ],
+    [
+     "15 01",
+     654
+    ],
+    [
+     "20 01",
+     200
+    ],
+    [
+     "16 01",
+     82
+    ],
+    [
+     "17 04",
+     46
+    ],
+    [
+     "17 09",
+     30
+    ],
+    [
+     "19 12",
+     29
+    ],
+    [
+     "17 06",
+     24
+    ]
+   ]
+  },
+  "jaatmeliik": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 123,
+   "min": "01 04 09",
+   "max": "20 03 98"
+  },
+  "jaatmeliik_nimi": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 111,
+   "min": "Absorbendid, puhastuskaltsud, filtermate",
+   "max": "Õlipüünistes lahutatud õline vesi"
+  },
+  "pohigrupp_nimi": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 16,
+   "top_values": [
+    [
+     "OLMEJÄÄTMED (KODUMAJAPIDAMISJÄÄTMED JA SAMALAADSED KAUBANDUS-, TÖÖSTUS- JA AMETIASUTUSJÄÄTMED), SEALHULGAS LIIGITI KOGUTUD JÄÄTMED",
+     963
+    ],
+    [
+     "PAKENDIJÄÄTMED, NIMISTUS MUJAL NIMETAMATA ABSORBENDID, PUHASTUSKALTSUD, FILTERMATERJALID JA KAITSERIIETUS",
+     665
+    ],
+    [
+     "EHITUS- JA LAMMUTUSPRAHT (SEALHULGAS SAASTUNUD MAA-ALADELT EEMALDATUD PINNAS)",
+     133
+    ],
+    [
+     "NIMISTUS MUJAL NIMETAMATA JÄÄTMED",
+     112
+    ],
+    [
+     "JÄÄTMEKÄITLUSETTEVÕTETE, ETTEVÕTTEVÄLISTE REOVEEPUHASTITE NING JOOGI- JA TÖÖSTUSVEE KÄITLEMISEL TEKKINUD JÄÄTMED",
+     36
+    ],
+    [
+     "ÕLI- JA VEDELKÜTUSEJÄÄTMED (välja arvatud toiduõlid ning jaotistes 05, 12 ja 19 nimetatud jäätmed)",
+     22
+    ],
+    [
+     "PINNAKATETE (VÄRVIDE, LAKKIDE JA KLAASJATE EMAILIDE), LIIMIDE, HERMEETIKUTE JA TRÜKIVÄRVIDE VALMISTAMISEL, KOKKUSEGAMISEL, JAOTAMISEL JA KASUTAMISEL TEKKINUD JÄÄTMED",
+     13
+    ],
+    [
+     "TERMILISTES PROTSESSIDES TEKKINUD JÄÄTMED",
+     13
+    ]
+   ]
+  },
+  "alamgrupp_nimi": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 40,
+   "top_values": [
+    [
+     "Muud olmejäätmed",
+     761
+    ],
+    [
+     "Pakendid (sealhulgas lahus kogutud olmepakendijäätmed)",
+     654
+    ],
+    [
+     "Olmejäätmete hulgast väljakorjatud või liigiti kogutud jäätmed (välja arvatud alajaotises 15 01 nimetatud jäätmed)",
+     200
+    ],
+    [
+     "Romusõidukid mitmesugustest liiklusvaldkondadest (sealhulgas liikurmasinad) ning romusõidukite lammutamisel ja sõidukihooldusel tekkinud jäätmed (välja arvatud jaotistes 13 ja 14 ning alajaotistes 16 ",
+     82
+    ],
+    [
+     "Metallid (sealhulgas sulamid)",
+     46
+    ],
+    [
+     "Muu ehitus- ja lammutuspraht",
+     30
+    ],
+    [
+     "Jäätmete mehaanilise töötlemise jäätmed, näiteks nimistus mujal nimetamata sortimis-, purustamis-, kokkupressimis- või granuleerimisjäätmed",
+     29
+    ],
+    [
+     "Isolatsioonimaterjalid ja asbesti sisaldavad ehitusmaterjalid",
+     24
+    ]
+   ]
+  },
+  "partner_riik_nimi": {
+   "non_null_share": 0.205,
+   "n_distinct_in_sample": 11,
+   "top_values": [
+    [
+     "Määramata",
+     388
+    ],
+    [
+     "Rootsi",
+     8
+    ],
+    [
+     "Leedu",
+     4
+    ],
+    [
+     "Norra",
+     2
+    ],
+    [
+     "Soome",
+     2
+    ],
+    [
+     "Taani",
+     1
+    ],
+    [
+     "Saksamaa",
+     1
+    ],
+    [
+     "Holland",
+     1
+    ]
+   ]
+  },
+  "ohtlik_lipp": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Ei",
+     1835
+    ],
+    [
+     "Jah",
+     165
+    ]
+   ]
+  },
+  "biojaatmed_lipp": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Jah",
+     1469
+    ],
+    [
+     "Ei",
+     531
+    ]
+   ]
+  },
+  "reoveesetted_lipp": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Ei",
+     1997
+    ],
+    [
+     "Jah",
+     3
+    ]
+   ]
+  },
+  "metallijaatmed_lipp": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Ei",
+     1873
+    ],
+    [
+     "Jah",
+     127
+    ]
+   ]
+  },
+  "probleemtooted_lipp": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Ei",
+     1976
+    ],
+    [
+     "Jah",
+     24
+    ]
+   ]
+  },
+  "riik": {
+   "non_null_share": 0.011,
+   "n_distinct_in_sample": 10,
+   "top_values": [
+    [
+     "SWE",
+     8
+    ],
+    [
+     "LTU",
+     4
+    ],
+    [
+     "NOR",
+     2
+    ],
+    [
+     "FIN",
+     2
+    ],
+    [
+     "DNK",
+     1
+    ],
+    [
+     "DEU",
+     1
+    ],
+    [
+     "NLD",
+     1
+    ],
+    [
+     "CHN",
+     1
+    ]
+   ]
+  },
+  "yhte_liiki_tegevus": {
+   "non_null_share": 0.335,
+   "n_distinct_in_sample": 36,
+   "top_values": [
+    [
+     "U1",
+     259
+    ],
+    [
+     "U13",
+     110
+    ],
+    [
+     "U10,U11,U12,U16",
+     36
+    ],
+    [
+     "U6,U16",
+     34
+    ],
+    [
+     "U6,U10,U11,U12,U13,U16",
+     33
+    ],
+    [
+     "U5,U10,U11,U12,U14,U16",
+     32
+    ],
+    [
+     "U17",
+     27
+    ],
+    [
+     "U1,U9,U10,U12,U14",
+     24
+    ]
+   ]
+  },
+  "komplekstegevus": {
+   "non_null_share": 0.226,
+   "n_distinct_in_sample": 6,
+   "top_values": [
+    [
+     "0",
+     299
+    ],
+    [
+     "1",
+     55
+    ],
+    [
+     "2",
+     38
+    ],
+    [
+     "K1",
+     33
+    ],
+    [
+     "K3",
+     19
+    ],
+    [
+     "3",
+     8
+    ]
+   ]
+  },
+  "materjali_kood": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 55,
+   "min": 121,
+   "max": 1281
+  },
+  "materjali_nimetus": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 55,
+   "min": "Aia- ja haljastujäätmed",
+   "max": "Õli vesiemulsioonide setted"
+  },
+  "maht_liik": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "Kõrvaldamine",
+     800
+    ],
+    [
+     "Laoseis aasta alguses",
+     800
+    ],
+    [
+     "Eksport",
+     400
+    ]
+   ]
+  },
+  "maht": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 11,
+   "min": 0,
+   "max": 1955.77
+  }
+ },
+ "head": [
+  {
+   "aasta": 2020,
+   "pohigrupp": "20",
+   "alamgrupp": "20 01",
+   "jaatmeliik": "20 01 08",
+   "jaatmeliik_nimi": "Biolagunevad köögi- ja sööklajäätmed",
+   "pohigrupp_nimi": "OLMEJÄÄTMED (KODUMAJAPIDAMISJÄÄTMED JA SAMALAADSED KAUBANDUS-, TÖÖSTUS- JA AMETIASUTUSJÄÄTMED), SEALHULGAS LIIGITI KOGUTUD JÄÄTMED",
+   "alamgrupp_nimi": "Olmejäätmete hulgast väljakorjatud või liigiti kogutud jäätmed (välja arvatud alajaotises 15 01 nimetatud jäätmed)",
+   "partner_riik_nimi": null,
+   "ohtlik_lipp": "Ei",
+   "biojaatmed_lipp": "Jah",
+   "reoveesetted_lipp": "Ei",
+   "metallijaatmed_lipp": "Ei",
+   "probleemtooted_lipp": "Ei",
+   "riik": null,
+   "yhte_liiki_tegevus": "U1",
+   "komplekstegevus": null,
+   "materjali_kood": 912,
+   "materjali_nimetus": "Taimsed toiduainete valmistamis- ja toiduainejäätmed",
+   "maht_liik": "Kõrvaldamine",
+   "maht": 0
+  },
+  {
+   "aasta": 2020,
+   "pohigrupp": "20",
+   "alamgrupp": "20 01",
+   "jaatmeliik": "20 01 14*",
+   "jaatmeliik_nimi": "Happed",
+   "pohigrupp_nimi": "OLMEJÄÄTMED (KODUMAJAPIDAMISJÄÄTMED JA SAMALAADSED KAUBANDUS-, TÖÖSTUS- JA AMETIASUTUSJÄÄTMED), SEALHULGAS LIIGITI KOGUTUD JÄÄTMED",
+   "alamgrupp_nimi": "Olmejäätmete hulgast väljakorjatud või liigiti kogutud jäätmed (välja arvatud alajaotises 15 01 nimetatud jäätmed)",
+   "partner_riik_nimi": null,
+   "ohtlik_lipp": "Jah",
+   "biojaatmed_lipp": "Ei",
+   "reoveesetted_lipp": "Ei",
+   "metallijaatmed_lipp": "Ei",
+   "probleemtooted_lipp": "Ei",
+   "riik": null,
+   "yhte_liiki_tegevus": "U1",
+   "komplekstegevus": null,
+   "materjali_kood": 121,
+   "materjali_nimetus": "Happejäätmed",
+   "maht_liik": "Kõrvaldamine",
+   "maht": 0
+  }
+ ]
+}

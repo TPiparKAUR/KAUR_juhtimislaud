@@ -1,0 +1,459 @@
+{
+ "table": "f_rahvalad_elupaikstat",
+ "total_rows": 12235,
+ "sample_rows": 2000,
+ "columns": {
+  "elpst_id": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 2000,
+   "min": -2146249552,
+   "max": 2143251479
+  },
+  "elpst_kood": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 74,
+   "min": "1110",
+   "max": "91F0"
+  },
+  "elpst_kood_selg": {
+   "non_null_share": 0.98,
+   "n_distinct_in_sample": 58,
+   "min": "1110. Veealused liivamadalad",
+   "max": "91F0. Laialehised lammimetsad"
+  },
+  "elpst_tyyp": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 4,
+   "top_values": [
+    [
+     "2014",
+     870
+    ],
+    [
+     "2023",
+     527
+    ],
+    [
+     "2012",
+     488
+    ],
+    [
+     "2010",
+     115
+    ]
+   ]
+  },
+  "elpst_tyyp_selg": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 4,
+   "top_values": [
+    [
+     "2015 Natura standardbaas",
+     870
+    ],
+    [
+     "2026 Natura standardbaas",
+     527
+    ],
+    [
+     "2012 Natura standardbaas",
+     488
+    ],
+    [
+     "2010 Natura standardbaas",
+     115
+    ]
+   ]
+  },
+  "elpst_obj_id": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 423,
+   "min": -2139839623,
+   "max": 2121175489
+  },
+  "elpst_elupaigatyyp_id": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 58,
+   "min": -2145731220,
+   "max": 2146975574
+  },
+  "elupaigatyyp_kood": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 58,
+   "min": "1110",
+   "max": "91F0"
+  },
+  "elupaigatyyp_selg": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 58,
+   "min": "Aas-rebasesaba ja ürt-punanupuga niidud",
+   "max": "Väikesaared ning laiud"
+  },
+  "elupaigatyyp_grupp": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 7,
+   "top_values": [
+    [
+     "9",
+     706
+    ],
+    [
+     "6",
+     552
+    ],
+    [
+     "7",
+     283
+    ],
+    [
+     "3",
+     260
+    ],
+    [
+     "1",
+     130
+    ],
+    [
+     "2",
+     35
+    ],
+    [
+     "8",
+     34
+    ]
+   ]
+  },
+  "elupaigatyyp_grupp_selg": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 7,
+   "top_values": [
+    [
+     "Metsad",
+     706
+    ],
+    [
+     "Niidud",
+     552
+    ],
+    [
+     "Sood",
+     283
+    ],
+    [
+     "Mageveekogud",
+     260
+    ],
+    [
+     "Rannikuelupaigad",
+     130
+    ],
+    [
+     "Nõmmed, liivikud ja kadastikud",
+     35
+    ],
+    [
+     "Paljandid ja koopad",
+     34
+    ]
+   ]
+  },
+  "elupaigatyyp_staatus": {
+   "non_null_share": 0.383,
+   "n_distinct_in_sample": 1,
+   "top_values": [
+    [
+     "E",
+     766
+    ]
+   ]
+  },
+  "elupaigatyyp_staatus_selg": {
+   "non_null_share": 0.383,
+   "n_distinct_in_sample": 1,
+   "top_values": [
+    [
+     "Esmatähtis",
+     766
+    ]
+   ]
+  },
+  "elupst_pindala_alal": {
+   "non_null_share": 0.998,
+   "n_distinct_in_sample": 807,
+   "min": 0,
+   "max": 26754
+  },
+  "elupst_pindala_alal_prots": {
+   "non_null_share": 0.946,
+   "n_distinct_in_sample": 370,
+   "min": 0,
+   "max": 100
+  },
+  "elupst_pindala_eesti_suhtes": {
+   "non_null_share": 0.987,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "C",
+     1902
+    ],
+    [
+     "B",
+     54
+    ],
+    [
+     "A",
+     17
+    ]
+   ]
+  },
+  "elupst_pindala_e_suhtes_selg": {
+   "non_null_share": 0.987,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "2% > p > 0%",
+     1902
+    ],
+    [
+     "15% > p > 2%",
+     54
+    ],
+    [
+     "100% > p > 15%",
+     17
+    ]
+   ]
+  },
+  "elupst_koopad": {
+   "non_null_share": 0.003,
+   "n_distinct_in_sample": 1,
+   "min": 1,
+   "max": 1
+  },
+  "elupst_esinduslikkus": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 4,
+   "top_values": [
+    [
+     "B",
+     920
+    ],
+    [
+     "C",
+     626
+    ],
+    [
+     "A",
+     427
+    ],
+    [
+     "D",
+     27
+    ]
+   ]
+  },
+  "elupst_esinduslikkus_selg": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 4,
+   "top_values": [
+    [
+     "Hea",
+     920
+    ],
+    [
+     "Arvestatav",
+     626
+    ],
+    [
+     "Väga hea",
+     427
+    ],
+    [
+     "Väheesinduslik",
+     27
+    ]
+   ]
+  },
+  "elupst_kaitse": {
+   "non_null_share": 0.987,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "B",
+     1136
+    ],
+    [
+     "C",
+     442
+    ],
+    [
+     "A",
+     395
+    ]
+   ]
+  },
+  "elupst_kaitse_selg": {
+   "non_null_share": 0.987,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "Hästi säilinud",
+     1136
+    ],
+    [
+     "Keskmiselt või vähe säilinud",
+     442
+    ],
+    [
+     "Väga hästi säilinud",
+     395
+    ]
+   ]
+  },
+  "elupst_hinnang": {
+   "non_null_share": 0.987,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "B",
+     1023
+    ],
+    [
+     "C",
+     533
+    ],
+    [
+     "A",
+     417
+    ]
+   ]
+  },
+  "elupst_hinnang_selg": {
+   "non_null_share": 0.987,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "Kõrge väärtus",
+     1023
+    ],
+    [
+     "Keskmine väärtus",
+     533
+    ],
+    [
+     "Väga kõrge väärtus",
+     417
+    ]
+   ]
+  },
+  "elupst_andmekvaliteet": {
+   "non_null_share": 0.943,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "M",
+     1824
+    ],
+    [
+     "P",
+     45
+    ],
+    [
+     "G",
+     16
+    ]
+   ]
+  },
+  "elupst_andmekval_selg": {
+   "non_null_share": 0.943,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "Keskmine",
+     1824
+    ],
+    [
+     "Kehv",
+     45
+    ],
+    [
+     "Hea",
+     16
+    ]
+   ]
+  },
+  "elupst_muut_aeg": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 229,
+   "min": "2011-11-28T12:51:25.277",
+   "max": "2026-08-04T13:43:54.131165"
+  },
+  "elupst_on_endine": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 1
+  }
+ },
+ "head": [
+  {
+   "elpst_id": 1929399685,
+   "elpst_kood": "9080",
+   "elpst_kood_selg": "9080. Soostuvad ja soo-lehtmetsad",
+   "elpst_tyyp": "2023",
+   "elpst_tyyp_selg": "2026 Natura standardbaas",
+   "elpst_obj_id": -1854580744,
+   "elpst_elupaigatyyp_id": 1314007623,
+   "elupaigatyyp_kood": "9080*",
+   "elupaigatyyp_selg": "Soostuvad ja soo-lehtmetsad",
+   "elupaigatyyp_grupp": "9",
+   "elupaigatyyp_grupp_selg": "Metsad",
+   "elupaigatyyp_staatus": "E",
+   "elupaigatyyp_staatus_selg": "Esmatähtis",
+   "elupst_pindala_alal": 25.5,
+   "elupst_pindala_alal_prots": 4.9,
+   "elupst_pindala_eesti_suhtes": "C",
+   "elupst_pindala_e_suhtes_selg": "2% > p > 0%",
+   "elupst_koopad": null,
+   "elupst_esinduslikkus": "B",
+   "elupst_esinduslikkus_selg": "Hea",
+   "elupst_kaitse": "B",
+   "elupst_kaitse_selg": "Hästi säilinud",
+   "elupst_hinnang": "B",
+   "elupst_hinnang_selg": "Kõrge väärtus",
+   "elupst_andmekvaliteet": "M",
+   "elupst_andmekval_selg": "Keskmine",
+   "elupst_muut_aeg": "2026-08-04T13:43:53.252619",
+   "elupst_on_endine": false
+  },
+  {
+   "elpst_id": 1922232997,
+   "elpst_kood": "1630",
+   "elpst_kood_selg": "1630*. Rannaniidud",
+   "elpst_tyyp": "2023",
+   "elpst_tyyp_selg": "2026 Natura standardbaas",
+   "elpst_obj_id": 285904455,
+   "elpst_elupaigatyyp_id": 1399301593,
+   "elupaigatyyp_kood": "1630*",
+   "elupaigatyyp_selg": "Rannaniidud",
+   "elupaigatyyp_grupp": "1",
+   "elupaigatyyp_grupp_selg": "Rannikuelupaigad",
+   "elupaigatyyp_staatus": "E",
+   "elupaigatyyp_staatus_selg": "Esmatähtis",
+   "elupst_pindala_alal": 62,
+   "elupst_pindala_alal_prots": 1.1,
+   "elupst_pindala_eesti_suhtes": "C",
+   "elupst_pindala_e_suhtes_selg": "2% > p > 0%",
+   "elupst_koopad": null,
+   "elupst_esinduslikkus": "B",
+   "elupst_esinduslikkus_selg": "Hea",
+   "elupst_kaitse": "A",
+   "elupst_kaitse_selg": "Väga hästi säilinud",
+   "elupst_hinnang": "A",
+   "elupst_hinnang_selg": "Väga kõrge väärtus",
+   "elupst_andmekvaliteet": "M",
+   "elupst_andmekval_selg": "Keskmine",
+   "elupst_muut_aeg": "2026-08-04T13:43:53.105319",
+   "elupst_on_endine": false
+  }
+ ]
+}

@@ -1,0 +1,763 @@
+{
+ "table": "f_hks_seisud",
+ "total_rows": 255,
+ "sample_rows": 255,
+ "columns": {
+  "id": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 255,
+   "min": -2069122424,
+   "max": 2129520424
+  },
+  "kood": {
+   "non_null_share": 0.008,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "D2C2.1_1_test",
+     1
+    ],
+    [
+     "D10C1_GOF",
+     1
+    ]
+   ]
+  },
+  "tyyp": {
+   "non_null_share": 0.031,
+   "n_distinct_in_sample": 1,
+   "top_values": [
+    [
+     "M",
+     8
+    ]
+   ]
+  },
+  "tyyp_selg": {
+   "non_null_share": 0.031,
+   "n_distinct_in_sample": 1,
+   "top_values": [
+    [
+     "Mõõdetud",
+     8
+    ]
+   ]
+  },
+  "hks_koondseis_id": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 13,
+   "min": -2147090044,
+   "max": 1829261608
+  },
+  "hks_koondseis_kood": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 13,
+   "top_values": [
+    [
+     "EE-2018-S",
+     216
+    ],
+    [
+     "EE-GR-2018-S",
+     17
+    ],
+    [
+     "EE-GR-CW08-2018-S",
+     4
+    ],
+    [
+     "EE-GF-CW05-2018-S",
+     3
+    ],
+    [
+     "EE-GF-CW01-2018-S",
+     3
+    ],
+    [
+     "EE-GF-2018-S",
+     2
+    ],
+    [
+     "EE-GF-CW03-2018-S",
+     2
+    ],
+    [
+     "EE-GF-CW06-2018-S",
+     2
+    ]
+   ]
+  },
+  "hks_koondseis_nimi": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 13,
+   "top_values": [
+    [
+     "Eesti mereala 2018.a koondseisund (2011-2016 andmete põhjal)",
+     216
+    ],
+    [
+     "Riia lahe mereala 2018 (2012-2016 andmete põhjal)",
+     17
+    ],
+    [
+     "Haapsalu lahe rannikuvesi 2018 (2012-2016 andmete põhjal)",
+     4
+    ],
+    [
+     "Muuga-Tallinna-Kakumäe lahe rannikuvesi 2018 (2012-2016 andmete põhjal)",
+     3
+    ],
+    [
+     "Narva-Kunda lahe rannikuvesi 2018 (2012-2016 andmete põhjal)",
+     3
+    ],
+    [
+     "Soome lahe mereala 2018 (2012-2016 andmete põhjal)",
+     2
+    ],
+    [
+     "Hara lahe rannikuvesi 2018 (2012-2016 andmete põhjal)",
+     2
+    ],
+    [
+     "Pakri lahe rannikuvesi 2018 (2012-2016 andmete põhjal)",
+     2
+    ]
+   ]
+  },
+  "hks_element_id": {
+   "non_null_share": 0.996,
+   "n_distinct_in_sample": 85,
+   "min": -2147082186,
+   "max": 2099979058
+  },
+  "hks_element_kood": {
+   "non_null_share": 0.953,
+   "n_distinct_in_sample": 74,
+   "min": "BALEED2C1.1_1",
+   "max": "EEA_3164-01-0"
+  },
+  "hks_element_nimi": {
+   "non_null_share": 0.996,
+   "n_distinct_in_sample": 85,
+   "min": "Antratseen (mereala kokku, 6a)",
+   "max": "Zooplanktoni keskmine suurus ja üldarvuk"
+  },
+  "seirejaam_id": {
+   "non_null_share": 0.059,
+   "n_distinct_in_sample": 10,
+   "min": -2216822,
+   "max": 8679274
+  },
+  "seirejaam_kkr_kood": {
+   "non_null_share": 0.059,
+   "n_distinct_in_sample": 10,
+   "top_values": [
+    [
+     "SJB3377000",
+     6
+    ],
+    [
+     "SJB3373000",
+     1
+    ],
+    [
+     "SJB3375000",
+     1
+    ],
+    [
+     "SJB3371000",
+     1
+    ],
+    [
+     "SJB3369000",
+     1
+    ],
+    [
+     "SJB3370000",
+     1
+    ],
+    [
+     "SJB3376000",
+     1
+    ],
+    [
+     "SJB3374000",
+     1
+    ]
+   ]
+  },
+  "seirejaam_nimi": {
+   "non_null_share": 0.059,
+   "n_distinct_in_sample": 10,
+   "top_values": [
+    [
+     "Valgeranna rand, Pärnu linn",
+     6
+    ],
+    [
+     "Nõva rand, Lääne-Nigula vald",
+     1
+    ],
+    [
+     "Orissaare rand, Saaremaa vald",
+     1
+    ],
+    [
+     "Loksa rand, Loksa linn",
+     1
+    ],
+    [
+     "Kaleste rand, Hiiumaa vald",
+     1
+    ],
+    [
+     "Kolga-Aabla rand, Kuusalu vald",
+     1
+    ],
+    [
+     "Saka rand, Toila vald",
+     1
+    ],
+    [
+     "Ohessaare rand, Saaremaa vald",
+     1
+    ]
+   ]
+  },
+  "sr_param_norm_id": {
+   "non_null_share": 0.008,
+   "n_distinct_in_sample": 1,
+   "min": -1187710508,
+   "max": -1187710508
+  },
+  "sr_param_norm_nimi": {
+   "non_null_share": 0.008,
+   "n_distinct_in_sample": 1,
+   "top_values": [
+    [
+     "Rannaprügi",
+     2
+    ]
+   ]
+  },
+  "kuulub_id": {
+   "non_null_share": 0.875,
+   "n_distinct_in_sample": 42,
+   "min": -2069122424,
+   "max": 2054341918
+  },
+  "kuulub_hks_elementi_id": {
+   "non_null_share": 0.875,
+   "n_distinct_in_sample": 40,
+   "min": -2147082186,
+   "max": 2099979058
+  },
+  "kuulub_hks_element_kood": {
+   "non_null_share": 0.714,
+   "n_distinct_in_sample": 32,
+   "top_values": [
+    [
+     "D1C5.1",
+     11
+    ],
+    [
+     "D8C1.44-E1-MA",
+     7
+    ],
+    [
+     "D1C2.3-A149",
+     6
+    ],
+    [
+     "D1C2.4-A069",
+     6
+    ],
+    [
+     "D1C6.1",
+     6
+    ],
+    [
+     "D1C2.4-A038",
+     6
+    ],
+    [
+     "D1C2.4-A017",
+     6
+    ],
+    [
+     "D1C2.4-A061",
+     6
+    ]
+   ]
+  },
+  "kuulub_hks_element_nimi": {
+   "non_null_share": 0.875,
+   "n_distinct_in_sample": 40,
+   "top_values": [
+    [
+     "Lõhi (Salmo salar) laskujate arvukus võrreldes maksimaalse loodusliku potentsiaalse arvukusega",
+     11
+    ],
+    [
+     "Pinnatoidulised linnud: Pesitsevad linnud",
+     9
+    ],
+    [
+     "Antratseen (mereala kokku, 6a)",
+     7
+    ],
+    [
+     "Soorüdi: Kahlajad: Pesitsevad linnud",
+     6
+    ],
+    [
+     "Kahlajad: Pesitsevad linnud",
+     6
+    ],
+    [
+     "Rohukoskel: Pelaagilistes kihtides toituvad linnud: Talvituvad linnud",
+     6
+    ],
+    [
+     "Fütoplanktoni dominantsete rühmade sesoonne dünaamika",
+     6
+    ],
+    [
+     "Laululuik: Taimtoidulised linnud: Talvituvad linnud",
+     6
+    ]
+   ]
+  },
+  "aasta_alg": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 6,
+   "min": 2011,
+   "max": 2016
+  },
+  "aasta_lopp": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 8,
+   "min": 2011,
+   "max": 2021
+  },
+  "seis_kp": {
+   "non_null_share": 0.004,
+   "n_distinct_in_sample": 1,
+   "top_values": [
+    [
+     "2018-08-01T00:00:00",
+     1
+    ]
+   ]
+  },
+  "seis_hinnang": {
+   "non_null_share": 0.369,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "hea",
+     50
+    ],
+    [
+     "halb",
+     44
+    ]
+   ]
+  },
+  "seis_hinnang_selg": {
+   "non_null_share": 0.369,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Hea",
+     50
+    ],
+    [
+     "Halb",
+     44
+    ]
+   ]
+  },
+  "seis_prots": {
+   "non_null_share": 0.702,
+   "n_distinct_in_sample": 173,
+   "min": 19.6,
+   "max": 5430.2
+  },
+  "seis_trend": {
+   "non_null_share": 0.004,
+   "n_distinct_in_sample": 1,
+   "top_values": [
+    [
+     "S",
+     1
+    ]
+   ]
+  },
+  "seis_trend_selg": {
+   "non_null_share": 0.004,
+   "n_distinct_in_sample": 1,
+   "top_values": [
+    [
+     "Stabiilne seis",
+     1
+    ]
+   ]
+  },
+  "seis_mark": {
+   "non_null_share": 0.02,
+   "n_distinct_in_sample": 1,
+   "top_values": [
+    [
+     "<",
+     5
+    ]
+   ]
+  },
+  "seis_nait": {
+   "non_null_share": 0.133,
+   "n_distinct_in_sample": 30,
+   "min": 0,
+   "max": 66768
+  },
+  "tx_seis": {
+   "non_null_share": 0.082,
+   "n_distinct_in_sample": 20,
+   "top_values": [
+    [
+     "heas seisundis 100% liikidest (4 liiki 4-st)",
+     2
+    ],
+    [
+     "Agregeeritud (kasutades tööriista MEREK) hinnang on, et Eesti merealal ei ole HKS saavutatud (MEREK\nhinnang on 0,29, mis jääb alla HKS piirväärtusele 0,6). Seejuures on tähelepanuväärne, et HKS on\nsaavutatud vaid ühel seirealal üheteistkümnest.\n\nLõhi laskujate arvukus hindamisperioodi jooksul (2011-2016 LH) võrreldes maksimaalse\nloodusliku potentsiaalse arvukusega (PSPC75):\n\nSeireala (PSPC75) 2011-2016 LH\nJägala (225) 0\nKeila (4875) 5777\nKunda (1575) 1455\nLoobu (8700) 4433\nPirita (7500) 4669\nPurtse (5700) 2933\nPärnu (975) 100\nSelja (8475) 1950\nValgejõgi (1125) 483\nVasalemma (1200) 593\nVääna (1500) 183",
+     1
+    ],
+    [
+     "Kõikidel Eesti merealadel on indikaatori väärtus allpool kehtestatud läviväärtust, s.t. HKS on saavutamata.",
+     1
+    ],
+    [
+     "heas seisundis 100% liikidest (3 liiki 3-st);",
+     1
+    ],
+    [
+     "heas seisundis 67% liikidest (4 liiki 6-st)",
+     1
+    ],
+    [
+     "heas seisundis 50% liikidest (2 liiki 4-st),",
+     1
+    ],
+    [
+     "Nii erinevate liigirühmade kui ka talvitavate lindude seisund tervikuna on kasutatud metoodika põhjal\nhea. Üksikliikidest oli ainsana ebasoodsas seisundis kirjuhahk. Liigirühmade piires moodustasid heas\nseisundis liigid 75% (põhjatoidulised linnud) kuni 100% (ülejäänud liigirühmad) vastavasse rühma\nkuuluvate liikide arvust. Käsitletud liikidest tervikuna oli heas seisundis 94% (16 liiki 17-st). Üksikliikide\narvukusindeksid aruandeperioodil on toodud järgnevas tabelis.\n\nVõrreldes talvitavate veelindude seisundit Eestis ja Läänemerel tervikuna (HELCOM, 2017) on\nliigipõhised tulemused vaatamata mõningatele metoodilistele erinevustele (Eesti indikaatorite\narvutamisel loobuti temperatuuri mõju mahaarvamisest) väga sarnased. Ainsateks erinevusteks\nliigipõhistes seisundihinnangutes oli laugu ja merivardi ebasoodne seisund Läänemerel tervikuna\nerinevalt heast seisundist meie vetes. Raskem on omavahel võrrelda liigirühmade seisundit, sest\nvastavalt kasutatavale metoodikale sõltub tulemus käsitletud liikide arvust.",
+     1
+    ],
+    [
+     "heas seisundis 75% liikidest (3 liiki 4-st)",
+     1
+    ]
+   ]
+  },
+  "seis_viga": {
+   "non_null_share": 0.0,
+   "n_distinct_in_sample": 0
+  },
+  "tx_metoodika": {
+   "non_null_share": 0.231,
+   "n_distinct_in_sample": 52,
+   "min": "5 ranna prügiseireandmete põhjal (Saka, ",
+   "max": "Vääna PSPC75=1500"
+  },
+  "usald": {
+   "non_null_share": 0.008,
+   "n_distinct_in_sample": 1,
+   "top_values": [
+    [
+     "5",
+     2
+    ]
+   ]
+  },
+  "usald_selg": {
+   "non_null_share": 0.008,
+   "n_distinct_in_sample": 1,
+   "top_values": [
+    [
+     "Kõrge",
+     2
+    ]
+   ]
+  },
+  "usald_ajaline": {
+   "non_null_share": 0.027,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "5",
+     5
+    ],
+    [
+     "3",
+     2
+    ]
+   ]
+  },
+  "usald_ajaline_selg": {
+   "non_null_share": 0.027,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Kõrge",
+     5
+    ],
+    [
+     "Keskmine",
+     2
+    ]
+   ]
+  },
+  "usald_ruumiline": {
+   "non_null_share": 0.027,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "5",
+     4
+    ],
+    [
+     "3",
+     3
+    ]
+   ]
+  },
+  "usald_ruumiline_selg": {
+   "non_null_share": 0.027,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Kõrge",
+     4
+    ],
+    [
+     "Keskmine",
+     3
+    ]
+   ]
+  },
+  "usald_klassif": {
+   "non_null_share": 0.031,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "5",
+     4
+    ],
+    [
+     "1",
+     2
+    ],
+    [
+     "3",
+     2
+    ]
+   ]
+  },
+  "usald_klassif_selg": {
+   "non_null_share": 0.031,
+   "n_distinct_in_sample": 3,
+   "top_values": [
+    [
+     "Kõrge",
+     4
+    ],
+    [
+     "Madal",
+     2
+    ],
+    [
+     "Keskmine",
+     2
+    ]
+   ]
+  },
+  "usald_meetod": {
+   "non_null_share": 0.031,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "5",
+     6
+    ],
+    [
+     "3",
+     2
+    ]
+   ]
+  },
+  "usald_meetod_selg": {
+   "non_null_share": 0.031,
+   "n_distinct_in_sample": 2,
+   "top_values": [
+    [
+     "Kõrge",
+     6
+    ],
+    [
+     "Keskmine",
+     2
+    ]
+   ]
+  },
+  "tx_usald": {
+   "non_null_share": 0.0,
+   "n_distinct_in_sample": 0
+  },
+  "usald_allikas": {
+   "non_null_share": 0.0,
+   "n_distinct_in_sample": 0
+  },
+  "tx_markused": {
+   "non_null_share": 0.035,
+   "n_distinct_in_sample": 9,
+   "top_values": [
+    [
+     "EQR = 1,44. Seisund kesine",
+     1
+    ],
+    [
+     "EQR = 1,56. Seisund halb.",
+     1
+    ],
+    [
+     "EQR = 1,24. Seisund kesine",
+     1
+    ],
+    [
+     "EQR = 2,04. Seisund väga halb.",
+     1
+    ],
+    [
+     "EQR = 0,98. Seisund hea",
+     1
+    ],
+    [
+     "EQR = 1,48. Seisund kesine",
+     1
+    ],
+    [
+     "EQR = 1,41. Seisund kesine",
+     1
+    ],
+    [
+     "Hinnangus võrdlus baastasemega (suhteline skaala). Hinnang antud 5-palli skaalal (väga hea, hea, kesine, halb, väga halb). HKS siht 15 prügiühikut/ 100 m.\n2020.a EL läviväärtus: 20 prügieset/100 m (mediaankeskmisena).",
+     1
+    ]
+   ]
+  },
+  "muut_aeg": {
+   "non_null_share": 1.0,
+   "n_distinct_in_sample": 99,
+   "min": "2020-04-22T12:35:16.696595",
+   "max": "2026-04-30T13:01:02.839422"
+  }
+ },
+ "head": [
+  {
+   "id": -1492710990,
+   "kood": null,
+   "tyyp": "M",
+   "tyyp_selg": "Mõõdetud",
+   "hks_koondseis_id": 1530057160,
+   "hks_koondseis_kood": "EE-GR-CW08-2018-S",
+   "hks_koondseis_nimi": "Haapsalu lahe rannikuvesi 2018 (2012-2016 andmete põhjal)",
+   "hks_element_id": null,
+   "hks_element_kood": null,
+   "hks_element_nimi": null,
+   "seirejaam_id": null,
+   "seirejaam_kkr_kood": null,
+   "seirejaam_nimi": null,
+   "sr_param_norm_id": null,
+   "sr_param_norm_nimi": null,
+   "kuulub_id": null,
+   "kuulub_hks_elementi_id": null,
+   "kuulub_hks_element_kood": null,
+   "kuulub_hks_element_nimi": null,
+   "aasta_alg": 2012,
+   "aasta_lopp": 2016,
+   "seis_kp": null,
+   "seis_hinnang": null,
+   "seis_hinnang_selg": null,
+   "seis_prots": null,
+   "seis_trend": null,
+   "seis_trend_selg": null,
+   "seis_mark": null,
+   "seis_nait": null,
+   "tx_seis": null,
+   "seis_viga": null,
+   "tx_metoodika": null,
+   "usald": null,
+   "usald_selg": null,
+   "usald_ajaline": null,
+   "usald_ajaline_selg": null,
+   "usald_ruumiline": null,
+   "usald_ruumiline_selg": null,
+   "usald_klassif": null,
+   "usald_klassif_selg": null,
+   "usald_meetod": null,
+   "usald_meetod_selg": null,
+   "tx_usald": null,
+   "usald_allikas": null,
+   "tx_markused": null,
+   "muut_aeg": "2021-01-26T18:10:23.90437"
+  },
+  {
+   "id": 74553530,
+   "kood": null,
+   "tyyp": null,
+   "tyyp_selg": null,
+   "hks_koondseis_id": 1829261608,
+   "hks_koondseis_kood": "EE-2018-S",
+   "hks_koondseis_nimi": "Eesti mereala 2018.a koondseisund (2011-2016 andmete põhjal)",
+   "hks_element_id": -684771436,
+   "hks_element_kood": "D1C2.3-A149",
+   "hks_element_nimi": "Soorüdi: Kahlajad: Pesitsevad linnud",
+   "seirejaam_id": null,
+   "seirejaam_kkr_kood": null,
+   "seirejaam_nimi": null,
+   "sr_param_norm_id": null,
+   "sr_param_norm_nimi": null,
+   "kuulub_id": 741557394,
+   "kuulub_hks_elementi_id": -684771436,
+   "kuulub_hks_element_kood": "D1C2.3-A149",
+   "kuulub_hks_element_nimi": "Soorüdi: Kahlajad: Pesitsevad linnud",
+   "aasta_alg": 2016,
+   "aasta_lopp": 2016,
+   "seis_kp": null,
+   "seis_hinnang": null,
+   "seis_hinnang_selg": null,
+   "seis_prots": 19.6,
+   "seis_trend": null,
+   "seis_trend_selg": null,
+   "seis_mark": null,
+   "seis_nait": null,
+   "tx_seis": null,
+   "seis_viga": null,
+   "tx_metoodika": null,
+   "usald": null,
+   "usald_selg": null,
+   "usald_ajaline": null,
+   "usald_ajaline_selg": null,
+   "usald_ruumiline": null,
+   "usald_ruumiline_selg": null,
+   "usald_klassif": null,
+   "usald_klassif_selg": null,
+   "usald_meetod": null,
+   "usald_meetod_selg": null,
+   "tx_usald": null,
+   "usald_allikas": null,
+   "tx_markused": null,
+   "muut_aeg": "2020-04-27T22:50:51.446266"
+  }
+ ]
+}
