@@ -1,0 +1,85 @@
+name: Crawl visualisations
+
+# Renders keskkonnaportaal.ee, inventories embedded visualisations and merges them with the
+# baseline inventory.  Results are force-pushed as a single commit to the `crawl-results` branch
+# so that `main` history stays clean.  Credentials come only from repository secrets.
+
+on:
+  workflow_dispatch:
+    inputs:
+      max_pages:
+        description: "Limit number of pages (empty = all)"
+        required: false
+        default: ""
+      delay:
+        description: "Seconds between pages"
+        required: false
+        default: "1.0"
+  schedule:
+    - cron: "17 3 1 * *" # monthly, 03:17 UTC on the 1st
+
+permissions:
+  contents: write
+
+concurrency:
+  group: crawl
+  cancel-in-progress: false
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+      - run: uv sync --all-extras --frozen
+      - run: uv run playwright install --with-deps chromium
+
+      - name: Crawl
+        env:
+          # Optional: without these the tableau.envir.ee inventory is skipped.
+          TABLEAU_PAT_NAME: ${{ secrets.TABLEAU_PAT_NAME }}
+          TABLEAU_PAT_SECRET: ${{ secrets.TABLEAU_PAT_SECRET }}
+          TABLEAU_SITE: ${{ secrets.TABLEAU_SITE }}
+          MAX_PAGES: ${{ inputs.max_pages }}
+          DELAY: ${{ inputs.delay || '1.0' }}
+        run: |
+          args=(--out out --delay "$DELAY")
+          if [ -n "$MAX_PAGES" ]; then args+=(--max-pages "$MAX_PAGES"); fi
+          uv run python crawl_kaur_viz.py "${args[@]}"
+
+      - name: Merge with baseline inventory
+        run: uv run python merge_inventory.py --crawl-dir out --out out/kaur_viz_inventar.csv
+
+      - name: Summary
+        run: |
+          {
+            echo "## Crawl results"
+            echo "- Portal embed rows: $(($(wc -l < out/portal_embeds.csv) - 1))"
+            echo "- Merged inventory rows: $(($(wc -l < out/kaur_viz_inventar.csv) - 1))"
+            if [ -f out/tableau_envir_inventory.csv ]; then
+              echo "- tableau.envir.ee rows: $(($(wc -l < out/tableau_envir_inventory.csv) - 1))"
+            else
+              echo "- tableau.envir.ee: skipped (no PAT secrets or unreachable)"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: crawl-out
+          path: out/
+          retention-days: 90
+
+      - name: Publish results to crawl-results branch
+        run: |
+          cp -r out "$RUNNER_TEMP/out"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan crawl-results
+          git rm -rf --quiet .
+          cp "$RUNNER_TEMP"/out/*.csv .
+          git add -- *.csv
+          git commit -m "Crawl results $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push --force origin crawl-results
