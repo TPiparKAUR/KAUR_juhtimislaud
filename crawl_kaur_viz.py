@@ -172,11 +172,13 @@ def write_csv(path: Path, fields: list[str], rows: Iterable[dict[str, Any]]) -> 
     return n
 
 
-def crawl_portal(out: Path, delay: float, max_pages: int | None) -> None:
+def crawl_portal(
+    out: Path, delay: float, max_pages: int | None, chromium: Path | None = None
+) -> None:
     """Render every sitemap page and write ``portal_embeds.csv``."""
     rows: list[dict[str, str]] = []
     with sync_playwright() as pw:
-        browser = pw.chromium.launch()
+        browser = pw.chromium.launch(executable_path=str(chromium) if chromium else None)
         page = browser.new_page()
         urls = sitemap_urls(page)[:max_pages]
         LOG.info("%d pages in sitemap", len(urls))
@@ -249,11 +251,16 @@ def main() -> None:
     ap.add_argument("--out", type=Path, default=Path("out"))
     ap.add_argument("--delay", type=float, default=1.0, help="seconds between pages")
     ap.add_argument("--max-pages", type=int, default=None)
+    ap.add_argument("--chromium", type=Path, help="use this Chromium instead of the bundled one")
     ap.add_argument("--skip-portal", action="store_true")
     args = ap.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
     if not args.skip_portal:
-        crawl_portal(args.out, args.delay, args.max_pages)
+        try:
+            crawl_portal(args.out, args.delay, args.max_pages, args.chromium)
+        except RuntimeError as exc:  # sitemap unreachable: report cleanly, no traceback
+            LOG.error("portal crawl aborted: %s", exc)
+            raise SystemExit(1) from exc
     inventory_tableau_server(args.out)
 
 
