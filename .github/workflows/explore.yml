@@ -1,0 +1,52 @@
+name: Explore open data
+
+# Profiles selected KAUR open-data tables (row counts, column statistics, value samples) so charts
+# are designed from facts.  Read-only GET against the public API; no credentials.  Output is
+# force-pushed as one commit to the `analysis-results` branch (folder `explore/`).
+
+on:
+  workflow_dispatch:
+    inputs:
+      tables:
+        description: "Space-separated tables (empty = default list)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: explore
+  cancel-in-progress: false
+
+jobs:
+  explore:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync --frozen
+      - name: Profile tables
+        env:
+          TABLES: ${{ inputs.tables }}
+        run: |
+          args=(--out out/explore)
+          if [ -n "$TABLES" ]; then args+=(--tables $TABLES); fi
+          uv run python explore.py "${args[@]}"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: explore
+          path: out/explore/
+          retention-days: 30
+      - name: Publish to analysis-results branch
+        run: |
+          cp -r out/explore "$RUNNER_TEMP/explore"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan analysis-results
+          git rm -rf --quiet .
+          mkdir explore && cp "$RUNNER_TEMP"/explore/* explore/
+          git add -- explore
+          git commit -m "Explore $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push --force origin analysis-results
