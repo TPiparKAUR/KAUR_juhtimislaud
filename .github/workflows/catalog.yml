@@ -22,7 +22,7 @@ concurrency:
 jobs:
   catalog:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 180
     steps:
       - uses: actions/checkout@v4
         with:
@@ -67,7 +67,8 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout --orphan catalog-results
           git rm -rf --quiet .
-          cp "$RUNNER_TEMP"/out/tableau_*.csv "$RUNNER_TEMP"/out/tableau_probes.json "$RUNNER_TEMP"/out/profile_*.json .
-          git add -A
+          cp "$RUNNER_TEMP"/out/tableau_*.csv "$RUNNER_TEMP"/out/tableau_probes.json \
+            "$RUNNER_TEMP"/out/profile_*.json .
+          git add -- tableau_*.csv tableau_probes.json profile_*.json
           git commit -m "Tableau catalogue $(date -u +%Y-%m-%dT%H:%MZ)"
           git push --force origin catalog-results

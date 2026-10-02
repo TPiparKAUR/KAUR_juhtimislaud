@@ -3,7 +3,9 @@
 from __future__ import annotations
 
 import csv
+import io
 import json
+import zipfile
 from pathlib import Path
 
 import pytest
@@ -13,6 +15,8 @@ import tableau_catalog as t
 
 def fake_fetch(routes: dict[str, t.Response]) -> t.Fetch:
     def fetch(url: str) -> t.Response:
+        if url in routes:
+            return routes[url]
         for prefix, resp in routes.items():
             if url.startswith(prefix):
                 return resp
@@ -103,3 +107,101 @@ def test_run_end_to_end(tmp_path: Path) -> None:
 )
 def test_looks_like_csv(resp: t.Response, expected: bool) -> None:
     assert t.looks_like_csv(resp) is expected
+
+
+TWB = """<?xml version='1.0'?>
+<workbook xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <datasources>
+    <datasource name='Parameters'><column name='[P]'/></datasource>
+    <datasource name='federated.1' caption='Heide'>
+      <connection class='federated'><named-connections><named-connection>
+        <connection class='hyper' dbname='x.hyper'/></named-connection></named-connections>
+      </connection>
+      <column name='[Aasta]' datatype='integer' role='dimension'/>
+      <column name='[Kokku]' caption='Kokku (kt)' datatype='real' role='measure'>
+        <calculation class='tableau' formula='SUM([x])'/></column>
+    </datasource>
+  </datasources>
+  <worksheets><worksheet name='Leht 1'/><worksheet name='Leht 2'/></worksheets>
+  <dashboards><dashboard name='Töölaud'/></dashboards>
+</workbook>""".encode()
+
+
+def test_inspect_twb() -> None:
+    info = t.inspect_twb(TWB)
+    assert info["sheets"] == [
+        ("Leht 1", "worksheet"),
+        ("Leht 2", "worksheet"),
+        ("Töölaud", "dashboard"),
+    ]
+    (ds,) = info["datasources"]  # "Parameters" is skipped
+    assert ds["caption"] == "Heide" and ds["connection"] == "federated|hyper"
+    assert [(f["field"], f["calculated"]) for f in ds["fields"]] == [
+        ("[Aasta]", False),
+        ("[Kokku]", True),
+    ]
+
+
+def make_twbx(xml: bytes = TWB) -> bytes:
+    buf = io.BytesIO()
+    with zipfile.ZipFile(buf, "w") as zf:
+        zf.writestr("Data/Extracts/x.hyper", b"\x00" * 10)
+        zf.writestr("wb.twb", xml)
+    return buf.getvalue()
+
+
+def test_twb_from_package_zip_and_bare() -> None:
+    assert t.twb_from_package(make_twbx()) == TWB
+    assert t.twb_from_package(TWB) == TWB
+    with pytest.raises(ValueError, match=r"no \.twb"):
+        t.twb_from_package(b"PK\x05\x06" + b"\0" * 18)
+
+
+def test_probe_workbook_twbx_then_twb_fallback_and_errors() -> None:
+    base = "https://public.tableau.com/workbooks/W"
+    ok = fake_fetch({base + ".twbx": t.Response(200, "application/octet-stream", make_twbx())})
+    row, info = t.probe_workbook(ok, "W")
+    assert row["download"] == "twbx" and info is not None and len(info["sheets"]) == 3
+
+    fallback = fake_fetch(
+        {base + ".twbx": t.Response(404, "", b""), base + ".twb": t.Response(200, "text/xml", TWB)}
+    )
+    row, info = t.probe_workbook(fallback, "W")
+    assert row["download"] == "twb" and info is not None
+
+    row, info = t.probe_workbook(fake_fetch({}), "W")
+    assert info is None and row["http_status"] == 404
+
+    bad = fake_fetch({base + ".twbx": t.Response(200, "x", b"<not xml")})
+    row, info = t.probe_workbook(bad, "W")
+    assert info is None and "unparsable" in row["error"]
+
+    big = fake_fetch({base + ".twbx": t.Response(200, "x", b"PK", truncated=True)})
+    assert "larger than" in t.probe_workbook(big, "W")[0]["error"]
+
+
+def test_run_catalogues_profile_workbooks(tmp_path: Path) -> None:
+    inv = tmp_path / "inv.csv"
+    inv.write_text("host,workbook,view\npublic.tableau.com,wb,V\n", encoding="utf-8")
+    page = {
+        "contents": [
+            {"workbookRepoUrl": "WB", "title": "T", "viewCount": 3},
+            {"workbookRepoUrl": "Other"},
+        ]
+    }
+    fetch = fake_fetch(
+        {t.PROFILE_ENDPOINT: t.Response(200, "application/json", json.dumps(page).encode())}
+    )
+    big = fake_fetch(
+        {"https://public.tableau.com/workbooks/WB.twbx": t.Response(200, "x", make_twbx())}
+    )
+    out = tmp_path / "out"
+    t.run([inv], out, ["p"], delay=0, fetch=fetch, fetch_big=big)
+    with (out / "tableau_public_workbooks.csv").open(encoding="utf-8") as fh:
+        rows = {r["workbook"]: r for r in csv.DictReader(fh)}
+    assert rows["WB"]["in_inventory"] == "jah" and rows["WB"]["n_worksheets"] == "2"
+    assert rows["Other"]["in_inventory"] == "ei" and rows["Other"]["http_status"] == "404"
+    with (out / "tableau_public_fields.csv").open(encoding="utf-8") as fh:
+        assert len(list(csv.DictReader(fh))) == 2
+    probes = json.loads((out / "tableau_probes.json").read_text(encoding="utf-8"))
+    assert "workbooks" not in probes["profiles"][0]

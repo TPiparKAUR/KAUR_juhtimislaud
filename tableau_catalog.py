@@ -12,8 +12,14 @@ lose the others:
    Tableau exposes it) and record status, row count and column names.  The data itself is NOT
    stored - only the schema - because redistribution needs a licence check per dataset.
 
+4. For every workbook of the profile: download ``/workbooks/<repo>.twbx`` (falling back to ``.twb``)
+   when the author allows it and read the workbook XML (datasources, fields, worksheets,
+   dashboards).  Only the structure is recorded; the packaged data extract is discarded.
+
 Outputs in ``--out``: ``tableau_catalog.csv`` (one row per view), ``tableau_columns.csv`` (one row
-per view column) and ``tableau_probes.json`` (profile/serverinfo status).  No credentials are used.
+per view column), ``tableau_public_workbooks.csv`` / ``_sheets.csv`` / ``_datasources.csv`` /
+``_fields.csv`` (workbook structure) and ``tableau_probes.json`` (profile/serverinfo status).
+No credentials are used.
 
 Usage
 -----
@@ -30,8 +36,11 @@ import logging
 import time
 import urllib.error
 import urllib.request
+import xml.etree.ElementTree as ET
+import zipfile
 from collections.abc import Callable, Iterable
 from dataclasses import dataclass
+from functools import partial
 from pathlib import Path
 from typing import Any
 from urllib.parse import quote
@@ -39,6 +48,8 @@ from urllib.parse import quote
 LOG = logging.getLogger("tableau_catalog")
 USER_AGENT = "kaur-juhtimislaud-catalog/0.1 (+https://github.com/TPiparKAUR/KAUR_juhtimislaud)"
 MAX_BYTES = 20 * 1024 * 1024
+MAX_WORKBOOK_BYTES = 300 * 1024 * 1024
+MAX_TWB_XML_BYTES = 100 * 1024 * 1024
 TABLEAU_HOSTS = ("public.tableau.com", "tableau.envir.ee")
 PROFILE_ENDPOINT = "https://public.tableau.com/public/apis/workbooks"
 SERVERINFO_URL = "https://tableau.envir.ee/api/3.0/serverinfo"
@@ -56,6 +67,23 @@ CATALOG_FIELDS = [
     "error",
 ]
 COLUMN_FIELDS = ["host", "workbook", "view", "position", "column"]
+WORKBOOK_FIELDS = [
+    "workbook",
+    "title",
+    "default_view",
+    "view_count",
+    "in_inventory",
+    "download",
+    "http_status",
+    "bytes",
+    "n_datasources",
+    "n_worksheets",
+    "n_dashboards",
+    "error",
+]
+SHEET_FIELDS = ["workbook", "sheet", "kind"]
+DATASOURCE_FIELDS = ["workbook", "datasource", "caption", "connection", "n_fields"]
+FIELD_FIELDS = ["workbook", "datasource", "field", "caption", "datatype", "role", "calculated"]
 
 Fetch = Callable[[str], "Response"]
 
@@ -69,17 +97,17 @@ class Response:
     error: str = ""
 
 
-def http_get(url: str, timeout: float = 60.0) -> Response:
+def http_get(url: str, timeout: float = 120.0, max_bytes: int = MAX_BYTES) -> Response:
     """GET ``url`` with a size cap; never raises for HTTP/network errors."""
     req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
     try:
         with urllib.request.urlopen(req, timeout=timeout) as resp:
-            body = resp.read(MAX_BYTES + 1)
+            body = resp.read(max_bytes + 1)
             return Response(
                 resp.status,
                 resp.headers.get("Content-Type", ""),
-                body[:MAX_BYTES],
-                truncated=len(body) > MAX_BYTES,
+                body[:max_bytes],
+                truncated=len(body) > max_bytes,
             )
     except urllib.error.HTTPError as exc:
         return Response(exc.code, exc.headers.get("Content-Type", ""), b"", error=str(exc))
@@ -185,6 +213,7 @@ def probe_profile(fetch: Fetch, profile: str, out: Path, page_size: int = 50) ->
         "http_status": status,
         "workbooks_found": len(workbooks),
         "workbook_repo_urls": sorted({str(w["workbookRepoUrl"]) for w in workbooks}),
+        "workbooks": {str(w["workbookRepoUrl"]): w for w in workbooks},
     }
 
 
@@ -196,6 +225,77 @@ def probe_serverinfo(fetch: Fetch) -> dict[str, Any]:
         "error": resp.error,
         "body": resp.body[:2000].decode("utf-8", errors="replace"),
     }
+
+
+def local(tag: str) -> str:
+    """XML tag name without namespace."""
+    return tag.rsplit("}", 1)[-1]
+
+
+def inspect_twb(xml_bytes: bytes) -> dict[str, Any]:
+    """Extract structure (sheets, dashboards, datasources, fields) from Tableau workbook XML."""
+    root = ET.fromstring(xml_bytes)
+    sheets: list[tuple[str, str]] = []
+    datasources: list[dict[str, Any]] = []
+    for el in root.iter():
+        tag = local(el.tag)
+        if tag in ("worksheet", "dashboard") and el.get("name"):
+            sheets.append((el.get("name", ""), tag))
+        if tag == "datasource" and el.get("name") and el.get("name") != "Parameters":
+            conns = sorted({c.get("class", "") for c in el.iter() if local(c.tag) == "connection"})
+            fields = [
+                {
+                    "field": c.get("name", ""),
+                    "caption": c.get("caption", ""),
+                    "datatype": c.get("datatype", ""),
+                    "role": c.get("role", ""),
+                    "calculated": any(local(k.tag) == "calculation" for k in c),
+                }
+                for c in el
+                if local(c.tag) == "column"
+            ]
+            datasources.append(
+                {
+                    "name": el.get("name", ""),
+                    "caption": el.get("caption", ""),
+                    "connection": "|".join(x for x in conns if x),
+                    "fields": fields,
+                }
+            )
+    # Worksheets also appear nested inside dashboards as <zone name=..>; only top-level counted.
+    return {"sheets": sorted(set(sheets)), "datasources": datasources}
+
+
+def twb_from_package(body: bytes) -> bytes:
+    """Return the workbook XML from a ``.twbx`` zip or a bare ``.twb`` payload."""
+    if body[:2] == b"PK":
+        with zipfile.ZipFile(io.BytesIO(body)) as zf:
+            for info in zf.infolist():
+                if info.filename.lower().endswith(".twb"):
+                    if info.file_size > MAX_TWB_XML_BYTES:
+                        raise ValueError(f"workbook XML too large: {info.file_size}")
+                    return zf.read(info)
+        raise ValueError("no .twb inside package")
+    return body
+
+
+def probe_workbook(fetch_big: Fetch, repo: str) -> tuple[dict[str, Any], dict[str, Any] | None]:
+    """Try ``.twbx`` then ``.twb`` download; return (status row, parsed structure or None)."""
+    row: dict[str, Any] = {"download": "", "http_status": "", "bytes": "", "error": ""}
+    for ext in ("twbx", "twb"):
+        resp = fetch_big(f"https://public.tableau.com/workbooks/{quote(repo)}.{ext}")
+        row.update(download=ext, http_status=resp.status, bytes=len(resp.body), error=resp.error)
+        if resp.status != 200 or not resp.body:
+            continue
+        if resp.truncated:
+            row["error"] = f"larger than {MAX_WORKBOOK_BYTES} bytes, skipped"
+            return row, None
+        try:
+            return row, inspect_twb(twb_from_package(resp.body))
+        except (ET.ParseError, zipfile.BadZipFile, ValueError) as exc:
+            row["error"] = f"unparsable {ext}: {exc}"
+            return row, None
+    return row, None
 
 
 def read_views(paths: Iterable[Path]) -> list[tuple[str, str, str]]:
@@ -218,14 +318,85 @@ def write_csv(path: Path, fields: list[str], rows: Iterable[dict[str, Any]]) -> 
         w.writerows(rows)
 
 
-def run(
-    inventories: list[Path], out: Path, profiles: list[str], delay: float, fetch: Fetch = http_get
+def catalog_workbooks(
+    fetch_big: Fetch,
+    profile: dict[str, Any],
+    inventory_workbooks: set[str],
+    out: Path,
+    delay: float,
 ) -> None:
+    """Download and inspect every workbook of a profile; write the four workbook-level CSVs."""
+    wb_rows: list[dict[str, Any]] = []
+    sheet_rows: list[dict[str, Any]] = []
+    ds_rows: list[dict[str, Any]] = []
+    field_rows: list[dict[str, Any]] = []
+    known = {w.casefold() for w in inventory_workbooks}
+    for repo, meta in sorted(profile["workbooks"].items()):
+        row, info = probe_workbook(fetch_big, repo)
+        row.update(
+            workbook=repo,
+            title=meta.get("title", ""),
+            default_view=meta.get("defaultViewName", ""),
+            view_count=meta.get("viewCount", ""),
+            in_inventory="jah" if repo.casefold() in known else "ei",
+            n_datasources="",
+            n_worksheets="",
+            n_dashboards="",
+        )
+        if info:
+            row.update(
+                n_datasources=len(info["datasources"]),
+                n_worksheets=sum(1 for _, k in info["sheets"] if k == "worksheet"),
+                n_dashboards=sum(1 for _, k in info["sheets"] if k == "dashboard"),
+            )
+            sheet_rows += [{"workbook": repo, "sheet": n, "kind": k} for n, k in info["sheets"]]
+            for ds in info["datasources"]:
+                ds_rows.append(
+                    {
+                        "workbook": repo,
+                        "datasource": ds["name"],
+                        "caption": ds["caption"],
+                        "connection": ds["connection"],
+                        "n_fields": len(ds["fields"]),
+                    }
+                )
+                field_rows += [
+                    {"workbook": repo, "datasource": ds["name"], **f} for f in ds["fields"]
+                ]
+        wb_rows.append(row)
+        LOG.info("workbook %s: %s %s", repo, row["download"], row["http_status"])
+        time.sleep(delay)
+    write_csv(out / "tableau_public_workbooks.csv", WORKBOOK_FIELDS, wb_rows)
+    write_csv(out / "tableau_public_sheets.csv", SHEET_FIELDS, sheet_rows)
+    write_csv(out / "tableau_public_datasources.csv", DATASOURCE_FIELDS, ds_rows)
+    write_csv(out / "tableau_public_fields.csv", FIELD_FIELDS, field_rows)
+    LOG.info(
+        "%d workbooks, %d sheets, %d datasources, %d fields",
+        len(wb_rows),
+        len(sheet_rows),
+        len(ds_rows),
+        len(field_rows),
+    )
+
+
+def run(
+    inventories: list[Path],
+    out: Path,
+    profiles: list[str],
+    delay: float,
+    fetch: Fetch = http_get,
+    fetch_big: Fetch | None = None,
+) -> None:
+    fetch_big = fetch_big or partial(http_get, max_bytes=MAX_WORKBOOK_BYTES)
+    profile_results = [probe_profile(fetch, p, out) for p in profiles]
     probes: dict[str, Any] = {
         "serverinfo": probe_serverinfo(fetch),
-        "profiles": [probe_profile(fetch, p, out) for p in profiles],
+        "profiles": [{k: v for k, v in r.items() if k != "workbooks"} for r in profile_results],
     }
     views = read_views(inventories)
+    inventory_workbooks = {wb for host, wb, _ in views if host == "public.tableau.com"}
+    for res in profile_results:
+        catalog_workbooks(fetch_big, res, inventory_workbooks, out, delay)
     LOG.info("probing %d views", len(views))
     catalog: list[dict[str, Any]] = []
     columns: list[dict[str, Any]] = []
