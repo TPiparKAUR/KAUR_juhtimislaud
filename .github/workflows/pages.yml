@@ -1,12 +1,8 @@
 name: Deploy site
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - build_site.py
-      - data/**
-      - .github/workflows/pages.yml
+  # Manual only: the repository currently publishes Pages from the /docs folder of main.
+  # Switch Settings -> Pages -> Source to "GitHub Actions" before running this workflow.
   workflow_dispatch:
 
 permissions:
