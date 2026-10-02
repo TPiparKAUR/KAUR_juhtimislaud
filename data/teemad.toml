@@ -1,0 +1,76 @@
+# Topic metadata for the public site (variant A: Keskkonnaülevaade).
+# `group` must equal the inventory group. Optional fields are rendered only when filled in;
+# the build warns about missing ones. Do not add values that have not been verified.
+#
+# Optional per topic:
+#   kokkuvote  - one-paragraph summary for the hub (Estonian)
+#   allikas    - data source (dataset name + version)
+#   paritolu - provenance level: toor / QC-tud / täidetud / homogeniseeritud / tuletatud indeks
+#   uuendus    - update frequency
+#   viited     - list of verified references: [{tekst = "...", url = "..."}]
+#
+# `seotud` lists related topic slugs; `seose_pohjus` explains the link. These links are a
+# PROPOSAL derived from view names in the inventory and must be confirmed by domain experts.
+
+[[teema]]
+slug = "ilm-ja-kliima"
+group = "Keskkonnaülevaade: ilm ja kliima"
+pealkiri = "Ilm ja kliima"
+seotud = ["energeetika", "valisohk"]
+seose_pohjus = "Kasvuhoonegaaside heitkogused seovad kliima, energeetika ja õhu teemad."
+
+[[teema]]
+slug = "energeetika"
+group = "Keskkonnaülevaade: energeetika"
+pealkiri = "Energeetika"
+seotud = ["ilm-ja-kliima", "valisohk"]
+seose_pohjus = "Energeetikasektori KHG heitkogused ja heited õhku."
+
+[[teema]]
+slug = "valisohk"
+group = "Keskkonnaülevaade: välisõhk"
+pealkiri = "Välisõhk"
+seotud = ["energeetika", "ilm-ja-kliima"]
+seose_pohjus = "Peamised heiteallikad on suures osas energeetikas ja seotud kliimaga."
+
+[[teema]]
+slug = "mets"
+group = "Keskkonnaülevaade: mets"
+pealkiri = "Mets"
+seotud = ["liigid", "okosusteemid"]
+seose_pohjus = "Metsamaa, raie ja metsakahjustajad mõjutavad liike ja ökosüsteeme."
+
+[[teema]]
+slug = "liigid"
+group = "Keskkonnaülevaade: liigid"
+pealkiri = "Liigid"
+seotud = ["mets", "okosusteemid"]
+seose_pohjus = "Liikide seisund sõltub elupaikadest ja ökosüsteemide seisundist."
+
+[[teema]]
+slug = "okosusteemid"
+group = "Keskkonnaülevaade: ökosüsteemid"
+pealkiri = "Ökosüsteemid"
+seotud = ["liigid", "mets"]
+seose_pohjus = "Elupaigatüüpide seisund ja ökosüsteemiteenused."
+
+[[teema]]
+slug = "vesi"
+group = "Keskkonnaülevaade: vesi"
+pealkiri = "Vesi"
+seotud = ["muld-ja-maahoive"]
+seose_pohjus = "Maakasutus ja muld mõjutavad toitainete jõudmist vette (nitraat, fosfor)."
+
+[[teema]]
+slug = "muld-ja-maahoive"
+group = "Keskkonnaülevaade: muld ja maahõive"
+pealkiri = "Muld ja maahõive"
+seotud = ["vesi"]
+seose_pohjus = "Põllumuld ja maakasutus mõjutavad veekogude seisundit."
+
+[[teema]]
+slug = "jaatmed"
+group = "Keskkonnaülevaade: jäätmed"
+pealkiri = "Jäätmed ja ringmajandus"
+seotud = ["energeetika"]
+seose_pohjus = "Jäätmetekke ja majanduse seos; jäätmekäitlus on ka energia- ja KHG-küsimus."
