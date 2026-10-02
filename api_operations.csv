@@ -1,0 +1,6 @@
+api,method,path,summary,operation_id
+KAIA,GET,/api/lists/{list},Aktiivse valikuhierarhia metaandmete loend / List metadata,
+KAIA,POST,/api/lists/{list}/items/query,Laaditakse alla valikusse filtreeritud failide metaandmed / Gets metadata of documents matching a filter,
+KAIA,POST,/api/lists/{list}/items/zipped-files,Laaditakse alla valikusse filtreeritud failide pakk / Gets zipped files of documents matching a filter,
+KAIA,GET,/api/lists/{list}/items/{id}/files/{fileId},Laaditakse alla etteantud identifikaatoriga fail / File of document,
+KAIA,PUT,/api/lists/{list}/items/{id}/files/{fileId},Laaditakse alla etteantud identifikaatoriga fail / File of document,

@@ -1,0 +1,323 @@
+workbook,datasource,field,caption,datatype,role,calculated
+Jtmearuandlus2004-2011,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[Calculation_1803128733326536711],aasta (copy),real,dimension,True
+Jtmearuandlus2004-2011,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[Calculation_269653028400988161],biojaatmed_lipp (copy),integer,dimension,True
+Jtmearuandlus2004-2011,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[Calculation_269653028401754115],Põhigrupp,string,dimension,True
+Jtmearuandlus2004-2011,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[Calculation_269653028402114565],Alamgrupp,string,dimension,True
+Jtmearuandlus2004-2011,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[Calculation_269653028402585606],Jäätmeliik orig,string,dimension,True
+Jtmearuandlus2004-2011,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[Calculation_269653028409393166],0 ridade välistamine,boolean,measure,True
+Jtmearuandlus2004-2011,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[Calculation_269653028658434065],maht_2,real,measure,True
+Jtmearuandlus2004-2011,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[Calculation_269653028734304279],Ekspordi/impordi riik ,string,dimension,True
+Jtmearuandlus2004-2011,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[Calculation_719450081121574912],Maakond,string,dimension,True
+Jtmearuandlus2004-2011,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[Calculation_719450081123643393],Omavalitsus (null)2,string,dimension,True
+Jtmearuandlus2004-2011,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[Calculation_875950172080283648],Materjali kood,string,dimension,True
+Jtmearuandlus2004-2011,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[Calculation_875950172080721921],Jäätmeliik,string,dimension,True
+Jtmearuandlus2004-2011,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[Calculation_875950172080902147],Jäätmeliigi nimetus,string,dimension,True
+Jtmearuandlus2004-2011,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[Calculation_982629175555051520],Omavalitsus,string,dimension,True
+Jtmearuandlus2004-2011,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[Mahu liik töölauale (group)],Vali andmeväljad,string,dimension,True
+Jtmearuandlus2004-2011,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[Mahu liik_3 (copy)_1803128733323223045],Mahu liik töölauale,string,dimension,True
+Jtmearuandlus2004-2011,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[Mahu liik_3 (copy)_2393663237704601600],Mahu liik 3.tasand,string,dimension,True
+Jtmearuandlus2004-2011,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[__tableau_internal_object_id__].[Extract (Extract.Extract)_C2CEE1842F0A404CA8C961426FE3D8AC],Extract,table,measure,False
+Jtmearuandlus2004-2011,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[aasta],,integer,measure,False
+Jtmearuandlus2004-2011,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[annual_report_id],,integer,dimension,False
+Jtmearuandlus2004-2011,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[biojaatmed_lipp (group)],Biolagunevad jäätmed,string,dimension,True
+Jtmearuandlus2004-2011,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[county_code],,string,dimension,False
+Jtmearuandlus2004-2011,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[metallijaatmed_lipp (copy) (group)],Metallijäätmed,string,dimension,True
+Jtmearuandlus2004-2011,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[metallijaatmed_lipp (copy)_269653028731605011],metallijaatmed_lipp (copy),integer,dimension,True
+Jtmearuandlus2004-2011,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[ohtlik_lipp (copy)_269653028732174356],ohtlik_lipp (copy),integer,dimension,True
+Jtmearuandlus2004-2011,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[partnercountry_name_et],,string,dimension,False
+Jtmearuandlus2004-2011,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[probleemtooted_lipp (copy) (group)],Probleemtooted,string,dimension,True
+Jtmearuandlus2004-2011,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[probleemtooted_lipp (copy)_269653028733407253],probleemtooted_lipp (copy),integer,dimension,True
+Jtmearuandlus2004-2011,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[reoveesetted_lipp (copy)_269653028733661206],reoveesetted_lipp (copy),integer,dimension,True
+Jtmearuandlus2004-2011,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[reoveesetted_lipp (group)],Reoveesetted,string,dimension,True
+Jtmearuandlus2004-2011,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[Calculation_1175439543409377280],Maakond,string,dimension,True
+Jtmearuandlus2004-2011,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[Calculation_118501009738260480],Jäätmeliik,string,dimension,True
+Jtmearuandlus2004-2011,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[Calculation_118501009738391553],Jäätmeliigi nimetus,string,dimension,True
+Jtmearuandlus2004-2011,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[Calculation_118501009738825731],Materjali kood,string,dimension,True
+Jtmearuandlus2004-2011,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[Calculation_1803128733326536711],aasta (copy),real,dimension,True
+Jtmearuandlus2004-2011,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[Calculation_269653028400988161],biojaatmed_lipp (copy),integer,dimension,True
+Jtmearuandlus2004-2011,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[Calculation_269653028401754115],Põhigrupp,string,dimension,True
+Jtmearuandlus2004-2011,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[Calculation_269653028402114565],Alamgrupp,string,dimension,True
+Jtmearuandlus2004-2011,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[Calculation_269653028402585606],Jäätmeliik orig,string,dimension,True
+Jtmearuandlus2004-2011,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[Calculation_269653028409393166],0 ridade välistamine,boolean,measure,True
+Jtmearuandlus2004-2011,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[Calculation_269653028658434065],maht_2,real,measure,True
+Jtmearuandlus2004-2011,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[Calculation_269653028734304279],Ekspordi/impordi riik ,string,dimension,True
+Jtmearuandlus2004-2011,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[Mahu liik töölauale (group)],Vali andmeväljad,string,dimension,True
+Jtmearuandlus2004-2011,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[Mahu liik_3 (copy)_1803128733323223045],Mahu liik töölauale,string,dimension,True
+Jtmearuandlus2004-2011,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[Mahu liik_3 (copy)_2392537340567523328],Mahu liik 3.tasand,string,dimension,True
+Jtmearuandlus2004-2011,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[__tableau_internal_object_id__].[Extract (Extract.Extract)_D0454C71FCFA42B190198223BF5A1691],Extract,table,measure,False
+Jtmearuandlus2004-2011,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[aasta],,integer,measure,False
+Jtmearuandlus2004-2011,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[annual_report_id],,integer,dimension,False
+Jtmearuandlus2004-2011,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[biojaatmed_lipp (group)],Biolagunevad jäätmed,string,dimension,True
+Jtmearuandlus2004-2011,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[county_code],,string,dimension,False
+Jtmearuandlus2004-2011,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[metallijaatmed_lipp (copy)_269653028731605011],metallijaatmed_lipp (copy),integer,dimension,True
+Jtmearuandlus2004-2011,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[metallijaatmed_lipp (group)],Metallijäätmed,string,dimension,True
+Jtmearuandlus2004-2011,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[ohtlik_lipp (copy)_269653028732174356],ohtlik_lipp (copy),integer,dimension,True
+Jtmearuandlus2004-2011,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[partnercountry_name_et],,string,dimension,False
+Jtmearuandlus2004-2011,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[probleemtooted_lipp (copy)_269653028733407253],probleemtooted_lipp (copy),integer,dimension,True
+Jtmearuandlus2004-2011,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[probleemtooted_lipp (group)],Probleemtooted,string,dimension,True
+Jtmearuandlus2004-2011,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[reoveesetted_lipp (copy)_269653028733661206],reoveesetted_lipp (copy),integer,dimension,True
+Jtmearuandlus2004-2011,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[reoveesetted_lipp (group)],Reoveesetted,string,dimension,True
+Jtmearuandlus2004-2011,federated.0quh0e70qn8n6j1aigyiy1flv4ap,[Calculation_1803128733326536711],aasta (copy),real,dimension,True
+Jtmearuandlus2004-2011,federated.0quh0e70qn8n6j1aigyiy1flv4ap,[Calculation_2049700824928944128],Jäätmeliik,string,dimension,True
+Jtmearuandlus2004-2011,federated.0quh0e70qn8n6j1aigyiy1flv4ap,[Calculation_2049700824929796098],Jäätmeliigi nimetus,string,dimension,True
+Jtmearuandlus2004-2011,federated.0quh0e70qn8n6j1aigyiy1flv4ap,[Calculation_2049700824931377158],Materjali kood,string,dimension,True
+Jtmearuandlus2004-2011,federated.0quh0e70qn8n6j1aigyiy1flv4ap,[Calculation_269653028400988161],biojaatmed_lipp (copy),integer,dimension,True
+Jtmearuandlus2004-2011,federated.0quh0e70qn8n6j1aigyiy1flv4ap,[Calculation_269653028401754115],Põhigrupp,string,dimension,True
+Jtmearuandlus2004-2011,federated.0quh0e70qn8n6j1aigyiy1flv4ap,[Calculation_269653028402114565],Alamgrupp,string,dimension,True
+Jtmearuandlus2004-2011,federated.0quh0e70qn8n6j1aigyiy1flv4ap,[Calculation_269653028402585606],Jäätmeliik orig,string,dimension,True
+Jtmearuandlus2004-2011,federated.0quh0e70qn8n6j1aigyiy1flv4ap,[Calculation_269653028409393166],0 ridade välistamine,boolean,measure,True
+Jtmearuandlus2004-2011,federated.0quh0e70qn8n6j1aigyiy1flv4ap,[Calculation_269653028658434065],maht_2,real,measure,True
+Jtmearuandlus2004-2011,federated.0quh0e70qn8n6j1aigyiy1flv4ap,[Calculation_269653028734304279],Ekspordi/impordi riik ,string,dimension,True
+Jtmearuandlus2004-2011,federated.0quh0e70qn8n6j1aigyiy1flv4ap,[Mahu liik_3 (copy)_1803128733323223045],Mahu liik töölauale,string,dimension,True
+Jtmearuandlus2004-2011,federated.0quh0e70qn8n6j1aigyiy1flv4ap,[Mahu liik_3 (copy)_3700551556247908352],Mahu liik 3.tasand,string,dimension,True
+Jtmearuandlus2004-2011,federated.0quh0e70qn8n6j1aigyiy1flv4ap,[__tableau_internal_object_id__].[Extract (Extract.Extract)_C358D1CAF73D46A591176ABDB2F4FA69],Extract,table,measure,False
+Jtmearuandlus2004-2011,federated.0quh0e70qn8n6j1aigyiy1flv4ap,[aasta],,integer,measure,False
+Jtmearuandlus2004-2011,federated.0quh0e70qn8n6j1aigyiy1flv4ap,[biojaatmed_lipp (copy) (group)],biojaatmed_lipp (group),string,dimension,True
+Jtmearuandlus2004-2011,federated.0quh0e70qn8n6j1aigyiy1flv4ap,[metallijaatmed_lipp (copy)_269653028731605011],metallijaatmed_lipp (copy),integer,dimension,True
+Jtmearuandlus2004-2011,federated.0quh0e70qn8n6j1aigyiy1flv4ap,[metallijaatmed_lipp (group)],,string,dimension,True
+Jtmearuandlus2004-2011,federated.0quh0e70qn8n6j1aigyiy1flv4ap,[ohtlik_lipp (copy)_269653028732174356],ohtlik_lipp (copy),integer,dimension,True
+Jtmearuandlus2004-2011,federated.0quh0e70qn8n6j1aigyiy1flv4ap,[partnercountry_name_et],,string,dimension,False
+Jtmearuandlus2004-2011,federated.0quh0e70qn8n6j1aigyiy1flv4ap,[probleemtooted_lipp (copy)_269653028733407253],probleemtooted_lipp (copy),integer,dimension,True
+Jtmearuandlus2004-2011,federated.0quh0e70qn8n6j1aigyiy1flv4ap,[probleemtooted_lipp (group)],,string,dimension,True
+Jtmearuandlus2004-2011,federated.0quh0e70qn8n6j1aigyiy1flv4ap,[reoveesetted_lipp (copy) (group)],reoveesetted_lipp (group),string,dimension,True
+Jtmearuandlus2004-2011,federated.0quh0e70qn8n6j1aigyiy1flv4ap,[reoveesetted_lipp (copy)_269653028733661206],reoveesetted_lipp (copy),integer,dimension,True
+Jtmearuandlus2012-2019,federated.0quh0e70qn8n6j1aigyiy1flv4ap,[Calculation_1803128733326536711],aasta (copy),real,dimension,True
+Jtmearuandlus2012-2019,federated.0quh0e70qn8n6j1aigyiy1flv4ap,[Calculation_2049700824928944128],Jäätmeliik,string,dimension,True
+Jtmearuandlus2012-2019,federated.0quh0e70qn8n6j1aigyiy1flv4ap,[Calculation_2049700824929796098],Jäätmeliigi nimetus,string,dimension,True
+Jtmearuandlus2012-2019,federated.0quh0e70qn8n6j1aigyiy1flv4ap,[Calculation_2049700824931377158],Materjali kood,string,dimension,True
+Jtmearuandlus2012-2019,federated.0quh0e70qn8n6j1aigyiy1flv4ap,[Calculation_269653028400988161],biojaatmed_lipp (copy),integer,dimension,True
+Jtmearuandlus2012-2019,federated.0quh0e70qn8n6j1aigyiy1flv4ap,[Calculation_269653028401754115],Põhigrupp,string,dimension,True
+Jtmearuandlus2012-2019,federated.0quh0e70qn8n6j1aigyiy1flv4ap,[Calculation_269653028402114565],Alamgrupp,string,dimension,True
+Jtmearuandlus2012-2019,federated.0quh0e70qn8n6j1aigyiy1flv4ap,[Calculation_269653028402585606],Jäätmeliik orig,string,dimension,True
+Jtmearuandlus2012-2019,federated.0quh0e70qn8n6j1aigyiy1flv4ap,[Calculation_269653028409393166],0 ridade välistamine,boolean,measure,True
+Jtmearuandlus2012-2019,federated.0quh0e70qn8n6j1aigyiy1flv4ap,[Calculation_269653028658434065],maht_2,real,measure,True
+Jtmearuandlus2012-2019,federated.0quh0e70qn8n6j1aigyiy1flv4ap,[Calculation_269653028734304279],Ekspordi/impordi riik ,string,dimension,True
+Jtmearuandlus2012-2019,federated.0quh0e70qn8n6j1aigyiy1flv4ap,[Mahu liik_3 (copy)_1803128733323223045],Mahu liik töölauale,string,dimension,True
+Jtmearuandlus2012-2019,federated.0quh0e70qn8n6j1aigyiy1flv4ap,[Mahu liik_3 (copy)_3700551556247908352],Mahu liik 3.tasand,string,dimension,True
+Jtmearuandlus2012-2019,federated.0quh0e70qn8n6j1aigyiy1flv4ap,[__tableau_internal_object_id__].[Extract (Extract.Extract)_C358D1CAF73D46A591176ABDB2F4FA69],Extract,table,measure,False
+Jtmearuandlus2012-2019,federated.0quh0e70qn8n6j1aigyiy1flv4ap,[aasta],,integer,measure,False
+Jtmearuandlus2012-2019,federated.0quh0e70qn8n6j1aigyiy1flv4ap,[biojaatmed_lipp (copy) (group)],biojaatmed_lipp (group),string,dimension,True
+Jtmearuandlus2012-2019,federated.0quh0e70qn8n6j1aigyiy1flv4ap,[metallijaatmed_lipp (copy)_269653028731605011],metallijaatmed_lipp (copy),integer,dimension,True
+Jtmearuandlus2012-2019,federated.0quh0e70qn8n6j1aigyiy1flv4ap,[metallijaatmed_lipp (group)],,string,dimension,True
+Jtmearuandlus2012-2019,federated.0quh0e70qn8n6j1aigyiy1flv4ap,[ohtlik_lipp (copy)_269653028732174356],ohtlik_lipp (copy),integer,dimension,True
+Jtmearuandlus2012-2019,federated.0quh0e70qn8n6j1aigyiy1flv4ap,[partnercountry_name_et],,string,dimension,False
+Jtmearuandlus2012-2019,federated.0quh0e70qn8n6j1aigyiy1flv4ap,[probleemtooted_lipp (copy)_269653028733407253],probleemtooted_lipp (copy),integer,dimension,True
+Jtmearuandlus2012-2019,federated.0quh0e70qn8n6j1aigyiy1flv4ap,[probleemtooted_lipp (group)],,string,dimension,True
+Jtmearuandlus2012-2019,federated.0quh0e70qn8n6j1aigyiy1flv4ap,[reoveesetted_lipp (copy) (group)],reoveesetted_lipp (group),string,dimension,True
+Jtmearuandlus2012-2019,federated.0quh0e70qn8n6j1aigyiy1flv4ap,[reoveesetted_lipp (copy)_269653028733661206],reoveesetted_lipp (copy),integer,dimension,True
+Jtmearuandlus2012-2019,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[Calculation_1175439543409377280],Maakond,string,dimension,True
+Jtmearuandlus2012-2019,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[Calculation_118501009738260480],Jäätmeliik,string,dimension,True
+Jtmearuandlus2012-2019,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[Calculation_118501009738391553],Jäätmeliigi nimetus,string,dimension,True
+Jtmearuandlus2012-2019,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[Calculation_118501009738825731],Materjali kood,string,dimension,True
+Jtmearuandlus2012-2019,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[Calculation_1803128733326536711],aasta (copy),real,dimension,True
+Jtmearuandlus2012-2019,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[Calculation_269653028400988161],biojaatmed_lipp (copy),integer,dimension,True
+Jtmearuandlus2012-2019,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[Calculation_269653028401754115],Põhigrupp,string,dimension,True
+Jtmearuandlus2012-2019,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[Calculation_269653028402114565],Alamgrupp,string,dimension,True
+Jtmearuandlus2012-2019,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[Calculation_269653028402585606],Jäätmeliik orig,string,dimension,True
+Jtmearuandlus2012-2019,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[Calculation_269653028409393166],0 ridade välistamine,boolean,measure,True
+Jtmearuandlus2012-2019,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[Calculation_269653028658434065],maht_2,real,measure,True
+Jtmearuandlus2012-2019,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[Calculation_269653028734304279],Ekspordi/impordi riik ,string,dimension,True
+Jtmearuandlus2012-2019,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[Mahu liik töölauale (group)],Vali andmeväljad,string,dimension,True
+Jtmearuandlus2012-2019,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[Mahu liik_3 (copy)_1803128733323223045],Mahu liik töölauale,string,dimension,True
+Jtmearuandlus2012-2019,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[Mahu liik_3 (copy)_2392537340567523328],Mahu liik 3.tasand,string,dimension,True
+Jtmearuandlus2012-2019,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[__tableau_internal_object_id__].[Extract (Extract.Extract)_D0454C71FCFA42B190198223BF5A1691],Extract,table,measure,False
+Jtmearuandlus2012-2019,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[aasta],,integer,measure,False
+Jtmearuandlus2012-2019,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[annual_report_id],,integer,dimension,False
+Jtmearuandlus2012-2019,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[biojaatmed_lipp (group)],Biolagunevad jäätmed,string,dimension,True
+Jtmearuandlus2012-2019,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[county_code],,string,dimension,False
+Jtmearuandlus2012-2019,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[metallijaatmed_lipp (copy)_269653028731605011],metallijaatmed_lipp (copy),integer,dimension,True
+Jtmearuandlus2012-2019,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[metallijaatmed_lipp (group)],Metallijäätmed,string,dimension,True
+Jtmearuandlus2012-2019,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[ohtlik_lipp (copy)_269653028732174356],ohtlik_lipp (copy),integer,dimension,True
+Jtmearuandlus2012-2019,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[partnercountry_name_et],,string,dimension,False
+Jtmearuandlus2012-2019,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[probleemtooted_lipp (copy)_269653028733407253],probleemtooted_lipp (copy),integer,dimension,True
+Jtmearuandlus2012-2019,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[probleemtooted_lipp (group)],Probleemtooted,string,dimension,True
+Jtmearuandlus2012-2019,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[reoveesetted_lipp (copy)_269653028733661206],reoveesetted_lipp (copy),integer,dimension,True
+Jtmearuandlus2012-2019,federated.0jd2qp70ykgqy419z9nbe0k18tbc,[reoveesetted_lipp (group)],Reoveesetted,string,dimension,True
+Jtmearuandlus2012-2019,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[Calculation_1803128733326536711],aasta (copy),real,dimension,True
+Jtmearuandlus2012-2019,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[Calculation_269653028400988161],biojaatmed_lipp (copy),integer,dimension,True
+Jtmearuandlus2012-2019,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[Calculation_269653028401754115],Põhigrupp,string,dimension,True
+Jtmearuandlus2012-2019,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[Calculation_269653028402114565],Alamgrupp,string,dimension,True
+Jtmearuandlus2012-2019,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[Calculation_269653028402585606],Jäätmeliik orig,string,dimension,True
+Jtmearuandlus2012-2019,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[Calculation_269653028409393166],0 ridade välistamine,boolean,measure,True
+Jtmearuandlus2012-2019,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[Calculation_269653028658434065],maht_2,real,measure,True
+Jtmearuandlus2012-2019,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[Calculation_269653028734304279],Ekspordi/impordi riik ,string,dimension,True
+Jtmearuandlus2012-2019,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[Calculation_719450081121574912],Maakond,string,dimension,True
+Jtmearuandlus2012-2019,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[Calculation_719450081123643393],Omavalitsus (null)2,string,dimension,True
+Jtmearuandlus2012-2019,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[Calculation_875950172080283648],Materjali kood,string,dimension,True
+Jtmearuandlus2012-2019,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[Calculation_875950172080721921],Jäätmeliik,string,dimension,True
+Jtmearuandlus2012-2019,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[Calculation_875950172080902147],Jäätmeliigi nimetus,string,dimension,True
+Jtmearuandlus2012-2019,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[Calculation_982629175555051520],Omavalitsus,string,dimension,True
+Jtmearuandlus2012-2019,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[Mahu liik töölauale (group)],Vali andmeväljad,string,dimension,True
+Jtmearuandlus2012-2019,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[Mahu liik_3 (copy)_1803128733323223045],Mahu liik töölauale,string,dimension,True
+Jtmearuandlus2012-2019,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[Mahu liik_3 (copy)_2393663237704601600],Mahu liik 3.tasand,string,dimension,True
+Jtmearuandlus2012-2019,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[__tableau_internal_object_id__].[Extract (Extract.Extract)_C2CEE1842F0A404CA8C961426FE3D8AC],Extract,table,measure,False
+Jtmearuandlus2012-2019,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[aasta],,integer,measure,False
+Jtmearuandlus2012-2019,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[annual_report_id],,integer,dimension,False
+Jtmearuandlus2012-2019,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[biojaatmed_lipp (group)],Biolagunevad jäätmed,string,dimension,True
+Jtmearuandlus2012-2019,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[county_code],,string,dimension,False
+Jtmearuandlus2012-2019,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[metallijaatmed_lipp (copy) (group)],Metallijäätmed,string,dimension,True
+Jtmearuandlus2012-2019,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[metallijaatmed_lipp (copy)_269653028731605011],metallijaatmed_lipp (copy),integer,dimension,True
+Jtmearuandlus2012-2019,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[ohtlik_lipp (copy)_269653028732174356],ohtlik_lipp (copy),integer,dimension,True
+Jtmearuandlus2012-2019,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[partnercountry_name_et],,string,dimension,False
+Jtmearuandlus2012-2019,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[probleemtooted_lipp (copy) (group)],Probleemtooted,string,dimension,True
+Jtmearuandlus2012-2019,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[probleemtooted_lipp (copy)_269653028733407253],probleemtooted_lipp (copy),integer,dimension,True
+Jtmearuandlus2012-2019,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[reoveesetted_lipp (copy)_269653028733661206],reoveesetted_lipp (copy),integer,dimension,True
+Jtmearuandlus2012-2019,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,[reoveesetted_lipp (group)],Reoveesetted,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp,[Calculation_1803128733326536711],aasta (copy),real,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp,[Calculation_2049700824928944128],Jäätmeliik,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp,[Calculation_2049700824929796098],Jäätmeliigi nimetus,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp,[Calculation_2049700824930709507],Materjali nimetus,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp,[Calculation_2049700824931377158],Materjali kood,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp,[Calculation_269653028400693248],Aasta ,real,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp,[Calculation_269653028400988161],biojaatmed_lipp (copy),integer,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp,[Calculation_269653028401258498],Ekspordi/impordi riik (copy),string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp,[Calculation_269653028401754115],Põhigrupp,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp,[Calculation_269653028401901572],Põhigrupi nimetus,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp,[Calculation_269653028402114565],Alamgrupp,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp,[Calculation_269653028402585606],Jäätmeliik orig,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp,[Calculation_269653028409393166],0 ridade välistamine,boolean,measure,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp,[Calculation_269653028409585679],Eelmine aasta,real,measure,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp,[Calculation_269653028658434065],maht_2,real,measure,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp,[Calculation_269653028723728402],Tagasi nupp,integer,measure,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp,[Calculation_269653028734304279],Ekspordi/impordi riik ,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp,[Mahu liik_1 (copy)_1803128733042429953],Mahu liik 1.tasand,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp,[Mahu liik_1],,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp,[Mahu liik_2 (copy)_1803128733041664000],Mahu liik 2.tasand,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp,[Mahu liik_2],,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp,[Mahu liik_3 (copy)_1803128733323223045],Mahu liik töölauale,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp,[Mahu liik_3 (copy)_3700551556247908352],Mahu liik 3.tasand,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp,[__tableau_internal_object_id__].[_7D446649F24048D5A842C81E4C07A320],Custom SQL Query,table,measure,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp,[aasta],,integer,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp,[biojaatmed_lipp (copy) (group)],biojaatmed_lipp (group),string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp,[biojaatmed_lipp],,integer,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp,[mahu_liik],Mahu liik_3,string,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp,[materjali_kood],Materjali kood orig,integer,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp,[materjali_nimetus],Materjali nimetus orig,string,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp,[metallijaatmed_lipp (copy)_269653028731605011],metallijaatmed_lipp (copy),integer,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp,[metallijaatmed_lipp (group)],,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp,[metallijaatmed_lipp],,integer,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp,[ohtlik_lipp (copy)_269653028732174356],ohtlik_lipp (copy),integer,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp,[ohtlik_lipp],,integer,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp,[partnercountry_name_et],,string,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp,[probleemtooted_lipp (copy)_269653028733407253],probleemtooted_lipp (copy),integer,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp,[probleemtooted_lipp (group)],,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp,[probleemtooted_lipp],,integer,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp,[reoveesetted_lipp (copy) (group)],reoveesetted_lipp (group),string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp,[reoveesetted_lipp (copy)_269653028733661206],reoveesetted_lipp (copy),integer,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp,[reoveesetted_lipp],,integer,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp,[riik],Ekspordi/impordi riik,string,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp,[waste_code],waste_code_3,string,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp,[waste_name_et],Jäätmeliigi nimetus orig,string,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp,[waste_name_et_2],Alamgrupi nimetus,string,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[Calculation_1175439543409377280],Maakond,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[Calculation_1175439543409537025],Maakonna kood,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[Calculation_118501009738260480],Jäätmeliik,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[Calculation_118501009738391553],Jäätmeliigi nimetus,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[Calculation_118501009738702850],Materjali nimetus,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[Calculation_118501009738825731],Materjali kood,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[Calculation_1803128733326536711],aasta (copy),real,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[Calculation_269653028400693248],Aasta ,real,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[Calculation_269653028400988161],biojaatmed_lipp (copy),integer,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[Calculation_269653028401258498],Ekspordi/impordi riik (copy),string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[Calculation_269653028401754115],Põhigrupp,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[Calculation_269653028401901572],Põhigrupi nimetus,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[Calculation_269653028402114565],Alamgrupp,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[Calculation_269653028402585606],Jäätmeliik orig,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[Calculation_269653028409393166],0 ridade välistamine,boolean,measure,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[Calculation_269653028409585679],Eelmine aasta,real,measure,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[Calculation_269653028658434065],maht_2,real,measure,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[Calculation_269653028723728402],Tagasi nupp,integer,measure,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[Calculation_269653028734304279],Ekspordi/impordi riik ,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[Mahu liik töölauale (group)],Vali andmeväljad,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[Mahu liik_1 (copy)_1803128733042429953],Mahu liik 1.tasand,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[Mahu liik_1],,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[Mahu liik_2 (copy)_1803128733041664000],Mahu liik 2.tasand,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[Mahu liik_2],,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[Mahu liik_3 (copy)_1803128733323223045],Mahu liik töölauale,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[Mahu liik_3 (copy)_2392537340567523328],Mahu liik 3.tasand,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[__tableau_internal_object_id__].[_7D446649F24048D5A842C81E4C07A320],Custom SQL Query,table,measure,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[aasta],,integer,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[annual_report_id (tegevuskoht)],,integer,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[biojaatmed_lipp (group)],Biolagunevad jäätmed,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[biojaatmed_lipp],,integer,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[county_code (tegevuskoht)],,string,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[county_code],Maakonna kood1,string,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[maakond],Maakond1,string,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[mahu_liik],Mahu liik_3,string,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[materjali_kood],Materjali kood orig,integer,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[materjali_nimetus],Materjali nimetus orig,string,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[metallijaatmed_lipp (copy)_269653028731605011],metallijaatmed_lipp (copy),integer,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[metallijaatmed_lipp (group)],Metallijäätmed,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[metallijaatmed_lipp],,integer,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[ohtlik_lipp (copy)_269653028732174356],ohtlik_lipp (copy),integer,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[ohtlik_lipp],,integer,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[partnercountry_name_et],,string,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[probleemtooted_lipp (copy)_269653028733407253],probleemtooted_lipp (copy),integer,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[probleemtooted_lipp (group)],Probleemtooted,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[probleemtooted_lipp],,integer,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[reoveesetted_lipp (copy)_269653028733661206],reoveesetted_lipp (copy),integer,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[reoveesetted_lipp (group)],Reoveesetted,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[reoveesetted_lipp],,integer,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[riik],Ekspordi/impordi riik,string,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[waste_code],waste_code_3,string,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[waste_name_et],Jäätmeliigi nimetus orig,string,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),[waste_name_et_2],Alamgrupi nimetus,string,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[Calculation_1803128733326536711],aasta (copy),real,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[Calculation_269653028400693248],Aasta ,real,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[Calculation_269653028400988161],biojaatmed_lipp (copy),integer,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[Calculation_269653028401258498],Ekspordi/impordi riik (copy),string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[Calculation_269653028401754115],Põhigrupp,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[Calculation_269653028401901572],Põhigrupi nimetus,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[Calculation_269653028402114565],Alamgrupp,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[Calculation_269653028402585606],Jäätmeliik orig,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[Calculation_269653028409393166],0 ridade välistamine,boolean,measure,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[Calculation_269653028409585679],Eelmine aasta,real,measure,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[Calculation_269653028658434065],maht_2,real,measure,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[Calculation_269653028723728402],Tagasi nupp,integer,measure,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[Calculation_269653028734304279],Ekspordi/impordi riik ,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[Calculation_719450081121574912],Maakond,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[Calculation_719450081123643393],Omavalitsus (null)2,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[Calculation_719450081129472002],Omavalitsuse kood,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[Calculation_719450081130545155],Maakonna kood,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[Calculation_875950172080283648],Materjali kood,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[Calculation_875950172080721921],Jäätmeliik,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[Calculation_875950172080902147],Jäätmeliigi nimetus,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[Calculation_875950172081168388],Materjali nimetus,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[Calculation_982629175555051520],Omavalitsus,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[Mahu liik töölauale (group)],Vali andmeväljad,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[Mahu liik_1 (copy)_1803128733042429953],Mahu liik 1.tasand,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[Mahu liik_1],,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[Mahu liik_2 (copy)_1803128733041664000],Mahu liik 2.tasand,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[Mahu liik_2],,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[Mahu liik_3 (copy)_1803128733323223045],Mahu liik töölauale,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[Mahu liik_3 (copy)_2393663237704601600],Mahu liik 3.tasand,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[__tableau_internal_object_id__].[_7D446649F24048D5A842C81E4C07A320],Custom SQL Query,table,measure,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[aasta],,integer,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[annual_report_id (tegevuskoht)],,integer,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[annual_report_id],,integer,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[biojaatmed_lipp (group)],Biolagunevad jäätmed,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[biojaatmed_lipp],,integer,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[county_code (tegevuskoht)],,string,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[county_code],Maakonna kood1,string,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[maakond],Maakond1,string,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[mahu_liik],Mahu liik_3,string,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[materjali_kood],Materjali kood orig,integer,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[materjali_nimetus],Materjali nimetus orig,string,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[metallijaatmed_lipp (copy) (group)],Metallijäätmed,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[metallijaatmed_lipp (copy)_269653028731605011],metallijaatmed_lipp (copy),integer,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[metallijaatmed_lipp],,integer,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[municipality_code],Omavalitsuse kood1,string,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[ohtlik_lipp (copy)_269653028732174356],ohtlik_lipp (copy),integer,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[ohtlik_lipp],,integer,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[omavalitsus],Omavalitsus (null),string,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[partnercountry_name_et],,string,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[probleemtooted_lipp (copy) (group)],Probleemtooted,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[probleemtooted_lipp (copy)_269653028733407253],probleemtooted_lipp (copy),integer,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[probleemtooted_lipp],,integer,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[reoveesetted_lipp (copy)_269653028733661206],reoveesetted_lipp (copy),integer,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[reoveesetted_lipp (group)],Reoveesetted,string,dimension,True
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[reoveesetted_lipp],,integer,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[riik],Ekspordi/impordi riik,string,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[waste_code],waste_code_3,string,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[waste_name_et],Jäätmeliigi nimetus orig,string,dimension,False
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),[waste_name_et_2],Alamgrupi nimetus,string,dimension,False

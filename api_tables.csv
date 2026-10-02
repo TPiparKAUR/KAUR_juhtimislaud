@@ -1,0 +1,303 @@
+api,table,description,n_columns
+EELIS/PostgREST,f_alad,Kaitsealused alad ja üksikobjektid,40
+EELIS/PostgREST,f_alad_dok,Kaitsealuse ala või üksikobjektiga seotud õigusaktid.,13
+EELIS/PostgREST,f_alad_ehak,Kaitsealuse ala või üksikobjekti kohanimi,11
+EELIS/PostgREST,f_alad_elupaigatyyp,"Natura elupaigatüübid, mis on kaitse eesmärgiks",10
+EELIS/PostgREST,f_alad_fjisik,Kaitsealuse ala või üksikobjekti valitsejad,6
+EELIS/PostgREST,f_alad_invelupaik,Kaitsealusel alal või üksikobjektil asuvad Natura elupaigad (v.a I ja II kaitsekatekooriga liikide püsielupaigad),114
+EELIS/PostgREST,f_alad_kandealus,Kaitsealuse ala või üksikobjekti kandealused,20
+EELIS/PostgREST,f_alad_kava,Kaitsekorralduskavad,7
+EELIS/PostgREST,f_alad_kirjandus,Kaitsealuse ala või üksikobjekti kirjandus ja uuringud,26
+EELIS/PostgREST,f_alad_lkoht,Kaitsealusel alal või üksikobjektil asuvad liikide leiukohad,48
+EELIS/PostgREST,f_alad_lkoht_py,"Leiukohad, mille kaitseks püsielupaik on loodud ( v.a I ja II kaitsekategooria liikide püsielupaigad)",48
+EELIS/PostgREST,f_alad_lnim,"Liigid, mis on kaitse eesmärgiks",16
+EELIS/PostgREST,f_alad_rahvala,Kaitsealune ala või üksikobjekt asub rahvusvahelise tähtsusega aladel,30
+EELIS/PostgREST,f_alad_seotud_ala,Kaitsealusel alal või üksikobjektil asuvad kaitsealused alad või üksikobjektid ( v.a I ja II kaitsekatekooriga liikide püsielupaigad),39
+EELIS/PostgREST,f_alad_veekogu,Kaitsealusel alal või üksikobjektil asuvad veekogud ( v.a I ja II kaitsekatekooriga liikide püsielupaigad).,83
+EELIS/PostgREST,f_alad_vep,Kaitsealuse ala või üksikobjektiga kattuvad vääriselupaigad ( v.a I ja II kaitsekatekooriga liikide püsielupaigad),37
+EELIS/PostgREST,f_alad_voond,Üksikobjekti vööndid ( v.a I ja II kaitsekatekooriga liikide püsielupaigad),13
+EELIS/PostgREST,f_alad_yksikobj_moot,Üksikobjekti mõõdud,35
+EELIS/PostgREST,f_alad_yrg,Kaitsealusel alal või üksikobjektil asuvad ürglooduse objektid ( v.a I ja II kaitsekatekooriga liikide püsielupaigad),25
+EELIS/PostgREST,f_hks_elemendid,Mereala HKS mõõdetavad elemendid,44
+EELIS/PostgREST,f_hks_elemendid_seirejaam,Mereala HKS mõõdetavate elementide seirejaamad,8
+EELIS/PostgREST,f_hks_elemendid_veekogum,Mereala HKS mõõdetavate elementide veekogumid,10
+EELIS/PostgREST,f_hks_indikaatorid,MSRD HKS indikaatorid,41
+EELIS/PostgREST,f_hks_indikaatorid_dok,MSRD indikaatoritega seotud õigusaktid,13
+EELIS/PostgREST,f_hks_indikaatorid_kirjandus,MSRD indikaatori kirjandus ja uuringud,26
+EELIS/PostgREST,f_hks_indikaatorid_veekogum,MSRD indikaatorite hindamisüksused,9
+EELIS/PostgREST,f_hks_kriteeriumid,MSRD tunnused ja kriteeriumid,23
+EELIS/PostgREST,f_hks_kriteeriumid_dok,MSRD indikaatoritega seotud õigusaktid,13
+EELIS/PostgREST,f_hks_kriteeriumid_sr_programm,HKS tunnusega/kriteeriumiga seotud MSRD seireprogrammid,13
+EELIS/PostgREST,f_hks_kriteeriumid_vmmeede,HKS kriteeriumiga seotud meetmed,10
+EELIS/PostgREST,f_hks_seisud,Mereala seisundi hinnatud väärtused,46
+EELIS/PostgREST,f_hks_sihid,Merestrateegia keskkonnaalased sihid ja indikaatorid,41
+EELIS/PostgREST,f_hks_sihid_sr_programm,MSRD sihtidega seotud seireprogrammid,28
+EELIS/PostgREST,f_hks_sihid_vmmeede,MSRD sihtidega seotud meetmed,8
+EELIS/PostgREST,f_hks_siht_seisud,MSRD sihi/indikaatori andmerida,12
+EELIS/PostgREST,f_hydroseire,Hüdroloogiliste seireandmete aegread,13
+EELIS/PostgREST,f_invelupaigad,NATURA elupaigad,114
+EELIS/PostgREST,f_invelupaigad_ala,Natura elupaik asub kaitsealusel alal ( v.a I ja II kaitsekatekooriga liikide püsielupaigad),39
+EELIS/PostgREST,f_invelupaigad_ehak,Natura elupaiga kohanimi,11
+EELIS/PostgREST,f_invelupaigad_invelupaigatyyp,Natura elupaigal esinevad põhilised ja kaasnevad elupaigatüübid,20
+EELIS/PostgREST,f_invelupaigad_invmojutegur,Natura elupaigas esinevad mõjutegurid,12
+EELIS/PostgREST,f_invelupaigad_invtunnus,Natura elupaiga tunnused,11
+EELIS/PostgREST,f_invelupaigad_kandealus,Natura elupaiga kandealused,20
+EELIS/PostgREST,f_invelupaigad_lkoht,"Natura elupaiga liikide leiukohad (v.a I, II kaitsekategooria liigid)",53
+EELIS/PostgREST,f_invelupaigad_lnim,"Natura alal esinevad olulised, alusmetsa ja järelkasvu liigid, võõrliigid ning määratud dominantliigid (v.a I, II kaitsekategooria liigid)",16
+EELIS/PostgREST,f_invelupaigad_rahvala,Natura elupaik asub rahvusvahelise tähtsusega aladel,30
+EELIS/PostgREST,f_invelupaigad_veekogu,Natura elupaigaga kattuvad veekogud,83
+EELIS/PostgREST,f_jaakreostusalad,Jääkreostusobjektid,45
+EELIS/PostgREST,f_jaakreostusalad_alamobjekt,Alamobjektid (jaakreostusala),40
+EELIS/PostgREST,f_jaakreostusalad_ehak,Jääkreostuseobjektide EHAK,11
+EELIS/PostgREST,f_jaakreostusalad_kandealus,Jääkreostusobjekti kirje kandealused,20
+EELIS/PostgREST,f_jaakreostusalad_kirjandus,Jääkreostusala kirjandus ja uuringud,25
+EELIS/PostgREST,f_jaakreostusalad_puurauk,Jääkreostusala seirepuuraugud,71
+EELIS/PostgREST,f_jaakreostusalad_vesikond,Jääkreostusala vesikonnad ,14
+EELIS/PostgREST,f_jaatmejaamad_jaatmeliigid_curr,,17
+EELIS/PostgREST,f_jaatmekohad,Kaadamisalad,20
+EELIS/PostgREST,f_jaatmekohad_kandealus,Kaadamisala kandealus,21
+EELIS/PostgREST,f_jaatmekohad_kirjandus,Kaadamisala kirjandus ja uuringud,25
+EELIS/PostgREST,f_jaatmeliikumine_fix_riik,Riigi taseme jäätmearuandluse statistika,20
+EELIS/PostgREST,f_jahiala,Jahipiirkonnad,17
+EELIS/PostgREST,f_jahiala_dokument,Jahipiirkonnaga seotud õigusaktid,8
+EELIS/PostgREST,f_jahiala_kandealus,Jahipiirkonnaga seotud kandealused,8
+EELIS/PostgREST,f_jahiala_seirejaam,Jahipiirkonnaga seotud seirejaamad,7
+EELIS/PostgREST,f_jkkregister_curr,Jäätmekäitluskohtade register,41
+EELIS/PostgREST,f_keskkonnaseire,Keskkonnaseire avaandmete andmeteenused,144
+EELIS/PostgREST,f_kliima_element,,6
+EELIS/PostgREST,f_kliima_jaam_vaatlus,Kliima: jaamade metaandmed ja elementide mõõtmisperioodid Climate: station metadata and element measurement periods,15
+EELIS/PostgREST,f_kliima_kuu,Kliima: kuuandmed Climate: monthly data,9
+EELIS/PostgREST,f_kliima_minut,Kliima: 10-minuti andmed Climate: 10-minute data,12
+EELIS/PostgREST,f_kliima_paev,Kliima: ööpäevaandmed Climate: daily data,10
+EELIS/PostgREST,f_kliima_tund,Kliima: tunniandmed  Climate: hourly data,11
+EELIS/PostgREST,f_kohustus_yld_curr,,11
+EELIS/PostgREST,f_lcp_poletusseadmed_allikas_curr,Suured põletusseadmed,105
+EELIS/PostgREST,f_lkohad,Liikide leiukohad,49
+EELIS/PostgREST,f_lkohad_ala,"Leiukohaga kattuv kaitseala (v.a I, II kaitsekategooria liikide püsielupaigad)",40
+EELIS/PostgREST,f_lkohad_alamosa,Leiukoha alamosad,38
+EELIS/PostgREST,f_lkohad_ehak,Leiukoha kohanimi,11
+EELIS/PostgREST,f_lkohad_invelupaik,"Leiukohaga kattuv elupaik (v.a I, II kaitsekategooria liigid)",114
+EELIS/PostgREST,f_lkohad_lnim,Leiukoha liigi rühm ja liigi kaitsekategooria,16
+EELIS/PostgREST,f_lkohad_py_ala,Leiukoha kaitseks loodud püsielupaik,40
+EELIS/PostgREST,f_lkohad_veekogu,"Leiukohaga kattuv veekogu (v.a I, II kaitsekategooria liigid)",83
+EELIS/PostgREST,f_luba_curr,,32
+EELIS/PostgREST,f_maa_deklar_kaevand_maht_api,Kaevandamise mahu deklaratsioonid,10
+EELIS/PostgREST,f_maa_deklar_tasu_api,Deklaratsiooni tasu,9
+EELIS/PostgREST,f_maa_deklar_tulusaaja_api,Deklaratsiooni tulusaaja,7
+EELIS/PostgREST,f_maasoojussysteemid,Maasoojussüsteemid,23
+EELIS/PostgREST,f_maasoojussysteemid_ehak,Maasoojussüsteemi EHAK,11
+EELIS/PostgREST,f_maasoojussysteemid_puurauk,Puuraugud,71
+EELIS/PostgREST,f_paisud,Paisud,28
+EELIS/PostgREST,f_paisud_kandealus,Paisu kandealused,20
+EELIS/PostgREST,f_paisud_kirjandus,Paisu kirjandus ja uuringud,25
+EELIS/PostgREST,f_paisud_klis_luba,Paisu KOTKAS load ,4
+EELIS/PostgREST,f_paisud_veekogum,Paisu veekogumid,36
+EELIS/PostgREST,f_paisud_veekogum_seis,Paisuga seotud veekogumi seisundi hinnang,17
+EELIS/PostgREST,f_paisud_vesiviljelus,Paisuga seotud vesiviljelused,16
+EELIS/PostgREST,f_paisud_yld,Paisu üldinfo (ajalugu),8
+EELIS/PostgREST,f_parandobjd,Pärandkultuuri objektid,27
+EELIS/PostgREST,f_parandobjd_ehak,Pärandkultuuri objekti kohanimi,11
+EELIS/PostgREST,f_parandobjd_veekogu,Pärandkultuuri objektiga kattuv veekogu,83
+EELIS/PostgREST,f_pohjaveekogumi_seisud,Põhjaveekogumi seisundid ja eesmärgid,65
+EELIS/PostgREST,f_pohjaveekogumi_seisud_kandealus,Põhjaveekogumi seisundi kandealused,20
+EELIS/PostgREST,f_pohjaveekogumi_seisud_kirjandus,Põhjaveekogumi seisundi kirjandus ja uuringud,26
+EELIS/PostgREST,f_pohjaveekogumid,Põhjaveekogumid,28
+EELIS/PostgREST,f_pohjaveekogumid_dok, Põhjaveekogumiga seotud õigusaktid,13
+EELIS/PostgREST,f_pohjaveekogumid_eelnev_pohjaveekogum,Eelnevad põhjaveekogumid,29
+EELIS/PostgREST,f_pohjaveekogumid_jargnev_pohjaveekogum,Järgnevad põhjaveekogumid ,29
+EELIS/PostgREST,f_pohjaveekogumid_kandealus,Põhjaveekogumite kandealused,20
+EELIS/PostgREST,f_pohjaveekogumid_pohjaveekogum_seis,Põhjaveekogumi seisundihinnangud,65
+EELIS/PostgREST,f_pohjaveekogumid_pohjaveevaru,Kinnitatud põhjaveevarud,35
+EELIS/PostgREST,f_pohjaveekogumid_puurauk,Põhjaveekogumi puuraugud,72
+EELIS/PostgREST,f_pohjaveekogumid_puurauk_pealmine,Põhjaveekogumi puuraugud (kus on pealmiseks kogumiks),71
+EELIS/PostgREST,f_pohjaveekogumid_rahvala,Põhjaveekogumiga seotud rahvusvahelise tähtsusega alad,30
+EELIS/PostgREST,f_pohjaveekogumid_tundlik_ala,Kinnitatud põhjaveevarud,30
+EELIS/PostgREST,f_pohjaveekogumid_vesikond,Põhjaveekogumi vesikond (vesikond),14
+EELIS/PostgREST,f_pohjaveevarud,Põhjaveevaruga alad,35
+EELIS/PostgREST,f_pohjaveevarud_dok, Põhjaveevaru kinnitamise käskkiri,13
+EELIS/PostgREST,f_pohjaveevarud_eelnev_pohjaveevaru,Eelnevad põhjaveevarud,36
+EELIS/PostgREST,f_pohjaveevarud_ehak,Põhjaveevaru EHAK,11
+EELIS/PostgREST,f_pohjaveevarud_jargnev_pohjaveevaru,Järgnevad põhjaveevarud,36
+EELIS/PostgREST,f_pohjaveevarud_kandealus,Põhjaveevaru kandealused,20
+EELIS/PostgREST,f_pohjaveevarud_kirjandus,Kinnitatud põhjaveevaruga ala kirjandus ja uuringud,26
+EELIS/PostgREST,f_pohjaveevarud_pohjaveekogum_seis,Põhjaveevaru seisundihinnangud,66
+EELIS/PostgREST,f_pohjaveevarud_puurauk,Põhjaveevaru puuraugud,73
+EELIS/PostgREST,f_puhastid,Puhastid,41
+EELIS/PostgREST,f_puhastid_ehak,Puhasti EHAK info,11
+EELIS/PostgREST,f_puhastid_veehaare,Puhastiga seotud veehaarded,39
+EELIS/PostgREST,f_puhastid_veelase,Puhastiga seotud veelaskmed,39
+EELIS/PostgREST,f_puuraugud,Puuraugud,73
+EELIS/PostgREST,f_puuraugud_ehak,Puuraugu EHAK info,11
+EELIS/PostgREST,f_puuraugud_konstruktsioon,Puuraugu konstruktsiooni elemendid,17
+EELIS/PostgREST,f_puuraugud_labiloige,Puuraugu läbilõike maapõuekihid,9
+EELIS/PostgREST,f_puuraugud_pohjaveekogum_seis,Puuraugu seisundihinnangud,66
+EELIS/PostgREST,f_puuraugud_pohjaveevaru,Puuraugu põhjaveevarud,36
+EELIS/PostgREST,f_puuraugud_puurauk_param,Puuraugu parameetrid,21
+EELIS/PostgREST,f_puuraugud_seirejaam,Puuraugu seirejaamad,84
+EELIS/PostgREST,f_puuraugud_vesikond,Vesikond millele kuulub puurauk,14
+EELIS/PostgREST,f_puuraugud_voond,Puuraugu kaitsevööndid (sanitaarkaitseala),10
+EELIS/PostgREST,f_rahvalad,Rahvusvahelised alad,30
+EELIS/PostgREST,f_rahvalad_dok,Rahvusvahelise alaga seotud õigusaktid ning Natura alade loodus- või linnualaks määramise siseriiklik õiguslik alus,14
+EELIS/PostgREST,f_rahvalad_ehak,Rahvusvahelise tähtsusega ala kohanimi ,11
+EELIS/PostgREST,f_rahvalad_elupaigatyyp,"Rahvusvahelise alaga seotud Natura elupaigatüübid, mis on kaitse eesmärgiks",10
+EELIS/PostgREST,f_rahvalad_elupaikstat,Natura ala elupaigatüüpide statistika (2025),28
+EELIS/PostgREST,f_rahvalad_invmojutegur,Natura alal esinevad mõjutegurid,12
+EELIS/PostgREST,f_rahvalad_kandealus,Rahvusvahelise tähtsusega ala kandealused,20
+EELIS/PostgREST,f_rahvalad_lkohtstat,"Natura ala leiukohtade statistika, eesmärgiks olevad ja muud liigid",38
+EELIS/PostgREST,f_rahvalad_lnim,"Rahvusvahelise alaga seotud liigid, mis on kaitse eesmärgiks",16
+EELIS/PostgREST,f_reoveealad,Reoveekogumisalad,32
+EELIS/PostgREST,f_reoveealad_dok,Reoveekogumisalaga seotud õigusaktid,14
+EELIS/PostgREST,f_reoveealad_ehak,Reoveekogumisalal asuvad haldusüksused,11
+EELIS/PostgREST,f_reoveealad_fjisik,Reoveekogumisala veevärkide haldajad,6
+EELIS/PostgREST,f_reoveealad_kandealus,Reoveekogumisala kandealused,20
+EELIS/PostgREST,f_reoveealad_kirjandus,Reoveekogumisala kirjandus ja uuringud,26
+EELIS/PostgREST,f_reoveealad_koormus,Reoveekogumisala reostuskoormuse jagunemine,7
+EELIS/PostgREST,f_reoveealad_puhasti,Reoveekogumisala veevärkide puhastid,41
+EELIS/PostgREST,f_reoveealad_veekogum,Reoveekogumisalal asuvad veekogumid,46
+EELIS/PostgREST,f_reoveealad_veekogum_seis,Reoveeala seisundi eesmärk,62
+EELIS/PostgREST,f_reoveealad_veelase,Reoveekogumisalal asuvad ilma veevärgi infota veelaskmed,39
+EELIS/PostgREST,f_reoveealad_vv_veelase,Reoveekogumisala veevärkide veelaskmed,39
+EELIS/PostgREST,f_rongastused,Rõngastuste info,17
+EELIS/PostgREST,f_saared,Saared,25
+EELIS/PostgREST,f_saared_ala,Saarel asuvad kaitsealused alad ning üksikobjektid,39
+EELIS/PostgREST,f_saared_ehak,Saare haldusüksused,11
+EELIS/PostgREST,f_saared_kandealus,Saarega seotud kandealused,20
+EELIS/PostgREST,f_saared_saar,Külge liitunud saared,24
+EELIS/PostgREST,f_saared_seirejaam,Saare seirejaamad,43
+EELIS/PostgREST,f_saared_veekogu,Saar piirneb merealadega,83
+EELIS/PostgREST,f_seirejaamad,Seirejaamade info,85
+EELIS/PostgREST,f_seirejaamad_dok,Seirejaamaga seotud õigusaktid,13
+EELIS/PostgREST,f_seirejaamad_kandealus,Seirejaama kirje kandealused,20
+EELIS/PostgREST,f_seirejaamad_mootekoht,Seirejaama mõõtekohad,46
+EELIS/PostgREST,f_seirejaamad_sr_programm,Seirejaamaga seotud seireprogrammid,16
+EELIS/PostgREST,f_seirejaamad_valgla,Seirejaama valglad,27
+EELIS/PostgREST,f_smi_tulemused,SMI arvutustulemused,30
+EELIS/PostgREST,f_toetused,Metsatoetuse alad,21
+EELIS/PostgREST,f_toetused_ehak,Metsatoetuse ala kohanimi ,11
+EELIS/PostgREST,f_toetused_kandealus,Metsatoetuse alaga seotud kandealused,20
+EELIS/PostgREST,f_tundlikud_alad,Tundlikud alad,31
+EELIS/PostgREST,f_tundlikud_alad_alamobjekt,Tundliku ala alamobjektid,31
+EELIS/PostgREST,f_tundlikud_alad_dok,Tundliku alaga seotud õigusaktid,14
+EELIS/PostgREST,f_tundlikud_alad_ehak,Tundliku ala kohanimi,11
+EELIS/PostgREST,f_tundlikud_alad_kandealus,Looduslikult tundliku ala kirje kandealused ,20
+EELIS/PostgREST,f_tundlikud_alad_kirjandus,Looduslikult tundliku ala kirjandus ja uuringud ,26
+EELIS/PostgREST,f_tundlikud_alad_pohjaveekogum_seis,Tundliku ala seisundihinnangud,66
+EELIS/PostgREST,f_tundlikud_alad_veekogu,Tundlikul alal asuvad allikad,82
+EELIS/PostgREST,f_veehaarded,Veehaarded,40
+EELIS/PostgREST,f_veehaarded_dok, Veehaardega seotud õigusaktid,13
+EELIS/PostgREST,f_veehaarded_ehak,Veehaarde EHAK info,11
+EELIS/PostgREST,f_veehaarded_fjisik,Veehaarde veevärgi haldaja,4
+EELIS/PostgREST,f_veehaarded_kandealus,Veehaarde kirje kandealused,20
+EELIS/PostgREST,f_veehaarded_kirjandus,Veehaarde kirjandus ja uuringud,26
+EELIS/PostgREST,f_veehaarded_puurauk,Veehaarde puuraugud,71
+EELIS/PostgREST,f_veehaarded_veekogum,Veehaarde veekogumid,46
+EELIS/PostgREST,f_veehaarded_veekogum_seis,Veehaarega seotud veekogumi seis,17
+EELIS/PostgREST,f_veehaarded_vesikond,"Vesikond, mille juurde kuulub veehaare",14
+EELIS/PostgREST,f_veehaarded_vesiviljelus,Veehaardega seotud vesiviljelused,16
+EELIS/PostgREST,f_veehaarded_voond,Veehaarete vööndid,10
+EELIS/PostgREST,f_veekogud,Veekogud,83
+EELIS/PostgREST,f_veekogud_ala_kaitse_pyp,Veekogus asub kaitstav kudemis- ja elupaik,38
+EELIS/PostgREST,f_veekogud_ala_obj,Veekogu kaitsealused alad ja üksikobjektid,38
+EELIS/PostgREST,f_veekogud_allikas_yrg,Allikas asub ürglooduse objektil (allikaalal),24
+EELIS/PostgREST,f_veekogud_dok,Veekoguga seotud õigusaktid,13
+EELIS/PostgREST,f_veekogud_ehak,Veekogu kohanimi,11
+EELIS/PostgREST,f_veekogud_invelupaik,Loodusdirektiivi elupaigad,114
+EELIS/PostgREST,f_veekogud_jvv_pais,Paisjärvega seotud paisud,28
+EELIS/PostgREST,f_veekogud_jvv_veekogu,Läbib seisuveekogusid (paisjärved),83
+EELIS/PostgREST,f_veekogud_jvv_veekogum,Paisjärve veekogum,45
+EELIS/PostgREST,f_veekogud_kaitsealune_ala,Veekogus asub kaitsealune kalade kudemis- ja elupaik,38
+EELIS/PostgREST,f_veekogud_kandealus,Veekogu kirje kandealused,20
+EELIS/PostgREST,f_veekogud_kirjandus,Veekogu kirjandus ja uuringud,26
+EELIS/PostgREST,f_veekogud_lahtuv_veekogu,Sellest veekogust lähtuvad veekogud,83
+EELIS/PostgREST,f_veekogud_lkoht,Veekoguga seotud liigi leiukohad,37
+EELIS/PostgREST,f_veekogud_mere_veekogu,Mereala alamosad,83
+EELIS/PostgREST,f_veekogud_pais,Vooluveekogul asuvad paisud,28
+EELIS/PostgREST,f_veekogud_parandobj,Veekogu pärandkultuuriobjekt,27
+EELIS/PostgREST,f_veekogud_rahvala,Veekogu asub rahvusvahelise tähtsusega aladel ,30
+EELIS/PostgREST,f_veekogud_saar,Saared,25
+EELIS/PostgREST,f_veekogud_seirejaam,Veekogu seirejaamad,84
+EELIS/PostgREST,f_veekogud_suubuv_veekogu,Suubuvad veekogud,83
+EELIS/PostgREST,f_veekogud_veehaare,Pinnaveehaarded veekogust,39
+EELIS/PostgREST,f_veekogud_veekogum_seis,Veekogu seisundi eesmärk,62
+EELIS/PostgREST,f_veekogud_veelase,Veelaskmed veekogusse,38
+EELIS/PostgREST,f_veekogud_vesikond,Veekogu vesikond,14
+EELIS/PostgREST,f_veekogud_vesiviljelus,Vesiviljelused,16
+EELIS/PostgREST,f_veekogud_vkg_veekogum,Veekogu veekogumid,43
+EELIS/PostgREST,f_veekogud_yrg,Veekogus asuvad ürglooduse objektid,24
+EELIS/PostgREST,f_veekogumi_seisundid,Pinnaveekogumi seisundid ja eesmärgid,62
+EELIS/PostgREST,f_veekogumi_seisundid_kese_seirejaam,KESE seirejaamad,85
+EELIS/PostgREST,f_veekogumi_seisundid_ose_seirejaam,ÖSE seirejaamad,85
+EELIS/PostgREST,f_veekogumid,Veekogumid ja hindamisüksused,45
+EELIS/PostgREST,f_veekogumid_eelnev,Eelnevad veekogumid,38
+EELIS/PostgREST,f_veekogumid_hks_koondseis,MSRD koondseisund,137
+EELIS/PostgREST,f_veekogumid_hks_siht,MSRD hindamisüksuse sihid ja indikaatorid,43
+EELIS/PostgREST,f_veekogumid_jargnev,Järgnevad veekogumid,38
+EELIS/PostgREST,f_veekogumid_jvv_veekogu,Paisjärve veekogum,83
+EELIS/PostgREST,f_veekogumid_kandealus,Veekogumiga seotud kandealused,20
+EELIS/PostgREST,f_veekogumid_kirjandus,Veekogumi kohta käiv kirjandus ja uuringud,26
+EELIS/PostgREST,f_veekogumid_koormus,Veekogumile mõjuvad koormused,27
+EELIS/PostgREST,f_veekogumid_naitaja,Veekogumi näitajad,12
+EELIS/PostgREST,f_veekogumid_pais,Veekogumis asuvad paisud ,28
+EELIS/PostgREST,f_veekogumid_pohjaveekogum,Pinnaveekogumiga seotud põhjaveekogumid ,29
+EELIS/PostgREST,f_veekogumid_veehaare,Veekogumis asuvad veehaarded,40
+EELIS/PostgREST,f_veekogumid_veekogu,Vooluveekogumi lisajõed,83
+EELIS/PostgREST,f_veekogumid_veekogum_seis,Veekogumi seisundi eesmärk,61
+EELIS/PostgREST,f_veekogumid_veelase,Veekogumis asuvad veelaskmed,39
+EELIS/PostgREST,f_veekogumid_vesikond,Veekogumi vesikond ,14
+EELIS/PostgREST,f_veekogumid_vesiviljelus,Veekogumis asuvad vesiviljelused,20
+EELIS/PostgREST,f_veelaskmed,Veelaskmed,39
+EELIS/PostgREST,f_veelaskmed_ehak,Veelaskme EHAK info,11
+EELIS/PostgREST,f_veelaskmed_kandealus,Veelaskmete kandealused,20
+EELIS/PostgREST,f_veelaskmed_veekogum,Veelaskme veekogumid,46
+EELIS/PostgREST,f_veelaskmed_veekogum_seis,Veelaskme veekogumi seisundid,62
+EELIS/PostgREST,f_veelaskmed_vesikond,"Vesikond, mille juurde kuulub veehaare (vesikond)",14
+EELIS/PostgREST,f_veenaitajad_W10_W1_public,,45
+EELIS/PostgREST,f_vepid,Vääriselupaigad,33
+EELIS/PostgREST,f_vepid_dok,Vääriselupaigaga seotud õigusaktid,13
+EELIS/PostgREST,f_vepid_ehak,Vääriselupaiga kohanimi,11
+EELIS/PostgREST,f_vepid_kandealus,Vääriselupaiga kirje kandealused,20
+EELIS/PostgREST,f_vepid_majandamine,Vääriselupaiga majandamine,15
+EELIS/PostgREST,f_vepid_mojutegur,Vääriselupaiga mõjutegurid,8
+EELIS/PostgREST,f_vepid_tunnus,Vääriselupaiga tunnused ja indikaatorliigid,15
+EELIS/PostgREST,f_yrgid,Ürglooduse objektid ,26
+EELIS/PostgREST,f_yrgid_ala,Ürglooduse objektiga kattuv kaitselala,39
+EELIS/PostgREST,f_yrgid_ehak,Ürglooduse objekti kohanimi,11
+EELIS/PostgREST,f_yrgid_kandealus,Ürglooduse objekti kandealused,20
+EELIS/PostgREST,f_yrgid_veekogu,Ürglooduse objektiga kattuv veekogu,83
+EELIS/PostgREST,jaatmejaamad_load,,9
+EELIS/PostgREST,jaatmeliik_kogus,,7
+EELIS/PostgREST,stat_t_awtabel001_01_curr,Asulad veearuandes,31
+EELIS/PostgREST,stat_t_awtabel001_02_curr,Reoveekogumisalad veearuandes,19
+EELIS/PostgREST,stat_t_awtabel001_curr,Üldandmed veearuandes,25
+EELIS/PostgREST,stat_t_awtabel002_01_curr,Põhjavee võtt veearuandes,20
+EELIS/PostgREST,stat_t_awtabel002_02_curr,Pinnavee võtt veearuandes,20
+EELIS/PostgREST,stat_t_awtabel004_curr,Veekasutus veearuandes,14
+EELIS/PostgREST,stat_t_awtabel006_01_curr,Heitvesi veearuandes,54
+EELIS/PostgREST,stat_t_awtabel006_02_curr,Heitvee lisanäitajad veearuandes,13
+EELIS/PostgREST,stat_t_awtabel006_03_curr,Äkkheited veearuandes,12
+EELIS/PostgREST,stat_t_awtabel009_curr,Vesiviljelus veearuandes,21
+EELIS/PostgREST,stat_t_heitkogus_allikas_curr,Heiteallikate heitkogused õhuaruandes,64
+EELIS/PostgREST,stat_t_heitkogus_allikas_poletusseade_curr,Põletusseadmed õhuaruandes,62
+EELIS/PostgREST,stat_t_soojatoodang_curr,Soojatoodang õhuaruandes,47
+EELIS/PostgREST,t_akkheide_allikas_curr,Äkkheited õhuaruandes,59
+EELIS/PostgREST,t_awtabel001_01_curr,Asulad veearuandes,31
+EELIS/PostgREST,t_awtabel001_02_curr,Reoveekogumisalad veearuandes,19
+EELIS/PostgREST,t_awtabel001_curr,Üldandmed veearuandes,18
+EELIS/PostgREST,t_awtabel002_01_curr,Põhjavee võtt veearuandes,20
+EELIS/PostgREST,t_awtabel002_02_curr,Pinnavee võtt veearuandes,20
+EELIS/PostgREST,t_awtabel004_curr,Veekasutus veearuandes,14
+EELIS/PostgREST,t_awtabel006_01_curr,Heitvesi veearuandes,54
+EELIS/PostgREST,t_awtabel006_02_curr,Heitvee lisanäitajad veearuandes,13
+EELIS/PostgREST,t_awtabel006_03_curr,Äkkheited veearuandes,12
+EELIS/PostgREST,t_awtabel009_curr,Vesiviljelus veearuandes,18
+EELIS/PostgREST,t_heiteallikas_curr,Heiteallikad õhuaruandes,36
+EELIS/PostgREST,t_heitkogus_allikas_curr,Heiteallikate heitkogused õhuaruandes,62
+EELIS/PostgREST,t_heitkogus_allikas_poletusseade_curr,Põletusseadmed õhuaruandes,60
+EELIS/PostgREST,t_heitkogus_kaitis_curr,Käitiste heitkogused õhuaruandes,48
+EELIS/PostgREST,t_kemikaal_allikas_curr,Lahusteid sisaldavate kemikaalide kasutamine õhuaruandes,59
+EELIS/PostgREST,t_lammastik_allikas_curr,Lämmastikubilanss õhuaruandes,60
+EELIS/PostgREST,t_loom_allikas_curr,Loomakasvatus õhuaruandes,62
+EELIS/PostgREST,t_puudeseade_allikas_curr,Püüdeseadmed õhuaruandes,57
+EELIS/PostgREST,t_soojatoodang_curr,Soojatoodang õhuaruandes,47
+EELIS/PostgREST,t_tankla_allikas_curr,Tanklad õhuaruandes,60
+EELIS/PostgREST,t_ths_kemikaal_kaitis_curr,Lenduvate orgaaniliste ühendite heitkogused tööstusheite seaduses nimetatud tegevuste korral õhuaruandes,57

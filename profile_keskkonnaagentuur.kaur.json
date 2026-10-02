@@ -1,0 +1,718 @@
+[
+ {
+  "contents": [
+   {
+    "workbookRepoUrl": "Jtmearuandlus2012-2019",
+    "title": "Jäätmearuandlus 2012-2019",
+    "defaultViewName": "Riigi tasand",
+    "viewCount": 51,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Jtmearuandlus2012-2019/sheets/Riigitasand"
+   },
+   {
+    "workbookRepoUrl": "Jtmearuandlus2004-2011",
+    "title": "Jäätmearuandlus 2004-2011",
+    "defaultViewName": "Riigi tasand",
+    "viewCount": 44,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Jtmearuandlus2004-2011/sheets/Riigitasand"
+   },
+   {
+    "workbookRepoUrl": "Jtmearuandlusalates2020",
+    "title": "Jäätmearuandlus alates 2020",
+    "defaultViewName": "Riigi tasand",
+    "viewCount": 303,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Jtmearuandlusalates2020/sheets/Riigitasand"
+   },
+   {
+    "workbookRepoUrl": "Asendusmetsastamine",
+    "title": "Asendusmetsastamine",
+    "defaultViewName": "Eesti vaade",
+    "viewCount": 71,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Asendusmetsastamine/sheets/Eestivaade"
+   },
+   {
+    "workbookRepoUrl": "Keskkonnanitajad-Ulukid-Metsseaarvukus",
+    "title": "Keskkonnanäitajad - Ulukid - Metssea arvukus",
+    "defaultViewName": "Metssiga",
+    "viewCount": 73,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Keskkonnanitajad-Ulukid-Metsseaarvukus/sheets/Metssiga"
+   },
+   {
+    "workbookRepoUrl": "Keskkonnanitajad-Vlishk-Vlishupeamistesaasteaineteheitkogused",
+    "title": "Keskkonnanäitajad - Välisõhk - Välisõhu peamiste saasteainete heitkogused",
+    "defaultViewName": "Heitkoguste inventuur",
+    "viewCount": 125,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Keskkonnanitajad-Vlishk-Vlishupeamistesaasteaineteheitkogused/sheets/Heitkogusteinventuur"
+   },
+   {
+    "workbookRepoUrl": "Tuuleenergeetika",
+    "title": "Tuuleenergeetika",
+    "defaultViewName": "Tuul",
+    "viewCount": 547,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Tuuleenergeetika/sheets/Tuul"
+   },
+   {
+    "workbookRepoUrl": "RKSP-Vlishuseire",
+    "title": "RKSP - Välisõhu seire",
+    "defaultViewName": "Välisõhk",
+    "viewCount": 141,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "RKSP-Vlishuseire/sheets/Vlishk"
+   },
+   {
+    "workbookRepoUrl": "RKSP-Mullaseire",
+    "title": "RKSP - Mullaseire",
+    "defaultViewName": "Raskemetallid mullas",
+    "viewCount": 269,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "RKSP-Mullaseire/sheets/Raskemetallidmullas"
+   },
+   {
+    "workbookRepoUrl": "Eestikeskminesademetesumma",
+    "title": "Eesti keskmine sademete summa",
+    "defaultViewName": "Sademed (2)",
+    "viewCount": 238,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Eestikeskminesademetesumma/sheets/Sademed2"
+   },
+   {
+    "workbookRepoUrl": "Eestikeskminepikespaiste",
+    "title": "Eesti keskmine päikespaiste",
+    "defaultViewName": "Päike",
+    "viewCount": 225,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Eestikeskminepikespaiste/sheets/Pike"
+   },
+   {
+    "workbookRepoUrl": "Kooreraskid2023",
+    "title": "Kooreüraskid 2023",
+    "defaultViewName": "Kuuse-kooreüraskid",
+    "viewCount": 31,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Kooreraskid2023/sheets/Kuuse-kooreraskid"
+   },
+   {
+    "workbookRepoUrl": "Kooreraskid2024",
+    "title": "Kooreüraskid 2024",
+    "defaultViewName": "Kuuse-kooreüraskid",
+    "viewCount": 27,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Kooreraskid2024/sheets/Kuuse-kooreraskid"
+   },
+   {
+    "workbookRepoUrl": "Kooreraskid2025",
+    "title": "Kooreüraskid 2025",
+    "defaultViewName": "Kuuse-kooreüraskid",
+    "viewCount": 32,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Kooreraskid2025/sheets/Kuuse-kooreraskid"
+   },
+   {
+    "workbookRepoUrl": "Kooreraskid2026",
+    "title": "Kooreüraskid 2026",
+    "defaultViewName": "Kuuse-kooreüraskid",
+    "viewCount": 128,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Kooreraskid2026/sheets/Kuuse-kooreraskid"
+   },
+   {
+    "workbookRepoUrl": "Vlishk-Heitkogusedheiteallikatekaupa",
+    "title": "Välisõhk - Heitkogused heiteallikate kaupa",
+    "defaultViewName": "Heitkogused heitellikate kaupa",
+    "viewCount": 146,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Vlishk-Heitkogusedheiteallikatekaupa/sheets/Heitkogusedheitellikatekaupa"
+   },
+   {
+    "workbookRepoUrl": "Vlishk-Keskkonnakaitselubaomavateheiteallikateheitkogused",
+    "title": "Välisõhk - Keskkonnakaitseluba omavate heiteallikate heitkogused",
+    "defaultViewName": "Kaardiga_loplik",
+    "viewCount": 171,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Vlishk-Keskkonnakaitselubaomavateheiteallikateheitkogused/sheets/Kaardiga_loplik"
+   },
+   {
+    "workbookRepoUrl": "Vlishk-Ktuseseiretulemused",
+    "title": "Välisõhk - Kütuseseire tulemused",
+    "defaultViewName": "Kütuseseire tulemused 2022",
+    "viewCount": 77,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Vlishk-Ktuseseiretulemused/sheets/Ktuseseiretulemused2022"
+   },
+   {
+    "workbookRepoUrl": "Vlishk-Heitkogused-Heitkogusteinventuur",
+    "title": "Välisõhk - Heitkogused - Heitkoguste inventuur",
+    "defaultViewName": "Heitkoguste inventuur",
+    "viewCount": 336,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Vlishk-Heitkogused-Heitkogusteinventuur/sheets/Heitkogusteinventuur"
+   },
+   {
+    "workbookRepoUrl": "Vlishk-Heitkogused-NECeesmrgid",
+    "title": "Välisõhk - Heitkogused - NEC eesmärgid",
+    "defaultViewName": "NEC eesmärgid",
+    "viewCount": 241,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Vlishk-Heitkogused-NECeesmrgid/sheets/NECeesmrgid"
+   },
+   {
+    "workbookRepoUrl": "Vlishk-Heitkogused-Heitkogustelevaade",
+    "title": "Välisõhk - Heitkogused - Heitkoguste ülevaade",
+    "defaultViewName": "Heitkogused_üld",
+    "viewCount": 333,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Vlishk-Heitkogused-Heitkogustelevaade/sheets/Heitkogused_ld"
+   },
+   {
+    "workbookRepoUrl": "Vlishk-Heitkogused-Tegevusaladeheidemullid",
+    "title": "Välisõhk - Heitkogused - Tegevusalade heide mullid",
+    "defaultViewName": "Tegevusalade heide mullid",
+    "viewCount": 273,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Vlishk-Heitkogused-Tegevusaladeheidemullid/sheets/Tegevusaladeheidemullid"
+   },
+   {
+    "workbookRepoUrl": "Keskkonnalevaade-Energeetika-Elektrienergiahulk",
+    "title": "Keskkonnaülevaade - Energeetika - Elektrienergia hulk",
+    "defaultViewName": "Elektrienergia hulk",
+    "viewCount": 227,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Keskkonnalevaade-Energeetika-Elektrienergiahulk/sheets/Elektrienergiahulk"
+   },
+   {
+    "workbookRepoUrl": "Keskkonnalevaade-Vesi-Reostuskoormusedmerre",
+    "title": "Keskkonnaülevaade - Vesi - Reostuskoormused merre",
+    "defaultViewName": "Üldfosfor",
+    "viewCount": 138,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Keskkonnalevaade-Vesi-Reostuskoormusedmerre/sheets/ldfosfor"
+   },
+   {
+    "workbookRepoUrl": "RKSP-Kiirgusseire",
+    "title": "RKSP - Kiirgusseire",
+    "defaultViewName": "Gamma kiirgus",
+    "viewCount": 155,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "RKSP-Kiirgusseire/sheets/Gammakiirgus"
+   },
+   {
+    "workbookRepoUrl": "RKSP-Metsaseire",
+    "title": "RKSP - Metsaseire",
+    "defaultViewName": "Okka- ja lehekadu puudel",
+    "viewCount": 79,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "RKSP-Metsaseire/sheets/Okka-jalehekadupuudel"
+   },
+   {
+    "workbookRepoUrl": "RKSP-Kompleksseire",
+    "title": "RKSP - Kompleksseire",
+    "defaultViewName": "Kompleksseire",
+    "viewCount": 99,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "RKSP-Kompleksseire/sheets/Kompleksseire"
+   },
+   {
+    "workbookRepoUrl": "RKSP-Hdroloogilineseire",
+    "title": "RKSP - Hüdroloogiline seire",
+    "defaultViewName": "Hüdro",
+    "viewCount": 77,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "RKSP-Hdroloogilineseire/sheets/Hdro"
+   },
+   {
+    "workbookRepoUrl": "RKSP-meteoroloogilineseire",
+    "title": "RKSP - meteoroloogiline seire",
+    "defaultViewName": "Meteo",
+    "viewCount": 439,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "RKSP-meteoroloogilineseire/sheets/Meteo"
+   },
+   {
+    "workbookRepoUrl": "Phjaveebilanss",
+    "title": "Põhjaveebilanss",
+    "defaultViewName": "Dashboard 2 (server)",
+    "viewCount": 1011,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Phjaveebilanss/sheets/Dashboard2server"
+   },
+   {
+    "workbookRepoUrl": "Rohemdikud-Elurikkus-detail-elurikkus-LoodusdirektiivielupaigatpideseisundEestisjaEuroopaLiidus",
+    "title": "Rohemõõdikud - Elurikkus - detail - elurikkus - Loodusdirektiivi elupaigatüüpide seisund Eestis ja Euroopa Liidus",
+    "defaultViewName": "Loodusdirektiivi elupaigatüüpide seisund Eestis ja Euroopa Liidus",
+    "viewCount": 497,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Rohemdikud-Elurikkus-detail-elurikkus-LoodusdirektiivielupaigatpideseisundEestisjaEuroopaLiidus/sheets/LoodusdirektiivielupaigatpideseisundEestisjaEuroopaLiidus"
+   },
+   {
+    "workbookRepoUrl": "Rohemdikud-Kliimamuutused-detail-kliimamuutused-Kasvuhoonegaasideheitkogused",
+    "title": "Rohemõõdikud - Kliimamuutused - detail - kliimamuutused - Kasvuhoonegaaside heitkogused",
+    "defaultViewName": "Kasvuhoonegaaside heitkogused",
+    "viewCount": 229,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Rohemdikud-Kliimamuutused-detail-kliimamuutused-Kasvuhoonegaasideheitkogused/sheets/Kasvuhoonegaasideheitkogused"
+   },
+   {
+    "workbookRepoUrl": "Rohemdikud-Energeetika-detail-energeetika-Energeetikasektorikasvuhoonegaasideheitkogused",
+    "title": "Rohemõõdikud - Energeetika - detail- energeetika - Energeetikasektori kasvuhoonegaaside heitkogused",
+    "defaultViewName": "Energeetikasektori kasvuhoonegaaside heitkogused",
+    "viewCount": 259,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Rohemdikud-Energeetika-detail-energeetika-Energeetikasektorikasvuhoonegaasideheitkogused/sheets/Energeetikasektorikasvuhoonegaasideheitkogused"
+   },
+   {
+    "workbookRepoUrl": "Keskkonnalevaade-Vesi-Veekasutus",
+    "title": "Keskkonnaülevaade - Vesi - Veekasutus",
+    "defaultViewName": "G4 (avalik)",
+    "viewCount": 173,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Keskkonnalevaade-Vesi-Veekasutus/sheets/G4avalik"
+   },
+   {
+    "workbookRepoUrl": "Keskkonnalevaade-Mets-raskid",
+    "title": "Keskkonnaülevaade - Mets - Üraskid",
+    "defaultViewName": "Mets: Kuuse-kooreüraskid",
+    "viewCount": 391,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Keskkonnalevaade-Mets-raskid/sheets/MetsKuuse-kooreraskid"
+   },
+   {
+    "workbookRepoUrl": "Keskkonnalevaade-Energeetika-Taastuvenergiaosakaal",
+    "title": "Keskkonnaülevaade - Energeetika - Taastuvenergia osakaal",
+    "defaultViewName": "Taastuvenergia osakaal",
+    "viewCount": 286,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Keskkonnalevaade-Energeetika-Taastuvenergiaosakaal/sheets/Taastuvenergiaosakaal"
+   },
+   {
+    "workbookRepoUrl": "Keskkonnalevaade-Liigid-Suurkiskjatearvukus",
+    "title": "Keskkonnaülevaade - Liigid - Suurkiskjate arvukus",
+    "defaultViewName": "Suurkiskjate arvukus",
+    "viewCount": 562,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Keskkonnalevaade-Liigid-Suurkiskjatearvukus/sheets/Suurkiskjatearvukus"
+   },
+   {
+    "workbookRepoUrl": "Keskkonnalevaade-Jtmed-Ringlevamaterjalimr",
+    "title": "Keskkonnaülevaade - Jäätmed - Ringleva materjali määr",
+    "defaultViewName": "Ringleva materjali määr ",
+    "viewCount": 321,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Keskkonnalevaade-Jtmed-Ringlevamaterjalimr/sheets/Ringlevamaterjalimr_1"
+   },
+   {
+    "workbookRepoUrl": "Keskkonnalevaade-Mets-Raiemahud",
+    "title": "Keskkonnaülevaade - Mets - Raiemahud",
+    "defaultViewName": "Mets: Raie",
+    "viewCount": 346,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Keskkonnalevaade-Mets-Raiemahud/sheets/MetsRaie"
+   },
+   {
+    "workbookRepoUrl": "Keskkonnalevaade-Liigid-Punasenimestikuliigid",
+    "title": "Keskkonnaülevaade - Liigid - Punase nimestiku liigid",
+    "defaultViewName": "Punase nimestiku liigid",
+    "viewCount": 631,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Keskkonnalevaade-Liigid-Punasenimestikuliigid/sheets/Punasenimestikuliigid"
+   },
+   {
+    "workbookRepoUrl": "Keskkonnalevaade-Maahive-PllumuldadePh",
+    "title": "Keskkonnaülevaade - Maahõive - Põllumuldade Ph",
+    "defaultViewName": "pH kaart (4)",
+    "viewCount": 202,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Keskkonnalevaade-Maahive-PllumuldadePh/sheets/pHkaart4"
+   },
+   {
+    "workbookRepoUrl": "Keskkonnalevaade-Vesi-Phjaveekogumitekoondseisund",
+    "title": "Keskkonnaülevaade - Vesi - Põhjaveekogumite koondseisund",
+    "defaultViewName": "G2 (avalik)",
+    "viewCount": 223,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Keskkonnalevaade-Vesi-Phjaveekogumitekoondseisund/sheets/G2avalik"
+   },
+   {
+    "workbookRepoUrl": "Keskkonnalevaade-Vesi-Pinnaveekogumitekoondseisund",
+    "title": "Keskkonnaülevaade - Vesi - Pinnaveekogumite koondseisund",
+    "defaultViewName": "G1 (avalik)",
+    "viewCount": 245,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Keskkonnalevaade-Vesi-Pinnaveekogumitekoondseisund/sheets/G1avalik"
+   },
+   {
+    "workbookRepoUrl": "Keskkonnalevaade-hk-Peamistesaasteaineteheitkogused",
+    "title": "Keskkonnaülevaade - Õhk - Peamiste saasteainete heitkogused",
+    "defaultViewName": "Graafik 1 (2)",
+    "viewCount": 254,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Keskkonnalevaade-hk-Peamistesaasteaineteheitkogused/sheets/Graafik12"
+   },
+   {
+    "workbookRepoUrl": "Keskkonnalevaade-hk-Peamisedheiteallikad",
+    "title": "Keskkonnaülevaade - Õhk - Peamised heiteallikad",
+    "defaultViewName": "Graafik 3",
+    "viewCount": 267,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Keskkonnalevaade-hk-Peamisedheiteallikad/sheets/Graafik3"
+   },
+   {
+    "workbookRepoUrl": "Keskkonnalevaade-Jtmed-Olmejtmed",
+    "title": "Keskkonnaülevaade - Jäätmed - Olmejäätmed",
+    "defaultViewName": "Olmejäätmed ",
+    "viewCount": 284,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Keskkonnalevaade-Jtmed-Olmejtmed/sheets/Olmejtmed_1"
+   },
+   {
+    "workbookRepoUrl": "Keskkonnalevaade-kossteemid-kohvedjasidusus",
+    "title": "Keskkonnaülevaade - Ökosüsteemid - Öko hüved ja sidusus",
+    "defaultViewName": "Hüved vs sidusus",
+    "viewCount": 264,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Keskkonnalevaade-kossteemid-kohvedjasidusus/sheets/Hvedvssidusus"
+   },
+   {
+    "workbookRepoUrl": "Keskkonnalevaade-hk-husaastetervisemju",
+    "title": "Keskkonnaülevaade - Õhk - Õhusaaste tervisemõju",
+    "defaultViewName": "Graafik 2",
+    "viewCount": 228,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Keskkonnalevaade-hk-husaastetervisemju/sheets/Graafik2"
+   },
+   {
+    "workbookRepoUrl": "Keskkonnalevaade-Vesi-NO3phjavees",
+    "title": "Keskkonnaülevaade - Vesi - NO3 põhjavees",
+    "defaultViewName": "G6 (avalik)",
+    "viewCount": 186,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Keskkonnalevaade-Vesi-NO3phjavees/sheets/G6avalik"
+   },
+   {
+    "workbookRepoUrl": "Keskkonnalevaade-Mets-Metsamaapindala",
+    "title": "Keskkonnaülevaade - Mets - Metsamaa pindala",
+    "defaultViewName": "Mets: Metsamaa pindala",
+    "viewCount": 429,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Keskkonnalevaade-Mets-Metsamaapindala/sheets/MetsMetsamaapindala"
+   }
+  ],
+  "startIndex": 0,
+  "nextIndex": 50,
+  "next": 50,
+  "current": 0
+ },
+ {
+  "contents": [
+   {
+    "workbookRepoUrl": "Keskkonnalevaade-Maahive-Mahepllumajanduseosakaal",
+    "title": "Keskkonnaülevaade - Maahõive - Mahepõllumajanduse osakaal",
+    "defaultViewName": "Mahepõllumajandusmaa osakaal dashboard",
+    "viewCount": 178,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Keskkonnalevaade-Maahive-Mahepllumajanduseosakaal/sheets/Mahepllumajandusmaaosakaaldashboard"
+   },
+   {
+    "workbookRepoUrl": "Keskkonnalevaade-Maahive-Maahive",
+    "title": "Keskkonnaülevaade - Maahõive - Maahõive",
+    "defaultViewName": "Maahõive pindala jaotus KOV dashboard",
+    "viewCount": 296,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Keskkonnalevaade-Maahive-Maahive/sheets/MaahivepindalajaotusKOVdashboard"
+   },
+   {
+    "workbookRepoUrl": "Keskkonnalevaade-Liigid-Lindudeindeks",
+    "title": "Keskkonnaülevaade - Liigid - Lindude indeks",
+    "defaultViewName": "Lindude indeks ",
+    "viewCount": 649,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Keskkonnalevaade-Liigid-Lindudeindeks/sheets/Lindudeindeks_1"
+   },
+   {
+    "workbookRepoUrl": "Keskkonnalevaade-Liigid-Liikideseisund",
+    "title": "Keskkonnaülevaade - Liigid - Liikide seisund",
+    "defaultViewName": "Liikide seisund",
+    "viewCount": 785,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Keskkonnalevaade-Liigid-Liikideseisund/sheets/Liikideseisund"
+   },
+   {
+    "workbookRepoUrl": "Keskkonnalevaade-Mets-Lehtpuu_Okaspuu",
+    "title": "Keskkonnaülevaade - Mets - Lehtpuu_Okaspuu",
+    "defaultViewName": "Mets: Lehtpuu/okaspuu",
+    "viewCount": 400,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Keskkonnalevaade-Mets-Lehtpuu_Okaspuu/sheets/MetsLehtpuuokaspuu"
+   },
+   {
+    "workbookRepoUrl": "Keskkonnalevaade-Jtmed-Kogujtmetekevaldkonniti",
+    "title": "Keskkonnaülevaade - Jäätmed - Kogujäätme teke valdkonniti",
+    "defaultViewName": "Jäätme valdkonnad",
+    "viewCount": 252,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Keskkonnalevaade-Jtmed-Kogujtmetekevaldkonniti/sheets/Jtmevaldkonnad"
+   },
+   {
+    "workbookRepoUrl": "Keskkonnalevaade-Mets-Kaitstavmets",
+    "title": "Keskkonnaülevaade - Mets - Kaitstav mets",
+    "defaultViewName": "Mets: Kaitstus",
+    "viewCount": 283,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Keskkonnalevaade-Mets-Kaitstavmets/sheets/MetsKaitstus"
+   },
+   {
+    "workbookRepoUrl": "Keskkonnalevaade-Jtmed-JtmedjaSKP",
+    "title": "Keskkonnaülevaade - Jäätmed - Jäätmed ja SKP",
+    "defaultViewName": "Eesti jäätmed vs SKP",
+    "viewCount": 331,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Keskkonnalevaade-Jtmed-JtmedjaSKP/sheets/EestijtmedvsSKP"
+   },
+   {
+    "workbookRepoUrl": "Keskkonnalevaade-Ilmjakliima-IlmjakliimaKlm_kuum",
+    "title": "Keskkonnaülevaade - Ilm ja kliima - Ilm ja kliima Külm_kuum",
+    "defaultViewName": "Kuum/Külm dash Avalik",
+    "viewCount": 531,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Keskkonnalevaade-Ilmjakliima-IlmjakliimaKlm_kuum/sheets/KuumKlmdashAvalik"
+   },
+   {
+    "workbookRepoUrl": "Keskkonnalevaade-Ilmajakliima-IlmjakliimaKHG2024",
+    "title": "Keskkonnaülevaade - Ilma ja kliima - Ilm ja kliima KHG 2024",
+    "defaultViewName": "Ilma ja kliima KHG 2024",
+    "viewCount": 188,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Keskkonnalevaade-Ilmajakliima-IlmjakliimaKHG2024/sheets/IlmajakliimaKHG2024"
+   },
+   {
+    "workbookRepoUrl": "Keskkonnalevaade-Ilmjakliima-Ilmjakliimaanomaaliad",
+    "title": "Keskkonnaülevaade - Ilm ja kliima - Ilm ja kliima anomaaliad",
+    "defaultViewName": "Anomaaliad dash Avalik",
+    "viewCount": 667,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Keskkonnalevaade-Ilmjakliima-Ilmjakliimaanomaaliad/sheets/AnomaaliaddashAvalik"
+   },
+   {
+    "workbookRepoUrl": "Keskkonnalevaade-Ilmjakliima-Keskmineaastahutemperatuur",
+    "title": "Keskkonnaülevaade - Ilm ja kliima - Keskmine aasta õhutemperatuur",
+    "defaultViewName": "est norm temp Avalik",
+    "viewCount": 518,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Keskkonnalevaade-Ilmjakliima-Keskmineaastahutemperatuur/sheets/estnormtempAvalik"
+   },
+   {
+    "workbookRepoUrl": "Keskkonnalevaade-Vesi-Eutrofeerumine",
+    "title": "Keskkonnaülevaade - Vesi - Eutrofeerumine",
+    "defaultViewName": "G3 (avalik)",
+    "viewCount": 156,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Keskkonnalevaade-Vesi-Eutrofeerumine/sheets/G3avalik"
+   },
+   {
+    "workbookRepoUrl": "Jtmearuandlus_KKPjtmeteteemalehtedevaldkonnad_ldinelevaade",
+    "title": "Jäätmearuandlus_KKP jäätmete teemalehtede valdkonnad_Üldine ülevaade",
+    "defaultViewName": "Üldine ülevaade",
+    "viewCount": 478,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Jtmearuandlus_KKPjtmeteteemalehtedevaldkonnad_ldinelevaade/sheets/ldinelevaade"
+   },
+   {
+    "workbookRepoUrl": "Jtmearuandlus_KKPjtmeteteemalehtedevaldkonnad_Probleemtooted",
+    "title": "Jäätmearuandlus_KKP jäätmete teemalehtede valdkonnad_Probleemtooted",
+    "defaultViewName": "PROTO",
+    "viewCount": 195,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Jtmearuandlus_KKPjtmeteteemalehtedevaldkonnad_Probleemtooted/sheets/PROTO"
+   },
+   {
+    "workbookRepoUrl": "Jtmearuandlus_KKPjtmeteteemalehtedevaldkonnad_Pakendijtmed",
+    "title": "Jäätmearuandlus_KKP jäätmete teemalehtede valdkonnad_Pakendijäätmed",
+    "defaultViewName": "Pakendijäätmed",
+    "viewCount": 359,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Jtmearuandlus_KKPjtmeteteemalehtedevaldkonnad_Pakendijtmed/sheets/Pakendijtmed"
+   },
+   {
+    "workbookRepoUrl": "Jtmearuandlus_KKPjtmeteteemalehtedevaldkonnad_Olmejtmed",
+    "title": "Jäätmearuandlus_KKP jäätmete teemalehtede valdkonnad_Olmejäätmed",
+    "defaultViewName": "Töölaud",
+    "viewCount": 579,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Jtmearuandlus_KKPjtmeteteemalehtedevaldkonnad_Olmejtmed/sheets/Tlaud"
+   },
+   {
+    "workbookRepoUrl": "Jtmearuandlus_KKPjtmeteteemalehtedevaldkonnad_Ohtlikudjtmed",
+    "title": "Jäätmearuandlus_KKP jäätmete teemalehtede valdkonnad_Ohtlikud jäätmed",
+    "defaultViewName": "Ohtlikud jäätmed ",
+    "viewCount": 304,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Jtmearuandlus_KKPjtmeteteemalehtedevaldkonnad_Ohtlikudjtmed/sheets/Ohtlikudjtmed"
+   },
+   {
+    "workbookRepoUrl": "Jtmearuandlus_KKPjtmeteteemalehtedevaldkonnad_Ehitus-lammutusjtmed",
+    "title": "Jäätmearuandlus_KKP jäätmete teemalehtede valdkonnad_Ehitus - lammutusjäätmed",
+    "defaultViewName": "Ehitus- ja lammutusjäätmete töölaud ",
+    "viewCount": 260,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Jtmearuandlus_KKPjtmeteteemalehtedevaldkonnad_Ehitus-lammutusjtmed/sheets/Ehitus-jalammutusjtmetetlaud"
+   },
+   {
+    "workbookRepoUrl": "Biojtmed",
+    "title": "Jäätmearuandlus_KKP jäätmete teemalehtede valdkonnad_Biojäätmed",
+    "defaultViewName": "Biojäätmed",
+    "viewCount": 341,
+    "numberOfFavorites": 0,
+    "authorDisplayName": "Keskkonnaagentuur KAUR",
+    "authorProfileName": "keskkonnaagentuur.kaur",
+    "defaultViewRepoUrl": "Biojtmed/sheets/Biojtmed"
+   }
+  ],
+  "startIndex": 50,
+  "nextIndex": -1,
+  "next": -1,
+  "current": 50
+ }
+]

@@ -1,0 +1,71 @@
+workbook,title,default_view,view_count,in_inventory,download,http_status,bytes,n_datasources,n_worksheets,n_dashboards,error
+Asendusmetsastamine,Asendusmetsastamine,Eesti vaade,71,ei,twb,404,0,,,,HTTP Error 404: Not Found
+Biojtmed,Jäätmearuandlus_KKP jäätmete teemalehtede valdkonnad_Biojäätmed,Biojäätmed,341,ei,twb,404,0,,,,HTTP Error 404: Not Found
+Eestikeskminepikespaiste,Eesti keskmine päikespaiste,Päike,225,ei,twb,404,0,,,,HTTP Error 404: Not Found
+Eestikeskminesademetesumma,Eesti keskmine sademete summa,Sademed (2),238,ei,twb,404,0,,,,HTTP Error 404: Not Found
+Jtmearuandlus2004-2011,Jäätmearuandlus 2004-2011,Riigi tasand,44,ei,twb,200,53189820,3,3,3,
+Jtmearuandlus2012-2019,Jäätmearuandlus 2012-2019,Riigi tasand,51,ei,twb,200,53026809,3,3,3,
+Jtmearuandlus_KKPjtmeteteemalehtedevaldkonnad_Ehitus-lammutusjtmed,Jäätmearuandlus_KKP jäätmete teemalehtede valdkonnad_Ehitus - lammutusjäätmed,Ehitus- ja lammutusjäätmete töölaud ,260,ei,twb,404,0,,,,HTTP Error 404: Not Found
+Jtmearuandlus_KKPjtmeteteemalehtedevaldkonnad_Ohtlikudjtmed,Jäätmearuandlus_KKP jäätmete teemalehtede valdkonnad_Ohtlikud jäätmed,Ohtlikud jäätmed ,304,ei,twb,404,0,,,,HTTP Error 404: Not Found
+Jtmearuandlus_KKPjtmeteteemalehtedevaldkonnad_Olmejtmed,Jäätmearuandlus_KKP jäätmete teemalehtede valdkonnad_Olmejäätmed,Töölaud,579,ei,twb,404,0,,,,HTTP Error 404: Not Found
+Jtmearuandlus_KKPjtmeteteemalehtedevaldkonnad_Pakendijtmed,Jäätmearuandlus_KKP jäätmete teemalehtede valdkonnad_Pakendijäätmed,Pakendijäätmed,359,ei,twb,404,0,,,,HTTP Error 404: Not Found
+Jtmearuandlus_KKPjtmeteteemalehtedevaldkonnad_Probleemtooted,Jäätmearuandlus_KKP jäätmete teemalehtede valdkonnad_Probleemtooted,PROTO,195,ei,twb,404,0,,,,HTTP Error 404: Not Found
+Jtmearuandlus_KKPjtmeteteemalehtedevaldkonnad_ldinelevaade,Jäätmearuandlus_KKP jäätmete teemalehtede valdkonnad_Üldine ülevaade,Üldine ülevaade,478,ei,twb,404,0,,,,HTTP Error 404: Not Found
+Jtmearuandlusalates2020,Jäätmearuandlus alates 2020,Riigi tasand,303,ei,twb,200,39744907,3,3,3,
+Keskkonnalevaade-Energeetika-Elektrienergiahulk,Keskkonnaülevaade - Energeetika - Elektrienergia hulk,Elektrienergia hulk,227,jah,twb,404,0,,,,HTTP Error 404: Not Found
+Keskkonnalevaade-Energeetika-Taastuvenergiaosakaal,Keskkonnaülevaade - Energeetika - Taastuvenergia osakaal,Taastuvenergia osakaal,286,jah,twb,404,0,,,,HTTP Error 404: Not Found
+Keskkonnalevaade-Ilmajakliima-IlmjakliimaKHG2024,Keskkonnaülevaade - Ilma ja kliima - Ilm ja kliima KHG 2024,Ilma ja kliima KHG 2024,188,jah,twb,404,0,,,,HTTP Error 404: Not Found
+Keskkonnalevaade-Ilmjakliima-IlmjakliimaKlm_kuum,Keskkonnaülevaade - Ilm ja kliima - Ilm ja kliima Külm_kuum,Kuum/Külm dash Avalik,531,jah,twb,404,0,,,,HTTP Error 404: Not Found
+Keskkonnalevaade-Ilmjakliima-Ilmjakliimaanomaaliad,Keskkonnaülevaade - Ilm ja kliima - Ilm ja kliima anomaaliad,Anomaaliad dash Avalik,667,jah,twb,404,0,,,,HTTP Error 404: Not Found
+Keskkonnalevaade-Ilmjakliima-Keskmineaastahutemperatuur,Keskkonnaülevaade - Ilm ja kliima - Keskmine aasta õhutemperatuur,est norm temp Avalik,518,jah,twb,404,0,,,,HTTP Error 404: Not Found
+Keskkonnalevaade-Jtmed-JtmedjaSKP,Keskkonnaülevaade - Jäätmed - Jäätmed ja SKP,Eesti jäätmed vs SKP,331,jah,twb,404,0,,,,HTTP Error 404: Not Found
+Keskkonnalevaade-Jtmed-Kogujtmetekevaldkonniti,Keskkonnaülevaade - Jäätmed - Kogujäätme teke valdkonniti,Jäätme valdkonnad,252,jah,twb,404,0,,,,HTTP Error 404: Not Found
+Keskkonnalevaade-Jtmed-Olmejtmed,Keskkonnaülevaade - Jäätmed - Olmejäätmed,Olmejäätmed ,284,jah,twb,404,0,,,,HTTP Error 404: Not Found
+Keskkonnalevaade-Jtmed-Ringlevamaterjalimr,Keskkonnaülevaade - Jäätmed - Ringleva materjali määr,Ringleva materjali määr ,321,jah,twb,404,0,,,,HTTP Error 404: Not Found
+Keskkonnalevaade-Liigid-Liikideseisund,Keskkonnaülevaade - Liigid - Liikide seisund,Liikide seisund,785,jah,twb,404,0,,,,HTTP Error 404: Not Found
+Keskkonnalevaade-Liigid-Lindudeindeks,Keskkonnaülevaade - Liigid - Lindude indeks,Lindude indeks ,649,jah,twb,404,0,,,,HTTP Error 404: Not Found
+Keskkonnalevaade-Liigid-Punasenimestikuliigid,Keskkonnaülevaade - Liigid - Punase nimestiku liigid,Punase nimestiku liigid,631,jah,twb,404,0,,,,HTTP Error 404: Not Found
+Keskkonnalevaade-Liigid-Suurkiskjatearvukus,Keskkonnaülevaade - Liigid - Suurkiskjate arvukus,Suurkiskjate arvukus,562,jah,twb,404,0,,,,HTTP Error 404: Not Found
+Keskkonnalevaade-Maahive-Maahive,Keskkonnaülevaade - Maahõive - Maahõive,Maahõive pindala jaotus KOV dashboard,296,ei,twb,404,0,,,,HTTP Error 404: Not Found
+Keskkonnalevaade-Maahive-Mahepllumajanduseosakaal,Keskkonnaülevaade - Maahõive - Mahepõllumajanduse osakaal,Mahepõllumajandusmaa osakaal dashboard,178,jah,twb,404,0,,,,HTTP Error 404: Not Found
+Keskkonnalevaade-Maahive-PllumuldadePh,Keskkonnaülevaade - Maahõive - Põllumuldade Ph,pH kaart (4),202,jah,twb,404,0,,,,HTTP Error 404: Not Found
+Keskkonnalevaade-Mets-Kaitstavmets,Keskkonnaülevaade - Mets - Kaitstav mets,Mets: Kaitstus,283,ei,twb,404,0,,,,HTTP Error 404: Not Found
+Keskkonnalevaade-Mets-Lehtpuu_Okaspuu,Keskkonnaülevaade - Mets - Lehtpuu_Okaspuu,Mets: Lehtpuu/okaspuu,400,jah,twb,404,0,,,,HTTP Error 404: Not Found
+Keskkonnalevaade-Mets-Metsamaapindala,Keskkonnaülevaade - Mets - Metsamaa pindala,Mets: Metsamaa pindala,429,jah,twb,404,0,,,,HTTP Error 404: Not Found
+Keskkonnalevaade-Mets-Raiemahud,Keskkonnaülevaade - Mets - Raiemahud,Mets: Raie,346,jah,twb,404,0,,,,HTTP Error 404: Not Found
+Keskkonnalevaade-Mets-raskid,Keskkonnaülevaade - Mets - Üraskid,Mets: Kuuse-kooreüraskid,391,jah,twb,404,0,,,,HTTP Error 404: Not Found
+Keskkonnalevaade-Vesi-Eutrofeerumine,Keskkonnaülevaade - Vesi - Eutrofeerumine,G3 (avalik),156,jah,twb,404,0,,,,HTTP Error 404: Not Found
+Keskkonnalevaade-Vesi-NO3phjavees,Keskkonnaülevaade - Vesi - NO3 põhjavees,G6 (avalik),186,jah,twb,404,0,,,,HTTP Error 404: Not Found
+Keskkonnalevaade-Vesi-Phjaveekogumitekoondseisund,Keskkonnaülevaade - Vesi - Põhjaveekogumite koondseisund,G2 (avalik),223,jah,twb,404,0,,,,HTTP Error 404: Not Found
+Keskkonnalevaade-Vesi-Pinnaveekogumitekoondseisund,Keskkonnaülevaade - Vesi - Pinnaveekogumite koondseisund,G1 (avalik),245,jah,twb,404,0,,,,HTTP Error 404: Not Found
+Keskkonnalevaade-Vesi-Reostuskoormusedmerre,Keskkonnaülevaade - Vesi - Reostuskoormused merre,Üldfosfor,138,jah,twb,404,0,,,,HTTP Error 404: Not Found
+Keskkonnalevaade-Vesi-Veekasutus,Keskkonnaülevaade - Vesi - Veekasutus,G4 (avalik),173,jah,twb,404,0,,,,HTTP Error 404: Not Found
+Keskkonnalevaade-hk-Peamisedheiteallikad,Keskkonnaülevaade - Õhk - Peamised heiteallikad,Graafik 3,267,jah,twb,404,0,,,,HTTP Error 404: Not Found
+Keskkonnalevaade-hk-Peamistesaasteaineteheitkogused,Keskkonnaülevaade - Õhk - Peamiste saasteainete heitkogused,Graafik 1 (2),254,jah,twb,404,0,,,,HTTP Error 404: Not Found
+Keskkonnalevaade-hk-husaastetervisemju,Keskkonnaülevaade - Õhk - Õhusaaste tervisemõju,Graafik 2,228,jah,twb,404,0,,,,HTTP Error 404: Not Found
+Keskkonnalevaade-kossteemid-kohvedjasidusus,Keskkonnaülevaade - Ökosüsteemid - Öko hüved ja sidusus,Hüved vs sidusus,264,jah,twb,404,0,,,,HTTP Error 404: Not Found
+Keskkonnanitajad-Ulukid-Metsseaarvukus,Keskkonnanäitajad - Ulukid - Metssea arvukus,Metssiga,73,ei,twb,404,0,,,,HTTP Error 404: Not Found
+Keskkonnanitajad-Vlishk-Vlishupeamistesaasteaineteheitkogused,Keskkonnanäitajad - Välisõhk - Välisõhu peamiste saasteainete heitkogused,Heitkoguste inventuur,125,ei,twb,404,0,,,,HTTP Error 404: Not Found
+Kooreraskid2023,Kooreüraskid 2023,Kuuse-kooreüraskid,31,ei,twb,404,0,,,,HTTP Error 404: Not Found
+Kooreraskid2024,Kooreüraskid 2024,Kuuse-kooreüraskid,27,ei,twb,404,0,,,,HTTP Error 404: Not Found
+Kooreraskid2025,Kooreüraskid 2025,Kuuse-kooreüraskid,32,ei,twb,404,0,,,,HTTP Error 404: Not Found
+Kooreraskid2026,Kooreüraskid 2026,Kuuse-kooreüraskid,128,ei,twb,404,0,,,,HTTP Error 404: Not Found
+Phjaveebilanss,Põhjaveebilanss,Dashboard 2 (server),1011,ei,twb,404,0,,,,HTTP Error 404: Not Found
+RKSP-Hdroloogilineseire,RKSP - Hüdroloogiline seire,Hüdro,77,jah,twb,404,0,,,,HTTP Error 404: Not Found
+RKSP-Kiirgusseire,RKSP - Kiirgusseire,Gamma kiirgus,155,jah,twb,404,0,,,,HTTP Error 404: Not Found
+RKSP-Kompleksseire,RKSP - Kompleksseire,Kompleksseire,99,jah,twb,404,0,,,,HTTP Error 404: Not Found
+RKSP-Metsaseire,RKSP - Metsaseire,Okka- ja lehekadu puudel,79,jah,twb,404,0,,,,HTTP Error 404: Not Found
+RKSP-Mullaseire,RKSP - Mullaseire,Raskemetallid mullas,269,jah,twb,404,0,,,,HTTP Error 404: Not Found
+RKSP-Vlishuseire,RKSP - Välisõhu seire,Välisõhk,141,jah,twb,404,0,,,,HTTP Error 404: Not Found
+RKSP-meteoroloogilineseire,RKSP - meteoroloogiline seire,Meteo,439,jah,twb,429,0,,,,HTTP Error 429: Too Many Requests
+Rohemdikud-Elurikkus-detail-elurikkus-LoodusdirektiivielupaigatpideseisundEestisjaEuroopaLiidus,Rohemõõdikud - Elurikkus - detail - elurikkus - Loodusdirektiivi elupaigatüüpide seisund Eestis ja Euroopa Liidus,Loodusdirektiivi elupaigatüüpide seisund Eestis ja Euroopa Liidus,497,jah,twb,429,0,,,,HTTP Error 429: Too Many Requests
+Rohemdikud-Energeetika-detail-energeetika-Energeetikasektorikasvuhoonegaasideheitkogused,Rohemõõdikud - Energeetika - detail- energeetika - Energeetikasektori kasvuhoonegaaside heitkogused,Energeetikasektori kasvuhoonegaaside heitkogused,259,jah,twb,404,0,,,,HTTP Error 404: Not Found
+Rohemdikud-Kliimamuutused-detail-kliimamuutused-Kasvuhoonegaasideheitkogused,Rohemõõdikud - Kliimamuutused - detail - kliimamuutused - Kasvuhoonegaaside heitkogused,Kasvuhoonegaaside heitkogused,229,jah,twb,404,0,,,,HTTP Error 404: Not Found
+Tuuleenergeetika,Tuuleenergeetika,Tuul,547,jah,twb,404,0,,,,HTTP Error 404: Not Found
+Vlishk-Heitkogused-Heitkogusteinventuur,Välisõhk - Heitkogused - Heitkoguste inventuur,Heitkoguste inventuur,336,ei,twb,404,0,,,,HTTP Error 404: Not Found
+Vlishk-Heitkogused-Heitkogustelevaade,Välisõhk - Heitkogused - Heitkoguste ülevaade,Heitkogused_üld,333,ei,twb,404,0,,,,HTTP Error 404: Not Found
+Vlishk-Heitkogused-NECeesmrgid,Välisõhk - Heitkogused - NEC eesmärgid,NEC eesmärgid,241,ei,twb,404,0,,,,HTTP Error 404: Not Found
+Vlishk-Heitkogused-Tegevusaladeheidemullid,Välisõhk - Heitkogused - Tegevusalade heide mullid,Tegevusalade heide mullid,273,ei,twb,404,0,,,,HTTP Error 404: Not Found
+Vlishk-Heitkogusedheiteallikatekaupa,Välisõhk - Heitkogused heiteallikate kaupa,Heitkogused heitellikate kaupa,146,ei,twb,404,0,,,,HTTP Error 404: Not Found
+Vlishk-Keskkonnakaitselubaomavateheiteallikateheitkogused,Välisõhk - Keskkonnakaitseluba omavate heiteallikate heitkogused,Kaardiga_loplik,171,ei,twb,404,0,,,,HTTP Error 404: Not Found
+Vlishk-Ktuseseiretulemused,Välisõhk - Kütuseseire tulemused,Kütuseseire tulemused 2022,77,ei,twb,404,0,,,,HTTP Error 404: Not Found

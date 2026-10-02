@@ -1,0 +1,10 @@
+workbook,datasource,caption,connection,n_fields
+Jtmearuandlus2004-2011,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,JATS kov tasand test Extract,federated|hyper,30
+Jtmearuandlus2004-2011,federated.0jd2qp70ykgqy419z9nbe0k18tbc,JATS maakonna tasand test Extract,federated|hyper,28
+Jtmearuandlus2004-2011,federated.0quh0e70qn8n6j1aigyiy1flv4ap,Custom SQL Query (andmeaitdev) Extract,federated|hyper,24
+Jtmearuandlus2012-2019,federated.0quh0e70qn8n6j1aigyiy1flv4ap,Custom SQL Query (andmeaitdev) Extract,federated|hyper,24
+Jtmearuandlus2012-2019,federated.0jd2qp70ykgqy419z9nbe0k18tbc,JATS maakonna tasand test Extract,federated|hyper,28
+Jtmearuandlus2012-2019,federated.0a3xgba0s1j8us14ha9bg1s0oi7c,JATS kov tasand test Extract,federated|hyper,30
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp,Custom SQL Query (andmeaitdev),federated|hyper|postgres,46
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy),Custom SQL Query (andmeaitdev) (2),excel-direct|federated|hyper|postgres,53
+Jtmearuandlusalates2020,federated.0gw1pz50uixd451fmqiuh0wwconp (copy 2),Custom SQL Query (andmeaitdev) (3),excel-direct|federated|hyper|postgres,59
