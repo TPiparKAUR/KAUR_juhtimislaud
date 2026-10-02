@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+# Crawl output and scratch space are kept out of version control
+out/
+scratch/
+.env
