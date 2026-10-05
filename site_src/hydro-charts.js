@@ -212,5 +212,5 @@
     });
   }
 
-  Object.assign(window.KaurCharts, { regimeBands, specificHeat, tempHeat, coverageMatrix, flowDuration, yearBars, extremesPanel, linkScatter, selectable });
+  Object.assign(window.KaurCharts, { matrix, regimeBands, specificHeat, tempHeat, coverageMatrix, flowDuration, yearBars, extremesPanel, linkScatter, selectable });
 })();

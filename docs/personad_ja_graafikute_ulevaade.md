@@ -12,7 +12,7 @@ Iga persoon: mida ta otsustab, mida ta tahab teada, kus leht seda praegu vastab 
 |---|---|---|---|---|
 | **Klimatoloog** (Ilmateenistus / KAUR) | hindab aasta ja hooaja klimaatilist erilisust, kirjutab ülevaateid | Kui erakordne on 2025/2026 normi suhtes? Kas trend on robustne jaama- ja meetodivalikust sõltumata? Kas äärmusindeksid (ETCCDI) muutuvad? | kliimaleht: aastaanomaaliad, hooajatrendid, robustsus, äärmusindeksid, katvus | jaamade homogeniseerimine, **võrdlus ametliku rahvusliku keskmise reaga**, pikem rida kui 1991 |
 | **Hüdroloog** (KAUR) | jälgib veeolukorda, hoiatab põua ja üleujutuse eest | Kas jooksev kuu on tavavahemikus? Kui madal on madalvesi? Kas jaama andmed on usaldatavad? | hüdroloogialeht: kuuregiim koos jooksva aastaga, kestvuskõver, Q7min, tipud, katvus, kvaliteedisõel | veetase (WL), jääperiood, mõõtekõvera/ühiku kinnitus, ülejäänud 61 jaama |
-| **Keskkonnapoliitika nõunik** (ministeerium) | seob andmed eesmärkidega ja aruandlusega | Kuhu on heited liikunud? Mida annab sektor/kütus? Kas muutus tuleb ETS-ist? | (käsil) õhk ja energia | võrdlus riikliku inventuuriga, eesmärgid; **ainult asutuse aruanded, mitte kogu riigi heide** |
+| **Keskkonnapoliitika nõunik** (ministeerium) | seob andmed eesmärkidega ja aruandlusega | Kuhu on heited liikunud? Mida annab sektor/kütus? Kas muutus tuleb ETS-ist? | õhk ja energia (käitiste aruanded) | võrdlus riikliku inventuuriga, eesmärgid; **ainult asutuse aruanded, mitte kogu riigi heide** |
 | **Omavalitsuse planeerija** | kohalik riskihinnang, loaotsused | Mis on minu piirkonnas: lähim jaam, kohalikud heited, põuariski signaalid? | jaamade trendid (üldiselt) | maakonna-/valla lõige, kaart |
 | **Ajakirjanik / huviline** | kirjutab loo, kontrollib väiteid | Mis on peamine sõnum? Kui kindel see on? Kust allikas? | peamised tulemused tekstina, hoiatused, tabelivaated | lihtne "mida see ei tähenda" plokk, allalaetav CSV |
 | **Teadlane / analüütik** | kasutab andmeid ja meetodit uuesti | Kuidas arvutati? Kas kood ja andmed on kättesaadavad? | meetodiplokk, avatud kood GitHubis | andmete versioonimine, DOI, viidatav väljalase |
@@ -50,6 +50,20 @@ Skaala: **Kindel** = kontrollitud andmete või testidega; **Eeldus** = lehel mä
 | Veetemperatuur | millised suved olid soojad? | **Eeldus:** ühik °C; vahemik 0…27,6 | keskmine | anduri asukoht; Narva linn alates 2017 |
 | Katvus | kus on lüngad? | **Kindel** | madal | 2026 on pooleli (märgitud) |
 
+### Välisõhk (`valisohk`) ja energeetika (`energeetika`)
+
+Allikas: käitajate deklareeritud aastaaruanded 2019–2025 (KOTKAS); **mitte** riiklik inventuur.
+
+| Graafik | Küsimus | Faktikontroll | Tihedus | Teadaolevad nõrkused |
+|---|---|---|---|---|
+| Fossiilne CO₂ (ETS-jaotus) | kuhu on heide liikunud? | **Kindel:** ühikud t/kg/mg → t; fossiilne ja biogeenne eraldi. **Lahtine:** langus 9,1 → 4,6 Mt on osalt aruandjate koosseisu muutus (1663 → 1353 aruannet) | kõrge | ETS-staatus puudub 2019–2022 suures osas → ETS-jaotus pole aastate vahel võrreldav (leht ütleb seda) |
+| Biogeenne CO₂ | kui suur on biomassi osa? | **Kindel** (eraldi grupp) | madal | riiklikus aruandluses teine arvestus |
+| Sektorid (NFR), ained, maakonnad | kus heide tekib? | **Kindel:** summad; **Lahtine:** NFR-nimed lühendatud, kontrollimata | kõrge | maakond = tegevuskoht; suurkäitised domineerivad |
+| Kontsentratsioon (top 1/5/10) | kui haavatav on muutus üksikutele? | **Kindel** | keskmine | identiteete ei salvestata |
+| Tundlikkus (kordused) | kui palju mõjutavad sama võtmega read? | **Kindel:** CO₂ 2,4–4,9%, SO₂ kuni 31% | keskmine | põhjus (meetodid/versioonid) selgitamata |
+| Soojus ja elekter kütuse järgi | millest toodetakse? | **Eeldus:** ühik MWh (tuletatud soojus/kütus suhtest); 233 rida (2019: 170) välja jäetud | kõrge | **gaasi soojus 2019 → 2020 −62%: kontrollimata, andmeomanikult üle küsida** |
+| Talv vs soojatoodang | kas külm talv tõstab? | **Lahtine:** 7 punkti, orientiir | madal | ei arvutata statistikut |
+
 ## 3. Kui tihedad ja õiged need graafikud on?
 
 **Tugevused:** kõigil graafikutel on allikas, ühik, periood, hajuvuse või ebakindluse märge ja
@@ -64,7 +78,7 @@ nimetatud; kõik testid kontrollivad nii arvutust kui joonistamist.
    mõned kokkuvõtted ("2026: 50% väljaspool tavavahemikku") on meie enda tavavahemiku suhtes
    ja sõltuvad 12 aasta valimist.
 4. Puudub **kaardivaade** (jaamad, valgalad, maakonnad), mida planeerijad ootavad.
-5. Praegu on kaetud ainult 2 teemat 9-st; avaleht ei ole veel terviklik "seostatud" ülevaade.
+5. Praegu on kaetud 4 teemat 9-st (kliima, vesi osaliselt, välisõhk, energeetika); avaleht ei ole veel terviklik "seostatud" ülevaade.
 
 ## 4. Mida võib ja mida ei või lehel väita
 

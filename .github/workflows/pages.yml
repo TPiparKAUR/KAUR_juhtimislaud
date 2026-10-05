@@ -14,6 +14,7 @@ on:
       - "Climate analysis"
       - "Hydrology data (daily)"
       - "Hydrology analysis (from existing daily data)"
+      - "Air and energy analysis (from existing data)"
     types: [completed]
   workflow_dispatch:
 
@@ -43,6 +44,9 @@ jobs:
           fi
           if git show origin/hydro-analysis:hydro.json > hydro.json 2>/dev/null; then
             args="$args --hydro hydro.json"
+          fi
+          if git show origin/airenergy-analysis:airenergy.json > airenergy.json 2>/dev/null; then
+            args="$args --airenergy airenergy.json"
           fi
           echo "SITE_ARGS=$args" >> "$GITHUB_ENV"
       - run: uv run python build_site.py --out _site $SITE_ARGS

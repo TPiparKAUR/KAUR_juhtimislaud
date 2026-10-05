@@ -57,10 +57,35 @@ ANALYSES: dict[str, tuple[str, list[tuple[str, str]]]] = {
             ("methods", ""),
         ],
     ),
+    "valisohk": (
+        "airenergy",
+        [
+            ("findings", "Käitiste õhuheited: peamised tulemused"),
+            ("co2", ""),
+            ("bio", ""),
+            ("sectors", "Sektorid ja ained"),
+            ("pollutants", ""),
+            ("counties", "Maakonnad"),
+            ("concentration", "Kontsentratsioon ja andmete tundlikkus"),
+            ("sensitivity", ""),
+            ("methods", ""),
+        ],
+    ),
+    "energeetika": (
+        "airenergy",
+        [
+            ("efindings", "Soojus- ja elektritoodang: peamised tulemused"),
+            ("fuel", ""),
+            ("electricity", ""),
+            ("heatclimate", "Talv ja soojatoodang"),
+            ("methods", ""),
+        ],
+    ),
 }
 SCRIPTS = {
     "climate": ["charts.js", "climate-page.js"],
     "hydro": ["charts.js", "hydro-charts.js", "hydro-page.js"],
+    "airenergy": ["charts.js", "hydro-charts.js", "airenergy-charts.js", "airenergy-page.js"],
 }
 TABLEAU_PUBLIC = "public.tableau.com"
 EMBED_QUERY = ":showVizHome=no&:embed=true&:toolbar=yes"
@@ -192,7 +217,7 @@ def layout(
         for t in topics
     )
     names: list[str] = []
-    for feat in ("climate", "hydro"):
+    for feat in ("climate", "hydro", "airenergy"):
         if feat in features:
             names += [n for n in SCRIPTS[feat] if n not in names]
     scripts = "".join(f'<script src="assets/{n}"></script>' for n in names)
@@ -315,11 +340,12 @@ def build(
     out: Path,
     climate_json: Path | None = None,
     hydro_json: Path | None = None,
+    airenergy_json: Path | None = None,
 ) -> list[Path]:
     """Write the site; analysis sections appear only for the JSON inputs that exist."""
     out.mkdir(parents=True, exist_ok=True)
     written = [out / "index.html"]
-    inputs = {"climate": climate_json, "hydro": hydro_json}
+    inputs = {"climate": climate_json, "hydro": hydro_json, "airenergy": airenergy_json}
     features: set[str] = set()
     for name, path in inputs.items():
         if path and path.exists():
@@ -347,10 +373,13 @@ def main() -> None:
     ap.add_argument("--out", type=Path, default=Path("_site"))
     ap.add_argument("--climate", type=Path, default=None, help="aggregated climate.json to embed")
     ap.add_argument("--hydro", type=Path, default=None, help="aggregated hydro.json to embed")
+    ap.add_argument(
+        "--airenergy", type=Path, default=None, help="aggregated airenergy.json to embed"
+    )
     args = ap.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
     topics = load_topics(args.topics, args.inventory)
-    files = build(topics, args.out, args.climate, args.hydro)
+    files = build(topics, args.out, args.climate, args.hydro, args.airenergy)
     LOG.info("wrote %d pages to %s", len(files), args.out)
 
 

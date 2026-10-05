@@ -17,8 +17,10 @@ from playwright.sync_api import Error as PlaywrightError
 
 import build_site as b
 import climate_analysis as ca
+import run_airenergy as ra
 import run_climate as rc
 import run_hydro as rh
+from tests.test_airenergy_analysis import emissions, heat_rows
 from tests.test_climate_analysis import STATIONS
 from tests.test_run_climate import monthly_frame
 from tests.test_run_hydro import CATALOG, frame
@@ -75,9 +77,15 @@ def site(tmp_path_factory: pytest.TempPathFactory) -> Iterator[str]:
     assert hydro["climate_link"] is not None  # synthetic years overlap with the climate series
     hj = tmp / "hydro.json"
     hj.write_text(json.dumps(hydro), encoding="utf-8")
+    em = emissions().with_columns(
+        aine_arvestus_meetod=pl.lit("AS"), cas_kood=pl.lit("124-38-9"), luba_versioon=pl.lit(1)
+    )
+    air = ra.build(em, heat_rows([]), generated="2026-01-01T00:00:00+00:00")
+    aj = tmp / "airenergy.json"
+    aj.write_text(json.dumps(air), encoding="utf-8")
     topics = b.load_topics(Path("data/teemad.toml"), Path("data/kaur_viz_inventar.csv"))
     out = tmp / "_site"
-    b.build(topics, out, cj, hj)
+    b.build(topics, out, cj, hj, aj)
     handler = functools.partial(http.server.SimpleHTTPRequestHandler, directory=str(out))
     handler.log_message = lambda *a, **k: None  # type: ignore[attr-defined]
     with socketserver.TCPServer(("127.0.0.1", 0), handler) as srv:
@@ -101,7 +109,14 @@ def browser() -> Iterator[Browser]:
 
 @pytest.mark.browser
 @pytest.mark.parametrize(
-    "path,min_svgs", [("index.html", 3), ("ilm-ja-kliima.html", 13), ("vesi.html", 9)]
+    "path,min_svgs",
+    [
+        ("index.html", 3),
+        ("ilm-ja-kliima.html", 13),
+        ("vesi.html", 9),
+        ("valisohk.html", 4),
+        ("energeetika.html", 1),
+    ],
 )
 def test_pages_render_charts_without_errors(
     browser: Browser, site: str, path: str, min_svgs: int
