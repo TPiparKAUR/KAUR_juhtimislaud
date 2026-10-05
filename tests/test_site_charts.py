@@ -65,6 +65,8 @@ def site(tmp_path_factory: pytest.TempPathFactory) -> Iterator[str]:
         }
     }
     data = rc.build(monthly_frame(), idx, stations, elements, checks, reps=50)
+    fd = data["extremes"]["FD"]
+    assert fd["mean"] and fd["trend"]["n"] == len(fd["aasta"])  # trend is computed on the mean
     cj = tmp / "climate.json"
     cj.write_text(json.dumps(data), encoding="utf-8")
     topics = b.load_topics(Path("data/teemad.toml"), Path("data/kaur_viz_inventar.csv"))

@@ -259,10 +259,10 @@ def build(
     }
     for block in out["extremes"].values():
         if block.get("aasta"):
-            yrs, med = np.array(block["aasta"]), np.array(block["median"], dtype=float)
+            yrs, avg = np.array(block["aasta"]), np.array(block["mean"], dtype=float)
             block["trend"] = {
                 k: (None if np.isnan(v) else round(float(v), 3))
-                for k, v in ca.trend(yrs, med, reps=reps).items()
+                for k, v in ca.trend(yrs, avg, reps=reps).items()
             }
     return out
 
