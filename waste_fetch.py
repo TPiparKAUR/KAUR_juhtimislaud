@@ -53,6 +53,8 @@ KEYS = [
     "pohigrupp",
     "alamgrupp",
     "jaatmeliik",
+    "jaatmeliik_nimi",
+    "pohigrupp_nimi",
     "ohtlik_lipp",
     "biojaatmed_lipp",
     "reoveesetted_lipp",
@@ -61,6 +63,7 @@ KEYS = [
     "partner_riik_nimi",
     "riik",
     "materjali_kood",
+    "materjali_nimetus",
 ]
 
 
