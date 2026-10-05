@@ -91,7 +91,7 @@ def table_shapes(
     the latest year's rows give units and magnitudes at a glance.
     """
     dims = [c for c in DIMS if c in df.columns]
-    year = sample_year or int(df[YEAR].cast(pl.Int64).max() or 0)
+    year = sample_year or int(df.select(pl.col(YEAR).max()).item())
     shapes: list[dict[str, Any]] = []
     keyed = df.with_columns(
         pl.concat_str(
@@ -107,7 +107,10 @@ def table_shapes(
         entry: dict[str, Any] = {
             "tabeli_number": tnr, "aruande_nimi": name, "tunnus": tunnus, "arvutus": calc,
             "filled": shape, "rows": g.height,
-            "years": [int(g[YEAR].cast(pl.Int64).min() or 0), int(g[YEAR].cast(pl.Int64).max() or 0)],
+            "years": [
+                int(g.select(pl.col(YEAR).min()).item()),
+                int(g.select(pl.col(YEAR).max()).item()),
+            ],
             "values": {},
         }  # fmt: skip
         for c in dims:
