@@ -1,0 +1,41 @@
+name: Hydrology catalogue
+
+# Enumerates the hydrological time series (stations, series names, row counts, first/last
+# timestamp) of the public open-data API without downloading the 74 M rows.  Read-only, no
+# credentials.  Output is force-pushed as one commit to the `hydro-results` branch.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: hydro
+  cancel-in-progress: false
+
+jobs:
+  catalog:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync --frozen
+      - run: uv run python hydro_catalog.py --out out/hydro
+      - uses: actions/upload-artifact@v4
+        with:
+          name: hydro-catalog
+          path: out/hydro/
+          retention-days: 30
+      - name: Publish to hydro-results branch
+        run: |
+          cp out/hydro/hydro_catalog.json "$RUNNER_TEMP/hydro_catalog.json"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan hydro-results
+          git rm -rf --quiet .
+          cp "$RUNNER_TEMP/hydro_catalog.json" hydro_catalog.json
+          git add -- hydro_catalog.json
+          git commit -m "Hydrology catalogue $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push --force origin hydro-results
