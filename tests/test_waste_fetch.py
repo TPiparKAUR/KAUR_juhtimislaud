@@ -95,3 +95,21 @@ def test_run_reports_failures_and_count_mismatches(tmp_path: Path) -> None:
     assert "timeout" in log["failed"][0]
     assert {"year": 2021, "expected": 2, "got": 1} in log["count_mismatches"]
     assert log["rows_read"] == 3 and log["rows_expected"] == 6
+
+
+def test_pages_with_whole_number_amounts_and_null_columns_still_merge() -> None:
+    """Regression: a page of integer amounts / an all-null column broke the final concat."""
+    ints = wf.aggregate([row(maht=5, partner_riik_nimi=None, materjali_kood=1)])
+    floats = wf.aggregate([row(maht=2.5, partner_riik_nimi="Rootsi")])
+    assert ints.schema == floats.schema
+    m = wf.merge([ints, floats])
+    assert sorted(m["maht"].to_list()) == [2.5, 5.0]
+
+
+def test_run_still_writes_log_when_merge_fails(tmp_path: Path) -> None:
+    def bad(p: wf.Page, delay: float) -> tuple[pl.DataFrame, int]:
+        return pl.DataFrame({"aasta": [1]}), p.expected  # wrong schema -> merge error
+
+    wf.run({2022: 1, 2021: 1}, tmp_path, workers=1, delay=0.0, budget_s=60, fetch=bad)
+    log = json.loads((tmp_path / "waste_fetch_log.json").read_text(encoding="utf-8"))
+    assert any(f.startswith("merge:") for f in log["failed"]) and log["rows_read"] == 2

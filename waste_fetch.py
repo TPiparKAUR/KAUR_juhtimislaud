@@ -55,6 +55,14 @@ KEYS = [
 ]
 
 
+# Explicit types: a JSON page whose amounts are all whole numbers (or whose partner column is
+# entirely null) would otherwise infer a different dtype and break the final concatenation.
+SCHEMA: dict[str, Any] = {
+    **dict.fromkeys(KEYS, pl.Utf8),
+    "aasta": pl.Int32,
+    "materjali_kood": pl.Int64,
+    "maht": pl.Float64,
+}
 SELECT = [*KEYS, "maht"]  # exactly the columns aggregate() needs; also the total sort order
 PAGE = 20_000  # the server returns at most this many rows per request
 
@@ -81,7 +89,7 @@ def aggregate(rows: list[dict[str, Any]]) -> pl.DataFrame:
     """Sum ``maht`` over the descriptive columns; keep row and negative-value counts."""
     if not rows:
         return pl.DataFrame()
-    df = pl.DataFrame(rows, infer_schema_length=None).select(*KEYS, "maht")
+    df = pl.DataFrame(rows, schema=SCHEMA, strict=False)
     return df.group_by(KEYS).agg(
         maht=pl.col("maht").sum(),
         rows=pl.len(),
@@ -163,7 +171,11 @@ def run(
                 continue
             read[p.year] += got
             parts.append(df)
-    result = merge(parts)
+    try:
+        result = merge(parts)
+    except Exception as exc:  # report instead of losing a long fetch silently
+        failed.append(f"merge: {type(exc).__name__}: {exc}"[:240])
+        result = pl.DataFrame()
     result.write_parquet(out / "waste_agg.parquet")
     mismatches = [
         {"year": y, "expected": n, "got": read[y]} for y, n in year_counts.items() if read[y] != n
