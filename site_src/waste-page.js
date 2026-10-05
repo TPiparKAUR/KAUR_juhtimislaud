@@ -39,13 +39,42 @@
       }
       host.innerHTML = `<ul class="findings">${li.join('')}</ul>`;
     },
-    generation(host) { C.wasteGeneration(host, d); },
-    generationRest(host) { C.wasteGenerationRest(host, d); },
-    flows(host) { C.wasteFlows(host, d); },
-    hazardous(host) { C.wasteHazardous(host, d); },
-    top(host) { C.wasteTopTypes(host, d); },
-    trade(host) { C.wasteTrade(host, d); },
-    stocks(host) { C.wasteStocks(host, d); },
+    generation(host) {
+      C.wasteGeneration(host, d);
+      const g = flow('Jäätmeteke', last), ch = d.generation_by_chapter.filter((r) => r.aasta === last).sort((a, b) => b.tonnes - a.tonnes)[0];
+      if (g && ch) C.punch(host, `Jäätmeteke on ${last}. aastal ${mt(g.tonnes)}; suurim peatükk on ${ch.pohigrupp} (${d.meta.chapter_labels_short[ch.pohigrupp] || ''}) ${fmt(100 * ch.tonnes / g.tonnes, 0)}% osakaaluga.`);
+    },
+    generationRest(host) {
+      C.wasteGenerationRest(host, d);
+      const rows = d.generation_by_chapter.filter((r) => r.aasta === last && r.pohigrupp !== '10').sort((a, b) => b.tonnes - a.tonnes), all = rows.reduce((a, r) => a + r.tonnes, 0);
+      if (rows[0]) C.punch(host, `Ilma peatükita 10 on jäätmeteke ${mt(all)}; suurim on peatükk ${rows[0].pohigrupp} (${d.meta.chapter_labels_short[rows[0].pohigrupp] || ''}), ${fmt(100 * rows[0].tonnes / all, 0)}%.`);
+    },
+    flows(host) {
+      C.wasteFlows(host, d);
+      const a = flow('Taaskasutamine', last), l = flow('Ladestatud prügilasse', last);
+      C.punch(host, a && l ? `${last}. aastal: taaskasutamine ${mt(a.tonnes)}, prügilasse ladestatud ${mt(l.tonnes)}. Voogusid ei liideta ega suhestata, sest nende kattuvus on teadmata.` : 'Iga vool on eraldi graafikul; voogusid ei liideta, sest nende kattuvus on teadmata.');
+    },
+    hazardous(host) {
+      C.wasteHazardous(host, d);
+      const h = d.hazardous_generation.find((r) => r.aasta === last);
+      if (h && h.share != null) C.punch(host, `Ohtlikuks märgitud osa on ${fmt(100 * h.share, 1)}% jäätmetekkest (${last}); osakaalu juhib suuresti peatükk 10.`);
+    },
+    top(host) {
+      C.wasteTopTypes(host, d);
+      const t = d.top_generation, all = flow('Jäätmeteke', last);
+      if (t[0] && all) C.punch(host, `Suurim jäätmeliik on ${t[0].jaatmeliik_nimi} (${t[0].jaatmeliik}) ${fmt(100 * t[0].tonnes / all.tonnes, 0)}% jäätmetekkest (${last}).`);
+    },
+    trade(host) {
+      C.wasteTrade(host, d, (key, by, keys) => {
+        const tot = keys.map((k) => ({ k, v: [...by.get(k).values()].reduce((a, b) => a + b, 0) })).sort((a, b) => b.v - a.v);
+        return tot[0] ? `${key === 'export_partners' ? 'Eksporti' : 'Importi'} on perioodil kokku kõige rohkem partneriga ${tot[0].k} (${fmt(tot[0].v / 1e3, 0)} kt kümne partneri hulgas).` : '';
+      });
+    },
+    stocks(host) {
+      C.wasteStocks(host, d);
+      const r = d.stock_continuity.filter((x) => x.ratio != null);
+      if (r.length) { const dev = r.map((x) => Math.abs(x.ratio - 1)).sort((a, b) => a - b); C.punch(host, `Lõpu- ja järgmise aasta algusladu lahknevus on mediaanis ${fmt(100 * dev[dev.length >> 1], 0)}% (suurim ${fmt(100 * dev[dev.length - 1], 0)}%): jäätmeandmete järjepidevus on piiratud.`); }
+    },
     methods(host) {
       const m = d.meta;
       host.innerHTML = `<div class="methods"><b>Andmed ja meetod</b> <span class="review-flag">valdkonnaekspert ülevaatamata</span>

@@ -54,16 +54,64 @@
       if (L) li.push(`<li><b>Talv ja soojatoodang:</b> ${L.years.length} punkti, aruannete koosseis muutub – ainult orientiir, statistikut ei arvutata.</li>`);
       host.innerHTML = `<ul class="findings">${li.join('')}</ul>`;
     },
-    co2(host) { C.co2Ets(host, d); },
-    bio(host) { C.co2Bio(host, d); },
-    sectors(host) { C.aeSectors(host, d); },
-    pollutants(host) { C.aePollutants(host, d); },
-    counties(host) { C.aeCounties(host, d); },
-    concentration(host) { C.aeConcentration(host, d); },
-    sensitivity(host) { C.aeSensitivity(host, d); },
-    fuel(host) { C.aeFuel(host, d); },
-    electricity(host) { C.aeElectricity(host, d); },
-    heatclimate(host) { C.aeHeatClimate(host, d); },
+    co2(host) {
+      C.co2Ets(host, d);
+      const c0 = tot(d.co2, 'CO2', first), c1 = tot(d.co2, 'CO2', last);
+      C.punch(host, `Fossiilne CO₂ aruannetes: ${fmt(c0 / 1e6, 1)} Mt (${first}) → ${fmt(c1 / 1e6, 1)} Mt (${last}); aruandeid ${reports(first)} → ${reports(last)}, seega osa langusest on koosseisu muutus.`);
+    },
+    bio(host) {
+      C.co2Bio(host, d);
+      const b0 = tot(d.co2, 'CO2 bio', first), b1 = tot(d.co2, 'CO2 bio', last);
+      C.punch(host, `Biogeenne CO₂ püsib ${fmt(b1 / 1e6, 1)} Mt tasemel (${fmt(b0 / 1e6, 1)} Mt aastal ${first}); see on eraldi fossiilsest ega liitu sellega.`);
+    },
+    sectors(host) {
+      const label = { CO2: 'fossiilsest CO₂-st', NO2: 'NOx-ist', NH3: 'NH₃-st' };
+      C.aeSectors(host, d, (g) => {
+        const rows = d.sectors[g].filter((r) => r.aruanne_aasta === last), all = rows.reduce((a, r) => a + r.tonnes, 0);
+        const top = rows.slice().sort((a, b) => b.tonnes - a.tonnes)[0];
+        return top ? `${d.meta.nfr_names[top.sector] || top.sector} (${top.sector}) annab ${fmt(100 * top.tonnes / all, 0)}% aruannete ${label[g] || g} aastal ${last}.` : '';
+      });
+    },
+    pollutants(host) {
+      C.aePollutants(host, d);
+      const parts = Object.entries(d.meta.pollutants).map(([k, name]) => { const a = tot(d.pollutants, k, first), b = tot(d.pollutants, k, last); return a ? `${name.split(' ')[0]} ${fmt(100 * (b / a - 1), 0)}%` : null; }).filter(Boolean);
+      C.punch(host, `Muutus ${first} → ${last}: ${parts.join(', ')}. Aruandjate koosseis muutub, seega need ei ole riigi heite muutused.`);
+    },
+    counties(host) {
+      C.aeCounties(host, d, (g) => {
+        const rows = d.counties[g].filter((r) => r.aruanne_aasta === last && r.county !== 'teadmata'), all = rows.reduce((a, r) => a + r.tonnes, 0);
+        const top = rows.slice().sort((a, b) => b.tonnes - a.tonnes)[0];
+        return top ? `${top.county.replace(' maakond', '')} annab ${fmt(100 * top.tonnes / all, 0)}% ${g === 'CO2' ? 'fossiilsest CO₂-st' : 'NOx-ist'} (${last}); suurkäitiste tõttu kajastab see asutuste, mitte elanike heidet.` : '';
+      });
+    },
+    concentration(host) {
+      C.aeConcentration(host, d, (g) => {
+        const r = d.concentration[g].find((x) => x.aruanne_aasta === last);
+        return r ? `${last}. aastal annavad 5 suurimat aruannet ${fmt(100 * r.top5_share, 0)}% ja 10 suurimat ${fmt(100 * r.top10_share, 0)}% summast (${r.reports} aruandest).` : '';
+      });
+    },
+    sensitivity(host) {
+      C.aeSensitivity(host, d);
+      const worst = d.sensitivity.slice().sort((a, b) => (b.gap_share ?? 0) - (a.gap_share ?? 0))[0];
+      if (worst) C.punch(host, `Sama võtmega ridade kordumine võib summat mõjutada kuni ${fmt(100 * worst.gap_share, 0)}% (${d.meta.pollutants[worst.aine_stat_grupp] || worst.aine_stat_grupp}, ${worst.aruanne_aasta}); CO₂ puhul kuni ${fmt(100 * Math.max(...d.sensitivity.filter((r) => r.aine_stat_grupp === 'CO2').map((r) => r.gap_share ?? 0)), 1)}%.`);
+    },
+    fuel(host) {
+      C.aeFuel(host, d);
+      const ht = d.energy.heat_total_mwh;
+      if (ht.length) C.punch(host, ht.length > 1 ? `Deklareeritud soojatoodang on ${fmt(ht[0].heat / 1e6, 1)} TWh (${ht[0].year}) → ${fmt(ht[ht.length - 1].heat / 1e6, 1)} TWh (${ht[ht.length - 1].year}); ühik eeldatud MWh, aruandjate koosseis muutub.` : `Deklareeritud soojatoodang on ${fmt(ht[0].heat / 1e6, 1)} TWh (${ht[0].year}); ühik eeldatud MWh.`);
+    },
+    electricity(host) {
+      C.aeElectricity(host, d);
+      const byYear = {};
+      for (const r of d.energy.by_fuel) byYear[r.aruanne_aasta] = (byYear[r.aruanne_aasta] || 0) + r.electricity;
+      const ys = Object.keys(byYear).map(Number).sort((a, b) => a - b);
+      if (ys.length) C.punch(host, ys.length > 1 ? `Deklareeritud elektritoodang on ${fmt(byYear[ys[0]] / 1e6, 1)} TWh (${ys[0]}) → ${fmt(byYear[ys[ys.length - 1]] / 1e6, 1)} TWh (${ys[ys.length - 1]}); see ei ole riigi elektritoodangu statistika.` : `Deklareeritud elektritoodang on ${fmt(byYear[ys[0]] / 1e6, 1)} TWh (${ys[0]}); see ei ole riigi elektritoodangu statistika.`);
+    },
+    heatclimate(host) {
+      C.aeHeatClimate(host, d);
+      const L = d.energy.climate_link;
+      if (L) C.punch(host, `${L.years.length} punkti ei võimalda talve ja soojatoodangu seost hinnata; graafik on ainult orientiiriks.`);
+    },
     methods(host) {
       const m = d.meta, hq = m.data_quality.heat;
       host.innerHTML = `<div class="methods"><b>Andmed ja meetod</b> <span class="review-flag">valdkonnaekspert ülevaatamata</span>

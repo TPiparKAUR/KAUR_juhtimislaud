@@ -25,6 +25,8 @@
   const top = A.top_years.slice(0, 3);
   const rob = T.robustness;
 
+  const MONTHS = ['jaanuar', 'veebruar', 'märts', 'aprill', 'mai', 'juuni', 'juuli', 'august', 'september', 'oktoober', 'november', 'detsember'];
+  const sigWord = (t) => (excl0(t) ? 'eristatav' : 'ei ole eristatav looduslikust kõikumisest');
   const forestItems = [{ label: 'Aasta', t: A.trend, strong: true }, ...Object.entries(T.seasonal).map(([k, b]) => ({ label: seasonNames[k].split(' ')[0], t: b.trend }))];
 
   const builders = {
@@ -39,24 +41,41 @@
     },
     annual(host) {
       C.annualBars(host, A, { title: 'Aastakeskmise õhutemperatuuri kõrvalekalle 1991–2020 normist', subtitle: `Eesti jaamade keskmine, ${A.years[0]}–${last(A.years)}. Iga tulp on aasta; kriips näitab, kuidas jaamad omavahel erinevad.`, unit: '°C', valueHead: 'Anomaalia °C', dec: 1, posLabel: 'Soojem kui norm', negLabel: 'Külmem kui norm', note: `Allikas: Keskkonnaagentuur / Ilmateenistus, avaandmed (f_kliima_kuu, õhutemperatuur ööpäeva keskmine), ${d.temperature.n_stations_with_normal} jaama normiga. Aeg UTC kuudes. Jaamade vahe ≠ mõõtemääramatus.` });
+      C.punch(host, `Eesti aastakeskmine õhutemperatuur on ${A.years[0]}–${last(A.years)} soojenenud ${tr(A.trend, 2, '°C')}; kolm soojemat aastat on ${top.map((t) => t[0]).join(', ')}.`);
     },
     forest(host) {
       C.forest(host, forestItems, { title: 'Temperatuuri trend aastaajati', subtitle: 'Soojenemine kümnendi kohta (Theil–Sen), 95% vahemik 3-aastaste plokkide bootstrapist.', unit: '°C / 10 a', dec: 2, note: 'Lühike rida (35 aastat) ja suur aastatevaheline kõikumine, eriti talvel, teevad vahemikud laiaks. Vahemik, mis sisaldab nulli, ei tähenda trendi puudumist, vaid et seda pole selle rea põhjal eristatav.' });
+    
+      const seas = Object.entries(T.seasonal).map(([k, bl]) => ({ k, t: bl.trend }));
+      const sig = seas.filter((x) => excl0(x.t)).map((x) => seasonNames[x.k].split(' ')[0].toLowerCase());
+      C.punch(host, `Eristatav soojenemine on ${sig.length ? sig.join(' ja ') : 'ühelgi aastaajal'}; ülejäänud aastaajad jäävad lühikese rea ja suure kõikumise tõttu veapiiri sisse.`);
     },
     grid(host) {
       C.heatGrid(host, T.monthly_grid, { title: 'Kuude kaupa: millal soojenemine toimus?', subtitle: 'Riigi keskmine kuu anomaalia võrreldes sama kuu 1991–2020 normiga.', limit: 5, note: 'Iga lahter on riigi jaamade keskmine anomaalia (vähemalt 5 jaama). Skaala on sümmeetriline ±5 °C ja kärbitud.' });
+    
+      const cells = T.monthly_grid.cells, yrs = T.monthly_grid.years, y0 = yrs[0], y1 = last(yrs);
+      const avg = (m, a, z) => { const v = cells.filter((c) => c[1] === m && c[0] >= a && c[0] <= z).map((c) => c[2]); return v.length ? v.reduce((x, y) => x + y, 0) / v.length : null; };
+      const diffs = MONTHS.map((nm, i) => ({ nm, v: avg(i + 1, y1 - 14, y1) - avg(i + 1, y0, y0 + 14) })).filter((x) => Number.isFinite(x.v)).sort((a, b) => b.v - a.v);
+      if (diffs.length) C.punch(host, `Kõige rohkem on soojenenud ${diffs[0].nm} (${sgn(diffs[0].v, 1)} °C: ${y1 - 14}–${y1} keskmine miinus ${y0}–${y0 + 14} keskmine), kõige vähem ${diffs[diffs.length - 1].nm} (${sgn(diffs[diffs.length - 1].v, 1)} °C). Kirjeldav võrdlus, ilma veahinnanguta.`);
     },
     stations(host) {
       C.stationDots(host, stationTrends, A.trend, { title: 'Kas soojenemine on ühtlane üle Eesti?', subtitle: 'Iga jaama aastakeskmise temperatuuri trend, aeglasemast kiiremani.', note: `${nPos} jaama ${stationTrends.length}-st näitab statistiliselt eristatavat soojenemist. Kasutatud on jaamad, millel on 1991–2020 normi jaoks vähemalt 25 aastat andmeid ja trendi jaoks vähemalt 10 täisaastat.` });
+    
+      C.punch(host, `${nPos} jaama ${stationTrends.length}-st näitab eristatavat soojenemist (kiirus ${fmt(stationTrends[0].slope_per_decade, 2)} … ${fmt(last(stationTrends).slope_per_decade, 2)} °C / 10 a); kiireim on ${last(stationTrends).name}, aeglaseim ${stationTrends[0].name}.`);
     },
     precip(host) {
       if (!P) return;
       C.annualBars(host, P.annual, { title: 'Aastane sademete summa protsendina 1991–2020 normist', subtitle: 'Riigi jaamade keskmine; 100% = norm.', unit: '%', valueHead: '% normist', dec: 0, baseline: 100, tipOffset: 0, posLabel: 'Märjem kui norm', negLabel: 'Kuivem kui norm', height: 260, note: 'Sademete mõõtmisel on teadaolev süstemaatiline alamõõtmine (tuul, lumi), seetõttu on usaldusväärsem aastate võrdlus, mitte absoluutne summa. Kriipsud: jaamade vahe.' });
+    
+      C.punch(host, `Aastased sademed muutuvad ${tr(P.annual.trend, 1, '%-punkti')}; trend ${sigWord(P.annual.trend)}.`);
     },
     precipForest(host) {
       if (!P) return;
       const items = [{ label: 'Aasta', t: P.annual.trend, strong: true }, ...Object.entries(P.seasonal).map(([k, b]) => ({ label: seasonNames[k].split(' ')[0], t: b.trend }))];
       C.forest(host, items, { title: 'Sademete trend: protsendipunkti kümnendi kohta', subtitle: 'Muutus normi %-des 10 aasta kohta.', unit: '%-punkti / 10 a', dec: 1, note: 'Vahemikud sisaldavad nulli: sademete trendi pole selle rea põhjal võimalik eristada looduslikust kõikumisest.' });
+    
+      const seasP = Object.entries(P.seasonal).filter(([, bl]) => excl0(bl.trend)).map(([k]) => seasonNames[k].split(' ')[0].toLowerCase());
+      C.punch(host, seasP.length ? `Eristatav sademete trend on ainult aastaajal: ${seasP.join(', ')}.` : 'Ühelgi aastaajal ei ole sademete trend looduslikust kõikumisest eristatav.');
     },
     extremes(host) {
       const E = d.extremes, defs = [
@@ -74,10 +93,17 @@
         const div = document.createElement('div');
         grid.appendChild(div);
         C.indexPanel(div, E[k], { title, unit, dec, subtitle: sub });
+        const tt = E[k].trend;
+        if (tt && tt.slope_per_decade !== null) C.punch(div, `${title.split(' (')[0]}: ${sgn(tt.slope_per_decade, dec)} ${unit} kümnendi kohta, ${sigWord(tt)}.`);
       }
     },
     coverage(host) {
       C.coverage(host, d.completeness, d.stations, { title: 'Andmete katvus: millised jaamad mõõtsid millal?', subtitle: 'Kuude arv aastas, millal jaamal on õhutemperatuuri väärtus.', note: 'Jaamavõrk ei ole stabiilne: osa jaamu alustas hiljem (Ruhnu 2003, Heltermaa 2007, Roomassaare 2008, Tooma 2009). Nende normi ei arvutata, kui baasperioodil on alla 25 aasta. Lüngad vähendavad riigi keskmise jaamade arvu konkreetsetel aastatel.' });
+    
+      const firstYear = {};
+      for (const [code, yr] of d.completeness.cells) firstYear[code] = Math.min(firstYear[code] ?? 9999, yr);
+      const late = Object.values(firstYear).filter((y) => y > d.completeness.years[0]).length;
+      C.punch(host, `${late} jaama ${Object.keys(firstYear).length}-st alustas pärast ${d.completeness.years[0]}. aastat, seega jaamavõrk ei ole kogu perioodi jooksul konstantne.`);
     },
     findings(host) {
       const li = [];

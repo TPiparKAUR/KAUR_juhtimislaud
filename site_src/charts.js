@@ -135,12 +135,15 @@
   /* Puänt: the chart's main message as a sentence computed from the data, shown above the title.
      Call after the chart is drawn (and again after a selector redraws it). */
   function punch(host, text) {
+    if (!text) return;
+    const panels = host.querySelector(':scope > .panels');
     const viz = host.classList.contains('viz') ? host : host.querySelector('.viz');
-    if (!viz || !text) return;
-    viz.querySelector(':scope > .viz-punch')?.remove();
+    const target = panels ? host : viz;
+    if (!target) return;
+    target.querySelector(':scope > .viz-punch')?.remove();
     const p = Object.assign(document.createElement('p'), { className: 'viz-punch', textContent: text });
     p.setAttribute('data-punch', '');
-    viz.prepend(p);
+    if (panels) host.insertBefore(p, panels); else viz.prepend(p);
   }
 
   function responsive(stage, draw) {

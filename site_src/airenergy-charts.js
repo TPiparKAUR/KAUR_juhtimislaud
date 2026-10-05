@@ -70,7 +70,7 @@
       note: 'Biogeenne CO₂ arvestatakse riiklikus aruandluses teisiti kui fossiilne; siin on see vaid asutuste deklareeritud kogus.' });
   }
 
-  function sectors(host, d) {
+  function sectors(host, d, punchFn) {
     const names = d.meta.nfr_names;
     const groups = [['CO2', 'Fossiilne CO₂', 'Mt', 1e6, 2], ['NO2', 'NOx (NO₂-na)', 'kt', 1e3, 2], ['NH3', 'NH₃', 'kt', 1e3, 2]];
     C.selectable(host, groups.map(([v, t]) => ({ value: v, text: t })), 'CO2', 'Aine:', (holder, g) => {
@@ -83,6 +83,7 @@
       if (by.has('Muu')) series.push({ key: 'Muu', label: 'Muu', color: GREY, values: by.get('Muu') });
       stackedBars(holder, { years: d.meta.years, scale, unit, dec, height: 320, title: `${label} sektorite kaupa (NFR)`, subtitle: 'EMEP/EEA NFR sektor aruandes; suurimad sektorid eraldi, ülejäänud kokku.', series,
         note: 'NFR-kood tuleb aruandest; sektorinimed on lühendatud EMEP/EEA klassifikaatori põhjal ja kontrollimata (koodi näeb alati kõrval).' });
+      if (punchFn) C.punch(holder, punchFn(g));
     });
   }
 
@@ -99,7 +100,7 @@
     }
   }
 
-  function counties(host, d) {
+  function counties(host, d, punchFn) {
     const groups = [['CO2', 'Fossiilne CO₂'], ['NO2', 'NOx (NO₂-na)']];
     C.selectable(host, groups.map(([v, t]) => ({ value: v, text: t })), 'CO2', 'Aine:', (holder, g) => {
       const by = seriesOf(d.counties[g], 'county', 'tonnes');
@@ -111,10 +112,11 @@
       C.matrix(holder, { title: `${g === 'CO2' ? 'Fossiilne CO₂' : 'NOx'} maakonniti`, subtitle: 'Aruandes märgitud tegevuskoha maakonna järgi; värv = kogus ruutjuure skaalal.', rowHead: 'Maakond', cols: years, rows,
         color: (v) => sequential(Math.sqrt(v), Math.sqrt(max)), colLabel: String, showCol: () => true, fmtCell: (v) => (v === undefined ? '–' : fmt(v / unit[1], 1)), tip: (v) => `${fmt(v / unit[1], 1)} ${unit[0]}`, labelW: 130, rowH: 22,
         ramp: `<span>0</span><i class="seq"></i><span>${fmt(max / unit[1], 0)} ${unit[0]}</span>`, note: 'Suurimad kogused koonduvad üksikutesse suurkäitistesse (vt kontsentratsioon): maakonna värv näitab seal asuvaid asutusi, mitte maakonna elanike heidet.' });
+      if (punchFn) C.punch(holder, punchFn(g));
     });
   }
 
-  function concentration(host, d) {
+  function concentration(host, d, punchFn) {
     const groups = [['CO2', 'Fossiilne CO₂'], ['NO2', 'NOx'], ['SO2', 'SO₂']];
     C.selectable(host, groups.map(([v, t]) => ({ value: v, text: t })), 'CO2', 'Aine:', (holder, g) => {
       const rows = d.concentration[g];
@@ -134,6 +136,7 @@
         });
         rows.forEach((r, i) => el('text', { x: x(i), y: h - 8, 'text-anchor': 'middle', class: 'tick' }, svg, String(r.aruanne_aasta)));
       });
+      if (punchFn) C.punch(holder, punchFn(g));
     });
   }
 

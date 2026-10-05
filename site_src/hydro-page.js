@@ -61,17 +61,55 @@
       C.selectable(host, items.map((s) => ({ value: String(s.code), text: named(s) })), initial, 'Jaam:', (holder, code) => {
         const s = items.find((x) => String(x.code) === code);
         C.regimeBands(holder, d.regime[code], named(s), { unit, refFrom: 2013, subtitle: `Kuude keskmine vooluhulk (${unit}, eeldatud) võrreldes varasemate aastatega; valgala ${fmt(s.area_km2, 0)} km².`, note: 'Kuu loetakse ainult vähemalt 25 kehtiva päevaga. Tavavahemik tuleneb ~12 aastast: servale jäävad väärtused ei ole haruldused pikas plaanis.' });
+        const r = d.regime[code];
+        let below = 0, above = 0;
+        r.current_months.forEach((m, k) => { const i = r.months.indexOf(m); if (i < 0) return; if (r.current[k] < r.q10[i]) below += 1; else if (r.current[k] > r.q90[i]) above += 1; });
+        C.punch(holder, `${s.name}: ${d.meta.current_year}. aasta ${r.current_months.length} kuust jääb ${below} alla ja ${above} üle varasemate aastate 10.–90. protsentiili (oodatav osa väljaspool on umbes 20%).`);
       });
     },
-    specific(host) { C.specificHeat(host, d, { note: 'Erivool = kuu mediaanvooluhulk / valgala pindala. Ühik eeldatud m³/s → l/s/km². Reguleerimata ja reguleeritud jõgesid ei eristata.' }); },
-    fdc(host) { C.flowDuration(host, d); },
+    specific(host) {
+      C.specificHeat(host, d, { note: 'Erivool = kuu mediaanvooluhulk / valgala pindala. Ühik eeldatud m³/s → l/s/km². Reguleerimata ja reguleeritud jõgesid ei eristata.' });
+      const m = d.stations.map((s) => ({ s, v: (d.annual[s.code]?.specific_ls_km2 || []).filter((x) => x !== null) })).filter((x) => x.v.length >= 5).map((x) => ({ name: x.s.name, v: x.v.reduce((a, b) => a + b, 0) / x.v.length })).sort((a, b) => b.v - a.v);
+      if (m.length > 1) C.punch(host, `Keskmine erivool on suurim jaamas ${m[0].name} (${fmt(m[0].v, 1)} l/s/km²) ja väikseim jaamas ${m[m.length - 1].name} (${fmt(m[m.length - 1].v, 1)}); vahe ${fmt(m[0].v / m[m.length - 1].v, 1)}-kordne.`);
+    },
+    fdc(host) {
+      C.flowDuration(host, d);
+      const q = Object.entries(d.flow_duration).map(([code, f]) => { const i50 = f.p.indexOf(50), i95 = f.p.indexOf(95); return i50 < 0 || i95 < 0 ? null : { name: (d.stations.find((x) => String(x.code) === code) || {}).name ?? code, r: f.specific_ls_km2[i95] / f.specific_ls_km2[i50] }; }).filter(Boolean).sort((a, b) => b.r - a.r);
+      if (q.length > 1) C.punch(host, `Madalvee (95. protsentiil) on ${fmt(100 * q[q.length - 1].r, 0)}–${fmt(100 * q[0].r, 0)}% mediaanvoolust: kõige ühtlasema režiimiga on ${q[0].name}, kõige muutlikum ${q[q.length - 1].name}.`);
+    },
     runoff(host) {
       C.annualBars(host, { years: N.year, mean: N.pct_of_mean, p10: N.p10, p90: N.p90, n_stations: N.n, trend: null }, { title: 'Aastane äravool protsendina jaamade enda keskmisest', subtitle: 'Kõigi jaamade keskmine; kriipsud: jaamade vahe (10.–90. protsentiil).', unit: '%', valueHead: '% keskmisest', dec: 0, baseline: 100, posLabel: 'Keskmisest veerikkam', negLabel: 'Keskmisest vaesem', height: 280, labelTop: 2, note: 'Referents on jaama kõigi täisaastate keskmine, mitte 30-aastane norm. Aasta loetakse ainult vähemalt 350 kehtiva päevaga.' });
+      if (ranked.length >= 2) C.punch(host, `Veerikkaim aasta oli ${ranked[0][0]} (${fmt(ranked[0][1], 0)}% keskmisest), kõige väiksema äravooluga ${ranked[ranked.length - 1][0]} (${fmt(ranked[ranked.length - 1][1], 0)}%).`);
     },
-    link(host) { if (d.climate_link) C.linkScatter(host, d.climate_link); },
-    extremes(host) { C.extremesPanel(host, d); },
-    temp(host) { C.tempHeat(host, d); },
-    coverage(host) { C.coverageMatrix(host, d); },
+    link(host) {
+      if (!d.climate_link) return;
+      C.linkScatter(host, d.climate_link);
+      const sp = d.climate_link.spearman;
+      if (sp) C.punch(host, `Sademeterikkad aastad on ka veerikkad: Spearmani ρ = ${fmt(sp.rho, 2)} (95% vahemik ${fmt(sp.lo, 2)} … ${fmt(sp.hi, 2)}, n = ${sp.n}); korrelatsioon ei tõesta põhjuslikkust.`);
+    },
+    extremes(host) {
+      C.extremesPanel(host, d);
+      let pk = null;
+      for (const [code, e] of Object.entries(d.extremes)) e.years.forEach((y, i) => { if (e.peak[i] !== null && (!pk || e.peak[i] > pk.v)) pk = { v: e.peak[i], y, name: (d.stations.find((x) => String(x.code) === code) || {}).name ?? code }; });
+      if (pk) C.punch(host, `Suurim registreeritud aasta tipp on ${fmt(pk.v, 0)} m³/s (${pk.name}, ${pk.y}); read algavad ${Math.min(...Object.values(d.extremes).map((e) => e.years[0]))}. aastast, seega korduvusaegu ei hinnata.`);
+    },
+    temp(host) {
+      C.tempHeat(host, d);
+      const years = {};
+      for (const t of Object.values(d.water_temperature)) {
+        const v = t.years.map((y, i) => [y, t.summer_mean[i]]).filter(([, x]) => x !== null);
+        if (v.length < 4) continue;
+        const mean = v.reduce((a, [, x]) => a + x, 0) / v.length;
+        for (const [y, x] of v) (years[y] ||= []).push(x - mean);
+      }
+      const yr = Object.entries(years).map(([y, a]) => [+y, a.reduce((x, z) => x + z, 0) / a.length]).sort((a, b) => b[1] - a[1]);
+      if (yr.length >= 2) C.punch(host, `Soojim jõesuvi oli ${yr[0][0]} (${sgn(yr[0][1], 1)} °C jaama keskmisest) ja jahedaim ${yr[yr.length - 1][0]} (${sgn(yr[yr.length - 1][1], 1)} °C); suvi = juuni–august.`);
+    },
+    coverage(host) {
+      C.coverageMatrix(host, d);
+      const c = d.coverage.cells, good = c.filter((x) => x[2] >= 0.95).length;
+      C.punch(host, `${fmt(100 * good / c.length, 0)}% jaama-aastatest on vähemalt 95% katvusega (${c.length} jaama-aastat); ${d.meta.current_year}. aasta on pooleli.`);
+    },
     methods(host) {
       host.innerHTML = `<div class="methods"><b>Andmed ja meetod</b> <span class="review-flag">valdkonnaekspert ülevaatamata</span>
         <p><b>Allikas ja päritolu:</b> Keskkonnaagentuuri avaandmed (keskkonnaandmed.envir.ee, tabel f_hydroseire): avaldatud seireread, tunniväärtused koondatud UTC kalendripäevadeks (päev vajab ≥ 20 tundi). Tabeli skeem ei nimeta ühikuid ega kvaliteeditaset: vooluhulk on eeldatud m³/s ja veetemperatuur °C (toetab kontroll: 15 jaama mediaanerivool 4–7 l/s/km²), kvaliteeditaset ei eeldata. Lisaks on rakendatud meie enda lihtne sõel (negatiivsed väärtused, ebareaalsed hüpped, võimatu temperatuur).</p>

@@ -64,7 +64,7 @@
       note: `Ohtlike osakaal: ${years.filter((y) => share.get(y) != null).map((y) => `${y} ${fmt(100 * share.get(y), 1)}%`).join(', ')}. Osakaal sõltub väga peatükist 10 (põlevkivituhk) ja selle ohtlikkuse märkimisest.` });
   }
 
-  function trade(host, d) {
+  function trade(host, d, punchFn) {
     const groups = [['export_partners', 'Eksport partnerriigi järgi'], ['import_partners', 'Import partnerriigi järgi']];
     C.selectable(host, groups.map(([v, t]) => ({ value: v, text: t })), 'export_partners', 'Suund:', (holder, key) => {
       const rows = d[key];
@@ -76,6 +76,7 @@
         rows: keys.map((k) => ({ label: k, cells: by.get(k) })), color: (v) => C.kit.sequential(Math.sqrt(Math.max(v, 0)), Math.sqrt(max)), colLabel: String, showCol: () => true,
         fmtCell: (v) => (v === undefined ? '–' : fmt(v / scale, scale === 1 ? 0 : 1)), tip: (v) => `${fmt(v / scale, scale === 1 ? 0 : 1)} ${unit}`, labelW: 130, rowH: 22,
         ramp: `<span>0</span><i class="seq"></i><span>${fmt(max / scale, 0)} ${unit}</span>`, note: 'Partnerriik on märgitud ainult piiriülese liikumise ridadel; "Määramata" tähendab, et riiki ei ole teada.' });
+      if (punchFn) C.punch(holder, punchFn(key, by, keys));
     });
   }
 

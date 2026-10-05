@@ -163,3 +163,27 @@ def test_hover_shows_tooltip(browser: Browser, site: str) -> None:
     assert page.locator(".viz-tip").is_visible()
     assert "jaama" in page.locator(".viz-tip").inner_text()
     page.close()
+
+
+PUNCH_PAGES = ["index.html", "ilm-ja-kliima.html", "vesi.html", "valisohk.html", "energeetika.html",
+               "jaatmed.html", "mets.html"]  # fmt: skip
+
+
+@pytest.mark.browser
+@pytest.mark.parametrize("path", PUNCH_PAGES)
+def test_every_chart_has_a_punchline(browser: Browser, site: str, path: str) -> None:
+    """Each chart block carries a data-derived main message (puänt) above its title."""
+    page = browser.new_page(viewport={"width": 1000, "height": 800})
+    page.route("**/public.tableau.com/**", lambda r: r.abort())
+    page.goto(f"{site}/{path}")
+    page.wait_for_selector("svg[role=img]")
+    page.wait_for_timeout(300)
+    missing = page.evaluate(
+        """() => [...document.querySelectorAll('[data-climate],[data-hydro],[data-airenergy],[data-waste],[data-forest]')]
+            .filter((h) => h.querySelector('svg[role=img]') && !h.querySelector('.viz-punch'))
+            .map((h) => Object.values(h.dataset).join(':'))"""
+    )
+    assert missing == []
+    texts = page.eval_on_selector_all(".viz-punch", "els => els.map(e => e.textContent)")
+    assert all(t.strip() and "undefined" not in t and "NaN" not in t for t in texts)
+    page.close()
