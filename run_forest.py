@@ -42,9 +42,40 @@ def changes(national: dict[str, list[dict[str, Any]]], span: int) -> dict[str, A
     return out
 
 
+def checks(
+    nat: dict[str, list[dict[str, Any]]],
+    species: dict[str, list[dict[str, Any]]],
+    owners: dict[str, list[dict[str, Any]]],
+    management: dict[str, list[dict[str, Any]]],
+    age: dict[str, list[dict[str, Any]]],
+) -> dict[str, Any]:
+    """Do the classes tile the total in the latest year? (selection sanity checks)"""
+
+    def latest(s: list[dict[str, Any]]) -> float:
+        return float(s[-1]["value"])
+
+    out: dict[str, Any] = {}
+    if nat["stock"] and species:
+        out["species_vs_stock"] = fa.shares_check(
+            [latest(s) for s in species.values()], latest(nat["stock"])
+        )
+    if nat["area"] and owners:
+        out["owners_vs_area"] = fa.shares_check(
+            [latest(s) for s in owners.values()], latest(nat["area"])
+        )
+    parts = [latest(management[k]) for k in fa.MANAGEMENT_PARTS if k in management]
+    if management.get("Kokku mets") and len(parts) == len(fa.MANAGEMENT_PARTS):
+        out["management_vs_total"] = fa.shares_check(parts, latest(management["Kokku mets"]))
+    if nat["area"] and age:
+        out["age_vs_area"] = fa.shares_check([latest(s) for s in age.values()], latest(nat["area"]))
+    return out
+
+
 def build(df: pl.DataFrame, generated: str | None = None) -> dict[str, Any]:
     """Return the JSON-ready analysis."""
     nat = fa.national(df)
+    species, owners = fa.species(df), fa.owners(df)
+    management, age = fa.management(df), fa.age_structure(df)
     years = sorted(df["aasta"].unique().to_list())
     return {
         "meta": {
@@ -70,11 +101,13 @@ def build(df: pl.DataFrame, generated: str | None = None) -> dict[str, Any]:
         },
         "national": nat,
         "changes": changes(nat, 10),
-        "species": fa.species(df),
-        "owners": fa.owners(df),
-        "management": fa.management(df),
+        "species": species,
+        "owners": owners,
+        "management": management,
+        "management_parts": fa.MANAGEMENT_PARTS,
         "counties": fa.counties(df),
-        "age": fa.age_structure(df),
+        "age": age,
+        "checks": checks(nat, species, owners, management, age),
         "errors": fa.error_summary(df),
     }
 

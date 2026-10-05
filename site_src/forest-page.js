@@ -63,7 +63,9 @@
     stock(host) {
       const c = d.changes.stock?.since_start, c10 = d.changes.stock?.last_10_years;
       C.errLines(host, { title: 'Kasvavate puude tagavara', subtitle: 'Kogutagavara koos veaga.', unit: 'tuhat m³', dec: 0, series: [{ label: 'Tagavara', color: COL[0], data: N.stock }], note: 'Tagavara on kogu metsamaa kasvavate puude maht. Hinnangud kattuvad 5-aastaste perioodidena.' });
-      C.punch(host, `Tagavara on ${mln(last(N.stock).value)} mln m³ (${pe(last(N.stock).err)}); ${c ? `${sgn(100 * c.pct, 0)}% aastast ${c.from} (${verdict(c)})` : ''}${c10 ? `, viimase kümne aasta muutus ${sgn(100 * c10.pct, 1)}% (${verdict(c10)})` : ''}.`);
+      const peak = N.stock.reduce((a, r) => (r.value > a.value ? r : a), N.stock[0]), now = last(N.stock);
+      const fromPeak = peak.year < now.year - 2 && peak.err != null && now.err != null ? { diff: now.value - peak.value, ok: Math.abs(now.value - peak.value) > Math.hypot(peak.value * peak.err, now.value * now.err) } : null;
+      C.punch(host, `Tagavara on ${mln(now.value)} mln m³ (${pe(now.err)}); ${c ? `${sgn(100 * c.pct, 0)}% aastast ${c.from} (${verdict(c)})` : ''}${fromPeak ? `. Kõrgeim hinnang oli ${peak.year}. aastal (${mln(peak.value)} mln m³); sellest on ${sgn(100 * fromPeak.diff / peak.value, 1)}% (${fromPeak.ok ? 'ületab veapiiri' : 'jääb veapiiri sisse'})` : ''}.`);
     },
     perha(host) {
       C.errLines(host, { title: 'Hektaritagavara', subtitle: 'Keskmine kasvavate puude maht hektari kohta.', unit: 'm³/ha', dec: 0, series: [{ label: 'Hektaritagavara', color: COL[3], data: N.stock_per_ha }], height: 260 });
@@ -72,7 +74,7 @@
     },
     balance(host) {
       if (none(host, N.felling_to_increment_5y, 'Juurdekasv ja raie')) return;
-      C.errLines(host, { title: 'Juurdekasv ja raie', subtitle: 'Aastane juurdekasv ja SMI raiehinnang (5-aastane periood).', unit: 'tuhat m³/a', dec: 0, zero: true, series: [{ label: 'Juurdekasv', color: COL[2], data: N.increment }, { label: 'Raie (SMI hinnang)', color: COL[1], data: N.felling_5y }], note: 'Raie on SMI hinnang proovitükkidelt ja erineb raiedokumentide põhisest statistikast. Suhte vea arvutus eeldab sõltumatuid hinnanguid (ligikaudne).' });
+      C.errLines(host, { title: 'Juurdekasv ja raie', subtitle: 'Aastane juurdekasv ja SMI raiehinnang (5-aastane periood).', unit: 'tuhat m³/a', dec: 0, zero: true, series: [{ label: 'Juurdekasv', color: COL[2], data: N.increment }, { label: 'Raie (SMI hinnang)', color: COL[1], data: N.felling_5y }], note: 'Raie on SMI hinnang proovitükkidelt ja erineb raiedokumentide põhisest statistikast. Juurdekasvu täpne definitsioon (kogu- või puhasjuurdekasv) on kinnitamata. Suhte vea arvutus eeldab sõltumatuid hinnanguid (ligikaudne).' });
       const R = N.felling_to_increment_5y, r = last(R);
       const under = R.filter((x) => x.err != null && x.value * (1 + x.err) < 1).length, over = R.filter((x) => x.err != null && x.value * (1 - x.err) > 1).length;
       C.punch(host, `Raie moodustab ${L}. aastal ${fmt(100 * r.value, 0)}% juurdekasvust (${pe(r.err)}); ${over ? `${over} aastal oli raie eristatavalt juurdekasvust suurem` : 'ükski aasta ei ole raie eristatavalt juurdekasvust suurem'}, ${under} aastal eristatavalt väiksem.`);
@@ -95,8 +97,9 @@
     },
     management(host) {
       if (none(host, d.management, 'Majanduskategooriad')) return;
-      const obj = Object.fromEntries(Object.entries(d.management).filter(([k]) => k !== 'Kokku mets' && k !== 'Kaitstav mets'));
-      C.errBars(host, { title: 'Metsa majanduskategooria', subtitle: 'Metsamaa pindala majanduskategooria järgi.', unit: 'tuhat ha', dec: 0, height: 260, cats: catBars(obj, null, PAIR), note: 'Rangelt kaitstav ja majanduspiiranguga mets on nii kaitstavad kui piirangutega metsad; kategooriad on SMI klassifikaator.' });
+      const parts = d.management_parts || ['Majandusmets', 'Majanduspiiranguga mets', 'Rangelt kaitstav mets'];
+      const obj = Object.fromEntries(parts.filter((k) => d.management[k]).map((k) => [k, d.management[k]]));
+      C.errBars(host, { title: 'Metsa majanduskategooria', subtitle: 'Metsamaa pindala majanduskategooria järgi.', unit: 'tuhat ha', dec: 0, height: 260, cats: catBars(obj, null, PAIR), note: 'Kolm üksteist välistavat kategooriat (summa = kogu metsamaa); SMI klassifikaator, mitte õiguslik kaitsestaatus.' });
       const total = d.management['Kokku mets'] ? last(d.management['Kokku mets']).value : null;
       const strict = obj['Rangelt kaitstav mets'] ? last(obj['Rangelt kaitstav mets']) : null;
       C.punch(host, strict && total ? `Rangelt kaitstavat metsa on ${fmt(100 * strict.value / total, 0)}% metsamaast (${fmt(strict.value, 0)} tuhat ha, ${pe(strict.err)}).` : 'Metsa jaotus majanduskategooriate järgi.');
@@ -111,9 +114,10 @@
     },
     age(host) {
       if (none(host, d.age, 'Vanuseline jaotus')) return;
-      const keys = Object.keys(d.age).sort((a, b) => parseInt(a, 10) - parseInt(b, 10));
+      const lowerBound = (name) => (/^[.…]/.test(name) ? 0 : parseInt(name, 10));
+      const keys = Object.keys(d.age).sort((a, b) => lowerBound(a) - lowerBound(b));
       const obj = Object.fromEntries(keys.map((k) => [k, d.age[k]]));
-      C.errBars(host, { title: 'Puistute vanuseline jaotus', subtitle: 'Metsamaa pindala vanuseklassi järgi (omandirühmad liidetud).', unit: 'tuhat ha', dec: 0, rotate: true, height: 320, cats: catBars(obj, null, PAIR), note: 'Vea arvutus liidab omandirühmade vead ruutude summana (ligikaudne).' });
+      C.errBars(host, { title: 'Puistute vanuseline jaotus', subtitle: 'Metsamaa pindala 20-aastaste vanuseklasside järgi (omandirühmad liidetud).', unit: 'tuhat ha', dec: 0, rotate: true, height: 320, cats: catBars(obj, null, PAIR), note: 'Vea arvutus liidab omandirühmade vead ruutude summana (ligikaudne).' });
       const ch = changes(obj), big = ch.slice().sort((a, b) => Math.abs(b.diff) - Math.abs(a.diff))[0], top = ch.slice().sort((a, b) => b.b.value - a.b.value)[0];
       C.punch(host, `Kõige suurem on vanuseklass ${top.name} (${fmt(top.b.value, 0)} tuhat ha); suurim muutus on klassis ${big.name} (${sgn(100 * big.pct, 0)}%, ${big.ok == null ? 'eristatavus teadmata' : big.ok ? 'ületab veapiiri' : 'jääb veapiiri sisse'}).`);
     },
@@ -129,6 +133,7 @@
         <p><b>Allikas ja päritolu:</b> Keskkonnaagentuuri avaandmed (keskkonnaandmed.envir.ee, tabel f_smi_tulemused, SMI arvutustulemused). Hinnangud põhinevad riikliku statistilise metsainventuuri proovitükkidel; need on <b>valimipõhised hinnangud</b>, mitte täisloendus, ja kannavad suhtelist viga.</p>
         <p><b>Tõlgendus (kinnitamata):</b> ${m.interpretation.join(' ')}</p>
         <p><b>Meetod:</b> read valiti tabeli, näitaja, arvutustüübi ja täidetud klassifikaatorite täpse kombinatsiooni järgi, et kogusummasid ja osasummasid ei segataks. Muutust nimetatakse eristatavaks ainult siis, kui see ületab ühendatud veapiiri (ruutude summa ruutjuur). Hinnangute vea mediaan ${fmt(100 * q.quantiles.p50, 1)}%.</p>
+        <p><b>Kontrollid:</b> ${Object.entries(d.checks || {}).map(([k, v]) => `${({ species_vs_stock: 'puuliikide tagavara summa', owners_vs_area: 'omandirühmade pindala summa', management_vs_total: 'majanduskategooriate summa', age_vs_area: 'vanuseklasside summa' })[k] || k} = ${fmt(100 * v, 1)}% kogusummast`).join('; ') || 'puuduvad'}. Väärtus ~100% tähendab, et klassid katavad kogusumma üks kord.</p>
         <p><b>Piirangud:</b> kattuvad perioodid, seega aastate vahelisi muutusi ei tohi tõlgendada aasta-aasta trendina; raie on SMI hinnang, mitte raiedokumentide statistika; väikeste rühmade hinnangud on ebatäpsed; pika perioodi võrdlusel võib inventuuri meetod muutuda. Genereeritud ${m.generated_utc.slice(0, 10)} (UTC).</p></div>`;
     },
   };

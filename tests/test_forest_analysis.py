@@ -44,9 +44,9 @@ def cube() -> pl.DataFrame:
             row(1, "Pindala", fa.SUM, y, 1000.0, 0.02, **lnd, omand="Riigimetsamaa"),
             row(1, "Pindala", fa.SUM, y, 1300.0, 0.02, **lnd, omand="Teised maaomanikud"),
             row(13, "Pindala", fa.SUM, y, 100.0, 0.05, **lnd, omand="Riigimetsamaa",
-                filtri_tunnus2="Vanus", filter2="81-100"),
+                filtri_tunnus2="Vanus", filter2="81…100 a"),
             row(13, "Pindala", fa.SUM, y, 200.0, 0.05, **lnd, omand="Teised maaomanikud",
-                filtri_tunnus2="Vanus", filter2="81-100"),
+                filtri_tunnus2="Vanus", filter2="81…100 a"),
         ]  # fmt: skip
     return pl.DataFrame(rows, infer_schema_length=None)
 
@@ -91,7 +91,7 @@ def test_change_flags_only_differences_larger_than_the_combined_error() -> None:
 def test_owner_age_and_error_summaries() -> None:
     d = cube()
     assert set(fa.owners(d)) == {"Riigimetsamaa", "Teised maaomanikud"}
-    assert fa.age_structure(d)["81-100"][0]["value"] == 300.0
+    assert fa.age_structure(d)["81…100 a"][0]["value"] == 300.0
     q = fa.error_summary(d)
     assert q["rows"] == d.height and q["share_over_50pct"] == pytest.approx(2 / d.height)
 
@@ -102,3 +102,25 @@ def test_categories_without_a_matching_series_are_dropped_not_returned_empty() -
     assert "Mänd" in set(d["enamuspuuliik"].drop_nulls())
     assert fa.species(d) == {}  # no stock-by-species rows in the cube -> nothing, not {"Mänd": []}
     assert fa.management(d) == {} and fa.counties(d) == {}
+
+
+def test_age_classes_use_one_scheme_only() -> None:
+    """Regression: 10-year ("21...30 a") and 20-year ("21…40 a") classes share one classifier."""
+    rows = []
+    for name, v in (
+        ("21…40 a", 400.0),
+        ("81…100 a", 100.0),
+        ("21...30 a", 250.0),
+        ("31...40 a", 150.0),
+    ):
+        rows.append(row(13, "Pindala", fa.SUM, 2024, v, 0.05, maakategooria="Metsamaa",
+                        omand="Riigimetsamaa", filtri_tunnus2="Vanus", filter2=name))  # fmt: skip
+    d = pl.DataFrame(rows, infer_schema_length=None)
+    assert set(fa.age_structure(d)) == {"21…40 a", "81…100 a"}
+    assert set(fa.age_structure(d, scheme="...")) == {"21...30 a", "31...40 a"}
+
+
+def test_shares_check_flags_classes_that_do_not_tile_the_total() -> None:
+    assert fa.shares_check([600.0, 400.0], 1000.0) == pytest.approx(1.0)
+    assert fa.shares_check([600.0, 900.0], 1000.0) == pytest.approx(1.5)  # overlapping classes
+    assert fa.shares_check([1.0], None) is None

@@ -243,12 +243,20 @@ def counties(df: pl.DataFrame) -> dict[str, dict[str, list[dict[str, Any]]]]:
     return out
 
 
-def age_structure(df: pl.DataFrame) -> dict[str, list[dict[str, Any]]]:
-    """Area by age class, owners added (table 13, classifier 'Vanus')."""
+AGE_20_YEAR = "…"  # the 20-year classes ("21…40 a") use the ellipsis character, the 10-year
+# classes ("21...30 a") three dots; both sets sit in the same classifier and must not be mixed.
+MANAGEMENT_PARTS = ["Majandusmets", "Majanduspiiranguga mets", "Rangelt kaitstav mets"]
+# ^ non-overlapping: "Majandatavad mets" and "Kaitstav mets" are sums of these.
+
+
+def age_structure(df: pl.DataFrame, scheme: str = AGE_20_YEAR) -> dict[str, list[dict[str, Any]]]:
+    """Area by age class, owners added (table 13, classifier 'Vanus', one class scheme only)."""
     classes = (
-        df.filter((pl.col("tabeli_number") == 13) & (pl.col("filtri_tunnus2") == "Vanus"))[
-            "filter2"
-        ]
+        df.filter(
+            (pl.col("tabeli_number") == 13)
+            & (pl.col("filtri_tunnus2") == "Vanus")
+            & pl.col("filter2").str.contains(scheme, literal=True)
+        )["filter2"]
         .drop_nulls()
         .unique()
     )
@@ -260,6 +268,11 @@ def age_structure(df: pl.DataFrame) -> dict[str, list[dict[str, Any]]]:
         if data:
             out[c] = data
     return out
+
+
+def shares_check(parts: list[float], total: float | None) -> float | None:
+    """Sum of parts divided by the stated total: ~1 means the classes tile the total."""
+    return None if not total else sum(parts) / total
 
 
 def error_summary(df: pl.DataFrame) -> dict[str, Any]:

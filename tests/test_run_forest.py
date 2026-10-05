@@ -29,3 +29,10 @@ def test_cli_roundtrip(tmp_path: Path) -> None:
     rf.main(["--raw", str(tmp_path / "raw.parquet"), "--out", str(tmp_path)])
     data = json.loads((tmp_path / "forest.json").read_text(encoding="utf-8"))
     assert data["national"]["area"][0]["value"] == 2300.0
+
+
+def test_checks_report_how_well_classes_tile_the_totals() -> None:
+    out = rf.build(cube(), "2026-01-01")["checks"]
+    # owners (1000 + 1300 in both years) against the national area (2300 -> 2530 in 2024)
+    assert out["owners_vs_area"] == pytest.approx(2300.0 / 2530.0)
+    assert "species_vs_stock" not in out  # no species rows in the cube
