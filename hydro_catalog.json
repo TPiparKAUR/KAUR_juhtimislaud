@@ -1,0 +1,2485 @@
+{
+ "table": "f_hydroseire",
+ "stations": [
+  {
+   "jaam_kood": 41925,
+   "jaam_nimi": "Mustvee",
+   "valgala_nimi": "---",
+   "valgala_suurus_km2": null,
+   "kaugus_suudmest_km": null,
+   "jaam_laiuskraad": 58.846978,
+   "jaam_pikkuskraad": 26.952581,
+   "veekogu_nimi": "Peipsi",
+   "series": [
+    {
+     "series": "WT min",
+     "rows": 129357,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.75,
+      "first_utc": 4.77,
+      "last_utc": 4.78
+     }
+    },
+    {
+     "series": "WL min",
+     "rows": 129333,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.77,
+      "first_utc": 4.81,
+      "last_utc": 4.86
+     }
+    },
+    {
+     "series": "WL max",
+     "rows": 129333,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.76,
+      "first_utc": 4.75,
+      "last_utc": 4.74
+     }
+    },
+    {
+     "series": "WT max",
+     "rows": 129357,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.75,
+      "first_utc": 4.77,
+      "last_utc": 4.76
+     }
+    },
+    {
+     "series": "WL avg",
+     "rows": 129333,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.76,
+      "first_utc": 4.77,
+      "last_utc": 4.83
+     }
+    },
+    {
+     "series": "WT avg",
+     "rows": 129357,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.77,
+      "first_utc": 4.71,
+      "last_utc": 4.86
+     }
+    }
+   ]
+  },
+  {
+   "jaam_kood": 41025,
+   "jaam_nimi": "Tartu",
+   "valgala_nimi": "Emajõgi",
+   "valgala_suurus_km2": 7849.0,
+   "kaugus_suudmest_km": 41.5,
+   "jaam_laiuskraad": 58.380022,
+   "jaam_pikkuskraad": 26.726181,
+   "veekogu_nimi": "Emajõgi",
+   "series": [
+    {
+     "series": "Äravool max",
+     "rows": 129357,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.74,
+      "first_utc": 4.74,
+      "last_utc": 4.75
+     }
+    },
+    {
+     "series": "Äravool min",
+     "rows": 129357,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.82,
+      "first_utc": 4.75,
+      "last_utc": 4.73
+     }
+    },
+    {
+     "series": "WT max",
+     "rows": 129349,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.82,
+      "first_utc": 4.89,
+      "last_utc": 4.78
+     }
+    },
+    {
+     "series": "Äravool avg",
+     "rows": 129357,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.81,
+      "first_utc": 4.85,
+      "last_utc": 5.1
+     }
+    },
+    {
+     "series": "WL max",
+     "rows": 129357,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 5.04,
+      "first_utc": 4.99,
+      "last_utc": 5.6
+     }
+    },
+    {
+     "series": "WT min",
+     "rows": 129349,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.78,
+      "first_utc": 4.79,
+      "last_utc": 5.02
+     }
+    },
+    {
+     "series": "WL min",
+     "rows": 129357,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.97,
+      "first_utc": 5.01,
+      "last_utc": 4.87
+     }
+    },
+    {
+     "series": "WT avg",
+     "rows": 129349,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 5.17,
+      "first_utc": 5.41,
+      "last_utc": 5.13
+     }
+    },
+    {
+     "series": "WL avg",
+     "rows": 129357,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 5.35,
+      "first_utc": 4.76,
+      "last_utc": 4.73
+     }
+    }
+   ]
+  },
+  {
+   "jaam_kood": 41112,
+   "jaam_nimi": "Kasari",
+   "valgala_nimi": "Kasari jõgi",
+   "valgala_suurus_km2": 2642.0,
+   "kaugus_suudmest_km": 19.6,
+   "jaam_laiuskraad": 58.726634,
+   "jaam_pikkuskraad": 23.99693,
+   "veekogu_nimi": "Kasari j.",
+   "series": [
+    {
+     "series": "Äravool avg",
+     "rows": 129222,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.76,
+      "first_utc": 4.81,
+      "last_utc": 5.0
+     }
+    },
+    {
+     "series": "WT min",
+     "rows": 129196,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.77,
+      "first_utc": 5.31,
+      "last_utc": 4.81
+     }
+    },
+    {
+     "series": "WT avg",
+     "rows": 129196,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.73,
+      "first_utc": 4.76,
+      "last_utc": 4.71
+     }
+    },
+    {
+     "series": "Äravool max",
+     "rows": 129222,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.67,
+      "first_utc": 4.76,
+      "last_utc": 4.71
+     }
+    },
+    {
+     "series": "WL avg",
+     "rows": 129222,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.89,
+      "first_utc": 4.75,
+      "last_utc": 4.75
+     }
+    },
+    {
+     "series": "WT max",
+     "rows": 129196,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.72,
+      "first_utc": 4.71,
+      "last_utc": 4.74
+     }
+    },
+    {
+     "series": "WL min",
+     "rows": 129222,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.66,
+      "first_utc": 4.71,
+      "last_utc": 4.7
+     }
+    },
+    {
+     "series": "WL max",
+     "rows": 129222,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.68,
+      "first_utc": 4.65,
+      "last_utc": 4.99
+     }
+    },
+    {
+     "series": "Äravool min",
+     "rows": 129222,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.73,
+      "first_utc": 4.64,
+      "last_utc": 4.73
+     }
+    }
+   ]
+  },
+  {
+   "jaam_kood": 41202,
+   "jaam_nimi": "Separa",
+   "valgala_nimi": "Avijõgi",
+   "valgala_suurus_km2": 388.0,
+   "kaugus_suudmest_km": 4.1,
+   "jaam_laiuskraad": 58.966152,
+   "jaam_pikkuskraad": 27.036676,
+   "veekogu_nimi": "Avijõgi",
+   "series": [
+    {
+     "series": "WL avg",
+     "rows": 129329,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.69,
+      "first_utc": 4.71,
+      "last_utc": 4.92
+     }
+    },
+    {
+     "series": "WT min",
+     "rows": 129328,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 5.65,
+      "first_utc": 4.82,
+      "last_utc": 4.68
+     }
+    },
+    {
+     "series": "WL min",
+     "rows": 129328,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 5.28,
+      "first_utc": 4.7,
+      "last_utc": 4.8
+     }
+    },
+    {
+     "series": "Äravool avg",
+     "rows": 129329,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 7.28,
+      "first_utc": 4.65,
+      "last_utc": 4.9
+     }
+    },
+    {
+     "series": "Äravool min",
+     "rows": 129328,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.82,
+      "first_utc": 5.15,
+      "last_utc": 4.96
+     }
+    },
+    {
+     "series": "WT max",
+     "rows": 129328,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.65,
+      "first_utc": 4.79,
+      "last_utc": 4.66
+     }
+    },
+    {
+     "series": "Äravool max",
+     "rows": 129328,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.81,
+      "first_utc": 4.69,
+      "last_utc": 4.66
+     }
+    },
+    {
+     "series": "WL max",
+     "rows": 129328,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.89,
+      "first_utc": 4.68,
+      "last_utc": 4.72
+     }
+    },
+    {
+     "series": "WT avg",
+     "rows": 129328,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.68,
+      "first_utc": 4.66,
+      "last_utc": 4.67
+     }
+    }
+   ]
+  },
+  {
+   "jaam_kood": 41010,
+   "jaam_nimi": "Narva linn",
+   "valgala_nimi": "Narva jõgi",
+   "valgala_suurus_km2": 56047.0,
+   "kaugus_suudmest_km": 14.1,
+   "jaam_laiuskraad": 59.382752,
+   "jaam_pikkuskraad": 28.206653,
+   "veekogu_nimi": "Narva",
+   "series": [
+    {
+     "series": "WT avg",
+     "rows": 78894,
+     "first_utc": "2017-10-03T12:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.62,
+      "first_utc": 4.64,
+      "last_utc": 4.66
+     }
+    },
+    {
+     "series": "WL max",
+     "rows": 78895,
+     "first_utc": "2017-10-03T11:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.6,
+      "first_utc": 4.64,
+      "last_utc": 4.65
+     }
+    },
+    {
+     "series": "WT min",
+     "rows": 78894,
+     "first_utc": "2017-10-03T12:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.61,
+      "first_utc": 4.72,
+      "last_utc": 4.66
+     }
+    },
+    {
+     "series": "WT max",
+     "rows": 78894,
+     "first_utc": "2017-10-03T12:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.68,
+      "first_utc": 4.67,
+      "last_utc": 4.67
+     }
+    },
+    {
+     "series": "Äravool min",
+     "rows": 129353,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.63,
+      "first_utc": 4.67,
+      "last_utc": 4.68
+     }
+    },
+    {
+     "series": "WL avg",
+     "rows": 78954,
+     "first_utc": "2017-10-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.62,
+      "first_utc": 4.69,
+      "last_utc": 4.65
+     }
+    },
+    {
+     "series": "Äravool avg",
+     "rows": 119153,
+     "first_utc": "2013-03-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.64,
+      "first_utc": 4.64,
+      "last_utc": 4.68
+     }
+    },
+    {
+     "series": "Äravool max",
+     "rows": 118676,
+     "first_utc": "2013-03-20T21:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.67,
+      "first_utc": 4.7,
+      "last_utc": 5.08
+     }
+    },
+    {
+     "series": "WL min",
+     "rows": 78895,
+     "first_utc": "2017-10-03T11:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.82,
+      "first_utc": 4.87,
+      "last_utc": 4.88
+     }
+    }
+   ]
+  },
+  {
+   "jaam_kood": 41154,
+   "jaam_nimi": "Luguse",
+   "valgala_nimi": "Luguse jõgi",
+   "valgala_suurus_km2": 98.2,
+   "kaugus_suudmest_km": 2.0,
+   "jaam_laiuskraad": 58.81026,
+   "jaam_pikkuskraad": 22.712464,
+   "veekogu_nimi": "Luguse j.",
+   "series": [
+    {
+     "series": "Äravool min",
+     "rows": 129034,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.7,
+      "first_utc": 4.68,
+      "last_utc": 4.67
+     }
+    },
+    {
+     "series": "WL max",
+     "rows": 129034,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.65,
+      "first_utc": 4.82,
+      "last_utc": 4.99
+     }
+    },
+    {
+     "series": "WT avg",
+     "rows": 129175,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.67,
+      "first_utc": 4.7,
+      "last_utc": 4.64
+     }
+    },
+    {
+     "series": "WL avg",
+     "rows": 129034,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.65,
+      "first_utc": 4.67,
+      "last_utc": 4.86
+     }
+    },
+    {
+     "series": "WT min",
+     "rows": 129175,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.81,
+      "first_utc": 4.6,
+      "last_utc": 4.63
+     }
+    },
+    {
+     "series": "Äravool max",
+     "rows": 129034,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.61,
+      "first_utc": 4.65,
+      "last_utc": 4.64
+     }
+    },
+    {
+     "series": "Äravool avg",
+     "rows": 129034,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.62,
+      "first_utc": 4.65,
+      "last_utc": 4.65
+     }
+    },
+    {
+     "series": "WL min",
+     "rows": 129034,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.62,
+      "first_utc": 4.63,
+      "last_utc": 4.7
+     }
+    },
+    {
+     "series": "WT max",
+     "rows": 129174,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.64,
+      "first_utc": 4.61,
+      "last_utc": 4.71
+     }
+    }
+   ]
+  },
+  {
+   "jaam_kood": 41174,
+   "jaam_nimi": "Kaansoo",
+   "valgala_nimi": "Pärnu jõgi",
+   "valgala_suurus_km2": 178.0,
+   "kaugus_suudmest_km": 1.0,
+   "jaam_laiuskraad": 58.577203,
+   "jaam_pikkuskraad": 25.221699,
+   "veekogu_nimi": "Saarjõgi",
+   "series": [
+    {
+     "series": "WL avg",
+     "rows": 129306,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T18:00:00",
+     "seconds": {
+      "rows": 4.61,
+      "first_utc": 4.64,
+      "last_utc": 4.62
+     }
+    },
+    {
+     "series": "WT avg",
+     "rows": 128837,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T18:00:00",
+     "seconds": {
+      "rows": 4.62,
+      "first_utc": 4.68,
+      "last_utc": 4.63
+     }
+    },
+    {
+     "series": "WT min",
+     "rows": 128820,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T18:00:00",
+     "seconds": {
+      "rows": 4.63,
+      "first_utc": 4.64,
+      "last_utc": 4.6
+     }
+    },
+    {
+     "series": "WL max",
+     "rows": 129306,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T18:00:00",
+     "seconds": {
+      "rows": 4.66,
+      "first_utc": 4.62,
+      "last_utc": 4.62
+     }
+    },
+    {
+     "series": "Äravool avg",
+     "rows": 129264,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T18:00:00",
+     "seconds": {
+      "rows": 4.64,
+      "first_utc": 4.6,
+      "last_utc": 4.64
+     }
+    },
+    {
+     "series": "Äravool max",
+     "rows": 129264,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T18:00:00",
+     "seconds": {
+      "rows": 4.67,
+      "first_utc": 4.87,
+      "last_utc": 4.93
+     }
+    },
+    {
+     "series": "Äravool min",
+     "rows": 129264,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T18:00:00",
+     "seconds": {
+      "rows": 4.7,
+      "first_utc": 4.91,
+      "last_utc": 4.84
+     }
+    },
+    {
+     "series": "WT max",
+     "rows": 128838,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T18:00:00",
+     "seconds": {
+      "rows": 4.83,
+      "first_utc": 4.6,
+      "last_utc": 5.91
+     }
+    },
+    {
+     "series": "WL min",
+     "rows": 129306,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T18:00:00",
+     "seconds": {
+      "rows": 4.68,
+      "first_utc": 4.65,
+      "last_utc": 4.63
+     }
+    }
+   ]
+  },
+  {
+   "jaam_kood": 41133,
+   "jaam_nimi": "Tori",
+   "valgala_nimi": "Pärnu jõgi",
+   "valgala_suurus_km2": 284.0,
+   "kaugus_suudmest_km": 5.0,
+   "jaam_laiuskraad": 58.799416,
+   "jaam_pikkuskraad": 25.476489,
+   "veekogu_nimi": "Prandi",
+   "series": [
+    {
+     "series": "Äravool avg",
+     "rows": 129312,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.62,
+      "first_utc": 4.61,
+      "last_utc": 4.65
+     }
+    },
+    {
+     "series": "Äravool min",
+     "rows": 50405,
+     "first_utc": "2021-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.63,
+      "first_utc": 4.6,
+      "last_utc": 4.65
+     }
+    },
+    {
+     "series": "WT avg",
+     "rows": 129313,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.63,
+      "first_utc": 4.62,
+      "last_utc": 4.63
+     }
+    },
+    {
+     "series": "WL avg",
+     "rows": 129312,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.65,
+      "first_utc": 4.82,
+      "last_utc": 4.9
+     }
+    },
+    {
+     "series": "WT min",
+     "rows": 38876,
+     "first_utc": "2022-04-26T09:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.65,
+      "first_utc": 4.64,
+      "last_utc": 4.71
+     }
+    },
+    {
+     "series": "Äravool max",
+     "rows": 50405,
+     "first_utc": "2021-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.64,
+      "first_utc": 4.61,
+      "last_utc": 4.66
+     }
+    },
+    {
+     "series": "WL max",
+     "rows": 50405,
+     "first_utc": "2021-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.68,
+      "first_utc": 4.63,
+      "last_utc": 4.67
+     }
+    },
+    {
+     "series": "WL min",
+     "rows": 50405,
+     "first_utc": "2021-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.68,
+      "first_utc": 4.64,
+      "last_utc": 4.63
+     }
+    },
+    {
+     "series": "WT max",
+     "rows": 38876,
+     "first_utc": "2022-04-26T09:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.69,
+      "first_utc": 4.83,
+      "last_utc": 4.63
+     }
+    }
+   ]
+  },
+  {
+   "jaam_kood": 41097,
+   "jaam_nimi": "Pajupea",
+   "valgala_nimi": "Pirita jõgi",
+   "valgala_suurus_km2": 84.0,
+   "kaugus_suudmest_km": 2.4,
+   "jaam_laiuskraad": 59.380909,
+   "jaam_pikkuskraad": 24.968918,
+   "veekogu_nimi": "Leivajõgi",
+   "series": [
+    {
+     "series": "WT max",
+     "rows": 129286,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.67,
+      "first_utc": 4.76,
+      "last_utc": 4.64
+     }
+    },
+    {
+     "series": "WL max",
+     "rows": 129357,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.69,
+      "first_utc": 4.77,
+      "last_utc": 4.65
+     }
+    },
+    {
+     "series": "WT min",
+     "rows": 129286,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.66,
+      "first_utc": 4.64,
+      "last_utc": 4.9
+     }
+    },
+    {
+     "series": "WL min",
+     "rows": 129357,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.94,
+      "first_utc": 5.21,
+      "last_utc": 4.86
+     }
+    },
+    {
+     "series": "Äravool max",
+     "rows": 129357,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.82,
+      "first_utc": 4.84,
+      "last_utc": 4.86
+     }
+    },
+    {
+     "series": "WL avg",
+     "rows": 129357,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.63,
+      "first_utc": 5.28,
+      "last_utc": 4.84
+     }
+    },
+    {
+     "series": "Äravool avg",
+     "rows": 129357,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.61,
+      "first_utc": 4.64,
+      "last_utc": 4.68
+     }
+    },
+    {
+     "series": "Äravool min",
+     "rows": 129357,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.78,
+      "first_utc": 5.08,
+      "last_utc": 4.65
+     }
+    },
+    {
+     "series": "WT avg",
+     "rows": 129240,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.66,
+      "first_utc": 4.64,
+      "last_utc": 4.62
+     }
+    }
+   ]
+  },
+  {
+   "jaam_kood": 41117,
+   "jaam_nimi": "Valgu",
+   "valgala_nimi": "Kasari jõgi",
+   "valgala_suurus_km2": 121.0,
+   "kaugus_suudmest_km": 42.0,
+   "jaam_laiuskraad": 58.817888,
+   "jaam_pikkuskraad": 24.645014,
+   "veekogu_nimi": "Velise j.",
+   "series": [
+    {
+     "series": "WL max",
+     "rows": 108808,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.61,
+      "first_utc": 4.61,
+      "last_utc": 4.63
+     }
+    },
+    {
+     "series": "WT min",
+     "rows": 107554,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.64,
+      "first_utc": 4.61,
+      "last_utc": 4.64
+     }
+    },
+    {
+     "series": "Äravool avg",
+     "rows": 108808,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.62,
+      "first_utc": 4.63,
+      "last_utc": 4.77
+     }
+    },
+    {
+     "series": "Äravool min",
+     "rows": 108808,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.64,
+      "first_utc": 4.62,
+      "last_utc": 4.61
+     }
+    },
+    {
+     "series": "WT avg",
+     "rows": 107552,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.68,
+      "first_utc": 4.62,
+      "last_utc": 4.61
+     }
+    },
+    {
+     "series": "WL avg",
+     "rows": 108808,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.66,
+      "first_utc": 4.65,
+      "last_utc": 4.63
+     }
+    },
+    {
+     "series": "Äravool max",
+     "rows": 108808,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.66,
+      "first_utc": 5.47,
+      "last_utc": 4.6
+     }
+    },
+    {
+     "series": "WT max",
+     "rows": 107549,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.62,
+      "first_utc": 4.66,
+      "last_utc": 4.65
+     }
+    },
+    {
+     "series": "WL min",
+     "rows": 108808,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.8,
+      "first_utc": 4.67,
+      "last_utc": 4.67
+     }
+    }
+   ]
+  },
+  {
+   "jaam_kood": 41184,
+   "jaam_nimi": "Reola",
+   "valgala_nimi": "Emajõgi",
+   "valgala_suurus_km2": 241.0,
+   "kaugus_suudmest_km": 10.2,
+   "jaam_laiuskraad": 58.273392,
+   "jaam_pikkuskraad": 26.742114,
+   "veekogu_nimi": "Porijõgi",
+   "series": [
+    {
+     "series": "WT max",
+     "rows": 129228,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.82,
+      "first_utc": 4.84,
+      "last_utc": 4.91
+     }
+    },
+    {
+     "series": "WL min",
+     "rows": 129292,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.89,
+      "first_utc": 4.82,
+      "last_utc": 4.9
+     }
+    },
+    {
+     "series": "WL avg",
+     "rows": 129312,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.64,
+      "first_utc": 4.65,
+      "last_utc": 4.69
+     }
+    },
+    {
+     "series": "WT avg",
+     "rows": 129228,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.85,
+      "first_utc": 4.7,
+      "last_utc": 5.61
+     }
+    },
+    {
+     "series": "Äravool min",
+     "rows": 129292,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.83,
+      "first_utc": 4.63,
+      "last_utc": 4.69
+     }
+    },
+    {
+     "series": "Äravool max",
+     "rows": 129312,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.86,
+      "first_utc": 4.65,
+      "last_utc": 4.69
+     }
+    },
+    {
+     "series": "Äravool avg",
+     "rows": 129312,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.6,
+      "first_utc": 4.61,
+      "last_utc": 4.65
+     }
+    },
+    {
+     "series": "WT min",
+     "rows": 129228,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.88,
+      "first_utc": 4.67,
+      "last_utc": 4.65
+     }
+    },
+    {
+     "series": "WL max",
+     "rows": 129312,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.66,
+      "first_utc": 4.72,
+      "last_utc": 4.73
+     }
+    }
+   ]
+  },
+  {
+   "jaam_kood": 41192,
+   "jaam_nimi": "Kirumpää",
+   "valgala_nimi": "Võhandu jõgi",
+   "valgala_suurus_km2": 585.0,
+   "kaugus_suudmest_km": 91.1,
+   "jaam_laiuskraad": 57.866022,
+   "jaam_pikkuskraad": 26.993284,
+   "veekogu_nimi": "Võhandu j.",
+   "series": [
+    {
+     "series": "WL max",
+     "rows": 129301,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T17:00:00",
+     "seconds": {
+      "rows": 4.68,
+      "first_utc": 4.78,
+      "last_utc": 4.66
+     }
+    },
+    {
+     "series": "Äravool max",
+     "rows": 104460,
+     "first_utc": "2014-11-01T00:00:00",
+     "last_utc": "2026-10-03T17:00:00",
+     "seconds": {
+      "rows": 4.69,
+      "first_utc": 4.98,
+      "last_utc": 4.7
+     }
+    },
+    {
+     "series": "WT max",
+     "rows": 129297,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T17:00:00",
+     "seconds": {
+      "rows": 4.72,
+      "first_utc": 4.72,
+      "last_utc": 4.79
+     }
+    },
+    {
+     "series": "WT avg",
+     "rows": 129299,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T17:00:00",
+     "seconds": {
+      "rows": 4.85,
+      "first_utc": 4.78,
+      "last_utc": 4.77
+     }
+    },
+    {
+     "series": "Äravool min",
+     "rows": 104460,
+     "first_utc": "2014-11-01T00:00:00",
+     "last_utc": "2026-10-03T17:00:00",
+     "seconds": {
+      "rows": 4.73,
+      "first_utc": 4.76,
+      "last_utc": 4.93
+     }
+    },
+    {
+     "series": "Äravool avg",
+     "rows": 104460,
+     "first_utc": "2014-11-01T00:00:00",
+     "last_utc": "2026-10-03T17:00:00",
+     "seconds": {
+      "rows": 4.75,
+      "first_utc": 4.95,
+      "last_utc": 4.77
+     }
+    },
+    {
+     "series": "WT min",
+     "rows": 129297,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T17:00:00",
+     "seconds": {
+      "rows": 4.74,
+      "first_utc": 4.81,
+      "last_utc": 4.81
+     }
+    },
+    {
+     "series": "WL min",
+     "rows": 129301,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T17:00:00",
+     "seconds": {
+      "rows": 5.11,
+      "first_utc": 5.39,
+      "last_utc": 4.93
+     }
+    },
+    {
+     "series": "WL avg",
+     "rows": 129300,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T17:00:00",
+     "seconds": {
+      "rows": 5.52,
+      "first_utc": 4.94,
+      "last_utc": 5.0
+     }
+    }
+   ]
+  },
+  {
+   "jaam_kood": 41199,
+   "jaam_nimi": "Tarvastu",
+   "valgala_nimi": "Emajõgi",
+   "valgala_suurus_km2": 83.3,
+   "kaugus_suudmest_km": 8.6,
+   "jaam_laiuskraad": 58.228727,
+   "jaam_pikkuskraad": 25.884369,
+   "veekogu_nimi": "Tarvastu",
+   "series": [
+    {
+     "series": "WT avg",
+     "rows": 123472,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.75,
+      "first_utc": 4.74,
+      "last_utc": 4.81
+     }
+    },
+    {
+     "series": "WT min",
+     "rows": 123472,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 5.29,
+      "first_utc": 4.79,
+      "last_utc": 4.85
+     }
+    },
+    {
+     "series": "WL min",
+     "rows": 123414,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.73,
+      "first_utc": 4.77,
+      "last_utc": 4.82
+     }
+    },
+    {
+     "series": "WL avg",
+     "rows": 123414,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.82,
+      "first_utc": 4.8,
+      "last_utc": 4.88
+     }
+    },
+    {
+     "series": "Äravool min",
+     "rows": 123413,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.78,
+      "first_utc": 4.87,
+      "last_utc": 4.7
+     }
+    },
+    {
+     "series": "WT max",
+     "rows": 123472,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.71,
+      "first_utc": 4.67,
+      "last_utc": 4.73
+     }
+    },
+    {
+     "series": "Äravool max",
+     "rows": 123413,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.66,
+      "first_utc": 4.67,
+      "last_utc": 4.61
+     }
+    },
+    {
+     "series": "WL max",
+     "rows": 123414,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.65,
+      "first_utc": 4.64,
+      "last_utc": 4.61
+     }
+    },
+    {
+     "series": "Äravool avg",
+     "rows": 123413,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.67,
+      "first_utc": 4.64,
+      "last_utc": 4.61
+     }
+    }
+   ]
+  },
+  {
+   "jaam_kood": 86110,
+   "jaam_nimi": "Haapsalu",
+   "valgala_nimi": "---",
+   "valgala_suurus_km2": null,
+   "kaugus_suudmest_km": null,
+   "jaam_laiuskraad": 58.958024,
+   "jaam_pikkuskraad": 23.527396,
+   "veekogu_nimi": null,
+   "series": [
+    {
+     "series": "WT avg",
+     "rows": 129357,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.67,
+      "first_utc": 4.63,
+      "last_utc": 4.64
+     }
+    },
+    {
+     "series": "WL max",
+     "rows": 129357,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.62,
+      "first_utc": 4.66,
+      "last_utc": 4.64
+     }
+    },
+    {
+     "series": "WL min",
+     "rows": 129357,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.66,
+      "first_utc": 4.65,
+      "last_utc": 4.66
+     }
+    },
+    {
+     "series": "WL avg",
+     "rows": 129357,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.65,
+      "first_utc": 4.66,
+      "last_utc": 4.91
+     }
+    },
+    {
+     "series": "WT max",
+     "rows": 129311,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.82,
+      "first_utc": 5.21,
+      "last_utc": 4.63
+     }
+    },
+    {
+     "series": "WT min",
+     "rows": 129357,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.9,
+      "first_utc": 4.82,
+      "last_utc": 4.87
+     }
+    }
+   ]
+  },
+  {
+   "jaam_kood": 26128,
+   "jaam_nimi": "Virtsu",
+   "valgala_nimi": "---",
+   "valgala_suurus_km2": null,
+   "kaugus_suudmest_km": null,
+   "jaam_laiuskraad": 58.574836,
+   "jaam_pikkuskraad": 23.510173,
+   "veekogu_nimi": null,
+   "series": [
+    {
+     "series": "WT max",
+     "rows": 128800,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.61,
+      "first_utc": 4.64,
+      "last_utc": 4.95
+     }
+    },
+    {
+     "series": "WL max",
+     "rows": 128702,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.6,
+      "first_utc": 4.6,
+      "last_utc": 4.65
+     }
+    },
+    {
+     "series": "WT min",
+     "rows": 128800,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.62,
+      "first_utc": 4.6,
+      "last_utc": 4.62
+     }
+    },
+    {
+     "series": "WL avg",
+     "rows": 128701,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.85,
+      "first_utc": 4.59,
+      "last_utc": 5.34
+     }
+    },
+    {
+     "series": "WT avg",
+     "rows": 128800,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.64,
+      "first_utc": 4.61,
+      "last_utc": 4.66
+     }
+    },
+    {
+     "series": "WL min",
+     "rows": 128701,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.61,
+      "first_utc": 4.79,
+      "last_utc": 4.66
+     }
+    }
+   ]
+  },
+  {
+   "jaam_kood": 41015,
+   "jaam_nimi": "Korela",
+   "valgala_nimi": "Piusa jõgi",
+   "valgala_suurus_km2": 744.0,
+   "kaugus_suudmest_km": 14.4,
+   "jaam_laiuskraad": 57.88534,
+   "jaam_pikkuskraad": 27.726254,
+   "veekogu_nimi": "Piusa",
+   "series": [
+    {
+     "series": "WL avg",
+     "rows": 129127,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.67,
+      "first_utc": 4.6,
+      "last_utc": 4.64
+     }
+    },
+    {
+     "series": "Äravool min",
+     "rows": 129127,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.63,
+      "first_utc": 4.62,
+      "last_utc": 4.64
+     }
+    },
+    {
+     "series": "Äravool max",
+     "rows": 129127,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.63,
+      "first_utc": 4.7,
+      "last_utc": 4.63
+     }
+    },
+    {
+     "series": "WT min",
+     "rows": 129229,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.65,
+      "first_utc": 4.71,
+      "last_utc": 4.8
+     }
+    },
+    {
+     "series": "Äravool avg",
+     "rows": 129126,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.83,
+      "first_utc": 4.75,
+      "last_utc": 4.9
+     }
+    },
+    {
+     "series": "WT avg",
+     "rows": 129229,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 5.57,
+      "first_utc": 4.79,
+      "last_utc": 4.65
+     }
+    },
+    {
+     "series": "WL max",
+     "rows": 129127,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.66,
+      "first_utc": 4.68,
+      "last_utc": 4.66
+     }
+    },
+    {
+     "series": "WT max",
+     "rows": 129229,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.68,
+      "first_utc": 5.07,
+      "last_utc": 4.85
+     }
+    },
+    {
+     "series": "WL min",
+     "rows": 129127,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.74,
+      "first_utc": 4.72,
+      "last_utc": 4.7
+     }
+    }
+   ]
+  },
+  {
+   "jaam_kood": 41058,
+   "jaam_nimi": "Elva",
+   "valgala_nimi": "Emajõgi",
+   "valgala_suurus_km2": 231.0,
+   "kaugus_suudmest_km": 32.7,
+   "jaam_laiuskraad": 58.211619,
+   "jaam_pikkuskraad": 26.434671,
+   "veekogu_nimi": "Elva j.",
+   "series": [
+    {
+     "series": "WT avg",
+     "rows": 129351,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.88,
+      "first_utc": 4.75,
+      "last_utc": 4.78
+     }
+    },
+    {
+     "series": "Äravool min",
+     "rows": 129357,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.74,
+      "first_utc": 4.76,
+      "last_utc": 4.72
+     }
+    },
+    {
+     "series": "WT max",
+     "rows": 129351,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.73,
+      "first_utc": 4.72,
+      "last_utc": 4.67
+     }
+    },
+    {
+     "series": "WT min",
+     "rows": 129351,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 5.03,
+      "first_utc": 4.72,
+      "last_utc": 4.79
+     }
+    },
+    {
+     "series": "Äravool avg",
+     "rows": 129357,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.78,
+      "first_utc": 4.76,
+      "last_utc": 4.72
+     }
+    },
+    {
+     "series": "WL max",
+     "rows": 129357,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.75,
+      "first_utc": 4.72,
+      "last_utc": 4.66
+     }
+    },
+    {
+     "series": "WL avg",
+     "rows": 129357,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.75,
+      "first_utc": 4.68,
+      "last_utc": 5.44
+     }
+    },
+    {
+     "series": "Äravool max",
+     "rows": 129357,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.73,
+      "first_utc": 4.7,
+      "last_utc": 4.72
+     }
+    },
+    {
+     "series": "WL min",
+     "rows": 129357,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T20:00:00",
+     "seconds": {
+      "rows": 4.7,
+      "first_utc": 4.69,
+      "last_utc": 4.61
+     }
+    }
+   ]
+  },
+  {
+   "jaam_kood": 41195,
+   "jaam_nimi": "Taheva",
+   "valgala_nimi": "Mustjõgi",
+   "valgala_suurus_km2": 1766.0,
+   "kaugus_suudmest_km": 4.4,
+   "jaam_laiuskraad": 57.598466,
+   "jaam_pikkuskraad": 26.349383,
+   "veekogu_nimi": "Mustjõgi",
+   "series": [
+    {
+     "series": "WT max",
+     "rows": 129235,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T18:00:00",
+     "seconds": {
+      "rows": 4.62,
+      "first_utc": 4.78,
+      "last_utc": 4.6
+     }
+    },
+    {
+     "series": "Äravool avg",
+     "rows": 129355,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T18:00:00",
+     "seconds": {
+      "rows": 4.6,
+      "first_utc": 4.63,
+      "last_utc": 4.7
+     }
+    },
+    {
+     "series": "Äravool max",
+     "rows": 129355,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T18:00:00",
+     "seconds": {
+      "rows": 4.69,
+      "first_utc": 4.74,
+      "last_utc": 4.73
+     }
+    },
+    {
+     "series": "WL max",
+     "rows": 129355,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T18:00:00",
+     "seconds": {
+      "rows": 4.67,
+      "first_utc": 4.71,
+      "last_utc": 4.67
+     }
+    },
+    {
+     "series": "Äravool min",
+     "rows": 129355,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T18:00:00",
+     "seconds": {
+      "rows": 4.69,
+      "first_utc": 5.51,
+      "last_utc": 5.56
+     }
+    },
+    {
+     "series": "WL min",
+     "rows": 129355,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T18:00:00",
+     "seconds": {
+      "rows": 5.58,
+      "first_utc": 5.68,
+      "last_utc": 7.1
+     }
+    },
+    {
+     "series": "WT avg",
+     "rows": 129235,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T18:00:00",
+     "seconds": {
+      "rows": 6.05,
+      "first_utc": 5.86,
+      "last_utc": 5.49
+     }
+    },
+    {
+     "series": "WL avg",
+     "rows": 129355,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T18:00:00",
+     "seconds": {
+      "rows": 5.5,
+      "first_utc": 5.39,
+      "last_utc": 5.16
+     }
+    },
+    {
+     "series": "WT min",
+     "rows": 129235,
+     "first_utc": "2012-01-01T00:00:00",
+     "last_utc": "2026-10-03T18:00:00",
+     "seconds": {
+      "rows": 5.26,
+      "first_utc": 5.24,
+      "last_utc": 5.29
+     }
+    }
+   ]
+  },
+  {
+   "jaam_kood": 41001,
+   "jaam_nimi": "Vasknarva",
+   "valgala_nimi": "Vääna jõgi",
+   "valgala_suurus_km2": 47807.0,
+   "kaugus_suudmest_km": 72.1,
+   "jaam_laiuskraad": 59.001003,
+   "jaam_pikkuskraad": 27.740386,
+   "veekogu_nimi": "Narva"
+  },
+  {
+   "jaam_kood": 41069,
+   "jaam_nimi": "Tõrva",
+   "valgala_nimi": "Emajõgi",
+   "valgala_suurus_km2": 272.0,
+   "kaugus_suudmest_km": 39.3,
+   "jaam_laiuskraad": 58.003807,
+   "jaam_pikkuskraad": 25.92112,
+   "veekogu_nimi": "Õhne j."
+  },
+  {
+   "jaam_kood": 41140,
+   "jaam_nimi": "Riisa",
+   "valgala_nimi": "Pärnu jõgi",
+   "valgala_suurus_km2": 1881.0,
+   "kaugus_suudmest_km": 5.2,
+   "jaam_laiuskraad": 58.479727,
+   "jaam_pikkuskraad": 24.994434,
+   "veekogu_nimi": "Halliste j."
+  },
+  {
+   "jaam_kood": 41074,
+   "jaam_nimi": "Lüganuse",
+   "valgala_nimi": "Purtse jõgi",
+   "valgala_suurus_km2": 785.0,
+   "kaugus_suudmest_km": 8.2,
+   "jaam_laiuskraad": 59.38386,
+   "jaam_pikkuskraad": 27.039066,
+   "veekogu_nimi": "Purtse"
+  },
+  {
+   "jaam_kood": 41127,
+   "jaam_nimi": "Oore",
+   "valgala_nimi": "Pärnu jõgi",
+   "valgala_suurus_km2": 5131.0,
+   "kaugus_suudmest_km": 25.8,
+   "jaam_laiuskraad": 58.463253,
+   "jaam_pikkuskraad": 24.767669,
+   "veekogu_nimi": "Pärnu"
+  },
+  {
+   "jaam_kood": 41905,
+   "jaam_nimi": "Kulgu sadam",
+   "valgala_nimi": "Narva jõgi",
+   "valgala_suurus_km2": null,
+   "kaugus_suudmest_km": null,
+   "jaam_laiuskraad": 59.343576,
+   "jaam_pikkuskraad": 28.172605,
+   "veekogu_nimi": "Narva veehoidla"
+  },
+  {
+   "jaam_kood": 26215,
+   "jaam_nimi": "Roomassaare",
+   "valgala_nimi": "---",
+   "valgala_suurus_km2": null,
+   "kaugus_suudmest_km": null,
+   "jaam_laiuskraad": 58.216361,
+   "jaam_pikkuskraad": 22.505609,
+   "veekogu_nimi": null
+  },
+  {
+   "jaam_kood": 41085,
+   "jaam_nimi": "Pudisoo",
+   "valgala_nimi": "Pudisoo jõgi",
+   "valgala_suurus_km2": 124.0,
+   "kaugus_suudmest_km": 6.7,
+   "jaam_laiuskraad": 59.508708,
+   "jaam_pikkuskraad": 25.594639,
+   "veekogu_nimi": "Pudisoo"
+  },
+  {
+   "jaam_kood": 41116,
+   "jaam_nimi": "Konuvere",
+   "valgala_nimi": "Kasari jõgi",
+   "valgala_suurus_km2": 584.0,
+   "kaugus_suudmest_km": 28.3,
+   "jaam_laiuskraad": 58.807783,
+   "jaam_pikkuskraad": 24.412884,
+   "veekogu_nimi": "Vigala j."
+  },
+  {
+   "jaam_kood": 41067,
+   "jaam_nimi": "Tõlliste",
+   "valgala_nimi": "Emajõgi",
+   "valgala_suurus_km2": 1045.0,
+   "kaugus_suudmest_km": 37.4,
+   "jaam_laiuskraad": 57.851069,
+   "jaam_pikkuskraad": 26.132519,
+   "veekogu_nimi": "Väike Emajõgi"
+  },
+  {
+   "jaam_kood": 41137,
+   "jaam_nimi": "Aesoo",
+   "valgala_nimi": "Pärnu jõgi",
+   "valgala_suurus_km2": 1049.0,
+   "kaugus_suudmest_km": 14.0,
+   "jaam_laiuskraad": 58.515303,
+   "jaam_pikkuskraad": 25.061826,
+   "veekogu_nimi": "Navesti"
+  },
+  {
+   "jaam_kood": 41156,
+   "jaam_nimi": "Uue-Lõve",
+   "valgala_nimi": "Lõve jõgi",
+   "valgala_suurus_km2": 143.0,
+   "kaugus_suudmest_km": 2.9,
+   "jaam_laiuskraad": 58.356544,
+   "jaam_pikkuskraad": 22.834082,
+   "veekogu_nimi": "Lõve j."
+  },
+  {
+   "jaam_kood": 41198,
+   "jaam_nimi": "Nurme",
+   "valgala_nimi": "Pärnu jõgi",
+   "valgala_suurus_km2": 550.0,
+   "kaugus_suudmest_km": 10.1,
+   "jaam_laiuskraad": 58.446319,
+   "jaam_pikkuskraad": 24.497713,
+   "veekogu_nimi": "Sauga"
+  },
+  {
+   "jaam_kood": 41061,
+   "jaam_nimi": "Ahja",
+   "valgala_nimi": "Emajõgi",
+   "valgala_suurus_km2": 897.0,
+   "kaugus_suudmest_km": 25.6,
+   "jaam_laiuskraad": 58.209401,
+   "jaam_pikkuskraad": 27.112593,
+   "veekogu_nimi": "Ahja j."
+  },
+  {
+   "jaam_kood": 86094,
+   "jaam_nimi": "Pirita",
+   "valgala_nimi": "---",
+   "valgala_suurus_km2": null,
+   "kaugus_suudmest_km": null,
+   "jaam_laiuskraad": 59.46887,
+   "jaam_pikkuskraad": 24.820797,
+   "veekogu_nimi": null
+  },
+  {
+   "jaam_kood": 41191,
+   "jaam_nimi": "Roosisaare",
+   "valgala_nimi": "Võhandu jõgi",
+   "valgala_suurus_km2": null,
+   "kaugus_suudmest_km": null,
+   "jaam_laiuskraad": 57.84683,
+   "jaam_pikkuskraad": 26.980847,
+   "veekogu_nimi": "Tamula"
+  },
+  {
+   "jaam_kood": 41801,
+   "jaam_nimi": "Narva-Jõesuu",
+   "valgala_nimi": "---",
+   "valgala_suurus_km2": null,
+   "kaugus_suudmest_km": null,
+   "jaam_laiuskraad": 59.468375,
+   "jaam_pikkuskraad": 28.042447,
+   "veekogu_nimi": "Soome laht"
+  },
+  {
+   "jaam_kood": 41028,
+   "jaam_nimi": "Tõrve",
+   "valgala_nimi": "Emajõgi",
+   "valgala_suurus_km2": 739.0,
+   "kaugus_suudmest_km": 46.6,
+   "jaam_laiuskraad": 58.602486,
+   "jaam_pikkuskraad": 26.374895,
+   "veekogu_nimi": "Pedja"
+  },
+  {
+   "jaam_kood": 41107,
+   "jaam_nimi": "Keila",
+   "valgala_nimi": "Keila jõgi",
+   "valgala_suurus_km2": 636.0,
+   "kaugus_suudmest_km": 17.7,
+   "jaam_laiuskraad": 59.308791,
+   "jaam_pikkuskraad": 24.434706,
+   "veekogu_nimi": "Keila j."
+  },
+  {
+   "jaam_kood": 86101,
+   "jaam_nimi": "Dirhami",
+   "valgala_nimi": "---",
+   "valgala_suurus_km2": null,
+   "kaugus_suudmest_km": null,
+   "jaam_laiuskraad": 59.211347,
+   "jaam_pikkuskraad": 23.500702,
+   "veekogu_nimi": null
+  },
+  {
+   "jaam_kood": 41087,
+   "jaam_nimi": "Kehra",
+   "valgala_nimi": "Jägala jõgi",
+   "valgala_suurus_km2": 912.0,
+   "kaugus_suudmest_km": 26.2,
+   "jaam_laiuskraad": 59.344362,
+   "jaam_pikkuskraad": 25.340421,
+   "veekogu_nimi": "Jägala j."
+  },
+  {
+   "jaam_kood": 41193,
+   "jaam_nimi": "Toila-Oru",
+   "valgala_nimi": "Pühajõgi",
+   "valgala_suurus_km2": 215.0,
+   "kaugus_suudmest_km": 0.8,
+   "jaam_laiuskraad": 59.423112,
+   "jaam_pikkuskraad": 27.530023,
+   "veekogu_nimi": "Pühajõgi"
+  },
+  {
+   "jaam_kood": 41175,
+   "jaam_nimi": "Pajusi",
+   "valgala_nimi": "Emajõgi",
+   "valgala_suurus_km2": 1082.0,
+   "kaugus_suudmest_km": 47.7,
+   "jaam_laiuskraad": 58.703248,
+   "jaam_pikkuskraad": 25.927792,
+   "veekogu_nimi": "Põltsamaa"
+  },
+  {
+   "jaam_kood": 41163,
+   "jaam_nimi": "Alajõe",
+   "valgala_nimi": "Alajõgi",
+   "valgala_suurus_km2": 137.0,
+   "kaugus_suudmest_km": 6.6,
+   "jaam_laiuskraad": 59.030896,
+   "jaam_pikkuskraad": 27.39296,
+   "veekogu_nimi": "Alajõgi"
+  },
+  {
+   "jaam_kood": 41077,
+   "jaam_nimi": "Sämi",
+   "valgala_nimi": "Kunda jõgi",
+   "valgala_suurus_km2": 421.0,
+   "kaugus_suudmest_km": 24.6,
+   "jaam_laiuskraad": 59.373078,
+   "jaam_pikkuskraad": 26.582772,
+   "veekogu_nimi": "Kunda j."
+  },
+  {
+   "jaam_kood": 41019,
+   "jaam_nimi": "Räpina",
+   "valgala_nimi": "Võhandu jõgi",
+   "valgala_suurus_km2": 1132.0,
+   "kaugus_suudmest_km": 12.2,
+   "jaam_laiuskraad": 58.095585,
+   "jaam_pikkuskraad": 27.454581,
+   "veekogu_nimi": "Võhandu j."
+  },
+  {
+   "jaam_kood": 41070,
+   "jaam_nimi": "Tänassilma",
+   "valgala_nimi": "Emajõgi",
+   "valgala_suurus_km2": 307.0,
+   "kaugus_suudmest_km": 17.5,
+   "jaam_laiuskraad": 58.394902,
+   "jaam_pikkuskraad": 25.822117,
+   "veekogu_nimi": "Tänassilma j."
+  },
+  {
+   "jaam_kood": 41110,
+   "jaam_nimi": "Vihterpalu",
+   "valgala_nimi": "Vihterpalu jõgi",
+   "valgala_suurus_km2": 478.0,
+   "kaugus_suudmest_km": 2.6,
+   "jaam_laiuskraad": 59.25211,
+   "jaam_pikkuskraad": 23.866549,
+   "veekogu_nimi": "Vihterpalu j."
+  },
+  {
+   "jaam_kood": 41080,
+   "jaam_nimi": "Arbavere",
+   "valgala_nimi": "Loobu jõgi",
+   "valgala_suurus_km2": 246.0,
+   "kaugus_suudmest_km": 32.8,
+   "jaam_laiuskraad": 59.440044,
+   "jaam_pikkuskraad": 25.963534,
+   "veekogu_nimi": "Loobu j."
+  },
+  {
+   "jaam_kood": 41201,
+   "jaam_nimi": "Varangu",
+   "valgala_nimi": "Seljajõgi",
+   "valgala_suurus_km2": 376.0,
+   "kaugus_suudmest_km": 18.2,
+   "jaam_laiuskraad": 59.472221,
+   "jaam_pikkuskraad": 26.351556,
+   "veekogu_nimi": "Selja"
+  },
+  {
+   "jaam_kood": 41082,
+   "jaam_nimi": "Vanaküla",
+   "valgala_nimi": "Valgejõgi",
+   "valgala_suurus_km2": 308.0,
+   "kaugus_suudmest_km": 27.2,
+   "jaam_laiuskraad": 59.467783,
+   "jaam_pikkuskraad": 25.789245,
+   "veekogu_nimi": "Valgejõgi"
+  },
+  {
+   "jaam_kood": 41203,
+   "jaam_nimi": "Kuningaküla",
+   "valgala_nimi": "Narva jõgi",
+   "valgala_suurus_km2": 47982.0,
+   "kaugus_suudmest_km": 56.2,
+   "jaam_laiuskraad": 59.124454,
+   "jaam_pikkuskraad": 27.803936,
+   "veekogu_nimi": "Narva"
+  },
+  {
+   "jaam_kood": 41103,
+   "jaam_nimi": "Hüüru",
+   "valgala_nimi": "Vääna jõgi",
+   "valgala_suurus_km2": 202.0,
+   "kaugus_suudmest_km": 28.8,
+   "jaam_laiuskraad": 59.380265,
+   "jaam_pikkuskraad": 24.534933,
+   "veekogu_nimi": "Vääna j."
+  },
+  {
+   "jaam_kood": 86120,
+   "jaam_nimi": "Mõntu",
+   "valgala_nimi": "---",
+   "valgala_suurus_km2": null,
+   "kaugus_suudmest_km": null,
+   "jaam_laiuskraad": 57.949496,
+   "jaam_pikkuskraad": 22.124243,
+   "veekogu_nimi": null
+  },
+  {
+   "jaam_kood": 86100,
+   "jaam_nimi": "Paldiski",
+   "valgala_nimi": "---",
+   "valgala_suurus_km2": null,
+   "kaugus_suudmest_km": null,
+   "jaam_laiuskraad": 59.349799,
+   "jaam_pikkuskraad": 24.04756,
+   "veekogu_nimi": null
+  },
+  {
+   "jaam_kood": 41200,
+   "jaam_nimi": "Narva karjäär",
+   "valgala_nimi": "Narva jõgi",
+   "valgala_suurus_km2": 294.0,
+   "kaugus_suudmest_km": 6.8,
+   "jaam_laiuskraad": 59.267222,
+   "jaam_pikkuskraad": 27.857163,
+   "veekogu_nimi": "Mustajõgi (Kirjaku pkr.)"
+  },
+  {
+   "jaam_kood": 41922,
+   "jaam_nimi": "Praaga",
+   "valgala_nimi": "Emajõgi",
+   "valgala_suurus_km2": null,
+   "kaugus_suudmest_km": null,
+   "jaam_laiuskraad": 58.436297,
+   "jaam_pikkuskraad": 27.235444,
+   "veekogu_nimi": "Peipsi"
+  },
+  {
+   "jaam_kood": 41065,
+   "jaam_nimi": "Roostoja",
+   "valgala_nimi": "Rannapungerja jõgi",
+   "valgala_suurus_km2": 319.0,
+   "kaugus_suudmest_km": 12.7,
+   "jaam_laiuskraad": 59.023744,
+   "jaam_pikkuskraad": 27.105679,
+   "veekogu_nimi": "Rannapungerja"
+  },
+  {
+   "jaam_kood": 26120,
+   "jaam_nimi": "Heltermaa",
+   "valgala_nimi": "---",
+   "valgala_suurus_km2": null,
+   "kaugus_suudmest_km": null,
+   "jaam_laiuskraad": 58.866406,
+   "jaam_pikkuskraad": 23.04687,
+   "veekogu_nimi": null
+  },
+  {
+   "jaam_kood": 41066,
+   "jaam_nimi": "Tudulinna",
+   "valgala_nimi": "Rannapungerja jõgi",
+   "valgala_suurus_km2": 240.0,
+   "kaugus_suudmest_km": 3.8,
+   "jaam_laiuskraad": 59.036109,
+   "jaam_pikkuskraad": 27.088872,
+   "veekogu_nimi": "Tagajõgi"
+  },
+  {
+   "jaam_kood": 41920,
+   "jaam_nimi": "Mehikoorma",
+   "valgala_nimi": "---",
+   "valgala_suurus_km2": null,
+   "kaugus_suudmest_km": null,
+   "jaam_laiuskraad": 58.237748,
+   "jaam_pikkuskraad": 27.474825,
+   "veekogu_nimi": "Peipsi"
+  },
+  {
+   "jaam_kood": 41125,
+   "jaam_nimi": "Särevere",
+   "valgala_nimi": "Pärnu jõgi",
+   "valgala_suurus_km2": 572.0,
+   "kaugus_suudmest_km": 101.8,
+   "jaam_laiuskraad": 58.788998,
+   "jaam_pikkuskraad": 25.42111,
+   "veekogu_nimi": "Pärnu"
+  },
+  {
+   "jaam_kood": 41132,
+   "jaam_nimi": "Põhjaka II",
+   "valgala_nimi": "Pärnu jõgi",
+   "valgala_suurus_km2": 7.7,
+   "kaugus_suudmest_km": 1.0,
+   "jaam_laiuskraad": 58.889139,
+   "jaam_pikkuskraad": 25.676698,
+   "veekogu_nimi": "Särgvere pkr."
+  },
+  {
+   "jaam_kood": 41197,
+   "jaam_nimi": "Laadi",
+   "valgala_nimi": "Pärnu jõgi",
+   "valgala_suurus_km2": 544.0,
+   "kaugus_suudmest_km": 14.6,
+   "jaam_laiuskraad": 58.267446,
+   "jaam_pikkuskraad": 24.646768,
+   "veekogu_nimi": "Reiu"
+  },
+  {
+   "jaam_kood": 41131,
+   "jaam_nimi": "Põhjaka I",
+   "valgala_nimi": "Pärnu jõgi",
+   "valgala_suurus_km2": 196.0,
+   "kaugus_suudmest_km": 8.4,
+   "jaam_laiuskraad": 58.892222,
+   "jaam_pikkuskraad": 25.669553,
+   "veekogu_nimi": "Esna j."
+  },
+  {
+   "jaam_kood": 41803,
+   "jaam_nimi": "Pärnu",
+   "valgala_nimi": "---",
+   "valgala_suurus_km2": null,
+   "kaugus_suudmest_km": null,
+   "jaam_laiuskraad": 58.381932,
+   "jaam_pikkuskraad": 24.477156,
+   "veekogu_nimi": null
+  },
+  {
+   "jaam_kood": 41022,
+   "jaam_nimi": "Rannu-Jõesuu",
+   "valgala_nimi": "Emajõgi",
+   "valgala_suurus_km2": 3366.0,
+   "kaugus_suudmest_km": 99.4,
+   "jaam_laiuskraad": 58.385461,
+   "jaam_pikkuskraad": 26.134033,
+   "veekogu_nimi": "Emajõgi"
+  },
+  {
+   "jaam_kood": 41126,
+   "jaam_nimi": "Tahkuse",
+   "valgala_nimi": "Pärnu jõgi",
+   "valgala_suurus_km2": 2047.0,
+   "kaugus_suudmest_km": 41.4,
+   "jaam_laiuskraad": 58.518491,
+   "jaam_pikkuskraad": 24.915769,
+   "veekogu_nimi": "Pärnu"
+  },
+  {
+   "jaam_kood": 26115,
+   "jaam_nimi": "Ristna",
+   "valgala_nimi": "---",
+   "valgala_suurus_km2": null,
+   "kaugus_suudmest_km": null,
+   "jaam_laiuskraad": 58.920824,
+   "jaam_pikkuskraad": 22.056593,
+   "veekogu_nimi": null
+  },
+  {
+   "jaam_kood": 86087,
+   "jaam_nimi": "Loksa",
+   "valgala_nimi": "---",
+   "valgala_suurus_km2": null,
+   "kaugus_suudmest_km": null,
+   "jaam_laiuskraad": 59.583513,
+   "jaam_pikkuskraad": 25.699016,
+   "veekogu_nimi": null
+  },
+  {
+   "jaam_kood": 86031,
+   "jaam_nimi": "Häädemeeste",
+   "valgala_nimi": "---",
+   "valgala_suurus_km2": null,
+   "kaugus_suudmest_km": null,
+   "jaam_laiuskraad": 58.036677,
+   "jaam_pikkuskraad": 24.45801,
+   "veekogu_nimi": null
+  },
+  {
+   "jaam_kood": 41157,
+   "jaam_nimi": "Kloostrimetsa",
+   "valgala_nimi": "Pirita jõgi",
+   "valgala_suurus_km2": 829.0,
+   "kaugus_suudmest_km": 5.1,
+   "jaam_laiuskraad": 59.466291,
+   "jaam_pikkuskraad": 24.879519,
+   "veekogu_nimi": "Pirita j."
+  },
+  {
+   "jaam_kood": 41063,
+   "jaam_nimi": "Kääpa",
+   "valgala_nimi": "Kääpa jõgi",
+   "valgala_suurus_km2": 264.0,
+   "kaugus_suudmest_km": 11.3,
+   "jaam_laiuskraad": 58.700695,
+   "jaam_pikkuskraad": 26.848988,
+   "veekogu_nimi": "Kääpa j."
+  },
+  {
+   "jaam_kood": 26045,
+   "jaam_nimi": "Kunda",
+   "valgala_nimi": "---",
+   "valgala_suurus_km2": null,
+   "kaugus_suudmest_km": null,
+   "jaam_laiuskraad": 59.526419,
+   "jaam_pikkuskraad": 26.543928,
+   "veekogu_nimi": "Soome laht"
+  },
+  {
+   "jaam_kood": 26227,
+   "jaam_nimi": "Ruhnu",
+   "valgala_nimi": "---",
+   "valgala_suurus_km2": null,
+   "kaugus_suudmest_km": null,
+   "jaam_laiuskraad": 57.781036,
+   "jaam_pikkuskraad": 23.27048,
+   "veekogu_nimi": null
+  },
+  {
+   "jaam_kood": 41128,
+   "jaam_nimi": "Vodja",
+   "valgala_nimi": "Pärnu jõgi",
+   "valgala_suurus_km2": 71.5,
+   "kaugus_suudmest_km": 7.1,
+   "jaam_laiuskraad": 58.938982,
+   "jaam_pikkuskraad": 25.644459,
+   "veekogu_nimi": "Vodja j."
+  },
+  {
+   "jaam_kood": 41183,
+   "jaam_nimi": "Audru",
+   "valgala_nimi": "Audru jõgi",
+   "valgala_suurus_km2": 322.0,
+   "kaugus_suudmest_km": 11.7,
+   "jaam_laiuskraad": 58.423455,
+   "jaam_pikkuskraad": 24.318862,
+   "veekogu_nimi": "Audru j."
+  },
+  {
+   "jaam_kood": 41159,
+   "jaam_nimi": "Elu",
+   "valgala_nimi": "Leisi jõgi",
+   "valgala_suurus_km2": 52.6,
+   "kaugus_suudmest_km": 8.7,
+   "jaam_laiuskraad": 58.51293,
+   "jaam_pikkuskraad": 22.697379,
+   "veekogu_nimi": "Leisi j."
+  }
+ ],
+ "complete": false
+}
