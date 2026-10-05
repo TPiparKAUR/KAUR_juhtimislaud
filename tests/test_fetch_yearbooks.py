@@ -56,7 +56,13 @@ HTML = b"""<html><head><title>Landing</title></head><body><h1>Yearbooks</h1>
 
 @pytest.fixture
 def server() -> Any:
-    pdf = make_pdf(["Sisukord", "Joonis 1. Metsa pindala vanuseklassi jargi", "Tabel 2. Raie maht"])
+    pdf = make_pdf(
+        [
+            "Sisukord",
+            "Joonis 1. Metsa pindala vanuseklassi jargi",
+            "Tabel 2. Raie maht suhteline viga 5%",
+        ]
+    )
 
     class H(BaseHTTPRequestHandler):
         def log_message(self, *a: Any) -> None:
@@ -120,3 +126,10 @@ def test_source_list_is_well_formed() -> None:
     items = tomllib.loads((root / "data" / "allikad.toml").read_text(encoding="utf-8"))["allikas"]
     ids = [i["id"] for i in items]
     assert len(ids) == len(set(ids)) and all(i["url"].startswith("https://") for i in items)
+
+
+def test_uncertainty_and_target_words_are_found_with_context(server: str, tmp_path: Path) -> None:
+    rec = fy.process({"id": "a", "url": f"{server}/mets.pdf"}, tmp_path)
+    words = [h["word"] for h in rec["keyword_hits"]["uncertainty"]]
+    assert words == ["suhteline viga"]
+    assert rec["keyword_hits"]["uncertainty"][0]["page"] == 3

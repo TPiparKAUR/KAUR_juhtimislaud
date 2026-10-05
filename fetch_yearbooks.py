@@ -40,6 +40,18 @@ CAPTION = re.compile(
     r"\s*[A-Z]?\d+[.:)]?\s*(.*)$",
     re.IGNORECASE,
 )
+# How uncertainty and targets are presented: words (several languages) and a short context window.
+UNCERTAINTY = re.compile(
+    r"(suhteline viga|usaldus\w*|veapiir\w*|standardviga|hinnangu viga|sampling error|"
+    r"standard error|confidence|relative error|uncertaint\w*|osäkerhet\w*|konfidens\w*|"
+    r"usikkerhet\w*|stikprøve\w*|spredning|keskivirhe|luottamus\w*)",
+    re.IGNORECASE,
+)
+TARGET = re.compile(
+    r"(eesmärk\w*|sihttase\w*|target\w*|goal\w*|miljömål\w*|måluppfyll\w*|mål\b|målet|"
+    r"tavoite\w*|trend\w*|indikaator\w*|indicator\w*|indikator\w*)",
+    re.IGNORECASE,
+)
 FOREST = re.compile(r"\b(mets|skog|forest|skov|metsä|skóg)\w*", re.IGNORECASE)
 
 
@@ -110,6 +122,7 @@ def summarise_pdf(body: bytes) -> dict[str, Any]:
     n = len(reader.pages)
     captions: list[dict[str, Any]] = []
     forest_pages: list[int] = []
+    hits: dict[str, list[dict[str, Any]]] = {"uncertainty": [], "target": []}
     excerpt = ""
     for i, page in enumerate(reader.pages, 1):
         try:
@@ -120,10 +133,18 @@ def summarise_pdf(body: bytes) -> dict[str, Any]:
             excerpt += f"\n[p{i}] " + " ".join(text.split())[:700]
         if FOREST.search(text):
             forest_pages.append(i)
+        flat = " ".join(text.split())
+        for kind, rx in (("uncertainty", UNCERTAINTY), ("target", TARGET)):
+            for m in rx.finditer(flat):
+                if len(hits[kind]) < 40 and (not hits[kind] or hits[kind][-1]["page"] != i):
+                    a, b = max(0, m.start() - 70), min(len(flat), m.end() + 90)
+                    hits[kind].append({"page": i, "word": m.group(0).lower(), "context": flat[a:b]})
         for line in text.splitlines():
-            m = CAPTION.match(line)
-            if m and len(captions) < 400:
-                captions.append({"page": i, "label": m.group(1).lower(), "text": m.group(2)[:160]})
+            cap = CAPTION.match(line)
+            if cap and len(captions) < 400:
+                captions.append(
+                    {"page": i, "label": cap.group(1).lower(), "text": cap.group(2)[:160]}
+                )
     meta = reader.metadata
     kinds: dict[str, int] = {}
     for c in captions:
@@ -137,6 +158,7 @@ def summarise_pdf(body: bytes) -> dict[str, Any]:
         "forest_pages": forest_pages[:300],
         "forest_page_share": round(len(forest_pages) / n, 3) if n else 0,
         "contents_excerpt": excerpt.strip()[:3000],
+        "keyword_hits": hits,
     }
 
 
