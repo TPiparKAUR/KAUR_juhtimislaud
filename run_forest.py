@@ -89,6 +89,14 @@ def build(df: pl.DataFrame, generated: str | None = None) -> dict[str, Any]:
                 "flow": "tuhat m3 aastas",
                 "per_ha": "m3/ha",
             },
+            "age_labels_seen": sorted(
+                df.filter((pl.col("tabeli_number") == 13) & (pl.col("filtri_tunnus2") == "Vanus"))[
+                    "filter2"
+                ]
+                .drop_nulls()
+                .unique()
+                .to_list()
+            ),
             "interpretation": [
                 "Ühikud on tuletatud suurusjärgust (2,35 mln ha metsamaad, 453 mln m3 tagavara) "
                 "ja neid ei ole tabeli skeemis.",
