@@ -3,7 +3,7 @@ name: Hydrology data (daily)
 # Streams selected hydrological series (Äravool avg/min/max, WT avg) for stations with long
 # records from the public API, aggregates them to UTC days and writes the daily Parquet as an
 # artifact (not committed: redistribution terms still need checking) plus a log with coverage and
-# value quantiles to the `hydro-data-log` branch for sanity checks.
+# value quantiles to the `hydro-analysis` branch for sanity checks.
 
 on:
   workflow_dispatch:
@@ -36,19 +36,26 @@ jobs:
         env:
           BUDGET: ${{ inputs.budget_min || '50' }}
         run: uv run python hydro_fetch.py --catalog hydro_catalog.json --out out/hydro --budget-min "$BUDGET"
+      - name: Analyse (links runoff to the climate analysis when available)
+        run: |
+          args=(--daily out/hydro/hydro_daily.parquet --catalog hydro_catalog.json --out out/hydro)
+          if git show origin/climate-results:climate.json > climate.json 2>/dev/null; then
+            args+=(--climate climate.json)
+          fi
+          uv run python run_hydro.py "${args[@]}"
       - uses: actions/upload-artifact@v4
         with:
           name: hydro-daily
           path: out/hydro/
           retention-days: 30
-      - name: Publish log to hydro-data-log branch
+      - name: Publish aggregated results to hydro-analysis branch
         run: |
-          cp out/hydro/hydro_fetch_log.json "$RUNNER_TEMP/hydro_fetch_log.json"
+          cp out/hydro/hydro.json out/hydro/hydro_fetch_log.json "$RUNNER_TEMP/"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git checkout --orphan hydro-data-log
+          git checkout --orphan hydro-analysis
           git rm -rf --quiet .
-          cp "$RUNNER_TEMP/hydro_fetch_log.json" hydro_fetch_log.json
-          git add -- hydro_fetch_log.json
-          git commit -m "Hydrology data log $(date -u +%Y-%m-%dT%H:%MZ)"
-          git push --force origin hydro-data-log
+          cp "$RUNNER_TEMP/hydro.json" "$RUNNER_TEMP/hydro_fetch_log.json" .
+          git add -- hydro.json hydro_fetch_log.json
+          git commit -m "Hydrology analysis $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push --force origin hydro-analysis
