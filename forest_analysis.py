@@ -195,9 +195,11 @@ def species(df: pl.DataFrame) -> dict[str, list[dict[str, Any]]]:
     ):
         if sp == ALL_STANDS:
             continue
-        out[sp] = series(
+        data = series(
             exact(df, 6, "Kasvavate puude maht", SUM, maakategooria=LAND, enamuspuuliik=sp)
         )
+        if data:
+            out[sp] = data
     return out
 
 
@@ -205,7 +207,9 @@ def owners(df: pl.DataFrame) -> dict[str, list[dict[str, Any]]]:
     """Forest land area by ownership group (table 1)."""
     out: dict[str, list[dict[str, Any]]] = {}
     for o in sorted(df.filter(pl.col("tabeli_number") == 1)["omand"].drop_nulls().unique()):
-        out[o] = series(exact(df, 1, "Pindala", SUM, maakategooria=LAND, omand=o))
+        data = series(exact(df, 1, "Pindala", SUM, maakategooria=LAND, omand=o))
+        if data:
+            out[o] = data
     return out
 
 
@@ -214,7 +218,9 @@ def management(df: pl.DataFrame) -> dict[str, list[dict[str, Any]]]:
     out: dict[str, list[dict[str, Any]]] = {}
     cats = df.filter(pl.col("tabeli_number") == 4)["majandkategooria"].drop_nulls().unique()
     for c in sorted(cats):
-        out[c] = series(exact(df, 4, "Pindala", SUM, maakategooria=LAND, majandkategooria=c))
+        data = series(exact(df, 4, "Pindala", SUM, maakategooria=LAND, majandkategooria=c))
+        if data:
+            out[c] = data
     return out
 
 
@@ -223,7 +229,7 @@ def counties(df: pl.DataFrame) -> dict[str, dict[str, list[dict[str, Any]]]]:
     out: dict[str, dict[str, list[dict[str, Any]]]] = {}
     names = df.filter(pl.col("tabeli_number") == 24)["maakond"].drop_nulls().unique()
     for c in sorted(names):
-        out[c] = {
+        entry = {
             "stock": series(
                 exact(df, 24, "Kasvavate puude maht", SUM, maakategooria=LAND, maakond=c)
             ),
@@ -232,6 +238,8 @@ def counties(df: pl.DataFrame) -> dict[str, dict[str, list[dict[str, Any]]]]:
             ),
             "area": series(exact(df, 24, "Pindala", SUM, maakategooria=LAND, maakond=c)),
         }
+        if entry["stock_per_ha"]:
+            out[c] = entry
     return out
 
 
@@ -246,9 +254,11 @@ def age_structure(df: pl.DataFrame) -> dict[str, list[dict[str, Any]]]:
     )
     out: dict[str, list[dict[str, Any]]] = {}
     for c in sorted(classes):
-        out[c] = total_over(
+        data = total_over(
             df, "omand", 13, "Pindala", SUM, maakategooria=LAND, filtri_tunnus2="Vanus", filter2=c
         )
+        if data:
+            out[c] = data
     return out
 
 

@@ -19,10 +19,12 @@ import build_site as b
 import climate_analysis as ca
 import run_airenergy as ra
 import run_climate as rc
+import run_forest as rf
 import run_hydro as rh
 import run_waste as rw
 from tests.test_airenergy_analysis import emissions, heat_rows
 from tests.test_climate_analysis import STATIONS
+from tests.test_forest_analysis import cube as forest_cube
 from tests.test_run_climate import monthly_frame
 from tests.test_run_hydro import CATALOG, frame
 from tests.test_waste_analysis import frame as waste_frame
@@ -87,9 +89,11 @@ def site(tmp_path_factory: pytest.TempPathFactory) -> Iterator[str]:
     aj.write_text(json.dumps(air), encoding="utf-8")
     wj = tmp / "waste.json"
     wj.write_text(json.dumps(rw.build(waste_frame(), None, "2026-01-01")), encoding="utf-8")
+    fj = tmp / "forest.json"
+    fj.write_text(json.dumps(rf.build(forest_cube(), "2026-01-01")), encoding="utf-8")
     topics = b.load_topics(Path("data/teemad.toml"), Path("data/kaur_viz_inventar.csv"))
     out = tmp / "_site"
-    b.build(topics, out, cj, hj, aj, wj)
+    b.build(topics, out, cj, hj, aj, wj, fj)
     handler = functools.partial(http.server.SimpleHTTPRequestHandler, directory=str(out))
     handler.log_message = lambda *a, **k: None  # type: ignore[attr-defined]
     with socketserver.TCPServer(("127.0.0.1", 0), handler) as srv:
@@ -121,6 +125,7 @@ def browser() -> Iterator[Browser]:
         ("valisohk.html", 4),
         ("energeetika.html", 1),
         ("jaatmed.html", 4),
+        ("mets.html", 3),
     ],
 )
 def test_pages_render_charts_without_errors(

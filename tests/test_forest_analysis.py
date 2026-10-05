@@ -94,3 +94,11 @@ def test_owner_age_and_error_summaries() -> None:
     assert fa.age_structure(d)["81-100"][0]["value"] == 300.0
     q = fa.error_summary(d)
     assert q["rows"] == d.height and q["share_over_50pct"] == pytest.approx(2 / d.height)
+
+
+def test_categories_without_a_matching_series_are_dropped_not_returned_empty() -> None:
+    """Regression: a species present only in the increment rows gave an empty stock series."""
+    d = cube()
+    assert "Mänd" in set(d["enamuspuuliik"].drop_nulls())
+    assert fa.species(d) == {}  # no stock-by-species rows in the cube -> nothing, not {"Mänd": []}
+    assert fa.management(d) == {} and fa.counties(d) == {}
