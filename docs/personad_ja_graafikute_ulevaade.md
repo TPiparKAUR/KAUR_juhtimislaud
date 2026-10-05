@@ -1,0 +1,92 @@
+# Personad, nende küsimused ja graafikute kriitiline ülevaade
+
+Töödokument analüüsi ja graafikute kvaliteedi hindamiseks. Seis: 2026-10-05. Seda dokumenti ei
+ole valdkonnaeksperdid üle vaadanud; kõik hinnangud "kinnitatud" tähendavad **kontrollitud
+andmetest ja testidest**, mitte ekspertide nõusolekut.
+
+## 1. Personad ja küsimused
+
+Iga persoon: mida ta otsustab, mida ta tahab teada, kus leht seda praegu vastab ja kus **mitte**.
+
+| Persoon | Otsus / ülesanne | Põhiküsimused | Praegu vastab | Puudub |
+|---|---|---|---|---|
+| **Klimatoloog** (Ilmateenistus / KAUR) | hindab aasta ja hooaja klimaatilist erilisust, kirjutab ülevaateid | Kui erakordne on 2025/2026 normi suhtes? Kas trend on robustne jaama- ja meetodivalikust sõltumata? Kas äärmusindeksid (ETCCDI) muutuvad? | kliimaleht: aastaanomaaliad, hooajatrendid, robustsus, äärmusindeksid, katvus | jaamade homogeniseerimine, **võrdlus ametliku rahvusliku keskmise reaga**, pikem rida kui 1991 |
+| **Hüdroloog** (KAUR) | jälgib veeolukorda, hoiatab põua ja üleujutuse eest | Kas jooksev kuu on tavavahemikus? Kui madal on madalvesi? Kas jaama andmed on usaldatavad? | hüdroloogialeht: kuuregiim koos jooksva aastaga, kestvuskõver, Q7min, tipud, katvus, kvaliteedisõel | veetase (WL), jääperiood, mõõtekõvera/ühiku kinnitus, ülejäänud 61 jaama |
+| **Keskkonnapoliitika nõunik** (ministeerium) | seob andmed eesmärkidega ja aruandlusega | Kuhu on heited liikunud? Mida annab sektor/kütus? Kas muutus tuleb ETS-ist? | (käsil) õhk ja energia | võrdlus riikliku inventuuriga, eesmärgid; **ainult asutuse aruanded, mitte kogu riigi heide** |
+| **Omavalitsuse planeerija** | kohalik riskihinnang, loaotsused | Mis on minu piirkonnas: lähim jaam, kohalikud heited, põuariski signaalid? | jaamade trendid (üldiselt) | maakonna-/valla lõige, kaart |
+| **Ajakirjanik / huviline** | kirjutab loo, kontrollib väiteid | Mis on peamine sõnum? Kui kindel see on? Kust allikas? | peamised tulemused tekstina, hoiatused, tabelivaated | lihtne "mida see ei tähenda" plokk, allalaetav CSV |
+| **Teadlane / analüütik** | kasutab andmeid ja meetodit uuesti | Kuidas arvutati? Kas kood ja andmed on kättesaadavad? | meetodiplokk, avatud kood GitHubis | andmete versioonimine, DOI, viidatav väljalase |
+| **Ettevõtte keskkonnajuht** | võrdleb end sektoriga | Kus ma asun sektori jaotuses? | (planeeritud) sektori jaotused | ainult koond: üksikettevõtteid ei näidata (privaatsus/konkurents) |
+
+Põhimõte: leht ei anna soovitusi ega hinnanguid üksikettevõtetele; ainult koond ja ebakindlus.
+
+## 2. Graafikute kontroll
+
+Skaala: **Kindel** = kontrollitud andmete või testidega; **Eeldus** = lehel märgitud, kuid kinnitamata;
+**Lahtine** = ei ole kontrollitud.
+
+### Kliima (`ilm-ja-kliima`)
+
+| Graafik | Küsimus | Faktikontroll | Tihedus | Teadaolevad nõrkused |
+|---|---|---|---|---|
+| Aastaanomaalia (tulbad, trend) | kui soe on aasta võrreldes 1991–2020 normiga? | **Kindel:** normi- ja anomaaliaarvutus testitud sünteetilise teadaoleva trendiga; kuu keskmine ühtib ööpäevaandmete keskmisega (suurim vahe 0,05 °C). **Lahtine:** ei ole võrreldud Ilmateenistuse ametliku rahvusliku keskmisega | kõrge (aasta, hajuvus jaamade vahel, trend, 3 rekordit) | jaamade lihtkeskmine (ilma pindala kaaluta); kriipsud ≠ mõõtemääramatus (märgitud) |
+| Trend aastaajati (forest) | kus soojenemine on eristatav? | **Kindel:** Theil–Sen ja ploki-bootstrap testitud. Kokkuvõte ütleb: kevad ja sügis eristatavad, talv ja suvi mitte | keskmine | 35 aastat; talve suur kõikumine; vahemik laiem kui lugeja intuitsioon |
+| Kuu × aasta soojuskaart | millal toimus soojenemine? | **Kindel:** riigi keskmine ≥ 5 jaamaga | kõrge | skaala ±5 °C kärbitud |
+| Jaamade trendid | kas ühtlane? | **Kindel:** 20/20 jaama positiivne ja eristatav; vahemikud jaama kaupa | keskmine | ruumiline paiknemine puudub (pole kaarti) |
+| Sademed % normist (tulbad, forest) | muutub sademete hulk? | **Kindel:** summade suhe, mitte kuusuhete keskmine; trend ei ole eristatav | keskmine | gabariidi alamõõtmine (märgitud); jaamad ≠ ühtlane võrk |
+| Äärmusnäitajad (6 paneeli) | kas külmapäevad/kuumapäevad/sademed muutuvad? | **Kindel:** FD eristatav; HD30, TR20 ei ole eristatavad; medianist keskmiseks parandatud | keskmine | harvad sündmused on diskreetsed; lühike rida |
+| Andmete katvus | kus on lüngad? | **Kindel:** kuude arv jaama-aasta kohta | keskmine | puuduvad jaamade nihked/ümberpaigutused (andmetes ei ole) |
+
+### Hüdroloogia (`vesi`)
+
+| Graafik | Küsimus | Faktikontroll | Tihedus | Teadaolevad nõrkused |
+|---|---|---|---|---|
+| Kuuregiim + jooksev aasta | kas jooksev aasta on tavavahemikus? | **Kindel:** P10/mediaan/P90 testitud; 2026 kokkuvõte loeb alla/üle. **Eeldus:** ühik m³/s | kõrge | 12–13 aasta "tavavahemik"; kuu vajab ≥ 25 kehtivat päeva |
+| Erivoolu soojuskaart | millised jõed annavad vett millal? | **Eeldus:** ühik; mediaan 4–7 l/s/km² 15 jaamal; **Valgu 11,4** on tähelepanek | kõrge | reguleeritud jõgesid ei eristata; valgalade piirid kontrollimata |
+| Kestvuskõver | kui sageli on erivool kindlast tasemest suurem? | **Kindel:** protsentiilid kehtivatest päevadest; telg 0,05 l/s/km² juures lõigatud | keskmine | UTC päevad; jääperiood ei ole eristatud |
+| Aastane äravool, % jaama keskmisest | kas veerikkad/-vaesed aastad? | **Kindel:** aasta ≥ 350 päeva; keskmine jaamade lõikes | keskmine | jaamade arv muutub (13→15); 2012 on esimene täisaasta |
+| Sademed vs äravool | kuidas sademed jõuavad jõgedesse? | **Kindel:** Spearmani ρ = 0,90 (0,61…1,00, n = 14). **Märkus:** sademed 1991–2020 normi suhtes, äravool 2012–2025 keskmise suhtes: võrreldud on järjestusi, mitte absoluutväärtusi | keskmine | n väike; ei tõesta põhjuslikkust (lumi, aurumine, sademete jaotus) |
+| Tipp ja Q7min (jaam valitav) | kui suur on tipp / madalvesi? | **Kindel:** testitud; Tori min/max read lühikesed ja jäetakse välja | madal-keskmine | 13 aastat: korduvusaegu ei hinnata |
+| Veetemperatuur | millised suved olid soojad? | **Eeldus:** ühik °C; vahemik 0…27,6 | keskmine | anduri asukoht; Narva linn alates 2017 |
+| Katvus | kus on lüngad? | **Kindel** | madal | 2026 on pooleli (märgitud) |
+
+## 3. Kui tihedad ja õiged need graafikud on?
+
+**Tugevused:** kõigil graafikutel on allikas, ühik, periood, hajuvuse või ebakindluse märge ja
+tabelivaade; tekstikokkuvõtted arvutatakse andmetest, mitte ei kirjutata käsitsi; piirangud on
+nimetatud; kõik testid kontrollivad nii arvutust kui joonistamist.
+
+**Nõrkused, mis ekspertidele paistavad kõigepealt:**
+1. Kliima: puudub **sõltumatu kontroll** ametliku rahvusliku keskmisega (ilma selleta ei saa
+   väita, et meie riigi keskmine ühtib ametlikuga). Samuti jaamade ruumilise kaalumise puudumine.
+2. Hüdroloogia: **ühik ja mõõtekõver** pole andmeomaniku poolt kinnitatud; jäämõju talvel; Valgu.
+3. Mõlemal: **lühikesed read** (35 ja 13 aastat) piiravad järeldusi; leht ütleb seda, aga
+   mõned kokkuvõtted ("2026: 50% väljaspool tavavahemikku") on meie enda tavavahemiku suhtes
+   ja sõltuvad 12 aasta valimist.
+4. Puudub **kaardivaade** (jaamad, valgalad, maakonnad), mida planeerijad ootavad.
+5. Praegu on kaetud ainult 2 teemat 9-st; avaleht ei ole veel terviklik "seostatud" ülevaade.
+
+## 4. Mida võib ja mida ei või lehel väita
+
+| Võib | Ei või |
+|---|---|
+| "Aastakeskmine temperatuur on 1991–2025 kasvanud ~0,5 °C kümnendi kohta (95% vahemik 0,24…0,79)" | "Eesti on soojenenud X °C alates tööstusrevolutsioonist" (rida algab 1991) |
+| "Viimase 20 aasta trend on kiirem, kuid vahemik on lai" | "Soojenemine kiireneb" |
+| "2026. aasta kuu keskmised jäävad paljudes jaamades alla tavavahemiku" | "2026 on põuaaasta" (ei ole defineeritud põuaindeksit) |
+| "Sademed ja äravool on seotud (ρ = 0,90)" | "Sademed põhjustavad X% äravoolust" |
+| "Vooluhulga ühik on eeldatud m³/s" | "Vooluhulk on m³/s" ilma märketa |
+
+## 5. Ülevaatuse protokoll
+
+Iga eksperdi jaoks 5–8 küsimust, vastused repo issues'isse (silt `ekspert-ülevaatus`):
+
+- **Klimatoloog:** Kas 1991–2020 jaamade lihtkeskmine on aktsepteeritav riigi keskmise lähend? Kas
+  mõni jaam vajab homogeniseerimist? Kas ETCCDI valik (FD, ID, SU25, HD30, TR20, R10, R20, Rx1day) on piisav?
+- **Hüdroloog:** Kas `Äravool` on m³/s ja `WL` cm? Kas jäämõju tuleks eraldi märkida? Kas
+  Valgu pindala/kõver vajab parandust? Millised jaamad on reguleeritud?
+- **Poliitikanõunik:** Millised aruanded seovad heitmed eesmärkidega? Kas ETS/non-ETS jaotus on
+  õige lähenemine?
+- **Kõik:** Kas järeldused on õiged, kas midagi olulist puudub, kas midagi on eksitav?
+
+Staatus: kõik graafikud kannavad märget "valdkonnaekspert ülevaatamata", kuni vastav isik on
+kinnitanud (või parandanud) iga graafiku iseseisvalt.
