@@ -1,0 +1,41 @@
+name: Air and energy data diagnostics
+
+# Fetches the public facility-level air-emission and heat-production tables, diagnoses what one
+# row means (repeated columns, units, substance groups) and publishes only aggregated diagnostics
+# to the `airenergy-explore` branch.  Raw rows stay in the workflow artifact.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: airenergy-explore
+  cancel-in-progress: false
+
+jobs:
+  explore:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync --frozen
+      - run: uv run python airenergy_explore.py --out out/airenergy
+      - uses: actions/upload-artifact@v4
+        with:
+          name: airenergy-raw
+          path: out/airenergy/
+          retention-days: 30
+      - name: Publish diagnostics
+        run: |
+          cp out/airenergy/diagnostics.json "$RUNNER_TEMP/diagnostics.json"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan airenergy-explore
+          git rm -rf --quiet .
+          cp "$RUNNER_TEMP/diagnostics.json" diagnostics.json
+          git add -- diagnostics.json
+          git commit -m "Air/energy diagnostics $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push --force origin airenergy-explore
