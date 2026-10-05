@@ -31,7 +31,7 @@ from typing import Any
 import polars as pl
 
 from postgrest import Client, PostgrestError
-from waste_explore import GRAIN_COLUMNS, TABLE
+from waste_explore import TABLE
 
 LOG = logging.getLogger("waste_fetch")
 TYPES = (
@@ -65,6 +65,9 @@ KEYS = [
     "materjali_kood",
     "materjali_nimetus",
 ]
+
+
+SELECT = [*KEYS, "maht"]  # exactly the columns aggregate() needs; also the total sort order
 
 
 @dataclass(frozen=True)
@@ -112,17 +115,17 @@ def aggregate(rows: list[dict[str, Any]]) -> pl.DataFrame:
     )
 
 
-def fetch_one(task: Task, delay: float) -> tuple[pl.DataFrame, int, int]:
+def fetch_one(
+    task: Task, delay: float, client: Client | None = None
+) -> tuple[pl.DataFrame, int, int]:
     """Return (aggregate, server count, rows read) for one slice."""
-    client = Client(delay=delay)
+    client = client or Client(delay=delay)
     flt = task.filters()
     expected = client.count(TABLE, flt) or 0
     if expected == 0:
         return pl.DataFrame(), 0, 0
     rows = list(
-        client.iter_rows(
-            TABLE, select=",".join(GRAIN_COLUMNS), filters=flt, order=",".join(GRAIN_COLUMNS)
-        )
+        client.iter_rows(TABLE, select=",".join(SELECT), filters=flt, order=",".join(SELECT))
     )
     return aggregate(rows), expected, len(rows)
 

@@ -2,13 +2,16 @@
 
 from __future__ import annotations
 
+import json
+import urllib.parse
+from collections.abc import Mapping
 from pathlib import Path
 from typing import Any
 
 import polars as pl
 
 import waste_fetch as wf
-from postgrest import PostgrestError
+from postgrest import Client, PgResponse, PostgrestError
 
 
 def row(**kw: Any) -> dict[str, Any]:
@@ -51,3 +54,25 @@ def test_run_collects_failures_mismatches_and_writes_outputs(tmp_path: Path) -> 
     log = (tmp_path / "waste_fetch_log.json").read_text(encoding="utf-8")
     assert df.height >= 1 and (tmp_path / "waste_agg.parquet").exists()
     assert "timeout" in log and '"expected": 2' in log
+
+
+def test_select_covers_every_key_and_the_amount() -> None:
+    assert set(wf.SELECT) == {*wf.KEYS, "maht"}
+
+
+def test_fetch_one_requests_only_columns_it_can_aggregate() -> None:
+    """Regression: the server returns only the selected columns, so the select must be complete."""
+    full: dict[str, object] = {c: ("20" if c == "pohigrupp" else "x") for c in wf.SELECT}
+    full.update(aasta=2022, materjali_kood=1, maht=2.5)
+    seen: list[str] = []
+
+    def transport(url: str, headers: Mapping[str, str]) -> PgResponse:
+        q = urllib.parse.parse_qs(urllib.parse.urlparse(url).query)
+        cols = q.get("select", ["*"])[0].split(",")
+        seen.append(q.get("select", ["*"])[0])
+        body = json.dumps([{c: full[c] for c in cols if c in full}]).encode()
+        return PgResponse(200, body, content_range="0-0/1")
+
+    client = Client(transport, delay=0.0, sleep=lambda _s: None)
+    df, expected, got = wf.fetch_one(wf.Task(2022, "Import", "20"), 0.0, client)
+    assert (expected, got) == (1, 1) and df["maht"].to_list() == [2.5]

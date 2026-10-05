@@ -1,0 +1,43 @@
+name: Waste read probe
+
+# Times counts, page sizes and ordering on one small year of the national waste table so that
+# the full read can be planned from measurements.  Only timings go to `waste-probe`.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: waste-probe
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync --frozen
+      - run: uv run python waste_probe.py --out out/waste_probe --year 2004
+        timeout-minutes: 25
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: waste-probe
+          path: out/waste_probe/
+          retention-days: 30
+      - name: Publish probe
+        if: always()
+        run: |
+          cp out/waste_probe/probe.json "$RUNNER_TEMP/probe.json"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan waste-probe
+          git rm -rf --quiet .
+          cp "$RUNNER_TEMP/probe.json" probe.json
+          git add -- probe.json
+          git commit -m "Waste probe $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push --force origin waste-probe
