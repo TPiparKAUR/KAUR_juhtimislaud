@@ -43,9 +43,9 @@ def cube() -> pl.DataFrame:
             row(5351, "Lamapuidu maht", fa.SUM, y, 3000.0, 0.1, **lnd, omand="Teised maaomanikud"),
             row(1, "Pindala", fa.SUM, y, 1000.0, 0.02, **lnd, omand="Riigimetsamaa"),
             row(1, "Pindala", fa.SUM, y, 1300.0, 0.02, **lnd, omand="Teised maaomanikud"),
-            row(13, "Pindala", fa.SUM, y, 100.0, 0.05, **lnd, omand="Riigimetsamaa",
+            row(13, "Pindala", fa.SUM, y, 100.0, 0.05, **lnd, omand="Riigimetsamaa", enamuspuuliik="Mänd",
                 filtri_tunnus2="Vanus", filter2="81…100 a"),
-            row(13, "Pindala", fa.SUM, y, 200.0, 0.05, **lnd, omand="Teised maaomanikud",
+            row(13, "Pindala", fa.SUM, y, 200.0, 0.05, **lnd, omand="Teised maaomanikud", enamuspuuliik="Mänd",
                 filtri_tunnus2="Vanus", filter2="81…100 a"),
         ]  # fmt: skip
     return pl.DataFrame(rows, infer_schema_length=None)
@@ -121,7 +121,7 @@ def test_age_structure_keeps_the_chosen_scheme_in_order() -> None:
                     ("41…60 a", 300.0), ("61…80 a", 200.0), ("…20 a", 50.0), ("101…120 a", 70.0),
                     ("121… a", 30.0)):  # fmt: skip
         rows.append(row(13, "Pindala", fa.SUM, 2024, v, 0.05, maakategooria="Metsamaa",
-                        omand="Riigimetsamaa", filtri_tunnus2="Vanus", filter2=name))  # fmt: skip
+                        omand="Riigimetsamaa", enamuspuuliik="Mänd", filtri_tunnus2="Vanus", filter2=name))  # fmt: skip
     got = fa.age_structure(pl.DataFrame(rows, infer_schema_length=None))
     assert list(got) == [
         "…20 a",
@@ -138,3 +138,31 @@ def test_shares_check_flags_classes_that_do_not_tile_the_total() -> None:
     assert fa.shares_check([600.0, 400.0], 1000.0) == pytest.approx(1.0)
     assert fa.shares_check([600.0, 900.0], 1000.0) == pytest.approx(1.5)  # overlapping classes
     assert fa.shares_check([1.0], None) is None
+
+
+def test_total_over_two_dimensions_sums_owner_by_species_cells() -> None:
+    rows = [
+        row(13, "Pindala", fa.SUM, 2024, v, 0.1, maakategooria="Metsamaa", omand=o,
+            enamuspuuliik=sp, filtri_tunnus2="Vanus", filter2="21…40 a")
+        for o in ("Riigimetsamaa", "Teised maaomanikud") for sp, v in (("Mänd", 10.0), ("Kuusk", 30.0))
+    ]  # fmt: skip
+    rows.append(
+        row(
+            13,
+            "Pindala",
+            fa.SUM,
+            2024,
+            999.0,
+            0.1,
+            maakategooria="Metsamaa",
+            omand="Riigimetsamaa",
+            majandkategooria="Majandusmets",
+            enamuspuuliik="Mänd",
+            filtri_tunnus2="Vanus",
+            filter2="21…40 a",
+        )
+    )  # managed-forest cut: excluded
+    d = pl.DataFrame(rows, infer_schema_length=None)
+    t = fa.total_over(d, ("omand", "enamuspuuliik"), 13, "Pindala", fa.SUM,
+                      maakategooria="Metsamaa", filtri_tunnus2="Vanus", filter2="21…40 a")  # fmt: skip
+    assert t[0]["value"] == 80.0

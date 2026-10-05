@@ -79,18 +79,29 @@ def _f(x: Any) -> float | None:
 
 
 def total_over(
-    df: pl.DataFrame, by: str, table: int, indicator: str, calc: str = SUM, **fixed: str
+    df: pl.DataFrame,
+    by: str | tuple[str, ...],
+    table: int,
+    indicator: str,
+    calc: str = SUM,
+    **fixed: str,
 ) -> list[dict[str, Any]]:
-    """Add the groups of ``by`` (e.g. owners) per year; combine errors as a root sum of squares."""
+    """Add the groups of ``by`` (e.g. owners, species) per year; errors as a root sum of squares.
+
+    Every ``by`` classifier must be filled and every other classifier empty or fixed, so exactly
+    one level of the cube is summed.
+    """
+    by_cols = (by,) if isinstance(by, str) else tuple(by)
     rows: dict[int, list[tuple[float, float | None]]] = {}
     sub = df.filter(
         (pl.col("tabeli_number") == table)
         & (pl.col("tunnus") == indicator)
         & (pl.col("arvutus") == calc)
-        & pl.col(by).is_not_null()
     )
+    for col in by_cols:
+        sub = sub.filter(pl.col(col).is_not_null())
     for col in DIMS:
-        if col == by:
+        if col in by_cols:
             continue
         sub = (
             sub.filter(pl.col(col) == fixed[col])
@@ -289,7 +300,14 @@ def age_structure(df: pl.DataFrame, width: int = AGE_WIDTH) -> dict[str, list[di
     out: dict[str, list[dict[str, Any]]] = {}
     for c in classes:
         data = total_over(
-            df, "omand", 13, "Pindala", SUM, maakategooria=LAND, filtri_tunnus2="Vanus", filter2=c
+            df,
+            ("omand", "enamuspuuliik"),  # the age classes exist only split by owner and species
+            13,
+            "Pindala",
+            SUM,
+            maakategooria=LAND,
+            filtri_tunnus2="Vanus",
+            filter2=c,
         )
         if data:
             out[c] = data
@@ -297,7 +315,12 @@ def age_structure(df: pl.DataFrame, width: int = AGE_WIDTH) -> dict[str, list[di
 
 
 def filter_trace(
-    df: pl.DataFrame, table: int, indicator: str, calc: str, by: str | None = None, **fixed: str
+    df: pl.DataFrame,
+    table: int,
+    indicator: str,
+    calc: str,
+    by: tuple[str, ...] = (),
+    **fixed: str,
 ) -> list[dict[str, Any]]:
     """Rows left after each selection step; shows which step empties a series (debugging)."""
     steps: list[tuple[str, pl.DataFrame]] = []
@@ -307,11 +330,11 @@ def filter_trace(
     steps.append((f"indicator {indicator}", d))
     d = d.filter(pl.col("arvutus") == calc)
     steps.append((f"calculation {calc}", d))
-    if by:
-        d = d.filter(pl.col(by).is_not_null())
-        steps.append((f"{by} filled", d))
+    for col in by:
+        d = d.filter(pl.col(col).is_not_null())
+        steps.append((f"{col} filled", d))
     for col in DIMS:
-        if col == by:
+        if col in by:
             continue
         if col in fixed:
             d = d.filter(pl.col(col) == fixed[col])

@@ -122,7 +122,7 @@ def build(df: pl.DataFrame, generated: str | None = None) -> dict[str, Any]:
                 13,
                 "Pindala",
                 fa.SUM,
-                by="omand",
+                by=("omand", "enamuspuuliik"),
                 maakategooria=fa.LAND,
                 filtri_tunnus2="Vanus",
                 filter2="21…40 a",
