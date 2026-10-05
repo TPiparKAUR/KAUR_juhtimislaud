@@ -1,0 +1,101 @@
+# Public reports whose structure and presentation we study (see docs/aastaraamatute_oppetunnid.md).
+# URLs below were returned by web searches and are UNVERIFIED until `fetch_yearbooks.py` has
+# downloaded them (status, size and a content check are written to the summary).  Titles are as
+# seen in the search results, not confirmed.
+[[allikas]]
+id = "ee-mets-2021"
+riik = "EE"
+asutus = "Keskkonnaagentuur"
+nimi = "Aastaraamat Mets 2021"
+url = "https://keskkonnaportaal.envir.ee/sites/default/files/Teemad/Mets/Mets2021.pdf"
+
+[[allikas]]
+id = "ee-mets-2020"
+riik = "EE"
+asutus = "Keskkonnaagentuur"
+nimi = "Aastaraamat Mets 2020"
+url = "https://keskkonnaportaal.envir.ee/sites/default/files/Teemad/Mets/Mets2020.pdf"
+
+[[allikas]]
+id = "ee-mets-2019"
+riik = "EE"
+asutus = "Keskkonnaagentuur"
+nimi = "Aastaraamat Mets 2019"
+url = "https://keskkonnaportaal.envir.ee/sites/default/files/2021-12/Aastaraamat%20Mets%202019.pdf"
+
+[[allikas]]
+id = "ee-seire-2022"
+riik = "EE"
+asutus = "Keskkonnaagentuur"
+nimi = "Keskkonnaseire tulemuste kokkuvote 2022"
+url = "https://keskkonnaportaal.envir.ee/sites/default/files/Teemad/Keskkonnaseire/Keskkonnaseire_tulemuste_kokkuvote_2022.pdf"
+
+[[allikas]]
+id = "ee-meteo-2025"
+riik = "EE"
+asutus = "Keskkonnaagentuur (Ilmateenistus)"
+nimi = "Eesti meteoroloogia aastaraamat 2025"
+url = "https://www.ilmateenistus.ee/wp-content/uploads/2026/03/meteoroloogia_aastaraamat_2025.pdf"
+
+[[allikas]]
+id = "ee-rmk-2023"
+riik = "EE"
+asutus = "RMK"
+nimi = "RMK aastaraamat 2023"
+url = "https://rmk.ee/wp-content/uploads/2024/10/RMK_aastaraamat_2023.pdf"
+
+[[allikas]]
+id = "se-skogsdata-2025"
+riik = "SE"
+asutus = "SLU Riksskogstaxeringen"
+nimi = "Skogsdata 2025"
+url = "https://www.slu.se/globalassets/ew/org/centrb/rt/dokument/skogsdata/skogsdata_2025_web.pdf"
+
+[[allikas]]
+id = "se-nv-7071"
+riik = "SE"
+asutus = "Naturvårdsverket"
+nimi = "Naturvårdsverket publication 978-91-620-7071-7"
+url = "https://www.naturvardsverket.se/globalassets/media/publikationer-pdf/7000/978-91-620-7071-7.pdf"
+
+[[allikas]]
+id = "no-nibio-2022-62"
+riik = "NO"
+asutus = "NIBIO"
+nimi = "NIBIO Rapport 2022 vol 8 nr 62 (Møre og Romsdal)"
+url = "https://inte.statsforvalteren.no/contentassets/0931d58b61344a4496769c7d09d8f9e4/nibio_rapport_2022_8_62.pdf"
+
+[[allikas]]
+id = "no-md-2023"
+riik = "NO"
+asutus = "Miljødirektoratet"
+nimi = "Årsrapport Miljødirektoratet 2023"
+url = "https://www.miljodirektoratet.no/globalassets/om-oss/tildelingsbrev-og-arsrapport/arsrapport/2023/arsrapport-miljodirekoratet-2023.pdf/download"
+
+[[allikas]]
+id = "dk-skov-2023"
+riik = "DK"
+asutus = "IGN, Københavns Universitet"
+nimi = "Skovstatistik 2023"
+url = "https://sgavmst.dk/media/xvddt53e/rapport_skovstatistik_2023_web.pdf"
+
+[[allikas]]
+id = "dk-skov-2021"
+riik = "DK"
+asutus = "IGN, Københavns Universitet"
+nimi = "Skovstatistik 2021"
+url = "https://sgavmst.dk/media/dvzj2bej/2021_skovstatistik.pdf"
+
+[[allikas]]
+id = "fi-luke-yearbook-end"
+riik = "FI"
+asutus = "Luke"
+nimi = "Luke news: publication of the Finnish Statistical Yearbook of Forestry ends"
+url = "https://www.luke.fi/en/news/publication-of-the-finnish-statistical-yearbook-of-forestry-ends"
+
+[[allikas]]
+id = "fi-syke-annual"
+riik = "FI"
+asutus = "SYKE"
+nimi = "SYKE annual report page"
+url = "https://www.syke.fi/en/about-us/organisation/annual-report"

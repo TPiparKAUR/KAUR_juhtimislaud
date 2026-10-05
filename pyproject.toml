@@ -9,6 +9,7 @@ dependencies = [
     # Renders JS-built <tableau-viz> web components and shadow DOM, which plain HTTP cannot see.
     "playwright>=1.48",
     "polars>=1.44.2",
+    "pypdf>=6.19.0",
 ]
 
 [project.optional-dependencies]
