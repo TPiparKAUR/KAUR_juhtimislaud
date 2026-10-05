@@ -76,6 +76,8 @@ def series_block(
         "mean": clean_nan(nat["mean"]),
         "lo": clean_nan(nat["lo"]),
         "hi": clean_nan(nat["hi"]),
+        "p10": clean_nan(nat["p10"]),
+        "p90": clean_nan(nat["p90"]),
         "n_stations": [int(v) for v in nat["n"]],
         "trend": {k: (None if np.isnan(v) else round(float(v), 3)) for k, v in tr.items()},
     }

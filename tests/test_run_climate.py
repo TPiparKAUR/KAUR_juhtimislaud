@@ -59,6 +59,13 @@ def test_build_structure_and_signal() -> None:
         out["meta"]["baseline"] == [1991, 2020] and out["meta"]["elements"][rc.TEMP]["unit"] == "°C"
     )
     ann = out["temperature"]["annual"]
+    assert all(
+        lo is not None and lo < m < hi
+        for lo, m, hi in zip(ann["p10"], ann["mean"], ann["p90"], strict=True)
+    )
+    for block in out["temperature"]["seasonal"].values():
+        assert "p10" in block and "p90" in block
+    assert "mean" in out["extremes"] or out["extremes"] == {}
     assert ann["years"][0] == 1991 and ann["years"][-1] == 2025
     tr = ann["trend"]
     assert tr["lo"] <= TREND_PER_DECADE <= tr["hi"]
