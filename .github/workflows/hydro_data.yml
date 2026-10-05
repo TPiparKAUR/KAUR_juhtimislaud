@@ -1,0 +1,54 @@
+name: Hydrology data (daily)
+
+# Streams selected hydrological series (Äravool avg/min/max, WT avg) for stations with long
+# records from the public API, aggregates them to UTC days and writes the daily Parquet as an
+# artifact (not committed: redistribution terms still need checking) plus a log with coverage and
+# value quantiles to the `hydro-data-log` branch for sanity checks.
+
+on:
+  workflow_dispatch:
+    inputs:
+      budget_min:
+        description: "Time budget in minutes"
+        required: false
+        default: "50"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: hydro-data
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync --frozen
+      - name: Catalogue from the latest hydrology catalogue run
+        run: git show origin/hydro-results:hydro_catalog.json > hydro_catalog.json
+      - name: Fetch and aggregate
+        env:
+          BUDGET: ${{ inputs.budget_min || '50' }}
+        run: uv run python hydro_fetch.py --catalog hydro_catalog.json --out out/hydro --budget-min "$BUDGET"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: hydro-daily
+          path: out/hydro/
+          retention-days: 30
+      - name: Publish log to hydro-data-log branch
+        run: |
+          cp out/hydro/hydro_fetch_log.json "$RUNNER_TEMP/hydro_fetch_log.json"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan hydro-data-log
+          git rm -rf --quiet .
+          cp "$RUNNER_TEMP/hydro_fetch_log.json" hydro_fetch_log.json
+          git add -- hydro_fetch_log.json
+          git commit -m "Hydrology data log $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push --force origin hydro-data-log
