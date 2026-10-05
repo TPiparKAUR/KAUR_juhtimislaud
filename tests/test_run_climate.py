@@ -62,6 +62,12 @@ def test_build_structure_and_signal() -> None:
     assert ann["years"][0] == 1991 and ann["years"][-1] == 2025
     tr = ann["trend"]
     assert tr["lo"] <= TREND_PER_DECADE <= tr["hi"]
+    rob = out["temperature"]["robustness"]
+    assert rob["core_stations_only"]["n_stations"] == len(STATIONS)
+    assert rob["block_1"]["lo"] <= TREND_PER_DECADE <= rob["block_5"]["hi"] + 0.5
+    pm = out["temperature"]["annual"]["period_means"]
+    assert [p["from"] for p in pm] == [1991, 2001, 2011, 2021] and pm[-1]["n_years"] == 5
+    assert pm[-1]["mean"] > pm[0]["mean"]  # warming signal
     assert set(out["temperature"]["seasonal"]) == {"DJF", "MAM", "JJA", "SON"}
     assert out["temperature"]["seasonal"]["DJF"]["years"][0] == 1992  # Dec 1990 is missing
     assert len(out["temperature"]["station_trends"]) == len(STATIONS)

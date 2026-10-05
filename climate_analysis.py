@@ -101,7 +101,11 @@ def national_series(
     reps: int = BOOTSTRAP_REPS,
     seed: int = 20260205,
 ) -> dict[str, np.ndarray]:
-    """Mean over stations per period with a station-bootstrap 95% interval."""
+    """Mean over stations per period.
+
+    ``lo``/``hi`` is the station-bootstrap 95% interval of that mean (sampling of stations only);
+    ``p10``/``p90`` is the spread *between* stations, the honest picture of spatial variability.
+    """
     n_st = np.sum(~np.isnan(mat), axis=0)
     rng = np.random.default_rng(seed)
     boot = np.full((reps, mat.shape[1]), np.nan)
@@ -112,11 +116,14 @@ def national_series(
             idx = rng.integers(0, mat.shape[0], mat.shape[0])
             boot[r] = np.nanmean(mat[idx], axis=0)
         lo, hi = np.nanpercentile(boot, [2.5, 97.5], axis=0)
+        p10, p90 = np.nanpercentile(mat, [10, 90], axis=0)  # spread between stations
     ok = n_st >= min_stations
     return {
         "mean": np.where(ok, mean, np.nan),
         "lo": np.where(ok, lo, np.nan),
         "hi": np.where(ok, hi, np.nan),
+        "p10": np.where(ok, p10, np.nan),
+        "p90": np.where(ok, p90, np.nan),
         "n": n_st,
     }
 
@@ -233,14 +240,21 @@ def daily_indices(tmax: pl.DataFrame, tmin: pl.DataFrame, prec: pl.DataFrame) ->
 
 
 def index_series(idx: pl.DataFrame, name: str, min_stations: int = MIN_STATIONS) -> dict[str, Any]:
-    """Across-station median and inter-quartile range per year for one index."""
+    """Across-station summary per year for one index.
+
+    ``mean`` and ``median`` (the median is uninformative for rare events: it is 0 when fewer than
+    half the stations see one), ``q10``/``q90`` spread, and ``share_any``: share of stations with
+    at least one event in the year.
+    """
     g = (
         idx.filter(pl.col(name).is_not_null())
         .group_by("aasta")
         .agg(
+            mean=pl.col(name).mean(),
             median=pl.col(name).median(),
-            q25=pl.col(name).quantile(0.25),
-            q75=pl.col(name).quantile(0.75),
+            q10=pl.col(name).quantile(0.10),
+            q90=pl.col(name).quantile(0.90),
+            share_any=(pl.col(name) > 0).mean(),
             n=pl.len(),
         )
         .filter(pl.col("n") >= min_stations)

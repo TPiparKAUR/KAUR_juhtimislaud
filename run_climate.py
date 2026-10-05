@@ -114,6 +114,8 @@ def analyse_variable(df: pl.DataFrame, kind: str, reps: int = ca.BOOTSTRAP_REPS)
     ya = np.array(years)
     out["annual"] = series_block(years, nat, ca.trend(ya, nat["mean"], reps=reps))
     out["annual"]["top_years"] = ca.ranks(nat["mean"], ya, 5)
+    out["annual"]["period_means"] = period_means(ya, nat["mean"])
+    out["robustness"] = robustness(ya, mat, nat["mean"], reps)
     out["station_trends"] = []
     for i, st in enumerate(stations):
         tr = ca.trend(ya, mat[i], reps=min(reps, 300))
@@ -145,6 +147,46 @@ def analyse_variable(df: pl.DataFrame, kind: str, reps: int = ca.BOOTSTRAP_REPS)
             ],
         }
     return out
+
+
+PERIODS = [(1991, 2000), (2001, 2010), (2011, 2020), (2021, 2025)]
+
+
+def period_means(years: np.ndarray, values: np.ndarray) -> list[dict[str, Any]]:
+    """Mean of the national annual series over fixed periods (years with data only)."""
+    out = []
+    for a, b in PERIODS:
+        sel = (years >= a) & (years <= b) & ~np.isnan(values)
+        out.append(
+            {
+                "from": a,
+                "to": b,
+                "n_years": int(sel.sum()),
+                "mean": round(float(values[sel].mean()), 3) if sel.any() else None,
+            }
+        )
+    return out
+
+
+def robustness(
+    years: np.ndarray, mat: np.ndarray, national: np.ndarray, reps: int
+) -> dict[str, Any]:
+    """How much the headline trend depends on the method and the station set."""
+
+    def slope(vals: np.ndarray, block: int = ca.BLOCK_LEN) -> dict[str, float | None]:
+        t = ca.trend(years, vals, reps=reps, block=block)
+        return {k: (None if np.isnan(v) else round(float(v), 3)) for k, v in t.items()}
+
+    core = np.sum(~np.isnan(mat), axis=1) >= 34  # (almost) complete 1991-2025 records
+    with np.errstate(all="ignore"):
+        core_mean = np.nanmean(mat[core], axis=0) if core.any() else np.full(len(years), np.nan)
+    return {
+        "block_1": slope(national, 1),
+        "block_3": slope(national, 3),
+        "block_5": slope(national, 5),
+        "core_stations_only": {"n_stations": int(core.sum()), **slope(core_mean)},
+        "last_20_years": slope(np.where(years >= 2006, national, np.nan)),
+    }
 
 
 def build(

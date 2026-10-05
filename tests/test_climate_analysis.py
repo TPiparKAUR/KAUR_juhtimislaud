@@ -85,6 +85,8 @@ def test_national_series_and_trend_recover_known_signal() -> None:
     mat, _, years = ca.to_matrix(ca.station_period_matrix(anom, ["aasta"], 12), "aasta")
     nat = ca.national_series(mat, reps=200)
     assert np.all(nat["lo"] <= nat["mean"]) and np.all(nat["mean"] <= nat["hi"])
+    assert np.all(nat["p10"] <= nat["mean"] + 1e-9) and np.all(nat["mean"] <= nat["p90"] + 1e-9)
+    assert np.all((nat["p90"] - nat["p10"]) > (nat["hi"] - nat["lo"]))  # between-station spread
     tr = ca.trend(np.array(years), nat["mean"], reps=300)
     assert tr["lo"] <= TREND_PER_DECADE <= tr["hi"]
     assert abs(tr["slope_per_decade"] - TREND_PER_DECADE) < 0.15
@@ -153,6 +155,16 @@ def test_index_series_quantiles_and_min_stations() -> None:
     )
     s = ca.index_series(idx, "FD", min_stations=5)
     assert s["aasta"] == [2000] and s["median"] == [35.0] and s["n"] == [6]
+    assert s["mean"] == [35.0] and s["share_any"] == [1.0]
+    assert s["q10"][0] < s["median"][0] < s["q90"][0]
+
+
+def test_index_series_share_any_counts_stations_with_events() -> None:
+    idx = pl.DataFrame(
+        {"jaam_kood": [f"S{i}" for i in range(6)], "aasta": 2000, "HD30": [0, 0, 0, 0, 3, 1]}
+    )
+    s = ca.index_series(idx, "HD30")
+    assert s["median"] == [0.0] and s["share_any"] == [pytest.approx(2 / 6)]
 
 
 def test_precipitation_ratio_uses_totals_and_full_periods() -> None:
