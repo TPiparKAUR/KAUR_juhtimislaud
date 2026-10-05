@@ -166,3 +166,16 @@ def test_total_over_two_dimensions_sums_owner_by_species_cells() -> None:
     t = fa.total_over(d, ("omand", "enamuspuuliik"), 13, "Pindala", fa.SUM,
                       maakategooria="Metsamaa", filtri_tunnus2="Vanus", filter2="21…40 a")  # fmt: skip
     assert t[0]["value"] == 80.0
+
+
+def test_a_zero_part_without_error_does_not_make_the_sum_unknown() -> None:
+    base = {"maakategooria": "Metsamaa", "filtri_tunnus2": "Vanus", "filter2": "21…40 a"}
+    ok = [
+        row(13, "Pindala", fa.SUM, 2024, 10.0, 0.1, omand="Riigimetsamaa", enamuspuuliik="Mänd", **base),
+        row(13, "Pindala", fa.SUM, 2024, 0.0, None, omand="Riigimetsamaa", enamuspuuliik="Kuusk", **base),
+    ]  # fmt: skip
+    t = fa.total_over(pl.DataFrame(ok, infer_schema_length=None), ("omand", "enamuspuuliik"), 13, "Pindala", fa.SUM, **base)  # fmt: skip
+    assert t[0]["err"] == pytest.approx(0.1)
+    bad = [*ok[:1], row(13, "Pindala", fa.SUM, 2024, 5.0, None, omand="Riigimetsamaa", enamuspuuliik="Kuusk", **base)]  # fmt: skip
+    t = fa.total_over(pl.DataFrame(bad, infer_schema_length=None), ("omand", "enamuspuuliik"), 13, "Pindala", fa.SUM, **base)  # fmt: skip
+    assert t[0]["err"] is None

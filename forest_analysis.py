@@ -117,7 +117,9 @@ def total_over(
     for y in sorted(rows):
         parts = rows[y]
         value = sum(v for v, _ in parts)
-        if value == 0 or any(e is None for _, e in parts):
+        # A part with value 0 has an undefined relative error but adds nothing, so it does not
+        # make the sum's error unknown; a positive part without an error does.
+        if value == 0 or any(e is None and v > 0 for v, e in parts):
             err = None
         else:
             err = math.sqrt(sum((v * (e or 0.0)) ** 2 for v, e in parts)) / value
