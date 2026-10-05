@@ -118,3 +118,24 @@ def test_no_credentials_in_workflows() -> None:
         for line in text.splitlines():
             if re.match(r"\s*TABLEAU_PAT_(NAME|SECRET):", line):
                 assert "${{ secrets." in line, f"{p.name}: literal credential"
+
+
+API_SCRIPTS = (
+    "waste_fetch.py", "waste_explore.py", "waste_probe.py", "forest_fetch.py", "hydro_fetch.py",
+    "hydro_catalog.py", "airenergy_explore.py", "explore.py", "api_catalog.py", "run_climate.py",
+)  # fmt: skip
+
+
+def test_workflows_that_query_the_shared_api_take_turns_and_stay_polite() -> None:
+    """The public API has a small connection pool: 4 jobs x 6 requests made it answer 504."""
+    for p in WORKFLOWS:
+        doc = load(p)
+        cmds = " ".join(commands(doc))
+        if not any(s in cmds for s in API_SCRIPTS):
+            continue
+        group = str(doc.get("concurrency", {}).get("group", ""))
+        assert group.startswith("kaur-api"), f"{p.name} can run alongside other API jobs"
+        for name, job in doc["jobs"].items():
+            parallel = job.get("strategy", {}).get("max-parallel", 1)
+            workers = [int(m) for c in commands(doc) for m in re.findall(r"--workers (\d+)", c)]
+            assert parallel * max(workers or [1]) <= 8, f"{p.name}:{name} too many requests at once"

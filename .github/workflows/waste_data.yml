@@ -7,7 +7,9 @@ name: Waste data (aggregated)
 #
 # If some years fail, use "Re-run failed jobs" on this run: successful years keep their artifacts
 # and `combine` runs again.  Measured server behaviour (see waste_probe.py): ~10 s per request,
-# 20 000 rows per request at most, unordered paging unstable -> ordered pages, read in parallel.
+# 20 000 rows per request at most, unordered paging unstable -> ordered pages.  Concurrency is kept
+# low on purpose (2 jobs x 3 requests): at 4 x 6 the shared API answered 504 "Timed out acquiring
+# connection from connection pool".
 
 on:
   workflow_dispatch:
@@ -16,7 +18,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: waste-data
+  group: kaur-api  # one job at a time against the shared public API
   cancel-in-progress: false
 
 jobs:
@@ -25,14 +27,14 @@ jobs:
     timeout-minutes: 45
     strategy:
       fail-fast: false
-      max-parallel: 4
+      max-parallel: 2
       matrix:
         year: [2025, 2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011, 2010, 2009, 2008, 2007, 2006, 2005, 2004]
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v5
       - run: uv sync --frozen
-      - run: uv run python waste_fetch.py --out out/parts --years ${{ matrix.year }} --workers 6 --budget-min 38
+      - run: uv run python waste_fetch.py --out out/parts --years ${{ matrix.year }} --workers 3 --budget-min 38
         timeout-minutes: 42
       - uses: actions/upload-artifact@v4
         if: always()

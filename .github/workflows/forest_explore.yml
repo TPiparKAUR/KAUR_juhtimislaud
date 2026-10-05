@@ -11,7 +11,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: forest-fetch
+  group: kaur-api  # one job at a time against the shared public API
   cancel-in-progress: false
 
 jobs:
@@ -22,7 +22,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v5
       - run: uv sync --frozen
-      - run: uv run python forest_fetch.py --out out/forest
+      - run: uv run python forest_fetch.py --out out/forest --workers 3
         timeout-minutes: 25
       - uses: actions/upload-artifact@v4
         if: always()

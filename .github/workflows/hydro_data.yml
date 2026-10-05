@@ -17,7 +17,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: hydro-data
+  group: kaur-api  # one job at a time against the shared public API
   cancel-in-progress: false
 
 jobs:

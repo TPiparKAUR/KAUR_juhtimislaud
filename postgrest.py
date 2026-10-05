@@ -22,7 +22,7 @@ BASE_URL = "https://keskkonnaandmed.envir.ee"
 PROFILE = "apijahiala"
 USER_AGENT = "kaur-juhtimislaud-analysis/0.1 (+https://github.com/TPiparKAUR/KAUR_juhtimislaud)"
 PAGE_SIZE = 5000
-MAX_ATTEMPTS = 4
+MAX_ATTEMPTS = 6  # waits 5+10+20+40+80 s: rides out a saturated connection pool (HTTP 504)
 
 
 @dataclass
@@ -51,6 +51,11 @@ def parse_total(content_range: str) -> int | None:
     """Total row count from a ``Content-Range: 0-0/123`` header, or None when unknown."""
     _, _, total = content_range.partition("/")
     return int(total) if total.isdigit() else None
+
+
+def backoff(attempt: int) -> float:
+    """Seconds to wait before retry number ``attempt`` (0-based): 5, 10, 20, 40, 80, ..."""
+    return float(min(5.0 * (2**attempt), 90.0))
 
 
 class PostgrestError(RuntimeError):
@@ -85,7 +90,7 @@ class Client:
                 return resp
             if resp.status not in (0, 429, 500, 502, 503, 504):
                 break
-            wait = 5.0 * (2**attempt)
+            wait = backoff(attempt)
             LOG.warning("%s: HTTP %s, retrying in %.0fs", table, resp.status, wait)
             self.sleep(wait)
         raise PostgrestError(f"{table}: HTTP {resp.status} {resp.error}")

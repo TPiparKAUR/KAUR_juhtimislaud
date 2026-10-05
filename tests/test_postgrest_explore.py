@@ -83,7 +83,7 @@ def test_retry_then_success_and_failure() -> None:
     api = FakeApi(3, status=[503, 200])
     assert len(client(api).rows("t")) == 3
     with pytest.raises(p.PostgrestError):
-        client(FakeApi(3, status=[500] * 4)).rows("t")
+        client(FakeApi(3, status=[500] * p.MAX_ATTEMPTS)).rows("t")
     with pytest.raises(p.PostgrestError):  # non-retryable
         client(FakeApi(3, status=[404])).rows("t")
 
@@ -115,3 +115,28 @@ def test_run_records_errors(tmp_path: Path) -> None:
     api = FakeApi(5, status=[404])
     e.run(client(api), ["bad"], tmp_path)
     assert "ERROR" in (tmp_path / "INDEX.md").read_text()
+
+
+def test_backoff_grows_and_is_capped() -> None:
+    from postgrest import backoff
+
+    assert [backoff(i) for i in range(5)] == [5.0, 10.0, 20.0, 40.0, 80.0]
+    assert backoff(10) == 90.0
+
+
+def test_saturated_connection_pool_is_retried_until_it_recovers() -> None:
+    """HTTP 504 PGRST003 (pool exhausted) lasted several attempts when 30 requests ran at once."""
+    from postgrest import Client, PgResponse
+
+    calls = {"n": 0}
+    waited: list[float] = []
+
+    def transport(url: str, headers: Mapping[str, str]) -> PgResponse:
+        calls["n"] += 1
+        if calls["n"] <= 4:
+            return PgResponse(504, b"", error="PGRST003 Timed out acquiring connection")
+        return PgResponse(200, b"[]")
+
+    client = Client(transport, delay=0.0, sleep=waited.append)
+    assert client.rows("t") == [] and calls["n"] == 5
+    assert waited[:4] == [5.0, 10.0, 20.0, 40.0]
