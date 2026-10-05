@@ -40,6 +40,7 @@ select = ["E", "F", "W", "I", "B", "UP", "SIM", "PTH", "N", "C4", "RUF"]
 [tool.mypy]
 python_version = "3.12"
 strict = true
+exclude = ["scratch/", "\\.venv/"]
 
 [[tool.mypy.overrides]]
 module = ["tableauserverclient", "tableauserverclient.*"]
