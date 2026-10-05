@@ -121,3 +121,18 @@ Iga eksperdi jaoks 5–8 küsimust, vastused repo issues'isse (silt `ekspert-ül
 
 Staatus: kõik graafikud kannavad märget "valdkonnaekspert ülevaatamata", kuni vastav isik on
 kinnitanud (või parandanud) iga graafiku iseseisvalt.
+
+## Jäätmed ja ringmajandus (päris andmetega, 2004–2025)
+
+Allikas: f_jaatmeliikumine_fix_riik, 20 139 963 rida loetud ja koondatud (kõik 22 aastat, ridade arv
+võrdub serveri arvuga). Puänt-sõnumid tulevad andmetest; ühik (t) on eeldatud.
+
+- Jäätmeteke: peatükk 10 (termilised protsessid, sh põlevkivituhk) on ~26% ja juhib aastatevahelist muutust;
+  graafik näitab ka kogumit ilma selleta.
+- Netokogused sisaldavad negatiivseid ridu (2025: −12,5 Mt); põhjus andmetest nähtamatu.
+- Voogusid (teke, taaskasutus, ladestus, eksport jt) ei liideta ega suhestata: kattuvus teadmata
+  (nt taaskasutus 2024 on suurem kui teke 2024).
+- Ohtlike jäätmete osakaal langeb 2019 → 2020 u 40%-lt 10%-le; see viitab märkimise või klassifikatsiooni
+  muutusele (põhjus kinnitamata), mitte tegelikule vähenemisele.
+- Laoseisu lõpp vs. järgmise aasta algus erineb mediaanis suurelt: aruandjate koosseis/parandused piiravad
+  järepidevust.

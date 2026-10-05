@@ -57,7 +57,11 @@
     hazardous(host) {
       C.wasteHazardous(host, d);
       const h = d.hazardous_generation.find((r) => r.aasta === last);
-      if (h && h.share != null) C.punch(host, `Ohtlikuks märgitud osa on ${fmt(100 * h.share, 1)}% jäätmetekkest (${last}); osakaalu juhib suuresti peatükk 10.`);
+      if (h && h.share != null) {
+        const hs = d.hazardous_generation.filter((r) => r.share != null).sort((a, b) => a.aasta - b.aasta);
+        const jump = hs.slice(1).map((r, i) => ({ y: r.aasta, dv: r.share - hs[i].share })).sort((a, b) => a.dv - b.dv)[0];
+        C.punch(host, `Ohtlikuks märgitud osa on ${fmt(100 * h.share, 1)}% jäätmetekkest (${last})${jump && jump.dv < -0.15 ? `; suurim hüpe on ${jump.y}. aastal (${fmt(100 * jump.dv, 0)} protsendipunkti), mis viitab pigem märkimise või klassifikatsiooni muutusele kui ohu tegelikule vähenemisele (põhjus kinnitamata)` : ''}.`);
+      }
     },
     top(host) {
       C.wasteTopTypes(host, d);

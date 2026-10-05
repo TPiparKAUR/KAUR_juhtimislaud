@@ -48,8 +48,10 @@
       if (!(mx > 0)) continue;
       const [unit, scale, dec] = unitFor(mx);
       const div = document.createElement('div'); grid.appendChild(div);
-      const neg = rows.reduce((a, r) => a + r.negative_tonnes, 0);
-      stackedBars(div, { years, scale, unit, dec, height: 200, title: f, subtitle: '', series: [{ key: f, label: f, color: SLOTS[0], values: m }], note: neg < 0 ? `Sisaldab negatiivseid väärtusi kokku ${fmt(neg / scale, dec)} ${unit}.` : '' });
+      const negYears = rows.filter((r) => r.negative_tonnes < 0).length;
+      const short = f.length > 52 ? `${f.slice(0, 50).trim()}…` : f;
+      const note = [f.length > 52 ? f : '', negYears ? `Negatiivseid väärtusi on ${negYears} aastal (netokogus).` : ''].filter(Boolean).join(' ');
+      stackedBars(div, { years, scale, unit, dec, height: 200, noLabels: true, title: short, subtitle: `Suurim: ${fmt(mx / scale, dec)} ${unit} (${[...m].find(([, v]) => v === mx)[0]})`, series: [{ key: f, label: short, color: SLOTS[0], values: m }], note });
     }
   }
 
@@ -111,12 +113,12 @@
       table: { head: ['Kood', 'Nimetus', `Kogus, ${unit}`], rows: rows.map((r) => [r.jaatmeliik, r.jaatmeliik_nimi, fmt(r.tonnes / scale, dec)]) },
       note: `Aasta ${d.meta.latest_year} andmed võivad olla täienemas.` });
     responsive(frm, (box, w) => {
-      const rowH = 24, labelW = Math.min(300, w * 0.5), m = { t: 8, r: 70 }, h = m.t + rowH * rows.length + 8;
+      const rowH = 24, labelW = Math.min(340, w * 0.55), m = { t: 8, r: 70 }, h = m.t + rowH * rows.length + 8;
       const svg = el('svg', { width: w, height: h, role: 'img', 'aria-label': 'Suurimad jäätmeliigid' }, box);
       rows.forEach((r, i) => {
         const y = m.t + i * rowH, bw = Math.max(1, (w - labelW - m.r) * Math.max(r.tonnes, 0) / max);
-        const t = r.jaatmeliik_nimi.length > 42 ? `${r.jaatmeliik_nimi.slice(0, 41)}…` : r.jaatmeliik_nimi;
-        el('text', { x: labelW - 6, y: y + 15, 'text-anchor': 'end', class: 'tick' }, svg, `${r.jaatmeliik} ${t}`);
+        const full = `${r.jaatmeliik} ${r.jaatmeliik_nimi}`, cap = Math.max(12, Math.floor((labelW - 10) / 6.4));
+        el('text', { x: labelW - 6, y: y + 15, 'text-anchor': 'end', class: 'tick' }, svg, full.length > cap ? `${full.slice(0, cap - 1)}…` : full);
         const rc = el('rect', { x: labelW, y: y + 3, width: bw, height: rowH - 8, rx: 2, fill: SLOTS[0], tabindex: 0 }, svg);
         hover(rc, () => `<b>${r.jaatmeliik}</b><br>${r.jaatmeliik_nimi}<br>${fmt(r.tonnes / scale, dec)} ${unit}`);
         el('text', { x: labelW + bw + 5, y: y + 15, class: 'lbl' }, svg, fmt(r.tonnes / scale, dec));
