@@ -164,7 +164,8 @@
     const stage = frame(host, {
       title: opt.title, subtitle: opt.subtitle,
       legend: [['box', 'var(--pos)', opt.posLabel], ['box', 'var(--neg)', opt.negLabel],
-        ['whisk', 'var(--ink-2)', 'Jaamade vahe: 10.–90. protsentiil'], ['dash', 'var(--ink)', 'Theil–Sen trend']],
+        ...(p10 ? [['whisk', 'var(--ink-2)', 'Jaamade vahe: 10.–90. protsentiil']] : []),
+        ...(tr ? [['dash', 'var(--ink)', 'Theil–Sen trend']] : [])],
       table: { head: ['Aasta', opt.valueHead, 'Jaamade 10.–90. pct', 'Jaamu'], rows },
       note: opt.note,
     });

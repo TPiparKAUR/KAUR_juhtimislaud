@@ -121,7 +121,7 @@ def build(
                 "water_temperature": "degC (assumed)",
             },
             "time_basis": "UTC calendar days; a day needs >= 20 hourly values.",
-            "reference": "All complete years per station (about 2013-2025); no 30-year normal.",
+            "reference": "All complete years per station (about 2012-2025); no 30-year normal.",
             "limits": [
                 "Records start in 2012: no return periods or long-term trends can be derived.",
                 "Stations chosen for record length; regulation by lakes or dams is not flagged.",

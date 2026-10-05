@@ -31,13 +31,26 @@
         const sp = L.spearman;
         li.push(`<li><b>Sademed ja äravool:</b> aastane riigi äravool ja sademete summa on seotud (ρ = ${fmt(sp.rho, 2)}, 95% vahemik ${fmt(sp.lo, 2)} … ${fmt(sp.hi, 2)}, n = ${sp.n}); ${sp.lo > 0 ? 'seos on positiivne ja vahemik ei sisalda nulli' : 'vahemik sisaldab nulli, seos pole selle valimiga kindlalt eristatav'}.</li>`);
       }
-      let out = 0, total = 0;
+      let out = 0, total = 0, below = 0;
       for (const s of d.stations) {
         const r = d.regime[s.code];
         if (!r) continue;
-        r.current_months.forEach((m) => { const i = r.months.indexOf(m); if (i < 0) return; total += 1; const v = r.current[r.current_months.indexOf(m)]; if (v > r.q90[i] || v < r.q10[i]) out += 1; });
+        r.current_months.forEach((m) => { const i = r.months.indexOf(m); if (i < 0) return; total += 1; const v = r.current[r.current_months.indexOf(m)]; if (v > r.q90[i] || v < r.q10[i]) out += 1; if (v < r.q10[i]) below += 1; });
       }
-      if (total) li.push(`<li><b>${d.meta.current_year}:</b> ${fmt(100 * out / total, 0)}% jaama-kuu väärtustest jääb väljapoole 10.–90. protsentiili (${out}/${total}); juhuslikult eeldaks umbes 20%.</li>`);
+      if (total) li.push(`<li><b>${d.meta.current_year}:</b> ${fmt(100 * out / total, 0)}% jaama-kuu väärtustest jääb väljapoole 10.–90. protsentiili (${out}/${total}; neist ${below} alla ja ${out - below} üle). Kui aasta oleks varasemate sarnane, oleks neid umbes 20%.</li>`);
+      const means = d.stations.map((s) => ({ s, m: (d.annual[s.code]?.specific_ls_km2 || []).filter((v) => v !== null) })).filter((x) => x.m.length >= 5).map((x) => ({ name: x.s.name, v: x.m.reduce((a, b) => a + b, 0) / x.m.length }));
+      const sorted = means.map((x) => x.v).sort((a, b) => a - b), med = sorted[sorted.length >> 1];
+      const high = means.filter((x) => x.v > 1.3 * med).map((x) => `${x.name} (${fmt(x.v, 1)})`);
+      if (high.length) li.push(`<li><b>Kontrolli vajav:</b> ${high.join(', ')} l/s/km² on jaamade mediaanist (${fmt(med, 1)}) üle 30% kõrgem – valgala pindala, mõõtekõver või maa-alune toide vajab kontrolli enne jaamade omavahelist võrdlust.</li>`);
+      const sw = d.water_temperature, years = {};
+      for (const [code, t] of Object.entries(sw)) {
+        const vals = t.years.map((y, i) => [y, t.summer_mean[i]]).filter(([, v]) => v !== null);
+        if (vals.length < 8) continue;
+        const mean = vals.reduce((a, [, v]) => a + v, 0) / vals.length;
+        for (const [y, v] of vals) (years[y] ||= []).push(v - mean);
+      }
+      const yr = Object.entries(years).filter(([, a]) => a.length >= 8).map(([y, a]) => [+y, a.reduce((x, z) => x + z, 0) / a.length]).sort((a, b) => b[1] - a[1]);
+      if (yr.length >= 4) li.push(`<li><b>Veetemperatuur:</b> kõige soojemad suved ${yr.slice(0, 3).map((r) => `${r[0]} (${sgn(r[1], 1)} °C)`).join(', ')}, kõige jahedamad ${yr.slice(-3).reverse().map((r) => `${r[0]} (${sgn(r[1], 1)} °C)`).join(', ')} (jaamade keskmine kõrvalekalle oma keskmisest, juuni–august).</li>`);
       const dq = d.quality.dropped, nq = dq.reduce((acc, x) => acc + x.negative + x.spike + x.out_of_range, 0);
       if (nq) li.push(`<li><b>Andmekvaliteet:</b> lihtne reeglipõhine sõel jättis välja ${nq} päevaväärtust (${dq.map((x) => `${(d.stations.find((s) => s.code === x.jaam_kood) || {}).name ?? x.jaam_kood}: ${x.series}, ${x.negative + x.spike + x.out_of_range}`).join('; ')}) – negatiivne vooluhulk, ebareaalne hüpe (> ${d.quality.rules.discharge_spike.match(/\d+/)[0]}× jaama enda Q95) või füüsikaliselt võimatu veetemperatuur. Andmete omaniku kvaliteedikontrolli tase ei ole teada.</li>`);
       host.innerHTML = `<ul class="findings">${li.join('')}</ul>`;

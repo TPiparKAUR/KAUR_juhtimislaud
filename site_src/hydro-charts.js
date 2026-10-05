@@ -113,7 +113,7 @@
     const rows = [...by.keys()].map((c) => ({ label: names[c] ?? String(c), cells: by.get(c) }));
     matrix(host, { title: 'Andmete katvus: kui suure osa aastast on kehtiv ööpäevakeskmine vooluhulk?', subtitle: 'Kehtiv päev = vähemalt 20 tunniväärtust.', rowHead: 'Jaam', cols: years, rows,
       color: (v) => sequential(2 + 7 * v, 9), colLabel: String, showCol: () => true, fmtCell: (v) => (v === undefined ? '–' : `${fmt(100 * v, 0)}%`), tip: (v) => `${fmt(100 * v, 0)}% päevi kehtivad`,
-      ramp: '<span>0%</span><i class="seq"></i><span>100%</span>', labelW: 150, rowH: 17, note: 'Puuduva või puudulikuga aastaid ei kasutata aasta keskmiste ja ekstreemide arvutamisel (alla 350 kehtiva päeva).' });
+      ramp: '<span>0%</span><i class="seq"></i><span>100%</span>', labelW: 150, rowH: 17, note: `Puuduva või puudulikuga aastaid ei kasutata aasta keskmiste ja ekstreemide arvutamisel (alla 350 kehtiva päeva). ${d.meta.current_year} on pooleli, seega jääb selle aasta osakaal paratamatult alla 100%.` });
   }
 
   /* ---- flow-duration curves, one station highlighted, others as context ---- */
@@ -124,14 +124,15 @@
     selectable(host, stations.map((s) => ({ value: String(s.code), text: label(s) })), initial, 'Rõhuta jaam:', (holder, code) => {
       const sel = stations.find((s) => String(s.code) === code);
       const rows = d.flow_duration[sel.code].p.map((p, i) => [`${p}%`, fmt(d.flow_duration[sel.code].specific_ls_km2[i], 2)]);
-      const stage = frame(holder, { title: 'Vooluhulga kestvuskõver (erivool)', subtitle: 'Mitu protsenti ajast on erivool vähemalt nii suur; log-telg. Hall: teised jaamad, sinine: valitud jaam.', table: { head: ['Ületamise tõenäosus', 'Erivool l/s/km²'], rows }, note: 'Kõik kehtivad päevad. Vool on jagatud valgala pindalaga, seega jaamu saab omavahel võrrelda; kõvera järsus näitab vooluhulga ebaühtlust (P5 = suurvesi, P95 = madalvesi).' });
+      const stage = frame(holder, { title: 'Vooluhulga kestvuskõver (erivool)', subtitle: 'Mitu protsenti ajast on erivool vähemalt nii suur; log-telg. Hall: teised jaamad, sinine: valitud jaam.', table: { head: ['Ületamise tõenäosus', 'Erivool l/s/km²'], rows }, note: 'Kõik kehtivad päevad. Vool on jagatud valgala pindalaga, seega jaamu saab omavahel võrrelda; kõvera järsus näitab vooluhulga ebaühtlust (P5 = suurvesi, P95 = madalvesi). Telg lõpeb 0,05 l/s/km² juures: sellest madalamad väärtused (kuivaperioodid, nullvool) on kärbitud.' });
       responsive(stage, (box, w) => {
         const m = { l: 50, r: 70, t: 14, b: 30 }, h = 320;
         const svg = el('svg', { width: w, height: h, role: 'img', 'aria-label': 'Vooluhulga kestvuskõver' }, box);
         const all = stations.flatMap((s) => d.flow_duration[s.code].specific_ls_km2).filter((v) => v > 0);
-        const lo = Math.log10(Math.min(...all)), hi = Math.log10(Math.max(...all));
+        const FLOOR = 0.05;  // l/s/km2: lower values (dry spells, zero flow) are clipped to the axis floor
+        const lo = Math.log10(FLOOR), hi = Math.log10(Math.max(...all));
         const x = (p) => m.l + (w - m.l - m.r) * (p / 100);
-        const y = (v) => m.t + (h - m.t - m.b) * (1 - (Math.log10(Math.max(v, 1e-3)) - lo) / (hi - lo));
+        const y = (v) => m.t + (h - m.t - m.b) * (1 - (Math.log10(Math.max(v, FLOOR)) - lo) / (hi - lo));
         for (let e = Math.ceil(lo); e <= Math.floor(hi); e++) {
           el('line', { x1: m.l, x2: w - m.r, y1: y(10 ** e), y2: y(10 ** e), class: 'grid' }, svg);
           el('text', { x: m.l - 6, y: y(10 ** e) + 4, 'text-anchor': 'end', class: 'tick' }, svg, fmt(10 ** e, e < 0 ? -e : 0));
@@ -168,7 +169,7 @@
         const cx = m.l + band * (i + 0.5);
         const r = el('rect', { x: cx - bw / 2, width: bw, y: y(values[i]), height: Math.max(1, y(0) - y(values[i])), rx: 2, class: 'bar-neg', tabindex: 0 }, svg);
         hover(r, () => `<b>${yr}</b><br>${fmt(values[i], opt.dec)} ${opt.unit}`);
-        el('text', { x: cx, y: h - 8, 'text-anchor': 'middle', class: 'tick' }, svg, String(yr));
+        if (band >= 26 || i % 2 === 0) el('text', { x: cx, y: h - 8, 'text-anchor': 'middle', class: 'tick' }, svg, String(yr));
       });
     });
   }
@@ -180,7 +181,7 @@
       const e = d.extremes[code];
       holder.innerHTML = '<div class="panels"><div></div><div></div></div>';
       const [a, b] = holder.firstChild.children;
-      yearBars(a, e.years, e.peak, { title: 'Aasta kõrgeim tunnimaksimum', subtitle: 'Suurim „Äravool max“ tunniväärtus aastas.', unit: 'm³/s', dec: 1, note: 'Ühik eeldatud. 13 aastat ei võimalda korduvusaegade hindamist.' });
+      yearBars(a, e.years, e.peak, { title: 'Aasta kõrgeim tunnimaksimum', subtitle: 'Suurim „Äravool max“ tunniväärtus aastas.', unit: 'm³/s', dec: 1, note: `Ühik eeldatud. ${e.years.length} aastat ei võimalda korduvusaegade hindamist.` });
       yearBars(b, e.years, e.q7min, { title: 'Madalvesi: väikseim 7 päeva keskmine', subtitle: 'Aasta madalaim 7 järjestikuse päeva keskmine vooluhulk (Q7min).', unit: 'm³/s', dec: 2, note: 'Madalvee 7-päeva keskmine eeldab järjestikuseid kehtivaid päevi; aasta peab olema vähemalt 350 päeva ulatuses kaetud.' });
     });
   }
@@ -202,7 +203,7 @@
       el('line', { x1: x(100), x2: x(100), y1: m.t, y2: h - m.b, class: 'ax-zero' }, svg);
       el('line', { x1: m.l, x2: w - m.r, y1: y(100), y2: y(100), class: 'ax-zero' }, svg);
       el('text', { x: w / 2, y: h - 4, 'text-anchor': 'middle', class: 'unit' }, svg, 'Aastased sademed, % 1991–2020 normist');
-      el('text', { x: m.l - 6, y: 8, 'text-anchor': 'end', class: 'unit' }, svg, 'Äravool, % keskmisest');
+      el('text', { x: m.l, y: 8, 'text-anchor': 'start', class: 'unit' }, svg, 'Äravool, % jaamade keskmisest');
       link.years.forEach((yr, i) => {
         const c = el('circle', { cx: x(xs[i]), cy: y(ys[i]), r: 6, class: 'dot-pos', tabindex: 0 }, svg);
         el('text', { x: x(xs[i]) + 9, y: y(ys[i]) + 4, class: 'tick' }, svg, String(yr));
