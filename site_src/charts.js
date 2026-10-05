@@ -316,7 +316,7 @@
       table: { head: ['Aasta', `Keskmine (${opt.unit})`, '10.–90. pct', 'Jaamu ≥1 sündmusega, %', 'Jaamu'], rows }, note: opt.note,
     });
     const verdict = tr && tr.slope_per_decade !== null
-      ? ((tr.lo > 0 || tr.hi < 0) ? `Trend ${sgn(tr.slope_per_decade, opt.dec ?? 1)} ${opt.unit} kümnendi kohta (95% ${fmt(tr.lo, opt.dec ?? 1)} … ${fmt(tr.hi, opt.dec ?? 1)}): eristub nullist` : `Trend ${sgn(tr.slope_per_decade, opt.dec ?? 1)} ${opt.unit} kümnendi kohta (95% ${fmt(tr.lo, opt.dec ?? 1)} … ${fmt(tr.hi, opt.dec ?? 1)}): ei erine nullist`) : '';
+      ? ((tr.lo > 0 || tr.hi < 0) ? `Trend ${sgn(tr.slope_per_decade, opt.dec ?? 1)} ${opt.unit.replace('/a', ' aastas')} kümnendi kohta (95% ${fmt(tr.lo, opt.dec ?? 1)} … ${fmt(tr.hi, opt.dec ?? 1)}): eristub nullist` : `Trend ${sgn(tr.slope_per_decade, opt.dec ?? 1)} ${opt.unit.replace('/a', ' aastas')} kümnendi kohta (95% ${fmt(tr.lo, opt.dec ?? 1)} … ${fmt(tr.hi, opt.dec ?? 1)}): ei erine nullist`) : '';
     stage.insertAdjacentHTML('beforebegin', `<p class="viz-verdict">${verdict}</p>`);
     responsive(stage, (box, w) => {
       const m = { l: 40, r: 8, t: 10, b: 24 }, h = opt.height || 190;

@@ -15,7 +15,7 @@
   }
   const T = d.temperature, P = d.precipitation, A = T.annual, stName = Object.fromEntries(d.stations.map((s) => [s.code, s.name]));
   const excl0 = (t) => t && t.lo !== null && (t.lo > 0 || t.hi < 0);
-  const tr = (t, dec = 2) => `${sgn(t.slope_per_decade, dec)} (95% vahemik ${fmt(t.lo, dec)} … ${fmt(t.hi, dec)})`;
+  const tr = (t, dec = 2, unit = '') => `${sgn(t.slope_per_decade, dec)}${unit ? ' ' + unit : ''} kümnendi kohta (95% vahemik ${fmt(t.lo, dec)} … ${fmt(t.hi, dec)}${unit ? ' ' + unit : ''})`;
   const last = (a) => a[a.length - 1];
   const seasonNames = { DJF: 'Talv (dets–veebr)', MAM: 'Kevad (märts–mai)', JJA: 'Suvi (juuni–aug)', SON: 'Sügis (sept–nov)' };
   const stationTrends = T.station_trends.map((s) => ({ ...s, name: stName[s.code] })).filter((s) => s.slope_per_decade !== null).sort((a, b) => a.slope_per_decade - b.slope_per_decade);
@@ -24,7 +24,6 @@
   const pm = A.period_means;
   const top = A.top_years.slice(0, 3);
   const rob = T.robustness;
-  const robVals = rob ? [rob.block_1, rob.block_3, rob.block_5, rob.core_stations_only, rob.last_20_years].filter((r) => r && r.slope_per_decade !== null) : [];
 
   const forestItems = [{ label: 'Aasta', t: A.trend, strong: true }, ...Object.entries(T.seasonal).map(([k, b]) => ({ label: seasonNames[k].split(' ')[0], t: b.trend }))];
 
@@ -82,27 +81,27 @@
     },
     findings(host) {
       const li = [];
-      li.push(`<li><b>Soojenemine:</b> aastakeskmine õhutemperatuur on ${A.years[0]}–${last(A.years)} muutunud ${tr(A.trend)} °C kümnendi kohta; ${excl0(A.trend) ? 'vahemik ei sisalda nulli' : 'vahemik sisaldab nulli'}. Viimase kümnendi (2021–${last(A.years)}) keskmine on ${sgn(last(pm).mean, 2)} °C võrreldes 1991–2020 normiga ja 1991–2000 keskmine ${sgn(pm[0].mean, 2)} °C.</li>`);
+      li.push(`<li><b>Soojenemine:</b> aastakeskmine õhutemperatuur on ${A.years[0]}–${last(A.years)} muutunud ${tr(A.trend, 2, '°C')}; ${excl0(A.trend) ? 'vahemik ei sisalda nulli' : 'vahemik sisaldab nulli'}. Kümnendite keskmised anomaaliad võrreldes 1991–2020 normiga: ${pm.map((q) => `${q.from}–${q.to}: ${sgn(q.mean, 2)} °C`).join('; ')}.</li>`);
       li.push(`<li><b>Ühtlus:</b> ${nPos} jaama ${stationTrends.length}-st annab statistiliselt eristatava soojenemise (trendid ${fmt(stationTrends[0].slope_per_decade, 2)} … ${fmt(last(stationTrends).slope_per_decade, 2)} °C / 10 a), ${allPositive ? 'seega signaal on ruumiliselt ühtlane' : 'kuid mitte kõigil'}.</li>`);
       const seas = Object.entries(T.seasonal).map(([k, b]) => ({ k, t: b.trend }));
       const sig = seas.filter((s) => excl0(s.t)).map((s) => seasonNames[s.k].split(' ')[0].toLowerCase());
       const non = seas.filter((s) => !excl0(s.t)).map((s) => seasonNames[s.k].split(' ')[0].toLowerCase());
       li.push(`<li><b>Aastaajad:</b> eristatav soojenemine: ${sig.join(', ') || 'ükski'}; ${non.length ? `vahemik sisaldab nulli: ${non.join(', ')} (lühike rida ja suur kõikumine)` : ''}.</li>`);
-      if (robVals.length) {
-        const lo = Math.min(...robVals.map((r) => r.slope_per_decade)), hi = Math.max(...robVals.map((r) => r.slope_per_decade));
-        li.push(`<li><b>Robustsus:</b> trendi hinnang jääb ${fmt(lo, 2)} … ${fmt(hi, 2)} °C / 10 a piiresse, kui muuta plokkide pikkust (1, 3, 5 a), kasutada ainult täispikkade ridadega jaamu (${rob.core_stations_only.n_stations}) või ainult viimast 20 aastat.</li>`);
+      if (rob) {
+        const core = rob.core_stations_only, l20 = rob.last_20_years, b1 = rob.block_1, b5 = rob.block_5;
+        li.push(`<li><b>Robustsus:</b> ainult täispikkade ridadega jaamadega (${core.n_stations}) on trend ${sgn(core.slope_per_decade, 2)} °C / 10 a (${fmt(core.lo, 2)} … ${fmt(core.hi, 2)}); vahemiku laius sõltub plokkide pikkusest (1–5 a) vähe (alumine piir ${fmt(Math.min(b1.lo, b5.lo), 2)}, ülemine ${fmt(Math.max(b1.hi, b5.hi), 2)}). Viimase 20 aasta trend on ${sgn(l20.slope_per_decade, 2)} °C / 10 a, kuid vahemik ${fmt(l20.lo, 2)} … ${fmt(l20.hi, 2)} on lai: kiirenemist selle põhjal väita ei saa.</li>`);
       }
-      if (P) li.push(`<li><b>Sademed:</b> aastase summa trend ${tr(P.annual.trend, 1)} %-punkti / 10 a – ${excl0(P.annual.trend) ? 'eristatav' : 'ei ole eristatav looduslikust kõikumisest'}.</li>`);
+      if (P) li.push(`<li><b>Sademed:</b> aastase summa trend ${tr(P.annual.trend, 1, '%-punkti')} – ${excl0(P.annual.trend) ? 'eristatav' : 'ei ole eristatav looduslikust kõikumisest'}.</li>`);
       const fd = d.extremes.FD;
-      if (fd && fd.trend) li.push(`<li><b>Külmapäevad:</b> ${tr(fd.trend, 1)} päeva / 10 a – ${excl0(fd.trend) ? 'märgatavalt vähem külmapäevi' : 'muutus pole eristatav'}.</li>`);
+      if (fd && fd.trend) li.push(`<li><b>Külmapäevad (Tmin &lt; 0 °C):</b> ${tr(fd.trend, 1, 'päeva aastas')} – ${excl0(fd.trend) ? 'külmapäevi on märgatavalt vähem' : 'muutus pole eristatav'}.</li>`);
       host.innerHTML = `<ul class="findings">${li.join('')}</ul>`;
     },
     methods(host) {
       const ch = d.checks.monthly_vs_daily_mean_temperature;
       host.innerHTML = `<div class="methods"><b>Andmed ja meetod</b> <span class="review-flag">valdkonnaekspert ülevaatamata</span>
-        <p>${d.meta.provenance} ${d.meta.time_basis}</p>
-        <p>Norm: WMO 1991–2020; jaama kuunorm nõuab vähemalt 25 aastat. Anomaaliad arvutatakse jaama kaupa ja keskmistatakse alles seejärel (jaamavõrgu muutus ei kalluta). Aasta/aastaaeg loetakse ainult täis kuudega. Riiklik väärtus on jaamade lihtkeskmine (ilma pindala kaaluta). Trend: Theil–Sen, vahemik 3-aastaste plokkide bootstrapist.</p>
-        <p><b>Piirangud:</b> ${d.meta.limits.join(' ')}</p>
+        <p><b>Allikas ja päritolu:</b> Keskkonnaagentuuri avaandmed (keskkonnaandmed.envir.ee, tabelid f_kliima_kuu, f_kliima_paev, f_kliima_jaam_vaatlus): avaldatud vaatlused, kuu- ja ööpäevaagregaadid. Andmetabeli kirjeldus ei nimeta kvaliteedikontrolli ega homogeniseerimise taset, seega seda ei eeldata. Aasta, kuu ja päev on avaldatud kujul UTC-s, kohalikku aega ei ole teisendatud.</p>
+        <p><b>Meetod:</b> norm WMO 1991–2020; jaama kuunorm nõuab vähemalt 25 aastat. Anomaaliad arvutatakse jaama kaupa ja keskmistatakse alles seejärel (jaamavõrgu muutus ei kalluta tulemust). Aasta ja aastaaeg loetakse ainult täis kuudega. Riiklik väärtus on jaamade lihtkeskmine (ilma pindala kaaluta). Hajuvuse kriipsud on jaamade vahe (10.–90. protsentiil), mitte mõõtemääramatus. Trend: Theil–Sen, 95% vahemik 3-aastaste plokkide bootstrapist. Äärmusnäitajad on loetud ainult aastatel, kus jaamal oli vähemalt 355 kehtivat päeva.</p>
+        <p><b>Piirangud:</b> rida algab 1991, seega sajandipikkust muutust siit hinnata ei saa; ~35 aastat on lühike rida, mistõttu aastaaegade trendide vahemikud on laiad; jaamade valik ja asukohad on ebaühtlased; mõõtmise ja jaamade nihkeid ei ole korrigeeritud.</p>
         <p><b>Kontroll:</b> kuu keskmine temperatuur ühtib ööpäevaväärtuste keskmisega (${ch.station}, ${ch.months_compared} kuud, suurim vahe ${fmt(ch.max_abs_diff_degC, 2)} °C). Genereeritud ${d.meta.generated_utc.slice(0, 10)} (UTC).</p></div>`;
     },
   };
