@@ -10,7 +10,10 @@ on:
       - data/**
       - .github/workflows/pages.yml
   workflow_run:
-    workflows: ["Climate analysis", "Hydrology data (daily)"]
+    workflows:
+      - "Climate analysis"
+      - "Hydrology data (daily)"
+      - "Hydrology analysis (from existing daily data)"
     types: [completed]
   workflow_dispatch:
 
