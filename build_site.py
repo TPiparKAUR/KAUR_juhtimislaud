@@ -81,10 +81,31 @@ ANALYSES: dict[str, tuple[str, list[tuple[str, str]]]] = {
             ("methods", ""),
         ],
     ),
+    "jaatmed": (
+        "waste",
+        [
+            ("findings", "Jäätmed: peamised tulemused"),
+            ("generation", "Jäätmeteke"),
+            ("generationRest", ""),
+            ("hazardous", ""),
+            ("top", ""),
+            ("flows", "Käitlus ja liikumine"),
+            ("trade", ""),
+            ("stocks", "Andmete järjepidevus"),
+            ("methods", ""),
+        ],
+    ),
 }
 SCRIPTS = {
     "climate": ["charts.js", "climate-page.js"],
     "hydro": ["charts.js", "hydro-charts.js", "hydro-page.js"],
+    "waste": [
+        "charts.js",
+        "hydro-charts.js",
+        "airenergy-charts.js",
+        "waste-charts.js",
+        "waste-page.js",
+    ],
     "airenergy": ["charts.js", "hydro-charts.js", "airenergy-charts.js", "airenergy-page.js"],
 }
 TABLEAU_PUBLIC = "public.tableau.com"
@@ -217,7 +238,7 @@ def layout(
         for t in topics
     )
     names: list[str] = []
-    for feat in ("climate", "hydro", "airenergy"):
+    for feat in ("climate", "hydro", "airenergy", "waste"):
         if feat in features:
             names += [n for n in SCRIPTS[feat] if n not in names]
     scripts = "".join(f'<script src="assets/{n}"></script>' for n in names)
@@ -341,11 +362,17 @@ def build(
     climate_json: Path | None = None,
     hydro_json: Path | None = None,
     airenergy_json: Path | None = None,
+    waste_json: Path | None = None,
 ) -> list[Path]:
     """Write the site; analysis sections appear only for the JSON inputs that exist."""
     out.mkdir(parents=True, exist_ok=True)
     written = [out / "index.html"]
-    inputs = {"climate": climate_json, "hydro": hydro_json, "airenergy": airenergy_json}
+    inputs = {
+        "climate": climate_json,
+        "hydro": hydro_json,
+        "airenergy": airenergy_json,
+        "waste": waste_json,
+    }
     features: set[str] = set()
     for name, path in inputs.items():
         if path and path.exists():
@@ -376,10 +403,11 @@ def main() -> None:
     ap.add_argument(
         "--airenergy", type=Path, default=None, help="aggregated airenergy.json to embed"
     )
+    ap.add_argument("--waste", type=Path, default=None, help="aggregated waste.json to embed")
     args = ap.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
     topics = load_topics(args.topics, args.inventory)
-    files = build(topics, args.out, args.climate, args.hydro, args.airenergy)
+    files = build(topics, args.out, args.climate, args.hydro, args.airenergy, args.waste)
     LOG.info("wrote %d pages to %s", len(files), args.out)
 
 

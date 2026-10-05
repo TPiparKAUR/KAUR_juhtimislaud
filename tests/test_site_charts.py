@@ -20,10 +20,12 @@ import climate_analysis as ca
 import run_airenergy as ra
 import run_climate as rc
 import run_hydro as rh
+import run_waste as rw
 from tests.test_airenergy_analysis import emissions, heat_rows
 from tests.test_climate_analysis import STATIONS
 from tests.test_run_climate import monthly_frame
 from tests.test_run_hydro import CATALOG, frame
+from tests.test_waste_analysis import frame as waste_frame
 
 CHROMIUM_FALLBACK = Path("/opt/pw-browsers/chromium")
 
@@ -83,9 +85,11 @@ def site(tmp_path_factory: pytest.TempPathFactory) -> Iterator[str]:
     air = ra.build(em, heat_rows([]), generated="2026-01-01T00:00:00+00:00")
     aj = tmp / "airenergy.json"
     aj.write_text(json.dumps(air), encoding="utf-8")
+    wj = tmp / "waste.json"
+    wj.write_text(json.dumps(rw.build(waste_frame(), None, "2026-01-01")), encoding="utf-8")
     topics = b.load_topics(Path("data/teemad.toml"), Path("data/kaur_viz_inventar.csv"))
     out = tmp / "_site"
-    b.build(topics, out, cj, hj, aj)
+    b.build(topics, out, cj, hj, aj, wj)
     handler = functools.partial(http.server.SimpleHTTPRequestHandler, directory=str(out))
     handler.log_message = lambda *a, **k: None  # type: ignore[attr-defined]
     with socketserver.TCPServer(("127.0.0.1", 0), handler) as srv:
@@ -116,6 +120,7 @@ def browser() -> Iterator[Browser]:
         ("vesi.html", 9),
         ("valisohk.html", 4),
         ("energeetika.html", 1),
+        ("jaatmed.html", 4),
     ],
 )
 def test_pages_render_charts_without_errors(

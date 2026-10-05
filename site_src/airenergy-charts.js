@@ -187,5 +187,5 @@
     });
   }
 
-  Object.assign(window.KaurCharts, { co2Ets, co2Bio, aeSectors: sectors, aePollutants: pollutants, aeCounties: counties, aeConcentration: concentration, aeSensitivity: sensitivity, aeFuel: energyFuel, aeElectricity: energyElectricity, aeHeatClimate: heatClimate });
+  Object.assign(window.KaurCharts, { stackedBars, seriesOf, SLOTS, GREY, co2Ets, co2Bio, aeSectors: sectors, aePollutants: pollutants, aeCounties: counties, aeConcentration: concentration, aeSensitivity: sensitivity, aeFuel: energyFuel, aeElectricity: energyElectricity, aeHeatClimate: heatClimate });
 })();
