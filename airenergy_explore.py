@@ -50,6 +50,9 @@ EMISSION_COLUMNS = [
     "eprtr_kohuslane",
     "aruande_esitaja_emtak_nimetus",
     "kaitis_pohitegevus_emtak_nimetus",
+    "cas_kood",
+    "luba_versioon",
+    "luba_liik",
 ]
 HEAT_COLUMNS = [
     "aruanne_id",
@@ -69,6 +72,7 @@ HEAT_COLUMNS = [
     "ets_kohuslane",
     "tegevuskoht_maakond_nimi_curr",
     "kaitis_pohitegevus_emtak_nimetus",
+    "luba_versioon",
 ]
 TO_TONNES = {"t": 1.0, "kg": 1e-3, "mg": 1e-9}
 
@@ -146,7 +150,39 @@ def emission_diagnostics(df: pl.DataFrame) -> dict[str, Any]:
         "with_n_gt_1": dup.filter(pl.col("n") > 1).height,
     }
     out["ets_flag"] = df.group_by("ets_kohuslane").agg(rows=pl.len()).to_dicts()
+    out["duplicates"] = duplicate_diagnostics(df)
     return out
+
+
+def duplicate_diagnostics(df: pl.DataFrame) -> dict[str, Any]:
+    """Are repeated (report, source, substance, fuel) rows true duplicates or distinct records?"""
+    key = ["aruanne_id", "heiteallikas_kood", "aine_nimetus", "kytus_kood"]
+    g = (
+        df.group_by(key)
+        .agg(
+            n=pl.len(),
+            amounts=pl.col("aine_kogus_maarus_yhik").n_unique(),
+            versions=pl.col("luba_versioon").n_unique(),
+            cas=pl.col("cas_kood").n_unique(),
+            groups=pl.col("aine_stat_grupp").n_unique(),
+            methods=pl.col("aine_arvestus_meetod").n_unique(),
+            total_t=pl.col("amount_t").sum(),
+            first_t=pl.col("amount_t").first(),
+        )
+        .filter(pl.col("n") > 1)
+    )
+    excess = float((g["total_t"] - g["first_t"]).fill_null(0).sum())
+    total_all = float(df["amount_t"].sum())
+    return {
+        "groups_n_gt_1": g.height,
+        "identical_amounts": g.filter(pl.col("amounts") == 1).height,
+        "differing_permit_versions": g.filter(pl.col("versions") > 1).height,
+        "differing_cas": g.filter(pl.col("cas") > 1).height,
+        "differing_stat_group": g.filter(pl.col("groups") > 1).height,
+        "differing_method": g.filter(pl.col("methods") > 1).height,
+        "excess_if_first_row_only_t": excess,
+        "share_of_all_t": excess / total_all if total_all else 0.0,
+    }
 
 
 def heat_diagnostics(df: pl.DataFrame) -> dict[str, Any]:
@@ -187,6 +223,55 @@ def heat_diagnostics(df: pl.DataFrame) -> dict[str, Any]:
         rep.group_by("aruanne_aasta")
         .agg(heat=pl.col("heat").sum(), electricity=pl.col("electricity").sum(), reports=pl.len())
         .sort("aruanne_aasta")
+        .to_dicts()
+    )
+    multi = (
+        df.group_by("aruanne_id")
+        .agg(
+            n=pl.len(),
+            el_max=pl.col("elekter_kokku").max(),
+            el_unique=pl.col("elekter_kokku").n_unique(),
+            heat_max=pl.col("soojus_kokku").max(),
+            heat_unique=pl.col("soojus_kokku").n_unique(),
+            versions=pl.col("luba_versioon").n_unique(),
+        )
+        .filter(pl.col("n") > 1)
+    )
+    out["additivity"] = {
+        "multi_row_reports": multi.height,
+        "with_nonzero_electricity": multi.filter(pl.col("el_max") > 0).height,
+        "nonzero_electricity_constant": multi.filter(
+            (pl.col("el_max") > 0) & (pl.col("el_unique") == 1)
+        ).height,
+        "with_nonzero_heat": multi.filter(pl.col("heat_max") > 0).height,
+        "nonzero_heat_constant": multi.filter(
+            (pl.col("heat_max") > 0) & (pl.col("heat_unique") == 1)
+        ).height,
+        "reports_with_several_permit_versions": multi.filter(pl.col("versions") > 1).height,
+    }
+    out["top_heat_rows"] = (
+        df.sort("soojus_kokku", descending=True, nulls_last=True)
+        .head(12)
+        .select(
+            "aruanne_aasta",
+            "snap",
+            "kytus_nimetus_val",
+            "kytus_kogus",
+            "kytus_yhik",
+            "soojus_kokku",
+            "soojus_omatarve",
+            "soojus_myyk",
+            "elekter_kokku",
+        )
+        .to_dicts()
+    )
+    out["heat_over_fuel"] = (
+        df.filter((pl.col("kytus_kogus") > 0) & (pl.col("soojus_kokku") > 0))
+        .with_columns(ratio=pl.col("soojus_kokku") / pl.col("kytus_kogus"))
+        .group_by("kytus_nimetus_val", "kytus_yhik")
+        .agg(rows=pl.len(), median_ratio=pl.col("ratio").median())
+        .sort("rows", descending=True)
+        .head(12)
         .to_dicts()
     )
     out["snap"] = (
