@@ -116,6 +116,20 @@ def build(df: pl.DataFrame, generated: str | None = None) -> dict[str, Any]:
         "counties": fa.counties(df),
         "age": age,
         "checks": checks(nat, species, owners, management, age),
+        "traces": {
+            "age": fa.filter_trace(
+                df,
+                13,
+                "Pindala",
+                fa.SUM,
+                by="omand",
+                maakategooria=fa.LAND,
+                filtri_tunnus2="Vanus",
+                filter2="21…40 a",
+            )
+        }
+        if not age
+        else {},
         "errors": fa.error_summary(df),
     }
 

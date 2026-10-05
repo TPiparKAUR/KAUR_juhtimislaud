@@ -296,6 +296,32 @@ def age_structure(df: pl.DataFrame, width: int = AGE_WIDTH) -> dict[str, list[di
     return out
 
 
+def filter_trace(
+    df: pl.DataFrame, table: int, indicator: str, calc: str, by: str | None = None, **fixed: str
+) -> list[dict[str, Any]]:
+    """Rows left after each selection step; shows which step empties a series (debugging)."""
+    steps: list[tuple[str, pl.DataFrame]] = []
+    d = df.filter(pl.col("tabeli_number") == table)
+    steps.append((f"table {table}", d))
+    d = d.filter(pl.col("tunnus") == indicator)
+    steps.append((f"indicator {indicator}", d))
+    d = d.filter(pl.col("arvutus") == calc)
+    steps.append((f"calculation {calc}", d))
+    if by:
+        d = d.filter(pl.col(by).is_not_null())
+        steps.append((f"{by} filled", d))
+    for col in DIMS:
+        if col == by:
+            continue
+        if col in fixed:
+            d = d.filter(pl.col(col) == fixed[col])
+            steps.append((f"{col} == {fixed[col]!r}", d))
+        else:
+            d = d.filter(pl.col(col).is_null())
+            steps.append((f"{col} empty", d))
+    return [{"step": name, "rows": x.height} for name, x in steps]
+
+
 def shares_check(parts: list[float], total: float | None) -> float | None:
     """Sum of parts divided by the stated total: ~1 means the classes tile the total."""
     return None if not total else sum(parts) / total
