@@ -1,0 +1,123 @@
+{
+ "years_present": [
+  2004,
+  2005,
+  2006,
+  2007,
+  2008,
+  2009,
+  2010,
+  2011,
+  2012,
+  2013,
+  2014,
+  2015,
+  2016,
+  2017,
+  2018,
+  2019,
+  2020,
+  2021,
+  2022,
+  2023,
+  2024,
+  2025
+ ],
+ "years_missing": [],
+ "years_row_mismatch": [],
+ "per_year": {
+  "2004": {
+   "rows_expected": 381292,
+   "rows_read": 381292
+  },
+  "2005": {
+   "rows_expected": 427578,
+   "rows_read": 427578
+  },
+  "2006": {
+   "rows_expected": 505902,
+   "rows_read": 505902
+  },
+  "2007": {
+   "rows_expected": 565470,
+   "rows_read": 565470
+  },
+  "2008": {
+   "rows_expected": 674799,
+   "rows_read": 674799
+  },
+  "2009": {
+   "rows_expected": 633967,
+   "rows_read": 633967
+  },
+  "2010": {
+   "rows_expected": 700544,
+   "rows_read": 700544
+  },
+  "2011": {
+   "rows_expected": 757957,
+   "rows_read": 757957
+  },
+  "2012": {
+   "rows_expected": 814978,
+   "rows_read": 814978
+  },
+  "2013": {
+   "rows_expected": 914319,
+   "rows_read": 914319
+  },
+  "2014": {
+   "rows_expected": 960402,
+   "rows_read": 960402
+  },
+  "2015": {
+   "rows_expected": 982261,
+   "rows_read": 982261
+  },
+  "2016": {
+   "rows_expected": 1010638,
+   "rows_read": 1010638
+  },
+  "2017": {
+   "rows_expected": 1014997,
+   "rows_read": 1014997
+  },
+  "2018": {
+   "rows_expected": 1018138,
+   "rows_read": 1018138
+  },
+  "2019": {
+   "rows_expected": 1077855,
+   "rows_read": 1077855
+  },
+  "2020": {
+   "rows_expected": 1102087,
+   "rows_read": 1102087
+  },
+  "2021": {
+   "rows_expected": 1264710,
+   "rows_read": 1264710
+  },
+  "2022": {
+   "rows_expected": 1259012,
+   "rows_read": 1259012
+  },
+  "2023": {
+   "rows_expected": 1308648,
+   "rows_read": 1308648
+  },
+  "2024": {
+   "rows_expected": 1394802,
+   "rows_read": 1394802
+  },
+  "2025": {
+   "rows_expected": 1369607,
+   "rows_read": 1369607
+  }
+ },
+ "rows_read": 20139963,
+ "rows_expected": 20139963,
+ "broken_parts": [],
+ "failed": [],
+ "complete": true
+}
