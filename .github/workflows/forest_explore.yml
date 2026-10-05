@@ -1,0 +1,44 @@
+name: Forest inventory data
+
+# Reads the statistical forest inventory results (f_smi_tulemused, ~330 000 rows, ~17 requests)
+# and writes forest_diagnostics.json (tables, indicators, classifiers, years, error statistics).
+# The Parquet stays in the artifact `forest-raw`; only the diagnostics go to `forest-explore`.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: forest-fetch
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync --frozen
+      - run: uv run python forest_fetch.py --out out/forest
+        timeout-minutes: 25
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: forest-raw
+          path: out/forest/
+          retention-days: 30
+      - name: Publish diagnostics
+        if: always()
+        run: |
+          cp out/forest/forest_diagnostics.json "$RUNNER_TEMP/forest_diagnostics.json"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan forest-explore
+          git rm -rf --quiet .
+          cp "$RUNNER_TEMP/forest_diagnostics.json" forest_diagnostics.json
+          git add -- forest_diagnostics.json
+          git commit -m "Forest diagnostics $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push --force origin forest-explore
