@@ -23,12 +23,15 @@ jobs:
       - uses: astral-sh/setup-uv@v5
       - run: uv sync --frozen
       - run: uv run python waste_explore.py --out out/waste --grain-year 2022
+        timeout-minutes: 40
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: waste-raw
           path: out/waste/
           retention-days: 30
       - name: Publish diagnostics
+        if: always()
         run: |
           cp out/waste/diagnostics.json "$RUNNER_TEMP/diagnostics.json"
           git config user.name "github-actions[bot]"

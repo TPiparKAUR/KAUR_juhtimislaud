@@ -9,7 +9,7 @@ from the data before any sum is computed:
 * does the server support aggregation (``select=maht.sum()``)?  If so the full table can be
   summarised without streaming 20 million rows;
 * row counts per year, distinct ``maht_liik`` values and their totals per year;
-* one full year streamed row by row for grain checks (duplicates, negatives, flag columns).
+* a bounded sample of one year for grain checks (duplicates, negatives, flag columns).
 
 Only aggregated diagnostics are written; no operator or facility names are stored.
 
@@ -127,29 +127,41 @@ def grain_diagnostics(df: pl.DataFrame) -> dict[str, Any]:
     return out
 
 
-def run(client: Client, out: Path, grain_year: int, first: int, last: int) -> None:
+def write_diag(out: Path, diag: dict[str, Any]) -> None:
+    (out / "diagnostics.json").write_text(
+        json.dumps(diag, ensure_ascii=False, indent=1, default=str), encoding="utf-8"
+    )
+
+
+def run(client: Client, out: Path, grain_year: int, first: int, last: int, grain_rows: int) -> None:
+    """Write diagnostics after every stage so a slow later stage never loses earlier results."""
     out.mkdir(parents=True, exist_ok=True)
     diag: dict[str, Any] = {"table": TABLE, "total_rows": client.count(TABLE)}
+    write_diag(out, diag)
     diag["aggregation"] = probe_aggregation(client)
     LOG.info("aggregation supported: %s", diag["aggregation"]["supported"])
+    write_diag(out, diag)
     diag["year_counts"] = year_counts(client, range(first, last + 1))
     diag["small_table_rows"] = client.count(SMALL_TABLE)
-    LOG.info("streaming %d for grain checks", grain_year)
+    write_diag(out, diag)
+    LOG.info("reading up to %d rows of %d for grain checks", grain_rows, grain_year)
+    # No ORDER BY: sorting a million rows for every page is what made the first attempt crawl.
+    # The sample is the first rows the server returns; it is used for grain, not for totals.
     rows = list(
         client.iter_rows(
             TABLE,
             select=",".join(GRAIN_COLUMNS),
             filters={"aasta": f"eq.{grain_year}"},
-            order=",".join(GRAIN_COLUMNS),
+            max_rows=grain_rows,
         )
     )
     df = pl.DataFrame(rows, infer_schema_length=None)
-    df.write_parquet(out / f"waste_{grain_year}.parquet")
     diag["grain_year"] = grain_year
+    diag["grain_sample"] = True
+    # Offset paging without ORDER BY may repeat or skip rows, so duplicate counts are indicative.
+    diag["duplicates_reliable"] = False
     diag["grain"] = grain_diagnostics(df)
-    (out / "diagnostics.json").write_text(
-        json.dumps(diag, ensure_ascii=False, indent=1, default=str), encoding="utf-8"
-    )
+    write_diag(out, diag)
 
 
 def main() -> None:
@@ -158,10 +170,18 @@ def main() -> None:
     ap.add_argument("--grain-year", type=int, default=2022)
     ap.add_argument("--first", type=int, default=2004)
     ap.add_argument("--last", type=int, default=2025)
+    ap.add_argument("--grain-rows", type=int, default=100_000)
     ap.add_argument("--delay", type=float, default=0.2)
     args = ap.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
-    run(Client(delay=args.delay), args.out, args.grain_year, args.first, args.last)
+    run(
+        Client(delay=args.delay),
+        args.out,
+        args.grain_year,
+        args.first,
+        args.last,
+        args.grain_rows,
+    )
 
 
 if __name__ == "__main__":
