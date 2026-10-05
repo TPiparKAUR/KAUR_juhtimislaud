@@ -45,7 +45,7 @@
   const builders = {
     findings(host) {
       const li = [];
-      li.push(`<li><b>Mis see on:</b> riikliku statistilise metsainventuuri (SMI) valimipõhised <b>hinnangud</b> aastatest ${d.meta.years[0]}–${L}, igaüks koos suhtelise veaga. Näitajad on 5-aastase inventeerimisperioodi (raiel 3- ja 5-aastase) hinnangud, seega järjestikused aastad <b>kattuvad</b> ega ole sõltumatud.</li>`);
+      li.push(`<li><b>Mis see on:</b> riikliku statistilise metsainventuuri (SMI) valimipõhised <b>hinnangud</b> aastatest ${d.meta.years[0]}–${L}, igaüks koos suhtelise veaga. Andmebaasi veerg „periood“ on 5 (raiel 3), mida tõlgendame mitmeaastase inventeerimisperioodina (kinnitamata); sel juhul järjestikused aastad <b>kattuvad</b> ega ole sõltumatud.</li>`);
       const A = last(N.area), S = last(N.stock), I = last(N.increment);
       li.push(`<li><b>Pindala ja tagavara (${L}):</b> metsamaad ${fmt(A.value, 0)} tuhat ha (${pe(A.err)}), kasvavate puude tagavara ${mln(S.value)} mln m³ (${pe(S.err)}), ${fmt(last(N.stock_per_ha).value, 0)} m³/ha. Tagavara ${chg(d.changes.stock?.since_start)}.</li>`);
       const R = last(N.felling_to_increment_5y);
@@ -62,15 +62,17 @@
     },
     stock(host) {
       const c = d.changes.stock?.since_start, c10 = d.changes.stock?.last_10_years;
-      C.errLines(host, { title: 'Kasvavate puude tagavara', subtitle: 'Kogutagavara koos veaga.', unit: 'tuhat m³', dec: 0, series: [{ label: 'Tagavara', color: COL[0], data: N.stock }], note: 'Tagavara on kogu metsamaa kasvavate puude maht. Hinnangud kattuvad 5-aastaste perioodidena.' });
+      C.errLines(host, { title: 'Kasvavate puude tagavara', subtitle: 'Kogutagavara koos veaga.', unit: 'tuhat m³', dec: 0, series: [{ label: 'Tagavara', color: COL[0], data: N.stock }], note: 'Tagavara on kogu metsamaa kasvavate puude maht. Telg ei alga nullist. Järjestikuste aastate hinnangud tõenäoliselt kattuvad (periood = 5, tõlgendus kinnitamata); varasemate aastate viga on suurem.' });
       const peak = N.stock.reduce((a, r) => (r.value > a.value ? r : a), N.stock[0]), now = last(N.stock);
       const fromPeak = peak.year < now.year - 2 && peak.err != null && now.err != null ? { diff: now.value - peak.value, ok: Math.abs(now.value - peak.value) > Math.hypot(peak.value * peak.err, now.value * now.err) } : null;
       C.punch(host, `Tagavara on ${mln(now.value)} mln m³ (${pe(now.err)}); ${c ? `${sgn(100 * c.pct, 0)}% aastast ${c.from} (${verdict(c)})` : ''}${fromPeak ? `. Kõrgeim hinnang oli ${peak.year}. aastal (${mln(peak.value)} mln m³); sellest on ${sgn(100 * fromPeak.diff / peak.value, 1)}% (${fromPeak.ok ? 'ületab veapiiri' : 'jääb veapiiri sisse'})` : ''}.`);
     },
     perha(host) {
-      C.errLines(host, { title: 'Hektaritagavara', subtitle: 'Keskmine kasvavate puude maht hektari kohta.', unit: 'm³/ha', dec: 0, series: [{ label: 'Hektaritagavara', color: COL[3], data: N.stock_per_ha }], height: 260 });
+      C.errLines(host, { title: 'Hektaritagavara', subtitle: 'Keskmine kasvavate puude maht hektari kohta.', unit: 'm³/ha', dec: 0, series: [{ label: 'Hektaritagavara', color: COL[3], data: N.stock_per_ha }], height: 260, note: 'Telg ei alga nullist.' });
       const c = d.changes.stock_per_ha?.since_start;
-      C.punch(host, `Keskmine hektaritagavara on ${fmt(last(N.stock_per_ha).value, 0)} m³/ha (${pe(last(N.stock_per_ha).err)})${c ? `, ${sgn(100 * c.pct, 0)}% aastast ${c.from} (${verdict(c)})` : ''}.`);
+      const P = N.stock_per_ha, pk = P.reduce((a, r) => (r.value > a.value ? r : a), P[0]), nw = last(P);
+      const pkOk = pk.year < nw.year - 2 && pk.err != null && nw.err != null ? Math.abs(nw.value - pk.value) > Math.hypot(pk.value * pk.err, nw.value * nw.err) : null;
+      C.punch(host, `Keskmine hektaritagavara on ${fmt(last(N.stock_per_ha).value, 0)} m³/ha (${pe(last(N.stock_per_ha).err)})${c ? `, ${sgn(100 * c.pct, 0)}% aastast ${c.from} (${verdict(c)})` : ''}${pkOk != null ? `. Kõrgeim hinnang oli ${pk.year}. aastal (${fmt(pk.value, 0)} m³/ha); sellest ${sgn(100 * (nw.value - pk.value) / pk.value, 1)}% (${pkOk ? 'ületab veapiiri' : 'jääb veapiiri sisse'})` : ''}.`);
     },
     balance(host) {
       if (none(host, N.felling_to_increment_5y, 'Juurdekasv ja raie')) return;
@@ -118,7 +120,7 @@
       const obj = Object.fromEntries(keys.map((k) => [k, d.age[k]]));
       C.errBars(host, { title: 'Puistute vanuseline jaotus', subtitle: 'Puistuga kaetud metsamaa pindala 20-aastaste vanuseklasside järgi (omandi- ja puuliigirühmad liidetud).', unit: 'tuhat ha', dec: 0, rotate: true, height: 320, cats: catBars(obj, null, PAIR), note: 'Vanuseklassid on olemas ainult puistuga metsamaal (metsata alal puistu vanust ei ole). Vea arvutus liidab omandi- ja puuliigirühmade vead ruutude summana (ligikaudne).' });
       const ch = changes(obj), big = ch.slice().sort((a, b) => Math.abs(b.diff) - Math.abs(a.diff))[0], top = ch.slice().sort((a, b) => b.b.value - a.b.value)[0];
-      C.punch(host, `Kõige suurem on vanuseklass ${top.name} (${fmt(top.b.value, 0)} tuhat ha); suurim muutus on klassis ${big.name} (${sgn(100 * big.pct, 0)}%, ${big.ok == null ? 'eristatavus teadmata' : big.ok ? 'ületab veapiiri' : 'jääb veapiiri sisse'}).`);
+      C.punch(host, `Kõige suurem on vanuseklass ${top.name} (${fmt(top.b.value, 0)} tuhat ha); suurim absoluutne muutus on klassis ${big.name} (${sgn(100 * big.pct, 0)}%, ${big.ok == null ? 'eristatavus teadmata' : big.ok ? 'ületab veapiiri' : 'jääb veapiiri sisse'}).`);
     },
     deadwood(host) {
       if (none(host, N.deadwood_per_ha, 'Surnud puit')) return;

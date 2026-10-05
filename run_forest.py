@@ -104,7 +104,8 @@ def build(df: pl.DataFrame, generated: str | None = None) -> dict[str, Any]:
                 "ja neid ei ole tabeli skeemis.",
                 "suhteline_viga on käsitletud kui 95% usaldusnivool antud ±% (Aastaraamat Mets "
                 "2021, lk 17 ja 124); andmebaasi veerg usaldusnivoo on kõigil ridadel 0.",
-                "periood = 5 (raie tabelis 22: 3) tähendab mitmeaastast inventeerimisperioodi: "
+                "periood = 5 (raie tabelis 22: 3) tõlgendame mitmeaastase inventeerimisperioodina "
+                "(kinnitamata): "
                 "järjestikused aastad kattuvad ega ole sõltumatud.",
                 "Vigade liitmine summades ja suhetes on ligikaudne (sõltumatuse eeldus).",
             ],
