@@ -1,0 +1,2661 @@
+{
+ "emissions": {
+  "rows": 343920,
+  "columns": [
+   "aruanne_id",
+   "aruanne_aasta",
+   "heiteallikas_kood",
+   "aine_nimetus",
+   "aine_stat_grupp",
+   "aine_kogus_maarus_yhik",
+   "aine_yhik_maarus",
+   "aine_arvestus_meetod",
+   "tegevusala_nfr",
+   "tegevusala_snap",
+   "tegevusala_snap_name",
+   "tegevuskoht_maakond_nimi_curr",
+   "kytus_kood",
+   "kytus_nimetus",
+   "kytus_kogus",
+   "kytus_yhik",
+   "ets_kohuslane",
+   "eprtr_kohuslane",
+   "aruande_esitaja_emtak_nimetus",
+   "kaitis_pohitegevus_emtak_nimetus",
+   "cas_kood",
+   "luba_versioon",
+   "luba_liik",
+   "amount_t"
+  ],
+  "rows_by_year": [
+   {
+    "aruanne_aasta": 2019,
+    "rows": 37236,
+    "reports": 1668
+   },
+   {
+    "aruanne_aasta": 2020,
+    "rows": 42380,
+    "reports": 1673
+   },
+   {
+    "aruanne_aasta": 2021,
+    "rows": 42642,
+    "reports": 1446
+   },
+   {
+    "aruanne_aasta": 2022,
+    "rows": 47399,
+    "reports": 1428
+   },
+   {
+    "aruanne_aasta": 2023,
+    "rows": 59380,
+    "reports": 1754
+   },
+   {
+    "aruanne_aasta": 2024,
+    "rows": 56433,
+    "reports": 1386
+   },
+   {
+    "aruanne_aasta": 2025,
+    "rows": 58450,
+    "reports": 1353
+   }
+  ],
+  "units": [
+   {
+    "aine_yhik_maarus": "t",
+    "n": 211375
+   },
+   {
+    "aine_yhik_maarus": null,
+    "n": 71
+   },
+   {
+    "aine_yhik_maarus": "kg",
+    "n": 125978
+   },
+   {
+    "aine_yhik_maarus": "mg",
+    "n": 6496
+   }
+  ],
+  "unknown_unit_rows": 216,
+  "negative_or_zero": {
+   "negative": 0,
+   "zero": 82780
+  },
+  "groups": [
+   {
+    "aine_stat_grupp": "CO2",
+    "rows": 17018,
+    "names": 1,
+    "example": "Süsinikdioksiid",
+    "total_t": 47066524.73961
+   },
+   {
+    "aine_stat_grupp": "CO2 bio",
+    "rows": 3965,
+    "names": 1,
+    "example": "Süsinikdioksiid biomassist",
+    "total_t": 22704351.593453
+   },
+   {
+    "aine_stat_grupp": "CO",
+    "rows": 18100,
+    "names": 1,
+    "example": "Süsinikmonooksiid",
+    "total_t": 345204.487704
+   },
+   {
+    "aine_stat_grupp": "metaan",
+    "rows": 10776,
+    "names": 1,
+    "example": "Metaan",
+    "total_t": 114597.542745
+   },
+   {
+    "aine_stat_grupp": "SO2",
+    "rows": 11887,
+    "names": 1,
+    "example": "Vääveldioksiid",
+    "total_t": 82015.78656
+   },
+   {
+    "aine_stat_grupp": "NO2",
+    "rows": 17988,
+    "names": 3,
+    "example": "Lämmastikdioksiid",
+    "total_t": 47771.140728
+   },
+   {
+    "aine_stat_grupp": "LOÜ",
+    "rows": 69407,
+    "names": 264,
+    "example": "Lenduvad orgaanilised ühendid kütuse põletamisel",
+    "total_t": 34399.501674
+   },
+   {
+    "aine_stat_grupp": "tahked_kokku_va_PM10_PM2.5_BC",
+    "rows": 19299,
+    "names": 17,
+    "example": "Tahked osakesed, summaarsed",
+    "total_t": 30744.654016
+   },
+   {
+    "aine_stat_grupp": "NH3",
+    "rows": 13090,
+    "names": 1,
+    "example": "Ammoniaak",
+    "total_t": 28892.057032
+   },
+   {
+    "aine_stat_grupp": "PM10",
+    "rows": 9765,
+    "names": 1,
+    "example": "Peened osakesed (PM10)",
+    "total_t": 7625.812148
+   },
+   {
+    "aine_stat_grupp": "PM2,5",
+    "rows": 7756,
+    "names": 1,
+    "example": "Eriti peened osakesed (PM2,5)",
+    "total_t": 5458.530468
+   },
+   {
+    "aine_stat_grupp": "HCl",
+    "rows": 305,
+    "names": 1,
+    "example": "Vesinikkloriid",
+    "total_t": 1680.399903
+   },
+   {
+    "aine_stat_grupp": "H2S",
+    "rows": 1342,
+    "names": 1,
+    "example": "Vesiniksulfiid",
+    "total_t": 864.609009
+   },
+   {
+    "aine_stat_grupp": null,
+    "rows": 1837,
+    "names": 60,
+    "example": "0",
+    "total_t": 574.470485489
+   },
+   {
+    "aine_stat_grupp": "BC",
+    "rows": 5007,
+    "names": 2,
+    "example": "Must süsinik",
+    "total_t": 330.97364699999997
+   },
+   {
+    "aine_stat_grupp": "N2O",
+    "rows": 3882,
+    "names": 3,
+    "example": "Dilämmastikoksiid (põllumajandus)",
+    "total_t": 326.401002
+   },
+   {
+    "aine_stat_grupp": "Zn",
+    "rows": 9669,
+    "names": 2,
+    "example": "Tsingiühendid, ümberarvutatuna tsingiks",
+    "total_t": 66.274977187
+   },
+   {
+    "aine_stat_grupp": "Pb",
+    "rows": 11157,
+    "names": 1,
+    "example": "Plii ja anorgaanilised ühendid, ümberarvutatuna pliiks",
+    "total_t": 15.147688519
+   },
+   {
+    "aine_stat_grupp": "Sb",
+    "rows": 12,
+    "names": 1,
+    "example": "Antimon ja ühendid, ümberarvutatuna antimoniks",
+    "total_t": 7.2644020000000005
+   },
+   {
+    "aine_stat_grupp": "Ni",
+    "rows": 11183,
+    "names": 2,
+    "example": "Nikkel ja lahustavad ühendid, ümberarvutatuna nikliks",
+    "total_t": 6.7681994770000005
+   },
+   {
+    "aine_stat_grupp": "Cu",
+    "rows": 9782,
+    "names": 1,
+    "example": "Vask ja anorgaanilised ühendid, ümberarvutatuna vaseks",
+    "total_t": 6.241351826
+   },
+   {
+    "aine_stat_grupp": "Cr",
+    "rows": 11186,
+    "names": 3,
+    "example": "Kroomi (VI) ühendid, ümberarvutatuna kroomiks",
+    "total_t": 6.043713691
+   },
+   {
+    "aine_stat_grupp": "Mn",
+    "rows": 1345,
+    "names": 1,
+    "example": "Mangaan ja ühendid, ümberarvutatuna mangaaniks",
+    "total_t": 4.72289008
+   },
+   {
+    "aine_stat_grupp": "V",
+    "rows": 4582,
+    "names": 1,
+    "example": "Vanaadium ja ühendid, ümberarvutatuna vanaadiumiks",
+    "total_t": 4.319215039
+   },
+   {
+    "aine_stat_grupp": "As",
+    "rows": 10948,
+    "names": 1,
+    "example": "Arseen ja anorgaanilised ühendid, ümberarvutatuna arseeniks",
+    "total_t": 3.9169442290000003
+   },
+   {
+    "aine_stat_grupp": "Se",
+    "rows": 5069,
+    "names": 1,
+    "example": "Seleen ja anorgaanilised ühendid, ümberarvutatuna seleeniks",
+    "total_t": 3.597886932
+   },
+   {
+    "aine_stat_grupp": "NO",
+    "rows": 21,
+    "names": 1,
+    "example": "Lämmastikmonooksiid",
+    "total_t": 3.3379000000000003
+   },
+   {
+    "aine_stat_grupp": "Cd",
+    "rows": 10867,
+    "names": 1,
+    "example": "Kaadmium ja anorgaanilised ühendid, ümberarvutatuna kaadmiumiks",
+    "total_t": 1.436555391
+   },
+   {
+    "aine_stat_grupp": "b(b)f",
+    "rows": 6468,
+    "names": 1,
+    "example": "Benso(b)fluoranteen",
+    "total_t": 1.310653216
+   },
+   {
+    "aine_stat_grupp": "Hg",
+    "rows": 10864,
+    "names": 3,
+    "example": "Elavhõbe ja ühendid, ümberarvutatana elavhõbedaks",
+    "total_t": 1.155051493
+   },
+   {
+    "aine_stat_grupp": "b(a)p",
+    "rows": 6468,
+    "names": 1,
+    "example": "Benso(a)püreen",
+    "total_t": 0.846528111
+   },
+   {
+    "aine_stat_grupp": "b(k)f",
+    "rows": 6466,
+    "names": 1,
+    "example": "Benso(k)fluoranteen",
+    "total_t": 0.44968731900000003
+   },
+   {
+    "aine_stat_grupp": "I(1,2,3)p",
+    "rows": 6466,
+    "names": 1,
+    "example": "Indeno(1,2,3-cd)püreen",
+    "total_t": 0.364068108
+   },
+   {
+    "aine_stat_grupp": "Tl",
+    "rows": 12,
+    "names": 1,
+    "example": "Tallium",
+    "total_t": 0.280874
+   },
+   {
+    "aine_stat_grupp": "Sn",
+    "rows": 69,
+    "names": 1,
+    "example": "Tinaühendid, ümberarvutatuna tinaks",
+    "total_t": 0.16387497
+   },
+   {
+    "aine_stat_grupp": "PCDD/PCDF",
+    "rows": 6496,
+    "names": 1,
+    "example": "Polüklooritud dibenso-p-dioksiinid ja dibensofuraanid",
+    "total_t": 0.135893133239006
+   },
+   {
+    "aine_stat_grupp": "Co",
+    "rows": 51,
+    "names": 1,
+    "example": "Koobalt ja anorgaanilised ühendid, ümberarvutatuna koobaltiks",
+    "total_t": 0.11616876
+   },
+   {
+    "aine_stat_grupp": "PAH",
+    "rows": 19,
+    "names": 1,
+    "example": "Polütsüklilised aromaatsed süsivesinikud",
+    "total_t": 0.01300366
+   },
+   {
+    "aine_stat_grupp": "HCB",
+    "rows": 1666,
+    "names": 1,
+    "example": "Heksaklorobenseen (HCB)",
+    "total_t": 0.0074607829999999995
+   },
+   {
+    "aine_stat_grupp": "PCB",
+    "rows": 1630,
+    "names": 1,
+    "example": "Polüklooritud bifenüülid (PCB-d)",
+    "total_t": 0.000312889
+   }
+  ],
+  "by_year_group_t": [
+   {
+    "aruanne_aasta": 2019,
+    "aine_stat_grupp": null,
+    "total_t": 95.66915700000004
+   },
+   {
+    "aruanne_aasta": 2019,
+    "aine_stat_grupp": "As",
+    "total_t": 1.9601126869999999
+   },
+   {
+    "aruanne_aasta": 2019,
+    "aine_stat_grupp": "BC",
+    "total_t": 3.5719529999999997
+   },
+   {
+    "aruanne_aasta": 2019,
+    "aine_stat_grupp": "CO",
+    "total_t": 49697.44033099995
+   },
+   {
+    "aruanne_aasta": 2019,
+    "aine_stat_grupp": "CO2",
+    "total_t": 9126320.87550699
+   },
+   {
+    "aruanne_aasta": 2019,
+    "aine_stat_grupp": "CO2 bio",
+    "total_t": 3158350.299055998
+   },
+   {
+    "aruanne_aasta": 2019,
+    "aine_stat_grupp": "Cd",
+    "total_t": 0.31448766599999983
+   },
+   {
+    "aruanne_aasta": 2019,
+    "aine_stat_grupp": "Co",
+    "total_t": 0.034182199999999996
+   },
+   {
+    "aruanne_aasta": 2019,
+    "aine_stat_grupp": "Cr",
+    "total_t": 1.9605638080000016
+   },
+   {
+    "aruanne_aasta": 2019,
+    "aine_stat_grupp": "Cu",
+    "total_t": 0.9512494090000003
+   },
+   {
+    "aruanne_aasta": 2019,
+    "aine_stat_grupp": "H2S",
+    "total_t": 101.01526900000003
+   },
+   {
+    "aruanne_aasta": 2019,
+    "aine_stat_grupp": "HCB",
+    "total_t": 3.7446e-05
+   },
+   {
+    "aruanne_aasta": 2019,
+    "aine_stat_grupp": "HCl",
+    "total_t": 561.5823350000002
+   },
+   {
+    "aruanne_aasta": 2019,
+    "aine_stat_grupp": "Hg",
+    "total_t": 0.2316489109999991
+   },
+   {
+    "aruanne_aasta": 2019,
+    "aine_stat_grupp": "I(1,2,3)p",
+    "total_t": 0.010182284999999996
+   },
+   {
+    "aruanne_aasta": 2019,
+    "aine_stat_grupp": "LOÜ",
+    "total_t": 4231.927627000018
+   },
+   {
+    "aruanne_aasta": 2019,
+    "aine_stat_grupp": "Mn",
+    "total_t": 0.7348846270000001
+   },
+   {
+    "aruanne_aasta": 2019,
+    "aine_stat_grupp": "N2O",
+    "total_t": 45.20395000000008
+   },
+   {
+    "aruanne_aasta": 2019,
+    "aine_stat_grupp": "NH3",
+    "total_t": 4074.595385000007
+   },
+   {
+    "aruanne_aasta": 2019,
+    "aine_stat_grupp": "NO",
+    "total_t": 2.4439
+   },
+   {
+    "aruanne_aasta": 2019,
+    "aine_stat_grupp": "NO2",
+    "total_t": 7533.335329000019
+   },
+   {
+    "aruanne_aasta": 2019,
+    "aine_stat_grupp": "Ni",
+    "total_t": 1.455227
+   },
+   {
+    "aruanne_aasta": 2019,
+    "aine_stat_grupp": "PAH",
+    "total_t": 0.0044989999999999995
+   },
+   {
+    "aruanne_aasta": 2019,
+    "aine_stat_grupp": "PCB",
+    "total_t": 9.52e-07
+   },
+   {
+    "aruanne_aasta": 2019,
+    "aine_stat_grupp": "PCDD/PCDF",
+    "total_t": 0.003081421925665001
+   },
+   {
+    "aruanne_aasta": 2019,
+    "aine_stat_grupp": "PM10",
+    "total_t": 591.8225789999993
+   },
+   {
+    "aruanne_aasta": 2019,
+    "aine_stat_grupp": "PM2,5",
+    "total_t": 262.39269099999996
+   },
+   {
+    "aruanne_aasta": 2019,
+    "aine_stat_grupp": "Pb",
+    "total_t": 7.656782832999998
+   },
+   {
+    "aruanne_aasta": 2019,
+    "aine_stat_grupp": "SO2",
+    "total_t": 17058.52430800001
+   },
+   {
+    "aruanne_aasta": 2019,
+    "aine_stat_grupp": "Sb",
+    "total_t": 0.00769
+   },
+   {
+    "aruanne_aasta": 2019,
+    "aine_stat_grupp": "Se",
+    "total_t": 0.017980739999999995
+   },
+   {
+    "aruanne_aasta": 2019,
+    "aine_stat_grupp": "Sn",
+    "total_t": 0.03543437000000001
+   },
+   {
+    "aruanne_aasta": 2019,
+    "aine_stat_grupp": "Tl",
+    "total_t": 0.0031450000000000002
+   },
+   {
+    "aruanne_aasta": 2019,
+    "aine_stat_grupp": "V",
+    "total_t": 2.9861214590000023
+   },
+   {
+    "aruanne_aasta": 2019,
+    "aine_stat_grupp": "Zn",
+    "total_t": 13.468658054000018
+   },
+   {
+    "aruanne_aasta": 2019,
+    "aine_stat_grupp": "b(a)p",
+    "total_t": 0.023992577
+   },
+   {
+    "aruanne_aasta": 2019,
+    "aine_stat_grupp": "b(b)f",
+    "total_t": 0.03800607100000001
+   },
+   {
+    "aruanne_aasta": 2019,
+    "aine_stat_grupp": "b(k)f",
+    "total_t": 0.012436557999999997
+   },
+   {
+    "aruanne_aasta": 2019,
+    "aine_stat_grupp": "metaan",
+    "total_t": 16883.40257900006
+   },
+   {
+    "aruanne_aasta": 2019,
+    "aine_stat_grupp": "tahked_kokku_va_PM10_PM2.5_BC",
+    "total_t": 4861.172197999995
+   },
+   {
+    "aruanne_aasta": 2020,
+    "aine_stat_grupp": null,
+    "total_t": 90.75827300000007
+   },
+   {
+    "aruanne_aasta": 2020,
+    "aine_stat_grupp": "As",
+    "total_t": 0.16821756000000013
+   },
+   {
+    "aruanne_aasta": 2020,
+    "aine_stat_grupp": "BC",
+    "total_t": 53.114186000000004
+   },
+   {
+    "aruanne_aasta": 2020,
+    "aine_stat_grupp": "CO",
+    "total_t": 52895.44028500001
+   },
+   {
+    "aruanne_aasta": 2020,
+    "aine_stat_grupp": "CO2",
+    "total_t": 6217541.345318006
+   },
+   {
+    "aruanne_aasta": 2020,
+    "aine_stat_grupp": "CO2 bio",
+    "total_t": 3117588.3427020023
+   },
+   {
+    "aruanne_aasta": 2020,
+    "aine_stat_grupp": "Cd",
+    "total_t": 0.16927441999999995
+   },
+   {
+    "aruanne_aasta": 2020,
+    "aine_stat_grupp": "Co",
+    "total_t": 0.0347281
+   },
+   {
+    "aruanne_aasta": 2020,
+    "aine_stat_grupp": "Cr",
+    "total_t": 0.48766845699999994
+   },
+   {
+    "aruanne_aasta": 2020,
+    "aine_stat_grupp": "Cu",
+    "total_t": 0.557072766
+   },
+   {
+    "aruanne_aasta": 2020,
+    "aine_stat_grupp": "H2S",
+    "total_t": 121.25320200000006
+   },
+   {
+    "aruanne_aasta": 2020,
+    "aine_stat_grupp": "HCB",
+    "total_t": 0.005619398
+   },
+   {
+    "aruanne_aasta": 2020,
+    "aine_stat_grupp": "HCl",
+    "total_t": 180.05240500000002
+   },
+   {
+    "aruanne_aasta": 2020,
+    "aine_stat_grupp": "Hg",
+    "total_t": 0.13122496999999997
+   },
+   {
+    "aruanne_aasta": 2020,
+    "aine_stat_grupp": "I(1,2,3)p",
+    "total_t": 0.06351083299999997
+   },
+   {
+    "aruanne_aasta": 2020,
+    "aine_stat_grupp": "LOÜ",
+    "total_t": 4246.499531000053
+   },
+   {
+    "aruanne_aasta": 2020,
+    "aine_stat_grupp": "Mn",
+    "total_t": 0.6295882989999998
+   },
+   {
+    "aruanne_aasta": 2020,
+    "aine_stat_grupp": "N2O",
+    "total_t": 39.90177700000001
+   },
+   {
+    "aruanne_aasta": 2020,
+    "aine_stat_grupp": "NH3",
+    "total_t": 3843.4663549999987
+   },
+   {
+    "aruanne_aasta": 2020,
+    "aine_stat_grupp": "NO",
+    "total_t": 0.744
+   },
+   {
+    "aruanne_aasta": 2020,
+    "aine_stat_grupp": "NO2",
+    "total_t": 6549.941210999992
+   },
+   {
+    "aruanne_aasta": 2020,
+    "aine_stat_grupp": "Ni",
+    "total_t": 0.6105689600000007
+   },
+   {
+    "aruanne_aasta": 2020,
+    "aine_stat_grupp": "PAH",
+    "total_t": 0.0037140000000000003
+   },
+   {
+    "aruanne_aasta": 2020,
+    "aine_stat_grupp": "PCB",
+    "total_t": 0.00011921800000000001
+   },
+   {
+    "aruanne_aasta": 2020,
+    "aine_stat_grupp": "PCDD/PCDF",
+    "total_t": 0.13280655173011005
+   },
+   {
+    "aruanne_aasta": 2020,
+    "aine_stat_grupp": "PM10",
+    "total_t": 384.6852730000002
+   },
+   {
+    "aruanne_aasta": 2020,
+    "aine_stat_grupp": "PM2,5",
+    "total_t": 221.2451690000002
+   },
+   {
+    "aruanne_aasta": 2020,
+    "aine_stat_grupp": "Pb",
+    "total_t": 1.528355256000002
+   },
+   {
+    "aruanne_aasta": 2020,
+    "aine_stat_grupp": "SO2",
+    "total_t": 10321.743655000007
+   },
+   {
+    "aruanne_aasta": 2020,
+    "aine_stat_grupp": "Sb",
+    "total_t": 6.580012
+   },
+   {
+    "aruanne_aasta": 2020,
+    "aine_stat_grupp": "Se",
+    "total_t": 0.017886874999999993
+   },
+   {
+    "aruanne_aasta": 2020,
+    "aine_stat_grupp": "Sn",
+    "total_t": 0.020790370000000006
+   },
+   {
+    "aruanne_aasta": 2020,
+    "aine_stat_grupp": "Tl",
+    "total_t": 0.015033999999999999
+   },
+   {
+    "aruanne_aasta": 2020,
+    "aine_stat_grupp": "V",
+    "total_t": 0.3843133320000003
+   },
+   {
+    "aruanne_aasta": 2020,
+    "aine_stat_grupp": "Zn",
+    "total_t": 6.3662067460000005
+   },
+   {
+    "aruanne_aasta": 2020,
+    "aine_stat_grupp": "b(a)p",
+    "total_t": 0.09768611299999991
+   },
+   {
+    "aruanne_aasta": 2020,
+    "aine_stat_grupp": "b(b)f",
+    "total_t": 0.14787454399999986
+   },
+   {
+    "aruanne_aasta": 2020,
+    "aine_stat_grupp": "b(k)f",
+    "total_t": 0.07181713699999995
+   },
+   {
+    "aruanne_aasta": 2020,
+    "aine_stat_grupp": "metaan",
+    "total_t": 16622.876644999975
+   },
+   {
+    "aruanne_aasta": 2020,
+    "aine_stat_grupp": "tahked_kokku_va_PM10_PM2.5_BC",
+    "total_t": 4302.390516999996
+   },
+   {
+    "aruanne_aasta": 2021,
+    "aine_stat_grupp": null,
+    "total_t": 76.04390500000011
+   },
+   {
+    "aruanne_aasta": 2021,
+    "aine_stat_grupp": "As",
+    "total_t": 0.23075684699999996
+   },
+   {
+    "aruanne_aasta": 2021,
+    "aine_stat_grupp": "BC",
+    "total_t": 32.60202
+   },
+   {
+    "aruanne_aasta": 2021,
+    "aine_stat_grupp": "CO",
+    "total_t": 46254.115370999956
+   },
+   {
+    "aruanne_aasta": 2021,
+    "aine_stat_grupp": "CO2",
+    "total_t": 7443605.915948006
+   },
+   {
+    "aruanne_aasta": 2021,
+    "aine_stat_grupp": "CO2 bio",
+    "total_t": 3657525.4045369993
+   },
+   {
+    "aruanne_aasta": 2021,
+    "aine_stat_grupp": "Cd",
+    "total_t": 0.2095270709999998
+   },
+   {
+    "aruanne_aasta": 2021,
+    "aine_stat_grupp": "Co",
+    "total_t": 0.022694
+   },
+   {
+    "aruanne_aasta": 2021,
+    "aine_stat_grupp": "Cr",
+    "total_t": 0.7359924960000008
+   },
+   {
+    "aruanne_aasta": 2021,
+    "aine_stat_grupp": "Cu",
+    "total_t": 0.9230989159999996
+   },
+   {
+    "aruanne_aasta": 2021,
+    "aine_stat_grupp": "H2S",
+    "total_t": 135.16456199999993
+   },
+   {
+    "aruanne_aasta": 2021,
+    "aine_stat_grupp": "HCB",
+    "total_t": 8.288299999999999e-05
+   },
+   {
+    "aruanne_aasta": 2021,
+    "aine_stat_grupp": "HCl",
+    "total_t": 300.05167
+   },
+   {
+    "aruanne_aasta": 2021,
+    "aine_stat_grupp": "Hg",
+    "total_t": 0.17190078100000003
+   },
+   {
+    "aruanne_aasta": 2021,
+    "aine_stat_grupp": "I(1,2,3)p",
+    "total_t": 0.06604284699999999
+   },
+   {
+    "aruanne_aasta": 2021,
+    "aine_stat_grupp": "LOÜ",
+    "total_t": 4125.118683000027
+   },
+   {
+    "aruanne_aasta": 2021,
+    "aine_stat_grupp": "Mn",
+    "total_t": 0.6814603520000001
+   },
+   {
+    "aruanne_aasta": 2021,
+    "aine_stat_grupp": "N2O",
+    "total_t": 44.81542400000002
+   },
+   {
+    "aruanne_aasta": 2021,
+    "aine_stat_grupp": "NH3",
+    "total_t": 4110.024931000002
+   },
+   {
+    "aruanne_aasta": 2021,
+    "aine_stat_grupp": "NO",
+    "total_t": 0.148
+   },
+   {
+    "aruanne_aasta": 2021,
+    "aine_stat_grupp": "NO2",
+    "total_t": 7442.664676000009
+   },
+   {
+    "aruanne_aasta": 2021,
+    "aine_stat_grupp": "Ni",
+    "total_t": 0.924872202000001
+   },
+   {
+    "aruanne_aasta": 2021,
+    "aine_stat_grupp": "PAH",
+    "total_t": 0.00434
+   },
+   {
+    "aruanne_aasta": 2021,
+    "aine_stat_grupp": "PCB",
+    "total_t": 3.331700000000001e-05
+   },
+   {
+    "aruanne_aasta": 2021,
+    "aine_stat_grupp": "PCDD/PCDF",
+    "total_t": 1.2796642190000005e-06
+   },
+   {
+    "aruanne_aasta": 2021,
+    "aine_stat_grupp": "PM10",
+    "total_t": 743.0285430000001
+   },
+   {
+    "aruanne_aasta": 2021,
+    "aine_stat_grupp": "PM2,5",
+    "total_t": 535.3189070000002
+   },
+   {
+    "aruanne_aasta": 2021,
+    "aine_stat_grupp": "Pb",
+    "total_t": 1.4075018739999994
+   },
+   {
+    "aruanne_aasta": 2021,
+    "aine_stat_grupp": "SO2",
+    "total_t": 11718.299453
+   },
+   {
+    "aruanne_aasta": 2021,
+    "aine_stat_grupp": "Sb",
+    "total_t": 0.0006
+   },
+   {
+    "aruanne_aasta": 2021,
+    "aine_stat_grupp": "Se",
+    "total_t": 0.06806121999999998
+   },
+   {
+    "aruanne_aasta": 2021,
+    "aine_stat_grupp": "Sn",
+    "total_t": 0.013901670000000003
+   },
+   {
+    "aruanne_aasta": 2021,
+    "aine_stat_grupp": "Tl",
+    "total_t": 0.057106000000000004
+   },
+   {
+    "aruanne_aasta": 2021,
+    "aine_stat_grupp": "V",
+    "total_t": 0.3094098150000001
+   },
+   {
+    "aruanne_aasta": 2021,
+    "aine_stat_grupp": "Zn",
+    "total_t": 10.520764100000001
+   },
+   {
+    "aruanne_aasta": 2021,
+    "aine_stat_grupp": "b(a)p",
+    "total_t": 0.16159373799999993
+   },
+   {
+    "aruanne_aasta": 2021,
+    "aine_stat_grupp": "b(b)f",
+    "total_t": 0.2549314929999999
+   },
+   {
+    "aruanne_aasta": 2021,
+    "aine_stat_grupp": "b(k)f",
+    "total_t": 0.08366487100000002
+   },
+   {
+    "aruanne_aasta": 2021,
+    "aine_stat_grupp": "metaan",
+    "total_t": 15998.426626
+   },
+   {
+    "aruanne_aasta": 2021,
+    "aine_stat_grupp": "tahked_kokku_va_PM10_PM2.5_BC",
+    "total_t": 4120.300320000001
+   },
+   {
+    "aruanne_aasta": 2022,
+    "aine_stat_grupp": null,
+    "total_t": 79.15626021499999
+   },
+   {
+    "aruanne_aasta": 2022,
+    "aine_stat_grupp": "As",
+    "total_t": 0.5501892019999994
+   },
+   {
+    "aruanne_aasta": 2022,
+    "aine_stat_grupp": "BC",
+    "total_t": 39.09633799999999
+   },
+   {
+    "aruanne_aasta": 2022,
+    "aine_stat_grupp": "CO",
+    "total_t": 53582.30451500015
+   },
+   {
+    "aruanne_aasta": 2022,
+    "aine_stat_grupp": "CO2",
+    "total_t": 8950825.916946998
+   },
+   {
+    "aruanne_aasta": 2022,
+    "aine_stat_grupp": "CO2 bio",
+    "total_t": 3393032.884443
+   },
+   {
+    "aruanne_aasta": 2022,
+    "aine_stat_grupp": "Cd",
+    "total_t": 0.20437872999999968
+   },
+   {
+    "aruanne_aasta": 2022,
+    "aine_stat_grupp": "Co",
+    "total_t": 0.006272
+   },
+   {
+    "aruanne_aasta": 2022,
+    "aine_stat_grupp": "Cr",
+    "total_t": 0.8213377110000014
+   },
+   {
+    "aruanne_aasta": 2022,
+    "aine_stat_grupp": "Cu",
+    "total_t": 1.0992882620000004
+   },
+   {
+    "aruanne_aasta": 2022,
+    "aine_stat_grupp": "H2S",
+    "total_t": 148.08707500000003
+   },
+   {
+    "aruanne_aasta": 2022,
+    "aine_stat_grupp": "HCB",
+    "total_t": 5.568699999999999e-05
+   },
+   {
+    "aruanne_aasta": 2022,
+    "aine_stat_grupp": "HCl",
+    "total_t": 325.706396
+   },
+   {
+    "aruanne_aasta": 2022,
+    "aine_stat_grupp": "Hg",
+    "total_t": 0.22082778099999983
+   },
+   {
+    "aruanne_aasta": 2022,
+    "aine_stat_grupp": "I(1,2,3)p",
+    "total_t": 0.05680032799999993
+   },
+   {
+    "aruanne_aasta": 2022,
+    "aine_stat_grupp": "LOÜ",
+    "total_t": 5469.06678300011
+   },
+   {
+    "aruanne_aasta": 2022,
+    "aine_stat_grupp": "Mn",
+    "total_t": 0.7406743709999999
+   },
+   {
+    "aruanne_aasta": 2022,
+    "aine_stat_grupp": "N2O",
+    "total_t": 39.478698000000016
+   },
+   {
+    "aruanne_aasta": 2022,
+    "aine_stat_grupp": "NH3",
+    "total_t": 4203.967428999997
+   },
+   {
+    "aruanne_aasta": 2022,
+    "aine_stat_grupp": "NO",
+    "total_t": 0.002
+   },
+   {
+    "aruanne_aasta": 2022,
+    "aine_stat_grupp": "NO2",
+    "total_t": 8443.614891000005
+   },
+   {
+    "aruanne_aasta": 2022,
+    "aine_stat_grupp": "Ni",
+    "total_t": 1.2301665920000011
+   },
+   {
+    "aruanne_aasta": 2022,
+    "aine_stat_grupp": "PCB",
+    "total_t": 3.918499999999999e-05
+   },
+   {
+    "aruanne_aasta": 2022,
+    "aine_stat_grupp": "PCDD/PCDF",
+    "total_t": 1.0474476719999996e-06
+   },
+   {
+    "aruanne_aasta": 2022,
+    "aine_stat_grupp": "PM10",
+    "total_t": 1452.065534999999
+   },
+   {
+    "aruanne_aasta": 2022,
+    "aine_stat_grupp": "PM2,5",
+    "total_t": 1116.820913999998
+   },
+   {
+    "aruanne_aasta": 2022,
+    "aine_stat_grupp": "Pb",
+    "total_t": 1.559870545000004
+   },
+   {
+    "aruanne_aasta": 2022,
+    "aine_stat_grupp": "SO2",
+    "total_t": 14755.353761999984
+   },
+   {
+    "aruanne_aasta": 2022,
+    "aine_stat_grupp": "Sb",
+    "total_t": 0.0005
+   },
+   {
+    "aruanne_aasta": 2022,
+    "aine_stat_grupp": "Se",
+    "total_t": 1.3629660530000014
+   },
+   {
+    "aruanne_aasta": 2022,
+    "aine_stat_grupp": "Sn",
+    "total_t": 0.017163
+   },
+   {
+    "aruanne_aasta": 2022,
+    "aine_stat_grupp": "Tl",
+    "total_t": 0.050083
+   },
+   {
+    "aruanne_aasta": 2022,
+    "aine_stat_grupp": "V",
+    "total_t": 0.25006427800000014
+   },
+   {
+    "aruanne_aasta": 2022,
+    "aine_stat_grupp": "Zn",
+    "total_t": 11.089494350000008
+   },
+   {
+    "aruanne_aasta": 2022,
+    "aine_stat_grupp": "b(a)p",
+    "total_t": 0.14044879699999988
+   },
+   {
+    "aruanne_aasta": 2022,
+    "aine_stat_grupp": "b(b)f",
+    "total_t": 0.21777232299999982
+   },
+   {
+    "aruanne_aasta": 2022,
+    "aine_stat_grupp": "b(k)f",
+    "total_t": 0.07214245099999991
+   },
+   {
+    "aruanne_aasta": 2022,
+    "aine_stat_grupp": "metaan",
+    "total_t": 16351.574019
+   },
+   {
+    "aruanne_aasta": 2022,
+    "aine_stat_grupp": "tahked_kokku_va_PM10_PM2.5_BC",
+    "total_t": 5110.450050000011
+   },
+   {
+    "aruanne_aasta": 2023,
+    "aine_stat_grupp": null,
+    "total_t": 97.61532400000002
+   },
+   {
+    "aruanne_aasta": 2023,
+    "aine_stat_grupp": "As",
+    "total_t": 0.4720876450000008
+   },
+   {
+    "aruanne_aasta": 2023,
+    "aine_stat_grupp": "BC",
+    "total_t": 51.41835400000002
+   },
+   {
+    "aruanne_aasta": 2023,
+    "aine_stat_grupp": "CO",
+    "total_t": 57304.17207399999
+   },
+   {
+    "aruanne_aasta": 2023,
+    "aine_stat_grupp": "CO2",
+    "total_t": 5813816.896331999
+   },
+   {
+    "aruanne_aasta": 2023,
+    "aine_stat_grupp": "CO2 bio",
+    "total_t": 3170051.8618070004
+   },
+   {
+    "aruanne_aasta": 2023,
+    "aine_stat_grupp": "Cd",
+    "total_t": 0.19068867799999992
+   },
+   {
+    "aruanne_aasta": 2023,
+    "aine_stat_grupp": "Co",
+    "total_t": 0.0065541
+   },
+   {
+    "aruanne_aasta": 2023,
+    "aine_stat_grupp": "Cr",
+    "total_t": 0.7152910849999998
+   },
+   {
+    "aruanne_aasta": 2023,
+    "aine_stat_grupp": "Cu",
+    "total_t": 1.015987342
+   },
+   {
+    "aruanne_aasta": 2023,
+    "aine_stat_grupp": "H2S",
+    "total_t": 149.23929199999998
+   },
+   {
+    "aruanne_aasta": 2023,
+    "aine_stat_grupp": "HCB",
+    "total_t": 0.0014287040000000003
+   },
+   {
+    "aruanne_aasta": 2023,
+    "aine_stat_grupp": "HCl",
+    "total_t": 106.81806
+   },
+   {
+    "aruanne_aasta": 2023,
+    "aine_stat_grupp": "Hg",
+    "total_t": 0.17759340000000068
+   },
+   {
+    "aruanne_aasta": 2023,
+    "aine_stat_grupp": "I(1,2,3)p",
+    "total_t": 0.04983386599999999
+   },
+   {
+    "aruanne_aasta": 2023,
+    "aine_stat_grupp": "LOÜ",
+    "total_t": 5635.240661000022
+   },
+   {
+    "aruanne_aasta": 2023,
+    "aine_stat_grupp": "Mn",
+    "total_t": 0.5337250869999998
+   },
+   {
+    "aruanne_aasta": 2023,
+    "aine_stat_grupp": "N2O",
+    "total_t": 39.51153699999999
+   },
+   {
+    "aruanne_aasta": 2023,
+    "aine_stat_grupp": "NH3",
+    "total_t": 4188.180098000007
+   },
+   {
+    "aruanne_aasta": 2023,
+    "aine_stat_grupp": "NO",
+    "total_t": 0.0
+   },
+   {
+    "aruanne_aasta": 2023,
+    "aine_stat_grupp": "NO2",
+    "total_t": 6626.681684000001
+   },
+   {
+    "aruanne_aasta": 2023,
+    "aine_stat_grupp": "Ni",
+    "total_t": 1.0863361300000005
+   },
+   {
+    "aruanne_aasta": 2023,
+    "aine_stat_grupp": "PAH",
+    "total_t": 0.0
+   },
+   {
+    "aruanne_aasta": 2023,
+    "aine_stat_grupp": "PCB",
+    "total_t": 8.212900000000004e-05
+   },
+   {
+    "aruanne_aasta": 2023,
+    "aine_stat_grupp": "PCDD/PCDF",
+    "total_t": 2.2121060000000012e-07
+   },
+   {
+    "aruanne_aasta": 2023,
+    "aine_stat_grupp": "PM10",
+    "total_t": 1294.1340879999993
+   },
+   {
+    "aruanne_aasta": 2023,
+    "aine_stat_grupp": "PM2,5",
+    "total_t": 1031.8345329999986
+   },
+   {
+    "aruanne_aasta": 2023,
+    "aine_stat_grupp": "Pb",
+    "total_t": 1.3840525289999999
+   },
+   {
+    "aruanne_aasta": 2023,
+    "aine_stat_grupp": "SO2",
+    "total_t": 10801.358721000011
+   },
+   {
+    "aruanne_aasta": 2023,
+    "aine_stat_grupp": "Sb",
+    "total_t": 0.0006
+   },
+   {
+    "aruanne_aasta": 2023,
+    "aine_stat_grupp": "Se",
+    "total_t": 1.0686481759999995
+   },
+   {
+    "aruanne_aasta": 2023,
+    "aine_stat_grupp": "Sn",
+    "total_t": 0.017324000000000003
+   },
+   {
+    "aruanne_aasta": 2023,
+    "aine_stat_grupp": "Tl",
+    "total_t": 0.055165
+   },
+   {
+    "aruanne_aasta": 2023,
+    "aine_stat_grupp": "V",
+    "total_t": 0.20587256100000015
+   },
+   {
+    "aruanne_aasta": 2023,
+    "aine_stat_grupp": "Zn",
+    "total_t": 9.09083270500001
+   },
+   {
+    "aruanne_aasta": 2023,
+    "aine_stat_grupp": "b(a)p",
+    "total_t": 0.12400721200000012
+   },
+   {
+    "aruanne_aasta": 2023,
+    "aine_stat_grupp": "b(b)f",
+    "total_t": 0.19036457600000023
+   },
+   {
+    "aruanne_aasta": 2023,
+    "aine_stat_grupp": "b(k)f",
+    "total_t": 0.06252371700000005
+   },
+   {
+    "aruanne_aasta": 2023,
+    "aine_stat_grupp": "metaan",
+    "total_t": 17274.373845000006
+   },
+   {
+    "aruanne_aasta": 2023,
+    "aine_stat_grupp": "tahked_kokku_va_PM10_PM2.5_BC",
+    "total_t": 4448.309622999999
+   },
+   {
+    "aruanne_aasta": 2024,
+    "aine_stat_grupp": null,
+    "total_t": 83.622739164
+   },
+   {
+    "aruanne_aasta": 2024,
+    "aine_stat_grupp": "As",
+    "total_t": 0.21233740600000006
+   },
+   {
+    "aruanne_aasta": 2024,
+    "aine_stat_grupp": "BC",
+    "total_t": 64.32419999999998
+   },
+   {
+    "aruanne_aasta": 2024,
+    "aine_stat_grupp": "CO",
+    "total_t": 50352.05694000002
+   },
+   {
+    "aruanne_aasta": 2024,
+    "aine_stat_grupp": "CO2",
+    "total_t": 4945870.944541
+   },
+   {
+    "aruanne_aasta": 2024,
+    "aine_stat_grupp": "CO2 bio",
+    "total_t": 3155627.078356
+   },
+   {
+    "aruanne_aasta": 2024,
+    "aine_stat_grupp": "Cd",
+    "total_t": 0.13961998699999995
+   },
+   {
+    "aruanne_aasta": 2024,
+    "aine_stat_grupp": "Co",
+    "total_t": 0.00644377
+   },
+   {
+    "aruanne_aasta": 2024,
+    "aine_stat_grupp": "Cr",
+    "total_t": 0.5660346079999998
+   },
+   {
+    "aruanne_aasta": 2024,
+    "aine_stat_grupp": "Cu",
+    "total_t": 0.6382031499999997
+   },
+   {
+    "aruanne_aasta": 2024,
+    "aine_stat_grupp": "H2S",
+    "total_t": 135.47759
+   },
+   {
+    "aruanne_aasta": 2024,
+    "aine_stat_grupp": "HCB",
+    "total_t": 0.00011067499999999999
+   },
+   {
+    "aruanne_aasta": 2024,
+    "aine_stat_grupp": "HCl",
+    "total_t": 79.07055999999999
+   },
+   {
+    "aruanne_aasta": 2024,
+    "aine_stat_grupp": "Hg",
+    "total_t": 0.10197895700000022
+   },
+   {
+    "aruanne_aasta": 2024,
+    "aine_stat_grupp": "I(1,2,3)p",
+    "total_t": 0.054885838000000034
+   },
+   {
+    "aruanne_aasta": 2024,
+    "aine_stat_grupp": "LOÜ",
+    "total_t": 5650.50691099998
+   },
+   {
+    "aruanne_aasta": 2024,
+    "aine_stat_grupp": "Mn",
+    "total_t": 0.588522898
+   },
+   {
+    "aruanne_aasta": 2024,
+    "aine_stat_grupp": "N2O",
+    "total_t": 56.96115000000002
+   },
+   {
+    "aruanne_aasta": 2024,
+    "aine_stat_grupp": "NH3",
+    "total_t": 4184.557903000001
+   },
+   {
+    "aruanne_aasta": 2024,
+    "aine_stat_grupp": "NO",
+    "total_t": 0.0
+   },
+   {
+    "aruanne_aasta": 2024,
+    "aine_stat_grupp": "NO2",
+    "total_t": 5573.842371999998
+   },
+   {
+    "aruanne_aasta": 2024,
+    "aine_stat_grupp": "Ni",
+    "total_t": 0.6468409450000001
+   },
+   {
+    "aruanne_aasta": 2024,
+    "aine_stat_grupp": "PAH",
+    "total_t": 0.00012065999999999999
+   },
+   {
+    "aruanne_aasta": 2024,
+    "aine_stat_grupp": "PCB",
+    "total_t": 3.107400000000001e-05
+   },
+   {
+    "aruanne_aasta": 2024,
+    "aine_stat_grupp": "PCDD/PCDF",
+    "total_t": 1.0840179269999992e-06
+   },
+   {
+    "aruanne_aasta": 2024,
+    "aine_stat_grupp": "PM10",
+    "total_t": 1202.8334839999977
+   },
+   {
+    "aruanne_aasta": 2024,
+    "aine_stat_grupp": "PM2,5",
+    "total_t": 976.569647999999
+   },
+   {
+    "aruanne_aasta": 2024,
+    "aine_stat_grupp": "Pb",
+    "total_t": 0.7456595630000001
+   },
+   {
+    "aruanne_aasta": 2024,
+    "aine_stat_grupp": "SO2",
+    "total_t": 8947.257179000006
+   },
+   {
+    "aruanne_aasta": 2024,
+    "aine_stat_grupp": "Sb",
+    "total_t": 0.359
+   },
+   {
+    "aruanne_aasta": 2024,
+    "aine_stat_grupp": "Se",
+    "total_t": 0.3803949140000001
+   },
+   {
+    "aruanne_aasta": 2024,
+    "aine_stat_grupp": "Sn",
+    "total_t": 0.04179356000000001
+   },
+   {
+    "aruanne_aasta": 2024,
+    "aine_stat_grupp": "Tl",
+    "total_t": 0.052212
+   },
+   {
+    "aruanne_aasta": 2024,
+    "aine_stat_grupp": "V",
+    "total_t": 0.10407483000000001
+   },
+   {
+    "aruanne_aasta": 2024,
+    "aine_stat_grupp": "Zn",
+    "total_t": 5.938364148999996
+   },
+   {
+    "aruanne_aasta": 2024,
+    "aine_stat_grupp": "b(a)p",
+    "total_t": 0.140146166
+   },
+   {
+    "aruanne_aasta": 2024,
+    "aine_stat_grupp": "b(b)f",
+    "total_t": 0.21418504600000027
+   },
+   {
+    "aruanne_aasta": 2024,
+    "aine_stat_grupp": "b(k)f",
+    "total_t": 0.06883758200000004
+   },
+   {
+    "aruanne_aasta": 2024,
+    "aine_stat_grupp": "metaan",
+    "total_t": 16244.271509000013
+   },
+   {
+    "aruanne_aasta": 2024,
+    "aine_stat_grupp": "tahked_kokku_va_PM10_PM2.5_BC",
+    "total_t": 3512.5216619999974
+   },
+   {
+    "aruanne_aasta": 2025,
+    "aine_stat_grupp": null,
+    "total_t": 51.604827109999995
+   },
+   {
+    "aruanne_aasta": 2025,
+    "aine_stat_grupp": "As",
+    "total_t": 0.3232428820000006
+   },
+   {
+    "aruanne_aasta": 2025,
+    "aine_stat_grupp": "BC",
+    "total_t": 86.846596
+   },
+   {
+    "aruanne_aasta": 2025,
+    "aine_stat_grupp": "CO",
+    "total_t": 35118.95818799996
+   },
+   {
+    "aruanne_aasta": 2025,
+    "aine_stat_grupp": "CO2",
+    "total_t": 4568542.8450170085
+   },
+   {
+    "aruanne_aasta": 2025,
+    "aine_stat_grupp": "CO2 bio",
+    "total_t": 3052175.7225519996
+   },
+   {
+    "aruanne_aasta": 2025,
+    "aine_stat_grupp": "Cd",
+    "total_t": 0.20857883900000002
+   },
+   {
+    "aruanne_aasta": 2025,
+    "aine_stat_grupp": "Co",
+    "total_t": 0.00529459
+   },
+   {
+    "aruanne_aasta": 2025,
+    "aine_stat_grupp": "Cr",
+    "total_t": 0.7568255259999996
+   },
+   {
+    "aruanne_aasta": 2025,
+    "aine_stat_grupp": "Cu",
+    "total_t": 1.0564519810000008
+   },
+   {
+    "aruanne_aasta": 2025,
+    "aine_stat_grupp": "H2S",
+    "total_t": 74.37201900000002
+   },
+   {
+    "aruanne_aasta": 2025,
+    "aine_stat_grupp": "HCB",
+    "total_t": 0.00012599000000000014
+   },
+   {
+    "aruanne_aasta": 2025,
+    "aine_stat_grupp": "HCl",
+    "total_t": 127.11847700000004
+   },
+   {
+    "aruanne_aasta": 2025,
+    "aine_stat_grupp": "Hg",
+    "total_t": 0.11987669300000005
+   },
+   {
+    "aruanne_aasta": 2025,
+    "aine_stat_grupp": "I(1,2,3)p",
+    "total_t": 0.06281211100000002
+   },
+   {
+    "aruanne_aasta": 2025,
+    "aine_stat_grupp": "LOÜ",
+    "total_t": 5041.1414780000805
+   },
+   {
+    "aruanne_aasta": 2025,
+    "aine_stat_grupp": "Mn",
+    "total_t": 0.8140344459999997
+   },
+   {
+    "aruanne_aasta": 2025,
+    "aine_stat_grupp": "N2O",
+    "total_t": 60.52846599999997
+   },
+   {
+    "aruanne_aasta": 2025,
+    "aine_stat_grupp": "NH3",
+    "total_t": 4287.264931
+   },
+   {
+    "aruanne_aasta": 2025,
+    "aine_stat_grupp": "NO",
+    "total_t": 0.0
+   },
+   {
+    "aruanne_aasta": 2025,
+    "aine_stat_grupp": "NO2",
+    "total_t": 5601.0605650000025
+   },
+   {
+    "aruanne_aasta": 2025,
+    "aine_stat_grupp": "Ni",
+    "total_t": 0.8141876480000005
+   },
+   {
+    "aruanne_aasta": 2025,
+    "aine_stat_grupp": "PAH",
+    "total_t": 0.00033000000000000005
+   },
+   {
+    "aruanne_aasta": 2025,
+    "aine_stat_grupp": "PCB",
+    "total_t": 7.013999999999999e-06
+   },
+   {
+    "aruanne_aasta": 2025,
+    "aine_stat_grupp": "PCDD/PCDF",
+    "total_t": 1.5272428130000002e-06
+   },
+   {
+    "aruanne_aasta": 2025,
+    "aine_stat_grupp": "PM10",
+    "total_t": 1957.242645999993
+   },
+   {
+    "aruanne_aasta": 2025,
+    "aine_stat_grupp": "PM2,5",
+    "total_t": 1314.3486059999962
+   },
+   {
+    "aruanne_aasta": 2025,
+    "aine_stat_grupp": "Pb",
+    "total_t": 0.8654659190000002
+   },
+   {
+    "aruanne_aasta": 2025,
+    "aine_stat_grupp": "SO2",
+    "total_t": 8413.24948200001
+   },
+   {
+    "aruanne_aasta": 2025,
+    "aine_stat_grupp": "Sb",
+    "total_t": 0.316
+   },
+   {
+    "aruanne_aasta": 2025,
+    "aine_stat_grupp": "Se",
+    "total_t": 0.6819489540000003
+   },
+   {
+    "aruanne_aasta": 2025,
+    "aine_stat_grupp": "Sn",
+    "total_t": 0.017467999999999997
+   },
+   {
+    "aruanne_aasta": 2025,
+    "aine_stat_grupp": "Tl",
+    "total_t": 0.048129
+   },
+   {
+    "aruanne_aasta": 2025,
+    "aine_stat_grupp": "V",
+    "total_t": 0.07935876400000001
+   },
+   {
+    "aruanne_aasta": 2025,
+    "aine_stat_grupp": "Zn",
+    "total_t": 9.800657083000004
+   },
+   {
+    "aruanne_aasta": 2025,
+    "aine_stat_grupp": "b(a)p",
+    "total_t": 0.15865350800000008
+   },
+   {
+    "aruanne_aasta": 2025,
+    "aine_stat_grupp": "b(b)f",
+    "total_t": 0.2475191630000001
+   },
+   {
+    "aruanne_aasta": 2025,
+    "aine_stat_grupp": "b(k)f",
+    "total_t": 0.07826500300000004
+   },
+   {
+    "aruanne_aasta": 2025,
+    "aine_stat_grupp": "metaan",
+    "total_t": 15222.617521999999
+   },
+   {
+    "aruanne_aasta": 2025,
+    "aine_stat_grupp": "tahked_kokku_va_PM10_PM2.5_BC",
+    "total_t": 4389.509646000021
+   }
+  ],
+  "nfr": [
+   {
+    "tegevusala_nfr": "1A1a",
+    "rows": 64078
+   },
+   {
+    "tegevusala_nfr": "1A2gviii",
+    "rows": 62131
+   },
+   {
+    "tegevusala_nfr": "1A4ai",
+    "rows": 37648
+   },
+   {
+    "tegevusala_nfr": "2D3d",
+    "rows": 33647
+   },
+   {
+    "tegevusala_nfr": "1A2b",
+    "rows": 25668
+   },
+   {
+    "tegevusala_nfr": "1A4ci",
+    "rows": 18256
+   },
+   {
+    "tegevusala_nfr": "1A2e",
+    "rows": 17019
+   },
+   {
+    "tegevusala_nfr": "1A2f",
+    "rows": 12905
+   },
+   {
+    "tegevusala_nfr": "3Dc",
+    "rows": 9364
+   },
+   {
+    "tegevusala_nfr": "2C1",
+    "rows": 7882
+   },
+   {
+    "tegevusala_nfr": "3B1b",
+    "rows": 4546
+   },
+   {
+    "tegevusala_nfr": "3B3",
+    "rows": 4122
+   },
+   {
+    "tegevusala_nfr": "2D3i",
+    "rows": 3876
+   },
+   {
+    "tegevusala_nfr": "3B1a",
+    "rows": 3573
+   },
+   {
+    "tegevusala_nfr": "2D3e",
+    "rows": 2891
+   },
+   {
+    "tegevusala_nfr": "1B2av",
+    "rows": 2508
+   },
+   {
+    "tegevusala_nfr": "1A1c",
+    "rows": 2470
+   },
+   {
+    "tegevusala_nfr": "2D3g",
+    "rows": 2437
+   },
+   {
+    "tegevusala_nfr": "2I",
+    "rows": 2323
+   },
+   {
+    "tegevusala_nfr": "1A2d",
+    "rows": 2174
+   },
+   {
+    "tegevusala_nfr": "1B2aiv",
+    "rows": 1988
+   },
+   {
+    "tegevusala_nfr": null,
+    "rows": 1939
+   },
+   {
+    "tegevusala_nfr": "2B10a",
+    "rows": 1928
+   },
+   {
+    "tegevusala_nfr": "2H2",
+    "rows": 1879
+   },
+   {
+    "tegevusala_nfr": "2L",
+    "rows": 1675
+   },
+   {
+    "tegevusala_nfr": "1A2c",
+    "rows": 1319
+   },
+   {
+    "tegevusala_nfr": "2A5a",
+    "rows": 1292
+   },
+   {
+    "tegevusala_nfr": "2D3h",
+    "rows": 1279
+   },
+   {
+    "tegevusala_nfr": "5D2",
+    "rows": 1276
+   },
+   {
+    "tegevusala_nfr": "2C7c",
+    "rows": 1138
+   },
+   {
+    "tegevusala_nfr": "2A5c",
+    "rows": 857
+   },
+   {
+    "tegevusala_nfr": "3B4h",
+    "rows": 850
+   },
+   {
+    "tegevusala_nfr": "5E",
+    "rows": 659
+   },
+   {
+    "tegevusala_nfr": "5B2",
+    "rows": 539
+   },
+   {
+    "tegevusala_nfr": "1A2a",
+    "rows": 520
+   },
+   {
+    "tegevusala_nfr": "5C1bi",
+    "rows": 502
+   },
+   {
+    "tegevusala_nfr": "5D1",
+    "rows": 494
+   },
+   {
+    "tegevusala_nfr": "2H1",
+    "rows": 486
+   },
+   {
+    "tegevusala_nfr": "2B10b",
+    "rows": 455
+   },
+   {
+    "tegevusala_nfr": "1B1c",
+    "rows": 431
+   }
+  ],
+  "methods": [
+   {
+    "aine_arvestus_meetod": "A",
+    "n": 90321
+   },
+   {
+    "aine_arvestus_meetod": null,
+    "n": 1
+   },
+   {
+    "aine_arvestus_meetod": "M+A",
+    "n": 8604
+   },
+   {
+    "aine_arvestus_meetod": "M",
+    "n": 658
+   },
+   {
+    "aine_arvestus_meetod": "AS",
+    "n": 231869
+   },
+   {
+    "aine_arvestus_meetod": "D",
+    "n": 12467
+   }
+  ],
+  "fuel_repeats": {
+   "groups": 15312,
+   "groups_with_multiple_rows": 15217,
+   "multi_row_groups_with_single_amount": 14583
+  },
+  "duplicate_substance_rows": {
+   "groups": 311329,
+   "with_n_gt_1": 22841
+  },
+  "ets_flag": [
+   {
+    "ets_kohuslane": null,
+    "rows": 41679
+   },
+   {
+    "ets_kohuslane": "Ei",
+    "rows": 283523
+   },
+   {
+    "ets_kohuslane": "Jah",
+    "rows": 18718
+   }
+  ],
+  "duplicates": {
+   "groups_n_gt_1": 22841,
+   "identical_amounts": 4197,
+   "differing_permit_versions": 0,
+   "differing_cas": 139,
+   "differing_stat_group": 23,
+   "differing_method": 4612,
+   "excess_if_first_row_only_t": 3014391.838131655,
+   "share_of_all_t": 0.042774624960487596
+  }
+ },
+ "heat": {
+  "rows": 10984,
+  "columns": [
+   "aruanne_id",
+   "aruanne_aasta",
+   "snap",
+   "kytus_liik",
+   "kytus_kood",
+   "kytus_nimetus_val",
+   "kytus_kogus",
+   "kytus_yhik",
+   "soojus_kokku",
+   "soojus_omatarve",
+   "soojus_myyk",
+   "elekter_kokku",
+   "elekter_omatarve",
+   "elekter_myyk",
+   "ets_kohuslane",
+   "tegevuskoht_maakond_nimi_curr",
+   "kaitis_pohitegevus_emtak_nimetus",
+   "luba_versioon"
+  ],
+  "rows_by_year": [
+   {
+    "aruanne_aasta": 2019,
+    "rows": 1368,
+    "reports": 1120
+   },
+   {
+    "aruanne_aasta": 2020,
+    "rows": 1758,
+    "reports": 1337
+   },
+   {
+    "aruanne_aasta": 2021,
+    "rows": 1530,
+    "reports": 1112
+   },
+   {
+    "aruanne_aasta": 2022,
+    "rows": 1549,
+    "reports": 1084
+   },
+   {
+    "aruanne_aasta": 2023,
+    "rows": 1850,
+    "reports": 1330
+   },
+   {
+    "aruanne_aasta": 2024,
+    "rows": 1493,
+    "reports": 1032
+   },
+   {
+    "aruanne_aasta": 2025,
+    "rows": 1436,
+    "reports": 987
+   }
+  ],
+  "fuel_units": [
+   {
+    "kytus_yhik": null,
+    "n": 1
+   },
+   {
+    "kytus_yhik": "tonni",
+    "n": 6693
+   },
+   {
+    "kytus_yhik": "tuh. Nm³",
+    "n": 4290
+   }
+  ],
+  "fuel_types": [
+   {
+    "kytus_liik": "Tahke kütus",
+    "kytus_nimetus_val": "Puiduhake",
+    "rows": 1667,
+    "total": 18622522.499000005
+   },
+   {
+    "kytus_liik": "Tahke kütus",
+    "kytus_nimetus_val": "Põlevkivi keevkihtpõletamisel",
+    "rows": 21,
+    "total": 16093935.28
+   },
+   {
+    "kytus_liik": "Gaaskütus",
+    "kytus_nimetus_val": "Muud gaaskütused",
+    "rows": 26,
+    "total": 15067468.408
+   },
+   {
+    "kytus_liik": "Tahke kütus",
+    "kytus_nimetus_val": "Põlevkivi tolmpõletamisel",
+    "rows": 13,
+    "total": 9010391.38
+   },
+   {
+    "kytus_liik": "Tahke kütus",
+    "kytus_nimetus_val": "Puidujäätmed",
+    "rows": 661,
+    "total": 1993896.5210000004
+   },
+   {
+    "kytus_liik": "Gaaskütus",
+    "kytus_nimetus_val": "Generaatorgaas",
+    "rows": 7,
+    "total": 1823628.4780000001
+   },
+   {
+    "kytus_liik": "Gaaskütus",
+    "kytus_nimetus_val": "Maagaas (välja arvatud vedelal kujul)",
+    "rows": 4077,
+    "total": 1689494.2710000002
+   },
+   {
+    "kytus_liik": "Tahke kütus",
+    "kytus_nimetus_val": "Olmejäätmed",
+    "rows": 7,
+    "total": 1590526.0
+   },
+   {
+    "kytus_liik": "Vedelkütus",
+    "kytus_nimetus_val": "Must leelis",
+    "rows": 7,
+    "total": 1014701.0
+   },
+   {
+    "kytus_liik": "Gaaskütus",
+    "kytus_nimetus_val": "Poolkoksigaas",
+    "rows": 18,
+    "total": 823795.756
+   },
+   {
+    "kytus_liik": "Tahke kütus",
+    "kytus_nimetus_val": "Freesturvas",
+    "rows": 41,
+    "total": 175674.4
+   },
+   {
+    "kytus_liik": "Vedelkütus",
+    "kytus_nimetus_val": "Põlevkiviõli (raske fraktsioon)",
+    "rows": 741,
+    "total": 145897.29799999995
+   },
+   {
+    "kytus_liik": "Vedelkütus",
+    "kytus_nimetus_val": "Põlevkiviõli (kerge fraktsioon)",
+    "rows": 486,
+    "total": 96015.976
+   },
+   {
+    "kytus_liik": "Tahke kütus",
+    "kytus_nimetus_val": "Puidugraanulid",
+    "rows": 362,
+    "total": 91926.494
+   },
+   {
+    "kytus_liik": "Tahke kütus",
+    "kytus_nimetus_val": "Muud tahkekütused",
+    "rows": 17,
+    "total": 74024.30099999999
+   },
+   {
+    "kytus_liik": "Gaaskütus",
+    "kytus_nimetus_val": "Biogaas",
+    "rows": 141,
+    "total": 65963.044
+   },
+   {
+    "kytus_liik": "Vedelkütus",
+    "kytus_nimetus_val": "Vedeldatud naftagaas (LPG)",
+    "rows": 510,
+    "total": 65059.27099999999
+   },
+   {
+    "kytus_liik": "Tahke kütus",
+    "kytus_nimetus_val": "Tükkturvas",
+    "rows": 119,
+    "total": 56267.131
+   },
+   {
+    "kytus_liik": "Tahke kütus",
+    "kytus_nimetus_val": "Küttepuud",
+    "rows": 297,
+    "total": 48917.424
+   },
+   {
+    "kytus_liik": "Vedelkütus",
+    "kytus_nimetus_val": "Muud vedelkütused",
+    "rows": 13,
+    "total": 35468.838
+   },
+   {
+    "kytus_liik": "Vedelkütus",
+    "kytus_nimetus_val": "Vedeldatud maagaas (LNG)",
+    "rows": 226,
+    "total": 21210.531999999996
+   },
+   {
+    "kytus_liik": "Tahke kütus",
+    "kytus_nimetus_val": "Ohtlikud jäätmed",
+    "rows": 8,
+    "total": 16142.24
+   },
+   {
+    "kytus_liik": "Vedelkütus",
+    "kytus_nimetus_val": "Diislikütus",
+    "rows": 763,
+    "total": 12148.067999999996
+   },
+   {
+    "kytus_liik": "Vedelkütus",
+    "kytus_nimetus_val": "Kerge kütteõli",
+    "rows": 483,
+    "total": 10262.481000000002
+   },
+   {
+    "kytus_liik": "Tahke kütus",
+    "kytus_nimetus_val": "Kivisöebrikett (kivi- või subbituminoosest söest)",
+    "rows": 5,
+    "total": 7628.58
+   },
+   {
+    "kytus_liik": "Vedelkütus",
+    "kytus_nimetus_val": "Raske kütteõli",
+    "rows": 70,
+    "total": 6803.701000000001
+   },
+   {
+    "kytus_liik": "Tahke kütus",
+    "kytus_nimetus_val": "Põlevkivi tsemendi tootmisel",
+    "rows": 1,
+    "total": 6550.0
+   },
+   {
+    "kytus_liik": "Vedelkütus",
+    "kytus_nimetus_val": null,
+    "rows": 30,
+    "total": 5806.391000000001
+   },
+   {
+    "kytus_liik": "Tahke kütus",
+    "kytus_nimetus_val": "Jäätmekütus (RDF)",
+    "rows": 3,
+    "total": 5120.469999999999
+   },
+   {
+    "kytus_liik": "Tahke kütus",
+    "kytus_nimetus_val": "Põhk",
+    "rows": 9,
+    "total": 4769.0
+   },
+   {
+    "kytus_liik": "Tahke kütus",
+    "kytus_nimetus_val": null,
+    "rows": 3,
+    "total": 4248.16
+   },
+   {
+    "kytus_liik": "Gaaskütus",
+    "kytus_nimetus_val": "Jäätmegaas",
+    "rows": 25,
+    "total": 3994.4049999999997
+   },
+   {
+    "kytus_liik": "Tahke kütus",
+    "kytus_nimetus_val": "Loomsed jäätmed",
+    "rows": 5,
+    "total": 2916.474
+   },
+   {
+    "kytus_liik": "Tahke kütus",
+    "kytus_nimetus_val": "Koksisüsi",
+    "rows": 20,
+    "total": 2768.0199999999995
+   },
+   {
+    "kytus_liik": "Tahke kütus",
+    "kytus_nimetus_val": "Puidubrikett",
+    "rows": 37,
+    "total": 2394.135
+   },
+   {
+    "kytus_liik": "Gaaskütus",
+    "kytus_nimetus_val": "Vedeldatud maagaas (LNG)",
+    "rows": 18,
+    "total": 2299.399
+   },
+   {
+    "kytus_liik": "Gaaskütus",
+    "kytus_nimetus_val": "Vedeldatud naftagaas (LPG)",
+    "rows": 25,
+    "total": 1454.5300000000002
+   },
+   {
+    "kytus_liik": "Vedelkütus",
+    "kytus_nimetus_val": "Muud vedelad jäätmed",
+    "rows": 1,
+    "total": 894.04
+   },
+   {
+    "kytus_liik": "Tahke kütus",
+    "kytus_nimetus_val": "Turbabrikett",
+    "rows": 8,
+    "total": 843.0
+   },
+   {
+    "kytus_liik": "Tahke kütus",
+    "kytus_nimetus_val": "Subbituminoosne süsi",
+    "rows": 2,
+    "total": 435.0
+   }
+  ],
+  "heat_repeats": {
+   "reports": 8002,
+   "multi_row_reports": 2295,
+   "multi_row_with_constant_heat": 106,
+   "multi_row_with_constant_electricity": 2126
+  },
+  "report_level_totals_by_year": [
+   {
+    "aruanne_aasta": 2019,
+    "heat": 527230345.3100001,
+    "electricity": 4747630.376,
+    "reports": 1120
+   },
+   {
+    "aruanne_aasta": 2020,
+    "heat": 13717853.010000005,
+    "electricity": 1740281.384,
+    "reports": 1337
+   },
+   {
+    "aruanne_aasta": 2021,
+    "heat": 11914101.372999996,
+    "electricity": 2969714.5360000003,
+    "reports": 1112
+   },
+   {
+    "aruanne_aasta": 2022,
+    "heat": 13645199.371,
+    "electricity": 5765822.556999999,
+    "reports": 1084
+   },
+   {
+    "aruanne_aasta": 2023,
+    "heat": 10370235.383000005,
+    "electricity": 3496785.7750000004,
+    "reports": 1330
+   },
+   {
+    "aruanne_aasta": 2024,
+    "heat": 9932648.170999996,
+    "electricity": 3846201.732,
+    "reports": 1032
+   },
+   {
+    "aruanne_aasta": 2025,
+    "heat": 9424821.397999996,
+    "electricity": 2998627.153,
+    "reports": 987
+   }
+  ],
+  "additivity": {
+   "multi_row_reports": 2295,
+   "with_nonzero_electricity": 170,
+   "nonzero_electricity_constant": 1,
+   "with_nonzero_heat": 2205,
+   "nonzero_heat_constant": 16,
+   "reports_with_several_permit_versions": 0
+  },
+  "top_heat_rows": [
+   {
+    "aruanne_aasta": 2019,
+    "snap": "020103b",
+    "kytus_nimetus_val": "Maagaas (välja arvatud vedelal kujul)",
+    "kytus_kogus": 3735.122,
+    "kytus_yhik": "tuh. Nm³",
+    "soojus_kokku": 207045669.132,
+    "soojus_omatarve": 0.0,
+    "soojus_myyk": 0.0,
+    "elekter_kokku": 0.0
+   },
+   {
+    "aruanne_aasta": 2019,
+    "snap": "030103b",
+    "kytus_nimetus_val": "Maagaas (välja arvatud vedelal kujul)",
+    "kytus_kogus": 1896.189,
+    "kytus_yhik": "tuh. Nm³",
+    "soojus_kokku": 31816192.8,
+    "soojus_omatarve": 31816192.8,
+    "soojus_myyk": 0.0,
+    "elekter_kokku": 0.0
+   },
+   {
+    "aruanne_aasta": 2019,
+    "snap": "010203b",
+    "kytus_nimetus_val": "Maagaas (välja arvatud vedelal kujul)",
+    "kytus_kogus": 701.548,
+    "kytus_yhik": "tuh. Nm³",
+    "soojus_kokku": 18418990.738,
+    "soojus_omatarve": 0.0,
+    "soojus_myyk": 0.0,
+    "elekter_kokku": 0.0
+   },
+   {
+    "aruanne_aasta": 2019,
+    "snap": "030103b",
+    "kytus_nimetus_val": "Maagaas (välja arvatud vedelal kujul)",
+    "kytus_kogus": 2185.296,
+    "kytus_yhik": "tuh. Nm³",
+    "soojus_kokku": 17132720.64,
+    "soojus_omatarve": 17132.72,
+    "soojus_myyk": 0.0,
+    "elekter_kokku": 0.0
+   },
+   {
+    "aruanne_aasta": 2019,
+    "snap": "030103b",
+    "kytus_nimetus_val": "Maagaas (välja arvatud vedelal kujul)",
+    "kytus_kogus": 1744.309,
+    "kytus_yhik": "tuh. Nm³",
+    "soojus_kokku": 14695803.325,
+    "soojus_omatarve": 0.0,
+    "soojus_myyk": 0.0,
+    "elekter_kokku": 0.0
+   },
+   {
+    "aruanne_aasta": 2019,
+    "snap": "020302b",
+    "kytus_nimetus_val": "Maagaas (välja arvatud vedelal kujul)",
+    "kytus_kogus": 936.202,
+    "kytus_yhik": "tuh. Nm³",
+    "soojus_kokku": 12599683.697,
+    "soojus_omatarve": 0.0,
+    "soojus_myyk": 0.0,
+    "elekter_kokku": 0.0
+   },
+   {
+    "aruanne_aasta": 2019,
+    "snap": "010203b",
+    "kytus_nimetus_val": "Maagaas (välja arvatud vedelal kujul)",
+    "kytus_kogus": 973.689,
+    "kytus_yhik": "tuh. Nm³",
+    "soojus_kokku": 12414530.5,
+    "soojus_omatarve": 0.0,
+    "soojus_myyk": 0.0,
+    "elekter_kokku": 0.0
+   },
+   {
+    "aruanne_aasta": 2019,
+    "snap": "030103b",
+    "kytus_nimetus_val": "Maagaas (välja arvatud vedelal kujul)",
+    "kytus_kogus": 1161.0,
+    "kytus_yhik": "tuh. Nm³",
+    "soojus_kokku": 9873144.0,
+    "soojus_omatarve": 0.0,
+    "soojus_myyk": 0.0,
+    "elekter_kokku": 0.0
+   },
+   {
+    "aruanne_aasta": 2019,
+    "snap": "030103b",
+    "kytus_nimetus_val": "Maagaas (välja arvatud vedelal kujul)",
+    "kytus_kogus": 930.706,
+    "kytus_yhik": "tuh. Nm³",
+    "soojus_kokku": 9512513.35,
+    "soojus_omatarve": 9512513.3,
+    "soojus_myyk": 0.0,
+    "elekter_kokku": 0.0
+   },
+   {
+    "aruanne_aasta": 2019,
+    "snap": "020103b",
+    "kytus_nimetus_val": "Maagaas (välja arvatud vedelal kujul)",
+    "kytus_kogus": 654.0,
+    "kytus_yhik": "tuh. Nm³",
+    "soojus_kokku": 9177633.333,
+    "soojus_omatarve": 9177633.3,
+    "soojus_myyk": 0.0,
+    "elekter_kokku": 0.0
+   },
+   {
+    "aruanne_aasta": 2019,
+    "snap": "010103b",
+    "kytus_nimetus_val": "Maagaas (välja arvatud vedelal kujul)",
+    "kytus_kogus": 1146.113,
+    "kytus_yhik": "tuh. Nm³",
+    "soojus_kokku": 9097844.994,
+    "soojus_omatarve": 0.0,
+    "soojus_myyk": 9097844.994,
+    "elekter_kokku": 0.0
+   },
+   {
+    "aruanne_aasta": 2019,
+    "snap": "030103b",
+    "kytus_nimetus_val": "Maagaas (välja arvatud vedelal kujul)",
+    "kytus_kogus": 980.612,
+    "kytus_yhik": "tuh. Nm³",
+    "soojus_kokku": 8246946.92,
+    "soojus_omatarve": 8246946.92,
+    "soojus_myyk": 0.0,
+    "elekter_kokku": 0.0
+   }
+  ],
+  "heat_over_fuel": [
+   {
+    "kytus_nimetus_val": "Maagaas (välja arvatud vedelal kujul)",
+    "kytus_yhik": "tuh. Nm³",
+    "rows": 3673,
+    "median_ratio": 8.5610988185196
+   },
+   {
+    "kytus_nimetus_val": "Puiduhake",
+    "kytus_yhik": "tonni",
+    "rows": 1576,
+    "median_ratio": 2.2731462928151824
+   },
+   {
+    "kytus_nimetus_val": "Põlevkiviõli (raske fraktsioon)",
+    "kytus_yhik": "tonni",
+    "rows": 640,
+    "median_ratio": 9.50002938744634
+   },
+   {
+    "kytus_nimetus_val": "Puidujäätmed",
+    "kytus_yhik": "tonni",
+    "rows": 623,
+    "median_ratio": 3.006963562753037
+   },
+   {
+    "kytus_nimetus_val": "Vedeldatud naftagaas (LPG)",
+    "kytus_yhik": "tonni",
+    "rows": 438,
+    "median_ratio": 11.527495085685903
+   },
+   {
+    "kytus_nimetus_val": "Diislikütus",
+    "kytus_yhik": "tonni",
+    "rows": 432,
+    "median_ratio": 10.75
+   },
+   {
+    "kytus_nimetus_val": "Põlevkiviõli (kerge fraktsioon)",
+    "kytus_yhik": "tonni",
+    "rows": 404,
+    "median_ratio": 9.666670850878006
+   },
+   {
+    "kytus_nimetus_val": "Kerge kütteõli",
+    "kytus_yhik": "tonni",
+    "rows": 368,
+    "median_ratio": 10.700000000000001
+   },
+   {
+    "kytus_nimetus_val": "Puidugraanulid",
+    "kytus_yhik": "tonni",
+    "rows": 338,
+    "median_ratio": 4.131164543904564
+   },
+   {
+    "kytus_nimetus_val": "Küttepuud",
+    "kytus_yhik": "tonni",
+    "rows": 260,
+    "median_ratio": 2.8430119047619047
+   },
+   {
+    "kytus_nimetus_val": "Vedeldatud maagaas (LNG)",
+    "kytus_yhik": "tonni",
+    "rows": 197,
+    "median_ratio": 11.50097520200613
+   },
+   {
+    "kytus_nimetus_val": "Tükkturvas",
+    "kytus_yhik": "tonni",
+    "rows": 106,
+    "median_ratio": 2.689270010449321
+   }
+  ],
+  "snap": [
+   {
+    "snap": "030103b",
+    "rows": 3470
+   },
+   {
+    "snap": "010203b",
+    "rows": 2492
+   },
+   {
+    "snap": "020103b",
+    "rows": 2124
+   },
+   {
+    "snap": "020302b",
+    "rows": 621
+   },
+   {
+    "snap": "030106",
+    "rows": 564
+   },
+   {
+    "snap": "020106",
+    "rows": 379
+   },
+   {
+    "snap": "030313",
+    "rows": 190
+   },
+   {
+    "snap": "010102",
+    "rows": 142
+   },
+   {
+    "snap": "020305",
+    "rows": 110
+   },
+   {
+    "snap": "010103b",
+    "rows": 106
+   },
+   {
+    "snap": "010101",
+    "rows": 103
+   },
+   {
+    "snap": "010203a",
+    "rows": 88
+   },
+   {
+    "snap": "030105",
+    "rows": 85
+   },
+   {
+    "snap": "010105",
+    "rows": 45
+   },
+   {
+    "snap": "010103a",
+    "rows": 44
+   },
+   {
+    "snap": "030103a",
+    "rows": 40
+   },
+   {
+    "snap": "020105",
+    "rows": 39
+   },
+   {
+    "snap": "091006",
+    "rows": 38
+   },
+   {
+    "snap": "030320",
+    "rows": 27
+   },
+   {
+    "snap": "030205",
+    "rows": 24
+   }
+  ],
+  "quantiles_heat": {
+   "0.5": 474.411,
+   "0.9": 8290.0,
+   "0.99": 546683.295,
+   "1.0": 207045669.132
+  }
+ }
+}
