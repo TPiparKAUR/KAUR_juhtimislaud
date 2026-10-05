@@ -132,6 +132,17 @@
     return stage;
   }
 
+  /* Puänt: the chart's main message as a sentence computed from the data, shown above the title.
+     Call after the chart is drawn (and again after a selector redraws it). */
+  function punch(host, text) {
+    const viz = host.classList.contains('viz') ? host : host.querySelector('.viz');
+    if (!viz || !text) return;
+    viz.querySelector(':scope > .viz-punch')?.remove();
+    const p = Object.assign(document.createElement('p'), { className: 'viz-punch', textContent: text });
+    p.setAttribute('data-punch', '');
+    viz.prepend(p);
+  }
+
   function responsive(stage, draw) {
     let last = 0;
     const run = () => {
@@ -371,7 +382,7 @@
   }
 
   window.KaurCharts = {
-    annualBars, heatGrid, forest, stationDots, indexPanel, coverage, fmt, sgn,
+    annualBars, heatGrid, forest, stationDots, indexPanel, coverage, fmt, sgn, punch,
     kit: { el, frame, responsive, niceTicks, hover, axisY, diverging, sequential, median, MINUS },
   };
 })();

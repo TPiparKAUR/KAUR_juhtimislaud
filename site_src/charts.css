@@ -20,6 +20,8 @@
   --seq-lo: #0d366b; --seq-hi: #86b6ef;
 }
 .viz { margin: 2rem 0; }
+.viz-punch { margin: 0 0 .35rem; font-size: 1.2rem; line-height: 1.3; font-weight: 700; color: var(--ink); max-width: 52rem; border-left: 4px solid var(--accent, #2a78d6); padding-left: .7rem; }
+.viz-punch + .viz-title { font-size: .95rem; font-weight: 600; color: var(--ink-2); }
 .viz-title { margin: 0 0 .15rem; font-size: 1.1rem; }
 .viz-sub { margin: 0 0 .6rem; color: var(--ink-2); font-size: .92rem; max-width: 60rem; }
 .viz-stage { width: 100%; min-height: 120px; }
