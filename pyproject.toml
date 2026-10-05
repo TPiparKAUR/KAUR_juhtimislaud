@@ -5,8 +5,10 @@ description = "Inventory of KAUR visualisations and tooling for the KAUR service
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "numpy>=2.5.3",
     # Renders JS-built <tableau-viz> web components and shadow DOM, which plain HTTP cannot see.
     "playwright>=1.48",
+    "polars>=1.44.2",
 ]
 
 [project.optional-dependencies]

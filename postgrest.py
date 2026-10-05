@@ -124,13 +124,31 @@ class Client:
         page_size: int = PAGE_SIZE,
         max_rows: int | None = None,
     ) -> Iterator[dict[str, Any]]:
-        """Stream all matching rows page by page (stable ``order`` is strongly advised)."""
+        """Stream all matching rows page by page (a stable ``order`` is strongly advised).
+
+        The exact total comes from the first response, so a server-side row cap (``db-max-rows``)
+        that returns fewer rows than ``page_size`` does not end the stream early.
+        """
         offset = 0
+        total: int | None = None
         while True:
-            page = self.rows(
-                table, select=select, filters=filters, order=order, limit=page_size, offset=offset
-            )
-            yield from page
-            offset += len(page)
-            if len(page) < page_size or (max_rows is not None and offset >= max_rows):
+            query = {
+                "select": select,
+                "limit": str(page_size),
+                "offset": str(offset),
+                **(filters or {}),
+            }
+            if order:
+                query["order"] = order
+            resp = self._get(table, query, {"Prefer": "count=exact"} if total is None else {})
+            if total is None:
+                total = parse_total(resp.content_range)
+            data = json.loads(resp.body or b"[]")
+            if not isinstance(data, list):
+                raise PostgrestError(f"{table}: expected a JSON array")
+            yield from data
+            offset += len(data)
+            done = not data or (max_rows is not None and offset >= max_rows)
+            short = offset >= total if total is not None else len(data) < page_size
+            if done or short:
                 return

@@ -1,0 +1,62 @@
+name: Climate analysis
+
+# Fetches KAUR climate open data (read-only, public API, no credentials), computes anomalies,
+# trends, completeness and extremes, and force-pushes the aggregated climate.json to the
+# `climate-results` branch.  Raw data are not redistributed.
+
+on:
+  workflow_dispatch:
+    inputs:
+      reps:
+        description: "Bootstrap repetitions"
+        required: false
+        default: "1000"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: climate
+  cancel-in-progress: false
+
+jobs:
+  climate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync --frozen
+      - name: Fetch and analyse
+        env:
+          REPS: ${{ inputs.reps || '1000' }}
+        run: uv run python run_climate.py --out out/climate --reps "$REPS"
+      - name: Summary
+        run: |
+          {
+            echo "## Climate analysis"
+            python3 - <<'PY'
+          import json
+          d = json.load(open("out/climate/climate.json"))
+          t = d["temperature"]["annual"]
+          print(f"- stations: {len(d['stations'])}; years {t['years'][0]}-{t['years'][-1]}")
+          print(f"- annual temperature trend (degC/decade): {t['trend']}")
+          print(f"- checks: {json.dumps(d['checks'])}")
+          PY
+          } >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: climate
+          path: out/climate/
+          retention-days: 30
+      - name: Publish to climate-results branch
+        run: |
+          cp out/climate/climate.json "$RUNNER_TEMP/climate.json"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan climate-results
+          git rm -rf --quiet .
+          cp "$RUNNER_TEMP/climate.json" climate.json
+          git add -- climate.json
+          git commit -m "Climate analysis $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push --force origin climate-results

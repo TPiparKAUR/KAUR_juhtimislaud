@@ -63,6 +63,22 @@ def test_iter_rows_pages_and_max_rows() -> None:
     assert len(list(client(api2).iter_rows("t", page_size=10, max_rows=10))) == 10
 
 
+def test_iter_rows_survives_server_side_row_cap() -> None:
+    class Capped(FakeApi):
+        def __call__(self, url: str, headers: Mapping[str, str]) -> p.PgResponse:
+            resp = super().__call__(url, headers)
+            if resp.status == 200 and not resp.content_range:
+                rows = json.loads(resp.body)[:7]  # server returns at most 7 rows per request
+                return p.PgResponse(200, json.dumps(rows).encode())
+            if resp.content_range:
+                rows = json.loads(resp.body)[:7]
+                return p.PgResponse(200, json.dumps(rows).encode(), resp.content_range)
+            return resp
+
+    api = Capped(30)
+    assert [r["id"] for r in client(api).iter_rows("t", page_size=20)] == list(range(30))
+
+
 def test_retry_then_success_and_failure() -> None:
     api = FakeApi(3, status=[503, 200])
     assert len(client(api).rows("t")) == 3
