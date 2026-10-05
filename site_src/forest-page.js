@@ -114,8 +114,7 @@
     },
     age(host) {
       if (none(host, d.age, 'Vanuseline jaotus')) return;
-      const lowerBound = (name) => (/^[.…]/.test(name) ? 0 : parseInt(name, 10));
-      const keys = Object.keys(d.age).sort((a, b) => lowerBound(a) - lowerBound(b));
+      const keys = Object.keys(d.age); // already ordered by lower bound
       const obj = Object.fromEntries(keys.map((k) => [k, d.age[k]]));
       C.errBars(host, { title: 'Puistute vanuseline jaotus', subtitle: 'Metsamaa pindala 20-aastaste vanuseklasside järgi (omandirühmad liidetud).', unit: 'tuhat ha', dec: 0, rotate: true, height: 320, cats: catBars(obj, null, PAIR), note: 'Vea arvutus liidab omandirühmade vead ruutude summana (ligikaudne).' });
       const ch = changes(obj), big = ch.slice().sort((a, b) => Math.abs(b.diff) - Math.abs(a.diff))[0], top = ch.slice().sort((a, b) => b.b.value - a.b.value)[0];

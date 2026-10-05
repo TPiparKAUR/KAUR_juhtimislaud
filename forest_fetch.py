@@ -83,7 +83,7 @@ DIMS = [
 
 
 def table_shapes(
-    df: pl.DataFrame, sample_year: int | None = None, max_values: int = 14
+    df: pl.DataFrame, sample_year: int | None = None, max_values: int = 40
 ) -> list[dict[str, Any]]:
     """For every table: which classifying columns are filled, their values, and example rows.
 
@@ -189,7 +189,9 @@ def run(
     df = fetch(client, workers)
     df.write_parquet(out / "forest_raw.parquet")
     (out / "forest_diagnostics.json").write_text(
-        json.dumps(diagnostics(df), ensure_ascii=False, indent=1, default=str), encoding="utf-8"
+        # ASCII escapes (\\uXXXX) make look-alike characters in class names visible.
+        json.dumps(diagnostics(df), ensure_ascii=True, indent=1, default=str),
+        encoding="utf-8",
     )
     LOG.info("wrote %d rows", df.height)
 

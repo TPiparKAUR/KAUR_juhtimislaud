@@ -104,20 +104,34 @@ def test_categories_without_a_matching_series_are_dropped_not_returned_empty() -
     assert fa.management(d) == {} and fa.counties(d) == {}
 
 
-def test_age_classes_use_one_scheme_only() -> None:
-    """Regression: 10-year ("21...30 a") and 20-year ("21…40 a") classes share one classifier."""
+def test_age_class_scheme_is_chosen_by_numbers_not_by_the_dot_character() -> None:
+    """Regression: 10-year and 20-year classes share one classifier, with look-alike dots."""
+    ten = ["...10 a", "11...20 a", "21...30 a", "31...40 a", "141...  a"]
+    for dots in ("…", "\u2025", "..."):  # real data used a character that is not U+2026
+        twenty = [f"{dots}20 a", f"21{dots}40 a", f"41{dots}60 a", f"61{dots}80 a", f"81{dots}100 a",
+                  f"101{dots}120 a", f"121{dots} a"]  # fmt: skip
+        assert fa.age_class_set(ten + twenty) == twenty
+    assert fa.age_class_set(ten + twenty, 10)[:2] == ["...10 a", "11...20 a"]
+    assert fa.age_class_set([]) == []
+
+
+def test_age_structure_keeps_the_chosen_scheme_in_order() -> None:
     rows = []
-    for name, v in (
-        ("21…40 a", 400.0),
-        ("81…100 a", 100.0),
-        ("21...30 a", 250.0),
-        ("31...40 a", 150.0),
-    ):
+    for name, v in (("81…100 a", 100.0), ("21…40 a", 400.0), ("21...30 a", 250.0), ("31...40 a", 150.0),
+                    ("41…60 a", 300.0), ("61…80 a", 200.0), ("…20 a", 50.0), ("101…120 a", 70.0),
+                    ("121… a", 30.0)):  # fmt: skip
         rows.append(row(13, "Pindala", fa.SUM, 2024, v, 0.05, maakategooria="Metsamaa",
                         omand="Riigimetsamaa", filtri_tunnus2="Vanus", filter2=name))  # fmt: skip
-    d = pl.DataFrame(rows, infer_schema_length=None)
-    assert set(fa.age_structure(d)) == {"21…40 a", "81…100 a"}
-    assert set(fa.age_structure(d, scheme="...")) == {"21...30 a", "31...40 a"}
+    got = fa.age_structure(pl.DataFrame(rows, infer_schema_length=None))
+    assert list(got) == [
+        "…20 a",
+        "21…40 a",
+        "41…60 a",
+        "61…80 a",
+        "81…100 a",
+        "101…120 a",
+        "121… a",
+    ]
 
 
 def test_shares_check_flags_classes_that_do_not_tile_the_total() -> None:

@@ -21,6 +21,7 @@ Interpretation (documented, to be confirmed by the data owner)
 from __future__ import annotations
 
 import math
+import re
 from typing import Any
 
 import polars as pl
@@ -243,25 +244,50 @@ def counties(df: pl.DataFrame) -> dict[str, dict[str, list[dict[str, Any]]]]:
     return out
 
 
-AGE_20_YEAR = "…"  # the 20-year classes ("21…40 a") use the ellipsis character, the 10-year
-# classes ("21...30 a") three dots; both sets sit in the same classifier and must not be mixed.
 MANAGEMENT_PARTS = ["Majandusmets", "Majanduspiiranguga mets", "Rangelt kaitstav mets"]
 # ^ non-overlapping: "Majandatavad mets" and "Kaitstav mets" are sums of these.
+AGE_WIDTH = 20  # years per class; the classifier also holds a 10-year scheme, never mixed
 
 
-def age_structure(df: pl.DataFrame, scheme: str = AGE_20_YEAR) -> dict[str, list[dict[str, Any]]]:
+def age_class_set(names: list[str], width: int = AGE_WIDTH) -> list[str]:
+    """One age-class scheme out of a classifier that holds several, ordered by lower bound.
+
+    Chosen by the *numbers* in the labels (typography of the dots varies): two-number labels
+    whose span is ``width`` years form the core; the open lower class has its upper bound equal
+    to ``width``; the open upper class starts right after the last core class.
+    """
+    core: list[tuple[int, str]] = []
+    for n in names:
+        nums = [int(x) for x in re.findall(r"\d+", n)]
+        if len(nums) == 2 and nums[1] - nums[0] + 1 == width:
+            core.append((nums[0], n))
+    if not core:
+        return []
+    top = max(lo for lo, _ in core) + width - 1
+    chosen = list(core)
+    for n in names:
+        nums = [int(x) for x in re.findall(r"\d+", n)]
+        if len(nums) == 1:
+            if not n[:1].isdigit() and nums[0] == width:
+                chosen.append((0, n))  # open lower class, e.g. "…20 a"
+            elif n[:1].isdigit() and nums[0] == top + 1:
+                chosen.append((nums[0], n))  # open upper class, e.g. "121… a"
+    return [n for _, n in sorted(chosen)]
+
+
+def age_structure(df: pl.DataFrame, width: int = AGE_WIDTH) -> dict[str, list[dict[str, Any]]]:
     """Area by age class, owners added (table 13, classifier 'Vanus', one class scheme only)."""
-    classes = (
-        df.filter(
-            (pl.col("tabeli_number") == 13)
-            & (pl.col("filtri_tunnus2") == "Vanus")
-            & pl.col("filter2").str.contains(scheme, literal=True)
-        )["filter2"]
+    names = (
+        df.filter((pl.col("tabeli_number") == 13) & (pl.col("filtri_tunnus2") == "Vanus"))[
+            "filter2"
+        ]
         .drop_nulls()
         .unique()
+        .to_list()
     )
+    classes = age_class_set(names, width)
     out: dict[str, list[dict[str, Any]]] = {}
-    for c in sorted(classes):
+    for c in classes:
         data = total_over(
             df, "omand", 13, "Pindala", SUM, maakategooria=LAND, filtri_tunnus2="Vanus", filter2=c
         )
