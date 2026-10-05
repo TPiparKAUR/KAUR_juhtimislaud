@@ -1,0 +1,1505 @@
+{
+ "table": "f_jaatmeliikumine_fix_riik",
+ "total_rows": 20139963,
+ "aggregation": {
+  "supported": false,
+  "error": "f_jaatmeliikumine_fix_riik: HTTP 400 HTTP Error 400: Bad Request b'{\"code\":\"PGRST123\",\"details\":null,\"hint\":null,\"message\":\"Use of aggregate functions is not allowed\"}'"
+ },
+ "year_counts": [
+  {
+   "aasta": 2004,
+   "rows": 381292
+  },
+  {
+   "aasta": 2005,
+   "rows": 427578
+  },
+  {
+   "aasta": 2006,
+   "rows": 505902
+  },
+  {
+   "aasta": 2007,
+   "rows": 565470
+  },
+  {
+   "aasta": 2008,
+   "rows": 674799
+  },
+  {
+   "aasta": 2009,
+   "rows": 633967
+  },
+  {
+   "aasta": 2010,
+   "rows": 700544
+  },
+  {
+   "aasta": 2011,
+   "rows": 757957
+  },
+  {
+   "aasta": 2012,
+   "rows": 814978
+  },
+  {
+   "aasta": 2013,
+   "rows": 914319
+  },
+  {
+   "aasta": 2014,
+   "rows": 960402
+  },
+  {
+   "aasta": 2015,
+   "rows": 982261
+  },
+  {
+   "aasta": 2016,
+   "rows": 1010638
+  },
+  {
+   "aasta": 2017,
+   "rows": 1014997
+  },
+  {
+   "aasta": 2018,
+   "rows": 1018138
+  },
+  {
+   "aasta": 2019,
+   "rows": 1077855
+  },
+  {
+   "aasta": 2020,
+   "rows": 1102087
+  },
+  {
+   "aasta": 2021,
+   "rows": 1264710
+  },
+  {
+   "aasta": 2022,
+   "rows": 1259012
+  },
+  {
+   "aasta": 2023,
+   "rows": 1308648
+  },
+  {
+   "aasta": 2024,
+   "rows": 1394802
+  },
+  {
+   "aasta": 2025,
+   "rows": 1369607
+  }
+ ],
+ "small_table_rows": 7702,
+ "grain_year": 2022,
+ "grain_sample": true,
+ "duplicates_reliable": false,
+ "grain": {
+  "rows": 100000,
+  "by_maht_liik": [
+   {
+    "maht_liik": "Eksport",
+    "rows": 5000,
+    "total": 164.135,
+    "neg": 0
+   },
+   {
+    "maht_liik": "Import",
+    "rows": 15000,
+    "total": 738.3929999999999,
+    "neg": 0
+   },
+   {
+    "maht_liik": "Jäätmete sortimine või muu eeltöötlus (toimingud R12)",
+    "rows": 5000,
+    "total": 603416.3779000003,
+    "neg": 0
+   },
+   {
+    "maht_liik": "Jäätmeteke",
+    "rows": 10000,
+    "total": 4678915.567500003,
+    "neg": 1790
+   },
+   {
+    "maht_liik": "Ladestatud prügilasse",
+    "rows": 10000,
+    "total": 552463.0,
+    "neg": 0
+   },
+   {
+    "maht_liik": "Laoseis aasta alguses",
+    "rows": 25000,
+    "total": 1123523.2686999987,
+    "neg": 0
+   },
+   {
+    "maht_liik": "Laoseis aasta lõpul",
+    "rows": 10000,
+    "total": 54091.879799999995,
+    "neg": 0
+   },
+   {
+    "maht_liik": "Määratlemata käitlemine",
+    "rows": 10000,
+    "total": 181407.78599999993,
+    "neg": 0
+   },
+   {
+    "maht_liik": "Saadud kodumajapidamistelt",
+    "rows": 5000,
+    "total": 56451.30480000001,
+    "neg": 0
+   },
+   {
+    "maht_liik": "Taaskasutamine",
+    "rows": 5000,
+    "total": 133374.94799999997,
+    "neg": 0
+   }
+  ],
+  "by_type_group": [
+   {
+    "maht_liik": "Eksport",
+    "pohigrupp": "01",
+    "rows": 6,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Eksport",
+    "pohigrupp": "02",
+    "rows": 46,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Eksport",
+    "pohigrupp": "03",
+    "rows": 24,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Eksport",
+    "pohigrupp": "04",
+    "rows": 7,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Eksport",
+    "pohigrupp": "05",
+    "rows": 4,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Eksport",
+    "pohigrupp": "07",
+    "rows": 5,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Eksport",
+    "pohigrupp": "08",
+    "rows": 21,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Eksport",
+    "pohigrupp": "10",
+    "rows": 11,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Eksport",
+    "pohigrupp": "11",
+    "rows": 25,
+    "total": 23.992
+   },
+   {
+    "maht_liik": "Eksport",
+    "pohigrupp": "12",
+    "rows": 15,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Eksport",
+    "pohigrupp": "13",
+    "rows": 30,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Eksport",
+    "pohigrupp": "15",
+    "rows": 1068,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Eksport",
+    "pohigrupp": "16",
+    "rows": 214,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Eksport",
+    "pohigrupp": "17",
+    "rows": 1120,
+    "total": 4.598
+   },
+   {
+    "maht_liik": "Eksport",
+    "pohigrupp": "18",
+    "rows": 24,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Eksport",
+    "pohigrupp": "19",
+    "rows": 62,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Eksport",
+    "pohigrupp": "20",
+    "rows": 2318,
+    "total": 135.545
+   },
+   {
+    "maht_liik": "Import",
+    "pohigrupp": "01",
+    "rows": 27,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Import",
+    "pohigrupp": "02",
+    "rows": 159,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Import",
+    "pohigrupp": "03",
+    "rows": 23,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Import",
+    "pohigrupp": "04",
+    "rows": 12,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Import",
+    "pohigrupp": "06",
+    "rows": 15,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Import",
+    "pohigrupp": "07",
+    "rows": 228,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Import",
+    "pohigrupp": "08",
+    "rows": 858,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Import",
+    "pohigrupp": "09",
+    "rows": 87,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Import",
+    "pohigrupp": "10",
+    "rows": 48,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Import",
+    "pohigrupp": "11",
+    "rows": 56,
+    "total": 285.862
+   },
+   {
+    "maht_liik": "Import",
+    "pohigrupp": "12",
+    "rows": 43,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Import",
+    "pohigrupp": "13",
+    "rows": 1004,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Import",
+    "pohigrupp": "14",
+    "rows": 88,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Import",
+    "pohigrupp": "15",
+    "rows": 4273,
+    "total": 43.867000000000004
+   },
+   {
+    "maht_liik": "Import",
+    "pohigrupp": "16",
+    "rows": 1367,
+    "total": 245.404
+   },
+   {
+    "maht_liik": "Import",
+    "pohigrupp": "17",
+    "rows": 1532,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Import",
+    "pohigrupp": "18",
+    "rows": 1018,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Import",
+    "pohigrupp": "19",
+    "rows": 304,
+    "total": 146.12000000000003
+   },
+   {
+    "maht_liik": "Import",
+    "pohigrupp": "20",
+    "rows": 3858,
+    "total": 17.139999999999997
+   },
+   {
+    "maht_liik": "Jäätmete sortimine või muu eeltöötlus (toimingud R12)",
+    "pohigrupp": "01",
+    "rows": 18,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Jäätmete sortimine või muu eeltöötlus (toimingud R12)",
+    "pohigrupp": "02",
+    "rows": 118,
+    "total": 51279.705
+   },
+   {
+    "maht_liik": "Jäätmete sortimine või muu eeltöötlus (toimingud R12)",
+    "pohigrupp": "03",
+    "rows": 43,
+    "total": 7706.419
+   },
+   {
+    "maht_liik": "Jäätmete sortimine või muu eeltöötlus (toimingud R12)",
+    "pohigrupp": "04",
+    "rows": 15,
+    "total": 33.22
+   },
+   {
+    "maht_liik": "Jäätmete sortimine või muu eeltöötlus (toimingud R12)",
+    "pohigrupp": "05",
+    "rows": 4,
+    "total": 31.829
+   },
+   {
+    "maht_liik": "Jäätmete sortimine või muu eeltöötlus (toimingud R12)",
+    "pohigrupp": "06",
+    "rows": 17,
+    "total": 2691.492
+   },
+   {
+    "maht_liik": "Jäätmete sortimine või muu eeltöötlus (toimingud R12)",
+    "pohigrupp": "07",
+    "rows": 42,
+    "total": 914.7939
+   },
+   {
+    "maht_liik": "Jäätmete sortimine või muu eeltöötlus (toimingud R12)",
+    "pohigrupp": "08",
+    "rows": 79,
+    "total": 2204.2423
+   },
+   {
+    "maht_liik": "Jäätmete sortimine või muu eeltöötlus (toimingud R12)",
+    "pohigrupp": "09",
+    "rows": 9,
+    "total": 130.3527
+   },
+   {
+    "maht_liik": "Jäätmete sortimine või muu eeltöötlus (toimingud R12)",
+    "pohigrupp": "10",
+    "rows": 67,
+    "total": 11229.064999999999
+   },
+   {
+    "maht_liik": "Jäätmete sortimine või muu eeltöötlus (toimingud R12)",
+    "pohigrupp": "11",
+    "rows": 44,
+    "total": 43.5897
+   },
+   {
+    "maht_liik": "Jäätmete sortimine või muu eeltöötlus (toimingud R12)",
+    "pohigrupp": "12",
+    "rows": 149,
+    "total": 43785.293
+   },
+   {
+    "maht_liik": "Jäätmete sortimine või muu eeltöötlus (toimingud R12)",
+    "pohigrupp": "13",
+    "rows": 181,
+    "total": 3405.3313000000003
+   },
+   {
+    "maht_liik": "Jäätmete sortimine või muu eeltöötlus (toimingud R12)",
+    "pohigrupp": "14",
+    "rows": 22,
+    "total": 109.8677
+   },
+   {
+    "maht_liik": "Jäätmete sortimine või muu eeltöötlus (toimingud R12)",
+    "pohigrupp": "15",
+    "rows": 521,
+    "total": 42239.316699999996
+   },
+   {
+    "maht_liik": "Jäätmete sortimine või muu eeltöötlus (toimingud R12)",
+    "pohigrupp": "16",
+    "rows": 1008,
+    "total": 49608.23900000001
+   },
+   {
+    "maht_liik": "Jäätmete sortimine või muu eeltöötlus (toimingud R12)",
+    "pohigrupp": "17",
+    "rows": 924,
+    "total": 178280.66230000005
+   },
+   {
+    "maht_liik": "Jäätmete sortimine või muu eeltöötlus (toimingud R12)",
+    "pohigrupp": "18",
+    "rows": 96,
+    "total": 289.39880000000005
+   },
+   {
+    "maht_liik": "Jäätmete sortimine või muu eeltöötlus (toimingud R12)",
+    "pohigrupp": "19",
+    "rows": 514,
+    "total": 78117.329
+   },
+   {
+    "maht_liik": "Jäätmete sortimine või muu eeltöötlus (toimingud R12)",
+    "pohigrupp": "20",
+    "rows": 1129,
+    "total": 131316.23149999997
+   },
+   {
+    "maht_liik": "Jäätmeteke",
+    "pohigrupp": "02",
+    "rows": 144,
+    "total": 109456.84800000003
+   },
+   {
+    "maht_liik": "Jäätmeteke",
+    "pohigrupp": "03",
+    "rows": 64,
+    "total": 72992.04499999998
+   },
+   {
+    "maht_liik": "Jäätmeteke",
+    "pohigrupp": "04",
+    "rows": 1,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Jäätmeteke",
+    "pohigrupp": "07",
+    "rows": 21,
+    "total": 523.9065000000002
+   },
+   {
+    "maht_liik": "Jäätmeteke",
+    "pohigrupp": "08",
+    "rows": 42,
+    "total": 145.31099999999998
+   },
+   {
+    "maht_liik": "Jäätmeteke",
+    "pohigrupp": "10",
+    "rows": 81,
+    "total": 3886924.7439999995
+   },
+   {
+    "maht_liik": "Jäätmeteke",
+    "pohigrupp": "11",
+    "rows": 2,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Jäätmeteke",
+    "pohigrupp": "12",
+    "rows": 145,
+    "total": 4995.891
+   },
+   {
+    "maht_liik": "Jäätmeteke",
+    "pohigrupp": "13",
+    "rows": 185,
+    "total": 8.573999999999984
+   },
+   {
+    "maht_liik": "Jäätmeteke",
+    "pohigrupp": "14",
+    "rows": 12,
+    "total": 1.4769999999999999
+   },
+   {
+    "maht_liik": "Jäätmeteke",
+    "pohigrupp": "15",
+    "rows": 693,
+    "total": 5816.6541
+   },
+   {
+    "maht_liik": "Jäätmeteke",
+    "pohigrupp": "16",
+    "rows": 1716,
+    "total": 13385.839200000006
+   },
+   {
+    "maht_liik": "Jäätmeteke",
+    "pohigrupp": "17",
+    "rows": 4078,
+    "total": 430285.68439999997
+   },
+   {
+    "maht_liik": "Jäätmeteke",
+    "pohigrupp": "18",
+    "rows": 146,
+    "total": 35.461400000000005
+   },
+   {
+    "maht_liik": "Jäätmeteke",
+    "pohigrupp": "19",
+    "rows": 487,
+    "total": 136874.32500000007
+   },
+   {
+    "maht_liik": "Jäätmeteke",
+    "pohigrupp": "20",
+    "rows": 2183,
+    "total": 17468.80690000007
+   },
+   {
+    "maht_liik": "Ladestatud prügilasse",
+    "pohigrupp": "01",
+    "rows": 29,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Ladestatud prügilasse",
+    "pohigrupp": "02",
+    "rows": 114,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Ladestatud prügilasse",
+    "pohigrupp": "03",
+    "rows": 23,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Ladestatud prügilasse",
+    "pohigrupp": "04",
+    "rows": 2,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Ladestatud prügilasse",
+    "pohigrupp": "06",
+    "rows": 4,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Ladestatud prügilasse",
+    "pohigrupp": "07",
+    "rows": 36,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Ladestatud prügilasse",
+    "pohigrupp": "08",
+    "rows": 107,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Ladestatud prügilasse",
+    "pohigrupp": "09",
+    "rows": 5,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Ladestatud prügilasse",
+    "pohigrupp": "10",
+    "rows": 28,
+    "total": 552463.0
+   },
+   {
+    "maht_liik": "Ladestatud prügilasse",
+    "pohigrupp": "11",
+    "rows": 35,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Ladestatud prügilasse",
+    "pohigrupp": "12",
+    "rows": 149,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Ladestatud prügilasse",
+    "pohigrupp": "13",
+    "rows": 161,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Ladestatud prügilasse",
+    "pohigrupp": "14",
+    "rows": 12,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Ladestatud prügilasse",
+    "pohigrupp": "15",
+    "rows": 1133,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Ladestatud prügilasse",
+    "pohigrupp": "16",
+    "rows": 1373,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Ladestatud prügilasse",
+    "pohigrupp": "17",
+    "rows": 3469,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Ladestatud prügilasse",
+    "pohigrupp": "18",
+    "rows": 80,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Ladestatud prügilasse",
+    "pohigrupp": "19",
+    "rows": 577,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Ladestatud prügilasse",
+    "pohigrupp": "20",
+    "rows": 2663,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Laoseis aasta alguses",
+    "pohigrupp": "01",
+    "rows": 23,
+    "total": 928833.4800999999
+   },
+   {
+    "maht_liik": "Laoseis aasta alguses",
+    "pohigrupp": "02",
+    "rows": 284,
+    "total": 156.8602
+   },
+   {
+    "maht_liik": "Laoseis aasta alguses",
+    "pohigrupp": "03",
+    "rows": 108,
+    "total": 14277.971
+   },
+   {
+    "maht_liik": "Laoseis aasta alguses",
+    "pohigrupp": "04",
+    "rows": 25,
+    "total": 0.73
+   },
+   {
+    "maht_liik": "Laoseis aasta alguses",
+    "pohigrupp": "05",
+    "rows": 6,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Laoseis aasta alguses",
+    "pohigrupp": "06",
+    "rows": 7,
+    "total": 0.254
+   },
+   {
+    "maht_liik": "Laoseis aasta alguses",
+    "pohigrupp": "07",
+    "rows": 64,
+    "total": 190.59900000000002
+   },
+   {
+    "maht_liik": "Laoseis aasta alguses",
+    "pohigrupp": "08",
+    "rows": 194,
+    "total": 729.9881
+   },
+   {
+    "maht_liik": "Laoseis aasta alguses",
+    "pohigrupp": "09",
+    "rows": 9,
+    "total": 92.885
+   },
+   {
+    "maht_liik": "Laoseis aasta alguses",
+    "pohigrupp": "10",
+    "rows": 134,
+    "total": 111.2671
+   },
+   {
+    "maht_liik": "Laoseis aasta alguses",
+    "pohigrupp": "11",
+    "rows": 21,
+    "total": 64.977
+   },
+   {
+    "maht_liik": "Laoseis aasta alguses",
+    "pohigrupp": "12",
+    "rows": 200,
+    "total": 37.16030000000001
+   },
+   {
+    "maht_liik": "Laoseis aasta alguses",
+    "pohigrupp": "13",
+    "rows": 531,
+    "total": 673.1752999999998
+   },
+   {
+    "maht_liik": "Laoseis aasta alguses",
+    "pohigrupp": "14",
+    "rows": 27,
+    "total": 115.90939999999999
+   },
+   {
+    "maht_liik": "Laoseis aasta alguses",
+    "pohigrupp": "15",
+    "rows": 2200,
+    "total": 6309.978899999999
+   },
+   {
+    "maht_liik": "Laoseis aasta alguses",
+    "pohigrupp": "16",
+    "rows": 3119,
+    "total": 10079.332600000005
+   },
+   {
+    "maht_liik": "Laoseis aasta alguses",
+    "pohigrupp": "17",
+    "rows": 6838,
+    "total": 47416.712700000004
+   },
+   {
+    "maht_liik": "Laoseis aasta alguses",
+    "pohigrupp": "18",
+    "rows": 2855,
+    "total": 63.6564
+   },
+   {
+    "maht_liik": "Laoseis aasta alguses",
+    "pohigrupp": "19",
+    "rows": 852,
+    "total": 63083.24100000001
+   },
+   {
+    "maht_liik": "Laoseis aasta alguses",
+    "pohigrupp": "20",
+    "rows": 7503,
+    "total": 51285.09060000001
+   },
+   {
+    "maht_liik": "Laoseis aasta lõpul",
+    "pohigrupp": "01",
+    "rows": 9,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Laoseis aasta lõpul",
+    "pohigrupp": "02",
+    "rows": 143,
+    "total": 363.40099999999995
+   },
+   {
+    "maht_liik": "Laoseis aasta lõpul",
+    "pohigrupp": "03",
+    "rows": 46,
+    "total": 0.001
+   },
+   {
+    "maht_liik": "Laoseis aasta lõpul",
+    "pohigrupp": "04",
+    "rows": 12,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Laoseis aasta lõpul",
+    "pohigrupp": "05",
+    "rows": 17,
+    "total": 18.246
+   },
+   {
+    "maht_liik": "Laoseis aasta lõpul",
+    "pohigrupp": "06",
+    "rows": 16,
+    "total": 14.911999999999999
+   },
+   {
+    "maht_liik": "Laoseis aasta lõpul",
+    "pohigrupp": "07",
+    "rows": 31,
+    "total": 9.876000000000001
+   },
+   {
+    "maht_liik": "Laoseis aasta lõpul",
+    "pohigrupp": "08",
+    "rows": 331,
+    "total": 577.493
+   },
+   {
+    "maht_liik": "Laoseis aasta lõpul",
+    "pohigrupp": "10",
+    "rows": 100,
+    "total": 2074.1071
+   },
+   {
+    "maht_liik": "Laoseis aasta lõpul",
+    "pohigrupp": "11",
+    "rows": 130,
+    "total": 69.34700000000001
+   },
+   {
+    "maht_liik": "Laoseis aasta lõpul",
+    "pohigrupp": "12",
+    "rows": 237,
+    "total": 51.19
+   },
+   {
+    "maht_liik": "Laoseis aasta lõpul",
+    "pohigrupp": "13",
+    "rows": 502,
+    "total": 100.5105
+   },
+   {
+    "maht_liik": "Laoseis aasta lõpul",
+    "pohigrupp": "14",
+    "rows": 32,
+    "total": 0.052000000000000005
+   },
+   {
+    "maht_liik": "Laoseis aasta lõpul",
+    "pohigrupp": "15",
+    "rows": 1620,
+    "total": 1926.7299999999996
+   },
+   {
+    "maht_liik": "Laoseis aasta lõpul",
+    "pohigrupp": "16",
+    "rows": 1371,
+    "total": 951.5010000000001
+   },
+   {
+    "maht_liik": "Laoseis aasta lõpul",
+    "pohigrupp": "17",
+    "rows": 2496,
+    "total": 28090.056299999997
+   },
+   {
+    "maht_liik": "Laoseis aasta lõpul",
+    "pohigrupp": "18",
+    "rows": 191,
+    "total": 1.6648
+   },
+   {
+    "maht_liik": "Laoseis aasta lõpul",
+    "pohigrupp": "19",
+    "rows": 522,
+    "total": 15400.3862
+   },
+   {
+    "maht_liik": "Laoseis aasta lõpul",
+    "pohigrupp": "20",
+    "rows": 2194,
+    "total": 4442.405899999999
+   },
+   {
+    "maht_liik": "Määratlemata käitlemine",
+    "pohigrupp": "01",
+    "rows": 7,
+    "total": 158573.38
+   },
+   {
+    "maht_liik": "Määratlemata käitlemine",
+    "pohigrupp": "02",
+    "rows": 99,
+    "total": 1.9
+   },
+   {
+    "maht_liik": "Määratlemata käitlemine",
+    "pohigrupp": "03",
+    "rows": 68,
+    "total": 52.0
+   },
+   {
+    "maht_liik": "Määratlemata käitlemine",
+    "pohigrupp": "04",
+    "rows": 14,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Määratlemata käitlemine",
+    "pohigrupp": "06",
+    "rows": 9,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Määratlemata käitlemine",
+    "pohigrupp": "07",
+    "rows": 37,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Määratlemata käitlemine",
+    "pohigrupp": "08",
+    "rows": 94,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Määratlemata käitlemine",
+    "pohigrupp": "09",
+    "rows": 4,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Määratlemata käitlemine",
+    "pohigrupp": "10",
+    "rows": 82,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Määratlemata käitlemine",
+    "pohigrupp": "11",
+    "rows": 8,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Määratlemata käitlemine",
+    "pohigrupp": "12",
+    "rows": 84,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Määratlemata käitlemine",
+    "pohigrupp": "13",
+    "rows": 297,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Määratlemata käitlemine",
+    "pohigrupp": "14",
+    "rows": 18,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Määratlemata käitlemine",
+    "pohigrupp": "15",
+    "rows": 836,
+    "total": 610.354
+   },
+   {
+    "maht_liik": "Määratlemata käitlemine",
+    "pohigrupp": "16",
+    "rows": 1728,
+    "total": 256.42499999999995
+   },
+   {
+    "maht_liik": "Määratlemata käitlemine",
+    "pohigrupp": "17",
+    "rows": 3859,
+    "total": 1168.0710000000001
+   },
+   {
+    "maht_liik": "Määratlemata käitlemine",
+    "pohigrupp": "18",
+    "rows": 368,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Määratlemata käitlemine",
+    "pohigrupp": "19",
+    "rows": 310,
+    "total": 16855.877
+   },
+   {
+    "maht_liik": "Määratlemata käitlemine",
+    "pohigrupp": "20",
+    "rows": 2078,
+    "total": 3889.7790000000005
+   },
+   {
+    "maht_liik": "Saadud kodumajapidamistelt",
+    "pohigrupp": "01",
+    "rows": 7,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Saadud kodumajapidamistelt",
+    "pohigrupp": "02",
+    "rows": 105,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Saadud kodumajapidamistelt",
+    "pohigrupp": "03",
+    "rows": 47,
+    "total": 25.319999999999997
+   },
+   {
+    "maht_liik": "Saadud kodumajapidamistelt",
+    "pohigrupp": "04",
+    "rows": 37,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Saadud kodumajapidamistelt",
+    "pohigrupp": "07",
+    "rows": 14,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Saadud kodumajapidamistelt",
+    "pohigrupp": "08",
+    "rows": 44,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Saadud kodumajapidamistelt",
+    "pohigrupp": "09",
+    "rows": 1,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Saadud kodumajapidamistelt",
+    "pohigrupp": "10",
+    "rows": 39,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Saadud kodumajapidamistelt",
+    "pohigrupp": "11",
+    "rows": 15,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Saadud kodumajapidamistelt",
+    "pohigrupp": "12",
+    "rows": 44,
+    "total": 110.063
+   },
+   {
+    "maht_liik": "Saadud kodumajapidamistelt",
+    "pohigrupp": "13",
+    "rows": 274,
+    "total": 7.3020000000000005
+   },
+   {
+    "maht_liik": "Saadud kodumajapidamistelt",
+    "pohigrupp": "14",
+    "rows": 37,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Saadud kodumajapidamistelt",
+    "pohigrupp": "15",
+    "rows": 806,
+    "total": 619.529
+   },
+   {
+    "maht_liik": "Saadud kodumajapidamistelt",
+    "pohigrupp": "16",
+    "rows": 737,
+    "total": 1632.6336999999996
+   },
+   {
+    "maht_liik": "Saadud kodumajapidamistelt",
+    "pohigrupp": "17",
+    "rows": 1467,
+    "total": 8552.142999999996
+   },
+   {
+    "maht_liik": "Saadud kodumajapidamistelt",
+    "pohigrupp": "18",
+    "rows": 78,
+    "total": 0.11199999999999999
+   },
+   {
+    "maht_liik": "Saadud kodumajapidamistelt",
+    "pohigrupp": "19",
+    "rows": 217,
+    "total": 10.266000000000002
+   },
+   {
+    "maht_liik": "Saadud kodumajapidamistelt",
+    "pohigrupp": "20",
+    "rows": 1031,
+    "total": 45493.936100000006
+   },
+   {
+    "maht_liik": "Taaskasutamine",
+    "pohigrupp": "02",
+    "rows": 20,
+    "total": 203.03699999999998
+   },
+   {
+    "maht_liik": "Taaskasutamine",
+    "pohigrupp": "06",
+    "rows": 5,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Taaskasutamine",
+    "pohigrupp": "07",
+    "rows": 9,
+    "total": 11.466
+   },
+   {
+    "maht_liik": "Taaskasutamine",
+    "pohigrupp": "08",
+    "rows": 2,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Taaskasutamine",
+    "pohigrupp": "10",
+    "rows": 16,
+    "total": 1802.0
+   },
+   {
+    "maht_liik": "Taaskasutamine",
+    "pohigrupp": "12",
+    "rows": 148,
+    "total": 24303.088000000003
+   },
+   {
+    "maht_liik": "Taaskasutamine",
+    "pohigrupp": "13",
+    "rows": 81,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Taaskasutamine",
+    "pohigrupp": "14",
+    "rows": 2,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Taaskasutamine",
+    "pohigrupp": "15",
+    "rows": 258,
+    "total": 3823.184
+   },
+   {
+    "maht_liik": "Taaskasutamine",
+    "pohigrupp": "16",
+    "rows": 923,
+    "total": 26540.464000000007
+   },
+   {
+    "maht_liik": "Taaskasutamine",
+    "pohigrupp": "17",
+    "rows": 1732,
+    "total": 50584.42000000001
+   },
+   {
+    "maht_liik": "Taaskasutamine",
+    "pohigrupp": "18",
+    "rows": 18,
+    "total": 0.0
+   },
+   {
+    "maht_liik": "Taaskasutamine",
+    "pohigrupp": "19",
+    "rows": 444,
+    "total": 19719.029000000002
+   },
+   {
+    "maht_liik": "Taaskasutamine",
+    "pohigrupp": "20",
+    "rows": 1342,
+    "total": 6388.259999999999
+   }
+  ],
+  "duplicates": {
+   "key_groups": 15442,
+   "groups_with_multiple_rows": 9487,
+   "groups_with_different_amounts": 2688
+  },
+  "maht_quantiles": {
+   "p0": -46276.0,
+   "p1": -1.86,
+   "p25": 0.0,
+   "p50": 0.0,
+   "p75": 0.0,
+   "p99": 156.59619999999998,
+   "p100": 1294829.0
+  },
+  "flags": {
+   "ohtlik_lipp": [
+    {
+     "ohtlik_lipp": "Ei",
+     "rows": 62076,
+     "total": 7282054.094000009
+    },
+    {
+     "ohtlik_lipp": "Jah",
+     "rows": 37924,
+     "total": 102492.56669999991
+    }
+   ],
+   "biojaatmed_lipp": [
+    {
+     "biojaatmed_lipp": "Ei",
+     "rows": 86676,
+     "total": 6845932.330600007
+    },
+    {
+     "biojaatmed_lipp": "Jah",
+     "rows": 13324,
+     "total": 538614.3300999999
+    }
+   ],
+   "reoveesetted_lipp": [
+    {
+     "reoveesetted_lipp": "Ei",
+     "rows": 98185,
+     "total": 7207172.384799996
+    },
+    {
+     "reoveesetted_lipp": "Jah",
+     "rows": 1815,
+     "total": 177374.27590000004
+    }
+   ],
+   "metallijaatmed_lipp": [
+    {
+     "metallijaatmed_lipp": "Ei",
+     "rows": 85066,
+     "total": 6957051.255799992
+    },
+    {
+     "metallijaatmed_lipp": "Jah",
+     "rows": 14934,
+     "total": 427495.4049000001
+    }
+   ],
+   "probleemtooted_lipp": [
+    {
+     "probleemtooted_lipp": "Ei",
+     "rows": 90237,
+     "total": 7310759.90810001
+    },
+    {
+     "probleemtooted_lipp": "Jah",
+     "rows": 9763,
+     "total": 73786.75259999998
+    }
+   ]
+  },
+  "partner_countries": [
+   {
+    "partner_riik_nimi": "Läti",
+    "rows": 2,
+    "total": 159.53699999999998
+   },
+   {
+    "partner_riik_nimi": "Leedu",
+    "rows": 1,
+    "total": 4.598
+   },
+   {
+    "partner_riik_nimi": null,
+    "rows": 4995,
+    "total": 0.0
+   },
+   {
+    "partner_riik_nimi": "Rootsi",
+    "rows": 2,
+    "total": 0.0
+   }
+  ],
+  "activity_codes": [
+   {
+    "yhte_liiki_tegevus": "U2",
+    "rows": 42,
+    "total": 4432307.0
+   },
+   {
+    "yhte_liiki_tegevus": "U16,U17",
+    "rows": 2847,
+    "total": 951418.4286999999
+   },
+   {
+    "yhte_liiki_tegevus": "U9",
+    "rows": 966,
+    "total": 272243.33520000003
+   },
+   {
+    "yhte_liiki_tegevus": "U17",
+    "rows": 1128,
+    "total": 181934.0439
+   },
+   {
+    "yhte_liiki_tegevus": "U6,U10,U11,U12,U16",
+    "rows": 1162,
+    "total": 162731.375
+   },
+   {
+    "yhte_liiki_tegevus": "U1,U5,U6,U9,U10,U11,U12,U14,U1",
+    "rows": 3775,
+    "total": 162698.646
+   },
+   {
+    "yhte_liiki_tegevus": "U4,U16,U17",
+    "rows": 12,
+    "total": 158573.38
+   },
+   {
+    "yhte_liiki_tegevus": "U6,U17",
+    "rows": 513,
+    "total": 154719.1
+   },
+   {
+    "yhte_liiki_tegevus": "U5,U6,U10,U11,U12,U13,U16",
+    "rows": 1059,
+    "total": 128941.42800000001
+   },
+   {
+    "yhte_liiki_tegevus": "U6,U10,U11,U12,U13,U14,U16",
+    "rows": 1608,
+    "total": 87087.8854
+   },
+   {
+    "yhte_liiki_tegevus": "U6,U16",
+    "rows": 1673,
+    "total": 76383.7206
+   },
+   {
+    "yhte_liiki_tegevus": "U16",
+    "rows": 3309,
+    "total": 52170.3817
+   },
+   {
+    "yhte_liiki_tegevus": null,
+    "rows": 15268,
+    "total": 50031.809
+   },
+   {
+    "yhte_liiki_tegevus": "U6,U10,U11,U12,U13,U16",
+    "rows": 2074,
+    "total": 47976.805
+   },
+   {
+    "yhte_liiki_tegevus": "U6,U9,U10,U11,U12,U16",
+    "rows": 4354,
+    "total": 39213.258
+   },
+   {
+    "yhte_liiki_tegevus": "U1,U5,U6,U9,U10,U16",
+    "rows": 67,
+    "total": 28416.318
+   },
+   {
+    "yhte_liiki_tegevus": "U15,U16,U17",
+    "rows": 1304,
+    "total": 26771.07
+   },
+   {
+    "yhte_liiki_tegevus": "U5,U6,U14,U16,U17",
+    "rows": 190,
+    "total": 26258.733
+   },
+   {
+    "yhte_liiki_tegevus": "U6,U9,U10,U16",
+    "rows": 688,
+    "total": 22489.827999999998
+   },
+   {
+    "yhte_liiki_tegevus": "U1,U9,U16",
+    "rows": 86,
+    "total": 21393.179
+   },
+   {
+    "yhte_liiki_tegevus": "U10,U11,U12,U14,U16",
+    "rows": 1461,
+    "total": 17967.579
+   },
+   {
+    "yhte_liiki_tegevus": "U1,U6,U9,U12,U14,U16,U17",
+    "rows": 993,
+    "total": 17822.884000000002
+   },
+   {
+    "yhte_liiki_tegevus": "U5,U6,U9,U10,U16",
+    "rows": 293,
+    "total": 15621.966
+   },
+   {
+    "yhte_liiki_tegevus": "U6,U7,U9,U10,U11,U12,U16",
+    "rows": 6635,
+    "total": 15374.8201
+   },
+   {
+    "yhte_liiki_tegevus": "U5,U6,U12,U16",
+    "rows": 497,
+    "total": 14838.353
+   },
+   {
+    "yhte_liiki_tegevus": "U13",
+    "rows": 2939,
+    "total": 14565.3066
+   },
+   {
+    "yhte_liiki_tegevus": "U10,U12,U16",
+    "rows": 1935,
+    "total": 13268.171
+   },
+   {
+    "yhte_liiki_tegevus": "U8,U16",
+    "rows": 370,
+    "total": 12364.689999999997
+   },
+   {
+    "yhte_liiki_tegevus": "U5,U16",
+    "rows": 78,
+    "total": 11862.111
+   },
+   {
+    "yhte_liiki_tegevus": "U5,U6,U10,U16",
+    "rows": 49,
+    "total": 11459.517800000001
+   }
+  ]
+ }
+}
