@@ -35,6 +35,7 @@ jobs:
           if [ -n "$TABLES" ]; then args+=(--tables $TABLES); fi
           uv run python explore.py "${args[@]}"
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: explore
           path: out/explore/

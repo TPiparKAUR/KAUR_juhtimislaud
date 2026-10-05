@@ -12,9 +12,14 @@ The number of rows read per year is compared with the server's exact count for t
 Only aggregates (no operator or facility identity) are kept.  The unit of ``maht`` is not in the
 schema and is assumed to be tonnes (to be confirmed with the data owner).
 
+The work is split by year so that a lost runner costs one year, not the whole read: each run
+(``--years 2022``) writes ``waste_part_<tag>.parquet`` plus a small JSON log, and
+``waste_combine.py`` merges the parts and states which years are missing.
+
 Usage
 -----
-    uv run python waste_fetch.py --out out/waste_agg --first 2004 --last 2025 --workers 8
+    uv run python waste_fetch.py --out out/parts --years 2022 --workers 6
+    uv run python waste_combine.py --parts out/parts --out out/waste_agg
 """
 
 from __future__ import annotations
@@ -31,7 +36,7 @@ from typing import Any
 
 import polars as pl
 
-from postgrest import Client, PostgrestError
+from postgrest import BASE_URL, Client, PostgrestError
 from waste_explore import TABLE
 
 LOG = logging.getLogger("waste_fetch")
@@ -142,11 +147,13 @@ def run(
     delay: float,
     budget_s: float,
     fetch: Callable[[Page, float], tuple[pl.DataFrame, int]] = fetch_page,
+    tag: str = "all",
+    page_size: int = PAGE,
 ) -> pl.DataFrame:
     """Fetch all pages in parallel within a time budget; write the aggregate and a log."""
     out.mkdir(parents=True, exist_ok=True)
     start = time.monotonic()
-    pages = make_pages(year_counts)
+    pages = make_pages(year_counts, page_size)
     parts: list[pl.DataFrame] = []
     read: dict[int, int] = dict.fromkeys(year_counts, 0)
     failed: list[str] = []
@@ -171,18 +178,26 @@ def run(
                 continue
             read[p.year] += got
             parts.append(df)
+            if len(parts) % 25 == 0:
+                LOG.info("%d/%d pages, %d rows", len(parts), len(pages), sum(read.values()))
     try:
         result = merge(parts)
     except Exception as exc:  # report instead of losing a long fetch silently
         failed.append(f"merge: {type(exc).__name__}: {exc}"[:240])
         result = pl.DataFrame()
-    result.write_parquet(out / "waste_agg.parquet")
+    result.write_parquet(out / f"waste_part_{tag}.parquet")
     mismatches = [
         {"year": y, "expected": n, "got": read[y]} for y, n in year_counts.items() if read[y] != n
     ]
-    (out / "waste_fetch_log.json").write_text(
+    (out / f"waste_part_{tag}.json").write_text(
         json.dumps(
             {
+                "tag": tag,
+                "per_year": {
+                    str(y): {"rows_expected": n, "rows_read": read[y]}
+                    for y, n in sorted(year_counts.items())
+                },
+                "years": sorted(year_counts),
                 "pages": len(pages),
                 "rows_read": sum(read.values()),
                 "rows_expected": sum(year_counts.values()),
@@ -199,24 +214,35 @@ def run(
     return result
 
 
-def main() -> None:
+def main(argv: list[str] | None = None) -> None:
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--out", type=Path, default=Path("out/waste_agg"))
+    ap.add_argument("--out", type=Path, default=Path("out/parts"))
+    ap.add_argument("--years", type=int, nargs="*", help="years to read (default: all)")
     ap.add_argument("--first", type=int, default=2004)
     ap.add_argument("--last", type=int, default=2025)
-    ap.add_argument("--workers", type=int, default=8)
+    ap.add_argument("--workers", type=int, default=6)
+    ap.add_argument("--page-size", type=int, default=PAGE, help="rows per request (server cap)")
     ap.add_argument("--delay", type=float, default=0.0)
-    ap.add_argument("--budget-min", type=float, default=100.0)
-    args = ap.parse_args()
+    ap.add_argument("--budget-min", type=float, default=35.0)
+    ap.add_argument("--base-url", default=BASE_URL)
+    args = ap.parse_args(argv)
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
-    client = Client(delay=args.delay)
+    years = args.years or list(range(args.first, args.last + 1))
+    client = Client(delay=args.delay, base_url=args.base_url)
     counts: dict[int, int] = {}
-    for y in range(args.first, args.last + 1):
+    for y in years:
         n = client.count(TABLE, {"aasta": f"eq.{y}"}) or 0
         LOG.info("%d: %d rows", y, n)
         if n:
             counts[y] = n
-    run(counts, args.out, args.workers, args.delay, args.budget_min * 60)
+    tag = "all" if not args.years else "_".join(str(y) for y in years)
+
+    def fetch(page: Page, delay: float) -> tuple[pl.DataFrame, int]:
+        return fetch_page(page, delay, Client(delay=delay, base_url=args.base_url))
+
+    run(
+        counts, args.out, args.workers, args.delay, args.budget_min * 60, fetch, tag, args.page_size
+    )
 
 
 if __name__ == "__main__":

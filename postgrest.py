@@ -64,12 +64,13 @@ class Client:
         *,
         base_url: str = BASE_URL,
         delay: float = 0.5,
-        sleep: Callable[[float], None] = time.sleep,
+        sleep: Callable[[float], None] | None = None,
     ) -> None:
         self.transport = transport
         self.base_url = base_url.rstrip("/")
         self.delay = delay
-        self.sleep = sleep
+        # Looked up at construction time (not at import) so tests can patch ``time.sleep``.
+        self.sleep = sleep or time.sleep
 
     def _get(self, table: str, query: Mapping[str, str], extra: Mapping[str, str]) -> PgResponse:
         url = f"{self.base_url}/{table}"

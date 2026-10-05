@@ -90,8 +90,8 @@ def test_run_reports_failures_and_count_mismatches(tmp_path: Path) -> None:
     df = wf.run(
         {2022: 2, 2021: 2, 2020: 2}, tmp_path, workers=2, delay=0.0, budget_s=60, fetch=fake
     )
-    log = json.loads((tmp_path / "waste_fetch_log.json").read_text(encoding="utf-8"))
-    assert df.height >= 1 and (tmp_path / "waste_agg.parquet").exists()
+    log = json.loads((tmp_path / "waste_part_all.json").read_text(encoding="utf-8"))
+    assert df.height >= 1 and (tmp_path / "waste_part_all.parquet").exists()
     assert "timeout" in log["failed"][0]
     assert {"year": 2021, "expected": 2, "got": 1} in log["count_mismatches"]
     assert log["rows_read"] == 3 and log["rows_expected"] == 6
@@ -111,5 +111,5 @@ def test_run_still_writes_log_when_merge_fails(tmp_path: Path) -> None:
         return pl.DataFrame({"aasta": [1]}), p.expected  # wrong schema -> merge error
 
     wf.run({2022: 1, 2021: 1}, tmp_path, workers=1, delay=0.0, budget_s=60, fetch=bad)
-    log = json.loads((tmp_path / "waste_fetch_log.json").read_text(encoding="utf-8"))
+    log = json.loads((tmp_path / "waste_part_all.json").read_text(encoding="utf-8"))
     assert any(f.startswith("merge:") for f in log["failed"]) and log["rows_read"] == 2

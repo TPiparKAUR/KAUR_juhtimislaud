@@ -24,6 +24,7 @@ jobs:
       - run: uv sync --frozen
       - run: uv run python hydro_catalog.py --out out/hydro --budget-min 40
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: hydro-catalog
           path: out/hydro/

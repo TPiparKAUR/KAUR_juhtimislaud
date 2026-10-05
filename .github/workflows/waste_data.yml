@@ -1,9 +1,13 @@
 name: Waste data (aggregated)
 
-# Streams the national waste-statistics table (f_jaatmeliikumine_fix_riik, ~20 M rows) in totally
-# ordered 20 000-row pages, many in parallel, and aggregates while reading.  The aggregate Parquet
-# stays in the workflow artifact; only the fetch log (counts, failures, mismatches) goes to the
-# `waste-data-log` branch.
+# Reads the national waste-statistics table (f_jaatmeliikumine_fix_riik, ~20 M rows) one year per
+# job, so that a lost or cancelled runner costs one year instead of the whole read.  Each job
+# uploads its aggregate part as an artifact; `combine` merges whatever parts exist, states which
+# years are missing and publishes only the small log to the `waste-data-log` branch.
+#
+# If some years fail, use "Re-run failed jobs" on this run: successful years keep their artifacts
+# and `combine` runs again.  Measured server behaviour (see waste_probe.py): ~10 s per request,
+# 20 000 rows per request at most, unordered paging unstable -> ordered pages, read in parallel.
 
 on:
   workflow_dispatch:
@@ -12,19 +16,49 @@ permissions:
   contents: write
 
 concurrency:
-  group: waste-data-log
+  group: waste-data
   cancel-in-progress: false
 
 jobs:
   fetch:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        year: [2025, 2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011, 2010, 2009, 2008, 2007, 2006, 2005, 2004]
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v5
       - run: uv sync --frozen
-      - run: uv run python waste_fetch.py --out out/waste_agg
-        timeout-minutes: 110
+      - run: uv run python waste_fetch.py --out out/parts --years ${{ matrix.year }} --workers 6 --budget-min 38
+        timeout-minutes: 42
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: waste-part-${{ matrix.year }}
+          path: out/parts/
+          retention-days: 30
+          if-no-files-found: warn
+
+  combine:
+    needs: fetch
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync --frozen
+      - uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          pattern: waste-part-*
+          merge-multiple: true
+          path: out/parts
+      - run: mkdir -p out/parts
+      - run: uv run python waste_combine.py --parts out/parts --out out/waste_agg --first 2004 --last 2025
       - uses: actions/upload-artifact@v4
         if: always()
         with:

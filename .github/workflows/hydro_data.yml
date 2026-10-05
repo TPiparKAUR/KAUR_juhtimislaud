@@ -44,6 +44,7 @@ jobs:
           fi
           uv run python run_hydro.py "${args[@]}"
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: hydro-daily
           path: out/hydro/
