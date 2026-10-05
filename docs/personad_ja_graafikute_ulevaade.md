@@ -64,6 +64,23 @@ Allikas: käitajate deklareeritud aastaaruanded 2019–2025 (KOTKAS); **mitte** 
 | Soojus ja elekter kütuse järgi | millest toodetakse? | **Eeldus:** ühik MWh (tuletatud soojus/kütus suhtest); 233 rida (2019: 170) välja jäetud | kõrge | **gaasi soojus 2019 → 2020 −62%: kontrollimata, andmeomanikult üle küsida** |
 | Talv vs soojatoodang | kas külm talv tõstab? | **Lahtine:** 7 punkti, orientiir | madal | ei arvutata statistikut |
 
+### Mets (`mets`): statistiline metsainventuur (SMI)
+
+Allikas: SMI arvutustulemused (`f_smi_tulemused`, 332 433 rida, 1999–2024), iga hinnang koos suhtelise veaga.
+Üksikasjad ja piirangud lehel endal; siin vaid ülevaatuse jaoks.
+
+| Graafik | Küsimus | Faktikontroll | Tihedus | Teadaolevad nõrkused |
+|---|---|---|---|---|
+| Metsamaa pindala, tagavara, hektaritagavara (veavahemikuga) | kui palju mets on ja kas see muutub? | **Kindel:** read valitakse tabeli, näitaja ja täpse klassifikaatorikombinatsiooni järgi; puuliikide, omandirühmade ja majanduskategooriate summa = 100,0% kogusummast. **Eeldus:** ühikud (tuhat ha, tuhat m³) tuletatud suurusjärgust; viga = 95% poolvahemik (Mets 2021, lk 17, 124), andmebaasi `usaldusnivoo` on 0 | kõrge | periood 5 a: järjestikused aastad ei ole sõltumatud |
+| Juurdekasv ja raie | kas raiutakse rohkem kui kasvab? | **Eeldus:** SMI raie, mitte raiedokumentide statistika; juurdekasvu definitsioon kinnitamata; suhte viga ligikaudne | keskmine | ei võrdu ametliku raiestatistikaga |
+| Struktuur (puuliik, omand, majanduskategooria, vanus) | kuidas on mets jaotunud? | **Kindel:** summad tiilivad kogusumma; **Lahtine:** vanuseklassid (vaata allpool) | keskmine | vanuseklassid kahes skeemis (10 ja 20 a) samas klassifikaatoris |
+| Maakonnad | kus on tagavara suurem? | **Kindel:** ±-vahemikud kuvatud | keskmine | väikeste rühmade viga suur (hinnangute 11% on ebatäpsemad kui ±50%) |
+| Surnud puit | kui palju on kõdupuitu? | **Eeldus:** püsti + lamapuit liidetud ligikaudse veaga | madal | viga suur |
+
+**Puänt (peamine sõnum) kõigil graafikutel.** Iga graafik algab lausega, mille arvud on arvutatud andmetest
+ja mis ütleb ka ebakindluse. Test kontrollib, et ükski graafik ei jää ilma. Lause ei kasuta sõna «kasvab»
+või «väheneb», kui muutus jääb veapiiri sisse.
+
 ## 3. Kui tihedad ja õiged need graafikud on?
 
 **Tugevused:** kõigil graafikutel on allikas, ühik, periood, hajuvuse või ebakindluse märge ja
