@@ -28,51 +28,70 @@ def test_aggregate_sums_and_counts_negatives() -> None:
     assert wf.aggregate([]).is_empty()
 
 
-def test_tasks_cover_residual_slices_and_newest_year_first() -> None:
-    tasks = wf.make_tasks(2020, 2021)
-    assert tasks[0].year == 2021 and len(tasks) == 2 * (len(wf.TYPES) + 1) * (len(wf.GROUPS) + 1)
-    residual = wf.Task(2021, None, None).filters()
-    assert residual["maht_liik"].startswith("not.in.(") and '"Eksport"' in residual["maht_liik"]
-    assert wf.Task(2021, "Import", "20").filters()["pohigrupp"] == "eq.20"
-
-
-def test_run_collects_failures_mismatches_and_writes_outputs(tmp_path: Path) -> None:
-    tasks = [
-        wf.Task(2022, "Import", "01"),
-        wf.Task(2022, "Import", "02"),
-        wf.Task(2022, None, None),
+def test_pages_cover_every_row_once_newest_year_first() -> None:
+    pages = wf.make_pages({2021: 45_000, 2022: 20_000}, page=20_000)
+    assert [(p.year, p.offset, p.expected) for p in pages] == [
+        (2022, 0, 20_000),
+        (2021, 0, 20_000),
+        (2021, 20_000, 20_000),
+        (2021, 40_000, 5_000),
     ]
 
-    def fake(t: wf.Task, delay: float) -> tuple[pl.DataFrame, int, int]:
-        if t.pohigrupp == "02":
-            raise PostgrestError("timeout")
-        if t.pohigrupp is None:
-            return wf.aggregate([row()]), 2, 1  # server said 2 rows, only 1 came back
-        return wf.aggregate([row(maht=4.0)]), 1, 1
 
-    df = wf.run(tasks, tmp_path, workers=2, delay=0.0, budget_s=60, fetch=fake)
-    log = (tmp_path / "waste_fetch_log.json").read_text(encoding="utf-8")
-    assert df.height >= 1 and (tmp_path / "waste_agg.parquet").exists()
-    assert "timeout" in log and '"expected": 2' in log
+def test_merge_sums_keys_that_span_several_pages() -> None:
+    a = wf.aggregate([row(maht=5.0), row(maht=-2.0)])
+    b = wf.aggregate([row(maht=4.0)])
+    m = wf.merge([a, b, pl.DataFrame()])
+    assert m.height == 1 and m["maht"][0] == 7.0 and m["rows"][0] == 3 and m["neg_rows"][0] == 1
 
 
 def test_select_covers_every_key_and_the_amount() -> None:
     assert set(wf.SELECT) == {*wf.KEYS, "maht"}
 
 
-def test_fetch_one_requests_only_columns_it_can_aggregate() -> None:
-    """Regression: the server returns only the selected columns, so the select must be complete."""
-    full: dict[str, object] = {c: ("20" if c == "pohigrupp" else "x") for c in wf.SELECT}
+def fake_client(total: int, cap: int) -> tuple[Client, list[dict[str, str]]]:
+    """A server holding ``total`` identical rows that returns at most ``cap`` rows per request."""
+    full: dict[str, object] = dict.fromkeys(wf.SELECT, "x")
     full.update(aasta=2022, materjali_kood=1, maht=2.5)
-    seen: list[str] = []
+    seen: list[dict[str, str]] = []
 
     def transport(url: str, headers: Mapping[str, str]) -> PgResponse:
-        q = urllib.parse.parse_qs(urllib.parse.urlparse(url).query)
-        cols = q.get("select", ["*"])[0].split(",")
-        seen.append(q.get("select", ["*"])[0])
-        body = json.dumps([{c: full[c] for c in cols if c in full}]).encode()
-        return PgResponse(200, body, content_range="0-0/1")
+        q = {k: v[0] for k, v in urllib.parse.parse_qs(urllib.parse.urlparse(url).query).items()}
+        seen.append(q)
+        cols = q["select"].split(",")  # a real server returns only the selected columns
+        n = max(0, min(int(q["limit"]), cap, total - int(q["offset"])))
+        return PgResponse(200, json.dumps([{c: full[c] for c in cols if c in full}] * n).encode())
 
-    client = Client(transport, delay=0.0, sleep=lambda _s: None)
-    df, expected, got = wf.fetch_one(wf.Task(2022, "Import", "20"), 0.0, client)
-    assert (expected, got) == (1, 1) and df["maht"].to_list() == [2.5]
+    return Client(transport, delay=0.0, sleep=lambda _s: None), seen
+
+
+def test_fetch_page_requests_only_known_columns_and_orders_totally() -> None:
+    """Regression: the server returns only the selected columns, so the select must be complete."""
+    client, seen = fake_client(total=3, cap=100)
+    df, got = wf.fetch_page(wf.Page(2022, 0, 3), 0.0, client)
+    assert got == 3 and df["maht"].to_list() == [7.5] and df["rows"].to_list() == [3]
+    assert seen[0]["order"] == seen[0]["select"] and seen[0]["aasta"] == "eq.2022"
+
+
+def test_fetch_page_continues_when_server_returns_fewer_rows() -> None:
+    client, seen = fake_client(total=5, cap=2)
+    _, got = wf.fetch_page(wf.Page(2022, 0, 5), 0.0, client)
+    assert got == 5 and [q["offset"] for q in seen] == ["0", "2", "4"]
+
+
+def test_run_reports_failures_and_count_mismatches(tmp_path: Path) -> None:
+    def fake(p: wf.Page, delay: float) -> tuple[pl.DataFrame, int]:
+        if p.year == 2020:
+            raise PostgrestError("timeout")
+        if p.year == 2021:
+            return wf.aggregate([row(aasta=2021)]), 1  # short read
+        return wf.aggregate([row(maht=4.0)]), p.expected
+
+    df = wf.run(
+        {2022: 2, 2021: 2, 2020: 2}, tmp_path, workers=2, delay=0.0, budget_s=60, fetch=fake
+    )
+    log = json.loads((tmp_path / "waste_fetch_log.json").read_text(encoding="utf-8"))
+    assert df.height >= 1 and (tmp_path / "waste_agg.parquet").exists()
+    assert "timeout" in log["failed"][0]
+    assert {"year": 2021, "expected": 2, "got": 1} in log["count_mismatches"]
+    assert log["rows_read"] == 3 and log["rows_expected"] == 6

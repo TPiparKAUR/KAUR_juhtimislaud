@@ -1,8 +1,9 @@
 name: Waste data (aggregated)
 
-# Streams the national waste-statistics table (f_jaatmeliikumine_fix_riik, ~20 M rows) in ordered
-# year x type x group slices and aggregates it while reading.  The aggregate Parquet stays in the
-# workflow artifact; only the fetch log (counts, failures, mismatches) goes to `waste-data-log`.
+# Streams the national waste-statistics table (f_jaatmeliikumine_fix_riik, ~20 M rows) in totally
+# ordered 20 000-row pages, many in parallel, and aggregates while reading.  The aggregate Parquet
+# stays in the workflow artifact; only the fetch log (counts, failures, mismatches) goes to the
+# `waste-data-log` branch.
 
 on:
   workflow_dispatch:

@@ -1,19 +1,20 @@
 #!/usr/bin/env python3
 """Stream the national waste-statistics table and aggregate it while reading.
 
-``f_jaatmeliikumine_fix_riik`` has about 20 million rows (2004-2025) and the server refuses
-aggregate selects (PostgREST error PGRST123).  Rows are therefore read in small, completely
-ordered slices (year x ``maht_liik`` x main group), so that offset paging is stable and the
-server never sorts a whole year per page, and each slice is reduced to sums immediately.  Slices
-for values *not* in the known lists catch types or groups that appear only in some years; the
-returned row count of every slice is compared with the server's exact count.
+``f_jaatmeliikumine_fix_riik`` has about 20 million rows (2004-2025).  Measurements
+(``waste_probe.py``) showed: aggregate selects are refused (PGRST123); every request takes about
+9-11 s regardless of size; the server returns at most 20 000 rows per request; and *unordered*
+offset pages are not stable (the same request returned different rows).  The table is therefore
+read in totally ordered pages of 20 000 rows (ordered by every selected column, so rows that tie
+are identical) and many pages are fetched in parallel.  Each page is reduced to sums immediately.
+The number of rows read per year is compared with the server's exact count for that year.
 
 Only aggregates (no operator or facility identity) are kept.  The unit of ``maht`` is not in the
 schema and is assumed to be tonnes (to be confirmed with the data owner).
 
 Usage
 -----
-    uv run python waste_fetch.py --out out/waste_agg --first 2004 --last 2025
+    uv run python waste_fetch.py --out out/waste_agg --first 2004 --last 2025 --workers 8
 """
 
 from __future__ import annotations
@@ -34,19 +35,6 @@ from postgrest import Client, PostgrestError
 from waste_explore import TABLE
 
 LOG = logging.getLogger("waste_fetch")
-TYPES = (
-    "Eksport",
-    "Import",
-    "Jäätmete sortimine või muu eeltöötlus (toimingud R12)",
-    "Jäätmeteke",
-    "Ladestatud prügilasse",
-    "Laoseis aasta alguses",
-    "Laoseis aasta lõpul",
-    "Määratlemata käitlemine",
-    "Saadud kodumajapidamistelt",
-    "Taaskasutamine",
-)
-GROUPS = tuple(f"{i:02d}" for i in range(1, 21))
 KEYS = [
     "aasta",
     "maht_liik",
@@ -68,37 +56,24 @@ KEYS = [
 
 
 SELECT = [*KEYS, "maht"]  # exactly the columns aggregate() needs; also the total sort order
+PAGE = 20_000  # the server returns at most this many rows per request
 
 
 @dataclass(frozen=True)
-class Task:
-    """One slice of the table; ``maht_liik``/``pohigrupp`` of ``None`` mean 'not in the list'."""
+class Page:
+    """One ordered page of one year: rows ``offset`` .. ``offset + expected - 1``."""
 
     year: int
-    maht_liik: str | None
-    pohigrupp: str | None
-
-    def filters(self) -> dict[str, str]:
-        f = {"aasta": f"eq.{self.year}"}
-        f["maht_liik"] = (
-            f"eq.{self.maht_liik}"
-            if self.maht_liik is not None
-            else "not.in.(" + ",".join(f'"{t}"' for t in TYPES) + ")"
-        )
-        f["pohigrupp"] = (
-            f"eq.{self.pohigrupp}"
-            if self.pohigrupp is not None
-            else "not.in.(" + ",".join(f'"{g}"' for g in GROUPS) + ")"
-        )
-        return f
+    offset: int
+    expected: int
 
 
-def make_tasks(first: int, last: int) -> list[Task]:
-    """All slices, newest year first (so a time budget drops the oldest data, not the latest)."""
-    out: list[Task] = []
-    for y in range(last, first - 1, -1):
-        for t in (*TYPES, None):
-            out += [Task(y, t, g) for g in (*GROUPS, None)]
+def make_pages(year_counts: dict[int, int], page: int = PAGE) -> list[Page]:
+    """All pages, newest year first (a time budget then drops the oldest data, not the latest)."""
+    out: list[Page] = []
+    for y in sorted(year_counts, reverse=True):
+        total = year_counts[y]
+        out += [Page(y, o, min(page, total - o)) for o in range(0, total, page)]
     return out
 
 
@@ -115,41 +90,63 @@ def aggregate(rows: list[dict[str, Any]]) -> pl.DataFrame:
     )
 
 
-def fetch_one(
-    task: Task, delay: float, client: Client | None = None
-) -> tuple[pl.DataFrame, int, int]:
-    """Return (aggregate, server count, rows read) for one slice."""
-    client = client or Client(delay=delay)
-    flt = task.filters()
-    expected = client.count(TABLE, flt) or 0
-    if expected == 0:
-        return pl.DataFrame(), 0, 0
-    rows = list(
-        client.iter_rows(TABLE, select=",".join(SELECT), filters=flt, order=",".join(SELECT))
+def merge(parts: list[pl.DataFrame]) -> pl.DataFrame:
+    """Combine page aggregates: the same key can occur on several pages, so sum again."""
+    parts = [p for p in parts if not p.is_empty()]
+    if not parts:
+        return pl.DataFrame()
+    return (
+        pl.concat(parts)
+        .group_by(KEYS)
+        .agg(
+            maht=pl.col("maht").sum(),
+            rows=pl.col("rows").sum(),
+            neg_rows=pl.col("neg_rows").sum(),
+            neg_sum=pl.col("neg_sum").sum(),
+        )
+        .sort("aasta", "maht_liik", "pohigrupp", "jaatmeliik")
     )
-    return aggregate(rows), expected, len(rows)
+
+
+def fetch_page(page: Page, delay: float, client: Client | None = None) -> tuple[pl.DataFrame, int]:
+    """Return (aggregate, rows read) for one page; continue if the server returns fewer rows."""
+    client = client or Client(delay=delay)
+    rows: list[dict[str, Any]] = []
+    while len(rows) < page.expected:
+        got = client.rows(
+            TABLE,
+            select=",".join(SELECT),
+            filters={"aasta": f"eq.{page.year}"},
+            order=",".join(SELECT),
+            limit=page.expected - len(rows),
+            offset=page.offset + len(rows),
+        )
+        if not got:
+            break
+        rows += got
+    return aggregate(rows), len(rows)
 
 
 def run(
-    tasks: list[Task],
+    year_counts: dict[int, int],
     out: Path,
     workers: int,
     delay: float,
     budget_s: float,
-    fetch: Callable[[Task, float], tuple[pl.DataFrame, int, int]] = fetch_one,
+    fetch: Callable[[Page, float], tuple[pl.DataFrame, int]] = fetch_page,
 ) -> pl.DataFrame:
-    """Run slices in parallel within a time budget; write the aggregate and a log."""
+    """Fetch all pages in parallel within a time budget; write the aggregate and a log."""
     out.mkdir(parents=True, exist_ok=True)
     start = time.monotonic()
+    pages = make_pages(year_counts)
     parts: list[pl.DataFrame] = []
-    mismatches: list[dict[str, Any]] = []
+    read: dict[int, int] = dict.fromkeys(year_counts, 0)
     failed: list[str] = []
     skipped = 0
-    rows_read = 0
     with ThreadPoolExecutor(max_workers=workers) as pool:
-        futures = {pool.submit(fetch, t, delay): t for t in tasks}
+        futures = {pool.submit(fetch, p, delay): p for p in pages}
         for fut in as_completed(futures):
-            t = futures[fut]
+            p = futures[fut]
             if time.monotonic() - start > budget_s:
                 for f in futures:
                     f.cancel()
@@ -157,30 +154,29 @@ def run(
                 skipped += 1
                 continue
             try:
-                df, expected, got = fut.result()
+                df, got = fut.result()
             except PostgrestError as exc:
-                failed.append(f"{t}: {exc}"[:240])
+                failed.append(f"{p}: {exc}"[:240])
                 continue
-            except Exception as exc:  # keep the whole run alive; report the slice
-                failed.append(f"{t}: {type(exc).__name__}"[:240])
+            except Exception as exc:  # keep the whole run alive; report the page
+                failed.append(f"{p}: {type(exc).__name__}: {exc}"[:240])
                 continue
-            rows_read += got
-            if expected != got:
-                mismatches.append({"task": t.__dict__, "expected": expected, "got": got})
-            if not df.is_empty():
-                parts.append(df)
-    result = pl.concat(parts) if parts else pl.DataFrame()
-    if not result.is_empty():
-        result = result.sort("aasta", "maht_liik", "pohigrupp", "jaatmeliik")
+            read[p.year] += got
+            parts.append(df)
+    result = merge(parts)
     result.write_parquet(out / "waste_agg.parquet")
+    mismatches = [
+        {"year": y, "expected": n, "got": read[y]} for y, n in year_counts.items() if read[y] != n
+    ]
     (out / "waste_fetch_log.json").write_text(
         json.dumps(
             {
-                "tasks": len(tasks),
-                "rows_read": rows_read,
+                "pages": len(pages),
+                "rows_read": sum(read.values()),
+                "rows_expected": sum(year_counts.values()),
                 "skipped_over_budget": skipped,
                 "failed": failed[:50],
-                "count_mismatches": mismatches[:50],
+                "count_mismatches": mismatches,
                 "seconds": round(time.monotonic() - start),
             },
             ensure_ascii=False,
@@ -196,18 +192,19 @@ def main() -> None:
     ap.add_argument("--out", type=Path, default=Path("out/waste_agg"))
     ap.add_argument("--first", type=int, default=2004)
     ap.add_argument("--last", type=int, default=2025)
-    ap.add_argument("--workers", type=int, default=5)
-    ap.add_argument("--delay", type=float, default=0.2)
+    ap.add_argument("--workers", type=int, default=8)
+    ap.add_argument("--delay", type=float, default=0.0)
     ap.add_argument("--budget-min", type=float, default=100.0)
     args = ap.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
-    run(
-        make_tasks(args.first, args.last),
-        args.out,
-        args.workers,
-        args.delay,
-        args.budget_min * 60,
-    )
+    client = Client(delay=args.delay)
+    counts: dict[int, int] = {}
+    for y in range(args.first, args.last + 1):
+        n = client.count(TABLE, {"aasta": f"eq.{y}"}) or 0
+        LOG.info("%d: %d rows", y, n)
+        if n:
+            counts[y] = n
+    run(counts, args.out, args.workers, args.delay, args.budget_min * 60)
 
 
 if __name__ == "__main__":
