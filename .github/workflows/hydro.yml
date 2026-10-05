@@ -22,7 +22,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v5
       - run: uv sync --frozen
-      - run: uv run python hydro_catalog.py --out out/hydro
+      - run: uv run python hydro_catalog.py --out out/hydro --budget-min 40
       - uses: actions/upload-artifact@v4
         with:
           name: hydro-catalog

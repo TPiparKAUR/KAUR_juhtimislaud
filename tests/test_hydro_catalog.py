@@ -94,9 +94,29 @@ def test_series_coverage_counts_and_edges() -> None:
 def test_run_writes_catalog(tmp_path: Path) -> None:
     res = h.run(client(), tmp_path)
     assert [s["jaam_kood"] for s in res["stations"]] == [1, 2]
-    assert res["total_rows"] == 4
+    assert res["complete"] is True
     assert {s["series"] for s in res["stations"][0]["series"]} == {"WT avg", "Äravool avg"}
     assert (
         json.loads((tmp_path / "hydro_catalog.json").read_text(encoding="utf-8"))["table"]
         == h.TABLE
     )
+
+
+def test_series_coverage_records_timings_and_survives_errors() -> None:
+    def flaky(url: str, headers: Mapping[str, str]) -> p.PgResponse:
+        if "order=" in url:
+            return p.PgResponse(500, b"", error="statement timeout")
+        return fake(url, headers)
+
+    c = p.Client(flaky, delay=0, sleep=lambda _s: None)
+    cov = h.series_coverage(c, 1, "WT avg")
+    assert cov["rows"] == 2 and cov["first_utc"] is None
+    assert set(cov["errors"]) == {"first_utc", "last_utc"}
+    assert set(cov["seconds"]) == {"rows", "first_utc", "last_utc"}
+
+
+def test_run_stops_at_budget_and_keeps_station_list(tmp_path: Path) -> None:
+    res = h.run(client(), tmp_path, budget_s=-1)
+    assert res["complete"] is False and len(res["stations"]) == 2
+    saved = json.loads((tmp_path / "hydro_catalog.json").read_text(encoding="utf-8"))
+    assert saved["complete"] is False
