@@ -169,3 +169,36 @@ def test_spearman_detects_monotone_relation_and_handles_small_n() -> None:
     noise = ha.spearman(x, np.random.default_rng(0).normal(size=15))
     assert abs(noise["rho"]) < 0.7 and noise["hi"] - noise["lo"] > 0.4
     assert np.isnan(ha.spearman(x[:4], x[:4])["rho"])
+
+
+def test_screen_drops_negative_spike_and_implausible_temperature() -> None:
+    base = daily(1, ha.Q_AVG, date(2020, 1, 1), date(2020, 4, 9), lambda d: 2.0)  # 100 days
+    bad = pl.DataFrame(
+        {
+            "jaam_kood": 1,
+            "series": ha.Q_AVG,
+            "date": [date(2021, 1, 1), date(2021, 1, 2)],
+            "value": [-3.0, 400.0],
+            "n_hours": 24,
+        },
+        schema=base.schema,
+    )
+    wt = daily(
+        1, ha.WT_AVG, date(2020, 1, 1), date(2020, 1, 3), lambda d: 40.0 if d.day == 2 else 5.0
+    )
+    clean, report = ha.screen(pl.concat([base, bad, wt]))
+    assert clean.filter(pl.col("series") == ha.Q_AVG).height == 100  # both bad days gone
+    assert clean.filter(pl.col("series") == ha.WT_AVG).height == 2
+    by = {r["series"]: r for r in report}
+    assert (by[ha.Q_AVG]["negative"], by[ha.Q_AVG]["spike"]) == (1, 1)
+    assert by[ha.WT_AVG]["out_of_range"] == 1
+    assert clean.columns == base.columns
+
+
+def test_screen_keeps_true_zero_flow_and_handles_empty() -> None:
+    dry = daily(
+        1, ha.Q_AVG, date(2020, 1, 1), date(2020, 3, 1), lambda d: 0.0 if d.day < 5 else 1.0
+    )
+    clean, report = ha.screen(dry)
+    assert clean.height == dry.height and report == []
+    assert ha.screen(dry.clear())[1] == []

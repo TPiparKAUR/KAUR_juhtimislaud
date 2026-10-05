@@ -27,6 +27,48 @@ Q_AVG, Q_MIN, Q_MAX, WT_AVG = "Äravool avg", "Äravool min", "Äravool max", "W
 EXCEEDANCE = [0.5, 1, 2, 5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 95, 98, 99, 99.5]
 
 
+SPIKE_FACTOR = 15.0
+WT_RANGE = (-1.0, 35.0)
+
+
+def screen(df: pl.DataFrame) -> tuple[pl.DataFrame, list[dict[str, Any]]]:
+    """Simple rule-based screening of daily values (our own, not the data owner's QC).
+
+    * Discharge: negative values are impossible; values above ``SPIKE_FACTOR`` times the
+      series' own 95th percentile are treated as spikes (flood peaks in the data are at most
+      about five times Q95; a 100-fold jump on a small catchment is a sensor/logger error).
+    * Water temperature outside ``WT_RANGE`` degC is physically implausible.
+    Dropped values are counted per station and series.
+    """
+    if df.is_empty():
+        return df, []
+    is_q = pl.col("series").str.starts_with("Äravool")
+    q95 = (
+        df.filter(is_q & (pl.col("value") >= 0))
+        .group_by("jaam_kood", "series")
+        .agg(q95=pl.col("value").quantile(0.95))
+    )
+    d = df.join(q95, on=["jaam_kood", "series"], how="left").with_columns(
+        negative=is_q & (pl.col("value") < 0),
+        spike=is_q & (pl.col("value") > SPIKE_FACTOR * pl.col("q95")) & (pl.col("q95") > 0),
+        out_of_range=(~is_q) & ((pl.col("value") < WT_RANGE[0]) | (pl.col("value") > WT_RANGE[1])),
+    )
+    report = (
+        d.group_by("jaam_kood", "series")
+        .agg(
+            negative=pl.col("negative").sum(),
+            spike=pl.col("spike").sum(),
+            out_of_range=pl.col("out_of_range").sum(),
+            n=pl.len(),
+        )
+        .filter((pl.col("negative") + pl.col("spike") + pl.col("out_of_range")) > 0)
+        .sort("jaam_kood", "series")
+        .to_dicts()
+    )
+    keep = d.filter(~(pl.col("negative") | pl.col("spike") | pl.col("out_of_range")))
+    return keep.select(df.columns), report
+
+
 def valid_days(df: pl.DataFrame, series: str) -> pl.DataFrame:
     """Complete days of one series with year/month columns added."""
     return (

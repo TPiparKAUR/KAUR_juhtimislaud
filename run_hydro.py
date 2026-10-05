@@ -73,6 +73,7 @@ def build(
 ) -> dict[str, Any]:
     meta = {s["jaam_kood"]: s for s in catalog.get("stations", [])}
     area = {int(k): v.get("valgala_suurus_km2") for k, v in meta.items()}
+    daily, dropped = ha.screen(daily)
     q_avg = ha.valid_days(daily, ha.Q_AVG)
     q_max = ha.valid_days(daily, ha.Q_MAX)
     wt = ha.valid_days(daily, ha.WT_AVG)
@@ -144,6 +145,14 @@ def build(
             ]
         },
         "plausibility": ha.plausibility(annual, wt),
+        "quality": {
+            "rules": {
+                "negative_discharge": "dropped",
+                "discharge_spike": f"dropped when > {ha.SPIKE_FACTOR:g} x the series' own Q95",
+                "water_temperature_range": f"dropped outside {ha.WT_RANGE} degC",
+            },
+            "dropped": dropped,
+        },
         "climate_link": link_with_climate(national, climate),
     }
 

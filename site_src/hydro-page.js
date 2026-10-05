@@ -38,6 +38,8 @@
         r.current_months.forEach((m) => { const i = r.months.indexOf(m); if (i < 0) return; total += 1; const v = r.current[r.current_months.indexOf(m)]; if (v > r.q90[i] || v < r.q10[i]) out += 1; });
       }
       if (total) li.push(`<li><b>${d.meta.current_year}:</b> ${fmt(100 * out / total, 0)}% jaama-kuu väärtustest jääb väljapoole 10.–90. protsentiili (${out}/${total}); juhuslikult eeldaks umbes 20%.</li>`);
+      const dq = d.quality.dropped, nq = dq.reduce((acc, x) => acc + x.negative + x.spike + x.out_of_range, 0);
+      if (nq) li.push(`<li><b>Andmekvaliteet:</b> lihtne reeglipõhine sõel jättis välja ${nq} päevaväärtust (${dq.map((x) => `${(d.stations.find((s) => s.code === x.jaam_kood) || {}).name ?? x.jaam_kood}: ${x.series}, ${x.negative + x.spike + x.out_of_range}`).join('; ')}) – negatiivne vooluhulk, ebareaalne hüpe (> ${d.quality.rules.discharge_spike.match(/\d+/)[0]}× jaama enda Q95) või füüsikaliselt võimatu veetemperatuur. Andmete omaniku kvaliteedikontrolli tase ei ole teada.</li>`);
       host.innerHTML = `<ul class="findings">${li.join('')}</ul>`;
     },
     regime(host) {
@@ -59,7 +61,7 @@
     coverage(host) { C.coverageMatrix(host, d); },
     methods(host) {
       host.innerHTML = `<div class="methods"><b>Andmed ja meetod</b> <span class="review-flag">valdkonnaekspert ülevaatamata</span>
-        <p><b>Allikas ja päritolu:</b> Keskkonnaagentuuri avaandmed (keskkonnaandmed.envir.ee, tabel f_hydroseire): avaldatud seireread, tunniväärtused koondatud UTC kalendripäevadeks (päev vajab ≥ 20 tundi). Tabeli skeem ei nimeta ühikuid ega kvaliteeditaset: vooluhulk on eeldatud m³/s ja veetemperatuur °C, kvaliteeditaset ei eeldata.</p>
+        <p><b>Allikas ja päritolu:</b> Keskkonnaagentuuri avaandmed (keskkonnaandmed.envir.ee, tabel f_hydroseire): avaldatud seireread, tunniväärtused koondatud UTC kalendripäevadeks (päev vajab ≥ 20 tundi). Tabeli skeem ei nimeta ühikuid ega kvaliteeditaset: vooluhulk on eeldatud m³/s ja veetemperatuur °C (toetab kontroll: 15 jaama mediaanerivool 4–7 l/s/km²), kvaliteeditaset ei eeldata. Lisaks on rakendatud meie enda lihtne sõel (negatiivsed väärtused, ebareaalsed hüpped, võimatu temperatuur).</p>
         <p><b>Meetod:</b> kuud ≥ 25 ja aastad ≥ 350 kehtiva päevaga; erivool = vooluhulk / valgala pindala; kestvuskõver kõigist kehtivatest päevadest; Q7min = aasta madalaim 7-päeva keskmine; seos sademetega Spearmani järgkorrelatsioon (bootstrap-vahemik) kliimaanalüüsi aastasete sademetega.</p>
         <p><b>Piirangud:</b> read algavad 2012, seega korduvusaegu ega pikaajalisi trende hinnata ei saa; jaamad on valitud rea pikkuse järgi, mitte kogu võrgu esindajana; jõgede reguleerimist (paisud, järved) ei ole eristatud; UTC päevad erinevad kohaliku aja päevadest kuni 3 tunni võrra.</p>
         <p>Genereeritud ${d.meta.generated_utc.slice(0, 10)} (UTC).</p></div>`;

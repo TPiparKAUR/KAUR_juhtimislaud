@@ -68,6 +68,7 @@ def test_build_structure_and_json_safe() -> None:
     assert 5 < out["water_temperature"]["1"]["annual_mean"][0] < 11
     assert out["plausibility"]["specific_runoff_ls_km2"]["median"] > 0
     assert out["climate_link"] is None
+    assert out["quality"]["dropped"] == []
 
 
 def test_climate_link_pairs_years_and_reports_spearman() -> None:
