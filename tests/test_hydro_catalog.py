@@ -50,7 +50,7 @@ def fake(url: str, headers: Mapping[str, str]) -> p.PgResponse:
             rows = [r for r in rows if str(r[col]) == val]
         elif op == "not":
             vals = [
-                v.strip().strip('"').replace('\\"', '"')
+                (v[1:-1] if v.startswith('"') else v).replace('\\"', '"')
                 for v in re.findall(r'"(?:[^"\\]|\\.)*"|[^,()]+', val[4:-1])
             ]
             rows = [r for r in rows if str(r[col]) not in vals]
