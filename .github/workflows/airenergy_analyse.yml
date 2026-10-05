@@ -1,0 +1,54 @@
+name: Air and energy analysis (from existing data)
+
+# Re-runs the analysis on the Parquet files of an earlier "Air and energy data diagnostics" run
+# (artifact airenergy-raw) and publishes the aggregated airenergy.json to `airenergy-analysis`.
+# Raw rows never leave the workflow artifact.
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: "Run id of a successful 'Air and energy data diagnostics' run"
+        required: true
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: airenergy-analyse
+  cancel-in-progress: false
+
+jobs:
+  analyse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync --frozen
+      - name: Download raw data artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_ID: ${{ inputs.run_id }}
+        run: gh run download "$RUN_ID" --repo "$GITHUB_REPOSITORY" -n airenergy-raw -D out/airenergy
+      - name: Analyse
+        run: |
+          args=(--emissions out/airenergy/emissions.parquet --heat out/airenergy/heat.parquet --out out/airenergy)
+          if git show origin/climate-results:climate.json > climate.json 2>/dev/null; then
+            args+=(--climate climate.json)
+          fi
+          uv run python run_airenergy.py "${args[@]}"
+      - name: Publish aggregated results
+        run: |
+          cp out/airenergy/airenergy.json "$RUNNER_TEMP/airenergy.json"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan airenergy-analysis
+          git rm -rf --quiet .
+          cp "$RUNNER_TEMP/airenergy.json" airenergy.json
+          git add -- airenergy.json
+          git commit -m "Air/energy analysis $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push --force origin airenergy-analysis
