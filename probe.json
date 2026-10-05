@@ -1,0 +1,29 @@
+{
+ "year": 2004,
+ "count_year": {
+  "seconds": 8.85,
+  "n": 381292
+ },
+ "count_year_type_group": {
+  "seconds": 11.49,
+  "n": 11196
+ },
+ "ordered_page_5000": {
+  "seconds": 8.74,
+  "got": 5000
+ },
+ "ordered_page_50000": {
+  "seconds": 10.17,
+  "got": 20000
+ },
+ "ordered_page_200000": {
+  "seconds": 9.51,
+  "got": 20000
+ },
+ "unordered_pages": {
+  "seconds": 11.51,
+  "got": 20000,
+  "same_page_twice": false,
+  "next_page_differs": true
+ }
+}
