@@ -40,6 +40,7 @@ DIMS = [
     "filter3",
 ]
 LAND = "Metsamaa"  # forest land (incl. temporarily unstocked), the national headline category
+STOCKED = "Metsaga metsamaa"  # forest land with a stand; the only category with age classes
 ALL_STANDS = "Puistud"  # the "all species" row of the species breakdown
 SUM, MEAN = "Summa", "Keskmine"
 
@@ -176,6 +177,7 @@ def national(df: pl.DataFrame) -> dict[str, Any]:
     stands = {"enamuspuuliik": ALL_STANDS}
     out: dict[str, Any] = {
         "area": series(exact(df, 24, "Pindala", SUM, maakategooria=LAND)),
+        "area_stocked": series(exact(df, 1, "Pindala", SUM, maakategooria=STOCKED)),
         "stock": series(exact(df, 24, "Kasvavate puude maht", SUM, maakategooria=LAND)),
         "stock_per_ha": series(exact(df, 24, "Kasvavate puude maht", MEAN, maakategooria=LAND)),
         "increment": series(exact(df, 6, "Juurdekasv", SUM, maakategooria=LAND, **stands)),
@@ -305,7 +307,7 @@ def age_structure(df: pl.DataFrame, width: int = AGE_WIDTH) -> dict[str, list[di
             13,
             "Pindala",
             SUM,
-            maakategooria=LAND,
+            maakategooria=STOCKED,  # age classes exist only for forest land with a stand
             filtri_tunnus2="Vanus",
             filter2=c,
         )

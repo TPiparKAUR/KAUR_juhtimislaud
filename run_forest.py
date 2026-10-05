@@ -66,8 +66,10 @@ def checks(
     parts = [latest(management[k]) for k in fa.MANAGEMENT_PARTS if k in management]
     if management.get("Kokku mets") and len(parts) == len(fa.MANAGEMENT_PARTS):
         out["management_vs_total"] = fa.shares_check(parts, latest(management["Kokku mets"]))
-    if nat["area"] and age:
-        out["age_vs_area"] = fa.shares_check([latest(s) for s in age.values()], latest(nat["area"]))
+    if nat.get("area_stocked") and age:
+        out["age_vs_stocked_area"] = fa.shares_check(
+            [latest(s) for s in age.values()], latest(nat["area_stocked"])
+        )
     return out
 
 

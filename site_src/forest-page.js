@@ -116,7 +116,7 @@
       if (none(host, d.age, 'Vanuseline jaotus')) return;
       const keys = Object.keys(d.age); // already ordered by lower bound
       const obj = Object.fromEntries(keys.map((k) => [k, d.age[k]]));
-      C.errBars(host, { title: 'Puistute vanuseline jaotus', subtitle: 'Metsamaa pindala 20-aastaste vanuseklasside järgi (omandirühmad liidetud).', unit: 'tuhat ha', dec: 0, rotate: true, height: 320, cats: catBars(obj, null, PAIR), note: 'Vea arvutus liidab omandirühmade vead ruutude summana (ligikaudne).' });
+      C.errBars(host, { title: 'Puistute vanuseline jaotus', subtitle: 'Puistuga kaetud metsamaa pindala 20-aastaste vanuseklasside järgi (omandi- ja puuliigirühmad liidetud).', unit: 'tuhat ha', dec: 0, rotate: true, height: 320, cats: catBars(obj, null, PAIR), note: 'Vanuseklassid on olemas ainult puistuga metsamaal (metsata alal puistu vanust ei ole). Vea arvutus liidab omandi- ja puuliigirühmade vead ruutude summana (ligikaudne).' });
       const ch = changes(obj), big = ch.slice().sort((a, b) => Math.abs(b.diff) - Math.abs(a.diff))[0], top = ch.slice().sort((a, b) => b.b.value - a.b.value)[0];
       C.punch(host, `Kõige suurem on vanuseklass ${top.name} (${fmt(top.b.value, 0)} tuhat ha); suurim muutus on klassis ${big.name} (${sgn(100 * big.pct, 0)}%, ${big.ok == null ? 'eristatavus teadmata' : big.ok ? 'ületab veapiiri' : 'jääb veapiiri sisse'}).`);
     },
@@ -132,7 +132,7 @@
         <p><b>Allikas ja päritolu:</b> Keskkonnaagentuuri avaandmed (keskkonnaandmed.envir.ee, tabel f_smi_tulemused, SMI arvutustulemused). Hinnangud põhinevad riikliku statistilise metsainventuuri proovitükkidel; need on <b>valimipõhised hinnangud</b>, mitte täisloendus, ja kannavad suhtelist viga.</p>
         <p><b>Tõlgendus (kinnitamata):</b> ${m.interpretation.join(' ')}</p>
         <p><b>Meetod:</b> read valiti tabeli, näitaja, arvutustüübi ja täidetud klassifikaatorite täpse kombinatsiooni järgi, et kogusummasid ja osasummasid ei segataks. Muutust nimetatakse eristatavaks ainult siis, kui see ületab ühendatud veapiiri (ruutude summa ruutjuur). Hinnangute vea mediaan ${fmt(100 * q.quantiles.p50, 1)}%.</p>
-        <p><b>Kontrollid:</b> ${Object.entries(d.checks || {}).map(([k, v]) => `${({ species_vs_stock: 'puuliikide tagavara summa', owners_vs_area: 'omandirühmade pindala summa', management_vs_total: 'majanduskategooriate summa', age_vs_area: 'vanuseklasside summa' })[k] || k} = ${fmt(100 * v, 1)}% kogusummast`).join('; ') || 'puuduvad'}. Väärtus ~100% tähendab, et klassid katavad kogusumma üks kord.</p>
+        <p><b>Kontrollid:</b> ${Object.entries(d.checks || {}).map(([k, v]) => `${({ species_vs_stock: 'puuliikide tagavara summa', owners_vs_area: 'omandirühmade pindala summa', management_vs_total: 'majanduskategooriate summa', age_vs_stocked_area: 'vanuseklasside summa (puistuga mets)' })[k] || k} = ${fmt(100 * v, 1)}% kogusummast`).join('; ') || 'puuduvad'}. Väärtus ~100% tähendab, et klassid katavad kogusumma üks kord.</p>
         <p><b>Piirangud:</b> kattuvad perioodid, seega aastate vahelisi muutusi ei tohi tõlgendada aasta-aasta trendina; raie on SMI hinnang, mitte raiedokumentide statistika; väikeste rühmade hinnangud on ebatäpsed; pika perioodi võrdlusel võib inventuuri meetod muutuda. Genereeritud ${m.generated_utc.slice(0, 10)} (UTC).</p></div>`;
     },
   };
