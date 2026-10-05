@@ -10,7 +10,7 @@ on:
       - data/**
       - .github/workflows/pages.yml
   workflow_run:
-    workflows: ["Climate analysis"]
+    workflows: ["Climate analysis", "Hydrology data (daily)"]
     types: [completed]
   workflow_dispatch:
 
@@ -32,12 +32,17 @@ jobs:
           fetch-depth: 0
       - uses: astral-sh/setup-uv@v5
       - run: uv sync --frozen
-      - name: Latest aggregated climate analysis (if published)
+      - name: Latest aggregated analyses (if published)
         run: |
+          args=""
           if git show origin/climate-results:climate.json > climate.json 2>/dev/null; then
-            echo "CLIMATE_ARGS=--climate climate.json" >> "$GITHUB_ENV"
+            args="$args --climate climate.json"
           fi
-      - run: uv run python build_site.py --out _site $CLIMATE_ARGS
+          if git show origin/hydro-analysis:hydro.json > hydro.json 2>/dev/null; then
+            args="$args --hydro hydro.json"
+          fi
+          echo "SITE_ARGS=$args" >> "$GITHUB_ENV"
+      - run: uv run python build_site.py --out _site $SITE_ARGS
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

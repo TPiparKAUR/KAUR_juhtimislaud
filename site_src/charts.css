@@ -71,3 +71,8 @@
 .review-flag { display: inline-block; border: 1px solid var(--ink-2); border-radius: 1rem; padding: 0 .6rem; font-size: .78rem; color: var(--ink-2); }
 .panels .viz-sub { min-height: 2.9em; }
 .panels .viz-verdict { min-height: 2.8em; }
+.viz .line-cur { fill: none; stroke: var(--pos); stroke-width: 2.5; }
+.viz .ctx { fill: none; stroke: var(--ink-2); stroke-width: 1; opacity: .35; }
+.viz .line.thick { stroke-width: 3; }
+.viz-select { display: block; margin: 1rem 0 .3rem; font-size: .9rem; color: var(--ink-2); }
+.viz-select select { font: inherit; padding: .2rem .4rem; border: 1px solid var(--line); border-radius: 4px; background: var(--surface); color: var(--ink); }

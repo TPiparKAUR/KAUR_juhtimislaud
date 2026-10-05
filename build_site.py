@@ -26,19 +26,41 @@ LOG = logging.getLogger("build_site")
 GROUP_PREFIX = "Keskkonnaülevaade: "
 ASSET_DIR = Path(__file__).parent / "site_src"
 # Analysis sections (chart builders in site_src/climate-page.js) per topic slug.
-ANALYSES: dict[str, list[tuple[str, str]]] = {
-    "ilm-ja-kliima": [
-        ("findings", "Peamised tulemused"),
-        ("annual", ""),
-        ("forest", ""),
-        ("grid", ""),
-        ("stations", ""),
-        ("precip", "Sademed"),
-        ("precipForest", ""),
-        ("extremes", "Äärmusnäitajad"),
-        ("coverage", "Andmete kvaliteet ja katvus"),
-        ("methods", ""),
-    ]
+ANALYSES: dict[str, tuple[str, list[tuple[str, str]]]] = {
+    "ilm-ja-kliima": (
+        "climate",
+        [
+            ("findings", "Peamised tulemused"),
+            ("annual", ""),
+            ("forest", ""),
+            ("grid", ""),
+            ("stations", ""),
+            ("precip", "Sademed"),
+            ("precipForest", ""),
+            ("extremes", "Äärmusnäitajad"),
+            ("coverage", "Andmete kvaliteet ja katvus"),
+            ("methods", ""),
+        ],
+    ),
+    "vesi": (
+        "hydro",
+        [
+            ("findings", "Jõgede vooluhulk: peamised tulemused"),
+            ("regime", ""),
+            ("specific", ""),
+            ("fdc", ""),
+            ("runoff", "Aastane äravool"),
+            ("link", ""),
+            ("extremes", "Suur- ja madalvesi"),
+            ("temp", "Veetemperatuur"),
+            ("coverage", "Andmete kvaliteet ja katvus"),
+            ("methods", ""),
+        ],
+    ),
+}
+SCRIPTS = {
+    "climate": ["charts.js", "climate-page.js"],
+    "hydro": ["charts.js", "hydro-charts.js", "hydro-page.js"],
 }
 TABLEAU_PUBLIC = "public.tableau.com"
 EMBED_QUERY = ":showVizHome=no&:embed=true&:toolbar=yes"
@@ -157,23 +179,28 @@ def e(text: str) -> str:
 
 
 def layout(
-    title: str, body: str, topics: list[Topic], current: str, prefix: str, charts: bool = False
+    title: str,
+    body: str,
+    topics: list[Topic],
+    current: str,
+    prefix: str,
+    features: frozenset[str] = frozenset(),
 ) -> str:
     links = "".join(
         f'<li><a href="{prefix}{t.slug}.html"'
         f"{' aria-current="page"' if t.slug == current else ''}>{e(t.title)}</a></li>"
         for t in topics
     )
-    scripts = (
-        '<script src="assets/charts.js"></script><script src="assets/climate-page.js"></script>\n'
-        if charts
-        else ""
-    )
+    names: list[str] = []
+    for feat in ("climate", "hydro"):
+        if feat in features:
+            names += [n for n in SCRIPTS[feat] if n not in names]
+    scripts = "".join(f'<script src="assets/{n}"></script>' for n in names)
     return f"""<!doctype html>
 <html lang="et"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{e(title)}</title><style>{CSS}</style>
-{'<link rel="stylesheet" href="assets/charts.css">' if charts else ""}</head><body>
+{'<link rel="stylesheet" href="assets/charts.css">' if features else ""}</head><body>
 <a class="skip" href="#main">Mine põhisisu juurde</a>
 <header class="site"><div class="wrap">
 <a class="brand" href="{prefix}index.html">Keskkonnaülevaade</a>
@@ -186,7 +213,7 @@ Vaated on Tableau Public sisu.</div></footer>
 """
 
 
-def render_index(topics: list[Topic], analysis: bool = False) -> str:
+def render_index(topics: list[Topic], features: frozenset[str] = frozenset()) -> str:
     cards = "".join(
         f'<li><div class="card"><h3><a href="{t.slug}.html">{e(t.title)}</a></h3>'
         f"<p>{e(t.summary) if t.summary else ''}</p>"
@@ -203,16 +230,24 @@ def render_index(topics: list[Topic], analysis: bool = False) -> str:
         + "</p></div></li>"
         for t in topics
     )
-    hero = (
-        '<section aria-labelledby="kliima">'
-        '<h2 id="kliima">Kliima: mis on viimase 35 aastaga muutunud?</h2>'
-        '<div data-climate="kpis"></div><div data-climate="annual"></div>'
-        '<div data-climate="forest"></div>'
-        '<p><a href="ilm-ja-kliima.html">Kogu kliimaanalüüs: kuud, jaamad, sademed, äärmused, '
-        "andmete kvaliteet →</a></p></section>"
-        if analysis
-        else ""
-    )
+    hero = ""
+    if "climate" in features:
+        hero += (
+            '<section aria-labelledby="kliima">'
+            '<h2 id="kliima">Kliima: mis on viimase 35 aastaga muutunud?</h2>'
+            '<div data-climate="kpis"></div><div data-climate="annual"></div>'
+            '<div data-climate="forest"></div>'
+            '<p><a href="ilm-ja-kliima.html">Kogu kliimaanalüüs: kuud, jaamad, sademed, äärmused, '
+            "andmete kvaliteet →</a></p></section>"
+        )
+    if "hydro" in features:
+        hero += (
+            '<section aria-labelledby="vesi">'
+            '<h2 id="vesi">Kliima ja vesi: kuidas sademed jõgedesse jõuavad?</h2>'
+            '<div data-hydro="link"></div>'
+            '<p><a href="vesi.html">Kogu hüdroloogia analüüs: režiim, erivool, kestvuskõver, '
+            "ekstreemid, veetemperatuur →</a></p></section>"
+        )
     body = (
         "<h1>Keskkonnaülevaade</h1>"
         "<p>Eesti keskkonnaseisundi teemad ühes kohas: iga teema all on vaated ja teemade "
@@ -220,10 +255,10 @@ def render_index(topics: list[Topic], analysis: bool = False) -> str:
         f"{hero}<h2>Teemad</h2>"
         f'<ul class="grid">{cards}</ul>'
     )
-    return layout("Keskkonnaülevaade", body, topics, "", "", charts=analysis)
+    return layout("Keskkonnaülevaade", body, topics, "", "", features)
 
 
-def render_topic(topic: Topic, topics: list[Topic], analysis: bool = False) -> str:
+def render_topic(topic: Topic, topics: list[Topic], features: frozenset[str] = frozenset()) -> str:
     figs = "".join(
         f'<figure class="viz"><figcaption><h2>{e(v.title)}</h2></figcaption>'
         f'<iframe src="{e(v.embed_url)}" title="{e(v.title)}" loading="lazy"></iframe>'
@@ -247,11 +282,14 @@ def render_topic(topic: Topic, topics: list[Topic], analysis: bool = False) -> s
         )
         related = f"<h2>Seotud teemad</h2><p>{e(topic.related_reason)}</p><ul>{items}</ul>"
     sections = ""
-    if analysis and topic.slug in ANALYSES:
-        for key, heading in ANALYSES[topic.slug]:
+    used: frozenset[str] = frozenset()
+    if topic.slug in ANALYSES and ANALYSES[topic.slug][0] in features:
+        kind, parts = ANALYSES[topic.slug]
+        used = frozenset({kind})
+        for key, heading in parts:
             sections += (
                 f"<h2>{e(heading)}</h2>" if heading else ""
-            ) + f'<div data-climate="{key}"></div>'
+            ) + f'<div data-{kind}="{key}"></div>'
         figs = "<h2>Keskkonnaportaali vaated (Tableau)</h2>" + figs
     body = (
         f"<h1>{e(topic.title)}</h1>"
@@ -268,25 +306,35 @@ def render_topic(topic: Topic, topics: list[Topic], analysis: bool = False) -> s
         topics,
         topic.slug,
         "",
-        charts=analysis and topic.slug in ANALYSES,
+        used,
     )
 
 
-def build(topics: list[Topic], out: Path, climate_json: Path | None = None) -> list[Path]:
+def build(
+    topics: list[Topic],
+    out: Path,
+    climate_json: Path | None = None,
+    hydro_json: Path | None = None,
+) -> list[Path]:
+    """Write the site; analysis sections appear only for the JSON inputs that exist."""
     out.mkdir(parents=True, exist_ok=True)
     written = [out / "index.html"]
-    analysis = bool(climate_json and climate_json.exists())
-    if analysis:
-        assert climate_json is not None
-        (out / "data").mkdir(exist_ok=True)
-        shutil.copyfile(climate_json, out / "data" / "climate.json")
+    inputs = {"climate": climate_json, "hydro": hydro_json}
+    features: set[str] = set()
+    for name, path in inputs.items():
+        if path and path.exists():
+            (out / "data").mkdir(exist_ok=True)
+            shutil.copyfile(path, out / "data" / f"{name}.json")
+            features.add(name)
+        else:
+            LOG.warning("no %s.json: %s analysis sections omitted", name, name)
+    if features:
         shutil.copytree(ASSET_DIR, out / "assets", dirs_exist_ok=True)
-    else:
-        LOG.warning("no climate.json: analysis sections omitted")
-    written[0].write_text(render_index(topics, analysis), encoding="utf-8")
+    feats = frozenset(features)
+    written[0].write_text(render_index(topics, feats), encoding="utf-8")
     for t in topics:
         path = out / f"{t.slug}.html"
-        path.write_text(render_topic(t, topics, analysis), encoding="utf-8")
+        path.write_text(render_topic(t, topics, feats), encoding="utf-8")
         written.append(path)
     (out / ".nojekyll").write_text("", encoding="utf-8")
     return written
@@ -298,10 +346,11 @@ def main() -> None:
     ap.add_argument("--topics", type=Path, default=Path("data/teemad.toml"))
     ap.add_argument("--out", type=Path, default=Path("_site"))
     ap.add_argument("--climate", type=Path, default=None, help="aggregated climate.json to embed")
+    ap.add_argument("--hydro", type=Path, default=None, help="aggregated hydro.json to embed")
     args = ap.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
     topics = load_topics(args.topics, args.inventory)
-    files = build(topics, args.out, args.climate)
+    files = build(topics, args.out, args.climate, args.hydro)
     LOG.info("wrote %d pages to %s", len(files), args.out)
 
 

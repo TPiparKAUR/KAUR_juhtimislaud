@@ -369,5 +369,8 @@
     });
   }
 
-  window.KaurCharts = { annualBars, heatGrid, forest, stationDots, indexPanel, coverage, fmt, sgn };
+  window.KaurCharts = {
+    annualBars, heatGrid, forest, stationDots, indexPanel, coverage, fmt, sgn,
+    kit: { el, frame, responsive, niceTicks, hover, axisY, diverging, sequential, median, MINUS },
+  };
 })();

@@ -18,8 +18,10 @@ from playwright.sync_api import Error as PlaywrightError
 import build_site as b
 import climate_analysis as ca
 import run_climate as rc
+import run_hydro as rh
 from tests.test_climate_analysis import STATIONS
 from tests.test_run_climate import monthly_frame
+from tests.test_run_hydro import CATALOG, frame
 
 CHROMIUM_FALLBACK = Path("/opt/pw-browsers/chromium")
 
@@ -69,9 +71,13 @@ def site(tmp_path_factory: pytest.TempPathFactory) -> Iterator[str]:
     assert fd["mean"] and fd["trend"]["n"] == len(fd["aasta"])  # trend is computed on the mean
     cj = tmp / "climate.json"
     cj.write_text(json.dumps(data), encoding="utf-8")
+    hydro = rh.build(frame(list(range(1, 8)), {2020, 2023}), CATALOG, climate=data)
+    assert hydro["climate_link"] is not None  # synthetic years overlap with the climate series
+    hj = tmp / "hydro.json"
+    hj.write_text(json.dumps(hydro), encoding="utf-8")
     topics = b.load_topics(Path("data/teemad.toml"), Path("data/kaur_viz_inventar.csv"))
     out = tmp / "_site"
-    b.build(topics, out, cj)
+    b.build(topics, out, cj, hj)
     handler = functools.partial(http.server.SimpleHTTPRequestHandler, directory=str(out))
     handler.log_message = lambda *a, **k: None  # type: ignore[attr-defined]
     with socketserver.TCPServer(("127.0.0.1", 0), handler) as srv:
@@ -94,7 +100,9 @@ def browser() -> Iterator[Browser]:
 
 
 @pytest.mark.browser
-@pytest.mark.parametrize("path,min_svgs", [("index.html", 2), ("ilm-ja-kliima.html", 13)])
+@pytest.mark.parametrize(
+    "path,min_svgs", [("index.html", 3), ("ilm-ja-kliima.html", 13), ("vesi.html", 9)]
+)
 def test_pages_render_charts_without_errors(
     browser: Browser, site: str, path: str, min_svgs: int
 ) -> None:
@@ -110,7 +118,8 @@ def test_pages_render_charts_without_errors(
     assert real_errors == []
     assert page.locator("svg[role=img]").count() >= min_svgs
     assert page.locator(".viz-table table").count() >= 1  # text/table view exists
-    assert "Anomaalia" in page.content() or "kõrvalekalle" in page.content()
+    assert page.locator(".viz-title").count() >= min_svgs - 1
+    assert "Graafikut ei saanud joonistada" not in page.content()
     assert "undefined" not in page.inner_text("main") and "NaN" not in page.inner_text("main")
     page.close()
 
