@@ -79,3 +79,13 @@ def test_a_short_read_is_an_error_not_a_silent_gap() -> None:
         # the loop refills until the page is full, so a transient short page is repaired
         df = ff.fetch_all(client, workers=2, page=5)
     assert df.height == len(rows)
+
+
+def test_table_shapes_list_filled_classifiers_and_latest_examples() -> None:
+    shapes = ff.table_shapes(pl.DataFrame(table()))
+    by = {(s["tabeli_number"], s["arvutus"]): s for s in shapes}
+    boniteet = by[(6, "Summa")]
+    assert "omand+" in boniteet["filled"] and "filter1" in boniteet["filled"]
+    assert boniteet["values"]["omand"] == ["Riigimetsamaa", "Teised maaomanikud"]
+    assert boniteet["examples_latest_year"][0]["aasta"] == 2021
+    assert "filter1" not in by[(9, "Summa")]["filled"]  # table 9 has no filter

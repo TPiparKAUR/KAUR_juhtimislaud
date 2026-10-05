@@ -76,6 +76,54 @@ def classify_columns(df: pl.DataFrame) -> dict[str, list[str]]:
     return {"descriptive": desc}
 
 
+DIMS = [
+    "maakategooria", "omand", "maakond", "majandkategooria", "enamuspuuliik",
+    "filtri_tunnus1", "filter1", "filtri_tunnus2", "filter2", "filtri_tunnus3", "filter3",
+]  # fmt: skip
+
+
+def table_shapes(
+    df: pl.DataFrame, sample_year: int | None = None, max_values: int = 14
+) -> list[dict[str, Any]]:
+    """For every table: which classifying columns are filled, their values, and example rows.
+
+    A "shape" is the set of non-null classifier columns plus indicator and calculation type;
+    the latest year's rows give units and magnitudes at a glance.
+    """
+    dims = [c for c in DIMS if c in df.columns]
+    year = sample_year or int(df[YEAR].cast(pl.Int64).max() or 0)
+    shapes: list[dict[str, Any]] = []
+    keyed = df.with_columns(
+        pl.concat_str(
+            [
+                pl.when(pl.col(c).is_not_null()).then(pl.lit(c[:7] + "+")).otherwise(pl.lit(""))
+                for c in dims
+            ]
+        ).alias("_shape")
+    )
+    for (tnr, name, tunnus, calc, shape), g in keyed.group_by(
+        "tabeli_number", "aruande_nimi", "tunnus", "arvutus", "_shape", maintain_order=True
+    ):
+        entry: dict[str, Any] = {
+            "tabeli_number": tnr, "aruande_nimi": name, "tunnus": tunnus, "arvutus": calc,
+            "filled": shape, "rows": g.height,
+            "years": [int(g[YEAR].cast(pl.Int64).min() or 0), int(g[YEAR].cast(pl.Int64).max() or 0)],
+            "values": {},
+        }  # fmt: skip
+        for c in dims:
+            n = g[c].drop_nulls().n_unique()
+            if 0 < n <= max_values:
+                entry["values"][c] = sorted(g[c].drop_nulls().unique().to_list())
+            elif n:
+                entry["values"][c] = f"{n} distinct"
+        ex = g.filter(pl.col(YEAR) == year).sort(VALUE, descending=True, nulls_last=True).head(3)
+        entry["examples_latest_year"] = ex.select(
+            [c for c in (*dims, YEAR, "periood", VALUE, ERROR) if c in ex.columns]
+        ).to_dicts()
+        shapes.append(entry)
+    return shapes
+
+
 def diagnostics(df: pl.DataFrame, max_values: int = 60) -> dict[str, Any]:
     """Describe tables, indicators, classifiers, years and data quality."""
     desc = classify_columns(df)["descriptive"]
@@ -120,6 +168,7 @@ def diagnostics(df: pl.DataFrame, max_values: int = 60) -> dict[str, Any]:
         "negative_rows": int((val < 0).sum()),
         "zero_rows": int((val == 0).sum()),
     }
+    out["table_shapes"] = table_shapes(df)
     key = [c for c in desc if c in df.columns] + [YEAR]
     dup = df.group_by(key).agg(n=pl.len(), distinct=pl.col(VALUE).n_unique())
     out["duplicates"] = {
