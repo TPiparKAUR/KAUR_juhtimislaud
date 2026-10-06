@@ -25,6 +25,8 @@ jobs:
       - run: uv sync --frozen
       - run: uv run python fetch_yearbooks.py --sources data/allikad.toml --out out/yearbooks
         timeout-minutes: 25
+      - name: Classify figures by caption
+        run: uv run python analyse_yearbooks.py --summary out/yearbooks/yearbooks_summary.json --out out/yearbooks
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -34,12 +36,12 @@ jobs:
       - name: Publish summary
         if: always()
         run: |
-          cp out/yearbooks/yearbooks_summary.json "$RUNNER_TEMP/yearbooks_summary.json"
+          cp out/yearbooks/yearbooks_summary.json out/yearbooks/yearbook_figures.json "$RUNNER_TEMP/"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout --orphan yearbooks
           git rm -rf --quiet .
-          cp "$RUNNER_TEMP/yearbooks_summary.json" yearbooks_summary.json
-          git add -- yearbooks_summary.json
+          cp "$RUNNER_TEMP/yearbooks_summary.json" "$RUNNER_TEMP/yearbook_figures.json" .
+          git add -- yearbooks_summary.json yearbook_figures.json
           git commit -m "Yearbooks summary $(date -u +%Y-%m-%dT%H:%MZ)"
           git push --force origin yearbooks
