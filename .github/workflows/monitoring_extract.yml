@@ -1,0 +1,57 @@
+name: Monitoring extract (one indicator)
+
+# Reads all rows of selected monitoring indicators (exact naitaja_nimetus names, one or several
+# separated by |) with a few columns and writes a Parquet plus a diagnostic summary. The Parquet
+# stays in the artifact `monitoring-extract`; only the summary goes to the
+# `monitoring-extract-summary` branch.
+
+on:
+  workflow_dispatch:
+    inputs:
+      indicators:
+        description: "naitaja_nimetus values separated by |"
+        required: true
+        default: "Okka/lehekadu kogu võra ulatuses"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: kaur-api  # one job at a time against the shared public API
+  cancel-in-progress: false
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync --frozen
+      - name: Extract
+        env:
+          INDICATORS: ${{ inputs.indicators }}
+        run: |
+          args=()
+          IFS='|' read -ra names <<< "$INDICATORS"
+          for n in "${names[@]}"; do args+=(--indicator "$n"); done
+          uv run python monitoring_extract.py "${args[@]}" --out out/extract --workers 3
+        timeout-minutes: 35
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: monitoring-extract
+          path: out/extract/
+          retention-days: 30
+      - name: Publish summary
+        if: always()
+        run: |
+          cp out/extract/monitoring_extract_summary.json "$RUNNER_TEMP/monitoring_extract_summary.json"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan monitoring-extract-summary
+          git rm -rf --quiet .
+          cp "$RUNNER_TEMP/monitoring_extract_summary.json" monitoring_extract_summary.json
+          git add -- monitoring_extract_summary.json
+          git commit -m "Monitoring extract summary $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push --force origin monitoring-extract-summary
