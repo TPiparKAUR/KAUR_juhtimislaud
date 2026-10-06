@@ -150,3 +150,17 @@ registris, 7041 seisundirida). Puänt-sõnumid tulevad andmetest; koondhinnangu 
   keemiline saastus (81%).
 - Põhjavesi: 2014 ja 2020 kogumite hulgad ei kattu, muutust ei arvutata.
 - Lämmastiku/fosfori kontsentratsioone ei kasutatud (<8% ridadest, ühik kinnitamata).
+
+## Liigid ja ökosüsteemid (looduskaitse registrid, päris andmetega)
+
+Allikas: f_alad, f_rahvalad, f_rahvalad_elupaikstat, f_rahvalad_lkohtstat, f_lkohad, f_vepid (ilma
+koordinaatide ja vabatekstita). Tegu on registritega, mitte seirega.
+
+- Kaitsealade pindalad kattuvad (vööndid, püsielupaigad), seega tüüpide vahel ei liideta.
+- Natura elupaikade säilimisklass 2010 -> 2026 samas alas: 90% muutumata (138 paranes, 141 halvenes, n=2851);
+  hinnang ei näita suunda.
+- Vääriselupaikade registreerimine toimus kampaaniatena (2000-2001, 2018-2022); registreeritud arv ei ole
+  tegelik arv. Kehtiva lepinguga 463 / 17 471 (2,7%).
+- Liikide leiukohtade arv sõltub inventeerimisest; võõrliikide leiukohtadest 99% on katteseemnetaimed.
+- Natura liikide kaitsestaatuse väli on ~40% ulatuses täitmata ja hinnatud kirjete hulk muutus versioonide
+  vahel (2988 -> 2261); osakaalude muutust ei tõlgendata.

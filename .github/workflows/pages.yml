@@ -18,6 +18,7 @@ on:
       - "Waste analysis (from existing data)"
       - "Forest analysis (from existing data)"
       - "Water analysis (from existing data)"
+      - "Nature analysis (from existing data)"
     types: [completed]
   workflow_dispatch:
 
@@ -60,6 +61,9 @@ jobs:
           fi
           if git show origin/water-analysis:water.json > water.json 2>/dev/null; then
             args="$args --water water.json"
+          fi
+          if git show origin/nature-analysis:nature.json > nature.json 2>/dev/null; then
+            args="$args --nature nature.json"
           fi
           echo "SITE_ARGS=$args" >> "$GITHUB_ENV"
       - run: uv run python build_site.py --out _site $SITE_ARGS
