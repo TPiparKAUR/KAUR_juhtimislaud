@@ -136,3 +136,17 @@ võrdub serveri arvuga). Puänt-sõnumid tulevad andmetest; ühik (t) on eeldatu
   muutusele (põhjus kinnitamata), mitte tegelikule vähenemisele.
 - Laoseisu lõpp vs. järgmise aasta algus erineb mediaanis suurelt: aruandjate koosseis/parandused piiravad
   järepidevust.
+
+## Vesi: veekogumite seisund (päris andmetega)
+
+Allikas: f_veekogumid, f_veekogumi_seisundid, f_veekogumid_koormus, f_pohjaveekogumi_seisud (1969 veekogumit
+registris, 7041 seisundirida). Puänt-sõnumid tulevad andmetest; koondhinnangu koostis on kinnitamata.
+
+- Täielikult hinnati ~730 veekogumit aastatel 2010 ja 2012-2015; 2016-2024 hinnatakse aastas vaid ~150, seega
+  aastaid ei saa riikliku aegreana võrrelda. Hea või parema osakaal: 69% (2010) -> 57% (2015).
+- Paaritatud võrdlus (sama veekogum, 2015 vs viimane hilisem hinnang): hea või parem 43% -> 29% (n=434);
+  järvedel 39 -> 7 hea hinnangut 78-st. Selline järsk muutus viitab pigem meetodi muutusele; põhjus kinnitamata.
+- Survetegurid: 745 hinnatud veekogumist 85%-l on oluline põllumajanduse survetegur; kõige sagedasem mõju on
+  keemiline saastus (81%).
+- Põhjavesi: 2014 ja 2020 kogumite hulgad ei kattu, muutust ei arvutata.
+- Lämmastiku/fosfori kontsentratsioone ei kasutatud (<8% ridadest, ühik kinnitamata).

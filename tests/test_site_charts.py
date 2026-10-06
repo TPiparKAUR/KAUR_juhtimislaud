@@ -22,6 +22,8 @@ import run_climate as rc
 import run_forest as rf
 import run_hydro as rh
 import run_waste as rw
+import run_water as rwa
+from tests import test_water_analysis as twa
 from tests.test_airenergy_analysis import emissions, heat_rows
 from tests.test_climate_analysis import STATIONS
 from tests.test_forest_analysis import cube as forest_cube
@@ -91,9 +93,16 @@ def site(tmp_path_factory: pytest.TempPathFactory) -> Iterator[str]:
     wj.write_text(json.dumps(rw.build(waste_frame(), None, "2026-01-01")), encoding="utf-8")
     fj = tmp / "forest.json"
     fj.write_text(json.dumps(rf.build(forest_cube(), "2026-01-01")), encoding="utf-8")
+    wtj = tmp / "water.json"
+    wtj.write_text(
+        json.dumps(
+            rwa.build(twa.register(), twa.states(), twa.pressures(), twa.gw(), "2026-01-01")
+        ),
+        encoding="utf-8",
+    )
     topics = b.load_topics(Path("data/teemad.toml"), Path("data/kaur_viz_inventar.csv"))
     out = tmp / "_site"
-    b.build(topics, out, cj, hj, aj, wj, fj)
+    b.build(topics, out, cj, hj, aj, wj, fj, wtj)
     handler = functools.partial(http.server.SimpleHTTPRequestHandler, directory=str(out))
     handler.log_message = lambda *a, **k: None  # type: ignore[attr-defined]
     with socketserver.TCPServer(("127.0.0.1", 0), handler) as srv:
@@ -179,7 +188,7 @@ def test_every_chart_has_a_punchline(browser: Browser, site: str, path: str) -> 
     page.wait_for_selector("svg[role=img]")
     page.wait_for_timeout(300)
     missing = page.evaluate(
-        """() => [...document.querySelectorAll('[data-climate],[data-hydro],[data-airenergy],[data-waste],[data-forest]')]
+        """() => [...document.querySelectorAll('[data-climate],[data-hydro],[data-airenergy],[data-waste],[data-forest],[data-water]')]
             .filter((h) => h.querySelector('svg[role=img]') && !h.querySelector('.viz-punch'))
             .map((h) => Object.values(h.dataset).join(':'))"""
     )
