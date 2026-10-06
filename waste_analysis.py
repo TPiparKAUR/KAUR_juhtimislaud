@@ -197,7 +197,7 @@ STREAM_FLOWS = (GENERATION, RECOVERY, LANDFILL, HOUSEHOLD, EXPORT, IMPORT)
 STREAMS: dict[str, tuple[str, pl.Expr]] = {
     "municipal": ("Olmejäätmed (peatükk 20)", pl.col("pohigrupp") == "20"),
     "packaging": ("Pakendijäätmed (liik 15 01)", pl.col("jaatmeliik").str.starts_with("15 01")),
-    "bio": ("Biojäätmed (märge)", pl.col("biojaatmed_lipp") == "Jah"),
+    "bio": ("Biojäätmete märkega kirjed", pl.col("biojaatmed_lipp") == "Jah"),
     "sludge": ("Reoveesetted (märge)", pl.col("reoveesetted_lipp") == "Jah"),
     "metal": ("Metallijäätmed (märge)", pl.col("metallijaatmed_lipp") == "Jah"),
     "problem": ("Probleemtooted (märge)", pl.col("probleemtooted_lipp") == "Jah"),

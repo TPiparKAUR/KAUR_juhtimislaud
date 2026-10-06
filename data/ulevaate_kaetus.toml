@@ -79,9 +79,9 @@ markus = "Ringleva materjali määr on Eurostati näitaja."
 [[vaade]]
 workbook = "Keskkonnalevaade-Jtmed-Olmejtmed"
 teema = "jaatmed"
-meie = "osaliselt"
+meie = "olemas"
 andmed = "API:f_jaatmeliikumine_fix_riik"
-markus = "Meil riigi voogude tabel; olmejäätmete eraldi lõige (peatükk 20) on tuletatav, kuid ei ole tehtud."
+markus = "Olmejäätmete (peatükk 20) vood 2004-2025 ja suurimad liigid; olmejäätmete ametlik määratlus võib erineda peatükist 20."
 
 [[vaade]]
 workbook = "Keskkonnalevaade-Jtmed-Kogujtmetekevaldkonniti"
@@ -304,9 +304,9 @@ markus = "Meil kinnitatud varud lasundi järgi ja põhjaveevõtt; bilanssi (varu
 [[vaade]]
 workbook = "Jtmearuandlus_KKPjtmeteteemalehtedevaldkonnad_Olmejtmed"
 teema = "jaatmed"
-meie = "osaliselt"
+meie = "olemas"
 andmed = "API:f_jaatmeliikumine_fix_riik"
-markus = "Olmejäätmed (jäätmearuandlus)."
+markus = "Olmejäätmete vood ja liigid (peatükk 20)."
 
 [[vaade]]
 workbook = "Jtmearuandlus_KKPjtmeteteemalehtedevaldkonnad_ldinelevaade"
@@ -318,16 +318,16 @@ markus = "Üldine ülevaade."
 [[vaade]]
 workbook = "Jtmearuandlus_KKPjtmeteteemalehtedevaldkonnad_Pakendijtmed"
 teema = "jaatmed"
-meie = "puudub"
+meie = "olemas"
 andmed = "API:f_jaatmeliikumine_fix_riik"
-markus = "Pakendijäätmed: peatükk 15 01 tuletatav, kuid ei ole tehtud."
+markus = "Pakendijäätmed (liik 15 01): vood ja materjalid 2004-2025."
 
 [[vaade]]
 workbook = "Biojtmed"
 teema = "jaatmed"
-meie = "puudub"
+meie = "osaliselt"
 andmed = "API:f_jaatmeliikumine_fix_riik"
-markus = "Biojäätmed; tuletatavus kontrollimata."
+markus = "Biojäätmete märkega kirjed (märke tähendus kinnitamata, hõlmab nt segaolmejäätmeid ja sõnnikut); eraldi biojäätmete definitsioon puudub."
 
 [[vaade]]
 workbook = "Jtmearuandlus_KKPjtmeteteemalehtedevaldkonnad_Ohtlikudjtmed"

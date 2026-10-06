@@ -21,15 +21,15 @@ töövihikute loetelu koos vaatamiste arvuga (`data/tableau_public_workbooks.csv
 
 | Katvus | Vaateid | Vaatamisi | Osakaal vaatamistest |
 |---|---|---|---|
-| olemas | 16 | 5 532 | 31% |
-| osaliselt | 12 | 4 530 | 25% |
-| puudub | 26 | 7 826 | 44% |
+| olemas | 19 | 6 754 | 38% |
+| osaliselt | 11 | 4 008 | 22% |
+| puudub | 24 | 7 126 | 40% |
 
 Teemati (vaatamised; katmata osa vaatamistest):
 
 | Teema | Vaatamisi | Katmata |
 |---|---|---|
-| Jäätmed | 3 509 | 38% |
+| Jäätmed | 3 509 | 19% (oli 38% enne olme-, pakendi- ja biojäätmete vooge) |
 | Liigid | 2 627 | **100%** |
 | Ilm ja kliima | 2 371 | 18% |
 | Vesi | 2 132 | 16% (oli 78% enne veekasutuse lisamist) |
@@ -71,7 +71,7 @@ Loodusdirektiivi elupaigatüüpide seisund (497, osaliselt), Kuuse-kooreüraskid
 | # | Valdkond | Põhjus | Eeldus |
 |---|---|---|---|
 | 1 | Vesi: veekasutus, veevõtt, heitvesi (**tehtud**); põhjaveebilanss, eutrofeerumine, nitraat avatud | 1 011 + 156 + 186 vaatamist | veevõtu ja varu seos; N/P ühik |
-| 2 | Jäätmed: olmejäätmed, pakend, bio | 579 + 359 + 341; andmed juba olemas | pipeline'i laiendus (lõige liigi koodi järgi) |
+| 2 | Jäätmed: olmejäätmed, pakend, bio (**tehtud**) | 579 + 359 + 341 | ringleva materjali määr ja SKP-seos vajavad väliseid allikaid |
 | 3 | Liigid: seisund, Punane nimestik, linnud, suurkiskjad | 2 627 vaatamist, 100% katmata | allika leidmine |
 | 4 | Mets: üraskid, kaitstav mets | 391 + 283 | allika leidmine / `f_alad` |
 | 5 | Energeetika, muld ja maahõive, seire | madalam kasutus, välised allikad | allikad ja litsentsid |

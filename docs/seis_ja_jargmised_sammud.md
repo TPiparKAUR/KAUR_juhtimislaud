@@ -38,7 +38,9 @@ Leht ehitatakse `pages.yml` poolt kõigist harudest; lisatud tulemused ilmuvad a
 1. **Vesi (tehtud 2026-10-06)**: veekasutus, veevõtt, heitvesi, reoveekogumisalad, põhjaveevarud. Avatud:
    põhjaveebilanss (varu vs võtt vajab veehaarde ja varu seost), eutrofeerumine (FÜKE N/P, ühik kinnitamata),
    nitraat põhjavees, reostuskoormus merre (merre jõudev osa).
-2. **Jäätmed**: olmejäätmed (peatükk 20), pakend (15 01), biojäätmed koondatud andmetest.
+2. **Jäätmed (tehtud 2026-10-06)**: olmejäätmed (ch 20), pakend (15 01), biojäätmete märge. Avatud:
+   ringleva materjali määr ja jäätmed vs SKP (välised allikad), biojäätmete täpne definitsioon, olmejäätmete
+   ametlik määratlus (võib erineda peatükist 20), märgete (sete, metall, probleemtooted) tähendus.
 3. **Liigid**: leida liikide seisundi, Punase nimestiku, lindude indeksi ja suurkiskjate allikas.
 4. **Mets**: üraskid, kaitstav mets.
 5. Energeetika, muld ja maahõive, seire: välised allikad ja litsentsid.
@@ -48,6 +50,7 @@ Leht ehitatakse `pages.yml` poolt kõigist harudest; lisatud tulemused ilmuvad a
 - Vee koondhinnangu koostis (ÖSE/KESE, ökoloogiline seisund vs potentsiaal); seisundiklassi muutus järvedes.
 - SMI suhtelise vea tõlgendus (95% pool-laius) ja `periood` tähendus.
 - Veevõtu ja veekasutuse veeliikide erinevus (põhjavesi 237 vs 45 Mm³ 2022; summa ühtib ±0,1%): kas kaevandus- ja karjäärivesi?
+- Jäätmetabeli märked (`biojaatmed_lipp` jt) hõlmavad kirjeid, mille liik pole selle voo jäätmed (nt segaolmejäätmed ja sõnnik biojäätmete märkega).
 - Jäätmetabeli ühik (t), negatiivsed read, ohtlike jäätmete osakaalu hüpe 2019 → 2020.
 - Natura SDF säilimishinnangu seos EL aruandluse seisundiga.
 - Aastaraamatute PDF-id ei ole repos (artefakt `yearbooks-raw`, 30 päeva); Soome, Island, Rootsi Skogsdata puuduvad.

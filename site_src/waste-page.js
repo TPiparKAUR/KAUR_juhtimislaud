@@ -16,26 +16,32 @@
   const years = d.meta.years, last = d.meta.latest_year, first = years[0];
   const flow = (f, y) => d.flows.find((r) => r.maht_liik === f && r.aasta === y);
   const mt = (t) => `${fmt(t / 1e6, 1)} Mt`;
+  const amt = (t) => (t >= 1e6 ? mt(t) : `${fmt(t / 1e3, 0)} kt`);
 
   const FLOWC = { 'Jäätmeteke': 0, 'Taaskasutamine': 2, 'Ladestatud prügilasse': 3, 'Saadud kodumajapidamistelt': 4 };
   function stream(host, key) {
     const st = d.streams && d.streams[key];
     if (!st) { host.innerHTML = '<p class="viz-note">Selle vooluga seotud andmeid ei ole.</p>'; return; }
+    host.innerHTML = '';
+    const hostA = document.createElement('div'), hostB = document.createElement('div');
+    host.append(hostA, hostB);
     const series = Object.keys(FLOWC).map((f) => ({ label: f, color: C.SLOTS[FLOWC[f]], data: st.flows[f] || [] }));
     const val = (f, y) => ((st.flows[f] || []).find((r) => r.aasta === y) || { tonnes: null }).tonnes;
     const g = val('Jäätmeteke', last), r = val('Taaskasutamine', last), l = val('Ladestatud prügilasse', last), g0 = val('Jäätmeteke', first);
-    C.wasteStreamLines(host, { series, title: st.label, subtitle: 'Vood eraldi joontena, t (eeldatud) aastas; neid ei liideta ega jagata, sest kattuvus on teadmata.', height: 300,
-      note: 'Voo kirjed valitakse jäätmekoodi või tabeli märke järgi; sama kirje võib kuuluda mitmesse vooluks, seega vood ei ole omavahel liidetavad. Negatiivsed väärtused on netosummas sees.' });
+    C.wasteStreamLines(hostA, { series, title: st.label, subtitle: 'Vood eraldi joontena, t (eeldatud) aastas; neid ei liideta ega jagata, sest kattuvus on teadmata.', height: 300,
+      note: key === 'bio' ? 'Märke „biojäätmed“ tähendus on kinnitamata: see hõlmab kirjeid, mille jäätmeliik ei ole biojäätme (nt segaolmejäätmed, sõnnik). Vood ei ole omavahel liidetavad ega suhestatavad.' : 'Voo kirjed valitakse jäätmekoodi järgi. Negatiivsed väärtused on netosummas sees.' });
+    const negL = ((st.flows['Jäätmeteke'] || []).find((x) => x.aasta === last) || { negative_tonnes: 0 }).negative_tonnes;
+    const negTxt = negL < 0 ? ` (neto, sh negatiivseid ${amt(-negL)})` : '';
     const parts = [];
-    if (g != null) parts.push(`tekkis ${mt(g)}`);
-    if (r != null) parts.push(`taaskasutati ${mt(r)}`);
-    if (l != null) parts.push(`ladestati prügilasse ${mt(l)}`);
+    if (g != null) parts.push(`tekkis ${amt(g)}${negTxt}`);
+    if (r != null) parts.push(`taaskasutati ${amt(r)}`);
+    if (l != null) parts.push(`ladestati prügilasse ${amt(l)}`);
     const trend = g != null && g0 ? `; teke ${sgnp(100 * (g - g0) / g0)}% aastast ${first}` : '';
-    C.punch(host, parts.length ? `Voos „${st.label}“ ${parts.join(', ')} (${last})${trend}; voogusid ei suhestata, kuid ${r != null && g != null && r > g ? 'taaskasutatud kogus ületab tekkinud kogust, mis näitab voogude erinevat katvust' : 'nende kattuvus on teadmata'}.` : `Voo „${st.label}“ andmeid aastal ${last} ei ole.`);
+    C.punch(hostA, parts.length ? `Voos „${st.label}“ ${parts.join(', ')} (${last})${trend}; voogusid ei suhestata, kuid ${r != null && g != null && r > g ? 'taaskasutatud kogus ületab tekkinud kogust, mis näitab voogude erinevat katvust' : 'nende kattuvus on teadmata'}.` : `Voo „${st.label}“ andmeid aastal ${last} ei ole.`);
     if (st.top_generation.length) {
       const top = st.top_generation.slice(0, 8);
-      C.natureBars(host, { rows: top.map((t) => ({ name: `${t.jaatmeliik} ${t.jaatmeliik_nimi}`, value: t.tonnes })), unit: 't', title: `${st.label}: suurimad jäätmeliigid ${last}`, subtitle: 'Jäätmeteke liigi kaupa (eeldatud t).', color: C.SLOTS[0] });
-      C.punch(host, `Suurim liik on ${top[0].jaatmeliik_nimi} (${fmt(top[0].tonnes / 1e3, 0)} kt${g ? `, ${fmt(100 * top[0].tonnes / g, 0)}% voo tekkest` : ''}).`);
+      C.natureBars(hostB, { rows: top.map((t) => ({ name: `${t.jaatmeliik} ${t.jaatmeliik_nimi}`, value: t.tonnes })), unit: 't', title: `${st.label}: suurimad jäätmeliigid ${last}`, subtitle: 'Jäätmeteke liigi kaupa (eeldatud t).', color: C.SLOTS[0] });
+      C.punch(hostB, `Suurim liik on ${top[0].jaatmeliik_nimi} (${fmt(top[0].tonnes / 1e3, 0)} kt${g ? `, ${fmt(100 * top[0].tonnes / g, 0)}% voo tekkest` : ''}).`);
     }
   }
 

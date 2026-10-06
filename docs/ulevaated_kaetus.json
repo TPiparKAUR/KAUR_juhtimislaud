@@ -4,16 +4,16 @@
   "n_views": 54,
   "by_status": {
    "olemas": {
-    "n": 16,
-    "views": 5532
+    "n": 19,
+    "views": 6754
    },
    "osaliselt": {
-    "n": 12,
-    "views": 4530
+    "n": 11,
+    "views": 4008
    },
    "puudub": {
-    "n": 26,
-    "views": 7826
+    "n": 24,
+    "views": 7126
    }
   },
   "themes": {
@@ -42,13 +42,13 @@
    "jaatmed": {
     "views": 3509,
     "n": 10,
-    "olemas": 4,
-    "osaliselt": 2,
-    "puudub": 4,
-    "views_olemas": 1294,
-    "views_osaliselt": 863,
-    "views_puudub": 1352,
-    "share_views_uncovered": 0.385
+    "olemas": 7,
+    "osaliselt": 1,
+    "puudub": 2,
+    "views_olemas": 2516,
+    "views_osaliselt": 341,
+    "views_puudub": 652,
+    "share_views_uncovered": 0.186
    },
    "liigid": {
     "views": 2627,
@@ -166,15 +166,6 @@
     "views": 631
    },
    {
-    "workbook": "Jtmearuandlus_KKPjtmeteteemalehtedevaldkonnad_Olmejtmed",
-    "teema": "jaatmed",
-    "meie": "osaliselt",
-    "andmed": "API:f_jaatmeliikumine_fix_riik",
-    "markus": "Olmejäätmed (jäätmearuandlus).",
-    "title": "Jäätmearuandlus_KKP jäätmete teemalehtede valdkonnad_Olmejäätmed",
-    "views": 579
-   },
-   {
     "workbook": "Keskkonnalevaade-Liigid-Suurkiskjatearvukus",
     "teema": "liigid",
     "meie": "puudub",
@@ -202,15 +193,6 @@
     "views": 391
    },
    {
-    "workbook": "Jtmearuandlus_KKPjtmeteteemalehtedevaldkonnad_Pakendijtmed",
-    "teema": "jaatmed",
-    "meie": "puudub",
-    "andmed": "API:f_jaatmeliikumine_fix_riik",
-    "markus": "Pakendijäätmed: peatükk 15 01 tuletatav, kuid ei ole tehtud.",
-    "title": "Jäätmearuandlus_KKP jäätmete teemalehtede valdkonnad_Pakendijäätmed",
-    "views": 359
-   },
-   {
     "workbook": "Keskkonnalevaade-Mets-Raiemahud",
     "teema": "mets",
     "meie": "osaliselt",
@@ -222,9 +204,9 @@
    {
     "workbook": "Biojtmed",
     "teema": "jaatmed",
-    "meie": "puudub",
+    "meie": "osaliselt",
     "andmed": "API:f_jaatmeliikumine_fix_riik",
-    "markus": "Biojäätmed; tuletatavus kontrollimata.",
+    "markus": "Biojäätmete märkega kirjed (märke tähendus kinnitamata, hõlmab nt segaolmejäätmeid ja sõnnikut); eraldi biojäätmete definitsioon puudub.",
     "title": "Jäätmearuandlus_KKP jäätmete teemalehtede valdkonnad_Biojäätmed",
     "views": 341
    },
@@ -236,6 +218,24 @@
     "markus": "Heitkoguste inventuur (riiklik); meil käitiste aruanded.",
     "title": "Välisõhk - Heitkogused - Heitkoguste inventuur",
     "views": 336
+   },
+   {
+    "workbook": "Vlishk-Heitkogused-Heitkogustelevaade",
+    "teema": "valisohk",
+    "meie": "osaliselt",
+    "andmed": "teadmata",
+    "markus": "Heitkoguste ülevaade.",
+    "title": "Välisõhk - Heitkogused - Heitkoguste ülevaade",
+    "views": 333
+   },
+   {
+    "workbook": "Keskkonnalevaade-Jtmed-JtmedjaSKP",
+    "teema": "jaatmed",
+    "meie": "puudub",
+    "andmed": "väline",
+    "markus": "Nõuab SKP andmeid (Statistikaamet).",
+    "title": "Keskkonnaülevaade - Jäätmed - Jäätmed ja SKP",
+    "views": 331
    }
   ]
  },
@@ -333,9 +333,9 @@
   {
    "workbook": "Keskkonnalevaade-Jtmed-Olmejtmed",
    "teema": "jaatmed",
-   "meie": "osaliselt",
+   "meie": "olemas",
    "andmed": "API:f_jaatmeliikumine_fix_riik",
-   "markus": "Meil riigi voogude tabel; olmejäätmete eraldi lõige (peatükk 20) on tuletatav, kuid ei ole tehtud.",
+   "markus": "Olmejäätmete (peatükk 20) vood 2004-2025 ja suurimad liigid; olmejäätmete ametlik määratlus võib erineda peatükist 20.",
    "title": "Keskkonnaülevaade - Jäätmed - Olmejäätmed",
    "views": 284
   },
@@ -621,9 +621,9 @@
   {
    "workbook": "Jtmearuandlus_KKPjtmeteteemalehtedevaldkonnad_Olmejtmed",
    "teema": "jaatmed",
-   "meie": "osaliselt",
+   "meie": "olemas",
    "andmed": "API:f_jaatmeliikumine_fix_riik",
-   "markus": "Olmejäätmed (jäätmearuandlus).",
+   "markus": "Olmejäätmete vood ja liigid (peatükk 20).",
    "title": "Jäätmearuandlus_KKP jäätmete teemalehtede valdkonnad_Olmejäätmed",
    "views": 579
   },
@@ -639,18 +639,18 @@
   {
    "workbook": "Jtmearuandlus_KKPjtmeteteemalehtedevaldkonnad_Pakendijtmed",
    "teema": "jaatmed",
-   "meie": "puudub",
+   "meie": "olemas",
    "andmed": "API:f_jaatmeliikumine_fix_riik",
-   "markus": "Pakendijäätmed: peatükk 15 01 tuletatav, kuid ei ole tehtud.",
+   "markus": "Pakendijäätmed (liik 15 01): vood ja materjalid 2004-2025.",
    "title": "Jäätmearuandlus_KKP jäätmete teemalehtede valdkonnad_Pakendijäätmed",
    "views": 359
   },
   {
    "workbook": "Biojtmed",
    "teema": "jaatmed",
-   "meie": "puudub",
+   "meie": "osaliselt",
    "andmed": "API:f_jaatmeliikumine_fix_riik",
-   "markus": "Biojäätmed; tuletatavus kontrollimata.",
+   "markus": "Biojäätmete märkega kirjed (märke tähendus kinnitamata, hõlmab nt segaolmejäätmeid ja sõnnikut); eraldi biojäätmete definitsioon puudub.",
    "title": "Jäätmearuandlus_KKP jäätmete teemalehtede valdkonnad_Biojäätmed",
    "views": 341
   },
