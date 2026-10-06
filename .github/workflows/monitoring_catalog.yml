@@ -1,0 +1,50 @@
+name: Monitoring catalogue (from existing data)
+
+# Builds the indicator/species catalogue from the monitoring aggregate of an earlier "Monitoring
+# data (aggregated)" run (artifact monitoring-agg) and publishes monitoring_catalog.json to the
+# `monitoring-catalog` branch.
+# Raw rows never leave the workflow artifact.
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: "Run id of a successful 'Monitoring data (aggregated)' run"
+        required: true
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: monitoring-catalog
+  cancel-in-progress: false
+
+jobs:
+  analyse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync --frozen
+      - name: Download aggregate artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_ID: ${{ inputs.run_id }}
+        run: gh run download "$RUN_ID" --repo "$GITHUB_REPOSITORY" -n monitoring-agg -D out/monitoring_agg
+      - name: Analyse
+        run: uv run python monitoring_catalog.py --agg out/monitoring_agg/monitoring_agg.parquet --out out/monitoring_agg
+      - name: Publish aggregated results
+        run: |
+          cp out/monitoring_agg/monitoring_catalog.json "$RUNNER_TEMP/monitoring_catalog.json"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan monitoring-catalog
+          git rm -rf --quiet .
+          cp "$RUNNER_TEMP/monitoring_catalog.json" monitoring_catalog.json
+          git add -- monitoring_catalog.json
+          git commit -m "Monitoring catalogue $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push --force origin monitoring-catalog
