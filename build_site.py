@@ -87,6 +87,15 @@ ANALYSES: dict[str, list[tuple[str, list[tuple[str, str]]]]] = {
                 ("wmethods", ""),
             ],
         ),
+        (
+            "monitoring",
+            [
+                ("wqfindings", "Veekvaliteet: seireandmed"),
+                ("wqnitrate", ""),
+                ("wqnutrients", ""),
+                ("mmethods", ""),
+            ],
+        ),
     ],
     "valisohk": [
         (

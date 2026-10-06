@@ -23,6 +23,7 @@ from typing import Any
 import polars as pl
 
 import crown_analysis as ca
+import wq_analysis as wq
 
 LOG = logging.getLogger("run_monitoring")
 FIRST_SITE_YEAR = 1990
@@ -80,6 +81,7 @@ def build(
         },
         "coverage": coverage(catalog),
         "crown": ca.build(extract),
+        "water_quality": wq.build(extract) if "pohjaveekogum_kood" in extract.columns else None,
     }
 
 

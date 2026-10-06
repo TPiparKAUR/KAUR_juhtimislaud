@@ -26,19 +26,20 @@
     const series = o.series.filter((s) => s.data.length);
     const years = [...new Set(series.flatMap((s) => s.data.map((r) => r.year)))].sort((a, b) => a - b);
     const frm = frame(host, { title: o.title, subtitle: o.subtitle, legend: series.map((s) => ['dot', s.color, s.label]),
-      table: { head: ['Aasta', ...series.flatMap((s) => [`${s.label} (%)`, `${s.label}: puid`])], rows: years.map((y) => [String(y), ...series.flatMap((s) => { const r = s.data.find((x) => x.year === y); return r ? [fmt(r.value, 1), fmt(r.n, 0)] : ['–', '–']; })]) }, note: o.note });
+      table: { head: ['Aasta', ...series.flatMap((s) => [`${s.label} (${o.unit || '%'})`, `${s.label}: ${o.nName || 'puid'}`])], rows: years.map((y) => [String(y), ...series.flatMap((s) => { const r = s.data.find((x) => x.year === y); return r ? [fmt(r.value, o.dec ?? 1), fmt(r.n, 0)] : ['–', '–']; })]) }, note: o.note });
     responsive(frm, (box, w) => {
       const m = { l: 52, r: 14, t: 16, b: 28 }, h = o.height || 300;
       const svg = el('svg', { width: w, height: h, role: 'img', 'aria-label': o.title }, box);
-      const top = Math.max(...series.flatMap((s) => s.data.map((r) => r.value)), 1) * 1.1;
+      const top = Math.max(...series.flatMap((s) => s.data.map((r) => r.value)), o.ref ? o.ref.value : 0, 1e-9) * 1.1;
       const { ticks } = niceTicks(0, top, 5);
       const x = (yr) => m.l + (w - m.l - m.r) * ((yr - years[0]) / (years[years.length - 1] - years[0] || 1));
       const y = (v) => m.t + (h - m.t - m.b) * (1 - (v - ticks[0]) / (ticks[ticks.length - 1] - ticks[0] || 1));
-      axisY(el('g', {}, svg), y, ticks, w, m, '%', 0);
+      axisY(el('g', {}, svg), y, ticks, w, m, o.unit || '%', o.axisDec ?? 0);
+      if (o.ref) { el('line', { x1: m.l, x2: w - m.r, y1: y(o.ref.value), y2: y(o.ref.value), stroke: '#c8312b', 'stroke-dasharray': '5 4', 'stroke-width': 1.5 }, svg); el('text', { x: w - m.r - 4, y: y(o.ref.value) - 5, 'text-anchor': 'end', class: 'tick' }, svg, o.ref.label); }
       for (const yr of years.filter((v, i) => i % Math.ceil(years.length / 8) === 0 || i === years.length - 1)) el('text', { x: x(yr), y: h - 8, 'text-anchor': 'middle', class: 'tick' }, svg, String(yr));
       for (const s of series) {
         el('path', { d: s.data.map((r, i) => `${i ? 'L' : 'M'}${x(r.year)},${y(r.value)}`).join(''), fill: 'none', stroke: s.color, 'stroke-width': 2.4 }, svg);
-        for (const r of s.data) { const c = el('circle', { cx: x(r.year), cy: y(r.value), r: 3, fill: s.color, tabindex: 0 }, svg); hover(c, () => `<b>${r.year}</b><br>${s.label}: <b>${fmt(r.value, 1)}%</b><br>${fmt(r.n, 0)} puud, ${r.plots} prooviala`); }
+        for (const r of s.data) { const c = el('circle', { cx: x(r.year), cy: y(r.value), r: 3, fill: s.color, tabindex: 0 }, svg); hover(c, () => `<b>${r.year}</b><br>${s.label}: <b>${fmt(r.value, o.dec ?? 1)} ${o.unit || '%'}</b><br>${r.extra || `${fmt(r.n, 0)} puud, ${r.plots} prooviala`}`); }
       }
     });
   }
@@ -75,6 +76,39 @@
         const series = ['none', 'slight', 'moderate', 'severe'].map((c, i) => ({ key: c, label: cr.meta.class_labels[c], color: ['#2e9e44', '#8cc152', '#ef8a2b', '#c8312b'][i], values: new Map(rows.map((r) => [String(r.year), r.trees ? (100 * r.counts[c]) / r.trees : 0])) }));
         C.stackedBars(holder, { years: rows.map((r) => String(r.year)), scale: 1, unit: '%', dec: 0, height: 300, noLabels: true, series, coverage: new Map(rows.map((r) => [String(r.year), r.trees])), title: `${NAMES[key]}: okka-/lehekao klassid`, subtitle: 'Osakaal hinnatud puudest, %; n = hinnatud puude arv.', note: 'Hindamata puud on välja jäetud; klassipiirid on ICP Forests tavapärased (kinnitamata).' });
         if (rows.length) { const a = first(rows), b = last(rows); C.punch(holder, `${NAMES[key]}: tugevalt kahjustunud või surnud puid ${fmt(100 * b.counts.severe / b.trees, 1)}% (${b.year}), mõõdukalt kahjustunud ${fmt(100 * b.counts.moderate / b.trees, 0)}%; ${a.year}. aastal vastavalt ${fmt(100 * a.counts.severe / a.trees, 1)}% ja ${fmt(100 * a.counts.moderate / a.trees, 0)}%.`); }
+      });
+    },
+    wqfindings(host) {
+      const w = d.water_quality;
+      if (!w) { host.innerHTML = '<p class="viz-note">Veekvaliteedi andmeid ei ole.</p>'; return; }
+      const g = w.groundwater_nitrate.years, gl = last(g), gf = first(g), li = [];
+      li.push(`<li><b>Mida see on:</b> keskkonnaseire (KESE) veeproovide kontsentratsioonid: põhjavee nitraat (${fmt(w.groundwater_nitrate.rows_used, 0)} proovi) ning üldlämmastik ja üldfosfor pinna- ja rannikuvees. Ühikud on teisendatud ühtseks (aatommassidega; tundmatu ühikuga read välja jäetud). Statistikud on proovide mediaanid, mitte vooluhulgaga kaalutud koormus; seirekohad ja proovivõtt erinevad aastati.</li>`);
+      li.push(`<li><b>Põhjavee nitraat:</b> mediaan ${fmt(gf.median, 1)} mg NO₃/l (${gf.year}) → ${fmt(gl.median, 1)} (${gl.year}); proovidest ületab EL põhjavee normi (${w.groundwater_nitrate.limit_mg_no3_l} mg NO₃/l) ${fmt(100 * gl.share_over_limit, 1)}% (${gl.year}, ${fmt(gl.samples, 0)} proovi, ${fmt(gl.sites, 0)} seirekohta).</li>`);
+      for (const [k, name, unit] of [['tn', 'Üldlämmastik', 'mg N/l'], ['tp', 'Üldfosfor', 'mg P/l']]) {
+        const cats = [...new Set(w.surface[k].map((r) => r.category))];
+        const bits = cats.map((c) => { const r = w.surface[k].filter((x) => x.category === c); return `${c.toLowerCase()} ${fmt(first(r).median, 2)} (${first(r).year}) → ${fmt(last(r).median, 2)} (${last(r).year})`; });
+        if (bits.length) li.push(`<li><b>${name}</b> (mediaan, ${unit}): ${bits.join('; ')}.</li>`);
+      }
+      host.innerHTML = `<ul class="findings">${li.join('')}</ul>`;
+    },
+    wqnitrate(host) {
+      const w = d.water_quality; if (!w) return;
+      const g = w.groundwater_nitrate.years;
+      const mk = (label, color, f) => ({ label, color, data: g.map((r) => ({ year: r.year, value: f(r), n: r.samples, extra: `${fmt(r.samples, 0)} proovi, ${fmt(r.sites, 0)} seirekohta` })) });
+      lines(host, { title: 'Nitraat põhjavees', subtitle: 'Mediaan ja 90. protsentiil proovide kaupa, mg NO₃/l; punane joon = EL põhjavee norm.', unit: 'mg/l', dec: 1, nName: 'proove', series: [mk('Mediaan', SLOTS[0], (r) => r.median), mk('90. protsentiil', SLOTS[1], (r) => r.p90)], ref: { value: w.groundwater_nitrate.limit_mg_no3_l, label: `${w.groundwater_nitrate.limit_mg_no3_l} mg/l (norm)` },
+        note: 'Nitraatlämmastik on teisendatud nitraadiks (× 4,427). Seirekohtade arv ja koosseis muutub aastati; mediaanid ei ole riiklik keskmine.' });
+      const gl = last(g), peak = g.reduce((a, r) => (r.p90 > a.p90 ? r : a), g[0]);
+      C.punch(host, `Põhjavee nitraadi mediaan oli ${fmt(gl.median, 1)} mg/l (${gl.year}), 90. protsentiil ${fmt(gl.p90, 1)}; proovidest ületas normi ${fmt(100 * gl.share_over_limit, 1)}% (kõrgeim 90. protsentiil ${fmt(peak.p90, 0)} mg/l aastal ${peak.year}); seirekohad erinevad aastati (${fmt(gl.sites, 0)} kohta ${gl.year}).`);
+    },
+    wqnutrients(host) {
+      const w = d.water_quality; if (!w) return;
+      C.selectable(host, [{ value: 'tn', text: 'Üldlämmastik (mg N/l)' }, { value: 'tp', text: 'Üldfosfor (mg P/l)' }], 'tn', 'Näitaja:', (holder, key) => {
+        const rows = w.surface[key], cats = [...new Set(rows.map((r) => r.category))];
+        const unit = key === 'tn' ? 'mg N/l' : 'mg P/l', name = key === 'tn' ? 'Üldlämmastik' : 'Üldfosfor';
+        const series = cats.map((c, i) => ({ label: c, color: [SLOTS[0], SLOTS[2], SLOTS[1]][i % 3], data: rows.filter((r) => r.category === c).map((r) => ({ year: r.year, value: r.median, n: r.samples, extra: `${fmt(r.samples, 0)} proovi, ${fmt(r.sites, 0)} seirekohta` })) }));
+        lines(holder, { title: `${name} pinna- ja rannikuvees`, subtitle: `Proovide mediaan aastas, ${unit}; üle 5 proovi grupis.`, unit, dec: 2, axisDec: 2, nName: 'proove', series, note: 'Proovide mediaan, mitte vooluhulgaga kaalutud; seirekohtade koosseis muutub aastati; ühikud on teisendatud (µmol/l, µg/l ja mg/m³ → mg/l).' });
+        const parts = cats.map((c) => { const r = rows.filter((x) => x.category === c); return r.length > 1 ? `${c.toLowerCase()} ${fmt(first(r).median, 2)} → ${fmt(last(r).median, 2)} ${unit} (${first(r).year}–${last(r).year})` : null; }).filter(Boolean);
+        C.punch(holder, parts.length ? `${name}: ${parts.join('; ')}; muutus võib kajastada seirekohtade koosseisu, mitte tegelikku seisundit.` : `${name}: aegrida ei ole piisavalt andmeid.`);
       });
     },
     mspecies(host) {
