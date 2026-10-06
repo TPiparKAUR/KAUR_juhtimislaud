@@ -177,7 +177,7 @@ def species_stats(ls: pl.DataFrame) -> dict[str, Any]:
 def species_sites(lk: pl.DataFrame) -> dict[str, Any]:
     """Registered species sites by species group and protection category (effort-dependent)."""
     sp = lk.filter(pl.col("liik_tyyp_selg") == "Kaitsealune liik")
-    by_group = []
+    by_group: list[dict[str, Any]] = []
     for (grp,), g in sp.group_by("lnim_ryhm_selg"):
         by_group.append(
             {
@@ -189,7 +189,7 @@ def species_sites(lk: pl.DataFrame) -> dict[str, Any]:
                 },
             }
         )
-    by_group.sort(key=lambda r: int(r["sites"]), reverse=True)
+    by_group.sort(key=lambda r: r["sites"], reverse=True)
     alien = lk.filter(pl.col("liik_tyyp_selg") == "Võõrliik")
     inv = [
         {"name": r["lnim_ryhm_selg"] or "määramata", "sites": r["sites"], "species": r["species"]}
