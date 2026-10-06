@@ -70,6 +70,8 @@ def build(
         "export_partners": wa.trade_partners(d, wa.EXPORT),
         "import_partners": wa.trade_partners(d, wa.IMPORT),
         "stock_continuity": wa.stock_continuity(d),
+        "streams": wa.streams(d, latest),
+        "flag_values": wa.flag_values(d),
     }
 
 

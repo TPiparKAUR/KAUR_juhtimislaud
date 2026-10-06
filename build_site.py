@@ -207,6 +207,7 @@ SCRIPTS = {
         "charts.js",
         "hydro-charts.js",
         "airenergy-charts.js",
+        "nature-charts.js",
         "waste-charts.js",
         "waste-page.js",
     ],

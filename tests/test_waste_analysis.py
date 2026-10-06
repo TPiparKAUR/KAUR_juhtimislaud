@@ -18,6 +18,10 @@ def frame() -> pl.DataFrame:
             "jaatmeliik": "20 03 01",
             "jaatmeliik_nimi": "Segaolmejäätmed",
             "ohtlik_lipp": "Ei",
+            "biojaatmed_lipp": "Ei",
+            "reoveesetted_lipp": "Ei",
+            "metallijaatmed_lipp": "Ei",
+            "probleemtooted_lipp": "Ei",
             "partner_riik_nimi": None,
             "maht": t,
             "rows": 2,
@@ -73,3 +77,38 @@ def test_top_types_and_partners_and_names() -> None:
     assert {r["partner_riik_nimi"] for r in wa.trade_partners(d, wa.EXPORT)} == {"Rootsi", "Soome"}
     assert wa.chapter_names(d)["20"] == "OLMEJÄÄTMED"
     assert wa.coverage(d)[0] == {"aasta": 2021, "rows": 8}
+
+
+def with_packaging() -> pl.DataFrame:
+    extra = (
+        frame()
+        .head(1)
+        .with_columns(
+            maht_liik=pl.lit(wa.RECOVERY),
+            aasta=pl.lit(2021),
+            maht=pl.lit(60.0),
+            pohigrupp=pl.lit("15"),
+            jaatmeliik=pl.lit("15 01 01"),
+            biojaatmed_lipp=pl.lit("Jah"),
+        )
+    )
+    return pl.concat([frame(), extra.cast(frame().schema)])
+
+
+def test_streams_select_by_code_and_flag_and_keep_flows_apart() -> None:
+    d = wa.clean(with_packaging())
+    st = wa.streams(d, 2022)
+    muni = {r["aasta"]: r["tonnes"] for r in st["municipal"]["flows"][wa.GENERATION]}
+    assert muni == {2021: 100.0, 2022: 150.0}  # chapter 20 only, hazardous chapter 13 excluded
+    assert [r["tonnes"] for r in st["packaging"]["flows"][wa.RECOVERY]] == [60.0]
+    assert (
+        st["packaging"]["flows"][wa.GENERATION] == []
+    )  # no generation rows: stays empty, no ratio
+    assert (
+        st["bio"]["rows"] == 2 and st["municipal"]["top_generation"][0]["jaatmeliik"] == "20 03 01"
+    )
+
+
+def test_flag_values_report_the_convention_used() -> None:
+    fv = wa.flag_values(wa.clean(with_packaging()))
+    assert {r["biojaatmed_lipp"] for r in fv["biojaatmed_lipp"]} == {"Ei", "Jah"}

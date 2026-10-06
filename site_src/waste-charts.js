@@ -126,5 +126,28 @@
     });
   }
 
-  Object.assign(window.KaurCharts, { wasteGeneration: generation, wasteGenerationRest: generationRest, wasteFlows: flows, wasteHazardous: hazardous, wasteTrade: trade, wasteStocks: stocks, wasteTopTypes: topTypes });
+  /* Several flows of one stream as lines on one axis (side by side, never summed). */
+  function streamLines(host, o) {
+    const series = o.series.filter((s) => s.data.length);
+    const years = [...new Set(series.flatMap((s) => s.data.map((r) => r.aasta)))].sort((a, b) => a - b);
+    const all = series.flatMap((s) => s.data.map((r) => r.tonnes));
+    const [unit, scale, dec] = unitFor(Math.max(...all, 0));
+    const frm = frame(host, { title: o.title, subtitle: o.subtitle, legend: series.map((s) => ['dot', s.color, s.label]),
+      table: { head: ['Aasta', ...series.map((s) => `${s.label} (${unit})`)], rows: years.map((y) => [String(y), ...series.map((s) => { const r = s.data.find((x) => x.aasta === y); return r ? fmt(r.tonnes / scale, dec) : '–'; })]) }, note: o.note });
+    responsive(frm, (box, w) => {
+      const m = { l: 56, r: 14, t: 16, b: 28 }, h = o.height || 280;
+      const svg = el('svg', { width: w, height: h, role: 'img', 'aria-label': o.title }, box);
+      const { ticks } = C.kit.niceTicks(0, Math.max(...all, 1) / scale * 1.05, 5);
+      const x = (yr) => m.l + (w - m.l - m.r) * ((yr - years[0]) / (years[years.length - 1] - years[0] || 1));
+      const y = (v) => m.t + (h - m.t - m.b) * (1 - (v - ticks[0]) / (ticks[ticks.length - 1] - ticks[0] || 1));
+      C.kit.axisY(el('g', {}, svg), y, ticks, w, m, unit, dec);
+      for (const yr of years.filter((v, i) => i % Math.ceil(years.length / 8) === 0 || i === years.length - 1)) el('text', { x: x(yr), y: h - 8, 'text-anchor': 'middle', class: 'tick' }, svg, String(yr));
+      for (const s of series) {
+        el('path', { d: s.data.map((r, i) => `${i ? 'L' : 'M'}${x(r.aasta)},${y(r.tonnes / scale)}`).join(''), fill: 'none', stroke: s.color, 'stroke-width': 2.4 }, svg);
+        for (const r of s.data) { const c = el('circle', { cx: x(r.aasta), cy: y(r.tonnes / scale), r: 3, fill: s.color, tabindex: 0 }, svg); hover(c, () => `<b>${r.aasta}</b><br>${s.label}: <b>${fmt(r.tonnes / scale, dec)} ${unit}</b>${r.negative_tonnes < 0 ? `<br>sh negatiivseid ${fmt(r.negative_tonnes / scale, dec)} ${unit}` : ''}`); }
+      }
+    });
+  }
+
+  Object.assign(window.KaurCharts, { wasteStreamLines: streamLines, wasteGeneration: generation, wasteGenerationRest: generationRest, wasteFlows: flows, wasteHazardous: hazardous, wasteTrade: trade, wasteStocks: stocks, wasteTopTypes: topTypes });
 })();

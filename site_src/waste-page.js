@@ -17,6 +17,30 @@
   const flow = (f, y) => d.flows.find((r) => r.maht_liik === f && r.aasta === y);
   const mt = (t) => `${fmt(t / 1e6, 1)} Mt`;
 
+  const FLOWC = { 'Jäätmeteke': 0, 'Taaskasutamine': 2, 'Ladestatud prügilasse': 3, 'Saadud kodumajapidamistelt': 4 };
+  function stream(host, key) {
+    const st = d.streams && d.streams[key];
+    if (!st) { host.innerHTML = '<p class="viz-note">Selle vooluga seotud andmeid ei ole.</p>'; return; }
+    const series = Object.keys(FLOWC).map((f) => ({ label: f, color: C.SLOTS[FLOWC[f]], data: st.flows[f] || [] }));
+    const val = (f, y) => ((st.flows[f] || []).find((r) => r.aasta === y) || { tonnes: null }).tonnes;
+    const g = val('Jäätmeteke', last), r = val('Taaskasutamine', last), l = val('Ladestatud prügilasse', last), g0 = val('Jäätmeteke', first);
+    C.wasteStreamLines(host, { series, title: st.label, subtitle: 'Vood eraldi joontena, t (eeldatud) aastas; neid ei liideta ega jagata, sest kattuvus on teadmata.', height: 300,
+      note: 'Voo kirjed valitakse jäätmekoodi või tabeli märke järgi; sama kirje võib kuuluda mitmesse vooluks, seega vood ei ole omavahel liidetavad. Negatiivsed väärtused on netosummas sees.' });
+    const parts = [];
+    if (g != null) parts.push(`tekkis ${mt(g)}`);
+    if (r != null) parts.push(`taaskasutati ${mt(r)}`);
+    if (l != null) parts.push(`ladestati prügilasse ${mt(l)}`);
+    const trend = g != null && g0 ? `; teke ${sgnp(100 * (g - g0) / g0)}% aastast ${first}` : '';
+    C.punch(host, parts.length ? `Voos „${st.label}“ ${parts.join(', ')} (${last})${trend}; voogusid ei suhestata, kuid ${r != null && g != null && r > g ? 'taaskasutatud kogus ületab tekkinud kogust, mis näitab voogude erinevat katvust' : 'nende kattuvus on teadmata'}.` : `Voo „${st.label}“ andmeid aastal ${last} ei ole.`);
+    if (st.top_generation.length) {
+      const top = st.top_generation.slice(0, 8);
+      C.natureBars(host, { rows: top.map((t) => ({ name: `${t.jaatmeliik} ${t.jaatmeliik_nimi}`, value: t.tonnes })), unit: 't', title: `${st.label}: suurimad jäätmeliigid ${last}`, subtitle: 'Jäätmeteke liigi kaupa (eeldatud t).', color: C.SLOTS[0] });
+      C.punch(host, `Suurim liik on ${top[0].jaatmeliik_nimi} (${fmt(top[0].tonnes / 1e3, 0)} kt${g ? `, ${fmt(100 * top[0].tonnes / g, 0)}% voo tekkest` : ''}).`);
+    }
+  }
+
+  const sgnp = (v) => `${v >= 0 ? '+' : '−'}${fmt(Math.abs(v), 0)}`;
+
   const builders = {
     findings(host) {
       const li = [];
@@ -54,6 +78,9 @@
       const a = flow('Taaskasutamine', last), l = flow('Ladestatud prügilasse', last);
       C.punch(host, a && l ? `${last}. aastal: taaskasutamine ${mt(a.tonnes)}, prügilasse ladestatud ${mt(l.tonnes)}. Voogusid ei liideta ega suhestata, sest nende kattuvus on teadmata.` : 'Iga vool on eraldi graafikul; voogusid ei liideta, sest nende kattuvus on teadmata.');
     },
+    smunicipal(host) { stream(host, 'municipal'); },
+    spackaging(host) { stream(host, 'packaging'); },
+    sbio(host) { stream(host, 'bio'); },
     hazardous(host) {
       C.wasteHazardous(host, d);
       const h = d.hazardous_generation.find((r) => r.aasta === last);

@@ -188,3 +188,63 @@ def chapter_names(df: pl.DataFrame) -> dict[str, str]:
         .sort("pohigrupp", pl.col("pohigrupp_nimi").str.len_chars())
         .to_dicts()
     }
+
+
+# Waste streams: a stream is a subset of rows picked by catalogue code or by a Jah/Ei flag.
+# The streams are *not* additive (a row can belong to several), and flows within a stream are
+# shown side by side, never summed or divided (overlap of flows is not documented).
+STREAM_FLOWS = (GENERATION, RECOVERY, LANDFILL, HOUSEHOLD, EXPORT, IMPORT)
+STREAMS: dict[str, tuple[str, pl.Expr]] = {
+    "municipal": ("Olmejäätmed (peatükk 20)", pl.col("pohigrupp") == "20"),
+    "packaging": ("Pakendijäätmed (liik 15 01)", pl.col("jaatmeliik").str.starts_with("15 01")),
+    "bio": ("Biojäätmed (märge)", pl.col("biojaatmed_lipp") == "Jah"),
+    "sludge": ("Reoveesetted (märge)", pl.col("reoveesetted_lipp") == "Jah"),
+    "metal": ("Metallijäätmed (märge)", pl.col("metallijaatmed_lipp") == "Jah"),
+    "problem": ("Probleemtooted (märge)", pl.col("probleemtooted_lipp") == "Jah"),
+}
+
+
+def flag_values(df: pl.DataFrame) -> dict[str, list[dict[str, Any]]]:
+    """Distinct values of each flag column with row counts (to verify the 'Jah' convention)."""
+    cols = (
+        "ohtlik_lipp",
+        "biojaatmed_lipp",
+        "reoveesetted_lipp",
+        "metallijaatmed_lipp",
+        "probleemtooted_lipp",
+    )
+    return {
+        c: df.group_by(c).agg(rows=pl.col("rows").sum()).sort("rows", descending=True).to_dicts()
+        for c in cols
+        if c in df.columns
+    }
+
+
+def streams(df: pl.DataFrame, latest: int) -> dict[str, Any]:
+    """Per stream: flows by year (net, negative tonnes) and the largest types of the latest year."""
+    out: dict[str, Any] = {}
+    for key, (label, pred) in STREAMS.items():
+        sub = df.filter(pred)
+        flows = {
+            f: sub.filter(pl.col("maht_liik") == f)
+            .group_by("aasta")
+            .agg(tonnes=pl.col("maht").sum(), negative_tonnes=pl.col("neg_sum").sum())
+            .sort("aasta")
+            .to_dicts()
+            for f in STREAM_FLOWS
+        }
+        top = (
+            sub.filter((pl.col("maht_liik") == GENERATION) & (pl.col("aasta") == latest))
+            .group_by("jaatmeliik", "jaatmeliik_nimi")
+            .agg(tonnes=pl.col("maht").sum())
+            .sort("tonnes", descending=True)
+            .head(8)
+            .to_dicts()
+        )
+        out[key] = {
+            "label": label,
+            "rows": int(sub["rows"].sum() or 0),
+            "flows": flows,
+            "top_generation": top,
+        }
+    return out
