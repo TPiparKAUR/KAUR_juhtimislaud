@@ -62,7 +62,8 @@ def test_by_year_excludes_not_assessed_and_counts_damaged_share() -> None:
 
 def test_checks_report_unassessed_and_duplicates() -> None:
     c = ca.checks(ca.prepare(frame()))
-    assert c["rows"] == 6 and c["not_assessed_or_unparsed"] == 1 and c["duplicate_groups"] == 0
+    assert c["rows"] == 6 and c["not_assessed_or_unparsed"] == 1
+    assert c["duplicate_groups_among_numbered"] == 0 and c["tree_number_null_share"] == 0.0
 
 
 def test_build_has_all_and_per_species_series() -> None:

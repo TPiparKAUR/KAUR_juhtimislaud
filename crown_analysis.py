@@ -68,15 +68,18 @@ def prepare(df: pl.DataFrame) -> pl.DataFrame:
 
 
 def checks(d: pl.DataFrame) -> dict[str, Any]:
+    """Row-level checks; duplicates are only meaningful where a tree number exists."""
     key = ["year", "seirekoht_kood", "isend_nr", "liik_est"]
-    dup = d.group_by(key).agg(n=pl.len())
+    numbered = d.filter(pl.col("isend_nr").is_not_null())
+    dup = numbered.group_by(key).agg(n=pl.len())
     labels = d.filter(pl.col("upper").is_null())["vaartus_muu"].value_counts().to_dicts()
     return {
         "rows": d.height,
+        "tree_number_null_share": d["isend_nr"].null_count() / d.height if d.height else None,
         "not_assessed_or_unparsed": int(d["upper"].null_count()),
         "unparsed_labels": labels[:10],
-        "duplicate_groups": int((dup["n"] > 1).sum()),
-        "tree_year_groups": dup.height,
+        "duplicate_groups_among_numbered": int((dup["n"] > 1).sum()),
+        "numbered_tree_year_groups": dup.height,
     }
 
 
@@ -117,7 +120,8 @@ def build(df: pl.DataFrame) -> dict[str, Any]:
                 "Rakenduse vastavus Eesti metoodikale on kinnitamata.",
                 "Hindamata puud jäetakse osakaaludest välja. Proovialade koosseis aastate lõikes "
                 "ei ole tingimata sama; proovialade ja puude arv on näidatud.",
-                "Osakaal arvutatakse puude, mitte proovialade lõikes.",
+                "Osakaal arvutatakse puude, mitte proovialade lõikes; „puu“ = üks hinnangurida "
+                "(puu number puudub enamikul ridadest, seega kordusi ei saa kontrollida).",
             ],
             "species_in_data": species_rows,
         },
