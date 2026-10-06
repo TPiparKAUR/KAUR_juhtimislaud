@@ -1,0 +1,2872 @@
+{
+ "t_awtabel004_curr": {
+  "rows": 6784,
+  "columns": {
+   "aruandeaasta": {
+    "dtype": "Int64",
+    "null_share": 0.0,
+    "distinct": 4,
+    "values": [
+     {
+      "value": 2024,
+      "rows": 1714
+     },
+     {
+      "value": 2022,
+      "rows": 1695
+     },
+     {
+      "value": 2023,
+      "rows": 1689
+     },
+     {
+      "value": 2025,
+      "rows": 1686
+     }
+    ],
+    "min": 2022,
+    "max": 2025
+   },
+   "annual_report_id": {
+    "dtype": "Int64",
+    "null_share": 0.0,
+    "distinct": 4081,
+    "min": 40200,
+    "max": 106267
+   },
+   "kasutuspiirkond": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 1215
+   },
+   "veeliik": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 9,
+    "values": [
+     {
+      "value": "P\u00f5hjavesi",
+      "rows": 6213
+     },
+     {
+      "value": "Pinnavesi (j\u00f5ed, j\u00e4rved)",
+      "rows": 364
+     },
+     {
+      "value": "Karj\u00e4\u00e4rivesi",
+      "rows": 102
+     },
+     {
+      "value": "Kaevandusvesi",
+      "rows": 30
+     },
+     {
+      "value": "Mineraalvesi",
+      "rows": 24
+     },
+     {
+      "value": "Tehnoloogiline vesi",
+      "rows": 20
+     },
+     {
+      "value": "Veev\u00e4rgivesi (p\u00f5hja-ja pinnavee segu)",
+      "rows": 17
+     },
+     {
+      "value": "Merevesi",
+      "rows": 13
+     },
+     {
+      "value": "Sademevesi",
+      "rows": 1
+     }
+    ]
+   },
+   "kokku": {
+    "dtype": "Float64",
+    "null_share": 0.0004,
+    "distinct": 5675,
+    "min": 0.0,
+    "max": 456205378.0
+   },
+   "olme": {
+    "dtype": "Float64",
+    "null_share": 0.3212,
+    "distinct": 3814,
+    "min": 0.0,
+    "max": 15795970.0
+   },
+   "toostus": {
+    "dtype": "Float64",
+    "null_share": 0.7264,
+    "distinct": 1262,
+    "min": 0.0,
+    "max": 20065611.0
+   },
+   "jahutus": {
+    "dtype": "Float64",
+    "null_share": 0.8791,
+    "distinct": 122,
+    "min": 0.0,
+    "max": 453998768.0
+   },
+   "energeetika": {
+    "dtype": "Float64",
+    "null_share": 0.8781,
+    "distinct": 163,
+    "min": 0.0,
+    "max": 3301167.0
+   },
+   "pollumajandus": {
+    "dtype": "Float64",
+    "null_share": 0.699,
+    "distinct": 1320,
+    "min": 0.0,
+    "max": 477610.0
+   },
+   "niisutus": {
+    "dtype": "Int64",
+    "null_share": 0.8785,
+    "distinct": 134,
+    "min": 0,
+    "max": 141858
+   },
+   "muu": {
+    "dtype": "Float64",
+    "null_share": 0.7578,
+    "distinct": 816,
+    "min": 0.0,
+    "max": 82672419.0
+   },
+   "veekadu": {
+    "dtype": "Float64",
+    "null_share": 0.5991,
+    "distinct": 1695,
+    "min": 0.0,
+    "max": 5420199.0
+   }
+  }
+ },
+ "t_awtabel002_01_curr": {
+  "rows": 9227,
+  "columns": {
+   "aruandeaasta": {
+    "dtype": "Int64",
+    "null_share": 0.0,
+    "distinct": 4,
+    "values": [
+     {
+      "value": 2024,
+      "rows": 2336
+     },
+     {
+      "value": 2022,
+      "rows": 2322
+     },
+     {
+      "value": 2023,
+      "rows": 2289
+     },
+     {
+      "value": 2025,
+      "rows": 2280
+     }
+    ],
+    "min": 2022,
+    "max": 2025
+   },
+   "annual_report_id": {
+    "dtype": "Int64",
+    "null_share": 0.0,
+    "distinct": 3834,
+    "min": 40200,
+    "max": 106267
+   },
+   "veehaardekood": {
+    "dtype": "String",
+    "null_share": 0.0131,
+    "distinct": 2365
+   },
+   "jaamakood": {
+    "dtype": "String",
+    "null_share": 0.5067,
+    "distinct": 852
+   },
+   "aastakokku": {
+    "dtype": "Float64",
+    "null_share": 0.0159,
+    "distinct": 6633,
+    "min": 0.0,
+    "max": 62725547.0
+   },
+   "jaanuar": {
+    "dtype": "Float64",
+    "null_share": 0.0156,
+    "distinct": 3142,
+    "min": 0.0,
+    "max": 5056319.0
+   },
+   "veebruar": {
+    "dtype": "Float64",
+    "null_share": 0.0156,
+    "distinct": 3101,
+    "min": 0.0,
+    "max": 5104574.0
+   },
+   "marts": {
+    "dtype": "Float64",
+    "null_share": 0.0155,
+    "distinct": 3208,
+    "min": 0.0,
+    "max": 5761595.0
+   },
+   "aprill": {
+    "dtype": "Float64",
+    "null_share": 0.0153,
+    "distinct": 3201,
+    "min": 0.0,
+    "max": 5526214.0
+   },
+   "mai": {
+    "dtype": "Float64",
+    "null_share": 0.0151,
+    "distinct": 3309,
+    "min": 0.0,
+    "max": 5207916.0
+   },
+   "juuni": {
+    "dtype": "Float64",
+    "null_share": 0.0152,
+    "distinct": 3283,
+    "min": 0.0,
+    "max": 5126389.0
+   },
+   "juuli": {
+    "dtype": "Float64",
+    "null_share": 0.0154,
+    "distinct": 3248,
+    "min": 0.0,
+    "max": 6800482.0
+   },
+   "august": {
+    "dtype": "Float64",
+    "null_share": 0.0153,
+    "distinct": 3276,
+    "min": 0.0,
+    "max": 5167375.0
+   },
+   "september": {
+    "dtype": "Float64",
+    "null_share": 0.0152,
+    "distinct": 3224,
+    "min": 0.0,
+    "max": 3936812.0
+   },
+   "oktoober": {
+    "dtype": "Float64",
+    "null_share": 0.0156,
+    "distinct": 3157,
+    "min": 0.0,
+    "max": 4590390.0
+   },
+   "november": {
+    "dtype": "Float64",
+    "null_share": 0.0156,
+    "distinct": 3149,
+    "min": 0.0,
+    "max": 5401640.0
+   },
+   "detsember": {
+    "dtype": "Float64",
+    "null_share": 0.0156,
+    "distinct": 3154,
+    "min": 0.0,
+    "max": 5891684.0
+   }
+  }
+ },
+ "t_awtabel002_02_curr": {
+  "rows": 460,
+  "columns": {
+   "aruandeaasta": {
+    "dtype": "Int64",
+    "null_share": 0.0,
+    "distinct": 4,
+    "values": [
+     {
+      "value": 2025,
+      "rows": 120
+     },
+     {
+      "value": 2023,
+      "rows": 118
+     },
+     {
+      "value": 2024,
+      "rows": 113
+     },
+     {
+      "value": 2022,
+      "rows": 109
+     }
+    ],
+    "min": 2022,
+    "max": 2025
+   },
+   "annual_report_id": {
+    "dtype": "Int64",
+    "null_share": 0.0,
+    "distinct": 354,
+    "min": 40202,
+    "max": 106227
+   },
+   "veehaardekood": {
+    "dtype": "String",
+    "null_share": 0.0957,
+    "distinct": 115
+   },
+   "jaamakood": {
+    "dtype": "String",
+    "null_share": 0.9696,
+    "distinct": 5,
+    "values": [
+     {
+      "value": null,
+      "rows": 446
+     },
+     {
+      "value": "VHP0000406",
+      "rows": 4
+     },
+     {
+      "value": "VHP0001263",
+      "rows": 4
+     },
+     {
+      "value": "VHP0001102",
+      "rows": 4
+     },
+     {
+      "value": "VHP0001367",
+      "rows": 2
+     }
+    ]
+   },
+   "aastakokku": {
+    "dtype": "Int64",
+    "null_share": 0.1087,
+    "distinct": 267,
+    "min": 0,
+    "max": 448825768
+   },
+   "jaanuar": {
+    "dtype": "Int64",
+    "null_share": 0.0957,
+    "distinct": 126,
+    "min": 0,
+    "max": 32687988
+   },
+   "veebruar": {
+    "dtype": "Int64",
+    "null_share": 0.0957,
+    "distinct": 118,
+    "min": 0,
+    "max": 29523926
+   },
+   "marts": {
+    "dtype": "Int64",
+    "null_share": 0.0957,
+    "distinct": 112,
+    "min": 0,
+    "max": 32639527
+   },
+   "aprill": {
+    "dtype": "Int64",
+    "null_share": 0.0957,
+    "distinct": 145,
+    "min": 0,
+    "max": 24536621
+   },
+   "mai": {
+    "dtype": "Int64",
+    "null_share": 0.0957,
+    "distinct": 192,
+    "min": 0,
+    "max": 32690185
+   },
+   "juuni": {
+    "dtype": "Int64",
+    "null_share": 0.0957,
+    "distinct": 203,
+    "min": 0,
+    "max": 41519981
+   },
+   "juuli": {
+    "dtype": "Int64",
+    "null_share": 0.0957,
+    "distinct": 188,
+    "min": 0,
+    "max": 50878628
+   },
+   "august": {
+    "dtype": "Int64",
+    "null_share": 0.0957,
+    "distinct": 189,
+    "min": 0,
+    "max": 64449879
+   },
+   "september": {
+    "dtype": "Int64",
+    "null_share": 0.0957,
+    "distinct": 177,
+    "min": 0,
+    "max": 50477112
+   },
+   "oktoober": {
+    "dtype": "Int64",
+    "null_share": 0.0978,
+    "distinct": 132,
+    "min": 0,
+    "max": 39894402
+   },
+   "november": {
+    "dtype": "Int64",
+    "null_share": 0.0978,
+    "distinct": 134,
+    "min": 0,
+    "max": 42372259
+   },
+   "detsember": {
+    "dtype": "Int64",
+    "null_share": 0.1,
+    "distinct": 135,
+    "min": 0,
+    "max": 44883266
+   }
+  }
+ },
+ "t_awtabel006_01_curr": {
+  "rows": 6850,
+  "columns": {
+   "aruandeaasta": {
+    "dtype": "Int64",
+    "null_share": 0.0,
+    "distinct": 4,
+    "values": [
+     {
+      "value": 2024,
+      "rows": 1742
+     },
+     {
+      "value": 2025,
+      "rows": 1721
+     },
+     {
+      "value": 2023,
+      "rows": 1706
+     },
+     {
+      "value": 2022,
+      "rows": 1681
+     }
+    ],
+    "min": 2022,
+    "max": 2025
+   },
+   "annual_report_id": {
+    "dtype": "Int64",
+    "null_share": 0.0,
+    "distinct": 3112,
+    "min": 40198,
+    "max": 106267
+   },
+   "valjalaskmekood": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 1833
+   },
+   "valjalaskme_kkr_kood": {
+    "dtype": "String",
+    "null_share": 0.0003,
+    "distinct": 1832
+   },
+   "puhasti_kkr_kood": {
+    "dtype": "String",
+    "null_share": 0.3228,
+    "distinct": 1183
+   },
+   "arvutusviis": {
+    "dtype": "String",
+    "null_share": 0.0001,
+    "distinct": 5,
+    "values": [
+     {
+      "value": "Arvutuslik",
+      "rows": 5014
+     },
+     {
+      "value": "M\u00f5\u00f5detud",
+      "rows": 1276
+     },
+     {
+      "value": "Arvutuslik ja m\u00f5\u00f5detud",
+      "rows": 471
+     },
+     {
+      "value": "Muu meetod",
+      "rows": 88
+     },
+     {
+      "value": null,
+      "rows": 1
+     }
+    ]
+   },
+   "heitveehulk1kv": {
+    "dtype": "Float64",
+    "null_share": 0.001,
+    "distinct": 3337,
+    "min": 0.0,
+    "max": 173588439.0
+   },
+   "heitveehulk2kv": {
+    "dtype": "Float64",
+    "null_share": 0.0019,
+    "distinct": 3426,
+    "min": 0.0,
+    "max": 169683019.0
+   },
+   "heitveehulk3kv": {
+    "dtype": "Float64",
+    "null_share": 0.0012,
+    "distinct": 3548,
+    "min": 0.0,
+    "max": 244681908.0
+   },
+   "heitveehulk4kv": {
+    "dtype": "Float64",
+    "null_share": 0.0012,
+    "distinct": 3485,
+    "min": 0.0,
+    "max": 147718752.0
+   },
+   "heitveehulkaastas": {
+    "dtype": "Float64",
+    "null_share": 0.0001,
+    "distinct": 4799,
+    "min": 0.0,
+    "max": 735672118.0
+   },
+   "bht7kontsentratsioonlubatud": {
+    "dtype": "Int64",
+    "null_share": 0.0483,
+    "distinct": 12,
+    "values": [
+     {
+      "value": 15,
+      "rows": 3675
+     },
+     {
+      "value": 40,
+      "rows": 1759
+     },
+     {
+      "value": 25,
+      "rows": 1060
+     },
+     {
+      "value": null,
+      "rows": 331
+     },
+     {
+      "value": 30,
+      "rows": 8
+     },
+     {
+      "value": 22,
+      "rows": 4
+     },
+     {
+      "value": 125,
+      "rows": 4
+     },
+     {
+      "value": 36,
+      "rows": 4
+     },
+     {
+      "value": 60,
+      "rows": 2
+     },
+     {
+      "value": 12,
+      "rows": 1
+     },
+     {
+      "value": 80,
+      "rows": 1
+     },
+     {
+      "value": 300,
+      "rows": 1
+     }
+    ],
+    "min": 12,
+    "max": 300
+   },
+   "bht7kontsentratsioon1kv": {
+    "dtype": "Float64",
+    "null_share": 0.0209,
+    "distinct": 353,
+    "min": 0.0,
+    "max": 1600.0
+   },
+   "bht7kontsentratsioon2kv": {
+    "dtype": "Float64",
+    "null_share": 0.0212,
+    "distinct": 339,
+    "min": 0.0,
+    "max": 1600.0
+   },
+   "bht7kontsentratsioon3kv": {
+    "dtype": "Float64",
+    "null_share": 0.0215,
+    "distinct": 322,
+    "min": 0.0,
+    "max": 2700.0
+   },
+   "bht7kontsentratsioon4kv": {
+    "dtype": "Float64",
+    "null_share": 0.0215,
+    "distinct": 316,
+    "min": 0.0,
+    "max": 2700.0
+   },
+   "bht7kogus": {
+    "dtype": "Float64",
+    "null_share": 0.0001,
+    "distinct": 5779,
+    "min": 0.0,
+    "max": 184.805377
+   },
+   "helkontsentratsioonlubatud": {
+    "dtype": "Float64",
+    "null_share": 0.0355,
+    "distinct": 13,
+    "values": [
+     {
+      "value": 40.0,
+      "rows": 3204
+     },
+     {
+      "value": 35.0,
+      "rows": 2810
+     },
+     {
+      "value": 15.0,
+      "rows": 358
+     },
+     {
+      "value": null,
+      "rows": 243
+     },
+     {
+      "value": 25.0,
+      "rows": 203
+     },
+     {
+      "value": 50.0,
+      "rows": 8
+     },
+     {
+      "value": 30.0,
+      "rows": 8
+     },
+     {
+      "value": 1.0,
+      "rows": 4
+     },
+     {
+      "value": 29.75,
+      "rows": 4
+     },
+     {
+      "value": 23.0,
+      "rows": 4
+     },
+     {
+      "value": 100.0,
+      "rows": 2
+     },
+     {
+      "value": 60.0,
+      "rows": 1
+     },
+     {
+      "value": 300.0,
+      "rows": 1
+     }
+    ],
+    "min": 1.0,
+    "max": 300.0
+   },
+   "helkontsentratsioon1kv": {
+    "dtype": "Float64",
+    "null_share": 0.0083,
+    "distinct": 350,
+    "min": 0.0,
+    "max": 1500.0
+   },
+   "helkontsentratsioon2kv": {
+    "dtype": "Float64",
+    "null_share": 0.0086,
+    "distinct": 352,
+    "min": 0.0,
+    "max": 2400.0
+   },
+   "helkontsentratsioon3kv": {
+    "dtype": "Float64",
+    "null_share": 0.0091,
+    "distinct": 343,
+    "min": 0.0,
+    "max": 1000.0
+   },
+   "helkontsentratsioon4kv": {
+    "dtype": "Float64",
+    "null_share": 0.0092,
+    "distinct": 359,
+    "min": 0.0,
+    "max": 1300.0
+   },
+   "helkogus": {
+    "dtype": "Float64",
+    "null_share": 0.0001,
+    "distinct": 6002,
+    "min": 0.0,
+    "max": 457.0888217
+   },
+   "khtkontsentratsioonlubatud": {
+    "dtype": "Float64",
+    "null_share": 0.3076,
+    "distinct": 11,
+    "values": [
+     {
+      "value": 125.0,
+      "rows": 2893
+     },
+     {
+      "value": null,
+      "rows": 2107
+     },
+     {
+      "value": 150.0,
+      "rows": 1732
+     },
+     {
+      "value": 250.0,
+      "rows": 102
+     },
+     {
+      "value": 106.0,
+      "rows": 4
+     },
+     {
+      "value": 1250.0,
+      "rows": 4
+     },
+     {
+      "value": 127.5,
+      "rows": 4
+     },
+     {
+      "value": 200.0,
+      "rows": 1
+     },
+     {
+      "value": 500.0,
+      "rows": 1
+     },
+     {
+      "value": 124.0,
+      "rows": 1
+     },
+     {
+      "value": 900.0,
+      "rows": 1
+     }
+    ],
+    "min": 106.0,
+    "max": 1250.0
+   },
+   "khtkontsentratsioon1kv": {
+    "dtype": "Float64",
+    "null_share": 0.274,
+    "distinct": 514,
+    "min": 0.0,
+    "max": 3954.0
+   },
+   "khtkontsentratsioon2kv": {
+    "dtype": "Float64",
+    "null_share": 0.2742,
+    "distinct": 532,
+    "min": 0.0,
+    "max": 3600.0
+   },
+   "khtkontsentratsioon3kv": {
+    "dtype": "Float64",
+    "null_share": 0.2745,
+    "distinct": 513,
+    "min": 0.0,
+    "max": 3300.0
+   },
+   "khtkontsentratsioon4kv": {
+    "dtype": "Float64",
+    "null_share": 0.2749,
+    "distinct": 508,
+    "min": 0.0,
+    "max": 3600.0
+   },
+   "khtkogus": {
+    "dtype": "Float64",
+    "null_share": 0.0001,
+    "distinct": 4282,
+    "min": 0.0,
+    "max": 2201.78493067
+   },
+   "pkontsentratsioonlubatud": {
+    "dtype": "Float64",
+    "null_share": 0.472,
+    "distinct": 9,
+    "values": [
+     {
+      "value": null,
+      "rows": 3233
+     },
+     {
+      "value": 1.0,
+      "rows": 2135
+     },
+     {
+      "value": 2.0,
+      "rows": 1129
+     },
+     {
+      "value": 0.5,
+      "rows": 310
+     },
+     {
+      "value": 1.5,
+      "rows": 36
+     },
+     {
+      "value": 1.7,
+      "rows": 4
+     },
+     {
+      "value": 5.0,
+      "rows": 1
+     },
+     {
+      "value": 15.0,
+      "rows": 1
+     },
+     {
+      "value": 4.0,
+      "rows": 1
+     }
+    ],
+    "min": 0.5,
+    "max": 15.0
+   },
+   "pkontsentratsioon1kv": {
+    "dtype": "Float64",
+    "null_share": 0.1857,
+    "distinct": 547,
+    "min": 0.0,
+    "max": 33.0
+   },
+   "pkontsentratsioon2kv": {
+    "dtype": "Float64",
+    "null_share": 0.1858,
+    "distinct": 526,
+    "min": 0.0,
+    "max": 90.0
+   },
+   "pkontsentratsioon3kv": {
+    "dtype": "Float64",
+    "null_share": 0.1866,
+    "distinct": 564,
+    "min": 0.0,
+    "max": 130.0
+   },
+   "pkontsentratsioon4kv": {
+    "dtype": "Float64",
+    "null_share": 0.1866,
+    "distinct": 560,
+    "min": 0.0,
+    "max": 41.0
+   },
+   "pkogus": {
+    "dtype": "Float64",
+    "null_share": 0.0001,
+    "distinct": 4878,
+    "min": 0.0,
+    "max": 18.66141625
+   },
+   "nyldkontsentratsioonlubatud": {
+    "dtype": "Int64",
+    "null_share": 0.4724,
+    "distinct": 12,
+    "values": [
+     {
+      "value": null,
+      "rows": 3236
+     },
+     {
+      "value": 45,
+      "rows": 2151
+     },
+     {
+      "value": 60,
+      "rows": 1056
+     },
+     {
+      "value": 10,
+      "rows": 215
+     },
+     {
+      "value": 15,
+      "rows": 145
+     },
+     {
+      "value": 75,
+      "rows": 24
+     },
+     {
+      "value": 25,
+      "rows": 9
+     },
+     {
+      "value": 55,
+      "rows": 4
+     },
+     {
+      "value": 51,
+      "rows": 4
+     },
+     {
+      "value": 40,
+      "rows": 4
+     },
+     {
+      "value": 100,
+      "rows": 1
+     },
+     {
+      "value": 180,
+      "rows": 1
+     }
+    ],
+    "min": 10,
+    "max": 180
+   },
+   "nyldkontsentratsioon1kv": {
+    "dtype": "Float64",
+    "null_share": 0.1832,
+    "distinct": 640,
+    "min": 0.0,
+    "max": 240.0
+   },
+   "nyldkontsentratsioon2kv": {
+    "dtype": "Float64",
+    "null_share": 0.1835,
+    "distinct": 664,
+    "min": 0.0,
+    "max": 240.0
+   },
+   "nyldkontsentratsioon3kv": {
+    "dtype": "Float64",
+    "null_share": 0.1839,
+    "distinct": 656,
+    "min": 0.0,
+    "max": 250.0
+   },
+   "nyldkontsentratsioon4kv": {
+    "dtype": "Float64",
+    "null_share": 0.1841,
+    "distinct": 649,
+    "min": 0.0,
+    "max": 627.0
+   },
+   "nyldkogus": {
+    "dtype": "Float64",
+    "null_share": 0.0001,
+    "distinct": 4822,
+    "min": 0.0,
+    "max": 220.9175614
+   },
+   "nyldeheitveehulk1kv": {
+    "dtype": "Int64",
+    "null_share": 0.0036,
+    "distinct": 657,
+    "min": 0,
+    "max": 14828732
+   },
+   "nyldeheitveehulk2kv": {
+    "dtype": "Int64",
+    "null_share": 0.0039,
+    "distinct": 290,
+    "min": 0,
+    "max": 4929961
+   },
+   "nyldeheitveehulk3kv": {
+    "dtype": "Int64",
+    "null_share": 0.0041,
+    "distinct": 171,
+    "min": 0,
+    "max": 2258121
+   },
+   "nyldeheitveehulk4kv": {
+    "dtype": "Int64",
+    "null_share": 0.0039,
+    "distinct": 471,
+    "min": 0,
+    "max": 7684326
+   },
+   "nyldeheitveehulkaastas": {
+    "dtype": "Int64",
+    "null_share": 0.0001,
+    "distinct": 808,
+    "min": 0,
+    "max": 25062188
+   },
+   "nyldekontsentratsioon1kv": {
+    "dtype": "Float64",
+    "null_share": 0.215,
+    "distinct": 246,
+    "min": 0.0,
+    "max": 240.0
+   },
+   "nyldekontsentratsioon2kv": {
+    "dtype": "Float64",
+    "null_share": 0.2153,
+    "distinct": 162,
+    "min": 0.0,
+    "max": 240.0
+   },
+   "nyldekontsentratsioon3kv": {
+    "dtype": "Float64",
+    "null_share": 0.2155,
+    "distinct": 111,
+    "min": 0.0,
+    "max": 140.0
+   },
+   "nyldekontsentratsioon4kv": {
+    "dtype": "Float64",
+    "null_share": 0.2153,
+    "distinct": 203,
+    "min": 0.0,
+    "max": 210.0
+   },
+   "nyldekogus": {
+    "dtype": "Float64",
+    "null_share": 0.0001,
+    "distinct": 746,
+    "min": 0.0,
+    "max": 178.5146573
+   }
+  }
+ },
+ "f_pohjaveevarud": {
+  "rows": 947,
+  "columns": {
+   "id": {
+    "dtype": "Int64",
+    "null_share": 0.0,
+    "distinct": 947,
+    "min": -2140655634,
+    "max": 2142055636
+   },
+   "keht_staatus": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 2,
+    "values": [
+     {
+      "value": "Kehtetu",
+      "rows": 729
+     },
+     {
+      "value": "Kehtiv",
+      "rows": 218
+     }
+    ]
+   },
+   "kkr_kood": {
+    "dtype": "String",
+    "null_share": 0.1954,
+    "distinct": 759
+   },
+   "kood": {
+    "dtype": "String",
+    "null_share": 0.0137,
+    "distinct": 920
+   },
+   "veemaardla_id": {
+    "dtype": "Int64",
+    "null_share": 0.169,
+    "distinct": 125,
+    "min": -1990157988,
+    "max": 2102457987
+   },
+   "veemaardla_kood": {
+    "dtype": "String",
+    "null_share": 0.169,
+    "distinct": 125
+   },
+   "ehak": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 175
+   },
+   "veekogum": {
+    "dtype": "String",
+    "null_share": 0.3031,
+    "distinct": 26,
+    "values": [
+     {
+      "value": null,
+      "rows": 287
+     },
+     {
+      "value": "04",
+      "rows": 170
+     },
+     {
+      "value": "03",
+      "rows": 102
+     },
+     {
+      "value": "09",
+      "rows": 88
+     },
+     {
+      "value": "08+12",
+      "rows": 54
+     },
+     {
+      "value": "11",
+      "rows": 52
+     },
+     {
+      "value": "02",
+      "rows": 38
+     },
+     {
+      "value": "01+02",
+      "rows": 24
+     },
+     {
+      "value": "09.3",
+      "rows": 24
+     },
+     {
+      "value": "15",
+      "rows": 22
+     },
+     {
+      "value": "01",
+      "rows": 19
+     },
+     {
+      "value": "07",
+      "rows": 17
+     },
+     {
+      "value": "09.4",
+      "rows": 14
+     },
+     {
+      "value": "09.2",
+      "rows": 8
+     },
+     {
+      "value": "09.1",
+      "rows": 7
+     },
+     {
+      "value": "15.1",
+      "rows": 4
+     },
+     {
+      "value": "13",
+      "rows": 3
+     },
+     {
+      "value": "09.5",
+      "rows": 2
+     },
+     {
+      "value": "06.2",
+      "rows": 2
+     },
+     {
+      "value": "12",
+      "rows": 2
+     },
+     {
+      "value": "15.2",
+      "rows": 2
+     },
+     {
+      "value": "14",
+      "rows": 2
+     },
+     {
+      "value": "15.5",
+      "rows": 1
+     },
+     {
+      "value": "4.2",
+      "rows": 1
+     },
+     {
+      "value": "08",
+      "rows": 1
+     },
+     {
+      "value": "8.1",
+      "rows": 1
+     }
+    ]
+   },
+   "pohjaveekogum_id": {
+    "dtype": "Int64",
+    "null_share": 0.3073,
+    "distinct": 47,
+    "min": -1872198586,
+    "max": 2023796871
+   },
+   "geol_indeks": {
+    "dtype": "String",
+    "null_share": 0.0032,
+    "distinct": 23,
+    "values": [
+     {
+      "value": "Ca-V",
+      "rows": 197
+     },
+     {
+      "value": "O-Ca",
+      "rows": 150
+     },
+     {
+      "value": "O",
+      "rows": 118
+     },
+     {
+      "value": "S",
+      "rows": 75
+     },
+     {
+      "value": "D2-1-S",
+      "rows": 67
+     },
+     {
+      "value": "D2",
+      "rows": 64
+     },
+     {
+      "value": "V2vr",
+      "rows": 55
+     },
+     {
+      "value": "O-Cm",
+      "rows": 52
+     },
+     {
+      "value": "Cm-V",
+      "rows": 49
+     },
+     {
+      "value": "Q",
+      "rows": 46
+     },
+     {
+      "value": "V2gd",
+      "rows": 35
+     },
+     {
+      "value": "S-O",
+      "rows": 16
+     },
+     {
+      "value": "D2-1",
+      "rows": 5
+     },
+     {
+      "value": null,
+      "rows": 3
+     },
+     {
+      "value": "O3kl-kk",
+      "rows": 3
+     },
+     {
+      "value": "O3prg",
+      "rows": 2
+     },
+     {
+      "value": "S1rk",
+      "rows": 2
+     },
+     {
+      "value": "S1ad-rk",
+      "rows": 2
+     },
+     {
+      "value": "O2ls-kn",
+      "rows": 2
+     },
+     {
+      "value": "O3kl-jh",
+      "rows": 1
+     },
+     {
+      "value": "S1rk-tm",
+      "rows": 1
+     },
+     {
+      "value": "S2rt-jg",
+      "rows": 1
+     },
+     {
+      "value": "D3",
+      "rows": 1
+     }
+    ]
+   },
+   "kasut_algus": {
+    "dtype": "Int64",
+    "null_share": 0.0201,
+    "distinct": 56,
+    "min": 0,
+    "max": 2026
+   },
+   "kasut_lopp": {
+    "dtype": "Int64",
+    "null_share": 0.0201,
+    "distinct": 76,
+    "min": 1964,
+    "max": 3000
+   },
+   "vk_litoloogia": {
+    "dtype": "String",
+    "null_share": 0.548,
+    "distinct": 12,
+    "values": [
+     {
+      "value": null,
+      "rows": 519
+     },
+     {
+      "value": "liivakivi",
+      "rows": 197
+     },
+     {
+      "value": "liivakivi, aleuroliit",
+      "rows": 140
+     },
+     {
+      "value": "lubjakivi",
+      "rows": 39
+     },
+     {
+      "value": "lubjakivi, dolomiit",
+      "rows": 19
+     },
+     {
+      "value": "liivakivi, lubjakivi",
+      "rows": 12
+     },
+     {
+      "value": "liiv,kruus",
+      "rows": 8
+     },
+     {
+      "value": "liivakivi, dolomiit",
+      "rows": 7
+     },
+     {
+      "value": "liiv",
+      "rows": 3
+     },
+     {
+      "value": "dolomiit, ludjakivi",
+      "rows": 1
+     },
+     {
+      "value": "liivakivi, aleuroriit",
+      "rows": 1
+     },
+     {
+      "value": "saviliiv, liiv, kruus",
+      "rows": 1
+     }
+    ]
+   },
+   "vk_paksus_m": {
+    "dtype": "Float64",
+    "null_share": 0.6917,
+    "distinct": 56,
+    "min": 5.0,
+    "max": 185.0
+   },
+   "vh_kasut_alg_a": {
+    "dtype": "String",
+    "null_share": 0.7709,
+    "distinct": 54
+   },
+   "kinnit_kuup": {
+    "dtype": "String",
+    "null_share": 0.5407,
+    "distinct": 84
+   },
+   "varu_t1_olme": {
+    "dtype": "Int64",
+    "null_share": 0.6103,
+    "distinct": 128,
+    "min": 10,
+    "max": 48000
+   },
+   "varu_t1_tehn": {
+    "dtype": "Int64",
+    "null_share": 0.9694,
+    "distinct": 21,
+    "values": [
+     {
+      "value": null,
+      "rows": 918
+     },
+     {
+      "value": 1000,
+      "rows": 6
+     },
+     {
+      "value": 3500,
+      "rows": 2
+     },
+     {
+      "value": 50,
+      "rows": 2
+     },
+     {
+      "value": 700,
+      "rows": 2
+     },
+     {
+      "value": 1200,
+      "rows": 2
+     },
+     {
+      "value": 800,
+      "rows": 1
+     },
+     {
+      "value": 900,
+      "rows": 1
+     },
+     {
+      "value": 1500,
+      "rows": 1
+     },
+     {
+      "value": 3630,
+      "rows": 1
+     },
+     {
+      "value": 600,
+      "rows": 1
+     },
+     {
+      "value": 3600,
+      "rows": 1
+     },
+     {
+      "value": 6400,
+      "rows": 1
+     },
+     {
+      "value": 5900,
+      "rows": 1
+     },
+     {
+      "value": 450,
+      "rows": 1
+     },
+     {
+      "value": 3900,
+      "rows": 1
+     },
+     {
+      "value": 2800,
+      "rows": 1
+     },
+     {
+      "value": 2000,
+      "rows": 1
+     },
+     {
+      "value": 150,
+      "rows": 1
+     },
+     {
+      "value": 17200,
+      "rows": 1
+     },
+     {
+      "value": 650,
+      "rows": 1
+     }
+    ],
+    "min": 50,
+    "max": 17200
+   },
+   "varu_t1_min": {
+    "dtype": "Int64",
+    "null_share": 0.9852,
+    "distinct": 14,
+    "values": [
+     {
+      "value": null,
+      "rows": 933
+     },
+     {
+      "value": 400,
+      "rows": 2
+     },
+     {
+      "value": 249,
+      "rows": 1
+     },
+     {
+      "value": 108,
+      "rows": 1
+     },
+     {
+      "value": 100,
+      "rows": 1
+     },
+     {
+      "value": 260,
+      "rows": 1
+     },
+     {
+      "value": 297,
+      "rows": 1
+     },
+     {
+      "value": 406,
+      "rows": 1
+     },
+     {
+      "value": 140,
+      "rows": 1
+     },
+     {
+      "value": 229,
+      "rows": 1
+     },
+     {
+      "value": 409,
+      "rows": 1
+     },
+     {
+      "value": 17,
+      "rows": 1
+     },
+     {
+      "value": 109,
+      "rows": 1
+     },
+     {
+      "value": 623,
+      "rows": 1
+     }
+    ],
+    "min": 17,
+    "max": 623
+   },
+   "varu_t2_olme": {
+    "dtype": "Int64",
+    "null_share": 0.9176,
+    "distinct": 47,
+    "min": 15,
+    "max": 48900
+   },
+   "varu_t2_tehn": {
+    "dtype": "Int64",
+    "null_share": 0.9958,
+    "distinct": 4,
+    "values": [
+     {
+      "value": null,
+      "rows": 943
+     },
+     {
+      "value": 1500,
+      "rows": 2
+     },
+     {
+      "value": 7900,
+      "rows": 1
+     },
+     {
+      "value": 1600,
+      "rows": 1
+     }
+    ],
+    "min": 1500,
+    "max": 7900
+   },
+   "varu_p_olme": {
+    "dtype": "Int64",
+    "null_share": 0.8479,
+    "distinct": 41,
+    "min": 5,
+    "max": 9300
+   },
+   "varu_p_tehn": {
+    "dtype": "Int64",
+    "null_share": 0.9989,
+    "distinct": 2,
+    "values": [
+     {
+      "value": null,
+      "rows": 946
+     },
+     {
+      "value": 2200,
+      "rows": 1
+     }
+    ],
+    "min": 2200,
+    "max": 2200
+   },
+   "muut_staatus": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 3,
+    "values": [
+     {
+      "value": "E",
+      "rows": 543
+     },
+     {
+      "value": "K",
+      "rows": 218
+     },
+     {
+      "value": "A",
+      "rows": 186
+     }
+    ]
+   },
+   "muut_staatus_selg": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 3,
+    "values": [
+     {
+      "value": "Endine",
+      "rows": 543
+     },
+     {
+      "value": "Kehtiv",
+      "rows": 218
+     },
+     {
+      "value": "Arhiveeritud",
+      "rows": 186
+     }
+    ]
+   },
+   "muut_aeg": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 664
+   },
+   "ehak_kood1": {
+    "dtype": "String",
+    "null_share": 0.1816,
+    "distinct": 35,
+    "values": [
+     {
+      "value": "0037",
+      "rows": 231
+     },
+     {
+      "value": null,
+      "rows": 172
+     },
+     {
+      "value": "0045",
+      "rows": 87
+     },
+     {
+      "value": "0060",
+      "rows": 68
+     },
+     {
+      "value": "0044",
+      "rows": 56
+     },
+     {
+      "value": "0079",
+      "rows": 31
+     },
+     {
+      "value": "0071",
+      "rows": 28
+     },
+     {
+      "value": "0084",
+      "rows": 23
+     },
+     {
+      "value": "0087",
+      "rows": 20
+     },
+     {
+      "value": "0068",
+      "rows": 19
+     },
+     {
+      "value": "0065",
+      "rows": 18
+     },
+     {
+      "value": "0074",
+      "rows": 15
+     },
+     {
+      "value": "0059",
+      "rows": 15
+     },
+     {
+      "value": "0045;0060",
+      "rows": 15
+     },
+     {
+      "value": "0049",
+      "rows": 14
+     },
+     {
+      "value": "0067",
+      "rows": 13
+     },
+     {
+      "value": "0052",
+      "rows": 11
+     },
+     {
+      "value": "0039",
+      "rows": 11
+     },
+     {
+      "value": "0081",
+      "rows": 10
+     },
+     {
+      "value": "0064",
+      "rows": 10
+     },
+     {
+      "value": "0070",
+      "rows": 10
+     },
+     {
+      "value": "0056",
+      "rows": 10
+     },
+     {
+      "value": "0037;0071",
+      "rows": 9
+     },
+     {
+      "value": "0057",
+      "rows": 8
+     },
+     {
+      "value": "0037;0060",
+      "rows": 7
+     },
+     {
+      "value": "0051",
+      "rows": 7
+     },
+     {
+      "value": "0050",
+      "rows": 6
+     },
+     {
+      "value": "0078",
+      "rows": 6
+     },
+     {
+      "value": "0082",
+      "rows": 6
+     },
+     {
+      "value": "0086",
+      "rows": 4
+     },
+     {
+      "value": "0037;0056;0071",
+      "rows": 2
+     },
+     {
+      "value": "0037;0052;0060",
+      "rows": 2
+     },
+     {
+      "value": "0052;0084",
+      "rows": 1
+     },
+     {
+      "value": "0037;0056",
+      "rows": 1
+     },
+     {
+      "value": "0037;0052;0071",
+      "rows": 1
+     }
+    ]
+   }
+  }
+ },
+ "f_reoveealad": {
+  "rows": 546,
+  "columns": {
+   "id": {
+    "dtype": "Int64",
+    "null_share": 0.0,
+    "distinct": 546,
+    "min": -2118972649,
+    "max": 2143795318
+   },
+   "id_text": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 546
+   },
+   "staatus": {
+    "dtype": "String",
+    "null_share": 0.9432,
+    "distinct": 2,
+    "values": [
+     {
+      "value": null,
+      "rows": 515
+     },
+     {
+      "value": "K",
+      "rows": 31
+     }
+    ]
+   },
+   "staatus_selg": {
+    "dtype": "String",
+    "null_share": 0.9432,
+    "distinct": 2,
+    "values": [
+     {
+      "value": null,
+      "rows": 515
+     },
+     {
+      "value": "Kogumiss\u00fcsteemideta",
+      "rows": 31
+     }
+    ]
+   },
+   "kkr_kood": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 546
+   },
+   "keht_staatus": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 2,
+    "values": [
+     {
+      "value": "Kehtiv",
+      "rows": 537
+     },
+     {
+      "value": "Kehtetu",
+      "rows": 9
+     }
+    ]
+   },
+   "kood": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 546
+   },
+   "tyyp": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 2,
+    "values": [
+     {
+      "value": "B",
+      "rows": 491
+     },
+     {
+      "value": "A",
+      "rows": 55
+     }
+    ]
+   },
+   "tyyp_selg": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 2,
+    "values": [
+     {
+      "value": "Alla 2000 ie",
+      "rows": 491
+     },
+     {
+      "value": "\u00dcle 2000 ie",
+      "rows": 55
+     }
+    ]
+   },
+   "kaitstus": {
+    "dtype": "String",
+    "null_share": 0.9249,
+    "distinct": 5,
+    "values": [
+     {
+      "value": null,
+      "rows": 505
+     },
+     {
+      "value": "2",
+      "rows": 18
+     },
+     {
+      "value": "1",
+      "rows": 13
+     },
+     {
+      "value": "3",
+      "rows": 8
+     },
+     {
+      "value": "4",
+      "rows": 2
+     }
+    ]
+   },
+   "kaitstus_selg": {
+    "dtype": "String",
+    "null_share": 0.9249,
+    "distinct": 5,
+    "values": [
+     {
+      "value": null,
+      "rows": 505
+     },
+     {
+      "value": "N\u00f5rgalt kaitstud",
+      "rows": 18
+     },
+     {
+      "value": "Kaitsmata",
+      "rows": 13
+     },
+     {
+      "value": "Keskmiselt kaitstud",
+      "rows": 8
+     },
+     {
+      "value": "Suhteliselt kaitstud",
+      "rows": 2
+     }
+    ]
+   },
+   "koormus": {
+    "dtype": "Float64",
+    "null_share": 0.0,
+    "distinct": 366,
+    "min": 55.0,
+    "max": 499581.0
+   },
+   "koormus_elanik": {
+    "dtype": "Int64",
+    "null_share": 0.9414,
+    "distinct": 33,
+    "values": [
+     {
+      "value": null,
+      "rows": 514
+     },
+     {
+      "value": 2864,
+      "rows": 1
+     },
+     {
+      "value": 203,
+      "rows": 1
+     },
+     {
+      "value": 13068,
+      "rows": 1
+     },
+     {
+      "value": 54,
+      "rows": 1
+     },
+     {
+      "value": 80,
+      "rows": 1
+     },
+     {
+      "value": 3774,
+      "rows": 1
+     },
+     {
+      "value": 1987,
+      "rows": 1
+     },
+     {
+      "value": 259,
+      "rows": 1
+     },
+     {
+      "value": 4145,
+      "rows": 1
+     },
+     {
+      "value": 7626,
+      "rows": 1
+     },
+     {
+      "value": 457,
+      "rows": 1
+     },
+     {
+      "value": 933,
+      "rows": 1
+     },
+     {
+      "value": 6370,
+      "rows": 1
+     },
+     {
+      "value": 149,
+      "rows": 1
+     },
+     {
+      "value": 348,
+      "rows": 1
+     },
+     {
+      "value": 108235,
+      "rows": 1
+     },
+     {
+      "value": 612,
+      "rows": 1
+     },
+     {
+      "value": 7391,
+      "rows": 1
+     },
+     {
+      "value": 72,
+      "rows": 1
+     },
+     {
+      "value": 218,
+      "rows": 1
+     },
+     {
+      "value": 1064,
+      "rows": 1
+     },
+     {
+      "value": 2153,
+      "rows": 1
+     },
+     {
+      "value": 3826,
+      "rows": 1
+     },
+     {
+      "value": 85,
+      "rows": 1
+     },
+     {
+      "value": 620,
+      "rows": 1
+     },
+     {
+      "value": 15314,
+      "rows": 1
+     },
+     {
+      "value": 534,
+      "rows": 1
+     },
+     {
+      "value": 5364,
+      "rows": 1
+     },
+     {
+      "value": 626,
+      "rows": 1
+     },
+     {
+      "value": 121,
+      "rows": 1
+     },
+     {
+      "value": 339,
+      "rows": 1
+     },
+     {
+      "value": 112,
+      "rows": 1
+     }
+    ],
+    "min": 54,
+    "max": 108235
+   },
+   "koormus_asutus": {
+    "dtype": "Int64",
+    "null_share": 0.9634,
+    "distinct": 19,
+    "values": [
+     {
+      "value": null,
+      "rows": 526
+     },
+     {
+      "value": 31,
+      "rows": 2
+     },
+     {
+      "value": 135,
+      "rows": 2
+     },
+     {
+      "value": 311,
+      "rows": 1
+     },
+     {
+      "value": 236,
+      "rows": 1
+     },
+     {
+      "value": 196,
+      "rows": 1
+     },
+     {
+      "value": 10,
+      "rows": 1
+     },
+     {
+      "value": 1722,
+      "rows": 1
+     },
+     {
+      "value": 73,
+      "rows": 1
+     },
+     {
+      "value": 34,
+      "rows": 1
+     },
+     {
+      "value": 3181,
+      "rows": 1
+     },
+     {
+      "value": 64,
+      "rows": 1
+     },
+     {
+      "value": 419,
+      "rows": 1
+     },
+     {
+      "value": 20,
+      "rows": 1
+     },
+     {
+      "value": 156,
+      "rows": 1
+     },
+     {
+      "value": 22044,
+      "rows": 1
+     },
+     {
+      "value": 429,
+      "rows": 1
+     },
+     {
+      "value": 160,
+      "rows": 1
+     },
+     {
+      "value": 30,
+      "rows": 1
+     }
+    ],
+    "min": 10,
+    "max": 22044
+   },
+   "koormus_ettevote": {
+    "dtype": "Int64",
+    "null_share": 0.9707,
+    "distinct": 16,
+    "values": [
+     {
+      "value": null,
+      "rows": 530
+     },
+     {
+      "value": 3,
+      "rows": 2
+     },
+     {
+      "value": 70,
+      "rows": 1
+     },
+     {
+      "value": 9,
+      "rows": 1
+     },
+     {
+      "value": 91,
+      "rows": 1
+     },
+     {
+      "value": 1100,
+      "rows": 1
+     },
+     {
+      "value": 3196,
+      "rows": 1
+     },
+     {
+      "value": 29,
+      "rows": 1
+     },
+     {
+      "value": 36,
+      "rows": 1
+     },
+     {
+      "value": 88,
+      "rows": 1
+     },
+     {
+      "value": 156,
+      "rows": 1
+     },
+     {
+      "value": 31,
+      "rows": 1
+     },
+     {
+      "value": 19,
+      "rows": 1
+     },
+     {
+      "value": 11,
+      "rows": 1
+     },
+     {
+      "value": 34,
+      "rows": 1
+     },
+     {
+      "value": 188,
+      "rows": 1
+     }
+    ],
+    "min": 3,
+    "max": 3196
+   },
+   "koormus_toostus": {
+    "dtype": "Int64",
+    "null_share": 0.978,
+    "distinct": 13,
+    "values": [
+     {
+      "value": null,
+      "rows": 534
+     },
+     {
+      "value": 9603,
+      "rows": 1
+     },
+     {
+      "value": 10,
+      "rows": 1
+     },
+     {
+      "value": 83,
+      "rows": 1
+     },
+     {
+      "value": 2569,
+      "rows": 1
+     },
+     {
+      "value": 41,
+      "rows": 1
+     },
+     {
+      "value": 1212,
+      "rows": 1
+     },
+     {
+      "value": 55,
+      "rows": 1
+     },
+     {
+      "value": 2850,
+      "rows": 1
+     },
+     {
+      "value": 94,
+      "rows": 1
+     },
+     {
+      "value": 9471,
+      "rows": 1
+     },
+     {
+      "value": 4,
+      "rows": 1
+     },
+     {
+      "value": 46,
+      "rows": 1
+     }
+    ],
+    "min": 4,
+    "max": 9603
+   },
+   "pindala": {
+    "dtype": "Float64",
+    "null_share": 0.0,
+    "distinct": 377,
+    "min": 4.6,
+    "max": 16431.1
+   },
+   "elanikke": {
+    "dtype": "Int64",
+    "null_share": 0.0165,
+    "distinct": 345,
+    "min": 30,
+    "max": 401173
+   },
+   "koormus_ie_ha": {
+    "dtype": "Float64",
+    "null_share": 0.0,
+    "distinct": 128,
+    "min": 3.9,
+    "max": 244.0
+   },
+   "koormus_tyyp": {
+    "dtype": "String",
+    "null_share": 0.956,
+    "distinct": 3,
+    "values": [
+     {
+      "value": null,
+      "rows": 522
+     },
+     {
+      "value": "S",
+      "rows": 23
+     },
+     {
+      "value": "P",
+      "rows": 1
+     }
+    ]
+   },
+   "koormus_tyyp_selg": {
+    "dtype": "String",
+    "null_share": 0.956,
+    "distinct": 3,
+    "values": [
+     {
+      "value": null,
+      "rows": 522
+     },
+     {
+      "value": "Arvutatud suvise koormuse j\u00e4rgi",
+      "rows": 23
+     },
+     {
+      "value": "Perspektiivne",
+      "rows": 1
+     }
+    ]
+   },
+   "muut_staatus": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 2,
+    "values": [
+     {
+      "value": "K",
+      "rows": 537
+     },
+     {
+      "value": "E",
+      "rows": 9
+     }
+    ]
+   },
+   "muut_staatus_selg": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 2,
+    "values": [
+     {
+      "value": "Kinnitatud (kehtiv)",
+      "rows": 537
+     },
+     {
+      "value": "T\u00fchistatud (endine)",
+      "rows": 9
+     }
+    ]
+   },
+   "muut_aeg": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 278
+   },
+   "ehak_kood1": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 16,
+    "values": [
+     {
+      "value": "0037",
+      "rows": 85
+     },
+     {
+      "value": "0068",
+      "rows": 54
+     },
+     {
+      "value": "0060",
+      "rows": 53
+     },
+     {
+      "value": "0079",
+      "rows": 50
+     },
+     {
+      "value": "0084",
+      "rows": 38
+     },
+     {
+      "value": "0087",
+      "rows": 35
+     },
+     {
+      "value": "0071",
+      "rows": 34
+     },
+     {
+      "value": "0052",
+      "rows": 34
+     },
+     {
+      "value": "0045",
+      "rows": 33
+     },
+     {
+      "value": "0050",
+      "rows": 32
+     },
+     {
+      "value": "0081",
+      "rows": 24
+     },
+     {
+      "value": "0074",
+      "rows": 24
+     },
+     {
+      "value": "0064",
+      "rows": 19
+     },
+     {
+      "value": "0056",
+      "rows": 19
+     },
+     {
+      "value": "0039",
+      "rows": 11
+     },
+     {
+      "value": "0037;0071",
+      "rows": 1
+     }
+    ]
+   }
+  }
+ },
+ "f_reoveealad_koormus": {
+  "rows": 87,
+  "columns": {
+   "rva_koormus_id": {
+    "dtype": "Int64",
+    "null_share": 0.0,
+    "distinct": 87,
+    "min": -2138943537,
+    "max": 1742913186
+   },
+   "reoveeala_id": {
+    "dtype": "Int64",
+    "null_share": 0.0,
+    "distinct": 22,
+    "values": [
+     {
+      "value": 210739434,
+      "rows": 8
+     },
+     {
+      "value": 1185139434,
+      "rows": 7
+     },
+     {
+      "value": -317539434,
+      "rows": 7
+     },
+     {
+      "value": 1797084093,
+      "rows": 7
+     },
+     {
+      "value": 1747826614,
+      "rows": 6
+     },
+     {
+      "value": -1541839434,
+      "rows": 6
+     },
+     {
+      "value": -1540639434,
+      "rows": 5
+     },
+     {
+      "value": -1090599731,
+      "rows": 5
+     },
+     {
+      "value": -643339434,
+      "rows": 4
+     },
+     {
+      "value": -782639434,
+      "rows": 3
+     },
+     {
+      "value": -1558839434,
+      "rows": 3
+     },
+     {
+      "value": -2096339434,
+      "rows": 3
+     },
+     {
+      "value": 740644439,
+      "rows": 3
+     },
+     {
+      "value": 2116939434,
+      "rows": 3
+     },
+     {
+      "value": 43369274,
+      "rows": 3
+     },
+     {
+      "value": -1021143572,
+      "rows": 3
+     },
+     {
+      "value": -1753208811,
+      "rows": 2
+     },
+     {
+      "value": -1227472287,
+      "rows": 2
+     },
+     {
+      "value": -619077637,
+      "rows": 2
+     },
+     {
+      "value": 1546508854,
+      "rows": 2
+     },
+     {
+      "value": -2051347009,
+      "rows": 2
+     },
+     {
+      "value": 999936495,
+      "rows": 1
+     }
+    ],
+    "min": -2096339434,
+    "max": 2116939434
+   },
+   "rva_koormus_tyyp": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 9,
+    "values": [
+     {
+      "value": "1.2",
+      "rows": 21
+     },
+     {
+      "value": "1.1",
+      "rows": 15
+     },
+     {
+      "value": "1.3",
+      "rows": 14
+     },
+     {
+      "value": "2.1",
+      "rows": 9
+     },
+     {
+      "value": "2.4",
+      "rows": 9
+     },
+     {
+      "value": "2.2",
+      "rows": 7
+     },
+     {
+      "value": "2.3",
+      "rows": 7
+     },
+     {
+      "value": "4.3",
+      "rows": 3
+     },
+     {
+      "value": "4.2",
+      "rows": 2
+     }
+    ]
+   },
+   "rva_koormus_tyyp_selg": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 9,
+    "values": [
+     {
+      "value": "Elanike koormus: eramud",
+      "rows": 21
+     },
+     {
+      "value": "Elanike koormus: kortermajad",
+      "rows": 15
+     },
+     {
+      "value": "Elanike koormus: suvitajad",
+      "rows": 14
+     },
+     {
+      "value": "Asutuste koormus: muu asutus",
+      "rows": 9
+     },
+     {
+      "value": "Asutuste koormus: kool",
+      "rows": 9
+     },
+     {
+      "value": "Asutuste koormus: k\u00fclastajad",
+      "rows": 7
+     },
+     {
+      "value": "Asutuste koormus: lasteaed",
+      "rows": 7
+     },
+     {
+      "value": "T\u00f6\u00f6stuslik koormus: muu t\u00f6\u00f6stus",
+      "rows": 3
+     },
+     {
+      "value": "T\u00f6\u00f6stuslik koormus: tootmisprotsessid",
+      "rows": 2
+     }
+    ]
+   },
+   "koormus": {
+    "dtype": "Int64",
+    "null_share": 0.0,
+    "distinct": 71,
+    "min": 1,
+    "max": 5181
+   },
+   "aasta": {
+    "dtype": "Null",
+    "null_share": 1.0,
+    "distinct": 1,
+    "values": [
+     {
+      "value": null,
+      "rows": 87
+     }
+    ]
+   },
+   "rva_kormus_muut_aeg": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 29,
+    "values": [
+     {
+      "value": "2022-03-07T11:22:21.229481",
+      "rows": 8
+     },
+     {
+      "value": "2022-09-23T10:37:35.593885",
+      "rows": 7
+     },
+     {
+      "value": "2022-02-03T15:25:58.132393",
+      "rows": 7
+     },
+     {
+      "value": "2022-09-23T10:42:06.507545",
+      "rows": 6
+     },
+     {
+      "value": "2022-02-03T15:18:41.753625",
+      "rows": 6
+     },
+     {
+      "value": "2022-03-07T12:07:06.069542",
+      "rows": 5
+     },
+     {
+      "value": "2026-05-25T15:00:03.432222",
+      "rows": 5
+     },
+     {
+      "value": "2022-02-03T16:02:06.462363",
+      "rows": 4
+     },
+     {
+      "value": "2022-01-31T14:06:58.497186",
+      "rows": 4
+     },
+     {
+      "value": "2024-03-25T15:27:18.072818",
+      "rows": 3
+     },
+     {
+      "value": "2022-02-03T15:53:20.745466",
+      "rows": 3
+     },
+     {
+      "value": "2022-03-07T11:07:30.388203",
+      "rows": 3
+     },
+     {
+      "value": "2022-02-03T15:35:59.616947",
+      "rows": 3
+     },
+     {
+      "value": "2022-02-03T15:40:04.797506",
+      "rows": 3
+     },
+     {
+      "value": "2022-09-23T10:27:02.953277",
+      "rows": 3
+     },
+     {
+      "value": "2022-03-07T11:34:54.26343",
+      "rows": 3
+     },
+     {
+      "value": "2022-09-26T14:32:41.832892",
+      "rows": 2
+     },
+     {
+      "value": "2024-01-26T13:04:09.984452",
+      "rows": 1
+     },
+     {
+      "value": "2023-07-21T13:47:00.515361",
+      "rows": 1
+     },
+     {
+      "value": "2023-07-21T14:44:25.906151",
+      "rows": 1
+     },
+     {
+      "value": "2024-02-05T10:16:12.247676",
+      "rows": 1
+     },
+     {
+      "value": "2023-07-21T14:39:00.756039",
+      "rows": 1
+     },
+     {
+      "value": "2023-07-21T13:48:17.435439",
+      "rows": 1
+     },
+     {
+      "value": "2023-07-21T15:06:41.495904",
+      "rows": 1
+     },
+     {
+      "value": "2024-02-05T10:15:40.518854",
+      "rows": 1
+     },
+     {
+      "value": "2023-12-19T14:48:38.157416",
+      "rows": 1
+     },
+     {
+      "value": "2023-12-19T14:49:46.927784",
+      "rows": 1
+     },
+     {
+      "value": "2023-07-21T14:44:57.54615",
+      "rows": 1
+     },
+     {
+      "value": "2024-01-25T10:42:37.060339",
+      "rows": 1
+     }
+    ]
+   }
+  }
+ }
+}
