@@ -1,0 +1,386 @@
+# Coverage of KAUR's Tableau "Keskkonnaülevaade"/"Seire" views by this site (assessment by the
+# analyst, 2026-10-06; to be confirmed by domain experts).  Key: `workbook` as in
+# data/tableau_public_workbooks.csv.  meie = olemas | osaliselt | puudub.  `andmed` = where data for
+# the missing/partial view could come from: "API:<table>" (named in the public API catalogue),
+# "väline" (not in the KAUR API, e.g. Statistikaamet, Eurostat, EEA) or "teadmata".
+# The Tableau views themselves could not be opened (no access to the hosts), so the descriptions
+# below rest on view titles only.
+
+[[vaade]]
+workbook = "Keskkonnalevaade-Energeetika-Taastuvenergiaosakaal"
+teema = "energeetika"
+meie = "puudub"
+andmed = "väline"
+markus = "Taastuvenergia osakaal on ametlikult energiabilansist (nt Statistikaamet); API-s puudub."
+
+[[vaade]]
+workbook = "Keskkonnalevaade-Energeetika-Elektrienergiahulk"
+teema = "energeetika"
+meie = "osaliselt"
+andmed = "API:t_soojatoodang_curr"
+markus = "Käitiste soojus- ja elektritoodang õhuaruandest; riiklik elektrienergia hulk puudub."
+
+[[vaade]]
+workbook = "Rohemdikud-Energeetika-detail-energeetika-Energeetikasektorikasvuhoonegaasideheitkogused"
+teema = "energeetika"
+meie = "puudub"
+andmed = "teadmata"
+markus = "Sektori KHG inventuur; API-s ei ole tuvastatud vastavat tabelit."
+
+[[vaade]]
+workbook = "Keskkonnalevaade-Ilmjakliima-Ilmjakliimaanomaaliad"
+teema = "ilm-ja-kliima"
+meie = "olemas"
+andmed = "API:f_kliima_*"
+markus = "Anomaaliad ja aastakeskmised kliimalehel."
+
+[[vaade]]
+workbook = "Keskkonnalevaade-Ilmjakliima-Keskmineaastahutemperatuur"
+teema = "ilm-ja-kliima"
+meie = "olemas"
+andmed = "API:f_kliima_*"
+markus = "Aasta keskmine temperatuur."
+
+[[vaade]]
+workbook = "Keskkonnalevaade-Ilmjakliima-IlmjakliimaKlm_kuum"
+teema = "ilm-ja-kliima"
+meie = "olemas"
+andmed = "API:f_kliima_*"
+markus = "Äärmusnäitajad (kuum/külm) kliimalehel."
+
+[[vaade]]
+workbook = "Rohemdikud-Kliimamuutused-detail-kliimamuutused-Kasvuhoonegaasideheitkogused"
+teema = "ilm-ja-kliima"
+meie = "puudub"
+andmed = "teadmata"
+markus = "KHG heitkogused (inventuur)."
+
+[[vaade]]
+workbook = "Keskkonnalevaade-Ilmajakliima-IlmjakliimaKHG2024"
+teema = "ilm-ja-kliima"
+meie = "puudub"
+andmed = "teadmata"
+markus = "KHG 2024."
+
+[[vaade]]
+workbook = "Keskkonnalevaade-Jtmed-JtmedjaSKP"
+teema = "jaatmed"
+meie = "puudub"
+andmed = "väline"
+markus = "Nõuab SKP andmeid (Statistikaamet)."
+
+[[vaade]]
+workbook = "Keskkonnalevaade-Jtmed-Ringlevamaterjalimr"
+teema = "jaatmed"
+meie = "puudub"
+andmed = "väline"
+markus = "Ringleva materjali määr on Eurostati näitaja."
+
+[[vaade]]
+workbook = "Keskkonnalevaade-Jtmed-Olmejtmed"
+teema = "jaatmed"
+meie = "osaliselt"
+andmed = "API:f_jaatmeliikumine_fix_riik"
+markus = "Meil riigi voogude tabel; olmejäätmete eraldi lõige (peatükk 20) on tuletatav, kuid ei ole tehtud."
+
+[[vaade]]
+workbook = "Keskkonnalevaade-Jtmed-Kogujtmetekevaldkonniti"
+teema = "jaatmed"
+meie = "olemas"
+andmed = "API:f_jaatmeliikumine_fix_riik"
+markus = "Teke peatükkide kaupa."
+
+[[vaade]]
+workbook = "Keskkonnalevaade-Liigid-Liikideseisund"
+teema = "liigid"
+meie = "puudub"
+andmed = "teadmata"
+markus = "Liikide seisundi hinnang (nt ELi aruandlus); meil ainult leiukohtade register."
+
+[[vaade]]
+workbook = "Keskkonnalevaade-Liigid-Punasenimestikuliigid"
+teema = "liigid"
+meie = "puudub"
+andmed = "teadmata"
+markus = "Punane nimestik; API-s ei ole tuvastatud."
+
+[[vaade]]
+workbook = "Keskkonnalevaade-Liigid-Suurkiskjatearvukus"
+teema = "liigid"
+meie = "puudub"
+andmed = "teadmata"
+markus = "Suurkiskjate arvukus (seire)."
+
+[[vaade]]
+workbook = "Keskkonnalevaade-Liigid-Lindudeindeks"
+teema = "liigid"
+meie = "puudub"
+andmed = "teadmata"
+markus = "Lindude indeks (seire)."
+
+[[vaade]]
+workbook = "Keskkonnalevaade-Mets-Metsamaapindala"
+teema = "mets"
+meie = "olemas"
+andmed = "API:f_smi_tulemused"
+markus = "Metsamaa pindala (SMI)."
+
+[[vaade]]
+workbook = "Keskkonnalevaade-Mets-Lehtpuu_Okaspuu"
+teema = "mets"
+meie = "olemas"
+andmed = "API:f_smi_tulemused"
+markus = "Puuliigid (tagavara enamuspuuliigi järgi)."
+
+[[vaade]]
+workbook = "Keskkonnalevaade-Mets-raskid"
+teema = "mets"
+meie = "puudub"
+andmed = "teadmata"
+markus = "Kuuse-kooreüraskid (metsakaitse seire)."
+
+[[vaade]]
+workbook = "Keskkonnalevaade-Mets-Raiemahud"
+teema = "mets"
+meie = "osaliselt"
+andmed = "API:f_smi_tulemused"
+markus = "Meil SMI raiehinnang; ametlik raiestatistika on teine allikas."
+
+[[vaade]]
+workbook = "Keskkonnalevaade-Maahive-PllumuldadePh"
+teema = "muld-ja-maahoive"
+meie = "puudub"
+andmed = "teadmata"
+markus = "Põllumuldade pH kaart."
+
+[[vaade]]
+workbook = "Keskkonnalevaade-Maahive-Mahepllumajanduseosakaal"
+teema = "muld-ja-maahoive"
+meie = "puudub"
+andmed = "väline"
+markus = "Mahepõllumajandusmaa osakaal (PRIA/Statistikaamet)."
+
+[[vaade]]
+workbook = "Keskkonnalevaade-Maahive-Maahive"
+teema = "muld-ja-maahoive"
+meie = "puudub"
+andmed = "väline"
+markus = "Maahõive jaotus."
+
+[[vaade]]
+workbook = "Keskkonnalevaade-Vesi-Pinnaveekogumitekoondseisund"
+teema = "vesi"
+meie = "olemas"
+andmed = "API:f_veekogumi_seisundid"
+markus = "Pinnaveekogumite seisund (paaritatud võrdlus)."
+
+[[vaade]]
+workbook = "Keskkonnalevaade-Vesi-Phjaveekogumitekoondseisund"
+teema = "vesi"
+meie = "osaliselt"
+andmed = "API:f_pohjaveekogumi_seisud"
+markus = "Põhjaveekogumid 2014 ja 2020, hulgad ei kattu."
+
+[[vaade]]
+workbook = "Keskkonnalevaade-Vesi-Eutrofeerumine"
+teema = "vesi"
+meie = "puudub"
+andmed = "API:f_veekogumi_seisundid"
+markus = "Tabelis on FÜKE üldlämmastik/-fosfor (alla 8% ridadest); ühik kinnitamata."
+
+[[vaade]]
+workbook = "Keskkonnalevaade-Vesi-Veekasutus"
+teema = "vesi"
+meie = "puudub"
+andmed = "API:t_awtabel004_curr"
+markus = "Veekasutus veearuandest; koondada ilma käitiste nimedeta."
+
+[[vaade]]
+workbook = "Keskkonnalevaade-Vesi-NO3phjavees"
+teema = "vesi"
+meie = "puudub"
+andmed = "teadmata"
+markus = "Nitraat põhjavees (seire)."
+
+[[vaade]]
+workbook = "Keskkonnalevaade-Vesi-Reostuskoormusedmerre"
+teema = "vesi"
+meie = "puudub"
+andmed = "API:f_reoveealad_koormus"
+markus = "Reostuskoormus merre; vastav tabel on API-s, tõlgendus kontrollimata."
+
+[[vaade]]
+workbook = "Keskkonnalevaade-hk-Peamisedheiteallikad"
+teema = "valisohk"
+meie = "olemas"
+andmed = "API:t_heitkogus_allikas_curr"
+markus = "Sektorid (käitiste aruanded, mitte riiklik inventuur)."
+
+[[vaade]]
+workbook = "Keskkonnalevaade-hk-Peamistesaasteaineteheitkogused"
+teema = "valisohk"
+meie = "olemas"
+andmed = "API:t_heitkogus_allikas_curr"
+markus = "Saasteained käitiste aruannetes."
+
+[[vaade]]
+workbook = "Keskkonnalevaade-hk-husaastetervisemju"
+teema = "valisohk"
+meie = "puudub"
+andmed = "väline"
+markus = "Tervisemõju (EEA hinnangud)."
+
+[[vaade]]
+workbook = "Rohemdikud-Elurikkus-detail-elurikkus-LoodusdirektiivielupaigatpideseisundEestisjaEuroopaLiidus"
+teema = "okosusteemid"
+meie = "osaliselt"
+andmed = "API:f_rahvalad_elupaikstat"
+markus = "Meil Natura SDF ala-taseme hinnang; EL elupaigatüüpide aruande seisund puudub."
+
+[[vaade]]
+workbook = "Keskkonnalevaade-kossteemid-kohvedjasidusus"
+teema = "okosusteemid"
+meie = "puudub"
+andmed = "teadmata"
+markus = "Ökosüsteemiteenused vs sidusus."
+
+[[vaade]]
+workbook = "RKSP-meteoroloogilineseire"
+teema = "seire"
+meie = "olemas"
+andmed = "API:f_kliima_*"
+markus = "Meteoroloogiline seire."
+
+[[vaade]]
+workbook = "RKSP-Hdroloogilineseire"
+teema = "seire"
+meie = "olemas"
+andmed = "API:f_hydroseire"
+markus = "Hüdroloogiline seire."
+
+[[vaade]]
+workbook = "RKSP-Metsaseire"
+teema = "seire"
+meie = "puudub"
+andmed = "teadmata"
+markus = "Okka- ja lehekadu."
+
+[[vaade]]
+workbook = "RKSP-Vlishuseire"
+teema = "seire"
+meie = "puudub"
+andmed = "teadmata"
+markus = "Välisõhu seire."
+
+[[vaade]]
+workbook = "RKSP-Kiirgusseire"
+teema = "seire"
+meie = "puudub"
+andmed = "teadmata"
+markus = "Kiirgusseire."
+
+[[vaade]]
+workbook = "RKSP-Kompleksseire"
+teema = "seire"
+meie = "puudub"
+andmed = "teadmata"
+markus = "Kompleksseire."
+
+[[vaade]]
+workbook = "RKSP-Mullaseire"
+teema = "seire"
+meie = "puudub"
+andmed = "teadmata"
+markus = "Raskmetallid mullas."
+
+# Further public workbooks of the profile that are not in the inventory (>= 230 views).
+[[vaade]]
+workbook = "Phjaveebilanss"
+teema = "vesi"
+meie = "puudub"
+andmed = "API:f_pohjaveevarud"
+markus = "Kõige vaadatum töövihik (põhjaveebilanss); tabelid olemas, tõlgendus kontrollimata."
+
+[[vaade]]
+workbook = "Jtmearuandlus_KKPjtmeteteemalehtedevaldkonnad_Olmejtmed"
+teema = "jaatmed"
+meie = "osaliselt"
+andmed = "API:f_jaatmeliikumine_fix_riik"
+markus = "Olmejäätmed (jäätmearuandlus)."
+
+[[vaade]]
+workbook = "Jtmearuandlus_KKPjtmeteteemalehtedevaldkonnad_ldinelevaade"
+teema = "jaatmed"
+meie = "olemas"
+andmed = "API:f_jaatmeliikumine_fix_riik"
+markus = "Üldine ülevaade."
+
+[[vaade]]
+workbook = "Jtmearuandlus_KKPjtmeteteemalehtedevaldkonnad_Pakendijtmed"
+teema = "jaatmed"
+meie = "puudub"
+andmed = "API:f_jaatmeliikumine_fix_riik"
+markus = "Pakendijäätmed: peatükk 15 01 tuletatav, kuid ei ole tehtud."
+
+[[vaade]]
+workbook = "Biojtmed"
+teema = "jaatmed"
+meie = "puudub"
+andmed = "API:f_jaatmeliikumine_fix_riik"
+markus = "Biojäätmed; tuletatavus kontrollimata."
+
+[[vaade]]
+workbook = "Jtmearuandlus_KKPjtmeteteemalehtedevaldkonnad_Ohtlikudjtmed"
+teema = "jaatmed"
+meie = "olemas"
+andmed = "API:f_jaatmeliikumine_fix_riik"
+markus = "Ohtlikud jäätmed."
+
+[[vaade]]
+workbook = "Jtmearuandlus_KKPjtmeteteemalehtedevaldkonnad_Ehitus-lammutusjtmed"
+teema = "jaatmed"
+meie = "olemas"
+andmed = "API:f_jaatmeliikumine_fix_riik"
+markus = "Ehitus- ja lammutusjäätmed on peatükk 17 jäätmetekke graafikul."
+
+[[vaade]]
+workbook = "Vlishk-Heitkogused-Heitkogusteinventuur"
+teema = "valisohk"
+meie = "osaliselt"
+andmed = "teadmata"
+markus = "Heitkoguste inventuur (riiklik); meil käitiste aruanded."
+
+[[vaade]]
+workbook = "Vlishk-Heitkogused-Heitkogustelevaade"
+teema = "valisohk"
+meie = "osaliselt"
+andmed = "teadmata"
+markus = "Heitkoguste ülevaade."
+
+[[vaade]]
+workbook = "Vlishk-Heitkogused-NECeesmrgid"
+teema = "valisohk"
+meie = "puudub"
+andmed = "väline"
+markus = "NEC eesmärgid (riiklik vähendamiskohustus)."
+
+[[vaade]]
+workbook = "Vlishk-Heitkogused-Tegevusaladeheidemullid"
+teema = "valisohk"
+meie = "osaliselt"
+andmed = "API:t_heitkogus_allikas_curr"
+markus = "Tegevusalade heide."
+
+[[vaade]]
+workbook = "Keskkonnalevaade-Mets-Kaitstavmets"
+teema = "mets"
+meie = "osaliselt"
+andmed = "API:f_alad"
+markus = "Kaitstav mets: meil kaitsealad ja vääriselupaigad, mitte metsamaa osakaal."
+
+[[vaade]]
+workbook = "Eestikeskminesademetesumma"
+teema = "ilm-ja-kliima"
+meie = "olemas"
+andmed = "API:f_kliima_*"
+markus = "Sademete summa kliimalehel."

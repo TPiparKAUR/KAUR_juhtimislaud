@@ -1,0 +1,730 @@
+{
+ "summary": {
+  "total_views": 17888,
+  "n_views": 54,
+  "by_status": {
+   "olemas": {
+    "n": 15,
+    "views": 5359
+   },
+   "osaliselt": {
+    "n": 10,
+    "views": 3381
+   },
+   "puudub": {
+    "n": 29,
+    "views": 9148
+   }
+  },
+  "themes": {
+   "energeetika": {
+    "views": 772,
+    "n": 3,
+    "olemas": 0,
+    "osaliselt": 1,
+    "puudub": 2,
+    "views_olemas": 0,
+    "views_osaliselt": 227,
+    "views_puudub": 545,
+    "share_views_uncovered": 0.706
+   },
+   "ilm-ja-kliima": {
+    "views": 2371,
+    "n": 6,
+    "olemas": 4,
+    "osaliselt": 0,
+    "puudub": 2,
+    "views_olemas": 1954,
+    "views_osaliselt": 0,
+    "views_puudub": 417,
+    "share_views_uncovered": 0.176
+   },
+   "jaatmed": {
+    "views": 3509,
+    "n": 10,
+    "olemas": 4,
+    "osaliselt": 2,
+    "puudub": 4,
+    "views_olemas": 1294,
+    "views_osaliselt": 863,
+    "views_puudub": 1352,
+    "share_views_uncovered": 0.385
+   },
+   "liigid": {
+    "views": 2627,
+    "n": 4,
+    "olemas": 0,
+    "osaliselt": 0,
+    "puudub": 4,
+    "views_olemas": 0,
+    "views_osaliselt": 0,
+    "views_puudub": 2627,
+    "share_views_uncovered": 1.0
+   },
+   "mets": {
+    "views": 1849,
+    "n": 5,
+    "olemas": 2,
+    "osaliselt": 2,
+    "puudub": 1,
+    "views_olemas": 829,
+    "views_osaliselt": 629,
+    "views_puudub": 391,
+    "share_views_uncovered": 0.211
+   },
+   "muld-ja-maahoive": {
+    "views": 676,
+    "n": 3,
+    "olemas": 0,
+    "osaliselt": 0,
+    "puudub": 3,
+    "views_olemas": 0,
+    "views_osaliselt": 0,
+    "views_puudub": 676,
+    "share_views_uncovered": 1.0
+   },
+   "vesi": {
+    "views": 2132,
+    "n": 7,
+    "olemas": 1,
+    "osaliselt": 1,
+    "puudub": 5,
+    "views_olemas": 245,
+    "views_osaliselt": 223,
+    "views_puudub": 1664,
+    "share_views_uncovered": 0.78
+   },
+   "valisohk": {
+    "views": 1932,
+    "n": 7,
+    "olemas": 2,
+    "osaliselt": 3,
+    "puudub": 2,
+    "views_olemas": 521,
+    "views_osaliselt": 942,
+    "views_puudub": 469,
+    "share_views_uncovered": 0.243
+   },
+   "okosusteemid": {
+    "views": 761,
+    "n": 2,
+    "olemas": 0,
+    "osaliselt": 1,
+    "puudub": 1,
+    "views_olemas": 0,
+    "views_osaliselt": 497,
+    "views_puudub": 264,
+    "share_views_uncovered": 0.347
+   },
+   "seire": {
+    "views": 1259,
+    "n": 7,
+    "olemas": 2,
+    "osaliselt": 0,
+    "puudub": 5,
+    "views_olemas": 516,
+    "views_osaliselt": 0,
+    "views_puudub": 743,
+    "share_views_uncovered": 0.59
+   }
+  },
+  "top_gaps": [
+   {
+    "workbook": "Phjaveebilanss",
+    "teema": "vesi",
+    "meie": "puudub",
+    "andmed": "API:f_pohjaveevarud",
+    "markus": "Kõige vaadatum töövihik (põhjaveebilanss); tabelid olemas, tõlgendus kontrollimata.",
+    "title": "Põhjaveebilanss",
+    "views": 1011
+   },
+   {
+    "workbook": "Keskkonnalevaade-Liigid-Liikideseisund",
+    "teema": "liigid",
+    "meie": "puudub",
+    "andmed": "teadmata",
+    "markus": "Liikide seisundi hinnang (nt ELi aruandlus); meil ainult leiukohtade register.",
+    "title": "Keskkonnaülevaade - Liigid - Liikide seisund",
+    "views": 785
+   },
+   {
+    "workbook": "Keskkonnalevaade-Liigid-Lindudeindeks",
+    "teema": "liigid",
+    "meie": "puudub",
+    "andmed": "teadmata",
+    "markus": "Lindude indeks (seire).",
+    "title": "Keskkonnaülevaade - Liigid - Lindude indeks",
+    "views": 649
+   },
+   {
+    "workbook": "Keskkonnalevaade-Liigid-Punasenimestikuliigid",
+    "teema": "liigid",
+    "meie": "puudub",
+    "andmed": "teadmata",
+    "markus": "Punane nimestik; API-s ei ole tuvastatud.",
+    "title": "Keskkonnaülevaade - Liigid - Punase nimestiku liigid",
+    "views": 631
+   },
+   {
+    "workbook": "Jtmearuandlus_KKPjtmeteteemalehtedevaldkonnad_Olmejtmed",
+    "teema": "jaatmed",
+    "meie": "osaliselt",
+    "andmed": "API:f_jaatmeliikumine_fix_riik",
+    "markus": "Olmejäätmed (jäätmearuandlus).",
+    "title": "Jäätmearuandlus_KKP jäätmete teemalehtede valdkonnad_Olmejäätmed",
+    "views": 579
+   },
+   {
+    "workbook": "Keskkonnalevaade-Liigid-Suurkiskjatearvukus",
+    "teema": "liigid",
+    "meie": "puudub",
+    "andmed": "teadmata",
+    "markus": "Suurkiskjate arvukus (seire).",
+    "title": "Keskkonnaülevaade - Liigid - Suurkiskjate arvukus",
+    "views": 562
+   },
+   {
+    "workbook": "Rohemdikud-Elurikkus-detail-elurikkus-LoodusdirektiivielupaigatpideseisundEestisjaEuroopaLiidus",
+    "teema": "okosusteemid",
+    "meie": "osaliselt",
+    "andmed": "API:f_rahvalad_elupaikstat",
+    "markus": "Meil Natura SDF ala-taseme hinnang; EL elupaigatüüpide aruande seisund puudub.",
+    "title": "Rohemõõdikud - Elurikkus - detail - elurikkus - Loodusdirektiivi elupaigatüüpide seisund Eestis ja Euroopa Liidus",
+    "views": 497
+   },
+   {
+    "workbook": "Keskkonnalevaade-Mets-raskid",
+    "teema": "mets",
+    "meie": "puudub",
+    "andmed": "teadmata",
+    "markus": "Kuuse-kooreüraskid (metsakaitse seire).",
+    "title": "Keskkonnaülevaade - Mets - Üraskid",
+    "views": 391
+   },
+   {
+    "workbook": "Jtmearuandlus_KKPjtmeteteemalehtedevaldkonnad_Pakendijtmed",
+    "teema": "jaatmed",
+    "meie": "puudub",
+    "andmed": "API:f_jaatmeliikumine_fix_riik",
+    "markus": "Pakendijäätmed: peatükk 15 01 tuletatav, kuid ei ole tehtud.",
+    "title": "Jäätmearuandlus_KKP jäätmete teemalehtede valdkonnad_Pakendijäätmed",
+    "views": 359
+   },
+   {
+    "workbook": "Keskkonnalevaade-Mets-Raiemahud",
+    "teema": "mets",
+    "meie": "osaliselt",
+    "andmed": "API:f_smi_tulemused",
+    "markus": "Meil SMI raiehinnang; ametlik raiestatistika on teine allikas.",
+    "title": "Keskkonnaülevaade - Mets - Raiemahud",
+    "views": 346
+   },
+   {
+    "workbook": "Biojtmed",
+    "teema": "jaatmed",
+    "meie": "puudub",
+    "andmed": "API:f_jaatmeliikumine_fix_riik",
+    "markus": "Biojäätmed; tuletatavus kontrollimata.",
+    "title": "Jäätmearuandlus_KKP jäätmete teemalehtede valdkonnad_Biojäätmed",
+    "views": 341
+   },
+   {
+    "workbook": "Vlishk-Heitkogused-Heitkogusteinventuur",
+    "teema": "valisohk",
+    "meie": "osaliselt",
+    "andmed": "teadmata",
+    "markus": "Heitkoguste inventuur (riiklik); meil käitiste aruanded.",
+    "title": "Välisõhk - Heitkogused - Heitkoguste inventuur",
+    "views": 336
+   }
+  ]
+ },
+ "views": [
+  {
+   "workbook": "Keskkonnalevaade-Energeetika-Taastuvenergiaosakaal",
+   "teema": "energeetika",
+   "meie": "puudub",
+   "andmed": "väline",
+   "markus": "Taastuvenergia osakaal on ametlikult energiabilansist (nt Statistikaamet); API-s puudub.",
+   "title": "Keskkonnaülevaade - Energeetika - Taastuvenergia osakaal",
+   "views": 286
+  },
+  {
+   "workbook": "Keskkonnalevaade-Energeetika-Elektrienergiahulk",
+   "teema": "energeetika",
+   "meie": "osaliselt",
+   "andmed": "API:t_soojatoodang_curr",
+   "markus": "Käitiste soojus- ja elektritoodang õhuaruandest; riiklik elektrienergia hulk puudub.",
+   "title": "Keskkonnaülevaade - Energeetika - Elektrienergia hulk",
+   "views": 227
+  },
+  {
+   "workbook": "Rohemdikud-Energeetika-detail-energeetika-Energeetikasektorikasvuhoonegaasideheitkogused",
+   "teema": "energeetika",
+   "meie": "puudub",
+   "andmed": "teadmata",
+   "markus": "Sektori KHG inventuur; API-s ei ole tuvastatud vastavat tabelit.",
+   "title": "Rohemõõdikud - Energeetika - detail- energeetika - Energeetikasektori kasvuhoonegaaside heitkogused",
+   "views": 259
+  },
+  {
+   "workbook": "Keskkonnalevaade-Ilmjakliima-Ilmjakliimaanomaaliad",
+   "teema": "ilm-ja-kliima",
+   "meie": "olemas",
+   "andmed": "API:f_kliima_*",
+   "markus": "Anomaaliad ja aastakeskmised kliimalehel.",
+   "title": "Keskkonnaülevaade - Ilm ja kliima - Ilm ja kliima anomaaliad",
+   "views": 667
+  },
+  {
+   "workbook": "Keskkonnalevaade-Ilmjakliima-Keskmineaastahutemperatuur",
+   "teema": "ilm-ja-kliima",
+   "meie": "olemas",
+   "andmed": "API:f_kliima_*",
+   "markus": "Aasta keskmine temperatuur.",
+   "title": "Keskkonnaülevaade - Ilm ja kliima - Keskmine aasta õhutemperatuur",
+   "views": 518
+  },
+  {
+   "workbook": "Keskkonnalevaade-Ilmjakliima-IlmjakliimaKlm_kuum",
+   "teema": "ilm-ja-kliima",
+   "meie": "olemas",
+   "andmed": "API:f_kliima_*",
+   "markus": "Äärmusnäitajad (kuum/külm) kliimalehel.",
+   "title": "Keskkonnaülevaade - Ilm ja kliima - Ilm ja kliima Külm_kuum",
+   "views": 531
+  },
+  {
+   "workbook": "Rohemdikud-Kliimamuutused-detail-kliimamuutused-Kasvuhoonegaasideheitkogused",
+   "teema": "ilm-ja-kliima",
+   "meie": "puudub",
+   "andmed": "teadmata",
+   "markus": "KHG heitkogused (inventuur).",
+   "title": "Rohemõõdikud - Kliimamuutused - detail - kliimamuutused - Kasvuhoonegaaside heitkogused",
+   "views": 229
+  },
+  {
+   "workbook": "Keskkonnalevaade-Ilmajakliima-IlmjakliimaKHG2024",
+   "teema": "ilm-ja-kliima",
+   "meie": "puudub",
+   "andmed": "teadmata",
+   "markus": "KHG 2024.",
+   "title": "Keskkonnaülevaade - Ilma ja kliima - Ilm ja kliima KHG 2024",
+   "views": 188
+  },
+  {
+   "workbook": "Keskkonnalevaade-Jtmed-JtmedjaSKP",
+   "teema": "jaatmed",
+   "meie": "puudub",
+   "andmed": "väline",
+   "markus": "Nõuab SKP andmeid (Statistikaamet).",
+   "title": "Keskkonnaülevaade - Jäätmed - Jäätmed ja SKP",
+   "views": 331
+  },
+  {
+   "workbook": "Keskkonnalevaade-Jtmed-Ringlevamaterjalimr",
+   "teema": "jaatmed",
+   "meie": "puudub",
+   "andmed": "väline",
+   "markus": "Ringleva materjali määr on Eurostati näitaja.",
+   "title": "Keskkonnaülevaade - Jäätmed - Ringleva materjali määr",
+   "views": 321
+  },
+  {
+   "workbook": "Keskkonnalevaade-Jtmed-Olmejtmed",
+   "teema": "jaatmed",
+   "meie": "osaliselt",
+   "andmed": "API:f_jaatmeliikumine_fix_riik",
+   "markus": "Meil riigi voogude tabel; olmejäätmete eraldi lõige (peatükk 20) on tuletatav, kuid ei ole tehtud.",
+   "title": "Keskkonnaülevaade - Jäätmed - Olmejäätmed",
+   "views": 284
+  },
+  {
+   "workbook": "Keskkonnalevaade-Jtmed-Kogujtmetekevaldkonniti",
+   "teema": "jaatmed",
+   "meie": "olemas",
+   "andmed": "API:f_jaatmeliikumine_fix_riik",
+   "markus": "Teke peatükkide kaupa.",
+   "title": "Keskkonnaülevaade - Jäätmed - Kogujäätme teke valdkonniti",
+   "views": 252
+  },
+  {
+   "workbook": "Keskkonnalevaade-Liigid-Liikideseisund",
+   "teema": "liigid",
+   "meie": "puudub",
+   "andmed": "teadmata",
+   "markus": "Liikide seisundi hinnang (nt ELi aruandlus); meil ainult leiukohtade register.",
+   "title": "Keskkonnaülevaade - Liigid - Liikide seisund",
+   "views": 785
+  },
+  {
+   "workbook": "Keskkonnalevaade-Liigid-Punasenimestikuliigid",
+   "teema": "liigid",
+   "meie": "puudub",
+   "andmed": "teadmata",
+   "markus": "Punane nimestik; API-s ei ole tuvastatud.",
+   "title": "Keskkonnaülevaade - Liigid - Punase nimestiku liigid",
+   "views": 631
+  },
+  {
+   "workbook": "Keskkonnalevaade-Liigid-Suurkiskjatearvukus",
+   "teema": "liigid",
+   "meie": "puudub",
+   "andmed": "teadmata",
+   "markus": "Suurkiskjate arvukus (seire).",
+   "title": "Keskkonnaülevaade - Liigid - Suurkiskjate arvukus",
+   "views": 562
+  },
+  {
+   "workbook": "Keskkonnalevaade-Liigid-Lindudeindeks",
+   "teema": "liigid",
+   "meie": "puudub",
+   "andmed": "teadmata",
+   "markus": "Lindude indeks (seire).",
+   "title": "Keskkonnaülevaade - Liigid - Lindude indeks",
+   "views": 649
+  },
+  {
+   "workbook": "Keskkonnalevaade-Mets-Metsamaapindala",
+   "teema": "mets",
+   "meie": "olemas",
+   "andmed": "API:f_smi_tulemused",
+   "markus": "Metsamaa pindala (SMI).",
+   "title": "Keskkonnaülevaade - Mets - Metsamaa pindala",
+   "views": 429
+  },
+  {
+   "workbook": "Keskkonnalevaade-Mets-Lehtpuu_Okaspuu",
+   "teema": "mets",
+   "meie": "olemas",
+   "andmed": "API:f_smi_tulemused",
+   "markus": "Puuliigid (tagavara enamuspuuliigi järgi).",
+   "title": "Keskkonnaülevaade - Mets - Lehtpuu_Okaspuu",
+   "views": 400
+  },
+  {
+   "workbook": "Keskkonnalevaade-Mets-raskid",
+   "teema": "mets",
+   "meie": "puudub",
+   "andmed": "teadmata",
+   "markus": "Kuuse-kooreüraskid (metsakaitse seire).",
+   "title": "Keskkonnaülevaade - Mets - Üraskid",
+   "views": 391
+  },
+  {
+   "workbook": "Keskkonnalevaade-Mets-Raiemahud",
+   "teema": "mets",
+   "meie": "osaliselt",
+   "andmed": "API:f_smi_tulemused",
+   "markus": "Meil SMI raiehinnang; ametlik raiestatistika on teine allikas.",
+   "title": "Keskkonnaülevaade - Mets - Raiemahud",
+   "views": 346
+  },
+  {
+   "workbook": "Keskkonnalevaade-Maahive-PllumuldadePh",
+   "teema": "muld-ja-maahoive",
+   "meie": "puudub",
+   "andmed": "teadmata",
+   "markus": "Põllumuldade pH kaart.",
+   "title": "Keskkonnaülevaade - Maahõive - Põllumuldade Ph",
+   "views": 202
+  },
+  {
+   "workbook": "Keskkonnalevaade-Maahive-Mahepllumajanduseosakaal",
+   "teema": "muld-ja-maahoive",
+   "meie": "puudub",
+   "andmed": "väline",
+   "markus": "Mahepõllumajandusmaa osakaal (PRIA/Statistikaamet).",
+   "title": "Keskkonnaülevaade - Maahõive - Mahepõllumajanduse osakaal",
+   "views": 178
+  },
+  {
+   "workbook": "Keskkonnalevaade-Maahive-Maahive",
+   "teema": "muld-ja-maahoive",
+   "meie": "puudub",
+   "andmed": "väline",
+   "markus": "Maahõive jaotus.",
+   "title": "Keskkonnaülevaade - Maahõive - Maahõive",
+   "views": 296
+  },
+  {
+   "workbook": "Keskkonnalevaade-Vesi-Pinnaveekogumitekoondseisund",
+   "teema": "vesi",
+   "meie": "olemas",
+   "andmed": "API:f_veekogumi_seisundid",
+   "markus": "Pinnaveekogumite seisund (paaritatud võrdlus).",
+   "title": "Keskkonnaülevaade - Vesi - Pinnaveekogumite koondseisund",
+   "views": 245
+  },
+  {
+   "workbook": "Keskkonnalevaade-Vesi-Phjaveekogumitekoondseisund",
+   "teema": "vesi",
+   "meie": "osaliselt",
+   "andmed": "API:f_pohjaveekogumi_seisud",
+   "markus": "Põhjaveekogumid 2014 ja 2020, hulgad ei kattu.",
+   "title": "Keskkonnaülevaade - Vesi - Põhjaveekogumite koondseisund",
+   "views": 223
+  },
+  {
+   "workbook": "Keskkonnalevaade-Vesi-Eutrofeerumine",
+   "teema": "vesi",
+   "meie": "puudub",
+   "andmed": "API:f_veekogumi_seisundid",
+   "markus": "Tabelis on FÜKE üldlämmastik/-fosfor (alla 8% ridadest); ühik kinnitamata.",
+   "title": "Keskkonnaülevaade - Vesi - Eutrofeerumine",
+   "views": 156
+  },
+  {
+   "workbook": "Keskkonnalevaade-Vesi-Veekasutus",
+   "teema": "vesi",
+   "meie": "puudub",
+   "andmed": "API:t_awtabel004_curr",
+   "markus": "Veekasutus veearuandest; koondada ilma käitiste nimedeta.",
+   "title": "Keskkonnaülevaade - Vesi - Veekasutus",
+   "views": 173
+  },
+  {
+   "workbook": "Keskkonnalevaade-Vesi-NO3phjavees",
+   "teema": "vesi",
+   "meie": "puudub",
+   "andmed": "teadmata",
+   "markus": "Nitraat põhjavees (seire).",
+   "title": "Keskkonnaülevaade - Vesi - NO3 põhjavees",
+   "views": 186
+  },
+  {
+   "workbook": "Keskkonnalevaade-Vesi-Reostuskoormusedmerre",
+   "teema": "vesi",
+   "meie": "puudub",
+   "andmed": "API:f_reoveealad_koormus",
+   "markus": "Reostuskoormus merre; vastav tabel on API-s, tõlgendus kontrollimata.",
+   "title": "Keskkonnaülevaade - Vesi - Reostuskoormused merre",
+   "views": 138
+  },
+  {
+   "workbook": "Keskkonnalevaade-hk-Peamisedheiteallikad",
+   "teema": "valisohk",
+   "meie": "olemas",
+   "andmed": "API:t_heitkogus_allikas_curr",
+   "markus": "Sektorid (käitiste aruanded, mitte riiklik inventuur).",
+   "title": "Keskkonnaülevaade - Õhk - Peamised heiteallikad",
+   "views": 267
+  },
+  {
+   "workbook": "Keskkonnalevaade-hk-Peamistesaasteaineteheitkogused",
+   "teema": "valisohk",
+   "meie": "olemas",
+   "andmed": "API:t_heitkogus_allikas_curr",
+   "markus": "Saasteained käitiste aruannetes.",
+   "title": "Keskkonnaülevaade - Õhk - Peamiste saasteainete heitkogused",
+   "views": 254
+  },
+  {
+   "workbook": "Keskkonnalevaade-hk-husaastetervisemju",
+   "teema": "valisohk",
+   "meie": "puudub",
+   "andmed": "väline",
+   "markus": "Tervisemõju (EEA hinnangud).",
+   "title": "Keskkonnaülevaade - Õhk - Õhusaaste tervisemõju",
+   "views": 228
+  },
+  {
+   "workbook": "Rohemdikud-Elurikkus-detail-elurikkus-LoodusdirektiivielupaigatpideseisundEestisjaEuroopaLiidus",
+   "teema": "okosusteemid",
+   "meie": "osaliselt",
+   "andmed": "API:f_rahvalad_elupaikstat",
+   "markus": "Meil Natura SDF ala-taseme hinnang; EL elupaigatüüpide aruande seisund puudub.",
+   "title": "Rohemõõdikud - Elurikkus - detail - elurikkus - Loodusdirektiivi elupaigatüüpide seisund Eestis ja Euroopa Liidus",
+   "views": 497
+  },
+  {
+   "workbook": "Keskkonnalevaade-kossteemid-kohvedjasidusus",
+   "teema": "okosusteemid",
+   "meie": "puudub",
+   "andmed": "teadmata",
+   "markus": "Ökosüsteemiteenused vs sidusus.",
+   "title": "Keskkonnaülevaade - Ökosüsteemid - Öko hüved ja sidusus",
+   "views": 264
+  },
+  {
+   "workbook": "RKSP-meteoroloogilineseire",
+   "teema": "seire",
+   "meie": "olemas",
+   "andmed": "API:f_kliima_*",
+   "markus": "Meteoroloogiline seire.",
+   "title": "RKSP - meteoroloogiline seire",
+   "views": 439
+  },
+  {
+   "workbook": "RKSP-Hdroloogilineseire",
+   "teema": "seire",
+   "meie": "olemas",
+   "andmed": "API:f_hydroseire",
+   "markus": "Hüdroloogiline seire.",
+   "title": "RKSP - Hüdroloogiline seire",
+   "views": 77
+  },
+  {
+   "workbook": "RKSP-Metsaseire",
+   "teema": "seire",
+   "meie": "puudub",
+   "andmed": "teadmata",
+   "markus": "Okka- ja lehekadu.",
+   "title": "RKSP - Metsaseire",
+   "views": 79
+  },
+  {
+   "workbook": "RKSP-Vlishuseire",
+   "teema": "seire",
+   "meie": "puudub",
+   "andmed": "teadmata",
+   "markus": "Välisõhu seire.",
+   "title": "RKSP - Välisõhu seire",
+   "views": 141
+  },
+  {
+   "workbook": "RKSP-Kiirgusseire",
+   "teema": "seire",
+   "meie": "puudub",
+   "andmed": "teadmata",
+   "markus": "Kiirgusseire.",
+   "title": "RKSP - Kiirgusseire",
+   "views": 155
+  },
+  {
+   "workbook": "RKSP-Kompleksseire",
+   "teema": "seire",
+   "meie": "puudub",
+   "andmed": "teadmata",
+   "markus": "Kompleksseire.",
+   "title": "RKSP - Kompleksseire",
+   "views": 99
+  },
+  {
+   "workbook": "RKSP-Mullaseire",
+   "teema": "seire",
+   "meie": "puudub",
+   "andmed": "teadmata",
+   "markus": "Raskmetallid mullas.",
+   "title": "RKSP - Mullaseire",
+   "views": 269
+  },
+  {
+   "workbook": "Phjaveebilanss",
+   "teema": "vesi",
+   "meie": "puudub",
+   "andmed": "API:f_pohjaveevarud",
+   "markus": "Kõige vaadatum töövihik (põhjaveebilanss); tabelid olemas, tõlgendus kontrollimata.",
+   "title": "Põhjaveebilanss",
+   "views": 1011
+  },
+  {
+   "workbook": "Jtmearuandlus_KKPjtmeteteemalehtedevaldkonnad_Olmejtmed",
+   "teema": "jaatmed",
+   "meie": "osaliselt",
+   "andmed": "API:f_jaatmeliikumine_fix_riik",
+   "markus": "Olmejäätmed (jäätmearuandlus).",
+   "title": "Jäätmearuandlus_KKP jäätmete teemalehtede valdkonnad_Olmejäätmed",
+   "views": 579
+  },
+  {
+   "workbook": "Jtmearuandlus_KKPjtmeteteemalehtedevaldkonnad_ldinelevaade",
+   "teema": "jaatmed",
+   "meie": "olemas",
+   "andmed": "API:f_jaatmeliikumine_fix_riik",
+   "markus": "Üldine ülevaade.",
+   "title": "Jäätmearuandlus_KKP jäätmete teemalehtede valdkonnad_Üldine ülevaade",
+   "views": 478
+  },
+  {
+   "workbook": "Jtmearuandlus_KKPjtmeteteemalehtedevaldkonnad_Pakendijtmed",
+   "teema": "jaatmed",
+   "meie": "puudub",
+   "andmed": "API:f_jaatmeliikumine_fix_riik",
+   "markus": "Pakendijäätmed: peatükk 15 01 tuletatav, kuid ei ole tehtud.",
+   "title": "Jäätmearuandlus_KKP jäätmete teemalehtede valdkonnad_Pakendijäätmed",
+   "views": 359
+  },
+  {
+   "workbook": "Biojtmed",
+   "teema": "jaatmed",
+   "meie": "puudub",
+   "andmed": "API:f_jaatmeliikumine_fix_riik",
+   "markus": "Biojäätmed; tuletatavus kontrollimata.",
+   "title": "Jäätmearuandlus_KKP jäätmete teemalehtede valdkonnad_Biojäätmed",
+   "views": 341
+  },
+  {
+   "workbook": "Jtmearuandlus_KKPjtmeteteemalehtedevaldkonnad_Ohtlikudjtmed",
+   "teema": "jaatmed",
+   "meie": "olemas",
+   "andmed": "API:f_jaatmeliikumine_fix_riik",
+   "markus": "Ohtlikud jäätmed.",
+   "title": "Jäätmearuandlus_KKP jäätmete teemalehtede valdkonnad_Ohtlikud jäätmed",
+   "views": 304
+  },
+  {
+   "workbook": "Jtmearuandlus_KKPjtmeteteemalehtedevaldkonnad_Ehitus-lammutusjtmed",
+   "teema": "jaatmed",
+   "meie": "olemas",
+   "andmed": "API:f_jaatmeliikumine_fix_riik",
+   "markus": "Ehitus- ja lammutusjäätmed on peatükk 17 jäätmetekke graafikul.",
+   "title": "Jäätmearuandlus_KKP jäätmete teemalehtede valdkonnad_Ehitus - lammutusjäätmed",
+   "views": 260
+  },
+  {
+   "workbook": "Vlishk-Heitkogused-Heitkogusteinventuur",
+   "teema": "valisohk",
+   "meie": "osaliselt",
+   "andmed": "teadmata",
+   "markus": "Heitkoguste inventuur (riiklik); meil käitiste aruanded.",
+   "title": "Välisõhk - Heitkogused - Heitkoguste inventuur",
+   "views": 336
+  },
+  {
+   "workbook": "Vlishk-Heitkogused-Heitkogustelevaade",
+   "teema": "valisohk",
+   "meie": "osaliselt",
+   "andmed": "teadmata",
+   "markus": "Heitkoguste ülevaade.",
+   "title": "Välisõhk - Heitkogused - Heitkoguste ülevaade",
+   "views": 333
+  },
+  {
+   "workbook": "Vlishk-Heitkogused-NECeesmrgid",
+   "teema": "valisohk",
+   "meie": "puudub",
+   "andmed": "väline",
+   "markus": "NEC eesmärgid (riiklik vähendamiskohustus).",
+   "title": "Välisõhk - Heitkogused - NEC eesmärgid",
+   "views": 241
+  },
+  {
+   "workbook": "Vlishk-Heitkogused-Tegevusaladeheidemullid",
+   "teema": "valisohk",
+   "meie": "osaliselt",
+   "andmed": "API:t_heitkogus_allikas_curr",
+   "markus": "Tegevusalade heide.",
+   "title": "Välisõhk - Heitkogused - Tegevusalade heide mullid",
+   "views": 273
+  },
+  {
+   "workbook": "Keskkonnalevaade-Mets-Kaitstavmets",
+   "teema": "mets",
+   "meie": "osaliselt",
+   "andmed": "API:f_alad",
+   "markus": "Kaitstav mets: meil kaitsealad ja vääriselupaigad, mitte metsamaa osakaal.",
+   "title": "Keskkonnaülevaade - Mets - Kaitstav mets",
+   "views": 283
+  },
+  {
+   "workbook": "Eestikeskminesademetesumma",
+   "teema": "ilm-ja-kliima",
+   "meie": "olemas",
+   "andmed": "API:f_kliima_*",
+   "markus": "Sademete summa kliimalehel.",
+   "title": "Eesti keskmine sademete summa",
+   "views": 238
+  }
+ ]
+}

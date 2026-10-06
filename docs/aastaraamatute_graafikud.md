@@ -117,3 +117,13 @@ kinnitust.
 - PDF-id ei ole repos; neid hoiab ainult töövoo artefakt (30 päeva).
 - Klassifikaatori märksõnad on minu valitud; viga võib olla (nt «maakonniti» lõikes loetud geograafiaks,
   «aastal 2022» ühe aasta seisuna ei loeta aegreaks).
+
+## 6. Teemade kaetus Keskkonnaülevaate vaadetega (jooniste ja teemade blokk)
+
+Aastaraamatute teemakaal (raie, pindala, hinnad) on ainult üks pool; teine on, mida KAUR-i enda
+Keskkonnaülevaate vaated kasutajatele kõige rohkem pakuvad. Tableau Public'i vaatamiste põhjal
+(`docs/keskkonnaulevaated_analuus.md`): kõige rohkem katmata nõudlust on teemadel **Liigid** (2 627
+vaatamist, 100% katmata), **Vesi** (2 132, 78% katmata) ja **Jäätmed** (3 509, 38%). Aastaraamatutes
+domineerib mets, juhtimislaua kasutuse põhjal on järgmised prioriteedid vesi (põhjaveebilanss, veekasutus),
+jäätmed (olmejäätmed, pakend) ja liigid. Järeldus: **aastaraamatud annavad vormi ja põhimõtted, kasutusandmed
+annavad teemade järjekorra**; kumbagi ei tohi teisega asendada.
