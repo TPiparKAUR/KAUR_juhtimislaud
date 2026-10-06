@@ -43,6 +43,7 @@ COLUMNS = [
     "seirekogum_tyyp",
     "naitaja_alamgrupp_selg",
     "naitaja_grupp_selg",
+    "analyys_meetod_nimi",
     "naitaja_proovimaatriks_nimi",
     "proov_vaatlus_mullatyyp_selg",
     "proov_vaatlus_mullahorisont",

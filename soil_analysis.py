@@ -94,6 +94,19 @@ def by_period(g: pl.DataFrame) -> list[dict[str, Any]]:
     return sorted(out, key=lambda r: r["period"])
 
 
+def methods(g: pl.DataFrame) -> list[dict[str, Any]]:
+    """Analytical methods behind an indicator (total content or extractable fraction?)."""
+    if "analyys_meetod_nimi" not in g.columns:
+        return []
+    return (
+        g.group_by("analyys_meetod_nimi")
+        .agg(rows=pl.len(), first_year=pl.col("year").min(), last_year=pl.col("year").max())
+        .sort("rows", descending=True)
+        .head(5)
+        .to_dicts()
+    )
+
+
 def paired(g: pl.DataFrame, first: str, last: str) -> dict[str, Any] | None:
     """Plots measured in both periods: per-plot median in each, and the change."""
     per = (
@@ -128,6 +141,7 @@ def build(df: pl.DataFrame) -> dict[str, Any]:
         indicators[name] = {
             "unit": "mg/kg KA" if INDICATORS[name][1] == "mg/kg" else INDICATORS[name][1] or "",
             "periods": periods,
+            "methods": methods(g),
             "paired": paired(g, labels[0], labels[-1]) if len(labels) >= 2 else None,
         }
     return {
@@ -144,6 +158,9 @@ def build(df: pl.DataFrame) -> dict[str, Any]:
                 "perioodis (paaritatud mediaanimuutus).",
                 "Väärtused, mis on märgitud „<“ (alla määramispiiri), on arvutustes määramispiiri "
                 "väärtusega; nende arv on iga perioodi juures näidatud.",
+                "Sama näitaja väärtus võib olla erineva fraktsiooni mõõtmine (kogusisaldus või "
+                "taimedele kättesaadav osa); meetodid on näitajate juures loetletud, kuid "
+                "fraktsiooni tõlgendus on kinnitamata ja väärtusi ei saa nende vahel võrrelda.",
                 "Piirväärtuste ja sihttasemetega võrdlust ei ole tehtud (kehtivaid norme ei ole "
                 "siin kinnitatud).",
             ],
