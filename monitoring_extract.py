@@ -42,6 +42,11 @@ COLUMNS = [
     "seirekoht_kood",
     "seirekogum_tyyp",
     "naitaja_alamgrupp_selg",
+    "naitaja_grupp_selg",
+    "naitaja_proovimaatriks_nimi",
+    "proov_vaatlus_mullatyyp_selg",
+    "proov_vaatlus_mullahorisont",
+    "mullaproov_sygavus",
     "vaartus_maaramispiir",
     "veekogu_kood",
     "veekogum_kood",
@@ -145,7 +150,8 @@ def summary(df: pl.DataFrame, nested: bool = True) -> dict[str, Any]:
 
 def main(argv: list[str] | None = None) -> None:
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--indicator", action="append", required=True, help="naitaja_nimetus (exact)")
+    ap.add_argument("--indicator", action="append", default=[], help="naitaja_nimetus (exact)")
+    ap.add_argument("--group", action="append", default=[], help="naitaja_grupp_selg (exact)")
     ap.add_argument("--species", default=None, help="liik_est (exact)")
     ap.add_argument("--out", type=Path, default=Path("out/extract"))
     ap.add_argument("--workers", type=int, default=3)
@@ -154,11 +160,16 @@ def main(argv: list[str] | None = None) -> None:
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
     client = Client(base_url=args.base_url)
     frames = []
-    for name in args.indicator:
-        filters = {"naitaja_nimetus": f"eq.{name}"}
+    selections = [("naitaja_nimetus", n) for n in args.indicator] + [
+        ("naitaja_grupp_selg", g) for g in args.group
+    ]
+    if not selections:
+        ap.error("give at least one --indicator or --group")
+    for column, name in selections:
+        filters = {column: f"eq.{name}"}
         if args.species:
             filters["liik_est"] = f"eq.{args.species}"
-        LOG.info("extracting %s", name)
+        LOG.info("extracting %s = %s", column, name)
         frames.append(extract(client, filters, args.workers))
     df = pl.concat(frames, how="diagonal") if frames else pl.DataFrame()
     args.out.mkdir(parents=True, exist_ok=True)

@@ -9,9 +9,13 @@ on:
   workflow_dispatch:
     inputs:
       indicators:
-        description: "naitaja_nimetus values separated by |"
-        required: true
-        default: "Okka/lehekadu kogu võra ulatuses"
+        description: "naitaja_nimetus values separated by | (may be empty if groups is set)"
+        required: false
+        default: ""
+      groups:
+        description: "naitaja_grupp_selg values separated by | (optional)"
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -31,10 +35,13 @@ jobs:
       - name: Extract
         env:
           INDICATORS: ${{ inputs.indicators }}
+          GROUPS_IN: ${{ inputs.groups }}
         run: |
           args=()
           IFS='|' read -ra names <<< "$INDICATORS"
-          for n in "${names[@]}"; do args+=(--indicator "$n"); done
+          for n in "${names[@]}"; do if [ -n "$n" ]; then args+=(--indicator "$n"); fi; done
+          IFS='|' read -ra gnames <<< "$GROUPS_IN"
+          for g in "${gnames[@]}"; do if [ -n "$g" ]; then args+=(--group "$g"); fi; done
           uv run python monitoring_extract.py "${args[@]}" --out out/extract --workers 3
         timeout-minutes: 35
       - uses: actions/upload-artifact@v4

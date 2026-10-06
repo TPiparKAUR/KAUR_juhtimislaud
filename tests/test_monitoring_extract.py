@@ -75,3 +75,13 @@ def test_indicators_with_different_null_columns_can_be_combined(tmp_path: Path) 
     assert df.height == 23 and df["naitaja_abr_unit"].null_count() == 17
     s = json.loads((tmp_path / "monitoring_extract_summary.json").read_text(encoding="utf-8"))
     assert set(s["per_indicator"]) == {"Okka/lehekadu kogu võra ulatuses", "Muu"}
+
+
+def test_group_selection_reads_all_indicators_of_the_group(tmp_path: Path) -> None:
+    rows = table()
+    for r in rows:
+        r["naitaja_grupp_selg"] = "Muld" if r["naitaja_nimetus"] == "Muu" else "Puud"
+    with fake_server({me.TABLE: rows}, max_rows=5) as (url, _s):
+        me.main(["--group", "Muld", "--out", str(tmp_path), "--base-url", url])
+    df = pl.read_parquet(tmp_path / "monitoring_extract.parquet")
+    assert df.height == 6 and set(df["naitaja_grupp_selg"]) == {"Muld"}
