@@ -131,6 +131,18 @@ def summary(df: pl.DataFrame, nested: bool = True) -> dict[str, Any]:
         .value_counts(sort=True)
         .head(20)
         .to_dicts(),
+        "matrix": df["naitaja_proovimaatriks_nimi"].value_counts(sort=True).head(10).to_dicts(),
+        "soil_types": df["proov_vaatlus_mullatyyp_selg"]
+        .value_counts(sort=True)
+        .head(12)
+        .to_dicts(),
+        "horizons": df["proov_vaatlus_mullahorisont"].value_counts(sort=True).head(15).to_dicts(),
+        "depths": df["mullaproov_sygavus"].value_counts(sort=True).head(15).to_dicts(),
+        "programmes": df["seiretoo_nimetus"]
+        .str.replace(r"\d{4}.*$", "", literal=False)
+        .value_counts(sort=True)
+        .head(12)
+        .to_dicts(),
         "other_values": df["vaartus_muu"].value_counts(sort=True).head(30).to_dicts(),
         "other_value_details": df["vaartus_muu_tapsustus"]
         .value_counts(sort=True)
