@@ -31,7 +31,7 @@ def frame() -> pl.DataFrame:
         add("Nitraat (NO3)", "mg/l", 20.0 + i, 2020, f"G{i % 2}", pohjaveekogum_kood="PV1")
     add("Nitraatlämmastik (NO3N)", "mgN/l", 12.0, 2020, "G9", pohjaveekogum_kood="PV1")
     add("Nitraatlämmastik (NO3N)", "mgN/l", None, 2020, "G9", pohjaveekogum_kood="PV1")
-    add("Nitraat (NO3)", "ppb", 5.0, 2020, "G9", pohjaveekogum_kood="PV1")
+    add("Nitraat (NO3)", "mgN/l", 5.0, 2020, "G9", pohjaveekogum_kood="PV1")  # ambiguous unit
     for i in range(6):  # river total nitrogen in mixed units; 1 mg N/l each
         unit, v = (("mg/l", 1.0), ("µg/l", 1000.0), ("µmolN/l", 71.39))[i % 3]
         add("Üldlämmastik", unit, v, 2021, f"R{i}", seirekogum_tyyp="V2B")

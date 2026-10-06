@@ -57,7 +57,11 @@ def nitrate_mg_no3(df: pl.DataFrame) -> pl.DataFrame:
         .then(pl.lit(NO3_FACTOR))
         .otherwise(pl.lit(1.0))
     )
-    ok_units = g.filter(pl.col("naitaja_abr_unit").is_in(["mg/l", "mgN/l"]))
+    is_n = pl.col("naitaja_nimetus") == "Nitraatlämmastik (NO3N)"
+    ok_units = g.filter(
+        (is_n & pl.col("naitaja_abr_unit").is_in(["mg/l", "mgN/l"]))
+        | (~is_n & (pl.col("naitaja_abr_unit") == "mg/l"))
+    )
     return ok_units.with_columns((pl.col("vaartus_arv_moodetud") * factor).alias("no3"))
 
 
