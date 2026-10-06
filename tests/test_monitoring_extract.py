@@ -51,3 +51,27 @@ def test_extract_reads_only_the_indicator_and_every_row(tmp_path: Path) -> None:
     assert df.height == 17 and set(df["naitaja_nimetus"]) == {"Okka/lehekadu kogu võra ulatuses"}
     s = json.loads((tmp_path / "monitoring_extract_summary.json").read_text(encoding="utf-8"))
     assert s["rows"] == 17 and s["plots"] == 4 and s["years"] == [2000, 2002]
+
+
+def test_indicators_with_different_null_columns_can_be_combined(tmp_path: Path) -> None:
+    rows = table()
+    for r in rows:
+        if r["naitaja_nimetus"] == "Muu":
+            r["naitaja_abr_unit"] = "mg/l"  # the other indicator has no unit at all
+    with fake_server({me.TABLE: rows}, max_rows=5) as (url, _s):
+        me.main(
+            [
+                "--indicator",
+                "Okka/lehekadu kogu võra ulatuses",
+                "--indicator",
+                "Muu",
+                "--out",
+                str(tmp_path),
+                "--base-url",
+                url,
+            ]
+        )
+    df = pl.read_parquet(tmp_path / "monitoring_extract.parquet")
+    assert df.height == 23 and df["naitaja_abr_unit"].null_count() == 17
+    s = json.loads((tmp_path / "monitoring_extract_summary.json").read_text(encoding="utf-8"))
+    assert set(s["per_indicator"]) == {"Okka/lehekadu kogu võra ulatuses", "Muu"}

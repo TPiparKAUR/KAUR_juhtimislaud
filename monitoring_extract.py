@@ -47,6 +47,17 @@ COLUMNS = [
 ]
 
 
+VALUE = "vaartus_arv_moodetud"
+
+
+def normalise(df: pl.DataFrame) -> pl.DataFrame:
+    """Same dtypes for every indicator (all-null columns are inferred as Null by polars)."""
+    return df.with_columns(
+        [pl.col(c).cast(pl.Float64) for c in COLUMNS if c == VALUE and c in df.columns]
+        + [pl.col(c).cast(pl.Utf8) for c in COLUMNS if c != VALUE and c in df.columns]
+    )
+
+
 def extract(
     client: Client, filters: dict[str, str], workers: int, page: int = PAGE
 ) -> pl.DataFrame:
@@ -76,7 +87,7 @@ def extract(
     rows = [r for p in parts for r in p]
     if len(rows) != total:
         raise RuntimeError(f"read {len(rows)} rows, server says {total}")
-    return pl.DataFrame(rows, infer_schema_length=None) if rows else pl.DataFrame()
+    return normalise(pl.DataFrame(rows, infer_schema_length=None)) if rows else pl.DataFrame()
 
 
 def summary(df: pl.DataFrame, nested: bool = True) -> dict[str, Any]:
