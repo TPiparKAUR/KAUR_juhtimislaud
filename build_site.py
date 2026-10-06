@@ -26,92 +26,104 @@ LOG = logging.getLogger("build_site")
 GROUP_PREFIX = "Keskkonnaülevaade: "
 ASSET_DIR = Path(__file__).parent / "site_src"
 # Analysis sections (chart builders in site_src/climate-page.js) per topic slug.
-ANALYSES: dict[str, tuple[str, list[tuple[str, str]]]] = {
-    "ilm-ja-kliima": (
-        "climate",
-        [
-            ("findings", "Peamised tulemused"),
-            ("annual", ""),
-            ("forest", ""),
-            ("grid", ""),
-            ("stations", ""),
-            ("precip", "Sademed"),
-            ("precipForest", ""),
-            ("extremes", "Äärmusnäitajad"),
-            ("coverage", "Andmete kvaliteet ja katvus"),
-            ("methods", ""),
-        ],
-    ),
-    "vesi": (
-        "hydro",
-        [
-            ("findings", "Jõgede vooluhulk: peamised tulemused"),
-            ("regime", ""),
-            ("specific", ""),
-            ("fdc", ""),
-            ("runoff", "Aastane äravool"),
-            ("link", ""),
-            ("extremes", "Suur- ja madalvesi"),
-            ("temp", "Veetemperatuur"),
-            ("coverage", "Andmete kvaliteet ja katvus"),
-            ("methods", ""),
-        ],
-    ),
-    "valisohk": (
-        "airenergy",
-        [
-            ("findings", "Käitiste õhuheited: peamised tulemused"),
-            ("co2", ""),
-            ("bio", ""),
-            ("sectors", "Sektorid ja ained"),
-            ("pollutants", ""),
-            ("counties", "Maakonnad"),
-            ("concentration", "Kontsentratsioon ja andmete tundlikkus"),
-            ("sensitivity", ""),
-            ("methods", ""),
-        ],
-    ),
-    "energeetika": (
-        "airenergy",
-        [
-            ("efindings", "Soojus- ja elektritoodang: peamised tulemused"),
-            ("fuel", ""),
-            ("electricity", ""),
-            ("heatclimate", "Talv ja soojatoodang"),
-            ("methods", ""),
-        ],
-    ),
-    "mets": (
-        "forest",
-        [
-            ("findings", "Mets: peamised tulemused"),
-            ("area", "Metsavarud"),
-            ("stock", ""),
-            ("perha", ""),
-            ("balance", "Juurdekasv ja raie"),
-            ("species", "Metsa struktuur"),
-            ("owners", ""),
-            ("management", ""),
-            ("age", ""),
-            ("counties", "Maakonnad"),
-            ("deadwood", "Surnud puit"),
-            ("methods", ""),
-        ],
-    ),
-    "jaatmed": (
-        "waste",
-        [
-            ("findings", "Jäätmed: peamised tulemused"),
-            ("generation", "Jäätmeteke"),
-            ("generationRest", ""),
-            ("hazardous", ""),
-            ("top", ""),
-            ("flows", "Käitlus ja liikumine"),
-            ("trade", ""),
-            ("stocks", "Andmete järjepidevus"),
-            ("methods", ""),
-        ],
-    ),
+ANALYSES: dict[str, list[tuple[str, list[tuple[str, str]]]]] = {
+    "ilm-ja-kliima": [
+        (
+            "climate",
+            [
+                ("findings", "Peamised tulemused"),
+                ("annual", ""),
+                ("forest", ""),
+                ("grid", ""),
+                ("stations", ""),
+                ("precip", "Sademed"),
+                ("precipForest", ""),
+                ("extremes", "Äärmusnäitajad"),
+                ("coverage", "Andmete kvaliteet ja katvus"),
+                ("methods", ""),
+            ],
+        ),
+    ],
+    "vesi": [
+        (
+            "hydro",
+            [
+                ("findings", "Jõgede vooluhulk: peamised tulemused"),
+                ("regime", ""),
+                ("specific", ""),
+                ("fdc", ""),
+                ("runoff", "Aastane äravool"),
+                ("link", ""),
+                ("extremes", "Suur- ja madalvesi"),
+                ("temp", "Veetemperatuur"),
+                ("coverage", "Andmete kvaliteet ja katvus"),
+                ("methods", ""),
+            ],
+        ),
+    ],
+    "valisohk": [
+        (
+            "airenergy",
+            [
+                ("findings", "Käitiste õhuheited: peamised tulemused"),
+                ("co2", ""),
+                ("bio", ""),
+                ("sectors", "Sektorid ja ained"),
+                ("pollutants", ""),
+                ("counties", "Maakonnad"),
+                ("concentration", "Kontsentratsioon ja andmete tundlikkus"),
+                ("sensitivity", ""),
+                ("methods", ""),
+            ],
+        ),
+    ],
+    "energeetika": [
+        (
+            "airenergy",
+            [
+                ("efindings", "Soojus- ja elektritoodang: peamised tulemused"),
+                ("fuel", ""),
+                ("electricity", ""),
+                ("heatclimate", "Talv ja soojatoodang"),
+                ("methods", ""),
+            ],
+        ),
+    ],
+    "mets": [
+        (
+            "forest",
+            [
+                ("findings", "Mets: peamised tulemused"),
+                ("area", "Metsavarud"),
+                ("stock", ""),
+                ("perha", ""),
+                ("balance", "Juurdekasv ja raie"),
+                ("species", "Metsa struktuur"),
+                ("owners", ""),
+                ("management", ""),
+                ("age", ""),
+                ("counties", "Maakonnad"),
+                ("deadwood", "Surnud puit"),
+                ("methods", ""),
+            ],
+        ),
+    ],
+    "jaatmed": [
+        (
+            "waste",
+            [
+                ("findings", "Jäätmed: peamised tulemused"),
+                ("generation", "Jäätmeteke"),
+                ("generationRest", ""),
+                ("hazardous", ""),
+                ("top", ""),
+                ("flows", "Käitlus ja liikumine"),
+                ("trade", ""),
+                ("stocks", "Andmete järjepidevus"),
+                ("methods", ""),
+            ],
+        ),
+    ],
 }
 SCRIPTS = {
     "climate": ["charts.js", "climate-page.js"],
@@ -347,13 +359,14 @@ def render_topic(topic: Topic, topics: list[Topic], features: frozenset[str] = f
         related = f"<h2>Seotud teemad</h2><p>{e(topic.related_reason)}</p><ul>{items}</ul>"
     sections = ""
     used: frozenset[str] = frozenset()
-    if topic.slug in ANALYSES and ANALYSES[topic.slug][0] in features:
-        kind, parts = ANALYSES[topic.slug]
-        used = frozenset({kind})
-        for key, heading in parts:
-            sections += (
-                f"<h2>{e(heading)}</h2>" if heading else ""
-            ) + f'<div data-{kind}="{key}"></div>'
+    blocks = [(k, p) for k, p in ANALYSES.get(topic.slug, []) if k in features]
+    if blocks:
+        used = frozenset(k for k, _ in blocks)
+        for kind, parts in blocks:
+            for key, heading in parts:
+                sections += (
+                    f"<h2>{e(heading)}</h2>" if heading else ""
+                ) + f'<div data-{kind}="{key}"></div>'
         figs = "<h2>Keskkonnaportaali vaated (Tableau)</h2>" + figs
     body = (
         f"<h1>{e(topic.title)}</h1>"

@@ -1,0 +1,49 @@
+name: Water analysis (from existing data)
+
+# Re-runs the analysis on the raw water-body tables of an earlier "Water data" run (artifact
+# water-raw) and publishes the aggregated water.json to `water-analysis`.
+# Raw rows never leave the workflow artifact.
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: "Run id of a successful 'Water data' run"
+        required: true
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: water-analyse
+  cancel-in-progress: false
+
+jobs:
+  analyse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync --frozen
+      - name: Download raw data artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_ID: ${{ inputs.run_id }}
+        run: gh run download "$RUN_ID" --repo "$GITHUB_REPOSITORY" -n water-raw -D out/water
+      - name: Analyse
+        run: uv run python run_water.py --raw out/water --out out/water
+      - name: Publish aggregated results
+        run: |
+          cp out/water/water.json "$RUNNER_TEMP/water.json"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan water-analysis
+          git rm -rf --quiet .
+          cp "$RUNNER_TEMP/water.json" water.json
+          git add -- water.json
+          git commit -m "Water analysis $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push --force origin water-analysis
