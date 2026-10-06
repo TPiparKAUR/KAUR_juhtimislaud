@@ -121,6 +121,12 @@ def summary(df: pl.DataFrame, nested: bool = True) -> dict[str, Any]:
         .value_counts(sort=True)
         .head(20)
         .to_dicts(),
+        "other_values": df["vaartus_muu"].value_counts(sort=True).head(30).to_dicts(),
+        "other_value_details": df["vaartus_muu_tapsustus"]
+        .value_counts(sort=True)
+        .head(20)
+        .to_dicts(),
+        "extra_numeric_non_null": int(df["vaartus_tapsustus_extra_arv"].is_not_null().sum()),
         "quantiles": {f"p{q}": v.quantile(q / 100) for q in (0, 5, 25, 50, 75, 95, 100)}
         if len(v)
         else {},
