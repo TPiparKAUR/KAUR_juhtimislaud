@@ -1,0 +1,3660 @@
+{
+ "register_category": [
+  {
+   "veekogu_tyyp": "12",
+   "veekogu_tyyp_selg": "Jõgi",
+   "keht_staatus": "Kehtetu",
+   "rows": 538
+  },
+  {
+   "veekogu_tyyp": "12",
+   "veekogu_tyyp_selg": "Jõgi",
+   "keht_staatus": "Kehtiv",
+   "rows": 370
+  },
+  {
+   "veekogu_tyyp": "11",
+   "veekogu_tyyp_selg": "Oja",
+   "keht_staatus": "Kehtetu",
+   "rows": 346
+  },
+  {
+   "veekogu_tyyp": "13",
+   "veekogu_tyyp_selg": "Peakraav",
+   "keht_staatus": "Kehtetu",
+   "rows": 238
+  },
+  {
+   "veekogu_tyyp": "11",
+   "veekogu_tyyp_selg": "Oja",
+   "keht_staatus": "Kehtiv",
+   "rows": 166
+  },
+  {
+   "veekogu_tyyp": "22",
+   "veekogu_tyyp_selg": "Looduslik järv",
+   "keht_staatus": "Kehtiv",
+   "rows": 89
+  },
+  {
+   "veekogu_tyyp": "13",
+   "veekogu_tyyp_selg": "Peakraav",
+   "keht_staatus": "Kehtiv",
+   "rows": 79
+  },
+  {
+   "veekogu_tyyp": "14",
+   "veekogu_tyyp_selg": "Kraav",
+   "keht_staatus": "Kehtetu",
+   "rows": 65
+  },
+  {
+   "veekogu_tyyp": "30",
+   "veekogu_tyyp_selg": "Meri",
+   "keht_staatus": "Kehtiv",
+   "rows": 38
+  },
+  {
+   "veekogu_tyyp": "14",
+   "veekogu_tyyp_selg": "Kraav",
+   "keht_staatus": "Kehtiv",
+   "rows": 14
+  },
+  {
+   "veekogu_tyyp": "15",
+   "veekogu_tyyp_selg": "Kanal",
+   "keht_staatus": "Kehtetu",
+   "rows": 6
+  },
+  {
+   "veekogu_tyyp": "15",
+   "veekogu_tyyp_selg": "Kanal",
+   "keht_staatus": "Kehtiv",
+   "rows": 6
+  },
+  {
+   "veekogu_tyyp": null,
+   "veekogu_tyyp_selg": null,
+   "keht_staatus": "Kehtetu",
+   "rows": 5
+  },
+  {
+   "veekogu_tyyp": "23",
+   "veekogu_tyyp_selg": "Tehisjärv",
+   "keht_staatus": "Kehtiv",
+   "rows": 4
+  },
+  {
+   "veekogu_tyyp": "21",
+   "veekogu_tyyp_selg": "Paisjärv",
+   "keht_staatus": "Kehtetu",
+   "rows": 4
+  },
+  {
+   "veekogu_tyyp": "22",
+   "veekogu_tyyp_selg": "Looduslik järv",
+   "keht_staatus": "Kehtetu",
+   "rows": 1
+  }
+ ],
+ "register_kood_prefix": [
+  {
+   "prefix": "115",
+   "keht_staatus": "Kehtetu",
+   "rows": 106
+  },
+  {
+   "prefix": "113",
+   "keht_staatus": "Kehtetu",
+   "rows": 101
+  },
+  {
+   "prefix": "114",
+   "keht_staatus": "Kehtetu",
+   "rows": 100
+  },
+  {
+   "prefix": "112",
+   "keht_staatus": "Kehtetu",
+   "rows": 96
+  },
+  {
+   "prefix": "108",
+   "keht_staatus": "Kehtetu",
+   "rows": 76
+  },
+  {
+   "prefix": "111",
+   "keht_staatus": "Kehtetu",
+   "rows": 73
+  },
+  {
+   "prefix": "110",
+   "keht_staatus": "Kehtetu",
+   "rows": 70
+  },
+  {
+   "prefix": "116",
+   "keht_staatus": "Kehtetu",
+   "rows": 62
+  },
+  {
+   "prefix": "103",
+   "keht_staatus": "Kehtetu",
+   "rows": 60
+  },
+  {
+   "prefix": "100",
+   "keht_staatus": "Kehtetu",
+   "rows": 60
+  },
+  {
+   "prefix": "104",
+   "keht_staatus": "Kehtetu",
+   "rows": 56
+  },
+  {
+   "prefix": "102",
+   "keht_staatus": "Kehtetu",
+   "rows": 54
+  },
+  {
+   "prefix": "101",
+   "keht_staatus": "Kehtetu",
+   "rows": 53
+  },
+  {
+   "prefix": "107",
+   "keht_staatus": "Kehtetu",
+   "rows": 52
+  },
+  {
+   "prefix": "116",
+   "keht_staatus": "Kehtiv",
+   "rows": 48
+  },
+  {
+   "prefix": "106",
+   "keht_staatus": "Kehtetu",
+   "rows": 46
+  },
+  {
+   "prefix": "115",
+   "keht_staatus": "Kehtiv",
+   "rows": 46
+  },
+  {
+   "prefix": "100",
+   "keht_staatus": "Kehtiv",
+   "rows": 44
+  },
+  {
+   "prefix": "105",
+   "keht_staatus": "Kehtetu",
+   "rows": 43
+  },
+  {
+   "prefix": "109",
+   "keht_staatus": "Kehtetu",
+   "rows": 43
+  },
+  {
+   "prefix": "117",
+   "keht_staatus": "Kehtetu",
+   "rows": 41
+  },
+  {
+   "prefix": "107",
+   "keht_staatus": "Kehtiv",
+   "rows": 39
+  },
+  {
+   "prefix": "114",
+   "keht_staatus": "Kehtiv",
+   "rows": 39
+  },
+  {
+   "prefix": "108",
+   "keht_staatus": "Kehtiv",
+   "rows": 39
+  },
+  {
+   "prefix": "111",
+   "keht_staatus": "Kehtiv",
+   "rows": 39
+  },
+  {
+   "prefix": "113",
+   "keht_staatus": "Kehtiv",
+   "rows": 37
+  },
+  {
+   "prefix": "112",
+   "keht_staatus": "Kehtiv",
+   "rows": 36
+  },
+  {
+   "prefix": "105",
+   "keht_staatus": "Kehtiv",
+   "rows": 36
+  },
+  {
+   "prefix": "101",
+   "keht_staatus": "Kehtiv",
+   "rows": 33
+  },
+  {
+   "prefix": "106",
+   "keht_staatus": "Kehtiv",
+   "rows": 33
+  },
+  {
+   "prefix": "110",
+   "keht_staatus": "Kehtiv",
+   "rows": 33
+  },
+  {
+   "prefix": "104",
+   "keht_staatus": "Kehtiv",
+   "rows": 31
+  },
+  {
+   "prefix": "103",
+   "keht_staatus": "Kehtiv",
+   "rows": 28
+  },
+  {
+   "prefix": "117",
+   "keht_staatus": "Kehtiv",
+   "rows": 27
+  },
+  {
+   "prefix": "102",
+   "keht_staatus": "Kehtiv",
+   "rows": 24
+  },
+  {
+   "prefix": "109",
+   "keht_staatus": "Kehtiv",
+   "rows": 22
+  },
+  {
+   "prefix": "EE_",
+   "keht_staatus": "Kehtiv",
+   "rows": 16
+  },
+  {
+   "prefix": "208",
+   "keht_staatus": "Kehtiv",
+   "rows": 12
+  },
+  {
+   "prefix": "200",
+   "keht_staatus": "Kehtiv",
+   "rows": 11
+  },
+  {
+   "prefix": "207",
+   "keht_staatus": "Kehtiv",
+   "rows": 11
+  }
+ ],
+ "register_kood_sample": [
+  "1150100_1",
+  "1154800_5",
+  "1110600_1",
+  "114280_1",
+  "101250_1",
+  "117430_1",
+  "104830_1",
+  "111960_3",
+  "102960_1",
+  "117010_1",
+  "110570_1",
+  "2070800_1"
+ ],
+ "register_vee_tyyp_selg": [
+  {
+   "vee_tyyp": "V1B",
+   "vee_tyyp_selg": "Vooluveekogu(mi) tüüp V1B",
+   "rows": 681
+  },
+  {
+   "vee_tyyp": null,
+   "vee_tyyp_selg": null,
+   "rows": 397
+  },
+  {
+   "vee_tyyp": "V1A",
+   "vee_tyyp_selg": "Vooluveekogu(mi) tüüp V1A",
+   "rows": 261
+  },
+  {
+   "vee_tyyp": "V2B",
+   "vee_tyyp_selg": "Vooluveekogu(mi) tüüp V2B",
+   "rows": 201
+  },
+  {
+   "vee_tyyp": "V1B-KaVo",
+   "vee_tyyp_selg": "Vooluveekogu(mi) tüüp V1B-KaVo",
+   "rows": 130
+  },
+  {
+   "vee_tyyp": "V1A-KaVo",
+   "vee_tyyp_selg": "Vooluveekogu(mi) tüüp V1A-KaVo",
+   "rows": 54
+  },
+  {
+   "vee_tyyp": "V2A",
+   "vee_tyyp_selg": "Vooluveekogu(mi) tüüp V2A",
+   "rows": 47
+  },
+  {
+   "vee_tyyp": "S2",
+   "vee_tyyp_selg": "Seisuveekogu(mi) tüüp S2",
+   "rows": 46
+  },
+  {
+   "vee_tyyp": "V3B",
+   "vee_tyyp_selg": "Vooluveekogu(mi) tüüp V3B",
+   "rows": 38
+  },
+  {
+   "vee_tyyp": "V1C",
+   "vee_tyyp_selg": null,
+   "rows": 29
+  },
+  {
+   "vee_tyyp": "S3",
+   "vee_tyyp_selg": "Seisuveekogu(mi) tüüp S3",
+   "rows": 18
+  },
+  {
+   "vee_tyyp": "S8",
+   "vee_tyyp_selg": "Seisuveekogu(mi) tüüp S8 (rannajärved)",
+   "rows": 13
+  },
+  {
+   "vee_tyyp": "S4",
+   "vee_tyyp_selg": "Seisuveekogu(mi) tüüp S4",
+   "rows": 9
+  },
+  {
+   "vee_tyyp": "V4B",
+   "vee_tyyp_selg": "Vooluveekogu(mi) tüüp V4B",
+   "rows": 8
+  },
+  {
+   "vee_tyyp": "S5",
+   "vee_tyyp_selg": "Seisuveekogu(mi) tüüp S5",
+   "rows": 8
+  },
+  {
+   "vee_tyyp": "R5",
+   "vee_tyyp_selg": "Rannikuvee tüüp 5 (Väinameri)",
+   "rows": 6
+  },
+  {
+   "vee_tyyp": "R3",
+   "vee_tyyp_selg": "Rannikuvee tüüp 3 (Soome lahe lääneosa)",
+   "rows": 5
+  },
+  {
+   "vee_tyyp": "V3A",
+   "vee_tyyp_selg": "Vooluveekogu(mi) tüüp V3A",
+   "rows": 4
+  },
+  {
+   "vee_tyyp": "R6",
+   "vee_tyyp_selg": "Rannikuvee tüüp 6 (Liivi laht)",
+   "rows": 4
+  },
+  {
+   "vee_tyyp": "R4",
+   "vee_tyyp_selg": "Rannikuvee tüüp 4 (Läänesaarte avamere rannikuvesi)",
+   "rows": 3
+  },
+  {
+   "vee_tyyp": "R1",
+   "vee_tyyp_selg": "Rannikuvee tüüp 1 (Soome lahe kaguosa)",
+   "rows": 2
+  },
+  {
+   "vee_tyyp": "R2",
+   "vee_tyyp_selg": "Rannikuvee tüüp 2 (Pärnu laht)",
+   "rows": 1
+  },
+  {
+   "vee_tyyp": "S6",
+   "vee_tyyp_selg": "Seisuveekogu(mi) tüüp S6 (Võrtsjärv)",
+   "rows": 1
+  },
+  {
+   "vee_tyyp": "S1",
+   "vee_tyyp_selg": "Seisuveekogu(mi) tüüp S1",
+   "rows": 1
+  },
+  {
+   "vee_tyyp": "S7-2",
+   "vee_tyyp_selg": "Seisuveekogu(mi) tüüp S7-2 (Peipsi järv: Peipsi veekogum)",
+   "rows": 1
+  },
+  {
+   "vee_tyyp": "S7-1",
+   "vee_tyyp_selg": "Seisuveekogu(mi) tüüp S7-1 (Peipsi järv: Pihkva-Lämmijärve veekogum)",
+   "rows": 1
+  }
+ ],
+ "status_by_year_type_validity": [
+  {
+   "aasta": "2007",
+   "tyyp": "S",
+   "keht_staatus": "Kehtiv",
+   "muut_staatus": null,
+   "rows": 17,
+   "bodies": 17
+  },
+  {
+   "aasta": "2008",
+   "tyyp": "S",
+   "keht_staatus": "Kehtiv",
+   "muut_staatus": null,
+   "rows": 25,
+   "bodies": 25
+  },
+  {
+   "aasta": "2009",
+   "tyyp": "S",
+   "keht_staatus": "Kehtiv",
+   "muut_staatus": null,
+   "rows": 28,
+   "bodies": 28
+  },
+  {
+   "aasta": "2010",
+   "tyyp": "S",
+   "keht_staatus": "Kehtiv",
+   "muut_staatus": null,
+   "rows": 736,
+   "bodies": 736
+  },
+  {
+   "aasta": "2011",
+   "tyyp": "S",
+   "keht_staatus": "Kehtiv",
+   "muut_staatus": null,
+   "rows": 152,
+   "bodies": 152
+  },
+  {
+   "aasta": "2012",
+   "tyyp": "S",
+   "keht_staatus": "Kehtiv",
+   "muut_staatus": null,
+   "rows": 735,
+   "bodies": 734
+  },
+  {
+   "aasta": "2013",
+   "tyyp": "S",
+   "keht_staatus": "Kehtiv",
+   "muut_staatus": null,
+   "rows": 734,
+   "bodies": 734
+  },
+  {
+   "aasta": "2014",
+   "tyyp": "S",
+   "keht_staatus": "Kehtiv",
+   "muut_staatus": null,
+   "rows": 729,
+   "bodies": 729
+  },
+  {
+   "aasta": "2015",
+   "tyyp": "E",
+   "keht_staatus": "Kehtiv",
+   "muut_staatus": null,
+   "rows": 727,
+   "bodies": 727
+  },
+  {
+   "aasta": "2015",
+   "tyyp": "S",
+   "keht_staatus": "Kehtiv",
+   "muut_staatus": "K",
+   "rows": 3,
+   "bodies": 3
+  },
+  {
+   "aasta": "2015",
+   "tyyp": "S",
+   "keht_staatus": "Kehtetu",
+   "muut_staatus": "A",
+   "rows": 7,
+   "bodies": 7
+  },
+  {
+   "aasta": "2015",
+   "tyyp": "S",
+   "keht_staatus": "Kehtiv",
+   "muut_staatus": null,
+   "rows": 721,
+   "bodies": 721
+  },
+  {
+   "aasta": "2016",
+   "tyyp": "S",
+   "keht_staatus": "Kehtiv",
+   "muut_staatus": null,
+   "rows": 132,
+   "bodies": 132
+  },
+  {
+   "aasta": "2017",
+   "tyyp": "S",
+   "keht_staatus": "Kehtiv",
+   "muut_staatus": null,
+   "rows": 149,
+   "bodies": 149
+  },
+  {
+   "aasta": "2017",
+   "tyyp": "S",
+   "keht_staatus": "Kehtetu",
+   "muut_staatus": "A",
+   "rows": 2,
+   "bodies": 2
+  },
+  {
+   "aasta": "2018",
+   "tyyp": "S",
+   "keht_staatus": "Kehtiv",
+   "muut_staatus": null,
+   "rows": 136,
+   "bodies": 136
+  },
+  {
+   "aasta": "2018",
+   "tyyp": "S",
+   "keht_staatus": "Kehtetu",
+   "muut_staatus": "A",
+   "rows": 4,
+   "bodies": 4
+  },
+  {
+   "aasta": "2019",
+   "tyyp": "S",
+   "keht_staatus": "Kehtetu",
+   "muut_staatus": "A",
+   "rows": 1,
+   "bodies": 1
+  },
+  {
+   "aasta": "2019",
+   "tyyp": "S",
+   "keht_staatus": "Kehtiv",
+   "muut_staatus": null,
+   "rows": 203,
+   "bodies": 203
+  },
+  {
+   "aasta": "2020",
+   "tyyp": "S",
+   "keht_staatus": "Kehtiv",
+   "muut_staatus": "K",
+   "rows": 1,
+   "bodies": 1
+  },
+  {
+   "aasta": "2020",
+   "tyyp": "S",
+   "keht_staatus": "Kehtetu",
+   "muut_staatus": "A",
+   "rows": 2,
+   "bodies": 2
+  },
+  {
+   "aasta": "2020",
+   "tyyp": "S",
+   "keht_staatus": "Kehtiv",
+   "muut_staatus": null,
+   "rows": 149,
+   "bodies": 149
+  },
+  {
+   "aasta": "2021",
+   "tyyp": "E",
+   "keht_staatus": "Kehtiv",
+   "muut_staatus": null,
+   "rows": 750,
+   "bodies": 750
+  },
+  {
+   "aasta": "2021",
+   "tyyp": "S",
+   "keht_staatus": "Kehtiv",
+   "muut_staatus": null,
+   "rows": 168,
+   "bodies": 168
+  },
+  {
+   "aasta": "2021",
+   "tyyp": "S",
+   "keht_staatus": "Kehtetu",
+   "muut_staatus": "A",
+   "rows": 2,
+   "bodies": 2
+  },
+  {
+   "aasta": "2021",
+   "tyyp": "S",
+   "keht_staatus": "Kehtiv",
+   "muut_staatus": "K",
+   "rows": 1,
+   "bodies": 1
+  },
+  {
+   "aasta": "2022",
+   "tyyp": "S",
+   "keht_staatus": "Kehtetu",
+   "muut_staatus": "A",
+   "rows": 3,
+   "bodies": 3
+  },
+  {
+   "aasta": "2022",
+   "tyyp": "S",
+   "keht_staatus": "Kehtiv",
+   "muut_staatus": "K",
+   "rows": 182,
+   "bodies": 182
+  },
+  {
+   "aasta": "2023",
+   "tyyp": "S",
+   "keht_staatus": "Kehtiv",
+   "muut_staatus": null,
+   "rows": 140,
+   "bodies": 140
+  },
+  {
+   "aasta": "2023",
+   "tyyp": "S",
+   "keht_staatus": "Kehtiv",
+   "muut_staatus": "K",
+   "rows": 9,
+   "bodies": 9
+  },
+  {
+   "aasta": "2023",
+   "tyyp": "S",
+   "keht_staatus": "Kehtetu",
+   "muut_staatus": "A",
+   "rows": 1,
+   "bodies": 1
+  },
+  {
+   "aasta": "2024",
+   "tyyp": "S",
+   "keht_staatus": "Kehtiv",
+   "muut_staatus": "K",
+   "rows": 165,
+   "bodies": 165
+  },
+  {
+   "aasta": "2027",
+   "tyyp": "E",
+   "keht_staatus": "Kehtiv",
+   "muut_staatus": null,
+   "rows": 222,
+   "bodies": 222
+  },
+  {
+   "aasta": "2027",
+   "tyyp": "E",
+   "keht_staatus": "Kehtetu",
+   "muut_staatus": "A",
+   "rows": 5,
+   "bodies": 5
+  }
+ ],
+ "status_duplicates": {
+  "groups": 7039,
+  "groups_with_multiple_rows": 2
+ },
+ "status_kood_sample": [
+  "1122000_1-2021-E",
+  "2133700_1-2018-S",
+  "2073400_1-2017-S",
+  "1050700_1-2015-E",
+  "1083100_1-2015-E",
+  "1051200_1-2012-S",
+  "2088620_1-2010-S",
+  "2065100_1-2015-E",
+  "2052800_1-2011-S",
+  "1077100_1-2014-S"
+ ],
+ "status_join_ok": {
+  "status_bodies": 852,
+  "found_in_register": 852
+ },
+ "status_S_valid_overall": [
+  {
+   "aasta": "2010",
+   "seis": "2",
+   "rows": 505
+  },
+  {
+   "aasta": "2012",
+   "seis": "2",
+   "rows": 472
+  },
+  {
+   "aasta": "2013",
+   "seis": "2",
+   "rows": 444
+  },
+  {
+   "aasta": "2014",
+   "seis": "2",
+   "rows": 428
+  },
+  {
+   "aasta": "2015",
+   "seis": "2",
+   "rows": 413
+  },
+  {
+   "aasta": "2015",
+   "seis": "3",
+   "rows": 232
+  },
+  {
+   "aasta": "2014",
+   "seis": "3",
+   "rows": 227
+  },
+  {
+   "aasta": "2013",
+   "seis": "3",
+   "rows": 223
+  },
+  {
+   "aasta": "2012",
+   "seis": "3",
+   "rows": 203
+  },
+  {
+   "aasta": "2010",
+   "seis": "3",
+   "rows": 189
+  },
+  {
+   "aasta": "2023",
+   "seis": "4",
+   "rows": 86
+  },
+  {
+   "aasta": "2022",
+   "seis": "4",
+   "rows": 84
+  },
+  {
+   "aasta": "2020",
+   "seis": "4",
+   "rows": 77
+  },
+  {
+   "aasta": "2024",
+   "seis": "4",
+   "rows": 75
+  },
+  {
+   "aasta": "2016",
+   "seis": "3",
+   "rows": 73
+  },
+  {
+   "aasta": "2015",
+   "seis": "4",
+   "rows": 73
+  },
+  {
+   "aasta": "2019",
+   "seis": "3",
+   "rows": 73
+  },
+  {
+   "aasta": "2021",
+   "seis": "4",
+   "rows": 72
+  },
+  {
+   "aasta": "2021",
+   "seis": "3",
+   "rows": 68
+  },
+  {
+   "aasta": "2019",
+   "seis": "2",
+   "rows": 67
+  },
+  {
+   "aasta": "2014",
+   "seis": "4",
+   "rows": 67
+  },
+  {
+   "aasta": "2013",
+   "seis": "4",
+   "rows": 61
+  },
+  {
+   "aasta": "2019",
+   "seis": "4",
+   "rows": 60
+  },
+  {
+   "aasta": "2011",
+   "seis": "2",
+   "rows": 59
+  },
+  {
+   "aasta": "2017",
+   "seis": "3",
+   "rows": 59
+  },
+  {
+   "aasta": "2022",
+   "seis": "3",
+   "rows": 58
+  },
+  {
+   "aasta": "2018",
+   "seis": "3",
+   "rows": 58
+  },
+  {
+   "aasta": "2024",
+   "seis": "3",
+   "rows": 57
+  },
+  {
+   "aasta": "2017",
+   "seis": "2",
+   "rows": 57
+  },
+  {
+   "aasta": "2012",
+   "seis": "4",
+   "rows": 53
+  },
+  {
+   "aasta": "2018",
+   "seis": "2",
+   "rows": 47
+  },
+  {
+   "aasta": "2011",
+   "seis": "3",
+   "rows": 46
+  },
+  {
+   "aasta": "2020",
+   "seis": "3",
+   "rows": 41
+  },
+  {
+   "aasta": "2022",
+   "seis": "2",
+   "rows": 40
+  },
+  {
+   "aasta": "2010",
+   "seis": "4",
+   "rows": 38
+  },
+  {
+   "aasta": "2023",
+   "seis": "3",
+   "rows": 35
+  },
+  {
+   "aasta": "2016",
+   "seis": "2",
+   "rows": 35
+  },
+  {
+   "aasta": "2011",
+   "seis": null,
+   "rows": 35
+  },
+  {
+   "aasta": "2017",
+   "seis": "4",
+   "rows": 32
+  },
+  {
+   "aasta": "2024",
+   "seis": "2",
+   "rows": 30
+  },
+  {
+   "aasta": "2018",
+   "seis": "4",
+   "rows": 28
+  },
+  {
+   "aasta": "2020",
+   "seis": "2",
+   "rows": 27
+  },
+  {
+   "aasta": "2023",
+   "seis": "2",
+   "rows": 25
+  },
+  {
+   "aasta": "2021",
+   "seis": "2",
+   "rows": 24
+  },
+  {
+   "aasta": "2016",
+   "seis": "4",
+   "rows": 23
+  },
+  {
+   "aasta": "2008",
+   "seis": "2",
+   "rows": 13
+  },
+  {
+   "aasta": "2011",
+   "seis": "4",
+   "rows": 12
+  },
+  {
+   "aasta": "2009",
+   "seis": "3",
+   "rows": 12
+  },
+  {
+   "aasta": "2007",
+   "seis": "3",
+   "rows": 8
+  },
+  {
+   "aasta": "2009",
+   "seis": "2",
+   "rows": 8
+  },
+  {
+   "aasta": "2008",
+   "seis": "4",
+   "rows": 7
+  },
+  {
+   "aasta": "2007",
+   "seis": "2",
+   "rows": 6
+  },
+  {
+   "aasta": "2009",
+   "seis": "4",
+   "rows": 6
+  },
+  {
+   "aasta": "2021",
+   "seis": "5",
+   "rows": 5
+  },
+  {
+   "aasta": "2008",
+   "seis": "3",
+   "rows": 5
+  },
+  {
+   "aasta": "2020",
+   "seis": null,
+   "rows": 4
+  },
+  {
+   "aasta": "2013",
+   "seis": "5",
+   "rows": 4
+  },
+  {
+   "aasta": "2012",
+   "seis": "5",
+   "rows": 4
+  },
+  {
+   "aasta": "2014",
+   "seis": "5",
+   "rows": 4
+  },
+  {
+   "aasta": "2024",
+   "seis": "5",
+   "rows": 3
+  },
+  {
+   "aasta": "2015",
+   "seis": "5",
+   "rows": 3
+  },
+  {
+   "aasta": "2019",
+   "seis": "5",
+   "rows": 3
+  },
+  {
+   "aasta": "2023",
+   "seis": "5",
+   "rows": 3
+  },
+  {
+   "aasta": "2007",
+   "seis": "4",
+   "rows": 3
+  },
+  {
+   "aasta": "2014",
+   "seis": "U",
+   "rows": 2
+  },
+  {
+   "aasta": "2009",
+   "seis": "5",
+   "rows": 2
+  },
+  {
+   "aasta": "2015",
+   "seis": "U",
+   "rows": 2
+  },
+  {
+   "aasta": "2018",
+   "seis": "5",
+   "rows": 2
+  },
+  {
+   "aasta": "2010",
+   "seis": "5",
+   "rows": 2
+  },
+  {
+   "aasta": "2012",
+   "seis": "U",
+   "rows": 2
+  },
+  {
+   "aasta": "2010",
+   "seis": "U",
+   "rows": 2
+  },
+  {
+   "aasta": "2013",
+   "seis": "U",
+   "rows": 1
+  },
+  {
+   "aasta": "2016",
+   "seis": null,
+   "rows": 1
+  },
+  {
+   "aasta": "2017",
+   "seis": null,
+   "rows": 1
+  },
+  {
+   "aasta": "2018",
+   "seis": null,
+   "rows": 1
+  },
+  {
+   "aasta": "2020",
+   "seis": "5",
+   "rows": 1
+  },
+  {
+   "aasta": "2012",
+   "seis": "1",
+   "rows": 1
+  },
+  {
+   "aasta": "2015",
+   "seis": "1",
+   "rows": 1
+  },
+  {
+   "aasta": "2014",
+   "seis": "1",
+   "rows": 1
+  },
+  {
+   "aasta": "2013",
+   "seis": "1",
+   "rows": 1
+  }
+ ],
+ "status_S_valid_by_category": [
+  {
+   "aasta": "2010",
+   "veekogu_tyyp": "12",
+   "seis": "2",
+   "rows": 246
+  },
+  {
+   "aasta": "2012",
+   "veekogu_tyyp": "12",
+   "seis": "2",
+   "rows": 207
+  },
+  {
+   "aasta": "2013",
+   "veekogu_tyyp": "12",
+   "seis": "2",
+   "rows": 184
+  },
+  {
+   "aasta": "2015",
+   "veekogu_tyyp": "12",
+   "seis": "2",
+   "rows": 179
+  },
+  {
+   "aasta": "2014",
+   "veekogu_tyyp": "12",
+   "seis": "2",
+   "rows": 176
+  },
+  {
+   "aasta": "2014",
+   "veekogu_tyyp": "12",
+   "seis": "3",
+   "rows": 160
+  },
+  {
+   "aasta": "2013",
+   "veekogu_tyyp": "12",
+   "seis": "3",
+   "rows": 159
+  },
+  {
+   "aasta": "2015",
+   "veekogu_tyyp": "12",
+   "seis": "3",
+   "rows": 149
+  },
+  {
+   "aasta": "2012",
+   "veekogu_tyyp": "12",
+   "seis": "3",
+   "rows": 138
+  },
+  {
+   "aasta": "2012",
+   "veekogu_tyyp": "11",
+   "seis": "2",
+   "rows": 126
+  },
+  {
+   "aasta": "2010",
+   "veekogu_tyyp": "11",
+   "seis": "2",
+   "rows": 123
+  },
+  {
+   "aasta": "2013",
+   "veekogu_tyyp": "11",
+   "seis": "2",
+   "rows": 117
+  },
+  {
+   "aasta": "2014",
+   "veekogu_tyyp": "11",
+   "seis": "2",
+   "rows": 112
+  },
+  {
+   "aasta": "2015",
+   "veekogu_tyyp": "11",
+   "seis": "2",
+   "rows": 107
+  },
+  {
+   "aasta": "2010",
+   "veekogu_tyyp": "12",
+   "seis": "3",
+   "rows": 107
+  },
+  {
+   "aasta": "2013",
+   "veekogu_tyyp": "13",
+   "seis": "2",
+   "rows": 75
+  },
+  {
+   "aasta": "2015",
+   "veekogu_tyyp": "13",
+   "seis": "2",
+   "rows": 74
+  },
+  {
+   "aasta": "2014",
+   "veekogu_tyyp": "13",
+   "seis": "2",
+   "rows": 74
+  },
+  {
+   "aasta": "2010",
+   "veekogu_tyyp": "13",
+   "seis": "2",
+   "rows": 73
+  },
+  {
+   "aasta": "2012",
+   "veekogu_tyyp": "13",
+   "seis": "2",
+   "rows": 72
+  },
+  {
+   "aasta": "2019",
+   "veekogu_tyyp": "12",
+   "seis": "3",
+   "rows": 55
+  },
+  {
+   "aasta": "2013",
+   "veekogu_tyyp": "22",
+   "seis": "2",
+   "rows": 50
+  },
+  {
+   "aasta": "2012",
+   "veekogu_tyyp": "22",
+   "seis": "2",
+   "rows": 48
+  },
+  {
+   "aasta": "2023",
+   "veekogu_tyyp": "12",
+   "seis": "4",
+   "rows": 48
+  },
+  {
+   "aasta": "2014",
+   "veekogu_tyyp": "22",
+   "seis": "2",
+   "rows": 47
+  },
+  {
+   "aasta": "2017",
+   "veekogu_tyyp": "12",
+   "seis": "3",
+   "rows": 46
+  },
+  {
+   "aasta": "2021",
+   "veekogu_tyyp": "12",
+   "seis": "3",
+   "rows": 46
+  },
+  {
+   "aasta": "2016",
+   "veekogu_tyyp": "12",
+   "seis": "3",
+   "rows": 46
+  },
+  {
+   "aasta": "2020",
+   "veekogu_tyyp": "12",
+   "seis": "4",
+   "rows": 45
+  },
+  {
+   "aasta": "2011",
+   "veekogu_tyyp": "22",
+   "seis": "2",
+   "rows": 45
+  },
+  {
+   "aasta": "2022",
+   "veekogu_tyyp": "12",
+   "seis": "4",
+   "rows": 45
+  },
+  {
+   "aasta": "2019",
+   "veekogu_tyyp": "12",
+   "seis": "2",
+   "rows": 45
+  },
+  {
+   "aasta": "2024",
+   "veekogu_tyyp": "12",
+   "seis": "4",
+   "rows": 43
+  },
+  {
+   "aasta": "2010",
+   "veekogu_tyyp": "22",
+   "seis": "2",
+   "rows": 43
+  },
+  {
+   "aasta": "2022",
+   "veekogu_tyyp": "12",
+   "seis": "3",
+   "rows": 43
+  },
+  {
+   "aasta": "2024",
+   "veekogu_tyyp": "12",
+   "seis": "3",
+   "rows": 41
+  },
+  {
+   "aasta": "2015",
+   "veekogu_tyyp": "12",
+   "seis": "4",
+   "rows": 41
+  },
+  {
+   "aasta": "2017",
+   "veekogu_tyyp": "12",
+   "seis": "2",
+   "rows": 40
+  },
+  {
+   "aasta": "2021",
+   "veekogu_tyyp": "12",
+   "seis": "4",
+   "rows": 40
+  },
+  {
+   "aasta": "2019",
+   "veekogu_tyyp": "12",
+   "seis": "4",
+   "rows": 39
+  },
+  {
+   "aasta": "2015",
+   "veekogu_tyyp": "22",
+   "seis": "2",
+   "rows": 38
+  },
+  {
+   "aasta": "2015",
+   "veekogu_tyyp": "11",
+   "seis": "3",
+   "rows": 37
+  },
+  {
+   "aasta": "2014",
+   "veekogu_tyyp": "12",
+   "seis": "4",
+   "rows": 36
+  },
+  {
+   "aasta": "2014",
+   "veekogu_tyyp": "11",
+   "seis": "3",
+   "rows": 35
+  },
+  {
+   "aasta": "2018",
+   "veekogu_tyyp": "12",
+   "seis": "3",
+   "rows": 35
+  },
+  {
+   "aasta": "2013",
+   "veekogu_tyyp": "12",
+   "seis": "4",
+   "rows": 34
+  },
+  {
+   "aasta": "2011",
+   "veekogu_tyyp": "12",
+   "seis": null,
+   "rows": 32
+  },
+  {
+   "aasta": "2013",
+   "veekogu_tyyp": "11",
+   "seis": "3",
+   "rows": 32
+  },
+  {
+   "aasta": "2015",
+   "veekogu_tyyp": "22",
+   "seis": "3",
+   "rows": 32
+  },
+  {
+   "aasta": "2018",
+   "veekogu_tyyp": "12",
+   "seis": "2",
+   "rows": 32
+  },
+  {
+   "aasta": "2010",
+   "veekogu_tyyp": "11",
+   "seis": "3",
+   "rows": 31
+  },
+  {
+   "aasta": "2020",
+   "veekogu_tyyp": "12",
+   "seis": "3",
+   "rows": 30
+  },
+  {
+   "aasta": "2023",
+   "veekogu_tyyp": "22",
+   "seis": "4",
+   "rows": 29
+  },
+  {
+   "aasta": "2023",
+   "veekogu_tyyp": "12",
+   "seis": "3",
+   "rows": 29
+  },
+  {
+   "aasta": "2012",
+   "veekogu_tyyp": "12",
+   "seis": "4",
+   "rows": 29
+  },
+  {
+   "aasta": "2010",
+   "veekogu_tyyp": "22",
+   "seis": "3",
+   "rows": 28
+  },
+  {
+   "aasta": "2022",
+   "veekogu_tyyp": "22",
+   "seis": "4",
+   "rows": 26
+  },
+  {
+   "aasta": "2011",
+   "veekogu_tyyp": "22",
+   "seis": "3",
+   "rows": 26
+  },
+  {
+   "aasta": "2012",
+   "veekogu_tyyp": "11",
+   "seis": "3",
+   "rows": 26
+  },
+  {
+   "aasta": "2010",
+   "veekogu_tyyp": "12",
+   "seis": "4",
+   "rows": 23
+  },
+  {
+   "aasta": "2024",
+   "veekogu_tyyp": "22",
+   "seis": "4",
+   "rows": 23
+  },
+  {
+   "aasta": "2024",
+   "veekogu_tyyp": "12",
+   "seis": "2",
+   "rows": 23
+  },
+  {
+   "aasta": "2014",
+   "veekogu_tyyp": "22",
+   "seis": "3",
+   "rows": 22
+  },
+  {
+   "aasta": "2016",
+   "veekogu_tyyp": "12",
+   "seis": "2",
+   "rows": 22
+  },
+  {
+   "aasta": "2012",
+   "veekogu_tyyp": "22",
+   "seis": "3",
+   "rows": 22
+  },
+  {
+   "aasta": "2023",
+   "veekogu_tyyp": "12",
+   "seis": "2",
+   "rows": 22
+  },
+  {
+   "aasta": "2013",
+   "veekogu_tyyp": "22",
+   "seis": "3",
+   "rows": 21
+  },
+  {
+   "aasta": "2022",
+   "veekogu_tyyp": "12",
+   "seis": "2",
+   "rows": 20
+  },
+  {
+   "aasta": "2020",
+   "veekogu_tyyp": "22",
+   "seis": "4",
+   "rows": 20
+  },
+  {
+   "aasta": "2021",
+   "veekogu_tyyp": "22",
+   "seis": "4",
+   "rows": 19
+  },
+  {
+   "aasta": "2021",
+   "veekogu_tyyp": "12",
+   "seis": "2",
+   "rows": 19
+  },
+  {
+   "aasta": "2016",
+   "veekogu_tyyp": "22",
+   "seis": "3",
+   "rows": 17
+  },
+  {
+   "aasta": "2011",
+   "veekogu_tyyp": "12",
+   "seis": "3",
+   "rows": 17
+  },
+  {
+   "aasta": "2022",
+   "veekogu_tyyp": "11",
+   "seis": "2",
+   "rows": 16
+  },
+  {
+   "aasta": "2017",
+   "veekogu_tyyp": "12",
+   "seis": "4",
+   "rows": 15
+  },
+  {
+   "aasta": "2018",
+   "veekogu_tyyp": "22",
+   "seis": "3",
+   "rows": 15
+  },
+  {
+   "aasta": "2021",
+   "veekogu_tyyp": "11",
+   "seis": "3",
+   "rows": 14
+  },
+  {
+   "aasta": "2016",
+   "veekogu_tyyp": "12",
+   "seis": "4",
+   "rows": 14
+  },
+  {
+   "aasta": "2018",
+   "veekogu_tyyp": "12",
+   "seis": "4",
+   "rows": 14
+  },
+  {
+   "aasta": "2020",
+   "veekogu_tyyp": "12",
+   "seis": "2",
+   "rows": 13
+  },
+  {
+   "aasta": "2019",
+   "veekogu_tyyp": "22",
+   "seis": "4",
+   "rows": 12
+  },
+  {
+   "aasta": "2019",
+   "veekogu_tyyp": "22",
+   "seis": "2",
+   "rows": 10
+  },
+  {
+   "aasta": "2019",
+   "veekogu_tyyp": "11",
+   "seis": "2",
+   "rows": 10
+  },
+  {
+   "aasta": "2011",
+   "veekogu_tyyp": "12",
+   "seis": "2",
+   "rows": 9
+  },
+  {
+   "aasta": "2015",
+   "veekogu_tyyp": "30",
+   "seis": "4",
+   "rows": 9
+  },
+  {
+   "aasta": "2014",
+   "veekogu_tyyp": "14",
+   "seis": "2",
+   "rows": 9
+  },
+  {
+   "aasta": "2013",
+   "veekogu_tyyp": "14",
+   "seis": "2",
+   "rows": 9
+  },
+  {
+   "aasta": "2017",
+   "veekogu_tyyp": "22",
+   "seis": "2",
+   "rows": 9
+  },
+  {
+   "aasta": "2012",
+   "veekogu_tyyp": "14",
+   "seis": "2",
+   "rows": 9
+  },
+  {
+   "aasta": "2013",
+   "veekogu_tyyp": "30",
+   "seis": "4",
+   "rows": 9
+  },
+  {
+   "aasta": "2010",
+   "veekogu_tyyp": "14",
+   "seis": "2",
+   "rows": 9
+  },
+  {
+   "aasta": "2014",
+   "veekogu_tyyp": "30",
+   "seis": "4",
+   "rows": 9
+  },
+  {
+   "aasta": "2016",
+   "veekogu_tyyp": "22",
+   "seis": "2",
+   "rows": 9
+  },
+  {
+   "aasta": "2024",
+   "veekogu_tyyp": "11",
+   "seis": "3",
+   "rows": 9
+  },
+  {
+   "aasta": "2016",
+   "veekogu_tyyp": "11",
+   "seis": "3",
+   "rows": 8
+  },
+  {
+   "aasta": "2015",
+   "veekogu_tyyp": "14",
+   "seis": "2",
+   "rows": 8
+  },
+  {
+   "aasta": "2021",
+   "veekogu_tyyp": "30",
+   "seis": "4",
+   "rows": 8
+  },
+  {
+   "aasta": "2017",
+   "veekogu_tyyp": "22",
+   "seis": "3",
+   "rows": 8
+  },
+  {
+   "aasta": "2019",
+   "veekogu_tyyp": "22",
+   "seis": "3",
+   "rows": 8
+  },
+  {
+   "aasta": "2024",
+   "veekogu_tyyp": "30",
+   "seis": "4",
+   "rows": 8
+  },
+  {
+   "aasta": "2017",
+   "veekogu_tyyp": "22",
+   "seis": "4",
+   "rows": 8
+  },
+  {
+   "aasta": "2015",
+   "veekogu_tyyp": "11",
+   "seis": "4",
+   "rows": 8
+  },
+  {
+   "aasta": "2023",
+   "veekogu_tyyp": "30",
+   "seis": "4",
+   "rows": 8
+  },
+  {
+   "aasta": "2022",
+   "veekogu_tyyp": "30",
+   "seis": "4",
+   "rows": 8
+  },
+  {
+   "aasta": "2020",
+   "veekogu_tyyp": "30",
+   "seis": "4",
+   "rows": 7
+  },
+  {
+   "aasta": "2014",
+   "veekogu_tyyp": "11",
+   "seis": "4",
+   "rows": 7
+  },
+  {
+   "aasta": "2010",
+   "veekogu_tyyp": "30",
+   "seis": "3",
+   "rows": 7
+  },
+  {
+   "aasta": "2018",
+   "veekogu_tyyp": "22",
+   "seis": "2",
+   "rows": 7
+  },
+  {
+   "aasta": "2022",
+   "veekogu_tyyp": "11",
+   "seis": "3",
+   "rows": 7
+  },
+  {
+   "aasta": "2017",
+   "veekogu_tyyp": "30",
+   "seis": "4",
+   "rows": 7
+  },
+  {
+   "aasta": "2010",
+   "veekogu_tyyp": "13",
+   "seis": "3",
+   "rows": 7
+  },
+  {
+   "aasta": "2012",
+   "veekogu_tyyp": "30",
+   "seis": "4",
+   "rows": 7
+  },
+  {
+   "aasta": "2018",
+   "veekogu_tyyp": "30",
+   "seis": "4",
+   "rows": 6
+  },
+  {
+   "aasta": "2017",
+   "veekogu_tyyp": "11",
+   "seis": "2",
+   "rows": 6
+  },
+  {
+   "aasta": "2008",
+   "veekogu_tyyp": "11",
+   "seis": "2",
+   "rows": 6
+  },
+  {
+   "aasta": "2012",
+   "veekogu_tyyp": "11",
+   "seis": "4",
+   "rows": 6
+  },
+  {
+   "aasta": "2019",
+   "veekogu_tyyp": "11",
+   "seis": "3",
+   "rows": 6
+  },
+  {
+   "aasta": "2012",
+   "veekogu_tyyp": "13",
+   "seis": "3",
+   "rows": 6
+  },
+  {
+   "aasta": "2021",
+   "veekogu_tyyp": "22",
+   "seis": "3",
+   "rows": 6
+  },
+  {
+   "aasta": "2013",
+   "veekogu_tyyp": "11",
+   "seis": "4",
+   "rows": 6
+  },
+  {
+   "aasta": "2018",
+   "veekogu_tyyp": "11",
+   "seis": "3",
+   "rows": 6
+  },
+  {
+   "aasta": "2020",
+   "veekogu_tyyp": "11",
+   "seis": "2",
+   "rows": 6
+  },
+  {
+   "aasta": "2018",
+   "veekogu_tyyp": "22",
+   "seis": "4",
+   "rows": 6
+  },
+  {
+   "aasta": "2020",
+   "veekogu_tyyp": "22",
+   "seis": "3",
+   "rows": 6
+  },
+  {
+   "aasta": "2010",
+   "veekogu_tyyp": "22",
+   "seis": "4",
+   "rows": 6
+  },
+  {
+   "aasta": "2019",
+   "veekogu_tyyp": "30",
+   "seis": "4",
+   "rows": 5
+  },
+  {
+   "aasta": "2012",
+   "veekogu_tyyp": "15",
+   "seis": "2",
+   "rows": 5
+  },
+  {
+   "aasta": "2014",
+   "veekogu_tyyp": null,
+   "seis": "4",
+   "rows": 5
+  },
+  {
+   "aasta": "2012",
+   "veekogu_tyyp": "22",
+   "seis": "4",
+   "rows": 5
+  },
+  {
+   "aasta": "2014",
+   "veekogu_tyyp": "22",
+   "seis": "4",
+   "rows": 5
+  },
+  {
+   "aasta": "2014",
+   "veekogu_tyyp": "15",
+   "seis": "2",
+   "rows": 5
+  },
+  {
+   "aasta": "2010",
+   "veekogu_tyyp": "15",
+   "seis": "2",
+   "rows": 5
+  },
+  {
+   "aasta": "2015",
+   "veekogu_tyyp": "15",
+   "seis": "2",
+   "rows": 5
+  },
+  {
+   "aasta": "2009",
+   "veekogu_tyyp": "11",
+   "seis": "3",
+   "rows": 5
+  },
+  {
+   "aasta": "2009",
+   "veekogu_tyyp": "12",
+   "seis": "3",
+   "rows": 5
+  },
+  {
+   "aasta": "2015",
+   "veekogu_tyyp": null,
+   "seis": "4",
+   "rows": 5
+  },
+  {
+   "aasta": "2010",
+   "veekogu_tyyp": null,
+   "seis": "3",
+   "rows": 5
+  },
+  {
+   "aasta": "2024",
+   "veekogu_tyyp": "22",
+   "seis": "3",
+   "rows": 5
+  },
+  {
+   "aasta": "2015",
+   "veekogu_tyyp": "13",
+   "seis": "3",
+   "rows": 5
+  },
+  {
+   "aasta": "2016",
+   "veekogu_tyyp": "30",
+   "seis": "4",
+   "rows": 4
+  },
+  {
+   "aasta": "2014",
+   "veekogu_tyyp": "13",
+   "seis": "3",
+   "rows": 4
+  },
+  {
+   "aasta": "2014",
+   "veekogu_tyyp": "23",
+   "seis": "2",
+   "rows": 4
+  },
+  {
+   "aasta": "2013",
+   "veekogu_tyyp": "13",
+   "seis": "4",
+   "rows": 4
+  },
+  {
+   "aasta": "2018",
+   "veekogu_tyyp": "11",
+   "seis": "2",
+   "rows": 4
+  },
+  {
+   "aasta": "2020",
+   "veekogu_tyyp": "11",
+   "seis": "3",
+   "rows": 4
+  },
+  {
+   "aasta": "2020",
+   "veekogu_tyyp": "22",
+   "seis": null,
+   "rows": 4
+  },
+  {
+   "aasta": "2009",
+   "veekogu_tyyp": "13",
+   "seis": "2",
+   "rows": 4
+  },
+  {
+   "aasta": "2014",
+   "veekogu_tyyp": "13",
+   "seis": "4",
+   "rows": 4
+  },
+  {
+   "aasta": "2020",
+   "veekogu_tyyp": "11",
+   "seis": "4",
+   "rows": 4
+  },
+  {
+   "aasta": "2022",
+   "veekogu_tyyp": "13",
+   "seis": "3",
+   "rows": 4
+  },
+  {
+   "aasta": "2013",
+   "veekogu_tyyp": "23",
+   "seis": "2",
+   "rows": 4
+  },
+  {
+   "aasta": "2015",
+   "veekogu_tyyp": "14",
+   "seis": "3",
+   "rows": 4
+  },
+  {
+   "aasta": "2011",
+   "veekogu_tyyp": "23",
+   "seis": "2",
+   "rows": 4
+  },
+  {
+   "aasta": "2013",
+   "veekogu_tyyp": "15",
+   "seis": "2",
+   "rows": 4
+  },
+  {
+   "aasta": "2011",
+   "veekogu_tyyp": "22",
+   "seis": "4",
+   "rows": 4
+  },
+  {
+   "aasta": "2020",
+   "veekogu_tyyp": "13",
+   "seis": "2",
+   "rows": 4
+  },
+  {
+   "aasta": "2012",
+   "veekogu_tyyp": "23",
+   "seis": "2",
+   "rows": 4
+  },
+  {
+   "aasta": "2007",
+   "veekogu_tyyp": "12",
+   "seis": "2",
+   "rows": 4
+  },
+  {
+   "aasta": "2017",
+   "veekogu_tyyp": "11",
+   "seis": "3",
+   "rows": 4
+  },
+  {
+   "aasta": "2013",
+   "veekogu_tyyp": "22",
+   "seis": "4",
+   "rows": 4
+  },
+  {
+   "aasta": "2020",
+   "veekogu_tyyp": "22",
+   "seis": "2",
+   "rows": 4
+  },
+  {
+   "aasta": "2012",
+   "veekogu_tyyp": "13",
+   "seis": "4",
+   "rows": 4
+  },
+  {
+   "aasta": "2010",
+   "veekogu_tyyp": "11",
+   "seis": "4",
+   "rows": 4
+  },
+  {
+   "aasta": "2024",
+   "veekogu_tyyp": "22",
+   "seis": "2",
+   "rows": 4
+  },
+  {
+   "aasta": "2015",
+   "veekogu_tyyp": "22",
+   "seis": "4",
+   "rows": 4
+  },
+  {
+   "aasta": "2012",
+   "veekogu_tyyp": null,
+   "seis": "3",
+   "rows": 4
+  },
+  {
+   "aasta": "2007",
+   "veekogu_tyyp": "12",
+   "seis": "3",
+   "rows": 4
+  },
+  {
+   "aasta": "2022",
+   "veekogu_tyyp": "11",
+   "seis": "4",
+   "rows": 3
+  },
+  {
+   "aasta": "2008",
+   "veekogu_tyyp": "22",
+   "seis": "4",
+   "rows": 3
+  },
+  {
+   "aasta": "2007",
+   "veekogu_tyyp": "12",
+   "seis": "4",
+   "rows": 3
+  },
+  {
+   "aasta": "2008",
+   "veekogu_tyyp": "12",
+   "seis": "2",
+   "rows": 3
+  },
+  {
+   "aasta": "2007",
+   "veekogu_tyyp": "11",
+   "seis": "3",
+   "rows": 3
+  },
+  {
+   "aasta": "2021",
+   "veekogu_tyyp": "11",
+   "seis": "4",
+   "rows": 3
+  },
+  {
+   "aasta": "2013",
+   "veekogu_tyyp": "13",
+   "seis": "3",
+   "rows": 3
+  },
+  {
+   "aasta": "2015",
+   "veekogu_tyyp": "13",
+   "seis": "4",
+   "rows": 3
+  },
+  {
+   "aasta": "2013",
+   "veekogu_tyyp": null,
+   "seis": "4",
+   "rows": 3
+  },
+  {
+   "aasta": "2008",
+   "veekogu_tyyp": "12",
+   "seis": "3",
+   "rows": 3
+  },
+  {
+   "aasta": "2015",
+   "veekogu_tyyp": "12",
+   "seis": "5",
+   "rows": 3
+  },
+  {
+   "aasta": "2022",
+   "veekogu_tyyp": "22",
+   "seis": "3",
+   "rows": 3
+  },
+  {
+   "aasta": "2011",
+   "veekogu_tyyp": "30",
+   "seis": "4",
+   "rows": 3
+  },
+  {
+   "aasta": "2014",
+   "veekogu_tyyp": "14",
+   "seis": "3",
+   "rows": 3
+  },
+  {
+   "aasta": "2019",
+   "veekogu_tyyp": "11",
+   "seis": "4",
+   "rows": 3
+  },
+  {
+   "aasta": "2019",
+   "veekogu_tyyp": "13",
+   "seis": "3",
+   "rows": 3
+  },
+  {
+   "aasta": "2009",
+   "veekogu_tyyp": "22",
+   "seis": "4",
+   "rows": 3
+  },
+  {
+   "aasta": "2014",
+   "veekogu_tyyp": "12",
+   "seis": "5",
+   "rows": 3
+  },
+  {
+   "aasta": "2011",
+   "veekogu_tyyp": "30",
+   "seis": "3",
+   "rows": 3
+  },
+  {
+   "aasta": "2012",
+   "veekogu_tyyp": "30",
+   "seis": "3",
+   "rows": 3
+  },
+  {
+   "aasta": "2023",
+   "veekogu_tyyp": "11",
+   "seis": "3",
+   "rows": 3
+  },
+  {
+   "aasta": "2011",
+   "veekogu_tyyp": "12",
+   "seis": "4",
+   "rows": 3
+  },
+  {
+   "aasta": "2019",
+   "veekogu_tyyp": "12",
+   "seis": "5",
+   "rows": 3
+  },
+  {
+   "aasta": "2015",
+   "veekogu_tyyp": "23",
+   "seis": "4",
+   "rows": 2
+  },
+  {
+   "aasta": "2010",
+   "veekogu_tyyp": "13",
+   "seis": "4",
+   "rows": 2
+  },
+  {
+   "aasta": "2022",
+   "veekogu_tyyp": "13",
+   "seis": "2",
+   "rows": 2
+  },
+  {
+   "aasta": "2016",
+   "veekogu_tyyp": "13",
+   "seis": "2",
+   "rows": 2
+  },
+  {
+   "aasta": "2010",
+   "veekogu_tyyp": "14",
+   "seis": "3",
+   "rows": 2
+  },
+  {
+   "aasta": "2018",
+   "veekogu_tyyp": "12",
+   "seis": "5",
+   "rows": 2
+  },
+  {
+   "aasta": "2010",
+   "veekogu_tyyp": "21",
+   "seis": "2",
+   "rows": 2
+  },
+  {
+   "aasta": "2018",
+   "veekogu_tyyp": "13",
+   "seis": "2",
+   "rows": 2
+  },
+  {
+   "aasta": "2021",
+   "veekogu_tyyp": "23",
+   "seis": "4",
+   "rows": 2
+  },
+  {
+   "aasta": "2023",
+   "veekogu_tyyp": "22",
+   "seis": "5",
+   "rows": 2
+  },
+  {
+   "aasta": "2016",
+   "veekogu_tyyp": "11",
+   "seis": "2",
+   "rows": 2
+  },
+  {
+   "aasta": "2008",
+   "veekogu_tyyp": "12",
+   "seis": "4",
+   "rows": 2
+  },
+  {
+   "aasta": "2010",
+   "veekogu_tyyp": "30",
+   "seis": "4",
+   "rows": 2
+  },
+  {
+   "aasta": "2018",
+   "veekogu_tyyp": "13",
+   "seis": "3",
+   "rows": 2
+  },
+  {
+   "aasta": "2023",
+   "veekogu_tyyp": "11",
+   "seis": "2",
+   "rows": 2
+  },
+  {
+   "aasta": "2013",
+   "veekogu_tyyp": "12",
+   "seis": "5",
+   "rows": 2
+  },
+  {
+   "aasta": "2013",
+   "veekogu_tyyp": "14",
+   "seis": "3",
+   "rows": 2
+  },
+  {
+   "aasta": "2019",
+   "veekogu_tyyp": "13",
+   "seis": "2",
+   "rows": 2
+  },
+  {
+   "aasta": "2021",
+   "veekogu_tyyp": "11",
+   "seis": "5",
+   "rows": 2
+  },
+  {
+   "aasta": "2013",
+   "veekogu_tyyp": "15",
+   "seis": "3",
+   "rows": 2
+  },
+  {
+   "aasta": "2021",
+   "veekogu_tyyp": "22",
+   "seis": "2",
+   "rows": 2
+  },
+  {
+   "aasta": "2008",
+   "veekogu_tyyp": "22",
+   "seis": "2",
+   "rows": 2
+  },
+  {
+   "aasta": "2010",
+   "veekogu_tyyp": "30",
+   "seis": "2",
+   "rows": 2
+  },
+  {
+   "aasta": "2021",
+   "veekogu_tyyp": "13",
+   "seis": "2",
+   "rows": 2
+  },
+  {
+   "aasta": "2010",
+   "veekogu_tyyp": "23",
+   "seis": "U",
+   "rows": 2
+  },
+  {
+   "aasta": "2008",
+   "veekogu_tyyp": "22",
+   "seis": "3",
+   "rows": 2
+  },
+  {
+   "aasta": "2008",
+   "veekogu_tyyp": "13",
+   "seis": "2",
+   "rows": 2
+  },
+  {
+   "aasta": "2016",
+   "veekogu_tyyp": "22",
+   "seis": "4",
+   "rows": 2
+  },
+  {
+   "aasta": "2022",
+   "veekogu_tyyp": "13",
+   "seis": "4",
+   "rows": 2
+  },
+  {
+   "aasta": "2009",
+   "veekogu_tyyp": "12",
+   "seis": "4",
+   "rows": 2
+  },
+  {
+   "aasta": "2010",
+   "veekogu_tyyp": "23",
+   "seis": "2",
+   "rows": 2
+  },
+  {
+   "aasta": "2022",
+   "veekogu_tyyp": "22",
+   "seis": "2",
+   "rows": 2
+  },
+  {
+   "aasta": "2011",
+   "veekogu_tyyp": "13",
+   "seis": null,
+   "rows": 2
+  },
+  {
+   "aasta": "2024",
+   "veekogu_tyyp": "22",
+   "seis": "5",
+   "rows": 2
+  },
+  {
+   "aasta": "2017",
+   "veekogu_tyyp": "13",
+   "seis": "2",
+   "rows": 2
+  },
+  {
+   "aasta": "2008",
+   "veekogu_tyyp": "11",
+   "seis": "4",
+   "rows": 2
+  },
+  {
+   "aasta": "2024",
+   "veekogu_tyyp": "11",
+   "seis": "2",
+   "rows": 2
+  },
+  {
+   "aasta": "2009",
+   "veekogu_tyyp": "12",
+   "seis": "2",
+   "rows": 2
+  },
+  {
+   "aasta": "2015",
+   "veekogu_tyyp": "30",
+   "seis": "3",
+   "rows": 2
+  },
+  {
+   "aasta": "2013",
+   "veekogu_tyyp": null,
+   "seis": "3",
+   "rows": 2
+  },
+  {
+   "aasta": "2012",
+   "veekogu_tyyp": "14",
+   "seis": "3",
+   "rows": 2
+  },
+  {
+   "aasta": "2014",
+   "veekogu_tyyp": "30",
+   "seis": "3",
+   "rows": 1
+  },
+  {
+   "aasta": "2016",
+   "veekogu_tyyp": "21",
+   "seis": "3",
+   "rows": 1
+  },
+  {
+   "aasta": "2022",
+   "veekogu_tyyp": "14",
+   "seis": "3",
+   "rows": 1
+  },
+  {
+   "aasta": "2009",
+   "veekogu_tyyp": "11",
+   "seis": "2",
+   "rows": 1
+  },
+  {
+   "aasta": "2017",
+   "veekogu_tyyp": "21",
+   "seis": "4",
+   "rows": 1
+  },
+  {
+   "aasta": "2020",
+   "veekogu_tyyp": "14",
+   "seis": "3",
+   "rows": 1
+  },
+  {
+   "aasta": "2012",
+   "veekogu_tyyp": "15",
+   "seis": "3",
+   "rows": 1
+  },
+  {
+   "aasta": "2012",
+   "veekogu_tyyp": "14",
+   "seis": "4",
+   "rows": 1
+  },
+  {
+   "aasta": "2018",
+   "veekogu_tyyp": "14",
+   "seis": "2",
+   "rows": 1
+  },
+  {
+   "aasta": "2012",
+   "veekogu_tyyp": null,
+   "seis": "4",
+   "rows": 1
+  },
+  {
+   "aasta": "2015",
+   "veekogu_tyyp": "15",
+   "seis": "3",
+   "rows": 1
+  },
+  {
+   "aasta": "2014",
+   "veekogu_tyyp": "12",
+   "seis": "1",
+   "rows": 1
+  },
+  {
+   "aasta": "2017",
+   "veekogu_tyyp": "12",
+   "seis": null,
+   "rows": 1
+  },
+  {
+   "aasta": "2010",
+   "veekogu_tyyp": "12",
+   "seis": "5",
+   "rows": 1
+  },
+  {
+   "aasta": "2014",
+   "veekogu_tyyp": "12",
+   "seis": "U",
+   "rows": 1
+  },
+  {
+   "aasta": "2014",
+   "veekogu_tyyp": "30",
+   "seis": "5",
+   "rows": 1
+  },
+  {
+   "aasta": "2017",
+   "veekogu_tyyp": null,
+   "seis": "4",
+   "rows": 1
+  },
+  {
+   "aasta": "2023",
+   "veekogu_tyyp": "15",
+   "seis": "3",
+   "rows": 1
+  },
+  {
+   "aasta": "2010",
+   "veekogu_tyyp": "14",
+   "seis": "4",
+   "rows": 1
+  },
+  {
+   "aasta": "2016",
+   "veekogu_tyyp": "30",
+   "seis": "3",
+   "rows": 1
+  },
+  {
+   "aasta": "2017",
+   "veekogu_tyyp": "13",
+   "seis": "3",
+   "rows": 1
+  },
+  {
+   "aasta": "2009",
+   "veekogu_tyyp": "14",
+   "seis": "3",
+   "rows": 1
+  },
+  {
+   "aasta": "2012",
+   "veekogu_tyyp": "12",
+   "seis": "1",
+   "rows": 1
+  },
+  {
+   "aasta": "2014",
+   "veekogu_tyyp": "15",
+   "seis": "3",
+   "rows": 1
+  },
+  {
+   "aasta": "2015",
+   "veekogu_tyyp": "21",
+   "seis": "2",
+   "rows": 1
+  },
+  {
+   "aasta": "2021",
+   "veekogu_tyyp": "30",
+   "seis": "5",
+   "rows": 1
+  },
+  {
+   "aasta": "2023",
+   "veekogu_tyyp": "22",
+   "seis": "2",
+   "rows": 1
+  },
+  {
+   "aasta": "2009",
+   "veekogu_tyyp": "22",
+   "seis": "3",
+   "rows": 1
+  },
+  {
+   "aasta": "2023",
+   "veekogu_tyyp": "30",
+   "seis": "5",
+   "rows": 1
+  },
+  {
+   "aasta": "2014",
+   "veekogu_tyyp": "21",
+   "seis": "3",
+   "rows": 1
+  },
+  {
+   "aasta": "2012",
+   "veekogu_tyyp": "22",
+   "seis": "5",
+   "rows": 1
+  },
+  {
+   "aasta": "2020",
+   "veekogu_tyyp": "12",
+   "seis": "5",
+   "rows": 1
+  },
+  {
+   "aasta": "2014",
+   "veekogu_tyyp": "21",
+   "seis": "2",
+   "rows": 1
+  },
+  {
+   "aasta": "2010",
+   "veekogu_tyyp": "15",
+   "seis": "3",
+   "rows": 1
+  },
+  {
+   "aasta": "2012",
+   "veekogu_tyyp": "12",
+   "seis": "5",
+   "rows": 1
+  },
+  {
+   "aasta": "2019",
+   "veekogu_tyyp": "14",
+   "seis": "3",
+   "rows": 1
+  },
+  {
+   "aasta": "2013",
+   "veekogu_tyyp": "14",
+   "seis": "4",
+   "rows": 1
+  },
+  {
+   "aasta": "2023",
+   "veekogu_tyyp": "13",
+   "seis": "3",
+   "rows": 1
+  },
+  {
+   "aasta": "2012",
+   "veekogu_tyyp": "14",
+   "seis": "5",
+   "rows": 1
+  },
+  {
+   "aasta": "2016",
+   "veekogu_tyyp": "14",
+   "seis": "4",
+   "rows": 1
+  },
+  {
+   "aasta": "2018",
+   "veekogu_tyyp": "11",
+   "seis": "4",
+   "rows": 1
+  },
+  {
+   "aasta": "2012",
+   "veekogu_tyyp": "21",
+   "seis": "2",
+   "rows": 1
+  },
+  {
+   "aasta": "2015",
+   "veekogu_tyyp": "21",
+   "seis": "U",
+   "rows": 1
+  },
+  {
+   "aasta": "2012",
+   "veekogu_tyyp": "30",
+   "seis": "5",
+   "rows": 1
+  },
+  {
+   "aasta": "2015",
+   "veekogu_tyyp": "21",
+   "seis": "3",
+   "rows": 1
+  },
+  {
+   "aasta": "2014",
+   "veekogu_tyyp": "21",
+   "seis": "U",
+   "rows": 1
+  },
+  {
+   "aasta": "2015",
+   "veekogu_tyyp": "23",
+   "seis": "3",
+   "rows": 1
+  },
+  {
+   "aasta": "2007",
+   "veekogu_tyyp": "22",
+   "seis": "2",
+   "rows": 1
+  },
+  {
+   "aasta": "2013",
+   "veekogu_tyyp": "30",
+   "seis": "3",
+   "rows": 1
+  },
+  {
+   "aasta": "2012",
+   "veekogu_tyyp": "12",
+   "seis": "U",
+   "rows": 1
+  },
+  {
+   "aasta": "2023",
+   "veekogu_tyyp": "22",
+   "seis": "3",
+   "rows": 1
+  },
+  {
+   "aasta": "2013",
+   "veekogu_tyyp": "21",
+   "seis": "U",
+   "rows": 1
+  },
+  {
+   "aasta": "2018",
+   "veekogu_tyyp": "12",
+   "seis": null,
+   "rows": 1
+  },
+  {
+   "aasta": "2024",
+   "veekogu_tyyp": "30",
+   "seis": "5",
+   "rows": 1
+  },
+  {
+   "aasta": "2011",
+   "veekogu_tyyp": "11",
+   "seis": null,
+   "rows": 1
+  },
+  {
+   "aasta": "2011",
+   "veekogu_tyyp": "13",
+   "seis": "2",
+   "rows": 1
+  },
+  {
+   "aasta": "2015",
+   "veekogu_tyyp": "12",
+   "seis": "U",
+   "rows": 1
+  },
+  {
+   "aasta": "2024",
+   "veekogu_tyyp": "13",
+   "seis": "3",
+   "rows": 1
+  },
+  {
+   "aasta": "2018",
+   "veekogu_tyyp": "15",
+   "seis": "2",
+   "rows": 1
+  },
+  {
+   "aasta": "2009",
+   "veekogu_tyyp": "23",
+   "seis": "2",
+   "rows": 1
+  },
+  {
+   "aasta": "2021",
+   "veekogu_tyyp": "12",
+   "seis": "5",
+   "rows": 1
+  },
+  {
+   "aasta": "2011",
+   "veekogu_tyyp": "13",
+   "seis": "4",
+   "rows": 1
+  },
+  {
+   "aasta": "2015",
+   "veekogu_tyyp": "14",
+   "seis": "4",
+   "rows": 1
+  },
+  {
+   "aasta": "2009",
+   "veekogu_tyyp": "12",
+   "seis": "5",
+   "rows": 1
+  },
+  {
+   "aasta": "2009",
+   "veekogu_tyyp": "14",
+   "seis": "5",
+   "rows": 1
+  },
+  {
+   "aasta": "2016",
+   "veekogu_tyyp": null,
+   "seis": "4",
+   "rows": 1
+  },
+  {
+   "aasta": "2012",
+   "veekogu_tyyp": "21",
+   "seis": "U",
+   "rows": 1
+  },
+  {
+   "aasta": "2016",
+   "veekogu_tyyp": "12",
+   "seis": null,
+   "rows": 1
+  },
+  {
+   "aasta": "2024",
+   "veekogu_tyyp": "23",
+   "seis": "2",
+   "rows": 1
+  },
+  {
+   "aasta": "2010",
+   "veekogu_tyyp": "14",
+   "seis": "5",
+   "rows": 1
+  },
+  {
+   "aasta": "2015",
+   "veekogu_tyyp": "23",
+   "seis": "2",
+   "rows": 1
+  },
+  {
+   "aasta": "2013",
+   "veekogu_tyyp": "21",
+   "seis": "2",
+   "rows": 1
+  },
+  {
+   "aasta": "2010",
+   "veekogu_tyyp": "21",
+   "seis": "3",
+   "rows": 1
+  },
+  {
+   "aasta": "2024",
+   "veekogu_tyyp": "23",
+   "seis": "3",
+   "rows": 1
+  },
+  {
+   "aasta": "2024",
+   "veekogu_tyyp": "11",
+   "seis": "4",
+   "rows": 1
+  },
+  {
+   "aasta": "2009",
+   "veekogu_tyyp": "13",
+   "seis": "4",
+   "rows": 1
+  },
+  {
+   "aasta": "2013",
+   "veekogu_tyyp": "21",
+   "seis": "3",
+   "rows": 1
+  },
+  {
+   "aasta": "2021",
+   "veekogu_tyyp": "14",
+   "seis": "3",
+   "rows": 1
+  },
+  {
+   "aasta": "2014",
+   "veekogu_tyyp": "14",
+   "seis": "4",
+   "rows": 1
+  },
+  {
+   "aasta": "2021",
+   "veekogu_tyyp": "22",
+   "seis": "5",
+   "rows": 1
+  },
+  {
+   "aasta": "2013",
+   "veekogu_tyyp": "12",
+   "seis": "1",
+   "rows": 1
+  },
+  {
+   "aasta": "2013",
+   "veekogu_tyyp": "30",
+   "seis": "5",
+   "rows": 1
+  },
+  {
+   "aasta": "2018",
+   "veekogu_tyyp": "13",
+   "seis": "4",
+   "rows": 1
+  },
+  {
+   "aasta": "2011",
+   "veekogu_tyyp": "11",
+   "seis": "4",
+   "rows": 1
+  },
+  {
+   "aasta": "2021",
+   "veekogu_tyyp": "13",
+   "seis": "3",
+   "rows": 1
+  },
+  {
+   "aasta": "2015",
+   "veekogu_tyyp": "12",
+   "seis": "1",
+   "rows": 1
+  },
+  {
+   "aasta": "2013",
+   "veekogu_tyyp": "14",
+   "seis": "5",
+   "rows": 1
+  },
+  {
+   "aasta": "2021",
+   "veekogu_tyyp": "11",
+   "seis": "2",
+   "rows": 1
+  },
+  {
+   "aasta": "2016",
+   "veekogu_tyyp": "11",
+   "seis": "4",
+   "rows": 1
+  },
+  {
+   "aasta": "2019",
+   "veekogu_tyyp": null,
+   "seis": "4",
+   "rows": 1
+  },
+  {
+   "aasta": "2023",
+   "veekogu_tyyp": "11",
+   "seis": "4",
+   "rows": 1
+  },
+  {
+   "aasta": "2020",
+   "veekogu_tyyp": "14",
+   "seis": "4",
+   "rows": 1
+  },
+  {
+   "aasta": "2007",
+   "veekogu_tyyp": "22",
+   "seis": "3",
+   "rows": 1
+  },
+  {
+   "aasta": "2007",
+   "veekogu_tyyp": "11",
+   "seis": "2",
+   "rows": 1
+  },
+  {
+   "aasta": "2012",
+   "veekogu_tyyp": "21",
+   "seis": "3",
+   "rows": 1
+  }
+ ],
+ "status_S_valid_per_body_year": [
+  {
+   "n": 2,
+   "k": 2
+  },
+  {
+   "n": 1,
+   "k": 5311
+  }
+ ],
+ "status_goal_example_columns": [
+  {
+   "aasta": "2021",
+   "seis": "2",
+   "staatus": null,
+   "rows": 591
+  },
+  {
+   "aasta": "2015",
+   "seis": "2",
+   "staatus": "saavutatud",
+   "rows": 375
+  },
+  {
+   "aasta": "2027",
+   "seis": "2",
+   "staatus": null,
+   "rows": 217
+  },
+  {
+   "aasta": "2015",
+   "seis": "2",
+   "staatus": "saavutamata",
+   "rows": 187
+  },
+  {
+   "aasta": "2021",
+   "seis": "3",
+   "staatus": null,
+   "rows": 119
+  },
+  {
+   "aasta": "2015",
+   "seis": "3",
+   "staatus": "saavutatud",
+   "rows": 104
+  },
+  {
+   "aasta": "2021",
+   "seis": "4",
+   "staatus": null,
+   "rows": 26
+  },
+  {
+   "aasta": "2015",
+   "seis": "3",
+   "staatus": "saavutamata",
+   "rows": 21
+  },
+  {
+   "aasta": "2021",
+   "seis": "1",
+   "staatus": null,
+   "rows": 14
+  },
+  {
+   "aasta": "2015",
+   "seis": "4",
+   "staatus": "saavutatud",
+   "rows": 14
+  },
+  {
+   "aasta": "2015",
+   "seis": "3",
+   "staatus": null,
+   "rows": 11
+  },
+  {
+   "aasta": "2027",
+   "seis": "1",
+   "staatus": null,
+   "rows": 7
+  },
+  {
+   "aasta": "2015",
+   "seis": "1",
+   "staatus": "saavutamata",
+   "rows": 5
+  },
+  {
+   "aasta": "2015",
+   "seis": "2",
+   "staatus": null,
+   "rows": 4
+  },
+  {
+   "aasta": "2027",
+   "seis": null,
+   "staatus": null,
+   "rows": 3
+  },
+  {
+   "aasta": "2015",
+   "seis": null,
+   "staatus": "saavutatud",
+   "rows": 3
+  },
+  {
+   "aasta": "2015",
+   "seis": "1",
+   "staatus": "saavutatud",
+   "rows": 2
+  },
+  {
+   "aasta": "2015",
+   "seis": "4",
+   "staatus": null,
+   "rows": 1
+  }
+ ],
+ "pressure_by_type": [
+  {
+   "koormus_tyyp": "1.5",
+   "koormus_tyyp_selg": "1.5 - Punktkoormus – saastunud või mahajäetud tööstusalad",
+   "rows": 1357
+  },
+  {
+   "koormus_tyyp": "4.1.2",
+   "koormus_tyyp_selg": "4.1.2 Veekogu sängi/põhja/kaldakaitsevööndi/kalda füüsiline muutus - põllumajanduse tarbeks",
+   "rows": 635
+  },
+  {
+   "koormus_tyyp": "4.3.6",
+   "koormus_tyyp_selg": "4.3.6 Hüdroloogiline häiring - muu",
+   "rows": 629
+  },
+  {
+   "koormus_tyyp": "2.2",
+   "koormus_tyyp_selg": "2.2 - Hajukoormus – Põllumajandus",
+   "rows": 580
+  },
+  {
+   "koormus_tyyp": "4.2.5",
+   "koormus_tyyp_selg": "4.2.5 Tammid, tõkked ja lüüsid - rekreatsioon",
+   "rows": 548
+  },
+  {
+   "koormus_tyyp": "4.2.8.1",
+   "koormus_tyyp_selg": "Paisrajatised",
+   "rows": 541
+  },
+  {
+   "koormus_tyyp": "8",
+   "koormus_tyyp_selg": "8. Survetegur teadmata",
+   "rows": 531
+  },
+  {
+   "koormus_tyyp": "9",
+   "koormus_tyyp_selg": "9. Ajaloolisest saastatusest tingitud koormus",
+   "rows": 321
+  },
+  {
+   "koormus_tyyp": "2.3.b",
+   "koormus_tyyp_selg": "2.3.b - Hajukoormus – Metsandus (metsamaa kuivendamine)",
+   "rows": 289
+  },
+  {
+   "koormus_tyyp": "2.2.b",
+   "koormus_tyyp_selg": "2.2.b - Hajukoormus – Põllumajandus (mineraalväetis)",
+   "rows": 268
+  },
+  {
+   "koormus_tyyp": "2.3.a",
+   "koormus_tyyp_selg": "2.3.a - Hajukoormus – Metsandus (lageraied)",
+   "rows": 268
+  },
+  {
+   "koormus_tyyp": "2.2.c",
+   "koormus_tyyp_selg": "2.2.c - Hajukoormus – Põllumajandus (põllumajandusloomad - orgaaniline väetis)",
+   "rows": 266
+  },
+  {
+   "koormus_tyyp": "2.2.a",
+   "koormus_tyyp_selg": "2.2.a - Hajukoormus – Põllumajandus (haritav maa)",
+   "rows": 265
+  },
+  {
+   "koormus_tyyp": "1.1",
+   "koormus_tyyp_selg": "1.1 - Punktkoormus – Asulate heitvesi",
+   "rows": 257
+  },
+  {
+   "koormus_tyyp": "2.2.d",
+   "koormus_tyyp_selg": "2.2.d - Hajukoormus – Põllumajandus (põllumajandusmaa kuivendamine)",
+   "rows": 251
+  },
+  {
+   "koormus_tyyp": "2.7",
+   "koormus_tyyp_selg": "2.7 - Hajukoormus – Atmosfäärist pärit sadestumine",
+   "rows": 207
+  },
+  {
+   "koormus_tyyp": "III.4.4",
+   "koormus_tyyp_selg": "Paisrajatised - Eelis otstarbeta ja paisud, mida mujale ei saa liigitada",
+   "rows": 185
+  },
+  {
+   "koormus_tyyp": "III.4.4.a",
+   "koormus_tyyp_selg": "Muud paisud ja veekogu tõkestamine rekreatsiooni eesmärgil",
+   "rows": 166
+  },
+  {
+   "koormus_tyyp": "7",
+   "koormus_tyyp_selg": "7. Muu inimtegevuslik koormus",
+   "rows": 149
+  },
+  {
+   "koormus_tyyp": "4.3.1",
+   "koormus_tyyp_selg": "4.3.1 Hüdroloogiline häiring - põllumajandus",
+   "rows": 125
+  },
+  {
+   "koormus_tyyp": "5.1.a",
+   "koormus_tyyp_selg": "5.1.a - Võõrliigid",
+   "rows": 112
+  },
+  {
+   "koormus_tyyp": "1.4",
+   "koormus_tyyp_selg": "1.4 - Punktkoormus – mitte-IED tööstusheide",
+   "rows": 93
+  },
+  {
+   "koormus_tyyp": "1.2.b",
+   "koormus_tyyp_selg": "1.2.b - Punktkoormus - Valingvee ülevoolud (sademevee laskmed)",
+   "rows": 83
+  },
+  {
+   "koormus_tyyp": "5.1.b",
+   "koormus_tyyp_selg": "5.1.b - Veeliikide haigused",
+   "rows": 82
+  },
+  {
+   "koormus_tyyp": "2.6",
+   "koormus_tyyp_selg": "2.6 - Hajukoormus – Kanalisatsioonisüsteemiga ühendamata heitmed",
+   "rows": 67
+  },
+  {
+   "koormus_tyyp": "2.10",
+   "koormus_tyyp_selg": "2.10 - Hajukoormus – Muu",
+   "rows": 59
+  },
+  {
+   "koormus_tyyp": "2.2.1",
+   "koormus_tyyp_selg": "2.2.1 - Hajukoormus – Põllumajandus (haritav maa)",
+   "rows": 58
+  },
+  {
+   "koormus_tyyp": "4.2.1",
+   "koormus_tyyp_selg": "4.2.1 Tammid, tõkked ja lüüsid - vee-energia",
+   "rows": 58
+  },
+  {
+   "koormus_tyyp": "4.2.8.2",
+   "koormus_tyyp_selg": "Koprapaisud",
+   "rows": 51
+  },
+  {
+   "koormus_tyyp": "1.3",
+   "koormus_tyyp_selg": "1.3 - Punktkoormus – tööstusheide tööstusheite direktiivi (IED) järgi",
+   "rows": 44
+  },
+  {
+   "koormus_tyyp": "4.3.3",
+   "koormus_tyyp_selg": "4.3.3 Hüdroloogiline häiring - hüdroenergia",
+   "rows": 36
+  },
+  {
+   "koormus_tyyp": "4.1.3",
+   "koormus_tyyp_selg": "4.1.3 Veekogu sängi/põhja/kaldakaitsevööndi/kalda füüsiline muutus - navigatsioon",
+   "rows": 35
+  },
+  {
+   "koormus_tyyp": "2.2.2",
+   "koormus_tyyp_selg": "2.2.2 - Hajukoormus – Põllumajandus (mineraalväetis)",
+   "rows": 31
+  },
+  {
+   "koormus_tyyp": "1.7",
+   "koormus_tyyp_selg": "1.7 - Punktkoormus – kaevandusvesi",
+   "rows": 31
+  },
+  {
+   "koormus_tyyp": "2.2.3",
+   "koormus_tyyp_selg": "Hajukoormus kuivendussüsteemidest",
+   "rows": 29
+  },
+  {
+   "koormus_tyyp": "3.6",
+   "koormus_tyyp_selg": "3.6 Veevõtt või voolu ümbersuunamine - kalakasvatuse tarbeks",
+   "rows": 23
+  },
+  {
+   "koormus_tyyp": "4.3.4",
+   "koormus_tyyp_selg": "4.3.4 Hüdroloogiline häiring - ühisveevärk",
+   "rows": 23
+  },
+  {
+   "koormus_tyyp": "4.1.4",
+   "koormus_tyyp_selg": "4.1.4 Sängi/põhja/kaldakaitsevööndi/kalda füüsiline muutus - muu",
+   "rows": 21
+  },
+  {
+   "koormus_tyyp": "5.2",
+   "koormus_tyyp_selg": "5.2 Veeloomade või -taimede püüdmine või korjamine",
+   "rows": 19
+  },
+  {
+   "koormus_tyyp": "4.5",
+   "koormus_tyyp_selg": "4.5 Muud hüdromorfoloogilised häiringud",
+   "rows": 17
+  },
+  {
+   "koormus_tyyp": "1.8",
+   "koormus_tyyp_selg": "1.8 - Punktkoormus – Vesiviljelus",
+   "rows": 17
+  },
+  {
+   "koormus_tyyp": "2.1",
+   "koormus_tyyp_selg": "2.1 - Hajukoormus – asulate äravool",
+   "rows": 16
+  },
+  {
+   "koormus_tyyp": "3.3",
+   "koormus_tyyp_selg": "3.3 Veevõtt või voolu ümbersuunamine - tööstuse tarbeks",
+   "rows": 16
+  },
+  {
+   "koormus_tyyp": "4.2.6",
+   "koormus_tyyp_selg": "4.2.6 Tammid, tõkked ja lüüsid - tööstused",
+   "rows": 16
+  },
+  {
+   "koormus_tyyp": "3.2",
+   "koormus_tyyp_selg": "3.2 - Veevõtt ühisveevärgi jaoks",
+   "rows": 16
+  },
+  {
+   "koormus_tyyp": "4.4.a",
+   "koormus_tyyp_selg": "4.4.a - Veekogu füüsiline kadumine - mäetööstus",
+   "rows": 16
+  },
+  {
+   "koormus_tyyp": "3.1",
+   "koormus_tyyp_selg": "3.1 - Veevõtt niisutuseks",
+   "rows": 16
+  },
+  {
+   "koormus_tyyp": "1.2.a",
+   "koormus_tyyp_selg": "1.2.a - Punktkoormus - Valingvee ülevoolud (äkkheitelaskmed)",
+   "rows": 16
+  },
+  {
+   "koormus_tyyp": "3.7",
+   "koormus_tyyp_selg": "3.7 Veevõtt või voolu ümbersuunamine - muu",
+   "rows": 15
+  },
+  {
+   "koormus_tyyp": "4.2.2",
+   "koormus_tyyp_selg": "4.2.2 Tammid, tõkked ja lüüsid - kaitseks üleujutuste eest",
+   "rows": 13
+  },
+  {
+   "koormus_tyyp": "III.4.2.b",
+   "koormus_tyyp_selg": "HEJ paisud mittelõhejõgedel",
+   "rows": 13
+  },
+  {
+   "koormus_tyyp": "4.1.1",
+   "koormus_tyyp_selg": "4.1.1 Veekogu sängi/põhja/kaldakaitsevööndi/kalda füüsiline muutus - kaitse üleujutuste eest",
+   "rows": 12
+  },
+  {
+   "koormus_tyyp": "2.5",
+   "koormus_tyyp_selg": "2.5 - Hajukoormus – Jääkreostusalad",
+   "rows": 11
+  },
+  {
+   "koormus_tyyp": "2.3",
+   "koormus_tyyp_selg": "2.3 - Hajukoormus – Metsandus",
+   "rows": 10
+  },
+  {
+   "koormus_tyyp": "3.4",
+   "koormus_tyyp_selg": "3.4 Veevõtt või voolu ümbersuunamine - jahutusveeks",
+   "rows": 9
+  },
+  {
+   "koormus_tyyp": "III.4.2.a",
+   "koormus_tyyp_selg": "HEJ paisud lõhejõgedel",
+   "rows": 9
+  },
+  {
+   "koormus_tyyp": "4.5.2",
+   "koormus_tyyp_selg": "Kaadamine",
+   "rows": 8
+  },
+  {
+   "koormus_tyyp": "2.8",
+   "koormus_tyyp_selg": "2.8 - Hajukoormus – Kaevandamine",
+   "rows": 7
+  },
+  {
+   "koormus_tyyp": "III.4.4.c",
+   "koormus_tyyp_selg": "Muud paisud ja veekogu tõkestamine tööstuse tarbeks",
+   "rows": 6
+  },
+  {
+   "koormus_tyyp": "4.2.8",
+   "koormus_tyyp_selg": "4.2.8 Tammid, tõkked ja lüüsid - muu",
+   "rows": 5
+  },
+  {
+   "koormus_tyyp": "4.2.3",
+   "koormus_tyyp_selg": "4.2.3 Tammid, tõkked ja lüüsid - joogivee tagamiseks",
+   "rows": 5
+  },
+  {
+   "koormus_tyyp": "4.1",
+   "koormus_tyyp_selg": "4.1 Veekogu sängi/põhja/kaldakaitsevööndi/kalda füüsiline muutus",
+   "rows": 2
+  },
+  {
+   "koormus_tyyp": "1.9",
+   "koormus_tyyp_selg": "1.9 - Punktkoormus – Muu",
+   "rows": 2
+  },
+  {
+   "koormus_tyyp": "1.1.2",
+   "koormus_tyyp_selg": "1.1.2 - Punktkoormus – Asulate heitvesi (<10000 ie puhastid)",
+   "rows": 2
+  },
+  {
+   "koormus_tyyp": "4.2.4",
+   "koormus_tyyp_selg": "4.2.4 Tammid, tõkked ja lüüsid - niisutamiseks",
+   "rows": 1
+  },
+  {
+   "koormus_tyyp": "4.4.b",
+   "koormus_tyyp_selg": "4.4.b - Veekogu füüsiline kadumine - muu",
+   "rows": 1
+  }
+ ],
+ "pressure_bodies": 851,
+ "pressure_dupes": {
+  "rows": 9070,
+  "distinct_koormus_id": 9070
+ },
+ "pressure_status_over_reg": [
+  {
+   "keht_staatus": "Kehtiv",
+   "koormus_staatus": "2",
+   "rows": 8658
+  },
+  {
+   "keht_staatus": "Kehtetu",
+   "koormus_staatus": "2",
+   "rows": 401
+  },
+  {
+   "keht_staatus": "Kehtiv",
+   "koormus_staatus": null,
+   "rows": 9
+  },
+  {
+   "keht_staatus": "Kehtiv",
+   "koormus_staatus": "3",
+   "rows": 2
+  }
+ ],
+ "groundwater": [
+  {
+   "aasta": 2014,
+   "seis": "1",
+   "seis_kem": "1",
+   "seis_kog": "1",
+   "rows": 28
+  },
+  {
+   "aasta": 2020,
+   "seis": "1",
+   "seis_kem": "1",
+   "seis_kog": "1",
+   "rows": 13
+  },
+  {
+   "aasta": 2020,
+   "seis": "2",
+   "seis_kem": "2",
+   "seis_kog": "1",
+   "rows": 8
+  },
+  {
+   "aasta": 2020,
+   "seis": "3",
+   "seis_kem": "3",
+   "seis_kog": "1",
+   "rows": 6
+  },
+  {
+   "aasta": 2014,
+   "seis": "3",
+   "seis_kem": "3",
+   "seis_kog": "1",
+   "rows": 5
+  },
+  {
+   "aasta": 2014,
+   "seis": "2",
+   "seis_kem": "1",
+   "seis_kog": "1",
+   "rows": 2
+  },
+  {
+   "aasta": 2020,
+   "seis": "3",
+   "seis_kem": "3",
+   "seis_kog": "3",
+   "rows": 2
+  },
+  {
+   "aasta": 2020,
+   "seis": "2",
+   "seis_kem": "2",
+   "seis_kog": "2",
+   "rows": 2
+  },
+  {
+   "aasta": 2014,
+   "seis": "3",
+   "seis_kem": "3",
+   "seis_kog": "2",
+   "rows": 2
+  },
+  {
+   "aasta": 2014,
+   "seis": "2",
+   "seis_kem": "2",
+   "seis_kog": "1",
+   "rows": 1
+  },
+  {
+   "aasta": 2014,
+   "seis": "3",
+   "seis_kem": "3",
+   "seis_kog": "3",
+   "rows": 1
+  }
+ ]
+}
