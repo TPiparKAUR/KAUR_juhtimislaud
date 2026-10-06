@@ -50,3 +50,47 @@ def test_end_to_end_reads_every_table_completely(tmp_path: Path) -> None:
     assert pl.read_parquet(tmp_path / "f_veekogumi_seisundid.parquet").height == 12
     diag = json.loads((tmp_path / "water_diagnostics.json").read_text(encoding="utf-8"))
     assert diag["f_veekogumid"]["rows"] == 7
+
+
+def test_grain_runs_on_fetched_tables(tmp_path: Path) -> None:
+    import water_grain as wg
+
+    pl.DataFrame(
+        {
+            "id": [1, 2],
+            "kood": ["1_a", "2_b"],
+            "veekogu_tyyp": ["11", "12"],
+            "veekogu_tyyp_selg": ["a", "b"],
+            "keht_staatus": ["Kehtiv"] * 2,
+            "vee_tyyp": ["V1", "V2"],
+            "vee_tyyp_selg": ["x", "y"],
+            "alamkategooria": ["LV", "LV"],
+        }
+    ).write_parquet(tmp_path / "f_veekogumid.parquet")
+    pl.DataFrame(
+        {
+            "vkm_id": [1, 1, 2],
+            "aasta": ["2015", "2021", "2021"],
+            "tyyp": ["S"] * 3,
+            "keht_staatus": ["Kehtiv"] * 3,
+            "muut_staatus": [None] * 3,
+            "seis": ["2", "3", "2"],
+            "kood": ["a", "a", "b"],
+            "staatus": [None] * 3,
+        }
+    ).write_parquet(tmp_path / "f_veekogumi_seisundid.parquet")
+    pl.DataFrame(
+        {
+            "koormus_id": [1],
+            "koormus_tyyp": ["t"],
+            "koormus_tyyp_selg": ["T"],
+            "koormus_veekogum_id": [1],
+            "koormus_staatus": ["a"],
+        }
+    ).write_parquet(tmp_path / "f_veekogumid_koormus.parquet")
+    pl.DataFrame(
+        {"aasta": [2014], "seis": ["1"], "seis_kem": ["1"], "seis_kog": ["1"]}
+    ).write_parquet(tmp_path / "f_pohjaveekogumi_seisud.parquet")
+    g = wg.grain(tmp_path)
+    assert g["status_join_ok"] == {"status_bodies": 2, "found_in_register": 2}
+    assert g["status_duplicates"]["groups_with_multiple_rows"] == 0
