@@ -1,0 +1,38 @@
+name: Monitoring probe
+
+# Counts rows of the environmental monitoring table (f_keskkonnaseire) and bird ringing table by
+# filter and period and reads small samples of descriptive columns (no coordinates, names or free
+# text). Publishes monitoring_probe.json to the `monitoring-probe` branch.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: kaur-api  # one job at a time against the shared public API
+  cancel-in-progress: false
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync --frozen
+      - run: uv run python monitoring_probe.py --out out/monitoring
+        timeout-minutes: 25
+      - name: Publish probe result
+        if: always()
+        run: |
+          cp out/monitoring/monitoring_probe.json "$RUNNER_TEMP/monitoring_probe.json"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan monitoring-probe
+          git rm -rf --quiet .
+          cp "$RUNNER_TEMP/monitoring_probe.json" monitoring_probe.json
+          git add -- monitoring_probe.json
+          git commit -m "Monitoring probe $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push --force origin monitoring-probe
