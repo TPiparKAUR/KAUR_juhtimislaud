@@ -94,3 +94,17 @@ def test_grain_runs_on_fetched_tables(tmp_path: Path) -> None:
     g = wg.grain(tmp_path)
     assert g["status_join_ok"] == {"status_bodies": 2, "found_in_register": 2}
     assert g["status_duplicates"]["groups_with_multiple_rows"] == 0
+
+
+def test_nature_fetch_drops_coordinates_and_text(tmp_path: Path) -> None:
+    import nature_fetch as nf
+
+    tables: dict[str, list[dict[str, Any]]] = {
+        t: [{"id": 1, "kesk_x": 5.0, "tx_kirjeldus": "x", "tyyp": "A"}] for t in nf.TABLES
+    }
+    with fake_server(tables, max_rows=5) as (url, _state):
+        nf.main(["--out", str(tmp_path), "--base-url", url])
+    df = pl.read_parquet(tmp_path / "f_alad.parquet")
+    assert df.columns == ["id", "tyyp"]
+    diag = json.loads((tmp_path / "nature_diagnostics.json").read_text(encoding="utf-8"))
+    assert set(diag) == set(nf.TABLES)

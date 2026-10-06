@@ -41,21 +41,30 @@ ERROR = "suhteline_viga"
 YEAR = "aasta"
 
 
-def fetch_all(client: Client, workers: int, page: int = PAGE, table: str = TABLE) -> pl.DataFrame:
+def fetch_all(
+    client: Client,
+    workers: int,
+    page: int = PAGE,
+    table: str = TABLE,
+    drop_prefixes: tuple[str, ...] = (),
+) -> pl.DataFrame:
     """Read every row in totally ordered pages, in parallel; verify the count."""
     total = client.count(table) or 0
     head = client.rows(table, limit=1)
     if not head:
         return pl.DataFrame()
-    cols = list(head[0])
+    cols = [c for c in head[0] if not c.startswith(drop_prefixes)]
     order = ",".join(cols)
+    select = order
 
     def one(offset: int) -> list[dict[str, Any]]:
         local = Client(delay=client.delay, base_url=client.base_url, transport=client.transport)
         got: list[dict[str, Any]] = []
         want = min(page, total - offset)
         while len(got) < want:
-            chunk = local.rows(table, order=order, limit=want - len(got), offset=offset + len(got))
+            chunk = local.rows(
+                table, select=select, order=order, limit=want - len(got), offset=offset + len(got)
+            )
             if not chunk:
                 break
             got += chunk

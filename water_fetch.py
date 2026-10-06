@@ -61,15 +61,22 @@ def describe(df: pl.DataFrame, max_distinct: int = MAX_DISTINCT) -> dict[str, An
     return out
 
 
-def run(client: Client, out: Path, workers: int, tables: tuple[str, ...] = TABLES) -> None:
+def run(
+    client: Client,
+    out: Path,
+    workers: int,
+    tables: tuple[str, ...] = TABLES,
+    drop_prefixes: tuple[str, ...] = (),
+    diag_name: str = "water_diagnostics.json",
+) -> None:
     out.mkdir(parents=True, exist_ok=True)
     diag: dict[str, Any] = {}
     for table in tables:
-        df = fetch_all(client, workers, table=table)
+        df = fetch_all(client, workers, table=table, drop_prefixes=drop_prefixes)
         df.write_parquet(out / f"{table}.parquet")
         diag[table] = describe(df)
         LOG.info("%s: %d rows", table, df.height)
-    (out / "water_diagnostics.json").write_text(
+    (out / diag_name).write_text(
         # ASCII escapes make look-alike characters in class names visible.
         json.dumps(diag, ensure_ascii=True, indent=1, default=str),
         encoding="utf-8",
