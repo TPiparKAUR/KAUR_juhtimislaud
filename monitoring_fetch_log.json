@@ -1,0 +1,174 @@
+{
+ "years_present": [
+  0,
+  1995,
+  1996,
+  1997,
+  1998,
+  1999,
+  2000,
+  2001,
+  2002,
+  2003,
+  2004,
+  2005,
+  2006,
+  2007,
+  2008,
+  2009,
+  2010,
+  2011,
+  2012,
+  2013,
+  2014,
+  2015,
+  2016,
+  2017,
+  2018,
+  2019,
+  2020,
+  2021,
+  2022,
+  2023,
+  2024,
+  2025
+ ],
+ "years_missing": [],
+ "years_row_mismatch": [],
+ "per_year": {
+  "0": {
+   "rows_expected": 272297,
+   "rows_read": 272297
+  },
+  "1995": {
+   "rows_expected": 162610,
+   "rows_read": 162610
+  },
+  "1996": {
+   "rows_expected": 142366,
+   "rows_read": 142366
+  },
+  "1997": {
+   "rows_expected": 150755,
+   "rows_read": 150755
+  },
+  "1998": {
+   "rows_expected": 141130,
+   "rows_read": 141130
+  },
+  "1999": {
+   "rows_expected": 122032,
+   "rows_read": 122032
+  },
+  "2000": {
+   "rows_expected": 138014,
+   "rows_read": 138014
+  },
+  "2001": {
+   "rows_expected": 112575,
+   "rows_read": 112575
+  },
+  "2002": {
+   "rows_expected": 135371,
+   "rows_read": 135371
+  },
+  "2003": {
+   "rows_expected": 143720,
+   "rows_read": 143720
+  },
+  "2004": {
+   "rows_expected": 160494,
+   "rows_read": 160494
+  },
+  "2005": {
+   "rows_expected": 157065,
+   "rows_read": 157065
+  },
+  "2006": {
+   "rows_expected": 193339,
+   "rows_read": 193339
+  },
+  "2007": {
+   "rows_expected": 221056,
+   "rows_read": 221056
+  },
+  "2008": {
+   "rows_expected": 218660,
+   "rows_read": 218660
+  },
+  "2009": {
+   "rows_expected": 224817,
+   "rows_read": 224817
+  },
+  "2010": {
+   "rows_expected": 272957,
+   "rows_read": 272957
+  },
+  "2011": {
+   "rows_expected": 381317,
+   "rows_read": 381317
+  },
+  "2012": {
+   "rows_expected": 378644,
+   "rows_read": 378644
+  },
+  "2013": {
+   "rows_expected": 426221,
+   "rows_read": 426221
+  },
+  "2014": {
+   "rows_expected": 452025,
+   "rows_read": 452025
+  },
+  "2015": {
+   "rows_expected": 432283,
+   "rows_read": 432283
+  },
+  "2016": {
+   "rows_expected": 364964,
+   "rows_read": 364964
+  },
+  "2017": {
+   "rows_expected": 406335,
+   "rows_read": 406335
+  },
+  "2018": {
+   "rows_expected": 414960,
+   "rows_read": 414960
+  },
+  "2019": {
+   "rows_expected": 476970,
+   "rows_read": 476970
+  },
+  "2020": {
+   "rows_expected": 502787,
+   "rows_read": 502787
+  },
+  "2021": {
+   "rows_expected": 510141,
+   "rows_read": 510141
+  },
+  "2022": {
+   "rows_expected": 586595,
+   "rows_read": 586595
+  },
+  "2023": {
+   "rows_expected": 604810,
+   "rows_read": 604810
+  },
+  "2024": {
+   "rows_expected": 570679,
+   "rows_read": 570679
+  },
+  "2025": {
+   "rows_expected": 505136,
+   "rows_read": 505136
+  }
+ },
+ "rows_read": 9983125,
+ "rows_expected": 9983125,
+ "broken_parts": [],
+ "failed": [],
+ "complete": true,
+ "note": "rows without a monitoring start time are not selected by any year filter"
+}
