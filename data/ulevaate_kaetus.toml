@@ -191,9 +191,9 @@ markus = "Tabelis on FÜKE üldlämmastik/-fosfor (alla 8% ridadest); ühik kinn
 [[vaade]]
 workbook = "Keskkonnalevaade-Vesi-Veekasutus"
 teema = "vesi"
-meie = "puudub"
+meie = "olemas"
 andmed = "API:t_awtabel004_curr"
-markus = "Veekasutus veearuandest; koondada ilma käitiste nimedeta."
+markus = "Veekasutus sektori ja veeliigi järgi 2022-2025 (veearuanded); neli aastat."
 
 [[vaade]]
 workbook = "Keskkonnalevaade-Vesi-NO3phjavees"
@@ -205,9 +205,9 @@ markus = "Nitraat põhjavees (seire)."
 [[vaade]]
 workbook = "Keskkonnalevaade-Vesi-Reostuskoormusedmerre"
 teema = "vesi"
-meie = "puudub"
+meie = "osaliselt"
 andmed = "API:f_reoveealad_koormus"
-markus = "Reostuskoormus merre; vastav tabel on API-s, tõlgendus kontrollimata."
+markus = "Meil väljalaskmete heitvee koormus (N, P jt) kokku, mitte merre jõudev koormus."
 
 [[vaade]]
 workbook = "Keskkonnalevaade-hk-Peamisedheiteallikad"
@@ -297,9 +297,9 @@ markus = "Raskmetallid mullas."
 [[vaade]]
 workbook = "Phjaveebilanss"
 teema = "vesi"
-meie = "puudub"
+meie = "osaliselt"
 andmed = "API:f_pohjaveevarud"
-markus = "Kõige vaadatum töövihik (põhjaveebilanss); tabelid olemas, tõlgendus kontrollimata."
+markus = "Meil kinnitatud varud lasundi järgi ja põhjaveevõtt; bilanssi (varu vs võtt) ei saa ehitada ilma seoseta."
 
 [[vaade]]
 workbook = "Jtmearuandlus_KKPjtmeteteemalehtedevaldkonnad_Olmejtmed"

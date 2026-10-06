@@ -1,6 +1,6 @@
 # KAUR Keskkonnaülevaate vaated: kasutus, katvus ja prioriteedid
 
-Seis: 2026-10-06. Tabel «vaated ja katvus» on genereeritud (`analyse_ulevaated.py`, väljund
+Seis: 2026-10-06 (uuendatud pärast veekasutuse ja heitvee lisamist). Tabel «vaated ja katvus» on genereeritud (`analyse_ulevaated.py`, väljund
 `docs/ulevaated_kaetus.md` ja `.json`). Sisend: (1) Tableau Public profiili `keskkonnaagentuur.kaur`
 töövihikute loetelu koos vaatamiste arvuga (`data/tableau_public_workbooks.csv`, 70 töövihikut),
 (2) minu hinnang, kas vaade on meie saidil olemas (`data/ulevaate_kaetus.toml`, 54 vaadet).
@@ -21,9 +21,9 @@ töövihikute loetelu koos vaatamiste arvuga (`data/tableau_public_workbooks.csv
 
 | Katvus | Vaateid | Vaatamisi | Osakaal vaatamistest |
 |---|---|---|---|
-| olemas | 15 | 5 359 | 30% |
-| osaliselt | 10 | 3 381 | 19% |
-| puudub | 29 | 9 148 | 51% |
+| olemas | 16 | 5 532 | 31% |
+| osaliselt | 12 | 4 530 | 25% |
+| puudub | 26 | 7 826 | 44% |
 
 Teemati (vaatamised; katmata osa vaatamistest):
 
@@ -32,7 +32,7 @@ Teemati (vaatamised; katmata osa vaatamistest):
 | Jäätmed | 3 509 | 38% |
 | Liigid | 2 627 | **100%** |
 | Ilm ja kliima | 2 371 | 18% |
-| Vesi | 2 132 | 78% |
+| Vesi | 2 132 | 16% (oli 78% enne veekasutuse lisamist) |
 | Välisõhk | 1 932 | 24% |
 | Mets | 1 849 | 21% |
 | Seire (RKSP) | 1 259 | 59% |
@@ -70,7 +70,7 @@ Loodusdirektiivi elupaigatüüpide seisund (497, osaliselt), Kuuse-kooreüraskid
 
 | # | Valdkond | Põhjus | Eeldus |
 |---|---|---|---|
-| 1 | Vesi: põhjaveebilanss, veekasutus, reostuskoormus | 1 011 + 173 + 138 vaatamist; tabelid API-s | tabelite tõlgendus (grain-uuring) |
+| 1 | Vesi: veekasutus, veevõtt, heitvesi (**tehtud**); põhjaveebilanss, eutrofeerumine, nitraat avatud | 1 011 + 156 + 186 vaatamist | veevõtu ja varu seos; N/P ühik |
 | 2 | Jäätmed: olmejäätmed, pakend, bio | 579 + 359 + 341; andmed juba olemas | pipeline'i laiendus (lõige liigi koodi järgi) |
 | 3 | Liigid: seisund, Punane nimestik, linnud, suurkiskjad | 2 627 vaatamist, 100% katmata | allika leidmine |
 | 4 | Mets: üraskid, kaitstav mets | 391 + 283 | allika leidmine / `f_alad` |

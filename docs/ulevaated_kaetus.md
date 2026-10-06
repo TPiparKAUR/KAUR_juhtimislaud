@@ -7,7 +7,7 @@ Genereeritud `analyse_ulevaated.py` poolt failidest `data/ulevaate_kaetus.toml` 
 | Jäätmed | 10 | 3509 | 4 | 2 | 4 | 38 |
 | Liigid | 4 | 2627 | 0 | 0 | 4 | 100 |
 | Ilm ja kliima | 6 | 2371 | 4 | 0 | 2 | 18 |
-| Vesi | 7 | 2132 | 1 | 1 | 5 | 78 |
+| Vesi | 7 | 2132 | 2 | 3 | 2 | 16 |
 | Välisõhk | 7 | 1932 | 2 | 3 | 2 | 24 |
 | Mets | 5 | 1849 | 2 | 2 | 1 | 21 |
 | Seire (RKSP) | 7 | 1259 | 2 | 0 | 5 | 59 |
@@ -66,10 +66,10 @@ Genereeritud `analyse_ulevaated.py` poolt failidest `data/ulevaate_kaetus.toml` 
 | Välisõhk | Keskkonnaülevaade - Õhk - Peamiste saasteainete heitkogused | 254 | olemas | API:t_heitkogus_allikas_curr | Saasteained käitiste aruannetes. |
 | Välisõhk | Välisõhk - Heitkogused - NEC eesmärgid | 241 | puudub | väline | NEC eesmärgid (riiklik vähendamiskohustus). |
 | Välisõhk | Keskkonnaülevaade - Õhk - Õhusaaste tervisemõju | 228 | puudub | väline | Tervisemõju (EEA hinnangud). |
-| Vesi | Põhjaveebilanss | 1011 | puudub | API:f_pohjaveevarud | Kõige vaadatum töövihik (põhjaveebilanss); tabelid olemas, tõlgendus kontrollimata. |
+| Vesi | Põhjaveebilanss | 1011 | osaliselt | API:f_pohjaveevarud | Meil kinnitatud varud lasundi järgi ja põhjaveevõtt; bilanssi (varu vs võtt) ei saa ehitada ilma seoseta. |
 | Vesi | Keskkonnaülevaade - Vesi - Pinnaveekogumite koondseisund | 245 | olemas | API:f_veekogumi_seisundid | Pinnaveekogumite seisund (paaritatud võrdlus). |
 | Vesi | Keskkonnaülevaade - Vesi - Põhjaveekogumite koondseisund | 223 | osaliselt | API:f_pohjaveekogumi_seisud | Põhjaveekogumid 2014 ja 2020, hulgad ei kattu. |
 | Vesi | Keskkonnaülevaade - Vesi - NO3 põhjavees | 186 | puudub | teadmata | Nitraat põhjavees (seire). |
-| Vesi | Keskkonnaülevaade - Vesi - Veekasutus | 173 | puudub | API:t_awtabel004_curr | Veekasutus veearuandest; koondada ilma käitiste nimedeta. |
+| Vesi | Keskkonnaülevaade - Vesi - Veekasutus | 173 | olemas | API:t_awtabel004_curr | Veekasutus sektori ja veeliigi järgi 2022-2025 (veearuanded); neli aastat. |
 | Vesi | Keskkonnaülevaade - Vesi - Eutrofeerumine | 156 | puudub | API:f_veekogumi_seisundid | Tabelis on FÜKE üldlämmastik/-fosfor (alla 8% ridadest); ühik kinnitamata. |
-| Vesi | Keskkonnaülevaade - Vesi - Reostuskoormused merre | 138 | puudub | API:f_reoveealad_koormus | Reostuskoormus merre; vastav tabel on API-s, tõlgendus kontrollimata. |
+| Vesi | Keskkonnaülevaade - Vesi - Reostuskoormused merre | 138 | osaliselt | API:f_reoveealad_koormus | Meil väljalaskmete heitvee koormus (N, P jt) kokku, mitte merre jõudev koormus. |

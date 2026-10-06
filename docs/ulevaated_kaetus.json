@@ -4,16 +4,16 @@
   "n_views": 54,
   "by_status": {
    "olemas": {
-    "n": 15,
-    "views": 5359
+    "n": 16,
+    "views": 5532
    },
    "osaliselt": {
-    "n": 10,
-    "views": 3381
+    "n": 12,
+    "views": 4530
    },
    "puudub": {
-    "n": 29,
-    "views": 9148
+    "n": 26,
+    "views": 7826
    }
   },
   "themes": {
@@ -86,13 +86,13 @@
    "vesi": {
     "views": 2132,
     "n": 7,
-    "olemas": 1,
-    "osaliselt": 1,
-    "puudub": 5,
-    "views_olemas": 245,
-    "views_osaliselt": 223,
-    "views_puudub": 1664,
-    "share_views_uncovered": 0.78
+    "olemas": 2,
+    "osaliselt": 3,
+    "puudub": 2,
+    "views_olemas": 418,
+    "views_osaliselt": 1372,
+    "views_puudub": 342,
+    "share_views_uncovered": 0.16
    },
    "valisohk": {
     "views": 1932,
@@ -132,9 +132,9 @@
    {
     "workbook": "Phjaveebilanss",
     "teema": "vesi",
-    "meie": "puudub",
+    "meie": "osaliselt",
     "andmed": "API:f_pohjaveevarud",
-    "markus": "Kõige vaadatum töövihik (põhjaveebilanss); tabelid olemas, tõlgendus kontrollimata.",
+    "markus": "Meil kinnitatud varud lasundi järgi ja põhjaveevõtt; bilanssi (varu vs võtt) ei saa ehitada ilma seoseta.",
     "title": "Põhjaveebilanss",
     "views": 1011
    },
@@ -477,9 +477,9 @@
   {
    "workbook": "Keskkonnalevaade-Vesi-Veekasutus",
    "teema": "vesi",
-   "meie": "puudub",
+   "meie": "olemas",
    "andmed": "API:t_awtabel004_curr",
-   "markus": "Veekasutus veearuandest; koondada ilma käitiste nimedeta.",
+   "markus": "Veekasutus sektori ja veeliigi järgi 2022-2025 (veearuanded); neli aastat.",
    "title": "Keskkonnaülevaade - Vesi - Veekasutus",
    "views": 173
   },
@@ -495,9 +495,9 @@
   {
    "workbook": "Keskkonnalevaade-Vesi-Reostuskoormusedmerre",
    "teema": "vesi",
-   "meie": "puudub",
+   "meie": "osaliselt",
    "andmed": "API:f_reoveealad_koormus",
-   "markus": "Reostuskoormus merre; vastav tabel on API-s, tõlgendus kontrollimata.",
+   "markus": "Meil väljalaskmete heitvee koormus (N, P jt) kokku, mitte merre jõudev koormus.",
    "title": "Keskkonnaülevaade - Vesi - Reostuskoormused merre",
    "views": 138
   },
@@ -612,9 +612,9 @@
   {
    "workbook": "Phjaveebilanss",
    "teema": "vesi",
-   "meie": "puudub",
+   "meie": "osaliselt",
    "andmed": "API:f_pohjaveevarud",
-   "markus": "Kõige vaadatum töövihik (põhjaveebilanss); tabelid olemas, tõlgendus kontrollimata.",
+   "markus": "Meil kinnitatud varud lasundi järgi ja põhjaveevõtt; bilanssi (varu vs võtt) ei saa ehitada ilma seoseta.",
    "title": "Põhjaveebilanss",
    "views": 1011
   },

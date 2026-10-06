@@ -9,7 +9,7 @@ Actionsis (sandbox ei pääse Eesti hostidele); tulemused loetakse harudest `git
 | Lehe slug | Analüüs | Töövoog (andmed → analüüs) | Tulemuse haru |
 |---|---|---|---|
 | ilm-ja-kliima | kliima | climate_* | climate-results |
-| vesi | hüdroloogia + veekogumite seisund | hydro_data, water_explore → water_analyse | hydro-analysis, water-analysis |
+| vesi | hüdroloogia + veekogumite seisund + veekasutus/heitvesi | hydro_data, water_explore → water_analyse, wateruse_explore → wateruse_analyse | hydro-analysis, water-analysis, wateruse-analysis |
 | valisohk, energeetika | käitiste õhuheited, soojus | airenergy_* | airenergy-analysis |
 | mets | SMI metsainventuur | forest_explore → forest_analyse | forest-analysis |
 | jaatmed | riigi jäätmestatistika (22 aastat) | waste_data (maatriks) → waste_analyse | waste-data-log, waste-analysis |
@@ -35,8 +35,9 @@ Leht ehitatakse `pages.yml` poolt kõigist harudest; lisatud tulemused ilmuvad a
 
 ## Järgmised valdkonnad (prioriteedi järjekorras; põhjendus `keskkonnaulevaated_analuus.md`)
 
-1. **Vesi**: põhjaveebilanss, veekasutus (`t_awtabel004_curr`), reostuskoormus (`f_reoveealad_koormus`);
-   esmalt struktuuri- ja grain-uuring (nagu `water_fetch.py` / `water_grain.py`).
+1. **Vesi (tehtud 2026-10-06)**: veekasutus, veevõtt, heitvesi, reoveekogumisalad, põhjaveevarud. Avatud:
+   põhjaveebilanss (varu vs võtt vajab veehaarde ja varu seost), eutrofeerumine (FÜKE N/P, ühik kinnitamata),
+   nitraat põhjavees, reostuskoormus merre (merre jõudev osa).
 2. **Jäätmed**: olmejäätmed (peatükk 20), pakend (15 01), biojäätmed koondatud andmetest.
 3. **Liigid**: leida liikide seisundi, Punase nimestiku, lindude indeksi ja suurkiskjate allikas.
 4. **Mets**: üraskid, kaitstav mets.
@@ -46,6 +47,7 @@ Leht ehitatakse `pages.yml` poolt kõigist harudest; lisatud tulemused ilmuvad a
 
 - Vee koondhinnangu koostis (ÖSE/KESE, ökoloogiline seisund vs potentsiaal); seisundiklassi muutus järvedes.
 - SMI suhtelise vea tõlgendus (95% pool-laius) ja `periood` tähendus.
+- Veevõtu ja veekasutuse veeliikide erinevus (põhjavesi 237 vs 45 Mm³ 2022; summa ühtib ±0,1%): kas kaevandus- ja karjäärivesi?
 - Jäätmetabeli ühik (t), negatiivsed read, ohtlike jäätmete osakaalu hüpe 2019 → 2020.
 - Natura SDF säilimishinnangu seos EL aruandluse seisundiga.
 - Aastaraamatute PDF-id ei ole repos (artefakt `yearbooks-raw`, 30 päeva); Soome, Island, Rootsi Skogsdata puuduvad.
