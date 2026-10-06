@@ -1,0 +1,52 @@
+name: Monitoring analysis (from existing data)
+
+# Builds monitoring.json (monitoring coverage + tree-crown condition) from the catalogue on the
+# `monitoring-catalog` branch and the extract artifact `monitoring-extract` of an earlier
+# "Monitoring extract (one indicator)" run, and publishes it to `monitoring-analysis`.
+# Raw rows never leave the workflow artifact.
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: "Run id of a successful 'Monitoring extract (one indicator)' run"
+        required: true
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: monitoring-analyse
+  cancel-in-progress: false
+
+jobs:
+  analyse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync --frozen
+      - name: Download extract artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_ID: ${{ inputs.run_id }}
+        run: gh run download "$RUN_ID" --repo "$GITHUB_REPOSITORY" -n monitoring-extract -D out/extract
+      - name: Catalogue from the monitoring-catalog branch
+        run: git show origin/monitoring-catalog:monitoring_catalog.json > monitoring_catalog.json
+      - name: Analyse
+        run: uv run python run_monitoring.py --catalog monitoring_catalog.json --extract out/extract/monitoring_extract.parquet --out out/monitoring
+      - name: Publish aggregated results
+        run: |
+          cp out/monitoring/monitoring.json "$RUNNER_TEMP/monitoring.json"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan monitoring-analysis
+          git rm -rf --quiet .
+          cp "$RUNNER_TEMP/monitoring.json" monitoring.json
+          git add -- monitoring.json
+          git commit -m "Monitoring analysis $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push --force origin monitoring-analysis

@@ -134,6 +134,15 @@ ANALYSES: dict[str, list[tuple[str, list[tuple[str, str]]]]] = {
                 ("methods", ""),
             ],
         ),
+        (
+            "monitoring",
+            [
+                ("mcfindings", "Metsaseire: puude võrade seisund"),
+                ("mcrown", ""),
+                ("mcrownclass", ""),
+                ("mmethods", ""),
+            ],
+        ),
     ],
     "okosusteemid": [
         (
@@ -158,6 +167,13 @@ ANALYSES: dict[str, list[tuple[str, list[tuple[str, str]]]]] = {
                 ("alien", "Võõrliigid"),
                 ("spstats", "Natura liigid"),
                 ("methods", ""),
+            ],
+        ),
+        (
+            "monitoring",
+            [
+                ("mspecies", "Seire ulatus: liigid ja näitajad"),
+                ("mgroups", ""),
             ],
         ),
     ],
@@ -191,6 +207,13 @@ SCRIPTS = {
         "airenergy-charts.js",
         "nature-charts.js",
         "nature-page.js",
+    ],
+    "monitoring": [
+        "charts.js",
+        "hydro-charts.js",
+        "airenergy-charts.js",
+        "nature-charts.js",
+        "monitoring-page.js",
     ],
     "wateruse": [
         "charts.js",
@@ -346,7 +369,17 @@ def layout(
         for t in topics
     )
     names: list[str] = []
-    for feat in ("climate", "hydro", "airenergy", "waste", "forest", "water", "nature", "wateruse"):
+    for feat in (
+        "climate",
+        "hydro",
+        "airenergy",
+        "waste",
+        "forest",
+        "water",
+        "nature",
+        "wateruse",
+        "monitoring",
+    ):
         if feat in features:
             names += [n for n in SCRIPTS[feat] if n not in names]
     scripts = "".join(f'<script src="assets/{n}"></script>' for n in names)
@@ -476,6 +509,7 @@ def build(
     water_json: Path | None = None,
     nature_json: Path | None = None,
     wateruse_json: Path | None = None,
+    monitoring_json: Path | None = None,
 ) -> list[Path]:
     """Write the site; analysis sections appear only for the JSON inputs that exist."""
     out.mkdir(parents=True, exist_ok=True)
@@ -489,6 +523,7 @@ def build(
         "water": water_json,
         "nature": nature_json,
         "wateruse": wateruse_json,
+        "monitoring": monitoring_json,
     }
     features: set[str] = set()
     for name, path in inputs.items():
@@ -525,6 +560,7 @@ def main() -> None:
     ap.add_argument("--water", type=Path, default=None, help="aggregated water.json to embed")
     ap.add_argument("--nature", type=Path, default=None, help="aggregated nature.json to embed")
     ap.add_argument("--wateruse", type=Path, default=None, help="aggregated wateruse.json to embed")
+    ap.add_argument("--monitoring", type=Path, default=None, help="monitoring.json to embed")
     args = ap.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
     topics = load_topics(args.topics, args.inventory)
@@ -539,6 +575,7 @@ def main() -> None:
         args.water,
         args.nature,
         args.wateruse,
+        args.monitoring,
     )
     LOG.info("wrote %d pages to %s", len(files), args.out)
 
