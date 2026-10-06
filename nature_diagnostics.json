@@ -1,0 +1,5157 @@
+{
+ "f_alad": {
+  "rows": 10335,
+  "columns": {
+   "id": {
+    "dtype": "Int64",
+    "null_share": 0.0,
+    "distinct": 10335,
+    "min": -2147437145,
+    "max": 2146994071
+   },
+   "id_text": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 10335
+   },
+   "nimi": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 8724
+   },
+   "tyyp": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 12,
+    "values": [
+     {
+      "value": "PY",
+      "rows": 5695
+     },
+     {
+      "value": "KLKA",
+      "rows": 1447
+     },
+     {
+      "value": "Y",
+      "rows": 1165
+     },
+     {
+      "value": "KMKA",
+      "rows": 731
+     },
+     {
+      "value": "H",
+      "rows": 350
+     },
+     {
+      "value": "KP",
+      "rows": 332
+     },
+     {
+      "value": "KRP",
+      "rows": 272
+     },
+     {
+      "value": "PYLJ",
+      "rows": 125
+     },
+     {
+      "value": "KKO",
+      "rows": 86
+     },
+     {
+      "value": "VP",
+      "rows": 67
+     },
+     {
+      "value": "PS",
+      "rows": 59
+     },
+     {
+      "value": "VK",
+      "rows": 6
+     }
+    ]
+   },
+   "tyyp_selg": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 12,
+    "values": [
+     {
+      "value": "p\u00fcsielupaik",
+      "rows": 5695
+     },
+     {
+      "value": "looduskaitseala",
+      "rows": 1447
+     },
+     {
+      "value": "\u00fcksikobjekt",
+      "rows": 1165
+     },
+     {
+      "value": "maastikukaitseala, looduspark",
+      "rows": 731
+     },
+     {
+      "value": "hoiuala",
+      "rows": 350
+     },
+     {
+      "value": "kaitsealune park",
+      "rows": 332
+     },
+     {
+      "value": "rahvuspark",
+      "rows": 272
+     },
+     {
+      "value": "kudemis- ja elupaik",
+      "rows": 125
+     },
+     {
+      "value": "kohalik kaitstav objekt",
+      "rows": 86
+     },
+     {
+      "value": "uuendamata piiridega park, puistu, arboreetum",
+      "rows": 67
+     },
+     {
+      "value": "puistu",
+      "rows": 59
+     },
+     {
+      "value": "uuendamata kaitsekorraga ala",
+      "rows": 6
+     }
+    ]
+   },
+   "kuulub_id": {
+    "dtype": "Int64",
+    "null_share": 0.5069,
+    "distinct": 3122,
+    "min": -2147103211,
+    "max": 2144672000
+   },
+   "kuulub_selg": {
+    "dtype": "String",
+    "null_share": 0.5069,
+    "distinct": 2376
+   },
+   "on_regobj": {
+    "dtype": "Boolean",
+    "null_share": 0.0,
+    "distinct": 2,
+    "values": [
+     {
+      "value": true,
+      "rows": 9708
+     },
+     {
+      "value": false,
+      "rows": 627
+     }
+    ]
+   },
+   "kkr_kood": {
+    "dtype": "String",
+    "null_share": 0.0607,
+    "distinct": 9709
+   },
+   "cdda_kood": {
+    "dtype": "String",
+    "null_share": 0.1393,
+    "distinct": 8896
+   },
+   "iucn_tyyp": {
+    "dtype": "String",
+    "null_share": 0.3777,
+    "distinct": 7,
+    "values": [
+     {
+      "value": null,
+      "rows": 3904
+     },
+     {
+      "value": "2",
+      "rows": 1986
+     },
+     {
+      "value": "4",
+      "rows": 1458
+     },
+     {
+      "value": "3",
+      "rows": 1070
+     },
+     {
+      "value": "6",
+      "rows": 966
+     },
+     {
+      "value": "5",
+      "rows": 927
+     },
+     {
+      "value": "1",
+      "rows": 24
+     }
+    ]
+   },
+   "iucn_tyyp_selg": {
+    "dtype": "String",
+    "null_share": 0.3777,
+    "distinct": 7,
+    "values": [
+     {
+      "value": null,
+      "rows": 3904
+     },
+     {
+      "value": "Ib - K\u00f5nnumaa",
+      "rows": 1986
+     },
+     {
+      "value": "IV - Elupaiga- v\u00f5i liigikaitseala",
+      "rows": 1458
+     },
+     {
+      "value": "III - Kaitstav loodusm\u00e4lestis",
+      "rows": 1070
+     },
+     {
+      "value": "VI - Piiratud looduskasutusega kaitseala",
+      "rows": 966
+     },
+     {
+      "value": "V - Maastikukaitseala",
+      "rows": 927
+     },
+     {
+      "value": "Ia - Loodusreservaat",
+      "rows": 24
+     }
+    ]
+   },
+   "al_yksiktyyp": {
+    "dtype": "String",
+    "null_share": 0.8836,
+    "distinct": 22,
+    "values": [
+     {
+      "value": null,
+      "rows": 9132
+     },
+     {
+      "value": "301",
+      "rows": 543
+     },
+     {
+      "value": "201",
+      "rows": 377
+     },
+     {
+      "value": "302",
+      "rows": 61
+     },
+     {
+      "value": "113",
+      "rows": 60
+     },
+     {
+      "value": "402",
+      "rows": 34
+     },
+     {
+      "value": "202",
+      "rows": 28
+     },
+     {
+      "value": "111",
+      "rows": 23
+     },
+     {
+      "value": "106",
+      "rows": 14
+     },
+     {
+      "value": "303",
+      "rows": 13
+     },
+     {
+      "value": "110",
+      "rows": 10
+     },
+     {
+      "value": "112",
+      "rows": 9
+     },
+     {
+      "value": "108",
+      "rows": 7
+     },
+     {
+      "value": "401",
+      "rows": 6
+     },
+     {
+      "value": "116",
+      "rows": 4
+     },
+     {
+      "value": "101",
+      "rows": 3
+     },
+     {
+      "value": "114",
+      "rows": 3
+     },
+     {
+      "value": "102",
+      "rows": 2
+     },
+     {
+      "value": "107",
+      "rows": 2
+     },
+     {
+      "value": "115",
+      "rows": 2
+     },
+     {
+      "value": "105",
+      "rows": 1
+     },
+     {
+      "value": "109",
+      "rows": 1
+     }
+    ]
+   },
+   "al_yksiktyyp_selg": {
+    "dtype": "String",
+    "null_share": 0.8836,
+    "distinct": 22,
+    "values": [
+     {
+      "value": null,
+      "rows": 9132
+     },
+     {
+      "value": "\u00fcksikpuu (puu)",
+      "rows": 543
+     },
+     {
+      "value": "r\u00e4ndrahn (r\u00e4ndrahn)",
+      "rows": 377
+     },
+     {
+      "value": "puuder\u00fchm, salu (puu)",
+      "rows": 61
+     },
+     {
+      "value": "allikas (pinnavorm)",
+      "rows": 60
+     },
+     {
+      "value": "paljand (paljand)",
+      "rows": 34
+     },
+     {
+      "value": "kivik\u00fclv (r\u00e4ndrahn)",
+      "rows": 28
+     },
+     {
+      "value": "karst (pinnavorm)",
+      "rows": 23
+     },
+     {
+      "value": "kuppelmaastiku element (pinnavorm)",
+      "rows": 14
+     },
+     {
+      "value": "allee (puu)",
+      "rows": 13
+     },
+     {
+      "value": "juga (pinnavorm)",
+      "rows": 10
+     },
+     {
+      "value": "koobas (pinnavorm)",
+      "rows": 9
+     },
+     {
+      "value": "astang (pinnavorm)",
+      "rows": 7
+     },
+     {
+      "value": "pank (paljand)",
+      "rows": 6
+     },
+     {
+      "value": "maastikuvorm (pinnavorm)",
+      "rows": 4
+     },
+     {
+      "value": "j\u00e4rv (pinnavorm)",
+      "rows": 3
+     },
+     {
+      "value": "org (pinnavorm)",
+      "rows": 3
+     },
+     {
+      "value": "oos (pinnavorm)",
+      "rows": 2
+     },
+     {
+      "value": "kraater (pinnavorm)",
+      "rows": 2
+     },
+     {
+      "value": "vall (pinnavorm)",
+      "rows": 2
+     },
+     {
+      "value": "m\u00f5hn (pinnavorm)",
+      "rows": 1
+     },
+     {
+      "value": "luide (pinnavorm)",
+      "rows": 1
+     }
+    ]
+   },
+   "yksikobj_seisund": {
+    "dtype": "String",
+    "null_share": 0.9766,
+    "distinct": 7,
+    "values": [
+     {
+      "value": null,
+      "rows": 10093
+     },
+     {
+      "value": "HE",
+      "rows": 110
+     },
+     {
+      "value": "RA",
+      "rows": 41
+     },
+     {
+      "value": "HA",
+      "rows": 36
+     },
+     {
+      "value": "VH",
+      "rows": 34
+     },
+     {
+      "value": "H\u00c4",
+      "rows": 20
+     },
+     {
+      "value": "OH",
+      "rows": 1
+     }
+    ]
+   },
+   "yksikobj_seisund_selg": {
+    "dtype": "String",
+    "null_share": 0.9766,
+    "distinct": 7,
+    "values": [
+     {
+      "value": null,
+      "rows": 10093
+     },
+     {
+      "value": "Hea",
+      "rows": 110
+     },
+     {
+      "value": "Rahuldav",
+      "rows": 41
+     },
+     {
+      "value": "Halb",
+      "rows": 36
+     },
+     {
+      "value": "V\u00e4ga hea",
+      "rows": 34
+     },
+     {
+      "value": "H\u00e4vinud",
+      "rows": 20
+     },
+     {
+      "value": "Ohtlik",
+      "rows": 1
+     }
+    ]
+   },
+   "al_voondtyyp": {
+    "dtype": "String",
+    "null_share": 0.4636,
+    "distinct": 7,
+    "values": [
+     {
+      "value": null,
+      "rows": 4791
+     },
+     {
+      "value": "PYS",
+      "rows": 2550
+     },
+     {
+      "value": "P",
+      "rows": 1024
+     },
+     {
+      "value": "H",
+      "rows": 1022
+     },
+     {
+      "value": "PYP",
+      "rows": 542
+     },
+     {
+      "value": "S",
+      "rows": 378
+     },
+     {
+      "value": "R",
+      "rows": 28
+     }
+    ]
+   },
+   "al_voondtyyp_selg": {
+    "dtype": "String",
+    "null_share": 0.4636,
+    "distinct": 7,
+    "values": [
+     {
+      "value": null,
+      "rows": 4791
+     },
+     {
+      "value": "p\u00fcsielupaiga sihtkaitsev\u00f6\u00f6nd",
+      "rows": 2550
+     },
+     {
+      "value": "piiranguv\u00f6\u00f6nd",
+      "rows": 1024
+     },
+     {
+      "value": "hooldatav sihtkaitsev\u00f6\u00f6nd",
+      "rows": 1022
+     },
+     {
+      "value": "p\u00fcsielupaiga piiranguv\u00f6\u00f6nd",
+      "rows": 542
+     },
+     {
+      "value": "looduslik sihtkaitsev\u00f6\u00f6nd",
+      "rows": 378
+     },
+     {
+      "value": "loodusreservaat",
+      "rows": 28
+     }
+    ]
+   },
+   "al_staatus": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 3,
+    "values": [
+     {
+      "value": "K",
+      "rows": 8942
+     },
+     {
+      "value": "P",
+      "rows": 1164
+     },
+     {
+      "value": "JK",
+      "rows": 229
+     }
+    ]
+   },
+   "al_staatus_selg": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 3,
+    "values": [
+     {
+      "value": "kaitsealune",
+      "rows": 8942
+     },
+     {
+      "value": "kavandatav kaitstav ala",
+      "rows": 1164
+     },
+     {
+      "value": "kaitsealune - j\u00e4\u00e4b kaitstavale alale",
+      "rows": 229
+     }
+    ]
+   },
+   "kaitsekorra_alus_id": {
+    "dtype": "Int64",
+    "null_share": 0.1146,
+    "distinct": 438,
+    "min": -2116051556,
+    "max": 2145775360
+   },
+   "pindala_maa": {
+    "dtype": "Float64",
+    "null_share": 0.1137,
+    "distinct": 3395,
+    "min": 0.0,
+    "max": 47189.7
+   },
+   "pindala_vesi": {
+    "dtype": "Float64",
+    "null_share": 0.5982,
+    "distinct": 655,
+    "min": 0.0,
+    "max": 27323.0
+   },
+   "pindala_meri": {
+    "dtype": "Float64",
+    "null_share": 0.6798,
+    "distinct": 284,
+    "min": 0.0,
+    "max": 188897.5
+   },
+   "veekogu_id": {
+    "dtype": "Int64",
+    "null_share": 0.9879,
+    "distinct": 126,
+    "min": -2095796549,
+    "max": 2130663140
+   },
+   "on_msoodust": {
+    "dtype": "Boolean",
+    "null_share": 0.0,
+    "distinct": 2,
+    "values": [
+     {
+      "value": true,
+      "rows": 9033
+     },
+     {
+      "value": false,
+      "rows": 1302
+     }
+    ]
+   },
+   "msoodust_prots": {
+    "dtype": "String",
+    "null_share": 0.3976,
+    "distinct": 5,
+    "values": [
+     {
+      "value": null,
+      "rows": 4109
+     },
+     {
+      "value": "0",
+      "rows": 3498
+     },
+     {
+      "value": "50",
+      "rows": 2725
+     },
+     {
+      "value": "100",
+      "rows": 2
+     },
+     {
+      "value": "50+",
+      "rows": 1
+     }
+    ]
+   },
+   "muut_aeg": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 10019
+   },
+   "keht_staatus": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 1,
+    "values": [
+     {
+      "value": "Kehtiv",
+      "rows": 10335
+     }
+    ]
+   },
+   "valitseja_reg_kood": {
+    "dtype": "String",
+    "null_share": 0.0023,
+    "distinct": 24,
+    "values": [
+     {
+      "value": "70008658",
+      "rows": 10226
+     },
+     {
+      "value": null,
+      "rows": 24
+     },
+     {
+      "value": "75021250",
+      "rows": 17
+     },
+     {
+      "value": "75014913",
+      "rows": 8
+     },
+     {
+      "value": "75014132",
+      "rows": 6
+     },
+     {
+      "value": "75012802",
+      "rows": 6
+     },
+     {
+      "value": "75032325",
+      "rows": 6
+     },
+     {
+      "value": "75018710",
+      "rows": 6
+     },
+     {
+      "value": "75011211",
+      "rows": 5
+     },
+     {
+      "value": "75007586",
+      "rows": 4
+     },
+     {
+      "value": "75025973",
+      "rows": 2
+     },
+     {
+      "value": "77000312",
+      "rows": 2
+     },
+     {
+      "value": "75004524",
+      "rows": 2
+     },
+     {
+      "value": "75015456",
+      "rows": 2
+     },
+     {
+      "value": "77000200",
+      "rows": 2
+     },
+     {
+      "value": "75033496",
+      "rows": 2
+     },
+     {
+      "value": "75011760",
+      "rows": 2
+     },
+     {
+      "value": "77000186",
+      "rows": 2
+     },
+     {
+      "value": "75010418",
+      "rows": 2
+     },
+     {
+      "value": "77000234",
+      "rows": 2
+     },
+     {
+      "value": "75007824",
+      "rows": 2
+     },
+     {
+      "value": "75012096",
+      "rows": 2
+     },
+     {
+      "value": "75026106",
+      "rows": 2
+     },
+     {
+      "value": "77000424",
+      "rows": 1
+     }
+    ]
+   },
+   "valitseja_nimetus": {
+    "dtype": "String",
+    "null_share": 0.0023,
+    "distinct": 28,
+    "values": [
+     {
+      "value": "Keskkonnaamet",
+      "rows": 10042
+     },
+     {
+      "value": "Keskkonnaameti P\u00f5hja regioon",
+      "rows": 92
+     },
+     {
+      "value": "Keskkonnaameti L\u00f5una regioon",
+      "rows": 44
+     },
+     {
+      "value": "Keskkonnaameti L\u00e4\u00e4ne regioon",
+      "rows": 42
+     },
+     {
+      "value": null,
+      "rows": 24
+     },
+     {
+      "value": "Viimsi Vallavalitsus",
+      "rows": 17
+     },
+     {
+      "value": "Tallinna Keskkonna- ja Kommunaalamet",
+      "rows": 8
+     },
+     {
+      "value": "Haapsalu Linnavalitsus",
+      "rows": 6
+     },
+     {
+      "value": "Keskkonnaameti J\u00f5geva-Tartu regioon",
+      "rows": 6
+     },
+     {
+      "value": "Harku Vallavalitsus",
+      "rows": 6
+     },
+     {
+      "value": "Tallinna Keskkonnaamet",
+      "rows": 6
+     },
+     {
+      "value": "Muhu Vallavalitsus",
+      "rows": 6
+     },
+     {
+      "value": "K\u00e4ina Vallavalitsus",
+      "rows": 5
+     },
+     {
+      "value": "Palupera Vallavalitsus",
+      "rows": 4
+     },
+     {
+      "value": "Urvaste Vallavalitsus",
+      "rows": 2
+     },
+     {
+      "value": "Tori Vallavalitsus",
+      "rows": 2
+     },
+     {
+      "value": "L\u00e4\u00e4ne-Harju Vallavalitsus",
+      "rows": 2
+     },
+     {
+      "value": "Kanepi Vallavalitsus",
+      "rows": 2
+     },
+     {
+      "value": "J\u00f5el\u00e4htme Vallavalitsus",
+      "rows": 2
+     },
+     {
+      "value": "Rapla Vallavalitsus",
+      "rows": 2
+     },
+     {
+      "value": "Roosna-Alliku Vallavalitsus",
+      "rows": 2
+     },
+     {
+      "value": "Rakvere Vallavalitsus*",
+      "rows": 2
+     },
+     {
+      "value": "Antsla Vallavalitsus",
+      "rows": 2
+     },
+     {
+      "value": "Kuusalu Vallavalitsus",
+      "rows": 2
+     },
+     {
+      "value": "P\u00f5hja-P\u00e4rnumaa Vallavalitsus",
+      "rows": 2
+     },
+     {
+      "value": "Kadrina Vallavalitsus",
+      "rows": 2
+     },
+     {
+      "value": "Rae Vallavalitsus",
+      "rows": 2
+     },
+     {
+      "value": "Hiiumaa Vallavalitsus",
+      "rows": 1
+     }
+    ]
+   },
+   "ehak_tekst": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 4212
+   },
+   "ehak_kood1": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 58
+   },
+   "ehak_kood2": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 305
+   },
+   "ehak_kood3": {
+    "dtype": "String",
+    "null_share": 0.0006,
+    "distinct": 4208
+   },
+   "on_seotud_ala": {
+    "dtype": "Int64",
+    "null_share": 0.0,
+    "distinct": 2,
+    "values": [
+     {
+      "value": 0,
+      "rows": 5239
+     },
+     {
+      "value": 1,
+      "rows": 5096
+     }
+    ],
+    "min": 0,
+    "max": 1
+   }
+  }
+ },
+ "f_rahvalad": {
+  "rows": 705,
+  "columns": {
+   "id": {
+    "dtype": "Int64",
+    "null_share": 0.0,
+    "distinct": 705,
+    "min": -2139839623,
+    "max": 2121175489
+   },
+   "id_text": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 705
+   },
+   "kood": {
+    "dtype": "String",
+    "null_share": 0.017,
+    "distinct": 654
+   },
+   "nimi": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 700
+   },
+   "tyyp": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 6,
+    "values": [
+     {
+      "value": "7",
+      "rows": 539
+     },
+     {
+      "value": "2",
+      "rows": 75
+     },
+     {
+      "value": "6",
+      "rows": 66
+     },
+     {
+      "value": "4",
+      "rows": 17
+     },
+     {
+      "value": "5",
+      "rows": 7
+     },
+     {
+      "value": "8",
+      "rows": 1
+     }
+    ]
+   },
+   "tyyp_selg": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 6,
+    "values": [
+     {
+      "value": "Natura (loodusala)",
+      "rows": 539
+     },
+     {
+      "value": "IBA",
+      "rows": 75
+     },
+     {
+      "value": "Natura (linnuala)",
+      "rows": 66
+     },
+     {
+      "value": "Ramsar",
+      "rows": 17
+     },
+     {
+      "value": "HELCOM",
+      "rows": 7
+     },
+     {
+      "value": "Biosf\u00e4\u00e4ri kaitseala",
+      "rows": 1
+     }
+    ]
+   },
+   "on_regobj": {
+    "dtype": "Boolean",
+    "null_share": 0.0,
+    "distinct": 2,
+    "values": [
+     {
+      "value": true,
+      "rows": 630
+     },
+     {
+      "value": false,
+      "rows": 75
+     }
+    ]
+   },
+   "kkr_kood": {
+    "dtype": "String",
+    "null_share": 0.1064,
+    "distinct": 631
+   },
+   "koostamise_kp": {
+    "dtype": "String",
+    "null_share": 0.1418,
+    "distinct": 18,
+    "values": [
+     {
+      "value": "2004-02-01T00:00:00",
+      "rows": 162
+     },
+     {
+      "value": "2004-03-01T00:00:00",
+      "rows": 146
+     },
+     {
+      "value": "2004-01-01T00:00:00",
+      "rows": 111
+     },
+     {
+      "value": "2004-04-01T00:00:00",
+      "rows": 104
+     },
+     {
+      "value": null,
+      "rows": 100
+     },
+     {
+      "value": "2009-05-01T00:00:00",
+      "rows": 32
+     },
+     {
+      "value": "2003-12-01T00:00:00",
+      "rows": 12
+     },
+     {
+      "value": "2010-12-01T00:00:00",
+      "rows": 11
+     },
+     {
+      "value": "2002-11-01T00:00:00",
+      "rows": 8
+     },
+     {
+      "value": "2007-03-01T00:00:00",
+      "rows": 5
+     },
+     {
+      "value": "2006-09-01T00:00:00",
+      "rows": 2
+     },
+     {
+      "value": "2006-11-01T00:00:00",
+      "rows": 2
+     },
+     {
+      "value": "2025-01-27T00:00:00",
+      "rows": 2
+     },
+     {
+      "value": "2003-01-01T00:00:00",
+      "rows": 2
+     },
+     {
+      "value": "2003-11-01T00:00:00",
+      "rows": 2
+     },
+     {
+      "value": "2006-10-01T00:00:00",
+      "rows": 2
+     },
+     {
+      "value": "2007-01-01T00:00:00",
+      "rows": 1
+     },
+     {
+      "value": "2002-10-01T00:00:00",
+      "rows": 1
+     }
+    ]
+   },
+   "kinnitamise_kp": {
+    "dtype": "String",
+    "null_share": 0.1064,
+    "distinct": 15,
+    "values": [
+     {
+      "value": "2008-12-12T00:00:00",
+      "rows": 494
+     },
+     {
+      "value": null,
+      "rows": 75
+     },
+     {
+      "value": "2004-04-30T00:00:00",
+      "rows": 66
+     },
+     {
+      "value": "2011-01-10T00:00:00",
+      "rows": 32
+     },
+     {
+      "value": "2012-11-16T00:00:00",
+      "rows": 11
+     },
+     {
+      "value": "1997-06-17T00:00:00",
+      "rows": 9
+     },
+     {
+      "value": "2010-04-09T00:00:00",
+      "rows": 5
+     },
+     {
+      "value": "2010-01-27T00:00:00",
+      "rows": 4
+     },
+     {
+      "value": "2025-01-17T00:00:00",
+      "rows": 2
+     },
+     {
+      "value": "2005-07-14T00:00:00",
+      "rows": 2
+     },
+     {
+      "value": "2003-03-31T00:00:00",
+      "rows": 1
+     },
+     {
+      "value": "1994-03-29T00:00:00",
+      "rows": 1
+     },
+     {
+      "value": "1989-12-27T00:00:00",
+      "rows": 1
+     },
+     {
+      "value": "2011-02-08T00:00:00",
+      "rows": 1
+     },
+     {
+      "value": "2006-02-03T00:00:00",
+      "rows": 1
+     }
+    ]
+   },
+   "pindala_maa": {
+    "dtype": "Float64",
+    "null_share": 0.0085,
+    "distinct": 644,
+    "min": 0.0,
+    "max": 402867.3
+   },
+   "pindala_vesi": {
+    "dtype": "Float64",
+    "null_share": 0.0298,
+    "distinct": 412,
+    "min": 0.0,
+    "max": 27455.51
+   },
+   "pindala_meri": {
+    "dtype": "Float64",
+    "null_share": 0.0553,
+    "distinct": 146,
+    "min": 0.0,
+    "max": 1111113.7
+   },
+   "spa_klassif_kp": {
+    "dtype": "String",
+    "null_share": 0.9064,
+    "distinct": 2,
+    "values": [
+     {
+      "value": null,
+      "rows": 639
+     },
+     {
+      "value": "2004-04-01T00:00:00",
+      "rows": 66
+     }
+    ]
+   },
+   "sci_esit_kp": {
+    "dtype": "String",
+    "null_share": 0.2355,
+    "distinct": 4,
+    "values": [
+     {
+      "value": "2004-04-01T00:00:00",
+      "rows": 493
+     },
+     {
+      "value": null,
+      "rows": 166
+     },
+     {
+      "value": "2009-05-01T00:00:00",
+      "rows": 35
+     },
+     {
+      "value": "2011-01-01T00:00:00",
+      "rows": 11
+     }
+    ]
+   },
+   "sci_kinnit_kp": {
+    "dtype": "String",
+    "null_share": 0.2355,
+    "distinct": 4,
+    "values": [
+     {
+      "value": "2007-11-01T00:00:00",
+      "rows": 492
+     },
+     {
+      "value": null,
+      "rows": 166
+     },
+     {
+      "value": "2011-01-01T00:00:00",
+      "rows": 36
+     },
+     {
+      "value": "2012-11-01T00:00:00",
+      "rows": 11
+     }
+    ]
+   },
+   "sac_eri_kp": {
+    "dtype": "String",
+    "null_share": 0.2355,
+    "distinct": 69
+   },
+   "muut_aeg": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 705
+   },
+   "keht_staatus": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 1,
+    "values": [
+     {
+      "value": "Kehtiv",
+      "rows": 705
+     }
+    ]
+   },
+   "staatus": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 1,
+    "values": [
+     {
+      "value": "K",
+      "rows": 705
+     }
+    ]
+   },
+   "staatus_selg": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 1,
+    "values": [
+     {
+      "value": "Kehtiv",
+      "rows": 705
+     }
+    ]
+   },
+   "muut_staatus": {
+    "dtype": "String",
+    "null_share": 0.1418,
+    "distinct": 2,
+    "values": [
+     {
+      "value": "N",
+      "rows": 605
+     },
+     {
+      "value": null,
+      "rows": 100
+     }
+    ]
+   },
+   "muut_staatus_selg": {
+    "dtype": "String",
+    "null_share": 0.1418,
+    "distinct": 2,
+    "values": [
+     {
+      "value": "NaturaSDF objekt",
+      "rows": 605
+     },
+     {
+      "value": null,
+      "rows": 100
+     }
+    ]
+   },
+   "ehak_tekst": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 627
+   },
+   "ehak_kood1": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 50
+   },
+   "ehak_kood2": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 187
+   },
+   "ehak_kood3": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 627
+   }
+  }
+ },
+ "f_rahvalad_elupaikstat": {
+  "rows": 12235,
+  "columns": {
+   "elpst_id": {
+    "dtype": "Int64",
+    "null_share": 0.0,
+    "distinct": 12235,
+    "min": -2146851479,
+    "max": 2147449552
+   },
+   "elpst_kood": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 76
+   },
+   "elpst_kood_selg": {
+    "dtype": "String",
+    "null_share": 0.0044,
+    "distinct": 61
+   },
+   "elpst_tyyp": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 4,
+    "values": [
+     {
+      "value": "2023",
+      "rows": 3151
+     },
+     {
+      "value": "2014",
+      "rows": 3044
+     },
+     {
+      "value": "2012",
+      "rows": 3021
+     },
+     {
+      "value": "2010",
+      "rows": 3019
+     }
+    ]
+   },
+   "elpst_tyyp_selg": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 4,
+    "values": [
+     {
+      "value": "2026 Natura standardbaas",
+      "rows": 3151
+     },
+     {
+      "value": "2015 Natura standardbaas",
+      "rows": 3044
+     },
+     {
+      "value": "2012 Natura standardbaas",
+      "rows": 3021
+     },
+     {
+      "value": "2010 Natura standardbaas",
+      "rows": 3019
+     }
+    ]
+   },
+   "elpst_obj_id": {
+    "dtype": "Int64",
+    "null_share": 0.0,
+    "distinct": 519,
+    "min": -2139839623,
+    "max": 2121175489
+   },
+   "elpst_elupaigatyyp_id": {
+    "dtype": "Int64",
+    "null_share": 0.0,
+    "distinct": 61,
+    "min": -2145731220,
+    "max": 2146975574
+   },
+   "elupaigatyyp_kood": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 61
+   },
+   "elupaigatyyp_selg": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 61
+   },
+   "elupaigatyyp_grupp": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 7,
+    "values": [
+     {
+      "value": "9",
+      "rows": 4119
+     },
+     {
+      "value": "6",
+      "rows": 2706
+     },
+     {
+      "value": "7",
+      "rows": 2181
+     },
+     {
+      "value": "1",
+      "rows": 1500
+     },
+     {
+      "value": "3",
+      "rows": 1228
+     },
+     {
+      "value": "2",
+      "rows": 306
+     },
+     {
+      "value": "8",
+      "rows": 195
+     }
+    ]
+   },
+   "elupaigatyyp_grupp_selg": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 7,
+    "values": [
+     {
+      "value": "Metsad",
+      "rows": 4119
+     },
+     {
+      "value": "Niidud",
+      "rows": 2706
+     },
+     {
+      "value": "Sood",
+      "rows": 2181
+     },
+     {
+      "value": "Rannikuelupaigad",
+      "rows": 1500
+     },
+     {
+      "value": "Mageveekogud",
+      "rows": 1228
+     },
+     {
+      "value": "N\u00f5mmed, liivikud ja kadastikud",
+      "rows": 306
+     },
+     {
+      "value": "Paljandid ja koopad",
+      "rows": 195
+     }
+    ]
+   },
+   "elupaigatyyp_staatus": {
+    "dtype": "String",
+    "null_share": 0.5507,
+    "distinct": 2,
+    "values": [
+     {
+      "value": null,
+      "rows": 6738
+     },
+     {
+      "value": "E",
+      "rows": 5497
+     }
+    ]
+   },
+   "elupaigatyyp_staatus_selg": {
+    "dtype": "String",
+    "null_share": 0.5507,
+    "distinct": 2,
+    "values": [
+     {
+      "value": null,
+      "rows": 6738
+     },
+     {
+      "value": "Esmat\u00e4htis",
+      "rows": 5497
+     }
+    ]
+   },
+   "elupst_pindala_alal": {
+    "dtype": "Float64",
+    "null_share": 0.0016,
+    "distinct": 3717,
+    "min": 0.0,
+    "max": 27316.6
+   },
+   "elupst_pindala_alal_prots": {
+    "dtype": "Float64",
+    "null_share": 0.0805,
+    "distinct": 546,
+    "min": 0.0,
+    "max": 100.0
+   },
+   "elupst_pindala_eesti_suhtes": {
+    "dtype": "String",
+    "null_share": 0.0134,
+    "distinct": 4,
+    "values": [
+     {
+      "value": "C",
+      "rows": 11704
+     },
+     {
+      "value": "B",
+      "rows": 292
+     },
+     {
+      "value": null,
+      "rows": 164
+     },
+     {
+      "value": "A",
+      "rows": 75
+     }
+    ]
+   },
+   "elupst_pindala_e_suhtes_selg": {
+    "dtype": "String",
+    "null_share": 0.0134,
+    "distinct": 4,
+    "values": [
+     {
+      "value": "2% > p > 0%",
+      "rows": 11704
+     },
+     {
+      "value": "15% > p > 2%",
+      "rows": 292
+     },
+     {
+      "value": null,
+      "rows": 164
+     },
+     {
+      "value": "100% > p > 15%",
+      "rows": 75
+     }
+    ]
+   },
+   "elupst_koopad": {
+    "dtype": "Int64",
+    "null_share": 0.9985,
+    "distinct": 2,
+    "values": [
+     {
+      "value": null,
+      "rows": 12217
+     },
+     {
+      "value": 1,
+      "rows": 18
+     }
+    ],
+    "min": 1,
+    "max": 1
+   },
+   "elupst_esinduslikkus": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 4,
+    "values": [
+     {
+      "value": "B",
+      "rows": 5169
+     },
+     {
+      "value": "C",
+      "rows": 4149
+     },
+     {
+      "value": "A",
+      "rows": 2745
+     },
+     {
+      "value": "D",
+      "rows": 172
+     }
+    ]
+   },
+   "elupst_esinduslikkus_selg": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 4,
+    "values": [
+     {
+      "value": "Hea",
+      "rows": 5169
+     },
+     {
+      "value": "Arvestatav",
+      "rows": 4149
+     },
+     {
+      "value": "V\u00e4ga hea",
+      "rows": 2745
+     },
+     {
+      "value": "V\u00e4heesinduslik",
+      "rows": 172
+     }
+    ]
+   },
+   "elupst_kaitse": {
+    "dtype": "String",
+    "null_share": 0.0136,
+    "distinct": 4,
+    "values": [
+     {
+      "value": "B",
+      "rows": 6684
+     },
+     {
+      "value": "A",
+      "rows": 2702
+     },
+     {
+      "value": "C",
+      "rows": 2682
+     },
+     {
+      "value": null,
+      "rows": 167
+     }
+    ]
+   },
+   "elupst_kaitse_selg": {
+    "dtype": "String",
+    "null_share": 0.0136,
+    "distinct": 4,
+    "values": [
+     {
+      "value": "H\u00e4sti s\u00e4ilinud",
+      "rows": 6684
+     },
+     {
+      "value": "V\u00e4ga h\u00e4sti s\u00e4ilinud",
+      "rows": 2702
+     },
+     {
+      "value": "Keskmiselt v\u00f5i v\u00e4he s\u00e4ilinud",
+      "rows": 2682
+     },
+     {
+      "value": null,
+      "rows": 167
+     }
+    ]
+   },
+   "elupst_hinnang": {
+    "dtype": "String",
+    "null_share": 0.0136,
+    "distinct": 4,
+    "values": [
+     {
+      "value": "B",
+      "rows": 6056
+     },
+     {
+      "value": "C",
+      "rows": 3309
+     },
+     {
+      "value": "A",
+      "rows": 2703
+     },
+     {
+      "value": null,
+      "rows": 167
+     }
+    ]
+   },
+   "elupst_hinnang_selg": {
+    "dtype": "String",
+    "null_share": 0.0136,
+    "distinct": 4,
+    "values": [
+     {
+      "value": "K\u00f5rge v\u00e4\u00e4rtus",
+      "rows": 6056
+     },
+     {
+      "value": "Keskmine v\u00e4\u00e4rtus",
+      "rows": 3309
+     },
+     {
+      "value": "V\u00e4ga k\u00f5rge v\u00e4\u00e4rtus",
+      "rows": 2703
+     },
+     {
+      "value": null,
+      "rows": 167
+     }
+    ]
+   },
+   "elupst_andmekvaliteet": {
+    "dtype": "String",
+    "null_share": 0.2468,
+    "distinct": 4,
+    "values": [
+     {
+      "value": "M",
+      "rows": 8893
+     },
+     {
+      "value": null,
+      "rows": 3019
+     },
+     {
+      "value": "P",
+      "rows": 267
+     },
+     {
+      "value": "G",
+      "rows": 56
+     }
+    ]
+   },
+   "elupst_andmekval_selg": {
+    "dtype": "String",
+    "null_share": 0.2468,
+    "distinct": 4,
+    "values": [
+     {
+      "value": "Keskmine",
+      "rows": 8893
+     },
+     {
+      "value": null,
+      "rows": 3019
+     },
+     {
+      "value": "Kehv",
+      "rows": 267
+     },
+     {
+      "value": "Hea",
+      "rows": 56
+     }
+    ]
+   },
+   "elupst_muut_aeg": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 1081
+   },
+   "elupst_on_endine": {
+    "dtype": "Boolean",
+    "null_share": 0.0,
+    "distinct": 1,
+    "values": [
+     {
+      "value": false,
+      "rows": 12235
+     }
+    ]
+   }
+  }
+ },
+ "f_rahvalad_lkohtstat": {
+  "rows": 21088,
+  "columns": {
+   "lkohtst_id": {
+    "dtype": "Int64",
+    "null_share": 0.0,
+    "distinct": 21088,
+    "min": -2146897442,
+    "max": 2147437400
+   },
+   "lkohtst_tyyp": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 5,
+    "values": [
+     {
+      "value": "2010",
+      "rows": 4902
+     },
+     {
+      "value": "2023",
+      "rows": 4076
+     },
+     {
+      "value": "2014",
+      "rows": 4044
+     },
+     {
+      "value": "2016",
+      "rows": 4043
+     },
+     {
+      "value": "2012",
+      "rows": 4023
+     }
+    ]
+   },
+   "lkohtst_tyyp_selg": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 5,
+    "values": [
+     {
+      "value": "2010 Natura standardbaas",
+      "rows": 4902
+     },
+     {
+      "value": "2026 Natura standardbaas",
+      "rows": 4076
+     },
+     {
+      "value": "2015 Natura standardbaas",
+      "rows": 4044
+     },
+     {
+      "value": "2017 Natura standardbaas",
+      "rows": 4043
+     },
+     {
+      "value": "2012 Natura standardbaas",
+      "rows": 4023
+     }
+    ]
+   },
+   "lkohtst_obj_id": {
+    "dtype": "Int64",
+    "null_share": 0.0,
+    "distinct": 462,
+    "min": -2139839623,
+    "max": 2121175489
+   },
+   "lkohtst_lnim_id": {
+    "dtype": "Int64",
+    "null_share": 0.0,
+    "distinct": 442,
+    "min": -2116845812,
+    "max": 2146329601
+   },
+   "ladnimi": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 442
+   },
+   "estnimi": {
+    "dtype": "String",
+    "null_share": 0.0051,
+    "distinct": 424
+   },
+   "ryhm": {
+    "dtype": "String",
+    "null_share": 0.0111,
+    "distinct": 19,
+    "values": [
+     {
+      "value": "424",
+      "rows": 11021
+     },
+     {
+      "value": "113",
+      "rows": 5344
+     },
+     {
+      "value": "425",
+      "rows": 1289
+     },
+     {
+      "value": "421",
+      "rows": 1110
+     },
+     {
+      "value": "418",
+      "rows": 441
+     },
+     {
+      "value": "111",
+      "rows": 376
+     },
+     {
+      "value": "414",
+      "rows": 357
+     },
+     {
+      "value": "426",
+      "rows": 239
+     },
+     {
+      "value": null,
+      "rows": 235
+     },
+     {
+      "value": "422",
+      "rows": 221
+     },
+     {
+      "value": "123",
+      "rows": 210
+     },
+     {
+      "value": "432",
+      "rows": 60
+     },
+     {
+      "value": "423",
+      "rows": 50
+     },
+     {
+      "value": "200",
+      "rows": 50
+     },
+     {
+      "value": "300",
+      "rows": 30
+     },
+     {
+      "value": "112",
+      "rows": 20
+     },
+     {
+      "value": "413",
+      "rows": 15
+     },
+     {
+      "value": "122",
+      "rows": 15
+     },
+     {
+      "value": "416",
+      "rows": 5
+     }
+    ]
+   },
+   "ryhm_selg": {
+    "dtype": "String",
+    "null_share": 0.0111,
+    "distinct": 19,
+    "values": [
+     {
+      "value": "Linnud",
+      "rows": 11021
+     },
+     {
+      "value": "Katteseemnetaimed",
+      "rows": 5344
+     },
+     {
+      "value": "Imetajad",
+      "rows": 1289
+     },
+     {
+      "value": "Kalad",
+      "rows": 1110
+     },
+     {
+      "value": "Putukad",
+      "rows": 441
+     },
+     {
+      "value": "S\u00f5najalgtaimed",
+      "rows": 376
+     },
+     {
+      "value": "Limused",
+      "rows": 357
+     },
+     {
+      "value": "Liblikalised",
+      "rows": 239
+     },
+     {
+      "value": null,
+      "rows": 235
+     },
+     {
+      "value": "Kahepaiksed",
+      "rows": 221
+     },
+     {
+      "value": "Lehtsamblad",
+      "rows": 210
+     },
+     {
+      "value": "Mardikalised",
+      "rows": 60
+     },
+     {
+      "value": "Roomajad",
+      "rows": 50
+     },
+     {
+      "value": "Seened",
+      "rows": 50
+     },
+     {
+      "value": "Samblikud",
+      "rows": 30
+     },
+     {
+      "value": "Paljasseemnetaimed",
+      "rows": 20
+     },
+     {
+      "value": "Helviksamblad",
+      "rows": 15
+     },
+     {
+      "value": "R\u00f5ngussid",
+      "rows": 15
+     },
+     {
+      "value": "V\u00e4hilaadsed",
+      "rows": 5
+     }
+    ]
+   },
+   "kaitsekategooria": {
+    "dtype": "String",
+    "null_share": 0.23,
+    "distinct": 4,
+    "values": [
+     {
+      "value": "3",
+      "rows": 8319
+     },
+     {
+      "value": "2",
+      "rows": 5764
+     },
+     {
+      "value": null,
+      "rows": 4850
+     },
+     {
+      "value": "1",
+      "rows": 2155
+     }
+    ]
+   },
+   "kaitsekategooria_selg": {
+    "dtype": "String",
+    "null_share": 0.23,
+    "distinct": 4,
+    "values": [
+     {
+      "value": "III kategooria",
+      "rows": 8319
+     },
+     {
+      "value": "II kategooria",
+      "rows": 5764
+     },
+     {
+      "value": null,
+      "rows": 4850
+     },
+     {
+      "value": "I kategooria",
+      "rows": 2155
+     }
+    ]
+   },
+   "tyyp": {
+    "dtype": "String",
+    "null_share": 0.2206,
+    "distinct": 4,
+    "values": [
+     {
+      "value": "KL",
+      "rows": 16143
+     },
+     {
+      "value": null,
+      "rows": 4651
+     },
+     {
+      "value": "VL",
+      "rows": 180
+     },
+     {
+      "value": "TK",
+      "rows": 114
+     }
+    ]
+   },
+   "liigi_tyyp_selg": {
+    "dtype": "String",
+    "null_share": 0.2206,
+    "distinct": 4,
+    "values": [
+     {
+      "value": "Kaitsealune liik",
+      "rows": 16143
+     },
+     {
+      "value": null,
+      "rows": 4651
+     },
+     {
+      "value": "V\u00f5\u00f5rliik",
+      "rows": 180
+     },
+     {
+      "value": "T\u00e4psustamata liik (nt. segapaar)",
+      "rows": 114
+     }
+    ]
+   },
+   "voorliik_tyyp": {
+    "dtype": "String",
+    "null_share": 0.9998,
+    "distinct": 2,
+    "values": [
+     {
+      "value": null,
+      "rows": 21083
+     },
+     {
+      "value": "2",
+      "rows": 5
+     }
+    ]
+   },
+   "voorliik_tyyp_selg": {
+    "dtype": "String",
+    "null_share": 0.9998,
+    "distinct": 2,
+    "values": [
+     {
+      "value": null,
+      "rows": 21083
+     },
+     {
+      "value": "Potentsiaalselt invasiivne",
+      "rows": 5
+     }
+    ]
+   },
+   "on_dir_liik": {
+    "dtype": "Boolean",
+    "null_share": 0.0,
+    "distinct": 2,
+    "values": [
+     {
+      "value": false,
+      "rows": 11562
+     },
+     {
+      "value": true,
+      "rows": 9526
+     }
+    ]
+   },
+   "arvukus_tyyp": {
+    "dtype": "String",
+    "null_share": 0.3174,
+    "distinct": 5,
+    "values": [
+     {
+      "value": null,
+      "rows": 6693
+     },
+     {
+      "value": "r",
+      "rows": 5817
+     },
+     {
+      "value": "p",
+      "rows": 5727
+     },
+     {
+      "value": "c",
+      "rows": 2598
+     },
+     {
+      "value": "w",
+      "rows": 253
+     }
+    ]
+   },
+   "arvukus_tyyp_selg": {
+    "dtype": "String",
+    "null_share": 0.3174,
+    "distinct": 5,
+    "values": [
+     {
+      "value": null,
+      "rows": 6693
+     },
+     {
+      "value": "Pesitsev/paljunev",
+      "rows": 5817
+     },
+     {
+      "value": "Paikne",
+      "rows": 5727
+     },
+     {
+      "value": "Peatuv",
+      "rows": 2598
+     },
+     {
+      "value": "Talvituv",
+      "rows": 253
+     }
+    ]
+   },
+   "arvukus_min": {
+    "dtype": "Int64",
+    "null_share": 0.5989,
+    "distinct": 218,
+    "min": 0,
+    "max": 700000
+   },
+   "arvukus_max": {
+    "dtype": "Int64",
+    "null_share": 0.6254,
+    "distinct": 217,
+    "min": 0,
+    "max": 700000
+   },
+   "arvukus_yhik": {
+    "dtype": "String",
+    "null_share": 0.5846,
+    "distinct": 4,
+    "values": [
+     {
+      "value": null,
+      "rows": 12327
+     },
+     {
+      "value": "p",
+      "rows": 5722
+     },
+     {
+      "value": "i",
+      "rows": 3024
+     },
+     {
+      "value": "m",
+      "rows": 15
+     }
+    ]
+   },
+   "arvukus_yhik_selg": {
+    "dtype": "String",
+    "null_share": 0.5846,
+    "distinct": 4,
+    "values": [
+     {
+      "value": null,
+      "rows": 12327
+     },
+     {
+      "value": "Paarid",
+      "rows": 5722
+     },
+     {
+      "value": "\u00dcksikisendid",
+      "rows": 3024
+     },
+     {
+      "value": "Isased",
+      "rows": 15
+     }
+    ]
+   },
+   "arvukus_kategooria": {
+    "dtype": "String",
+    "null_share": 0.6911,
+    "distinct": 5,
+    "values": [
+     {
+      "value": null,
+      "rows": 14573
+     },
+     {
+      "value": "P",
+      "rows": 5113
+     },
+     {
+      "value": "C",
+      "rows": 792
+     },
+     {
+      "value": "R",
+      "rows": 518
+     },
+     {
+      "value": "V",
+      "rows": 92
+     }
+    ]
+   },
+   "arvukus_kategooria_selg": {
+    "dtype": "String",
+    "null_share": 0.6911,
+    "distinct": 5,
+    "values": [
+     {
+      "value": null,
+      "rows": 14573
+     },
+     {
+      "value": "Esineb",
+      "rows": 5113
+     },
+     {
+      "value": "Tavaline",
+      "rows": 792
+     },
+     {
+      "value": "Haruldane",
+      "rows": 518
+     },
+     {
+      "value": "V\u00e4ga haruldane",
+      "rows": 92
+     }
+    ]
+   },
+   "arvukus_olulisus": {
+    "dtype": "String",
+    "null_share": 0.4289,
+    "distinct": 5,
+    "values": [
+     {
+      "value": null,
+      "rows": 9044
+     },
+     {
+      "value": "C",
+      "rows": 7839
+     },
+     {
+      "value": "B",
+      "rows": 3070
+     },
+     {
+      "value": "A",
+      "rows": 972
+     },
+     {
+      "value": "D",
+      "rows": 163
+     }
+    ]
+   },
+   "arvukus_olulisus_selg": {
+    "dtype": "String",
+    "null_share": 0.4289,
+    "distinct": 5,
+    "values": [
+     {
+      "value": null,
+      "rows": 9044
+     },
+     {
+      "value": "2% > p > 0%",
+      "rows": 7839
+     },
+     {
+      "value": "15% > p > 2%",
+      "rows": 3070
+     },
+     {
+      "value": "100% > p > 15%",
+      "rows": 972
+     },
+     {
+      "value": "Ebaoluline populatsioon",
+      "rows": 163
+     }
+    ]
+   },
+   "lkohtst_kaitse": {
+    "dtype": "String",
+    "null_share": 0.4348,
+    "distinct": 5,
+    "values": [
+     {
+      "value": null,
+      "rows": 9170
+     },
+     {
+      "value": "B",
+      "rows": 6019
+     },
+     {
+      "value": "A",
+      "rows": 3418
+     },
+     {
+      "value": "C",
+      "rows": 2480
+     },
+     {
+      "value": "D",
+      "rows": 1
+     }
+    ]
+   },
+   "lkohtst_kaitse_selg": {
+    "dtype": "String",
+    "null_share": 0.4349,
+    "distinct": 4,
+    "values": [
+     {
+      "value": null,
+      "rows": 9171
+     },
+     {
+      "value": "Hea kaitsestaatus",
+      "rows": 6019
+     },
+     {
+      "value": "Kaitsestaatus eeskujulik",
+      "rows": 3418
+     },
+     {
+      "value": "Keskmine v\u00f5i v\u00e4henenud kaitsestaatus",
+      "rows": 2480
+     }
+    ]
+   },
+   "eraldatus": {
+    "dtype": "String",
+    "null_share": 0.4363,
+    "distinct": 5,
+    "values": [
+     {
+      "value": null,
+      "rows": 9200
+     },
+     {
+      "value": "C",
+      "rows": 7859
+     },
+     {
+      "value": "B",
+      "rows": 3272
+     },
+     {
+      "value": "A",
+      "rows": 756
+     },
+     {
+      "value": "c",
+      "rows": 1
+     }
+    ]
+   },
+   "eraldatus_selg": {
+    "dtype": "String",
+    "null_share": 0.4363,
+    "distinct": 4,
+    "values": [
+     {
+      "value": null,
+      "rows": 9201
+     },
+     {
+      "value": "Populatsioon ei ole eraldatud kogu liigi loodusliku leviku alal",
+      "rows": 7859
+     },
+     {
+      "value": "Populatsioon ei ole eraldatud, kuid asub oma levikuala \u00e4\u00e4rel",
+      "rows": 3272
+     },
+     {
+      "value": "Populatsioon (peaaegu) eraldatud",
+      "rows": 756
+     }
+    ]
+   },
+   "vaartus": {
+    "dtype": "String",
+    "null_share": 0.4351,
+    "distinct": 4,
+    "values": [
+     {
+      "value": null,
+      "rows": 9175
+     },
+     {
+      "value": "B",
+      "rows": 4995
+     },
+     {
+      "value": "C",
+      "rows": 3725
+     },
+     {
+      "value": "A",
+      "rows": 3193
+     }
+    ]
+   },
+   "vaartus_selg": {
+    "dtype": "String",
+    "null_share": 0.4351,
+    "distinct": 4,
+    "values": [
+     {
+      "value": null,
+      "rows": 9175
+     },
+     {
+      "value": "V\u00e4\u00e4rtuslik",
+      "rows": 4995
+     },
+     {
+      "value": "K\u00fcllaltki v\u00e4\u00e4rtuslik",
+      "rows": 3725
+     },
+     {
+      "value": "\u00dcliv\u00e4\u00e4rtuslik",
+      "rows": 3193
+     }
+    ]
+   },
+   "lkohtst_andmekvaliteet": {
+    "dtype": "String",
+    "null_share": 0.4104,
+    "distinct": 4,
+    "values": [
+     {
+      "value": null,
+      "rows": 8655
+     },
+     {
+      "value": "M",
+      "rows": 7945
+     },
+     {
+      "value": "P",
+      "rows": 4480
+     },
+     {
+      "value": "G",
+      "rows": 8
+     }
+    ]
+   },
+   "lkohtst_andmekvaliteet_selg": {
+    "dtype": "String",
+    "null_share": 0.4104,
+    "distinct": 4,
+    "values": [
+     {
+      "value": null,
+      "rows": 8655
+     },
+     {
+      "value": "Keskmine",
+      "rows": 7945
+     },
+     {
+      "value": "Kehv",
+      "rows": 4480
+     },
+     {
+      "value": "Hea",
+      "rows": 8
+     }
+    ]
+   },
+   "pohjendus": {
+    "dtype": "String",
+    "null_share": 0.6848,
+    "distinct": 5,
+    "values": [
+     {
+      "value": null,
+      "rows": 14442
+     },
+     {
+      "value": "A",
+      "rows": 5719
+     },
+     {
+      "value": "C",
+      "rows": 638
+     },
+     {
+      "value": "D",
+      "rows": 284
+     },
+     {
+      "value": "B",
+      "rows": 5
+     }
+    ]
+   },
+   "pohjendus_selg": {
+    "dtype": "String",
+    "null_share": 0.6848,
+    "distinct": 5,
+    "values": [
+     {
+      "value": null,
+      "rows": 14442
+     },
+     {
+      "value": "Siseriikliku punase raamatu andmed",
+      "rows": 5719
+     },
+     {
+      "value": "Rahvusvahelised konventsioonid",
+      "rows": 638
+     },
+     {
+      "value": "Muud p\u00f5hjused",
+      "rows": 284
+     },
+     {
+      "value": "Endeemsed liigid",
+      "rows": 5
+     }
+    ]
+   },
+   "lkohtst_muutaeg": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 1975
+   },
+   "lkohtst_on_endine": {
+    "dtype": "Boolean",
+    "null_share": 0.0,
+    "distinct": 1,
+    "values": [
+     {
+      "value": false,
+      "rows": 21088
+     }
+    ]
+   }
+  }
+ },
+ "f_lkohad": {
+  "rows": 195180,
+  "columns": {
+   "id": {
+    "dtype": "Int64",
+    "null_share": 0.0,
+    "distinct": 195180,
+    "min": -2147473418,
+    "max": 2147460916
+   },
+   "id_text": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 195180
+   },
+   "lnim_id": {
+    "dtype": "Int64",
+    "null_share": 0.0,
+    "distinct": 1008,
+    "min": -2137205646,
+    "max": 2146329601
+   },
+   "lnim_estnimi": {
+    "dtype": "String",
+    "null_share": 0.0006,
+    "distinct": 954
+   },
+   "lnim_ladnimi": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 1008
+   },
+   "lnim_kaitsekategooria": {
+    "dtype": "String",
+    "null_share": 0.0572,
+    "distinct": 4,
+    "values": [
+     {
+      "value": "3",
+      "rows": 117638
+     },
+     {
+      "value": "2",
+      "rows": 51276
+     },
+     {
+      "value": "1",
+      "rows": 15106
+     },
+     {
+      "value": null,
+      "rows": 11160
+     }
+    ]
+   },
+   "lnim_kaitsekategooria_selg": {
+    "dtype": "String",
+    "null_share": 0.0572,
+    "distinct": 4,
+    "values": [
+     {
+      "value": "III kategooria",
+      "rows": 117638
+     },
+     {
+      "value": "II kategooria",
+      "rows": 51276
+     },
+     {
+      "value": "I kategooria",
+      "rows": 15106
+     },
+     {
+      "value": null,
+      "rows": 11160
+     }
+    ]
+   },
+   "lnim_ryhm": {
+    "dtype": "String",
+    "null_share": 0.0001,
+    "distinct": 19,
+    "values": [
+     {
+      "value": "113",
+      "rows": 90468
+     },
+     {
+      "value": "424",
+      "rows": 45824
+     },
+     {
+      "value": "123",
+      "rows": 11853
+     },
+     {
+      "value": "425",
+      "rows": 10676
+     },
+     {
+      "value": "300",
+      "rows": 8437
+     },
+     {
+      "value": "111",
+      "rows": 5916
+     },
+     {
+      "value": "422",
+      "rows": 5885
+     },
+     {
+      "value": "200",
+      "rows": 4860
+     },
+     {
+      "value": "418",
+      "rows": 3323
+     },
+     {
+      "value": "112",
+      "rows": 3152
+     },
+     {
+      "value": "122",
+      "rows": 1726
+     },
+     {
+      "value": "421",
+      "rows": 1327
+     },
+     {
+      "value": "426",
+      "rows": 616
+     },
+     {
+      "value": "414",
+      "rows": 517
+     },
+     {
+      "value": "423",
+      "rows": 315
+     },
+     {
+      "value": "413",
+      "rows": 124
+     },
+     {
+      "value": "432",
+      "rows": 99
+     },
+     {
+      "value": "416",
+      "rows": 52
+     },
+     {
+      "value": null,
+      "rows": 10
+     }
+    ]
+   },
+   "lnim_ryhm_selg": {
+    "dtype": "String",
+    "null_share": 0.0001,
+    "distinct": 19,
+    "values": [
+     {
+      "value": "Katteseemnetaimed",
+      "rows": 90468
+     },
+     {
+      "value": "Linnud",
+      "rows": 45824
+     },
+     {
+      "value": "Lehtsamblad",
+      "rows": 11853
+     },
+     {
+      "value": "Imetajad",
+      "rows": 10676
+     },
+     {
+      "value": "Samblikud",
+      "rows": 8437
+     },
+     {
+      "value": "S\u00f5najalgtaimed",
+      "rows": 5916
+     },
+     {
+      "value": "Kahepaiksed",
+      "rows": 5885
+     },
+     {
+      "value": "Seened",
+      "rows": 4860
+     },
+     {
+      "value": "Putukad",
+      "rows": 3323
+     },
+     {
+      "value": "Paljasseemnetaimed",
+      "rows": 3152
+     },
+     {
+      "value": "Helviksamblad",
+      "rows": 1726
+     },
+     {
+      "value": "Kalad",
+      "rows": 1327
+     },
+     {
+      "value": "Liblikalised",
+      "rows": 616
+     },
+     {
+      "value": "Limused",
+      "rows": 517
+     },
+     {
+      "value": "Roomajad",
+      "rows": 315
+     },
+     {
+      "value": "R\u00f5ngussid",
+      "rows": 124
+     },
+     {
+      "value": "Mardikalised",
+      "rows": 99
+     },
+     {
+      "value": "V\u00e4hilaadsed",
+      "rows": 52
+     },
+     {
+      "value": null,
+      "rows": 10
+     }
+    ]
+   },
+   "liik_tyyp": {
+    "dtype": "String",
+    "null_share": 0.0213,
+    "distinct": 4,
+    "values": [
+     {
+      "value": "KL",
+      "rows": 182002
+     },
+     {
+      "value": "VL",
+      "rows": 7003
+     },
+     {
+      "value": null,
+      "rows": 4153
+     },
+     {
+      "value": "TK",
+      "rows": 2022
+     }
+    ]
+   },
+   "liik_tyyp_selg": {
+    "dtype": "String",
+    "null_share": 0.0213,
+    "distinct": 4,
+    "values": [
+     {
+      "value": "Kaitsealune liik",
+      "rows": 182002
+     },
+     {
+      "value": "V\u00f5\u00f5rliik",
+      "rows": 7003
+     },
+     {
+      "value": null,
+      "rows": 4153
+     },
+     {
+      "value": "T\u00e4psustamata liik (nt. segapaar)",
+      "rows": 2022
+     }
+    ]
+   },
+   "voorliik_tyyp": {
+    "dtype": "String",
+    "null_share": 0.9662,
+    "distinct": 4,
+    "values": [
+     {
+      "value": null,
+      "rows": 188575
+     },
+     {
+      "value": "1",
+      "rows": 6577
+     },
+     {
+      "value": "2",
+      "rows": 21
+     },
+     {
+      "value": "3",
+      "rows": 7
+     }
+    ]
+   },
+   "voorliik_tyyp_selg": {
+    "dtype": "String",
+    "null_share": 0.9662,
+    "distinct": 4,
+    "values": [
+     {
+      "value": null,
+      "rows": 188575
+     },
+     {
+      "value": "Invasiivne",
+      "rows": 6577
+     },
+     {
+      "value": "Potentsiaalselt invasiivne",
+      "rows": 21
+     },
+     {
+      "value": "Mitteinvasiivne",
+      "rows": 7
+     }
+    ]
+   },
+   "nimi": {
+    "dtype": "String",
+    "null_share": 0.8544,
+    "distinct": 7509
+   },
+   "tyyp": {
+    "dtype": "String",
+    "null_share": 0.0213,
+    "distinct": 3,
+    "values": [
+     {
+      "value": "K",
+      "rows": 184053
+     },
+     {
+      "value": "VL",
+      "rows": 6960
+     },
+     {
+      "value": null,
+      "rows": 4167
+     }
+    ]
+   },
+   "tyyp_selg": {
+    "dtype": "String",
+    "null_share": 0.0213,
+    "distinct": 3,
+    "values": [
+     {
+      "value": "kaitsealuse liigi leiukoht",
+      "rows": 184053
+     },
+     {
+      "value": "v\u00f5\u00f5rliigi leiukoht",
+      "rows": 6960
+     },
+     {
+      "value": null,
+      "rows": 4167
+     }
+    ]
+   },
+   "kuulub_id": {
+    "dtype": "Int64",
+    "null_share": 0.5705,
+    "distinct": 32887,
+    "min": -2147463357,
+    "max": 2147158960
+   },
+   "on_regobj": {
+    "dtype": "Boolean",
+    "null_share": 0.0,
+    "distinct": 2,
+    "values": [
+     {
+      "value": true,
+      "rows": 107477
+     },
+     {
+      "value": false,
+      "rows": 87703
+     }
+    ]
+   },
+   "kkr_kood": {
+    "dtype": "String",
+    "null_share": 0.4203,
+    "distinct": 113141
+   },
+   "elup_kasutus": {
+    "dtype": "String",
+    "null_share": 0.8028,
+    "distinct": 28,
+    "values": [
+     {
+      "value": null,
+      "rows": 156689
+     },
+     {
+      "value": "S",
+      "rows": 34347
+     },
+     {
+      "value": "O",
+      "rows": 1664
+     },
+     {
+      "value": "M",
+      "rows": 1287
+     },
+     {
+      "value": "R",
+      "rows": 353
+     },
+     {
+      "value": "T",
+      "rows": 268
+     },
+     {
+      "value": "O,V",
+      "rows": 146
+     },
+     {
+      "value": "V",
+      "rows": 93
+     },
+     {
+      "value": "O,S",
+      "rows": 83
+     },
+     {
+      "value": "P",
+      "rows": 80
+     },
+     {
+      "value": "M,S",
+      "rows": 67
+     },
+     {
+      "value": "O,T",
+      "rows": 43
+     },
+     {
+      "value": "S,T",
+      "rows": 15
+     },
+     {
+      "value": "O,S,T",
+      "rows": 12
+     },
+     {
+      "value": "R,S",
+      "rows": 9
+     },
+     {
+      "value": "O,S,V",
+      "rows": 4
+     },
+     {
+      "value": "S,V",
+      "rows": 3
+     },
+     {
+      "value": "R,S,T",
+      "rows": 3
+     },
+     {
+      "value": "O, S",
+      "rows": 2
+     },
+     {
+      "value": "M,O",
+      "rows": 2
+     },
+     {
+      "value": "O,T,V",
+      "rows": 2
+     },
+     {
+      "value": "P,V",
+      "rows": 2
+     },
+     {
+      "value": "O,V,T",
+      "rows": 1
+     },
+     {
+      "value": "O,R",
+      "rows": 1
+     },
+     {
+      "value": "V,T",
+      "rows": 1
+     },
+     {
+      "value": "O,V,S",
+      "rows": 1
+     },
+     {
+      "value": "P,R",
+      "rows": 1
+     },
+     {
+      "value": "T,O",
+      "rows": 1
+     }
+    ]
+   },
+   "elup_kasutus_selg": {
+    "dtype": "String",
+    "null_share": 0.8048,
+    "distinct": 8,
+    "values": [
+     {
+      "value": null,
+      "rows": 157088
+     },
+     {
+      "value": "Sigimispaik",
+      "rows": 34347
+     },
+     {
+      "value": "Toitumisala",
+      "rows": 1664
+     },
+     {
+      "value": "M\u00e4ngupaik",
+      "rows": 1287
+     },
+     {
+      "value": "R\u00e4ndepeatuspaik/astmelaud",
+      "rows": 353
+     },
+     {
+      "value": "Talvituspaik",
+      "rows": 268
+     },
+     {
+      "value": "Suvine varjepaik",
+      "rows": 93
+     },
+     {
+      "value": "Puhkeala",
+      "rows": 80
+     }
+    ]
+   },
+   "elup_nat": {
+    "dtype": "String",
+    "null_share": 0.9362,
+    "distinct": 256
+   },
+   "elup_nat_selg": {
+    "dtype": "String",
+    "null_share": 0.945,
+    "distinct": 51
+   },
+   "elup_paal": {
+    "dtype": "String",
+    "null_share": 0.8966,
+    "distinct": 824
+   },
+   "elup_paal_selg": {
+    "dtype": "String",
+    "null_share": 0.9218,
+    "distinct": 141
+   },
+   "ohud": {
+    "dtype": "String",
+    "null_share": 0.9844,
+    "distinct": 103
+   },
+   "ohud_aste": {
+    "dtype": "String",
+    "null_share": 0.9907,
+    "distinct": 4,
+    "values": [
+     {
+      "value": null,
+      "rows": 193367
+     },
+     {
+      "value": "1",
+      "rows": 870
+     },
+     {
+      "value": "2",
+      "rows": 747
+     },
+     {
+      "value": "3",
+      "rows": 196
+     }
+    ]
+   },
+   "ohud_aste_selg": {
+    "dtype": "String",
+    "null_share": 0.9907,
+    "distinct": 4,
+    "values": [
+     {
+      "value": null,
+      "rows": 193367
+     },
+     {
+      "value": "N\u00f5rk",
+      "rows": 870
+     },
+     {
+      "value": "Keskmine",
+      "rows": 747
+     },
+     {
+      "value": "Tugev",
+      "rows": 196
+     }
+    ]
+   },
+   "kasvamise_koht": {
+    "dtype": "String",
+    "null_share": 0.9747,
+    "distinct": 461
+   },
+   "kasvamise_koht_selg": {
+    "dtype": "String",
+    "null_share": 0.9916,
+    "distinct": 16,
+    "values": [
+     {
+      "value": null,
+      "rows": 193538
+     },
+     {
+      "value": "rohumaa",
+      "rows": 334
+     },
+     {
+      "value": "p\u00f5\u00f5sastik",
+      "rows": 254
+     },
+     {
+      "value": "mets",
+      "rows": 249
+     },
+     {
+      "value": "teed, t\u00e4navad, platsid (sh teemaa)",
+      "rows": 145
+     },
+     {
+      "value": "j\u00e4\u00e4tmaa",
+      "rows": 128
+     },
+     {
+      "value": "p\u00f5ld, aiamaa",
+      "rows": 114
+     },
+     {
+      "value": "\u00f5u",
+      "rows": 104
+     },
+     {
+      "value": "veekogu ja selle kallas",
+      "rows": 102
+     },
+     {
+      "value": "s\u00f6\u00f6tis maa",
+      "rows": 50
+     },
+     {
+      "value": "lageraielank",
+      "rows": 47
+     },
+     {
+      "value": "muu",
+      "rows": 41
+     },
+     {
+      "value": "siht (kvartali siht, kommunikatsioonitrass)",
+      "rows": 29
+     },
+     {
+      "value": "vare, vundament",
+      "rows": 21
+     },
+     {
+      "value": "haljasala, park, kalmistu",
+      "rows": 20
+     },
+     {
+      "value": "hoone, rajatis",
+      "rows": 4
+     }
+    ]
+   },
+   "koht_vesi": {
+    "dtype": "String",
+    "null_share": 0.9733,
+    "distinct": 5,
+    "values": [
+     {
+      "value": null,
+      "rows": 189960
+     },
+     {
+      "value": "p",
+      "rows": 1463
+     },
+     {
+      "value": "n",
+      "rows": 1320
+     },
+     {
+      "value": "m",
+      "rows": 1219
+     },
+     {
+      "value": "k",
+      "rows": 1218
+     }
+    ]
+   },
+   "koht_vesi_selg": {
+    "dtype": "String",
+    "null_share": 0.9733,
+    "distinct": 5,
+    "values": [
+     {
+      "value": null,
+      "rows": 189960
+     },
+     {
+      "value": "Parasniiske",
+      "rows": 1463
+     },
+     {
+      "value": "Niiske",
+      "rows": 1320
+     },
+     {
+      "value": "M\u00e4rg",
+      "rows": 1219
+     },
+     {
+      "value": "Kuiv",
+      "rows": 1218
+     }
+    ]
+   },
+   "koht_valgus": {
+    "dtype": "String",
+    "null_share": 0.9727,
+    "distinct": 4,
+    "values": [
+     {
+      "value": null,
+      "rows": 189858
+     },
+     {
+      "value": "5",
+      "rows": 2630
+     },
+     {
+      "value": "3",
+      "rows": 2108
+     },
+     {
+      "value": "1",
+      "rows": 584
+     }
+    ]
+   },
+   "koht_valgus_selg": {
+    "dtype": "String",
+    "null_share": 0.9727,
+    "distinct": 4,
+    "values": [
+     {
+      "value": null,
+      "rows": 189858
+     },
+     {
+      "value": "Valgusrikas",
+      "rows": 2630
+     },
+     {
+      "value": "Poolvari",
+      "rows": 2108
+     },
+     {
+      "value": "Vari",
+      "rows": 584
+     }
+    ]
+   },
+   "koht_muld": {
+    "dtype": "String",
+    "null_share": 0.9922,
+    "distinct": 9,
+    "values": [
+     {
+      "value": null,
+      "rows": 193655
+     },
+     {
+      "value": "k",
+      "rows": 474
+     },
+     {
+      "value": "tm",
+      "rows": 442
+     },
+     {
+      "value": "ls",
+      "rows": 157
+     },
+     {
+      "value": "sl",
+      "rows": 152
+     },
+     {
+      "value": "lm",
+      "rows": 140
+     },
+     {
+      "value": "l",
+      "rows": 114
+     },
+     {
+      "value": "s",
+      "rows": 28
+     },
+     {
+      "value": "g",
+      "rows": 18
+     }
+    ]
+   },
+   "koht_muld_selg": {
+    "dtype": "String",
+    "null_share": 0.9922,
+    "distinct": 9,
+    "values": [
+     {
+      "value": null,
+      "rows": 193655
+     },
+     {
+      "value": "Karbonaatne",
+      "rows": 474
+     },
+     {
+      "value": "Turbamuld",
+      "rows": 442
+     },
+     {
+      "value": "Liivsavi",
+      "rows": 157
+     },
+     {
+      "value": "Saviliiv",
+      "rows": 152
+     },
+     {
+      "value": "Leetmuld",
+      "rows": 140
+     },
+     {
+      "value": "Liiv",
+      "rows": 114
+     },
+     {
+      "value": "Savi",
+      "rows": 28
+     },
+     {
+      "value": "Gleimuld",
+      "rows": 18
+     }
+    ]
+   },
+   "on_voorliik_teavitus": {
+    "dtype": "Boolean",
+    "null_share": 0.0,
+    "distinct": 1,
+    "values": [
+     {
+      "value": false,
+      "rows": 195180
+     }
+    ]
+   },
+   "muut_aeg": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 185503
+   },
+   "keht_staatus": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 1,
+    "values": [
+     {
+      "value": "Kehtiv",
+      "rows": 195180
+     }
+    ]
+   },
+   "staatus": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 1,
+    "values": [
+     {
+      "value": "K",
+      "rows": 195180
+     }
+    ]
+   },
+   "ehak_tekst": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 9540
+   },
+   "ehak_kood1": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 54
+   },
+   "ehak_kood2": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 325
+   },
+   "ehak_kood3": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 9532
+   }
+  }
+ },
+ "f_lkohad_lnim": {
+  "rows": 195194,
+  "columns": {
+   "id": {
+    "dtype": "Int64",
+    "null_share": 0.0,
+    "distinct": 1008,
+    "min": -2137205646,
+    "max": 2146329601
+   },
+   "ladnimi": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 1008
+   },
+   "estnimi": {
+    "dtype": "String",
+    "null_share": 0.0006,
+    "distinct": 954
+   },
+   "ryhm": {
+    "dtype": "String",
+    "null_share": 0.0001,
+    "distinct": 19,
+    "values": [
+     {
+      "value": "113",
+      "rows": 90471
+     },
+     {
+      "value": "424",
+      "rows": 45828
+     },
+     {
+      "value": "123",
+      "rows": 11855
+     },
+     {
+      "value": "425",
+      "rows": 10676
+     },
+     {
+      "value": "300",
+      "rows": 8440
+     },
+     {
+      "value": "111",
+      "rows": 5916
+     },
+     {
+      "value": "422",
+      "rows": 5885
+     },
+     {
+      "value": "200",
+      "rows": 4862
+     },
+     {
+      "value": "418",
+      "rows": 3323
+     },
+     {
+      "value": "112",
+      "rows": 3152
+     },
+     {
+      "value": "122",
+      "rows": 1726
+     },
+     {
+      "value": "421",
+      "rows": 1327
+     },
+     {
+      "value": "426",
+      "rows": 616
+     },
+     {
+      "value": "414",
+      "rows": 517
+     },
+     {
+      "value": "423",
+      "rows": 315
+     },
+     {
+      "value": "413",
+      "rows": 124
+     },
+     {
+      "value": "432",
+      "rows": 99
+     },
+     {
+      "value": "416",
+      "rows": 52
+     },
+     {
+      "value": null,
+      "rows": 10
+     }
+    ]
+   },
+   "ryhm_selg": {
+    "dtype": "String",
+    "null_share": 0.0001,
+    "distinct": 19,
+    "values": [
+     {
+      "value": "Katteseemnetaimed",
+      "rows": 90471
+     },
+     {
+      "value": "Linnud",
+      "rows": 45828
+     },
+     {
+      "value": "Lehtsamblad",
+      "rows": 11855
+     },
+     {
+      "value": "Imetajad",
+      "rows": 10676
+     },
+     {
+      "value": "Samblikud",
+      "rows": 8440
+     },
+     {
+      "value": "S\u00f5najalgtaimed",
+      "rows": 5916
+     },
+     {
+      "value": "Kahepaiksed",
+      "rows": 5885
+     },
+     {
+      "value": "Seened",
+      "rows": 4862
+     },
+     {
+      "value": "Putukad",
+      "rows": 3323
+     },
+     {
+      "value": "Paljasseemnetaimed",
+      "rows": 3152
+     },
+     {
+      "value": "Helviksamblad",
+      "rows": 1726
+     },
+     {
+      "value": "Kalad",
+      "rows": 1327
+     },
+     {
+      "value": "Liblikalised",
+      "rows": 616
+     },
+     {
+      "value": "Limused",
+      "rows": 517
+     },
+     {
+      "value": "Roomajad",
+      "rows": 315
+     },
+     {
+      "value": "R\u00f5ngussid",
+      "rows": 124
+     },
+     {
+      "value": "Mardikalised",
+      "rows": 99
+     },
+     {
+      "value": "V\u00e4hilaadsed",
+      "rows": 52
+     },
+     {
+      "value": null,
+      "rows": 10
+     }
+    ]
+   },
+   "kaitsekategooria": {
+    "dtype": "String",
+    "null_share": 0.0572,
+    "distinct": 4,
+    "values": [
+     {
+      "value": "3",
+      "rows": 117648
+     },
+     {
+      "value": "2",
+      "rows": 51280
+     },
+     {
+      "value": "1",
+      "rows": 15106
+     },
+     {
+      "value": null,
+      "rows": 11160
+     }
+    ]
+   },
+   "kaitsekategooria_selg": {
+    "dtype": "String",
+    "null_share": 0.0572,
+    "distinct": 4,
+    "values": [
+     {
+      "value": "III kategooria",
+      "rows": 117648
+     },
+     {
+      "value": "II kategooria",
+      "rows": 51280
+     },
+     {
+      "value": "I kategooria",
+      "rows": 15106
+     },
+     {
+      "value": null,
+      "rows": 11160
+     }
+    ]
+   },
+   "tyyp": {
+    "dtype": "String",
+    "null_share": 0.0213,
+    "distinct": 4,
+    "values": [
+     {
+      "value": "KL",
+      "rows": 182016
+     },
+     {
+      "value": "VL",
+      "rows": 7003
+     },
+     {
+      "value": null,
+      "rows": 4153
+     },
+     {
+      "value": "TK",
+      "rows": 2022
+     }
+    ]
+   },
+   "liigi_tyyp_selg": {
+    "dtype": "String",
+    "null_share": 0.0213,
+    "distinct": 4,
+    "values": [
+     {
+      "value": "Kaitsealune liik",
+      "rows": 182016
+     },
+     {
+      "value": "V\u00f5\u00f5rliik",
+      "rows": 7003
+     },
+     {
+      "value": null,
+      "rows": 4153
+     },
+     {
+      "value": "T\u00e4psustamata liik (nt. segapaar)",
+      "rows": 2022
+     }
+    ]
+   },
+   "voorliik_tyyp": {
+    "dtype": "String",
+    "null_share": 0.9662,
+    "distinct": 4,
+    "values": [
+     {
+      "value": null,
+      "rows": 188589
+     },
+     {
+      "value": "1",
+      "rows": 6577
+     },
+     {
+      "value": "2",
+      "rows": 21
+     },
+     {
+      "value": "3",
+      "rows": 7
+     }
+    ]
+   },
+   "voorliik_tyyp_selg": {
+    "dtype": "String",
+    "null_share": 0.9662,
+    "distinct": 4,
+    "values": [
+     {
+      "value": null,
+      "rows": 188589
+     },
+     {
+      "value": "Invasiivne",
+      "rows": 6577
+     },
+     {
+      "value": "Potentsiaalselt invasiivne",
+      "rows": 21
+     },
+     {
+      "value": "Mitteinvasiivne",
+      "rows": 7
+     }
+    ]
+   },
+   "linnudirektiiv_kood": {
+    "dtype": "String",
+    "null_share": 0.8044,
+    "distinct": 11,
+    "values": [
+     {
+      "value": null,
+      "rows": 157014
+     },
+     {
+      "value": "LI1",
+      "rows": 25896
+     },
+     {
+      "value": "LI22",
+      "rows": 5822
+     },
+     {
+      "value": "LI1,LI21",
+      "rows": 3442
+     },
+     {
+      "value": "LI1,LI22,LI32",
+      "rows": 1839
+     },
+     {
+      "value": "LI1,LI22",
+      "rows": 965
+     },
+     {
+      "value": "LI21,LI32",
+      "rows": 133
+     },
+     {
+      "value": "LI21",
+      "rows": 36
+     },
+     {
+      "value": "LI21,LI31",
+      "rows": 20
+     },
+     {
+      "value": "LI22,LI32",
+      "rows": 19
+     },
+     {
+      "value": "LI22,LI31",
+      "rows": 8
+     }
+    ]
+   },
+   "linnudirektiiv_selg": {
+    "dtype": "String",
+    "null_share": 0.8044,
+    "distinct": 13,
+    "values": [
+     {
+      "value": null,
+      "rows": 157014
+     },
+     {
+      "value": "Linnudirektiivi I lisa",
+      "rows": 25896
+     },
+     {
+      "value": "Linnudirektiivi II lisa B osa",
+      "rows": 5822
+     },
+     {
+      "value": "Linnudirektiivi I lisa, Linnudirektiivi II lisa A osa",
+      "rows": 3442
+     },
+     {
+      "value": "Linnudirektiivi II lisa B osa, Linnudirektiivi III lisa B osa, Linnudirektiivi I lisa",
+      "rows": 1005
+     },
+     {
+      "value": "Linnudirektiivi II lisa B osa, Linnudirektiivi I lisa",
+      "rows": 965
+     },
+     {
+      "value": "Linnudirektiivi II lisa B osa, Linnudirektiivi I lisa, Linnudirektiivi III lisa B osa",
+      "rows": 834
+     },
+     {
+      "value": "Linnudirektiivi II lisa A osa, Linnudirektiivi III lisa B osa",
+      "rows": 90
+     },
+     {
+      "value": "Linnudirektiivi III lisa B osa, Linnudirektiivi II lisa A osa",
+      "rows": 43
+     },
+     {
+      "value": "Linnudirektiivi II lisa A osa",
+      "rows": 36
+     },
+     {
+      "value": "Linnudirektiivi II lisa A osa, Linnudirektiivi III lisa A osa",
+      "rows": 20
+     },
+     {
+      "value": "Linnudirektiivi III lisa B osa, Linnudirektiivi II lisa B osa",
+      "rows": 19
+     },
+     {
+      "value": "Linnudirektiivi III lisa A osa, Linnudirektiivi II lisa B osa",
+      "rows": 8
+     }
+    ]
+   },
+   "loodusdirketiiv_kood": {
+    "dtype": "String",
+    "null_share": 0.8339,
+    "distinct": 6,
+    "values": [
+     {
+      "value": null,
+      "rows": 162772
+     },
+     {
+      "value": "LO2,LO4",
+      "rows": 17666
+     },
+     {
+      "value": "LO4",
+      "rows": 7832
+     },
+     {
+      "value": "LO5",
+      "rows": 3618
+     },
+     {
+      "value": "LO2",
+      "rows": 2827
+     },
+     {
+      "value": "LO2,LO5",
+      "rows": 479
+     }
+    ]
+   },
+   "loodusdirektiiv_selg": {
+    "dtype": "String",
+    "null_share": 0.8339,
+    "distinct": 8,
+    "values": [
+     {
+      "value": null,
+      "rows": 162772
+     },
+     {
+      "value": "Loodusdirektiivi lisa IV, Loodusdirektiivi lisa II",
+      "rows": 10196
+     },
+     {
+      "value": "Loodusdirektiivi lisa IV",
+      "rows": 7832
+     },
+     {
+      "value": "Loodusdirektiivi lisa II, Loodusdirektiivi lisa IV",
+      "rows": 7470
+     },
+     {
+      "value": "Loodusdirektiivi lisa V",
+      "rows": 3618
+     },
+     {
+      "value": "Loodusdirektiivi lisa II",
+      "rows": 2827
+     },
+     {
+      "value": "Loodusdirektiivi lisa II, Loodusdirektiivi lisa V",
+      "rows": 406
+     },
+     {
+      "value": "Loodusdirektiivi lisa V, Loodusdirektiivi lisa II",
+      "rows": 73
+     }
+    ]
+   },
+   "lkoht_id": {
+    "dtype": "Int64",
+    "null_share": 0.0,
+    "distinct": 195180,
+    "min": -2147473418,
+    "max": 2147460916
+   }
+  }
+ },
+ "f_vepid": {
+  "rows": 17948,
+  "columns": {
+   "id": {
+    "dtype": "Int64",
+    "null_share": 0.0,
+    "distinct": 17948,
+    "min": -2147464853,
+    "max": 2147233978
+   },
+   "id_text": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 17948
+   },
+   "kood": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 17502
+   },
+   "nimi": {
+    "dtype": "String",
+    "null_share": 0.0265,
+    "distinct": 17473
+   },
+   "tyyp": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 2,
+    "values": [
+     {
+      "value": "3",
+      "rows": 17471
+     },
+     {
+      "value": "6",
+      "rows": 477
+     }
+    ]
+   },
+   "tyyp_selg": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 2,
+    "values": [
+     {
+      "value": "V\u00e4\u00e4riselupaik",
+      "rows": 17471
+     },
+     {
+      "value": "Vepi lepinguga ala",
+      "rows": 477
+     }
+    ]
+   },
+   "pindala": {
+    "dtype": "Float64",
+    "null_share": 0.0,
+    "distinct": 1336,
+    "min": 0.0,
+    "max": 257.09
+   },
+   "on_regobj": {
+    "dtype": "Boolean",
+    "null_share": 0.0,
+    "distinct": 2,
+    "values": [
+     {
+      "value": true,
+      "rows": 17471
+     },
+     {
+      "value": false,
+      "rows": 477
+     }
+    ]
+   },
+   "kkr_kood": {
+    "dtype": "String",
+    "null_share": 0.0266,
+    "distinct": 17472
+   },
+   "kaitse": {
+    "dtype": "String",
+    "null_share": 0.0266,
+    "distinct": 3,
+    "values": [
+     {
+      "value": "EI",
+      "rows": 17008
+     },
+     {
+      "value": null,
+      "rows": 477
+     },
+     {
+      "value": "LEP",
+      "rows": 463
+     }
+    ]
+   },
+   "kaitse_selg": {
+    "dtype": "String",
+    "null_share": 0.0266,
+    "distinct": 3,
+    "values": [
+     {
+      "value": "Ei ole kehtivat lepingut",
+      "rows": 17008
+     },
+     {
+      "value": null,
+      "rows": 477
+     },
+     {
+      "value": "On kehtiv leping",
+      "rows": 463
+     }
+    ]
+   },
+   "veptyyp": {
+    "dtype": "String",
+    "null_share": 0.0266,
+    "distinct": 31,
+    "values": [
+     {
+      "value": "A2",
+      "rows": 4094
+     },
+     {
+      "value": "A1",
+      "rows": 2796
+     },
+     {
+      "value": "B3",
+      "rows": 2185
+     },
+     {
+      "value": "C3",
+      "rows": 2174
+     },
+     {
+      "value": "B2",
+      "rows": 1438
+     },
+     {
+      "value": "B1",
+      "rows": 1044
+     },
+     {
+      "value": "C2",
+      "rows": 1019
+     },
+     {
+      "value": "C1",
+      "rows": 767
+     },
+     {
+      "value": "D",
+      "rows": 615
+     },
+     {
+      "value": null,
+      "rows": 477
+     },
+     {
+      "value": "71",
+      "rows": 161
+     },
+     {
+      "value": "13",
+      "rows": 144
+     },
+     {
+      "value": "11",
+      "rows": 131
+     },
+     {
+      "value": "4",
+      "rows": 125
+     },
+     {
+      "value": "52",
+      "rows": 106
+     },
+     {
+      "value": "12",
+      "rows": 90
+     },
+     {
+      "value": "9",
+      "rows": 77
+     },
+     {
+      "value": "8",
+      "rows": 71
+     },
+     {
+      "value": "C4",
+      "rows": 71
+     },
+     {
+      "value": "72",
+      "rows": 69
+     },
+     {
+      "value": "10",
+      "rows": 56
+     },
+     {
+      "value": "32",
+      "rows": 45
+     },
+     {
+      "value": "73",
+      "rows": 42
+     },
+     {
+      "value": "51",
+      "rows": 30
+     },
+     {
+      "value": "31",
+      "rows": 27
+     },
+     {
+      "value": "22",
+      "rows": 25
+     },
+     {
+      "value": "35",
+      "rows": 22
+     },
+     {
+      "value": "21",
+      "rows": 16
+     },
+     {
+      "value": "34",
+      "rows": 11
+     },
+     {
+      "value": "33",
+      "rows": 11
+     },
+     {
+      "value": "6",
+      "rows": 9
+     }
+    ]
+   },
+   "veptyyp_selg": {
+    "dtype": "String",
+    "null_share": 0.0266,
+    "distinct": 31,
+    "values": [
+     {
+      "value": "M\u00e4nnikud ja m\u00e4nnisegametsad",
+      "rows": 4094
+     },
+     {
+      "value": "Kuusikud ja kuusesegametsad",
+      "rows": 2796
+     },
+     {
+      "value": "Teised lehtmetsad",
+      "rows": 2185
+     },
+     {
+      "value": "M\u00e4rgalade m\u00e4nnikud ja kaasikud",
+      "rows": 2174
+     },
+     {
+      "value": "Haavikud",
+      "rows": 1438
+     },
+     {
+      "value": "Laialehised metsad",
+      "rows": 1044
+     },
+     {
+      "value": "M\u00e4rgalade kuusikud ja kuusesegametsad",
+      "rows": 1019
+     },
+     {
+      "value": "Lepikud",
+      "rows": 767
+     },
+     {
+      "value": "Loometsad",
+      "rows": 615
+     },
+     {
+      "value": null,
+      "rows": 477
+     },
+     {
+      "value": "V\u00f5sastunud puisrohumaad",
+      "rows": 161
+     },
+     {
+      "value": "Ojade kaldan\u00f5lvad",
+      "rows": 144
+     },
+     {
+      "value": "J\u00f5gede ja j\u00e4rvede j\u00e4rsud kaldan\u00f5lvad",
+      "rows": 131
+     },
+     {
+      "value": "V\u00e4ikesed m\u00e4rgalasaared ja -poolsaared",
+      "rows": 125
+     },
+     {
+      "value": "Pinnakattej\u00e4rsakud",
+      "rows": 106
+     },
+     {
+      "value": "J\u00f5gede ja j\u00e4rvede laugjad kaldan\u00f5lvad",
+      "rows": 90
+     },
+     {
+      "value": "\u00dcksikud suured puud",
+      "rows": 77
+     },
+     {
+      "value": "Sarapikud",
+      "rows": 71
+     },
+     {
+      "value": "M\u00e4rgalade laialehised metsad",
+      "rows": 71
+     },
+     {
+      "value": "Puisniit",
+      "rows": 69
+     },
+     {
+      "value": "Pargid",
+      "rows": 56
+     },
+     {
+      "value": "Allika-alad",
+      "rows": 45
+     },
+     {
+      "value": "Puiskarjamaa",
+      "rows": 42
+     },
+     {
+      "value": "Pangaj\u00e4rsakud",
+      "rows": 30
+     },
+     {
+      "value": "Ajutised veekogud",
+      "rows": 27
+     },
+     {
+      "value": "Ojalammid",
+      "rows": 25
+     },
+     {
+      "value": "Muude veekogude kaldad",
+      "rows": 22
+     },
+     {
+      "value": "Madalad j\u00f5ekaldad ja j\u00f5elammid",
+      "rows": 16
+     },
+     {
+      "value": "Karbonaatsed sood ja m\u00e4rjad niidud",
+      "rows": 11
+     },
+     {
+      "value": "Kopratammide m\u00f5jualad",
+      "rows": 11
+     },
+     {
+      "value": "P\u00f5lendikud",
+      "rows": 9
+     }
+    ]
+   },
+   "veptyyp_kaasnev": {
+    "dtype": "String",
+    "null_share": 0.8122,
+    "distinct": 210
+   },
+   "veptyyp_kaasnev_selg": {
+    "dtype": "String",
+    "null_share": 0.8122,
+    "distinct": 246
+   },
+   "elupaik_paal": {
+    "dtype": "String",
+    "null_share": 0.0266,
+    "distinct": 34,
+    "values": [
+     {
+      "value": "1162",
+      "rows": 1965
+     },
+     {
+      "value": "1141",
+      "rows": 1958
+     },
+     {
+      "value": "1312",
+      "rows": 1849
+     },
+     {
+      "value": "1132",
+      "rows": 1754
+     },
+     {
+      "value": "1161",
+      "rows": 1660
+     },
+     {
+      "value": "1142",
+      "rows": 1503
+     },
+     {
+      "value": "1512",
+      "rows": 913
+     },
+     {
+      "value": "1131",
+      "rows": 830
+     },
+     {
+      "value": "1511",
+      "rows": 779
+     },
+     {
+      "value": "1112",
+      "rows": 740
+     },
+     {
+      "value": "1321",
+      "rows": 633
+     },
+     {
+      "value": null,
+      "rows": 478
+     },
+     {
+      "value": "1421",
+      "rows": 422
+     },
+     {
+      "value": "1313",
+      "rows": 393
+     },
+     {
+      "value": "1412",
+      "rows": 304
+     },
+     {
+      "value": "1323",
+      "rows": 289
+     },
+     {
+      "value": "1311",
+      "rows": 285
+     },
+     {
+      "value": "1121",
+      "rows": 275
+     },
+     {
+      "value": "1411",
+      "rows": 159
+     },
+     {
+      "value": "1322",
+      "rows": 153
+     },
+     {
+      "value": "1431",
+      "rows": 136
+     },
+     {
+      "value": "1122",
+      "rows": 131
+     },
+     {
+      "value": "1111",
+      "rows": 79
+     },
+     {
+      "value": "11311",
+      "rows": 73
+     },
+     {
+      "value": "1212",
+      "rows": 72
+     },
+     {
+      "value": "1153",
+      "rows": 33
+     },
+     {
+      "value": "1113",
+      "rows": 30
+     },
+     {
+      "value": "1163",
+      "rows": 22
+     },
+     {
+      "value": "1211",
+      "rows": 17
+     },
+     {
+      "value": "1151",
+      "rows": 5
+     },
+     {
+      "value": "1152",
+      "rows": 4
+     },
+     {
+      "value": "1221",
+      "rows": 2
+     },
+     {
+      "value": "121",
+      "rows": 1
+     },
+     {
+      "value": "14121",
+      "rows": 1
+     }
+    ]
+   },
+   "elupaik_paal_selg": {
+    "dtype": "String",
+    "null_share": 0.0266,
+    "distinct": 34,
+    "values": [
+     {
+      "value": "1162. Naadi kasvukohat\u00fc\u00fcp",
+      "rows": 1965
+     },
+     {
+      "value": "1141. J\u00e4nesekapsa-mustika kasvukohat\u00fc\u00fcp",
+      "rows": 1958
+     },
+     {
+      "value": "1312. Angervaksa kasvukohat\u00fc\u00fcp",
+      "rows": 1849
+     },
+     {
+      "value": "1132. Mustika kasvukohat\u00fc\u00fcp",
+      "rows": 1754
+     },
+     {
+      "value": "1161. Sinilille kasvukohat\u00fc\u00fcp",
+      "rows": 1660
+     },
+     {
+      "value": "1142. J\u00e4nesekapsa kasvukohat\u00fc\u00fcp",
+      "rows": 1503
+     },
+     {
+      "value": "1512. J\u00e4nesekapsa-k\u00f5dusoo kasvukohat\u00fc\u00fcp",
+      "rows": 913
+     },
+     {
+      "value": "1131. Pohla kasvukohat\u00fc\u00fcp",
+      "rows": 830
+     },
+     {
+      "value": "1511. Mustika-k\u00f5dusoo kasvukohat\u00fc\u00fcp",
+      "rows": 779
+     },
+     {
+      "value": "1112. Kastikuloo kasvukohat\u00fc\u00fcp",
+      "rows": 740
+     },
+     {
+      "value": "1321. Karusambla-mustika kasvukohat\u00fc\u00fcp",
+      "rows": 633
+     },
+     {
+      "value": null,
+      "rows": 478
+     },
+     {
+      "value": "1421. Siirdesoometsa kasvukohat\u00fc\u00fcp",
+      "rows": 422
+     },
+     {
+      "value": "1313. Sinihelmika kasvukohat\u00fc\u00fcp",
+      "rows": 393
+     },
+     {
+      "value": "1412. Lodumetsa (soov\u00f5ha) kasvukohat\u00fc\u00fcp",
+      "rows": 304
+     },
+     {
+      "value": "1323. Sinika kasvukohat\u00fc\u00fcp",
+      "rows": 289
+     },
+     {
+      "value": "1311. S\u00f5najala kasvukohat\u00fc\u00fcp",
+      "rows": 285
+     },
+     {
+      "value": "1121. Sambliku kasvukohat\u00fc\u00fcp",
+      "rows": 275
+     },
+     {
+      "value": "1411. Madalsoometsa kasvukohat\u00fc\u00fcp",
+      "rows": 159
+     },
+     {
+      "value": "1322. Karusambla kasvukohat\u00fc\u00fcp",
+      "rows": 153
+     },
+     {
+      "value": "1431. Rabametsa kasvukohat\u00fc\u00fcp",
+      "rows": 136
+     },
+     {
+      "value": "1122. Kanarbiku kasvukohat\u00fc\u00fcp",
+      "rows": 131
+     },
+     {
+      "value": "1111. Leesikaloo kasvukohat\u00fc\u00fcp",
+      "rows": 79
+     },
+     {
+      "value": "11311. J\u00e4nesekapsa-pohla kasvukohat\u00fc\u00fcp",
+      "rows": 73
+     },
+     {
+      "value": "1212. Pika tarna kasvukohat\u00fc\u00fcp",
+      "rows": 72
+     },
+     {
+      "value": "1153. Sarapuu kasvukohat\u00fc\u00fcp",
+      "rows": 33
+     },
+     {
+      "value": "1113. Lubikaloo kasvukohat\u00fc\u00fcp",
+      "rows": 30
+     },
+     {
+      "value": "1163. Kuukressi kasvukohat\u00fc\u00fcp",
+      "rows": 22
+     },
+     {
+      "value": "1211. Humala kasvukohat\u00fc\u00fcp",
+      "rows": 17
+     },
+     {
+      "value": "1151. Kassik\u00e4pa kasvukohat\u00fc\u00fcp",
+      "rows": 5
+     },
+     {
+      "value": "1152. Maasika kasvukohat\u00fc\u00fcp",
+      "rows": 4
+     },
+     {
+      "value": "1221. Paju kasvukohat\u00fc\u00fcp",
+      "rows": 2
+     },
+     {
+      "value": "14121. Ranniku-lodumetsa kasvukoha allt\u00fc\u00fcp",
+      "rows": 1
+     },
+     {
+      "value": "121. Lammimetsade t\u00fc\u00fcbir\u00fchm",
+      "rows": 1
+     }
+    ]
+   },
+   "esmane_kp": {
+    "dtype": "String",
+    "null_share": 0.0324,
+    "distinct": 2450
+   },
+   "reg_kp": {
+    "dtype": "String",
+    "null_share": 0.757,
+    "distinct": 952
+   },
+   "muut_aeg": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 16761
+   },
+   "keht_staatus": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 1,
+    "values": [
+     {
+      "value": "Kehtiv",
+      "rows": 17948
+     }
+    ]
+   },
+   "staatus": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 1,
+    "values": [
+     {
+      "value": "K",
+      "rows": 17948
+     }
+    ]
+   },
+   "omandiv": {
+    "dtype": "String",
+    "null_share": 0.0198,
+    "distinct": 4,
+    "values": [
+     {
+      "value": "R",
+      "rows": 13427
+     },
+     {
+      "value": "E",
+      "rows": 3042
+     },
+     {
+      "value": "X",
+      "rows": 1123
+     },
+     {
+      "value": null,
+      "rows": 356
+     }
+    ]
+   },
+   "omandiv_selg": {
+    "dtype": "String",
+    "null_share": 0.0198,
+    "distinct": 4,
+    "values": [
+     {
+      "value": "Riigiomand",
+      "rows": 13427
+     },
+     {
+      "value": "Eraomand",
+      "rows": 3042
+     },
+     {
+      "value": "Riigi omandis olev \u00f5igusvastaselt v\u00f5\u00f5randatud maa",
+      "rows": 1123
+     },
+     {
+      "value": null,
+      "rows": 356
+     }
+    ]
+   },
+   "ehak_tekst": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 3484
+   },
+   "ehak_kood1": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 37,
+    "values": [
+     {
+      "value": "0068",
+      "rows": 3199
+     },
+     {
+      "value": "0037",
+      "rows": 1691
+     },
+     {
+      "value": "0060",
+      "rows": 1474
+     },
+     {
+      "value": "0045",
+      "rows": 1320
+     },
+     {
+      "value": "0074",
+      "rows": 1274
+     },
+     {
+      "value": "0084",
+      "rows": 1249
+     },
+     {
+      "value": "0081",
+      "rows": 1137
+     },
+     {
+      "value": "0039",
+      "rows": 1024
+     },
+     {
+      "value": "0071",
+      "rows": 979
+     },
+     {
+      "value": "0087",
+      "rows": 970
+     },
+     {
+      "value": "0079",
+      "rows": 910
+     },
+     {
+      "value": "0050",
+      "rows": 813
+     },
+     {
+      "value": "0052",
+      "rows": 755
+     },
+     {
+      "value": "0056",
+      "rows": 600
+     },
+     {
+      "value": "0064",
+      "rows": 441
+     },
+     {
+      "value": "0068;0084",
+      "rows": 20
+     },
+     {
+      "value": "0037;0071",
+      "rows": 18
+     },
+     {
+      "value": "0068;0071",
+      "rows": 13
+     },
+     {
+      "value": "0037;0060",
+      "rows": 9
+     },
+     {
+      "value": "0045;0060",
+      "rows": 7
+     },
+     {
+      "value": "0079;0081",
+      "rows": 6
+     },
+     {
+      "value": "0064;0087",
+      "rows": 6
+     },
+     {
+      "value": "0052;0071",
+      "rows": 5
+     },
+     {
+      "value": "0052;0060",
+      "rows": 4
+     },
+     {
+      "value": "0037;0052",
+      "rows": 3
+     },
+     {
+      "value": "0045;0050",
+      "rows": 2
+     },
+     {
+      "value": "0064;0081",
+      "rows": 2
+     },
+     {
+      "value": "0052;0084",
+      "rows": 2
+     },
+     {
+      "value": "0050;0079",
+      "rows": 2
+     },
+     {
+      "value": "0052;0068",
+      "rows": 2
+     },
+     {
+      "value": "0050;0060",
+      "rows": 2
+     },
+     {
+      "value": "0050;0052",
+      "rows": 2
+     },
+     {
+      "value": "0081;0084",
+      "rows": 2
+     },
+     {
+      "value": "0064;0079",
+      "rows": 2
+     },
+     {
+      "value": "0050;0084",
+      "rows": 1
+     },
+     {
+      "value": "0037;0056",
+      "rows": 1
+     },
+     {
+      "value": "0081;0087",
+      "rows": 1
+     }
+    ]
+   },
+   "ehak_kood2": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 162
+   },
+   "ehak_kood3": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 3484
+   },
+   "on_lepinguga": {
+    "dtype": "Int64",
+    "null_share": 0.0,
+    "distinct": 2,
+    "values": [
+     {
+      "value": 0,
+      "rows": 17341
+     },
+     {
+      "value": 1,
+      "rows": 607
+     }
+    ],
+    "min": 0,
+    "max": 1
+   }
+  }
+ }
+}
