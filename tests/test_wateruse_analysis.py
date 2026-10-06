@@ -152,3 +152,39 @@ def test_build_is_json_serialisable() -> None:
     )
     json.dumps(d)
     assert d["meta"]["years"] == [2024, 2025]
+
+
+def test_abstraction_totals_are_compared_with_declared_use() -> None:
+    use = pl.DataFrame({"aruandeaasta": [2024], "kokku": [48.0]})
+    r = wu.abstraction_vs_use(use, abstraction_frame(), abstraction_frame())
+    assert r == [{"year": 2024, "use_total": 48.0, "abstraction_total": 48.0, "ratio": 1.0}]
+
+
+def sample_build() -> dict[str, object]:
+    """A small but multi-year build for the site tests (two years of every table)."""
+    use = pl.concat(
+        [use_frame(), use_frame().with_columns(pl.lit(2026, dtype=pl.Int64).alias("aruandeaasta"))]
+    )
+    gw = pl.concat(
+        [
+            abstraction_frame(),
+            abstraction_frame().with_columns(pl.lit(2025, dtype=pl.Int64).alias("aruandeaasta")),
+        ]
+    )
+    dis = pl.concat(
+        [
+            discharge_frame(),
+            discharge_frame().with_columns(pl.lit(2025, dtype=pl.Int64).alias("aruandeaasta")),
+        ]
+    )
+    res = pl.DataFrame({"keht_staatus": ["Kehtiv"], "geol_indeks": ["O"], "varu_t1_olme": [10]})
+    ra = pl.DataFrame(
+        {
+            "keht_staatus": ["Kehtiv", "Kehtiv"],
+            "tyyp_selg": ["Üle 2000 ie", "Alla 2000 ie"],
+            "elanikke": [10, 5],
+            "koormus": [15.0, 6.0],
+            "pindala": [1.0, 1.0],
+        }
+    )
+    return rw.build(use, gw, gw, dis, res, ra, "2026-01-01")

@@ -26,6 +26,7 @@ import run_waste as rw
 import run_water as rwa
 from tests import test_nature_analysis as tna
 from tests import test_water_analysis as twa
+from tests import test_wateruse_analysis as twu
 from tests.test_airenergy_analysis import emissions, heat_rows
 from tests.test_climate_analysis import STATIONS
 from tests.test_forest_analysis import cube as forest_cube
@@ -117,9 +118,11 @@ def site(tmp_path_factory: pytest.TempPathFactory) -> Iterator[str]:
         ),
         encoding="utf-8",
     )
+    uj = tmp / "wateruse.json"
+    uj.write_text(json.dumps(twu.sample_build()), encoding="utf-8")
     topics = b.load_topics(Path("data/teemad.toml"), Path("data/kaur_viz_inventar.csv"))
     out = tmp / "_site"
-    b.build(topics, out, cj, hj, aj, wj, fj, wtj, nj)
+    b.build(topics, out, cj, hj, aj, wj, fj, wtj, nj, uj)
     handler = functools.partial(http.server.SimpleHTTPRequestHandler, directory=str(out))
     handler.log_message = lambda *a, **k: None  # type: ignore[attr-defined]
     with socketserver.TCPServer(("127.0.0.1", 0), handler) as srv:
@@ -207,7 +210,7 @@ def test_every_chart_has_a_punchline(browser: Browser, site: str, path: str) -> 
     page.wait_for_selector("svg[role=img]")
     page.wait_for_timeout(300)
     missing = page.evaluate(
-        """() => [...document.querySelectorAll('[data-climate],[data-hydro],[data-airenergy],[data-waste],[data-forest],[data-water],[data-nature]')]
+        """() => [...document.querySelectorAll('[data-climate],[data-hydro],[data-airenergy],[data-waste],[data-forest],[data-water],[data-nature],[data-wateruse]')]
             .filter((h) => h.querySelector('svg[role=img]') && !h.querySelector('.viz-punch'))
             .map((h) => Object.values(h.dataset).join(':'))"""
     )

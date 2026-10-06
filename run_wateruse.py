@@ -55,6 +55,8 @@ def build(
                 "Vastavus = vähemalt üks kvartali kontsentratsioon ületab lubatud piirmäära "
                 "väljalaskmetel, millel on piirmäär märgitud; kontsentratsioonid on suures osas "
                 "arvutuslikud, mitte mõõdetud.",
+                "Põhja- ja pinnaveevõtu summa ühtib veekasutuse kogusummaga, kuid veeliikide "
+                "jaotus erineb (tõenäoliselt kaevandus- ja karjäärivesi; kinnitamata).",
                 "Põhjaveevarusid ei võrrelda veevõtuga: veevõtu tabel ei seo veehaaret varuga.",
                 "Käitiste, väljalaskmete ja veehaarete nimesid ei laeta ega avaldata.",
             ],
@@ -68,6 +70,7 @@ def build(
         "checks": {
             "sector_tiling": wu.sector_tiling(use),
             "use_duplicates": wu.duplicates(use),
+            "abstraction_vs_use": wu.abstraction_vs_use(use, gw, sw),
         },
     }
 

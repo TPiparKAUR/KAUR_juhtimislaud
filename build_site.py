@@ -72,6 +72,21 @@ ANALYSES: dict[str, list[tuple[str, list[tuple[str, str]]]]] = {
                 ("methods", ""),
             ],
         ),
+        (
+            "wateruse",
+            [
+                ("wfindings", "Veekasutus ja heitvesi: peamised tulemused"),
+                ("wsector", "Veekasutus"),
+                ("wsectorRest", ""),
+                ("wtype", ""),
+                ("wabstraction", "Veevõtt"),
+                ("wloads", "Heitvesi ja reostuskoormus"),
+                ("wcompliance", ""),
+                ("wagglo", "Reoveekogumisalad"),
+                ("wreserves", "Põhjaveevarud"),
+                ("wmethods", ""),
+            ],
+        ),
     ],
     "valisohk": [
         (
@@ -173,6 +188,13 @@ SCRIPTS = {
         "airenergy-charts.js",
         "nature-charts.js",
         "nature-page.js",
+    ],
+    "wateruse": [
+        "charts.js",
+        "hydro-charts.js",
+        "airenergy-charts.js",
+        "nature-charts.js",
+        "wateruse-page.js",
     ],
     "water": [
         "charts.js",
@@ -320,7 +342,7 @@ def layout(
         for t in topics
     )
     names: list[str] = []
-    for feat in ("climate", "hydro", "airenergy", "waste", "forest", "water", "nature"):
+    for feat in ("climate", "hydro", "airenergy", "waste", "forest", "water", "nature", "wateruse"):
         if feat in features:
             names += [n for n in SCRIPTS[feat] if n not in names]
     scripts = "".join(f'<script src="assets/{n}"></script>' for n in names)
@@ -449,6 +471,7 @@ def build(
     forest_json: Path | None = None,
     water_json: Path | None = None,
     nature_json: Path | None = None,
+    wateruse_json: Path | None = None,
 ) -> list[Path]:
     """Write the site; analysis sections appear only for the JSON inputs that exist."""
     out.mkdir(parents=True, exist_ok=True)
@@ -461,6 +484,7 @@ def build(
         "forest": forest_json,
         "water": water_json,
         "nature": nature_json,
+        "wateruse": wateruse_json,
     }
     features: set[str] = set()
     for name, path in inputs.items():
@@ -496,6 +520,7 @@ def main() -> None:
     ap.add_argument("--forest", type=Path, default=None, help="aggregated forest.json to embed")
     ap.add_argument("--water", type=Path, default=None, help="aggregated water.json to embed")
     ap.add_argument("--nature", type=Path, default=None, help="aggregated nature.json to embed")
+    ap.add_argument("--wateruse", type=Path, default=None, help="aggregated wateruse.json to embed")
     args = ap.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
     topics = load_topics(args.topics, args.inventory)
@@ -509,6 +534,7 @@ def main() -> None:
         args.forest,
         args.water,
         args.nature,
+        args.wateruse,
     )
     LOG.info("wrote %d pages to %s", len(files), args.out)
 

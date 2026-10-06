@@ -203,3 +203,25 @@ def reserves(res: pl.DataFrame) -> dict[str, Any]:
         "t1_olme_total": v["varu_t1_olme"].sum(),
         "by_aquifer": [r for r in by.to_dicts() if r["geol_indeks"]][:12],
     }
+
+
+def abstraction_vs_use(
+    use: pl.DataFrame, gw: pl.DataFrame, sw: pl.DataFrame
+) -> list[dict[str, Any]]:
+    """Does groundwater + surface abstraction equal the declared use total per year?"""
+    out = []
+    for (year,), g in use.group_by("aruandeaasta", maintain_order=True):
+        a = sum(
+            float(df.filter(pl.col("aruandeaasta") == year)["aastakokku"].sum() or 0)
+            for df in (gw, sw)
+        )
+        total = float(g["kokku"].sum() or 0)
+        out.append(
+            {
+                "year": int(year),
+                "use_total": total,
+                "abstraction_total": a,
+                "ratio": a / total if total else None,
+            }
+        )
+    return sorted(out, key=lambda r: r["year"])
