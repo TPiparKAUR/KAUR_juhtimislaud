@@ -80,6 +80,53 @@
         if (rows.length) { const a = first(rows), b = last(rows); C.punch(holder, `${NAMES[key]}: tugevalt kahjustunud või surnud puid ${fmt(100 * b.counts.severe / b.trees, 1)}% (${b.year}), mõõdukalt kahjustunud ${fmt(100 * b.counts.moderate / b.trees, 0)}%; ${a.year}. aastal vastavalt ${fmt(100 * a.counts.severe / a.trees, 1)}% ja ${fmt(100 * a.counts.moderate / a.trees, 0)}%.`); }
       });
     },
+    sfindings(host) {
+      const so = d.soil; if (!so) { host.innerHTML = '<p class="viz-note">Mullaseire andmeid ei ole.</p>'; return; }
+      const I = so.indicators, li = [];
+      li.push(`<li><b>Mida see on:</b> riikliku mullaseire (KESE) mulla (A-horisont ja muud proovid) mõõtmised alates 2002: ${fmt(so.checks.rows, 0)} väärtust ${fmt(so.checks.plots, 0)} proovialalt. Perioodid on 5-aastased ja proovialad ei ole perioodide vahel samad, seega perioodide mediaane ei tõlgendata trendina; muutust hinnatakse ainult proovialadel, mida on mõõdetud nii esimeses kui viimases perioodis (paaritatud). Normide ja sihttasemetega võrdlust ei ole tehtud.</li>`);
+      const pr = (n) => I[n] && I[n].paired;
+      for (const [n, u, dec] of [['pH', '', 2], ['Orgaaniline süsinik', '% KA', 2]]) {
+        const p = pr(n); if (p) li.push(`<li><b>${n}:</b> samal ${fmt(p.plots, 0)} proovialal ${p.from} → ${p.to}: mediaan ${fmt(p.median_first, dec)} → ${fmt(p.median_last, dec)} ${u}; mediaanmuutus ${sgn(p.median_change, dec)}, kasvas ${fmt(100 * p.share_increased, 0)}% proovialadest.</li>`);
+      }
+      const metals = ['Vask', 'Tsink', 'Plii', 'Kaadmium', 'Kroom', 'Nikkel', 'Elavhõbe', 'Arseen'].filter((m) => I[m]);
+      if (metals.length) li.push(`<li><b>Metallid (mg/kg kuivaines):</b> ${metals.map((m) => `${m.toLowerCase()} mediaan ${fmt(last(I[m].periods).median, 2)} (${last(I[m].periods).period})`).join('; ')}.</li>`);
+      host.innerHTML = `<ul class="findings">${li.join('')}</ul>`;
+    },
+    sph(host) {
+      const so = d.soil; if (!so || !so.indicators.pH) return;
+      const pl = so.indicators.pH.periods.filter((r) => r.plots >= 20);
+      const mk = (label, color, f) => ({ label, color, data: pl.map((r) => ({ year: +r.period.slice(0, 4) + 2, value: f(r), n: r.samples, extra: `${r.period}: ${fmt(r.samples, 0)} proovi, ${fmt(r.plots, 0)} prooviala` })) });
+      lines(host, { title: 'Mulla pH (mullaseire)', subtitle: 'Perioodi mediaan ning 10. ja 90. protsentiil (pH ühikuta); iga punkt on 5-aastane periood.', unit: '', dec: 2, axisDec: 1, nName: 'proove', series: [mk('Mediaan', SLOTS[0], (r) => r.median), mk('10. protsentiil', SLOTS[2], (r) => r.p10), mk('90. protsentiil', SLOTS[1], (r) => r.p90)], note: 'Proovialad ei ole perioodide vahel samad; pH väärtused väljaspool 2-10 on välja jäetud (andmevead). Paaritatud muutus on kokkuvõttes ja lehe tekstis.' });
+      const a = first(pl), b = last(pl), p = so.indicators.pH.paired;
+      C.punch(host, `Mulla pH mediaan on ${fmt(a.median, 1)} (${a.period}) ja ${fmt(b.median, 1)} (${b.period}); ${p ? `samadel ${fmt(p.plots, 0)} proovialadel on mediaanmuutus ${sgn(p.median_change, 2)} ja ${fmt(100 * p.share_increased, 0)}% proovialadel pH kasvas` : 'paaritatud võrdlust ei saa teha'}; perioodide erinevus võib tuleneda proovialade koosseisust.`);
+    },
+    sorg(host) {
+      const so = d.soil; if (!so || !so.indicators['Orgaaniline süsinik']) return;
+      const I = so.indicators['Orgaaniline süsinik'], pl = I.periods.filter((r) => r.plots >= 20);
+      const mk = (label, color, f) => ({ label, color, data: pl.map((r) => ({ year: +r.period.slice(0, 4) + 2, value: f(r), n: r.samples, extra: `${r.period}: ${fmt(r.samples, 0)} proovi, ${fmt(r.plots, 0)} prooviala` })) });
+      lines(host, { title: 'Mulla orgaaniline süsinik (mullaseire)', subtitle: '% kuivaines; perioodi mediaan ning 10. ja 90. protsentiil.', unit: '%', dec: 2, axisDec: 1, nName: 'proove', series: [mk('Mediaan', SLOTS[0], (r) => r.median), mk('10. protsentiil', SLOTS[2], (r) => r.p10), mk('90. protsentiil', SLOTS[1], (r) => r.p90)], note: 'Proovialad ei ole perioodide vahel samad; huumus ja orgaaniline süsinik on eri näitajad.' });
+      const a = first(pl), b = last(pl), p = I.paired;
+      C.punch(host, `Orgaanilise süsiniku mediaan on ${fmt(a.median, 2)}% (${a.period}) ja ${fmt(b.median, 2)}% (${b.period}); ${p ? `samadel ${fmt(p.plots, 0)} proovialadel on mediaanmuutus ${sgn(p.median_change, 2)} protsendipunkti` : 'paaritatud võrdlust ei saa teha'}; erinevus perioodide vahel võib tuleneda proovialade koosseisust.`);
+    },
+    smetals(host) {
+      const so = d.soil; if (!so) return;
+      const names = ['Vask', 'Tsink', 'Plii', 'Kaadmium', 'Kroom', 'Nikkel', 'Elavhõbe', 'Arseen'].filter((m) => so.indicators[m]);
+      if (!names.length) return;
+      C.selectable(host, names.map((n) => ({ value: n, text: n })), names[0], 'Element:', (holder, key) => {
+        const I = so.indicators[key], pl = I.periods.filter((r) => r.plots >= 20);
+        if (!pl.length) { holder.innerHTML = `<p class="viz-note">${key}: ühelgi perioodil ei ole vähemalt 20 prooviala.</p>`; return; }
+        const mk = (label, color, f) => ({ label, color, data: pl.map((r) => ({ year: +r.period.slice(0, 4) + 2, value: f(r), n: r.samples, extra: `${r.period}: ${fmt(r.samples, 0)} proovi, ${fmt(r.plots, 0)} prooviala, alla määramispiiri ${r.below_loq_mark}` })) });
+        lines(holder, { title: `${key} mullas (mullaseire)`, subtitle: 'mg/kg kuivaines; perioodi mediaan ja 90. protsentiil.', unit: 'mg/kg', dec: 2, axisDec: 1, nName: 'proove', series: [mk('Mediaan', SLOTS[0], (r) => r.median), mk('90. protsentiil', SLOTS[1], (r) => r.p90)], note: 'Ühikud on teisendatud mg/kg kuivaines (ppm = mg/kg; µg/kg ja ppb ÷ 1000). Piirväärtustega võrdlust ei ole tehtud. Proovialad ei ole perioodide vahel samad.' });
+        if (pl.length) { const a = first(pl), b = last(pl), p = I.paired; C.punch(holder, `${key}: mediaan ${fmt(a.median, 2)} mg/kg (${a.period}) ja ${fmt(b.median, 2)} (${b.period}); 90. protsentiil ${fmt(b.p90, 1)}; ${p ? `samadel ${fmt(p.plots, 0)} proovialadel on mediaanmuutus ${sgn(p.median_change, 2)} mg/kg` : 'paaritatud võrdlust ei saa teha'}; piirväärtustega ei ole võrreldud.`); }
+      });
+    },
+    smethods(host) {
+      const so = d.soil; if (!so) return;
+      host.innerHTML = `<div class="methods"><b>Andmed ja meetod</b> <span class="review-flag">valdkonnaekspert ülevaatamata</span>
+        <p><b>Allikas ja päritolu:</b> Keskkonnaagentuuri avaandmed (keskkonnaandmed.envir.ee), keskkonnaseire tabel (KESE), mullaseire programm; mõõdetud või laboris määratud väärtused (mitte hinnangud ega mudelid).</p>
+        <p><b>Tõlgendus (kinnitamata):</b> ${so.meta.interpretation.join(' ')}</p>
+        <p><b>Piirangud:</b> proovialad ei ole perioodide vahel samad, proovivõtusügavus ja horisont erinevad (andmeväljad on enamasti täitmata); põllumuld ja muud mullaseire alad pole siin eristatud; metaboolsed näitajad, normid ja tõlgendus vajavad pedoloogi kinnitust. Genereeritud ${d.meta.generated_utc.slice(0, 10)} (UTC).</p></div>`;
+    },
     wqfindings(host) {
       const w = d.water_quality;
       if (!w) { host.innerHTML = '<p class="viz-note">Veekvaliteedi andmeid ei ole.</p>'; return; }

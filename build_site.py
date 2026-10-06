@@ -186,6 +186,18 @@ ANALYSES: dict[str, list[tuple[str, list[tuple[str, str]]]]] = {
             ],
         ),
     ],
+    "muld-ja-maahoive": [
+        (
+            "monitoring",
+            [
+                ("sfindings", "Mullaseire: peamised tulemused"),
+                ("sph", ""),
+                ("sorg", ""),
+                ("smetals", ""),
+                ("smethods", ""),
+            ],
+        ),
+    ],
     "jaatmed": [
         (
             "waste",

@@ -8,8 +8,8 @@ name: Monitoring analysis (from existing data)
 on:
   workflow_dispatch:
     inputs:
-      run_id:
-        description: "Run id of a successful 'Monitoring extract (one indicator)' run"
+      run_ids:
+        description: "Run ids (space separated) of successful 'Monitoring extract (one indicator)' runs"
         required: true
 
 permissions:
@@ -33,12 +33,15 @@ jobs:
       - name: Download extract artifact
         env:
           GH_TOKEN: ${{ github.token }}
-          RUN_ID: ${{ inputs.run_id }}
-        run: gh run download "$RUN_ID" --repo "$GITHUB_REPOSITORY" -n monitoring-extract -D out/extract
+          RUN_IDS: ${{ inputs.run_ids }}
+        run: |
+          for id in $RUN_IDS; do
+            gh run download "$id" --repo "$GITHUB_REPOSITORY" -n monitoring-extract -D "out/extract/$id"
+          done
       - name: Catalogue from the monitoring-catalog branch
         run: git show origin/monitoring-catalog:monitoring_catalog.json > monitoring_catalog.json
       - name: Analyse
-        run: uv run python run_monitoring.py --catalog monitoring_catalog.json --extract out/extract/monitoring_extract.parquet --out out/monitoring
+        run: uv run python run_monitoring.py --catalog monitoring_catalog.json $(for f in out/extract/*/monitoring_extract.parquet; do printf -- "--extract %s " "$f"; done) --out out/monitoring
       - name: Publish aggregated results
         run: |
           cp out/monitoring/monitoring.json "$RUNNER_TEMP/monitoring.json"

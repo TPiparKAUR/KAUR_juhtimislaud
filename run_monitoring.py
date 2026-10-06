@@ -23,6 +23,7 @@ from typing import Any
 import polars as pl
 
 import crown_analysis as ca
+import soil_analysis as sa
 import wq_analysis as wq
 
 LOG = logging.getLogger("run_monitoring")
@@ -81,6 +82,7 @@ def build(
         },
         "coverage": coverage(catalog),
         "crown": ca.build(extract),
+        "soil": sa.build(extract) if "naitaja_proovimaatriks_nimi" in extract.columns else None,
         "water_quality": wq.build(extract) if "pohjaveekogum_kood" in extract.columns else None,
     }
 
@@ -88,12 +90,13 @@ def build(
 def main(argv: list[str] | None = None) -> None:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--catalog", type=Path, required=True)
-    ap.add_argument("--extract", type=Path, required=True)
+    ap.add_argument("--extract", type=Path, action="append", required=True)
     ap.add_argument("--out", type=Path, default=Path("out/monitoring"))
     args = ap.parse_args(argv)
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
     catalog = json.loads(args.catalog.read_text(encoding="utf-8"))
-    result = build(catalog, pl.read_parquet(args.extract))
+    frames = [pl.read_parquet(p) for p in args.extract]
+    result = build(catalog, pl.concat(frames, how="diagonal_relaxed"))
     args.out.mkdir(parents=True, exist_ok=True)
     (args.out / "monitoring.json").write_text(
         json.dumps(result, ensure_ascii=False, separators=(",", ":")), encoding="utf-8"

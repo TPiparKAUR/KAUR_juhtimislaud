@@ -29,6 +29,7 @@ import run_water as rwa
 from tests import test_crown_analysis as tcr
 from tests import test_monitoring_catalog as tma
 from tests import test_nature_analysis as tna
+from tests import test_soil_analysis as tso
 from tests import test_water_analysis as twa
 from tests import test_wateruse_analysis as twu
 from tests.test_airenergy_analysis import emissions, heat_rows
@@ -124,7 +125,14 @@ def site(tmp_path_factory: pytest.TempPathFactory) -> Iterator[str]:
     )
     mj = tmp / "monitoring.json"
     mj.write_text(
-        json.dumps(rmo.build(mc.catalog(tma.agg()), tcr.frame(), "2026-01-01")), encoding="utf-8"
+        json.dumps(
+            rmo.build(
+                mc.catalog(tma.agg()),
+                pl.concat([tcr.frame(), tso.frame()], how="diagonal_relaxed"),
+                "2026-01-01",
+            )
+        ),
+        encoding="utf-8",
     )
     uj = tmp / "wateruse.json"
     uj.write_text(json.dumps(twu.sample_build()), encoding="utf-8")
@@ -165,6 +173,7 @@ def browser() -> Iterator[Browser]:
         ("mets.html", 3),
         ("okosusteemid.html", 2),
         ("liigid.html", 2),
+        ("muld-ja-maahoive.html", 1),
     ],
 )
 def test_pages_render_charts_without_errors(
@@ -205,7 +214,7 @@ def test_hover_shows_tooltip(browser: Browser, site: str) -> None:
 
 
 PUNCH_PAGES = ["index.html", "ilm-ja-kliima.html", "vesi.html", "valisohk.html", "energeetika.html",
-               "jaatmed.html", "mets.html", "okosusteemid.html", "liigid.html"]  # fmt: skip
+               "jaatmed.html", "mets.html", "okosusteemid.html", "liigid.html", "muld-ja-maahoive.html"]  # fmt: skip
 
 
 @pytest.mark.browser
