@@ -1,0 +1,45 @@
+name: Water use data
+
+# Reads water use, abstraction, waste-water discharge, groundwater reserves and sewage
+# agglomeration tables (7 tables; facility names, free text and coordinates excluded) and writes
+# wateruse_diagnostics.json. Parquet stays in artifact `wateruse-raw`; diagnostics go to `wateruse-explore`.
+
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: kaur-api  # one job at a time against the shared public API
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync --frozen
+      - run: uv run python wateruse_fetch.py --out out/wateruse --workers 3
+        timeout-minutes: 25
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: wateruse-raw
+          path: out/wateruse/
+          retention-days: 30
+      - name: Publish diagnostics
+        if: always()
+        run: |
+          cp out/wateruse/wateruse_diagnostics.json "$RUNNER_TEMP/wateruse_diagnostics.json"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan wateruse-explore
+          git rm -rf --quiet .
+          cp "$RUNNER_TEMP/wateruse_diagnostics.json" wateruse_diagnostics.json
+          git add -- wateruse_diagnostics.json
+          git commit -m "Water use diagnostics $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push --force origin wateruse-explore

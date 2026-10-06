@@ -108,3 +108,17 @@ def test_nature_fetch_drops_coordinates_and_text(tmp_path: Path) -> None:
     assert df.columns == ["id", "tyyp"]
     diag = json.loads((tmp_path / "nature_diagnostics.json").read_text(encoding="utf-8"))
     assert set(diag) == set(nf.TABLES)
+
+
+def test_wateruse_fetch_drops_names_and_reads_every_table(tmp_path: Path) -> None:
+    import wateruse_fetch as wf2
+
+    tables: dict[str, list[dict[str, Any]]] = {
+        t: [{"aruandeaasta": 2020, "kokku": 5.0, "jaamanimi": "secret", "markused": "x"}]
+        for t in wf2.TABLES
+    }
+    with fake_server(tables, max_rows=5) as (url, _state):
+        wf2.main(["--out", str(tmp_path), "--base-url", url])
+    df = pl.read_parquet(tmp_path / "t_awtabel004_curr.parquet")
+    assert df.columns == ["aruandeaasta", "kokku"]
+    assert "secret" not in (tmp_path / "wateruse_diagnostics.json").read_text(encoding="utf-8")
