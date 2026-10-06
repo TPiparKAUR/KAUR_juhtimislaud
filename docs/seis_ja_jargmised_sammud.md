@@ -41,7 +41,13 @@ Leht ehitatakse `pages.yml` poolt kõigist harudest; lisatud tulemused ilmuvad a
 2. **Jäätmed (tehtud 2026-10-06)**: olmejäätmed (ch 20), pakend (15 01), biojäätmete märge. Avatud:
    ringleva materjali määr ja jäätmed vs SKP (välised allikad), biojäätmete täpne definitsioon, olmejäätmete
    ametlik määratlus (võib erineda peatükist 20), märgete (sete, metall, probleemtooted) tähendus.
-3. **Liigid**: leida liikide seisundi, Punase nimestiku, lindude indeksi ja suurkiskjate allikas.
+3. **Liigid / seire (käimas 2026-10-06)**: allikas leitud: `f_keskkonnaseire` (~10 mln rida, KESE
+   keskkonnaseire pikk tabel: 2,9 mln liigiga ridu, 8,1 mln arvväärtust, 0,2 mln mõõtemääramatusega; ridu
+   perioodil 1995–2025 ~9,7 mln). Samas tabelis on ka metsaseire, mulla-, vee-, põhjavee- ja välisõhuseire, mis
+   katab mitu Tableau vaadet (metsaseire okka-/lehekadu, nitraat põhjavees, jõgede TN/TP, mullaseire).
+   Samm 1: `monitoring_data.yml` (matriks aastate kaupa, kataloog näitaja × aasta × liik) →
+   `monitoring-agg` artefakt + `monitoring-data-log` haru. Samm 2: kataloogi põhjal sihitud analüüsid.
+   Lisaks: `f_rongastused` (1,3 mln rõngastust, 1995–2025; pingutuse näitaja, mitte arvukus).
 4. **Mets**: üraskid, kaitstav mets.
 5. Energeetika, muld ja maahõive, seire: välised allikad ja litsentsid.
 
