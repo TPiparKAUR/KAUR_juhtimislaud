@@ -4,16 +4,16 @@
   "n_views": 54,
   "by_status": {
    "olemas": {
-    "n": 21,
-    "views": 7019
+    "n": 22,
+    "views": 7288
    },
    "osaliselt": {
-    "n": 12,
-    "views": 4164
+    "n": 13,
+    "views": 4366
    },
    "puudub": {
-    "n": 21,
-    "views": 6705
+    "n": 19,
+    "views": 6234
    }
   },
   "themes": {
@@ -76,12 +76,12 @@
     "views": 676,
     "n": 3,
     "olemas": 0,
-    "osaliselt": 0,
-    "puudub": 3,
+    "osaliselt": 1,
+    "puudub": 2,
     "views_olemas": 0,
-    "views_osaliselt": 0,
-    "views_puudub": 676,
-    "share_views_uncovered": 1.0
+    "views_osaliselt": 202,
+    "views_puudub": 474,
+    "share_views_uncovered": 0.701
    },
    "vesi": {
     "views": 2132,
@@ -119,13 +119,13 @@
    "seire": {
     "views": 1259,
     "n": 7,
-    "olemas": 3,
+    "olemas": 4,
     "osaliselt": 0,
-    "puudub": 4,
-    "views_olemas": 595,
+    "puudub": 3,
+    "views_olemas": 864,
     "views_osaliselt": 0,
-    "views_puudub": 664,
-    "share_views_uncovered": 0.527
+    "views_puudub": 395,
+    "share_views_uncovered": 0.314
    }
   },
   "top_gaps": [
@@ -423,9 +423,9 @@
   {
    "workbook": "Keskkonnalevaade-Maahive-PllumuldadePh",
    "teema": "muld-ja-maahoive",
-   "meie": "puudub",
-   "andmed": "teadmata",
-   "markus": "Põllumuldade pH kaart.",
+   "meie": "osaliselt",
+   "andmed": "API:f_keskkonnaseire",
+   "markus": "Mulla pH perioodide mediaanid mullaseire andmetest (kaarti ei ole); meetod muutus 2018.",
    "title": "Keskkonnaülevaade - Maahõive - Põllumuldade Ph",
    "views": 202
   },
@@ -603,9 +603,9 @@
   {
    "workbook": "RKSP-Mullaseire",
    "teema": "seire",
-   "meie": "puudub",
-   "andmed": "teadmata",
-   "markus": "Raskmetallid mullas.",
+   "meie": "olemas",
+   "andmed": "API:f_keskkonnaseire",
+   "markus": "Mulla pH, orgaaniline süsinik, toitained ja mikroelemendid (mullaseire); meetodid muutunud, normidega ei ole võrreldud.",
    "title": "RKSP - Mullaseire",
    "views": 269
   },

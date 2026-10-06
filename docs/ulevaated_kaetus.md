@@ -10,10 +10,10 @@ Genereeritud `analyse_ulevaated.py` poolt failidest `data/ulevaate_kaetus.toml` 
 | Vesi | 7 | 2132 | 3 | 4 | 0 | 0 |
 | Välisõhk | 7 | 1932 | 2 | 3 | 2 | 24 |
 | Mets | 5 | 1849 | 2 | 2 | 1 | 21 |
-| Seire (RKSP) | 7 | 1259 | 3 | 0 | 4 | 53 |
+| Seire (RKSP) | 7 | 1259 | 4 | 0 | 3 | 31 |
 | Energeetika | 3 | 772 | 0 | 1 | 2 | 71 |
 | Ökosüsteemid | 2 | 761 | 0 | 1 | 1 | 35 |
-| Muld ja maahõive | 3 | 676 | 0 | 0 | 3 | 100 |
+| Muld ja maahõive | 3 | 676 | 0 | 1 | 2 | 70 |
 
 ## Vaated
 
@@ -48,12 +48,12 @@ Genereeritud `analyse_ulevaated.py` poolt failidest `data/ulevaate_kaetus.toml` 
 | Mets | Keskkonnaülevaade - Mets - Raiemahud | 346 | osaliselt | API:f_smi_tulemused | Meil SMI raiehinnang; ametlik raiestatistika on teine allikas. |
 | Mets | Keskkonnaülevaade - Mets - Kaitstav mets | 283 | osaliselt | API:f_alad | Kaitstav mets: meil kaitsealad ja vääriselupaigad, mitte metsamaa osakaal. |
 | Muld ja maahõive | Keskkonnaülevaade - Maahõive - Maahõive | 296 | puudub | väline | Maahõive jaotus. |
-| Muld ja maahõive | Keskkonnaülevaade - Maahõive - Põllumuldade Ph | 202 | puudub | teadmata | Põllumuldade pH kaart. |
+| Muld ja maahõive | Keskkonnaülevaade - Maahõive - Põllumuldade Ph | 202 | osaliselt | API:f_keskkonnaseire | Mulla pH perioodide mediaanid mullaseire andmetest (kaarti ei ole); meetod muutus 2018. |
 | Muld ja maahõive | Keskkonnaülevaade - Maahõive - Mahepõllumajanduse osakaal | 178 | puudub | väline | Mahepõllumajandusmaa osakaal (PRIA/Statistikaamet). |
 | Ökosüsteemid | Rohemõõdikud - Elurikkus - detail - elurikkus - Loodusdirektiivi elupaigatüüpide seisund Eestis ja Euroopa Liidus | 497 | osaliselt | API:f_rahvalad_elupaikstat | Meil Natura SDF ala-taseme hinnang; EL elupaigatüüpide aruande seisund puudub. |
 | Ökosüsteemid | Keskkonnaülevaade - Ökosüsteemid - Öko hüved ja sidusus | 264 | puudub | teadmata | Ökosüsteemiteenused vs sidusus. |
 | Seire (RKSP) | RKSP - meteoroloogiline seire | 439 | olemas | API:f_kliima_* | Meteoroloogiline seire. |
-| Seire (RKSP) | RKSP - Mullaseire | 269 | puudub | teadmata | Raskmetallid mullas. |
+| Seire (RKSP) | RKSP - Mullaseire | 269 | olemas | API:f_keskkonnaseire | Mulla pH, orgaaniline süsinik, toitained ja mikroelemendid (mullaseire); meetodid muutunud, normidega ei ole võrreldud. |
 | Seire (RKSP) | RKSP - Kiirgusseire | 155 | puudub | teadmata | Kiirgusseire. |
 | Seire (RKSP) | RKSP - Välisõhu seire | 141 | puudub | teadmata | Välisõhu seire. |
 | Seire (RKSP) | RKSP - Kompleksseire | 99 | puudub | teadmata | Kompleksseire. |

@@ -164,3 +164,9 @@ koordinaatide ja vabatekstita). Tegu on registritega, mitte seirega.
 - Liikide leiukohtade arv sõltub inventeerimisest; võõrliikide leiukohtadest 99% on katteseemnetaimed.
 - Natura liikide kaitsestaatuse väli on ~40% ulatuses täitmata ja hinnatud kirjete hulk muutus versioonide
   vahel (2988 -> 2261); osakaalude muutust ei tõlgendata.
+
+## Muld (seiretabel, päris andmetega)
+
+Graafikud: pH, orgaaniline süsinik/huumus, toitained, raskmetallid perioodide kaupa (mediaan, p10–p90) ning
+meetodite loetelu. Puänt on andmetest tuletatud ja märgib meetodimuutust; paarisvõrdlus puudub, kui korduvaid
+proovialasid on alla 20. Ülevaatamata valdkonnaekspertide poolt.

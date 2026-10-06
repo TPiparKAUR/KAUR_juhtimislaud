@@ -59,6 +59,7 @@ Leht ehitatakse `pages.yml` poolt kõigist harudest; lisatud tulemused ilmuvad a
 - Jäätmetabeli märked (`biojaatmed_lipp` jt) hõlmavad kirjeid, mille liik pole selle voo jäätmed (nt segaolmejäätmed ja sõnnik biojäätmete märkega).
 - Jäätmetabeli ühik (t), negatiivsed read, ohtlike jäätmete osakaalu hüpe 2019 → 2020.
 - Natura SDF säilimishinnangu seos EL aruandluse seisundiga.
+- Mullaseire meetodimuutused (pH, P, Cu, Corg): mediaan 2002–2006 → 2022–2026 pH 6,6 → 6,3 ja Corg 1,86% → 2,60% ei ole paarisvõrdlus (alad ja meetodid erinevad); ekspert peab kinnitama.
 - Aastaraamatute PDF-id ei ole repos (artefakt `yearbooks-raw`, 30 päeva); Soome, Island, Rootsi Skogsdata puuduvad.
 
 ## Seire (KESE) töövoog: kuidas jätkata
@@ -72,6 +73,6 @@ Leht ehitatakse `pages.yml` poolt kõigist harudest; lisatud tulemused ilmuvad a
    `vaartus_muu` (klass/tekst), nt okka-/lehekadu.
 4. `monitoring_analyse.yml` (input extract run_id) → `monitoring.json` harul `monitoring-analysis` (Mets ja Liigid).
 Järgmised näitajad kataloogist: nitraat põhjavees, jõgede üldlämmastik/-fosfor (eutrofeerumine), mullaseire
-raskmetallid, välisõhu seire. Avatud küsimused: okka-/lehekao klassipiirid (ICP Forests?) ja hindajate kooskõla,
+raskmetallid (tehtud: Muld ja maahõive leht), välisõhu seire (järgmine). Avatud küsimused: okka-/lehekao klassipiirid (ICP Forests?) ja hindajate kooskõla,
 1993–1996 kõrge mändide kahjustusosakaal (meetod või proovialad), mis on „Liigi isendite arv“ hundil/karul
 (vaatlused või jäljed?), lindude haudepaaride loenduse indeksi meetod.

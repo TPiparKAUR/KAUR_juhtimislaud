@@ -21,9 +21,9 @@ töövihikute loetelu koos vaatamiste arvuga (`data/tableau_public_workbooks.csv
 
 | Katvus | Vaateid | Vaatamisi | Osakaal vaatamistest |
 |---|---|---|---|
-| olemas | 21 | 7 019 | 39% |
-| osaliselt | 12 | 4 164 | 23% |
-| puudub | 21 | 6 705 | 37% |
+| olemas | 22 | 7 288 | 41% |
+| osaliselt | 13 | 4 366 | 24% |
+| puudub | 19 | 6 234 | 35% |
 
 Teemati (vaatamised; katmata osa vaatamistest):
 
@@ -35,7 +35,7 @@ Teemati (vaatamised; katmata osa vaatamistest):
 | Vesi | 2 132 | 0% katmata (osaliselt kaetud: põhjaveebilanss, eutrofeerumine, reostuskoormus merre, põhjavee koondseisund) |
 | Välisõhk | 1 932 | 24% |
 | Mets | 1 849 | 21% |
-| Seire (RKSP) | 1 259 | 53% (metsaseire lisandus) |
+| Seire (RKSP) | 1 259 | 31% (metsaseire lisandus) |
 | Energeetika | 772 | 71% |
 | Ökosüsteemid | 761 | 35% |
 | Muld ja maahõive | 676 | **100%** |
@@ -98,3 +98,11 @@ Põhjavee nitraat (90. protsentiil ja normi ületanute osakaal; mediaan jäetud 
 märgitud „<“) ning üldlämmastiku ja -fosfori mediaanid jõgedes, järvedes ja rannikuvees on „Vesi“ lehel
 (`wq_analysis.py`). Tulemused kirjeldavad seireandmeid (seirekohad ja proovivõtt erinevad aastati), mitte
 veekogumi seisundi hinnangut. Põhjaveebilanss on endiselt osaliselt kaetud (varud + võtt eraldi).
+
+## Täiendus 2026-10-06 (hiljem): muld seiretabelist
+
+Mullaseire (pH, orgaaniline süsinik, huumus, P, K, Cu, Zn, Pb, Cd, Cr, Ni, Hg) on lehel „Muld ja maahõive“
+(`soil_analysis.py`, 5-aastased perioodid alates 2002; mediaan, p10, p90). Maahõive ja mahepõllumajandus
+vajavad välist allikat ja jäävad katmata. **Hoiatus:** analüüsimeetodid on perioodide jooksul muutunud
+(pH KCl → ISO 10390, P Egner-Riehm → Mehlich III, Corg Tjurin → Dumas), seega perioodide erinevus ei ole
+puhas ajatrend; korduvalt mõõdetud proovialasid on pH ja Corg paarisvõrdluseks alla 20.

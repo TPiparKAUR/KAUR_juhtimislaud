@@ -28,7 +28,7 @@
     const series = o.series.filter((s) => s.data.length);
     const years = [...new Set(series.flatMap((s) => s.data.map((r) => r.year)))].sort((a, b) => a - b);
     const frm = frame(host, { title: o.title, subtitle: o.subtitle, legend: series.map((s) => ['dot', s.color, s.label]),
-      table: { head: ['Aasta', ...series.flatMap((s) => [`${s.label} (${o.unit || '%'})`, `${s.label}: ${o.nName || 'puid'}`])], rows: years.map((y) => [String(y), ...series.flatMap((s) => { const r = s.data.find((x) => x.year === y); return r ? [fmt(r.value, o.dec ?? 1), fmt(r.n, 0)] : ['–', '–']; })]) }, note: o.note });
+      table: { head: ['Aasta', ...series.flatMap((s) => [`${s.label} (${o.unit ?? '%'})`, `${s.label}: ${o.nName || 'puid'}`])], rows: years.map((y) => [String(y), ...series.flatMap((s) => { const r = s.data.find((x) => x.year === y); return r ? [fmt(r.value, o.dec ?? 1), fmt(r.n, 0)] : ['–', '–']; })]) }, note: o.note });
     responsive(frm, (box, w) => {
       const m = { l: 52, r: 14, t: 16, b: 28 }, h = o.height || 300;
       const svg = el('svg', { width: w, height: h, role: 'img', 'aria-label': o.title }, box);
@@ -36,12 +36,12 @@
       const { ticks } = niceTicks(0, top, 5);
       const x = (yr) => m.l + (w - m.l - m.r) * ((yr - years[0]) / (years[years.length - 1] - years[0] || 1));
       const y = (v) => m.t + (h - m.t - m.b) * (1 - (v - ticks[0]) / (ticks[ticks.length - 1] - ticks[0] || 1));
-      axisY(el('g', {}, svg), y, ticks, w, m, o.unit || '%', o.axisDec ?? 0);
+      axisY(el('g', {}, svg), y, ticks, w, m, o.unit ?? '%', o.axisDec ?? 0);
       if (o.ref) { el('line', { x1: m.l, x2: w - m.r, y1: y(o.ref.value), y2: y(o.ref.value), stroke: '#c8312b', 'stroke-dasharray': '5 4', 'stroke-width': 1.5 }, svg); el('text', { x: w - m.r - 4, y: y(o.ref.value) - 5, 'text-anchor': 'end', class: 'tick' }, svg, o.ref.label); }
       for (const yr of years.filter((v, i) => i % Math.ceil(years.length / 8) === 0 || i === years.length - 1)) el('text', { x: x(yr), y: h - 8, 'text-anchor': 'middle', class: 'tick' }, svg, String(yr));
       for (const s of series) {
         el('path', { d: s.data.map((r, i) => `${i ? 'L' : 'M'}${x(r.year)},${y(r.value)}`).join(''), fill: 'none', stroke: s.color, 'stroke-width': 2.4 }, svg);
-        for (const r of s.data) { const c = el('circle', { cx: x(r.year), cy: y(r.value), r: 3, fill: s.color, tabindex: 0 }, svg); hover(c, () => `<b>${r.year}</b><br>${s.label}: <b>${fmt(r.value, o.dec ?? 1)} ${o.unit || '%'}</b><br>${r.extra || `${fmt(r.n, 0)} puud, ${r.plots} prooviala`}`); }
+        for (const r of s.data) { const c = el('circle', { cx: x(r.year), cy: y(r.value), r: 3, fill: s.color, tabindex: 0 }, svg); hover(c, () => `<b>${r.year}</b><br>${s.label}: <b>${fmt(r.value, o.dec ?? 1)} ${o.unit ?? '%'}</b><br>${r.extra || `${fmt(r.n, 0)} puud, ${r.plots} prooviala`}`); }
       }
     });
   }
@@ -90,13 +90,15 @@
       }
       const metals = ['Vask', 'Tsink', 'Plii', 'Kaadmium', 'Kroom', 'Nikkel', 'Elavhõbe', 'Arseen'].filter((m) => I[m]);
       if (metals.length) li.push(`<li><b>Metallid (mg/kg kuivaines):</b> ${metals.map((m) => `${m.toLowerCase()} mediaan ${fmt(last(I[m].periods).median, 2)} (${last(I[m].periods).period})`).join('; ')}.</li>`);
+      const changed = Object.keys(I).filter((n) => (I[n].methods || []).filter((m) => m.rows >= 100).length > 1);
+      if (changed.length) li.push(`<li><b>Meetodimuutus:</b> näitajate ${changed.map((n) => n.toLowerCase()).join(', ')} määramismeetod on perioodide vahel muutunud (nt pH KCl-meetod → ISO 10390 2018, fosfor Egner-Riehm → Mehlich III); perioodid ei ole seetõttu otse võrreldavad ja meetodid on iga graafiku märkuses.</li>`);
       host.innerHTML = `<ul class="findings">${li.join('')}</ul>`;
     },
     sph(host) {
       const so = d.soil; if (!so || !so.indicators.pH) return;
       const pl = so.indicators.pH.periods.filter((r) => r.plots >= 20);
       const mk = (label, color, f) => ({ label, color, data: pl.map((r) => ({ year: +r.period.slice(0, 4) + 2, value: f(r), n: r.samples, extra: `${r.period}: ${fmt(r.samples, 0)} proovi, ${fmt(r.plots, 0)} prooviala` })) });
-      lines(host, { title: 'Mulla pH (mullaseire)', subtitle: 'Perioodi mediaan ning 10. ja 90. protsentiil (pH ühikuta); iga punkt on 5-aastane periood.', unit: '', dec: 2, axisDec: 1, nName: 'proove', series: [mk('Mediaan', SLOTS[0], (r) => r.median), mk('10. protsentiil', SLOTS[2], (r) => r.p10), mk('90. protsentiil', SLOTS[1], (r) => r.p90)], note: 'Proovialad ei ole perioodide vahel samad; pH väärtused väljaspool 2-10 on välja jäetud (andmevead). Paaritatud muutus on kokkuvõttes ja lehe tekstis.' });
+      lines(host, { title: 'Mulla pH (mullaseire)', subtitle: 'Perioodi mediaan ning 10. ja 90. protsentiil (pH ühikuta); iga punkt on 5-aastane periood.', unit: '', dec: 2, axisDec: 1, nName: 'proove', series: [mk('Mediaan', SLOTS[0], (r) => r.median), mk('10. protsentiil', SLOTS[2], (r) => r.p10), mk('90. protsentiil', SLOTS[1], (r) => r.p90)], note: `Proovialad ei ole perioodide vahel samad; pH väärtused väljaspool 2-10 on välja jäetud (andmevead). Meetodid: ${so.indicators.pH.methods.map((m) => `${m.analyys_meetod_nimi || 'märkimata'} (${m.first_year}–${m.last_year})`).join('; ')}; meetod muutus perioodide vahel.` });
       const a = first(pl), b = last(pl), p = so.indicators.pH.paired;
       C.punch(host, `Mulla pH mediaan on ${fmt(a.median, 1)} (${a.period}) ja ${fmt(b.median, 1)} (${b.period}); ${p ? `samadel ${fmt(p.plots, 0)} proovialadel on mediaanmuutus ${sgn(p.median_change, 2)} ja ${fmt(100 * p.share_increased, 0)}% proovialadel pH kasvas` : 'paaritatud võrdlust ei saa teha'}; perioodide erinevus võib tuleneda proovialade koosseisust.`);
     },
@@ -104,7 +106,7 @@
       const so = d.soil; if (!so || !so.indicators['Orgaaniline süsinik']) return;
       const I = so.indicators['Orgaaniline süsinik'], pl = I.periods.filter((r) => r.plots >= 20);
       const mk = (label, color, f) => ({ label, color, data: pl.map((r) => ({ year: +r.period.slice(0, 4) + 2, value: f(r), n: r.samples, extra: `${r.period}: ${fmt(r.samples, 0)} proovi, ${fmt(r.plots, 0)} prooviala` })) });
-      lines(host, { title: 'Mulla orgaaniline süsinik (mullaseire)', subtitle: '% kuivaines; perioodi mediaan ning 10. ja 90. protsentiil.', unit: '%', dec: 2, axisDec: 1, nName: 'proove', series: [mk('Mediaan', SLOTS[0], (r) => r.median), mk('10. protsentiil', SLOTS[2], (r) => r.p10), mk('90. protsentiil', SLOTS[1], (r) => r.p90)], note: 'Proovialad ei ole perioodide vahel samad; huumus ja orgaaniline süsinik on eri näitajad.' });
+      lines(host, { title: 'Mulla orgaaniline süsinik (mullaseire)', subtitle: '% kuivaines; perioodi mediaan ning 10. ja 90. protsentiil.', unit: '%', dec: 2, axisDec: 1, nName: 'proove', series: [mk('Mediaan', SLOTS[0], (r) => r.median), mk('10. protsentiil', SLOTS[2], (r) => r.p10), mk('90. protsentiil', SLOTS[1], (r) => r.p90)], note: `Proovialad ei ole perioodide vahel samad; huumus ja orgaaniline süsinik on eri näitajad. Meetodid: ${I.methods.map((m) => `${m.analyys_meetod_nimi || 'märkimata'} (${m.first_year}–${m.last_year})`).join('; ')}; meetod muutus aastate vahel.` });
       const a = first(pl), b = last(pl), p = I.paired;
       C.punch(host, `Orgaanilise süsiniku mediaan on ${fmt(a.median, 2)}% (${a.period}) ja ${fmt(b.median, 2)}% (${b.period}); ${p ? `samadel ${fmt(p.plots, 0)} proovialadel on mediaanmuutus ${sgn(p.median_change, 2)} protsendipunkti` : 'paaritatud võrdlust ei saa teha'}; erinevus perioodide vahel võib tuleneda proovialade koosseisust.`);
     },
