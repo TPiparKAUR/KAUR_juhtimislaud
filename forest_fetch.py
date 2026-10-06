@@ -41,10 +41,10 @@ ERROR = "suhteline_viga"
 YEAR = "aasta"
 
 
-def fetch_all(client: Client, workers: int, page: int = PAGE) -> pl.DataFrame:
+def fetch_all(client: Client, workers: int, page: int = PAGE, table: str = TABLE) -> pl.DataFrame:
     """Read every row in totally ordered pages, in parallel; verify the count."""
-    total = client.count(TABLE) or 0
-    head = client.rows(TABLE, limit=1)
+    total = client.count(table) or 0
+    head = client.rows(table, limit=1)
     if not head:
         return pl.DataFrame()
     cols = list(head[0])
@@ -55,7 +55,7 @@ def fetch_all(client: Client, workers: int, page: int = PAGE) -> pl.DataFrame:
         got: list[dict[str, Any]] = []
         want = min(page, total - offset)
         while len(got) < want:
-            chunk = local.rows(TABLE, order=order, limit=want - len(got), offset=offset + len(got))
+            chunk = local.rows(table, order=order, limit=want - len(got), offset=offset + len(got))
             if not chunk:
                 break
             got += chunk
@@ -65,7 +65,7 @@ def fetch_all(client: Client, workers: int, page: int = PAGE) -> pl.DataFrame:
         parts = list(pool.map(one, range(0, total, page)))
     rows = [r for p in parts for r in p]
     if len(rows) != total:
-        raise RuntimeError(f"{TABLE}: read {len(rows)} rows, server says {total}")
+        raise RuntimeError(f"{table}: read {len(rows)} rows, server says {total}")
     return pl.DataFrame(rows, infer_schema_length=None)
 
 
