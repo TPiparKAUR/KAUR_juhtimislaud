@@ -63,7 +63,7 @@
     mcrown(host) {
       const series = Object.keys(NAMES).map((k, i) => ({ label: NAMES[k], color: COLS[i], data: dmg(sp(k)) }));
       lines(host, { title: 'Kahjustunud puude osakaal (üle 25% okka-/lehekadu)', subtitle: 'Hinnatud puudest, % aastas; metsaseire proovialad (aastate lõikes ei pruugi proovialade koosseis olla sama).', series,
-        note: 'Okka-/lehekadu on klassina; „kahjustunud“ = ülempiir üle 25%. Osakaal on puude lõikes; puude ja proovialade arv on tabelivaates.' });
+        note: 'Okka-/lehekadu on klassina; „kahjustunud“ = ülempiir üle 25%. Osakaal on puude lõikes; puude ja proovialade arv on tabelivaates. Esimeste aastate (1993–1996) kõrge mändide osakaal võib tuleneda hindamismeetodist või proovialade koosseisust (kinnitamata).' });
       const p = sp('harilik mänd'), k = sp('harilik kuusk');
       const al = last(cr.all);
       if (!(p.length && k.length)) C.punch(host, `Kahjustunud puude osakaal oli ${al.year}. aastal ${pctv(al.share_damaged)} (${fmt(al.trees, 0)} puud, ${al.plots} prooviala); liigipõhiseid võrdlusi ei ole piisavalt andmeid.`);

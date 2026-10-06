@@ -41,7 +41,7 @@ Leht ehitatakse `pages.yml` poolt kõigist harudest; lisatud tulemused ilmuvad a
 2. **Jäätmed (tehtud 2026-10-06)**: olmejäätmed (ch 20), pakend (15 01), biojäätmete märge. Avatud:
    ringleva materjali määr ja jäätmed vs SKP (välised allikad), biojäätmete täpne definitsioon, olmejäätmete
    ametlik määratlus (võib erineda peatükist 20), märgete (sete, metall, probleemtooted) tähendus.
-3. **Liigid / seire (käimas 2026-10-06)**: allikas leitud: `f_keskkonnaseire` (~10 mln rida, KESE
+3. **Liigid / seire (osaliselt tehtud 2026-10-06)**: allikas leitud: `f_keskkonnaseire` (~10 mln rida, KESE
    keskkonnaseire pikk tabel: 2,9 mln liigiga ridu, 8,1 mln arvväärtust, 0,2 mln mõõtemääramatusega; ridu
    perioodil 1995–2025 ~9,7 mln). Samas tabelis on ka metsaseire, mulla-, vee-, põhjavee- ja välisõhuseire, mis
    katab mitu Tableau vaadet (metsaseire okka-/lehekadu, nitraat põhjavees, jõgede TN/TP, mullaseire).
@@ -60,3 +60,18 @@ Leht ehitatakse `pages.yml` poolt kõigist harudest; lisatud tulemused ilmuvad a
 - Jäätmetabeli ühik (t), negatiivsed read, ohtlike jäätmete osakaalu hüpe 2019 → 2020.
 - Natura SDF säilimishinnangu seos EL aruandluse seisundiga.
 - Aastaraamatute PDF-id ei ole repos (artefakt `yearbooks-raw`, 30 päeva); Soome, Island, Rootsi Skogsdata puuduvad.
+
+## Seire (KESE) töövoog: kuidas jätkata
+
+1. `monitoring_data.yml` (matriks, 32 aastatööd) → `monitoring-agg` artefakt (näitaja × aasta × liik, ridade arv,
+   arvväärtuste summa/min/max) + haru `monitoring-data-log`. Täielik: 9 983 125 rida (27 tuhat rida ilma
+   seireaja alguseta ei ole valitud).
+2. `monitoring_catalog.yml` (input run_id) → haru `monitoring-catalog` (programmid, 29 rühma, näitajad, liigid).
+3. `monitoring_extract.yml` (input: `naitaja_nimetus` väärtused eraldatud |-ga) → artefakt `monitoring-extract` ja
+   kokkuvõte harul `monitoring-extract-summary`; väärtused võivad olla `vaartus_arv_moodetud` (arv) või
+   `vaartus_muu` (klass/tekst), nt okka-/lehekadu.
+4. `monitoring_analyse.yml` (input extract run_id) → `monitoring.json` harul `monitoring-analysis` (Mets ja Liigid).
+Järgmised näitajad kataloogist: nitraat põhjavees, jõgede üldlämmastik/-fosfor (eutrofeerumine), mullaseire
+raskmetallid, välisõhu seire. Avatud küsimused: okka-/lehekao klassipiirid (ICP Forests?) ja hindajate kooskõla,
+1993–1996 kõrge mändide kahjustusosakaal (meetod või proovialad), mis on „Liigi isendite arv“ hundil/karul
+(vaatlused või jäljed?), lindude haudepaaride loenduse indeksi meetod.

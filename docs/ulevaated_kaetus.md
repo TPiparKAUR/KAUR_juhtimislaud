@@ -10,7 +10,7 @@ Genereeritud `analyse_ulevaated.py` poolt failidest `data/ulevaate_kaetus.toml` 
 | Vesi | 7 | 2132 | 2 | 3 | 2 | 16 |
 | Välisõhk | 7 | 1932 | 2 | 3 | 2 | 24 |
 | Mets | 5 | 1849 | 2 | 2 | 1 | 21 |
-| Seire (RKSP) | 7 | 1259 | 2 | 0 | 5 | 59 |
+| Seire (RKSP) | 7 | 1259 | 3 | 0 | 4 | 53 |
 | Energeetika | 3 | 772 | 0 | 1 | 2 | 71 |
 | Ökosüsteemid | 2 | 761 | 0 | 1 | 1 | 35 |
 | Muld ja maahõive | 3 | 676 | 0 | 0 | 3 | 100 |
@@ -38,10 +38,10 @@ Genereeritud `analyse_ulevaated.py` poolt failidest `data/ulevaate_kaetus.toml` 
 | Jäätmed | Keskkonnaülevaade - Jäätmed - Olmejäätmed | 284 | olemas | API:f_jaatmeliikumine_fix_riik | Olmejäätmete (peatükk 20) vood 2004-2025 ja suurimad liigid; olmejäätmete ametlik määratlus võib erineda peatükist 20. |
 | Jäätmed | Jäätmearuandlus_KKP jäätmete teemalehtede valdkonnad_Ehitus - lammutusjäätmed | 260 | olemas | API:f_jaatmeliikumine_fix_riik | Ehitus- ja lammutusjäätmed on peatükk 17 jäätmetekke graafikul. |
 | Jäätmed | Keskkonnaülevaade - Jäätmed - Kogujäätme teke valdkonniti | 252 | olemas | API:f_jaatmeliikumine_fix_riik | Teke peatükkide kaupa. |
-| Liigid | Keskkonnaülevaade - Liigid - Liikide seisund | 785 | puudub | teadmata | Liikide seisundi hinnang (nt ELi aruandlus); meil ainult leiukohtade register. |
-| Liigid | Keskkonnaülevaade - Liigid - Lindude indeks | 649 | puudub | teadmata | Lindude indeks (seire). |
+| Liigid | Keskkonnaülevaade - Liigid - Liikide seisund | 785 | puudub | teadmata | Seiretabelis on liikide kohta ridu (liikide arv aastas), kuid liikide seisundi hinnang (nt EL aruandlus) ei ole selles tabelis tuvastatud. |
+| Liigid | Keskkonnaülevaade - Liigid - Lindude indeks | 649 | puudub | API:f_keskkonnaseire | Linnuloenduse haudepaaride ridu on 189 tuhat (2008-2025), kuid indeksi arvutus vajab seiremeetodi tundmist; ei ole arvutatud. |
 | Liigid | Keskkonnaülevaade - Liigid - Punase nimestiku liigid | 631 | puudub | teadmata | Punane nimestik; API-s ei ole tuvastatud. |
-| Liigid | Keskkonnaülevaade - Liigid - Suurkiskjate arvukus | 562 | puudub | teadmata | Suurkiskjate arvukus (seire). |
+| Liigid | Keskkonnaülevaade - Liigid - Suurkiskjate arvukus | 562 | puudub | API:f_keskkonnaseire | Tabelis on hundi ja karu vaatluste/jälgede ridu, kuid arvukuse hinnang vajab seiremeetodi tundmist; ei ole arvutatud. |
 | Mets | Keskkonnaülevaade - Mets - Metsamaa pindala | 429 | olemas | API:f_smi_tulemused | Metsamaa pindala (SMI). |
 | Mets | Keskkonnaülevaade - Mets - Lehtpuu_Okaspuu | 400 | olemas | API:f_smi_tulemused | Puuliigid (tagavara enamuspuuliigi järgi). |
 | Mets | Keskkonnaülevaade - Mets - Üraskid | 391 | puudub | teadmata | Kuuse-kooreüraskid (metsakaitse seire). |
@@ -57,7 +57,7 @@ Genereeritud `analyse_ulevaated.py` poolt failidest `data/ulevaate_kaetus.toml` 
 | Seire (RKSP) | RKSP - Kiirgusseire | 155 | puudub | teadmata | Kiirgusseire. |
 | Seire (RKSP) | RKSP - Välisõhu seire | 141 | puudub | teadmata | Välisõhu seire. |
 | Seire (RKSP) | RKSP - Kompleksseire | 99 | puudub | teadmata | Kompleksseire. |
-| Seire (RKSP) | RKSP - Metsaseire | 79 | puudub | teadmata | Okka- ja lehekadu. |
+| Seire (RKSP) | RKSP - Metsaseire | 79 | olemas | API:f_keskkonnaseire | Metsaseire okka-/lehekadu (puude võra seisund) 1993-2025 klassidena; ICP Forests klassipiirid kinnitamata. |
 | Seire (RKSP) | RKSP - Hüdroloogiline seire | 77 | olemas | API:f_hydroseire | Hüdroloogiline seire. |
 | Välisõhk | Välisõhk - Heitkogused - Heitkoguste inventuur | 336 | osaliselt | teadmata | Heitkoguste inventuur (riiklik); meil käitiste aruanded. |
 | Välisõhk | Välisõhk - Heitkogused - Heitkoguste ülevaade | 333 | osaliselt | teadmata | Heitkoguste ülevaade. |

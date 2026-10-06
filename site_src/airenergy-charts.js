@@ -40,7 +40,7 @@
         });
         if (!o.noLabels) el('text', { x: cx, y: y(acc) - 5, 'text-anchor': 'middle', class: 'lbl' }, svg, fmt(acc, o.dec));
         if (i % Math.max(1, Math.ceil(30 / ((w - m.l - m.r) / years.length))) === 0) el('text', { x: cx, y: h - 22, 'text-anchor': 'middle', class: 'tick' }, svg, String(yr));
-        if (o.coverage) el('text', { x: cx, y: h - 8, 'text-anchor': 'middle', class: 'unit' }, svg, `n=${o.coverage.get(yr)}`);
+        if (o.coverage && i % Math.max(1, Math.ceil(72 / ((w - m.l - m.r) / years.length))) === 0) el('text', { x: cx, y: h - 8, 'text-anchor': 'middle', class: 'unit' }, svg, `n=${o.coverage.get(yr)}`);
       });
     });
   }

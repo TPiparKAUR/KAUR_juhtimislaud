@@ -21,9 +21,9 @@ töövihikute loetelu koos vaatamiste arvuga (`data/tableau_public_workbooks.csv
 
 | Katvus | Vaateid | Vaatamisi | Osakaal vaatamistest |
 |---|---|---|---|
-| olemas | 19 | 6 754 | 38% |
+| olemas | 20 | 6 833 | 38% |
 | osaliselt | 11 | 4 008 | 22% |
-| puudub | 24 | 7 126 | 40% |
+| puudub | 23 | 7 047 | 39% |
 
 Teemati (vaatamised; katmata osa vaatamistest):
 
@@ -35,7 +35,7 @@ Teemati (vaatamised; katmata osa vaatamistest):
 | Vesi | 2 132 | 16% (oli 78% enne veekasutuse lisamist) |
 | Välisõhk | 1 932 | 24% |
 | Mets | 1 849 | 21% |
-| Seire (RKSP) | 1 259 | 59% |
+| Seire (RKSP) | 1 259 | 53% (metsaseire lisandus) |
 | Energeetika | 772 | 71% |
 | Ökosüsteemid | 761 | 35% |
 | Muld ja maahõive | 676 | **100%** |
@@ -79,3 +79,15 @@ Loodusdirektiivi elupaigatüüpide seisund (497, osaliselt), Kuuse-kooreüraskid
 Järgmise sammuna tuleks #1 jaoks teha `water`-sarja uuring: `f_pohjaveevarud`, `f_pohjaveekogumid_pohjaveevaru`,
 `t_awtabel004_curr`, `f_reoveealad_koormus` struktuuri ja grain-i raport (nagu veekogumite puhul), enne
 analüüsi kirjutamist.
+
+## Täiendus 2026-10-06: liikide ja seire allikas leitud
+
+Avalikus API-s on `f_keskkonnaseire` (KESE keskkonnaseire pikk tabel, 9,98 mln rida 1949–2025, 29 näitajate
+rühma, 2,9 mln liigiga rida). See katab metsaseire (okka-/lehekadu), vee- ja põhjavee seire, mullaseire,
+välisõhu seire, kiirguse (väga väike maht) ja liikide loendused (isendite arv, haudepaarid, jäljerajad).
+Tehtud: kataloog (`monitoring_catalog.py`), metsaseire võra seisund (`crown_analysis.py`, Mets leht),
+seire ulatus ja liikide arv aastas (Liigid leht). **Tegemata:** lindude indeks, suurkiskjate arvukus,
+liikide seisund ja Punane nimestik, sest nende arvutamine eeldab seiremeetodi (valim, kordused, mitmekordne
+vaatlus) tundmist ja eksperdi kinnitust; tabelis ei ole ka Punase nimestiku kategooriat (ainult
+kaitsekategooria `liik_kategooria`). Seiretabel katab veel mitu vaadet (nitraat põhjavees, jõgede TN/TP,
+mullaseire raskmetallid), mille analüüs on järgmine samm.

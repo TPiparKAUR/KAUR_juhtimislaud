@@ -4,16 +4,16 @@
   "n_views": 54,
   "by_status": {
    "olemas": {
-    "n": 19,
-    "views": 6754
+    "n": 20,
+    "views": 6833
    },
    "osaliselt": {
     "n": 11,
     "views": 4008
    },
    "puudub": {
-    "n": 24,
-    "views": 7126
+    "n": 23,
+    "views": 7047
    }
   },
   "themes": {
@@ -119,13 +119,13 @@
    "seire": {
     "views": 1259,
     "n": 7,
-    "olemas": 2,
+    "olemas": 3,
     "osaliselt": 0,
-    "puudub": 5,
-    "views_olemas": 516,
+    "puudub": 4,
+    "views_olemas": 595,
     "views_osaliselt": 0,
-    "views_puudub": 743,
-    "share_views_uncovered": 0.59
+    "views_puudub": 664,
+    "share_views_uncovered": 0.527
    }
   },
   "top_gaps": [
@@ -143,7 +143,7 @@
     "teema": "liigid",
     "meie": "puudub",
     "andmed": "teadmata",
-    "markus": "Liikide seisundi hinnang (nt ELi aruandlus); meil ainult leiukohtade register.",
+    "markus": "Seiretabelis on liikide kohta ridu (liikide arv aastas), kuid liikide seisundi hinnang (nt EL aruandlus) ei ole selles tabelis tuvastatud.",
     "title": "Keskkonnaülevaade - Liigid - Liikide seisund",
     "views": 785
    },
@@ -151,8 +151,8 @@
     "workbook": "Keskkonnalevaade-Liigid-Lindudeindeks",
     "teema": "liigid",
     "meie": "puudub",
-    "andmed": "teadmata",
-    "markus": "Lindude indeks (seire).",
+    "andmed": "API:f_keskkonnaseire",
+    "markus": "Linnuloenduse haudepaaride ridu on 189 tuhat (2008-2025), kuid indeksi arvutus vajab seiremeetodi tundmist; ei ole arvutatud.",
     "title": "Keskkonnaülevaade - Liigid - Lindude indeks",
     "views": 649
    },
@@ -169,8 +169,8 @@
     "workbook": "Keskkonnalevaade-Liigid-Suurkiskjatearvukus",
     "teema": "liigid",
     "meie": "puudub",
-    "andmed": "teadmata",
-    "markus": "Suurkiskjate arvukus (seire).",
+    "andmed": "API:f_keskkonnaseire",
+    "markus": "Tabelis on hundi ja karu vaatluste/jälgede ridu, kuid arvukuse hinnang vajab seiremeetodi tundmist; ei ole arvutatud.",
     "title": "Keskkonnaülevaade - Liigid - Suurkiskjate arvukus",
     "views": 562
    },
@@ -353,7 +353,7 @@
    "teema": "liigid",
    "meie": "puudub",
    "andmed": "teadmata",
-   "markus": "Liikide seisundi hinnang (nt ELi aruandlus); meil ainult leiukohtade register.",
+   "markus": "Seiretabelis on liikide kohta ridu (liikide arv aastas), kuid liikide seisundi hinnang (nt EL aruandlus) ei ole selles tabelis tuvastatud.",
    "title": "Keskkonnaülevaade - Liigid - Liikide seisund",
    "views": 785
   },
@@ -370,8 +370,8 @@
    "workbook": "Keskkonnalevaade-Liigid-Suurkiskjatearvukus",
    "teema": "liigid",
    "meie": "puudub",
-   "andmed": "teadmata",
-   "markus": "Suurkiskjate arvukus (seire).",
+   "andmed": "API:f_keskkonnaseire",
+   "markus": "Tabelis on hundi ja karu vaatluste/jälgede ridu, kuid arvukuse hinnang vajab seiremeetodi tundmist; ei ole arvutatud.",
    "title": "Keskkonnaülevaade - Liigid - Suurkiskjate arvukus",
    "views": 562
   },
@@ -379,8 +379,8 @@
    "workbook": "Keskkonnalevaade-Liigid-Lindudeindeks",
    "teema": "liigid",
    "meie": "puudub",
-   "andmed": "teadmata",
-   "markus": "Lindude indeks (seire).",
+   "andmed": "API:f_keskkonnaseire",
+   "markus": "Linnuloenduse haudepaaride ridu on 189 tuhat (2008-2025), kuid indeksi arvutus vajab seiremeetodi tundmist; ei ole arvutatud.",
    "title": "Keskkonnaülevaade - Liigid - Lindude indeks",
    "views": 649
   },
@@ -567,9 +567,9 @@
   {
    "workbook": "RKSP-Metsaseire",
    "teema": "seire",
-   "meie": "puudub",
-   "andmed": "teadmata",
-   "markus": "Okka- ja lehekadu.",
+   "meie": "olemas",
+   "andmed": "API:f_keskkonnaseire",
+   "markus": "Metsaseire okka-/lehekadu (puude võra seisund) 1993-2025 klassidena; ICP Forests klassipiirid kinnitamata.",
    "title": "RKSP - Metsaseire",
    "views": 79
   },
