@@ -21,9 +21,9 @@ töövihikute loetelu koos vaatamiste arvuga (`data/tableau_public_workbooks.csv
 
 | Katvus | Vaateid | Vaatamisi | Osakaal vaatamistest |
 |---|---|---|---|
-| olemas | 20 | 6 833 | 38% |
-| osaliselt | 11 | 4 008 | 22% |
-| puudub | 23 | 7 047 | 39% |
+| olemas | 21 | 7 019 | 39% |
+| osaliselt | 12 | 4 164 | 23% |
+| puudub | 21 | 6 705 | 37% |
 
 Teemati (vaatamised; katmata osa vaatamistest):
 
@@ -32,7 +32,7 @@ Teemati (vaatamised; katmata osa vaatamistest):
 | Jäätmed | 3 509 | 19% (oli 38% enne olme-, pakendi- ja biojäätmete vooge) |
 | Liigid | 2 627 | **100%** |
 | Ilm ja kliima | 2 371 | 18% |
-| Vesi | 2 132 | 16% (oli 78% enne veekasutuse lisamist) |
+| Vesi | 2 132 | 0% katmata (osaliselt kaetud: põhjaveebilanss, eutrofeerumine, reostuskoormus merre, põhjavee koondseisund) |
 | Välisõhk | 1 932 | 24% |
 | Mets | 1 849 | 21% |
 | Seire (RKSP) | 1 259 | 53% (metsaseire lisandus) |
@@ -91,3 +91,10 @@ liikide seisund ja Punane nimestik, sest nende arvutamine eeldab seiremeetodi (v
 vaatlus) tundmist ja eksperdi kinnitust; tabelis ei ole ka Punase nimestiku kategooriat (ainult
 kaitsekategooria `liik_kategooria`). Seiretabel katab veel mitu vaadet (nitraat põhjavees, jõgede TN/TP,
 mullaseire raskmetallid), mille analüüs on järgmine samm.
+
+## Täiendus 2026-10-06 (hiljem): vee kvaliteet seiretabelist
+
+Põhjavee nitraat (90. protsentiil ja normi ületanute osakaal; mediaan jäetud välja, sest kuni 46% väärtustest on
+märgitud „<“) ning üldlämmastiku ja -fosfori mediaanid jõgedes, järvedes ja rannikuvees on „Vesi“ lehel
+(`wq_analysis.py`). Tulemused kirjeldavad seireandmeid (seirekohad ja proovivõtt erinevad aastati), mitte
+veekogumi seisundi hinnangut. Põhjaveebilanss on endiselt osaliselt kaetud (varud + võtt eraldi).

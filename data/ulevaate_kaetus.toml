@@ -184,9 +184,9 @@ markus = "Põhjaveekogumid 2014 ja 2020, hulgad ei kattu."
 [[vaade]]
 workbook = "Keskkonnalevaade-Vesi-Eutrofeerumine"
 teema = "vesi"
-meie = "puudub"
-andmed = "API:f_veekogumi_seisundid"
-markus = "Tabelis on FÜKE üldlämmastik/-fosfor (alla 8% ridadest); ühik kinnitamata."
+meie = "osaliselt"
+andmed = "API:f_keskkonnaseire"
+markus = "Üldlämmastiku ja -fosfori mediaanid jõgedes, järvedes ja rannikuvees; veekogumite eutrofeerumise hinnang (klassifitseerimine) puudub."
 
 [[vaade]]
 workbook = "Keskkonnalevaade-Vesi-Veekasutus"
@@ -198,9 +198,9 @@ markus = "Veekasutus sektori ja veeliigi järgi 2022-2025 (veearuanded); neli aa
 [[vaade]]
 workbook = "Keskkonnalevaade-Vesi-NO3phjavees"
 teema = "vesi"
-meie = "puudub"
-andmed = "teadmata"
-markus = "Nitraat põhjavees (seire)."
+meie = "olemas"
+andmed = "API:f_keskkonnaseire"
+markus = "Põhjavee nitraadi 90. protsentiil ja normi ületanute osakaal aastati (seireandmed); seirekohtade koosseis muutub aastati."
 
 [[vaade]]
 workbook = "Keskkonnalevaade-Vesi-Reostuskoormusedmerre"

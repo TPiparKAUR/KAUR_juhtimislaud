@@ -15,6 +15,8 @@
     return;
   }
   const cr = d.crown, cov = d.coverage;
+  const maxY = +d.meta.generated_utc.slice(0, 4) - 1; // the running year is incomplete
+  const MINN = 30; // fewer samples per year are not shown
   const NAMES = { 'harilik mänd': 'Harilik mänd', 'harilik kuusk': 'Harilik kuusk', arukask: 'Arukask' };
   const COLS = [SLOTS[1], SLOTS[2], SLOTS[0]];
   const pctv = (v) => `${fmt(100 * v, 0)}%`;
@@ -81,29 +83,30 @@
     wqfindings(host) {
       const w = d.water_quality;
       if (!w) { host.innerHTML = '<p class="viz-note">Veekvaliteedi andmeid ei ole.</p>'; return; }
-      const g = w.groundwater_nitrate.years, gl = last(g), gf = first(g), li = [];
+      const g = w.groundwater_nitrate.years.filter((r) => r.samples >= MINN && r.year <= maxY), gl = last(g), gf = first(g), li = [];
       li.push(`<li><b>Mida see on:</b> keskkonnaseire (KESE) veeproovide kontsentratsioonid: põhjavee nitraat (${fmt(w.groundwater_nitrate.rows_used, 0)} proovi) ning üldlämmastik ja üldfosfor pinna- ja rannikuvees. Ühikud on teisendatud ühtseks (aatommassidega; tundmatu ühikuga read välja jäetud). Statistikud on proovide mediaanid, mitte vooluhulgaga kaalutud koormus; seirekohad ja proovivõtt erinevad aastati.</li>`);
-      li.push(`<li><b>Põhjavee nitraat:</b> mediaan ${fmt(gf.median, 1)} mg NO₃/l (${gf.year}) → ${fmt(gl.median, 1)} (${gl.year}); proovidest ületab EL põhjavee normi (${w.groundwater_nitrate.limit_mg_no3_l} mg NO₃/l) ${fmt(100 * gl.share_over_limit, 1)}% (${gl.year}, ${fmt(gl.samples, 0)} proovi, ${fmt(gl.sites, 0)} seirekohta).</li>`);
+      li.push(`<li><b>Põhjavee nitraat:</b> 90. protsentiil ${fmt(gf.p90, 1)} mg NO₃/l (${gf.year}) → ${fmt(gl.p90, 1)} (${gl.year}); mediaani ei esitata, sest kuni ${fmt(100 * Math.max(...g.map((r) => r.share_below_loq_mark)), 0)}% proovidest on märgitud „<“ (alla määramispiiri). Proovidest ületab EL põhjavee normi (${w.groundwater_nitrate.limit_mg_no3_l} mg NO₃/l) ${fmt(100 * gl.share_over_limit, 1)}% (${gl.year}, ${fmt(gl.samples, 0)} proovi, ${fmt(gl.sites, 0)} seirekohta).</li>`);
       for (const [k, name, unit] of [['tn', 'Üldlämmastik', 'mg N/l'], ['tp', 'Üldfosfor', 'mg P/l']]) {
-        const cats = [...new Set(w.surface[k].map((r) => r.category))];
-        const bits = cats.map((c) => { const r = w.surface[k].filter((x) => x.category === c); return `${c.toLowerCase()} ${fmt(first(r).median, 2)} (${first(r).year}) → ${fmt(last(r).median, 2)} (${last(r).year})`; });
+        const sf = w.surface[k].filter((r) => r.year <= maxY);
+        const cats = [...new Set(sf.map((r) => r.category))];
+        const bits = cats.map((c) => { const r = sf.filter((x) => x.category === c); return `${c.toLowerCase()} ${fmt(first(r).median, 2)} (${first(r).year}) → ${fmt(last(r).median, 2)} (${last(r).year})`; });
         if (bits.length) li.push(`<li><b>${name}</b> (mediaan, ${unit}): ${bits.join('; ')}.</li>`);
       }
       host.innerHTML = `<ul class="findings">${li.join('')}</ul>`;
     },
     wqnitrate(host) {
       const w = d.water_quality; if (!w) return;
-      const g = w.groundwater_nitrate.years;
+      const g = w.groundwater_nitrate.years.filter((r) => r.samples >= MINN && r.year <= maxY);
       const mk = (label, color, f) => ({ label, color, data: g.map((r) => ({ year: r.year, value: f(r), n: r.samples, extra: `${fmt(r.samples, 0)} proovi, ${fmt(r.sites, 0)} seirekohta` })) });
-      lines(host, { title: 'Nitraat põhjavees', subtitle: 'Mediaan ja 90. protsentiil proovide kaupa, mg NO₃/l; punane joon = EL põhjavee norm.', unit: 'mg/l', dec: 1, nName: 'proove', series: [mk('Mediaan', SLOTS[0], (r) => r.median), mk('90. protsentiil', SLOTS[1], (r) => r.p90)], ref: { value: w.groundwater_nitrate.limit_mg_no3_l, label: `${w.groundwater_nitrate.limit_mg_no3_l} mg/l (norm)` },
-        note: 'Nitraatlämmastik on teisendatud nitraadiks (× 4,427). Seirekohtade arv ja koosseis muutub aastati; mediaanid ei ole riiklik keskmine.' });
-      const gl = last(g), peak = g.reduce((a, r) => (r.p90 > a.p90 ? r : a), g[0]);
-      C.punch(host, `Põhjavee nitraadi mediaan oli ${fmt(gl.median, 1)} mg/l (${gl.year}), 90. protsentiil ${fmt(gl.p90, 1)}; proovidest ületas normi ${fmt(100 * gl.share_over_limit, 1)}% (kõrgeim 90. protsentiil ${fmt(peak.p90, 0)} mg/l aastal ${peak.year}); seirekohad erinevad aastati (${fmt(gl.sites, 0)} kohta ${gl.year}).`);
+      lines(host, { title: 'Nitraat põhjavees', subtitle: `90. protsentiil proovide kaupa, mg NO₃/l (aastad vähemalt ${MINN} prooviga); punane joon = EL põhjavee norm.`, unit: 'mg/l', dec: 1, nName: 'proove', series: [mk('90. protsentiil', SLOTS[1], (r) => r.p90)], ref: { value: w.groundwater_nitrate.limit_mg_no3_l, label: `${w.groundwater_nitrate.limit_mg_no3_l} mg/l (norm)` },
+        note: 'Nitraatlämmastik on teisendatud nitraadiks (korrutatud 4,427-ga). Osa väärtustest on märgitud „<“ (alla määramispiiri), seega mediaan oleks määramispiiri valiku mõju all; kasutatakse 90. protsentiili. Seirekohtade arv ja koosseis muutub aastati; see ei ole riiklik keskmine.' });
+      const gl = last(g), hi = g.filter((r) => r.samples >= 100).reduce((a, r) => (r.share_over_limit > a.share_over_limit ? r : a), g[0]);
+      C.punch(host, `Põhjavee nitraadi 90. protsentiil oli ${fmt(gl.p90, 1)} mg/l (${gl.year}); proovidest ületas normi ${fmt(100 * gl.share_over_limit, 1)}% (suurim osakaal ${fmt(100 * hi.share_over_limit, 1)}% aastal ${hi.year}); ${fmt(100 * gl.share_below_loq_mark, 0)}% väärtustest on märgitud „<“ ning seirekohad erinevad aastati (${fmt(gl.sites, 0)} kohta ${gl.year}).`);
     },
     wqnutrients(host) {
       const w = d.water_quality; if (!w) return;
       C.selectable(host, [{ value: 'tn', text: 'Üldlämmastik (mg N/l)' }, { value: 'tp', text: 'Üldfosfor (mg P/l)' }], 'tn', 'Näitaja:', (holder, key) => {
-        const rows = w.surface[key], cats = [...new Set(rows.map((r) => r.category))];
+        const rows = w.surface[key].filter((r) => r.year <= maxY), cats = [...new Set(rows.map((r) => r.category))];
         const unit = key === 'tn' ? 'mg N/l' : 'mg P/l', name = key === 'tn' ? 'Üldlämmastik' : 'Üldfosfor';
         const series = cats.map((c, i) => ({ label: c, color: [SLOTS[0], SLOTS[2], SLOTS[1]][i % 3], data: rows.filter((r) => r.category === c).map((r) => ({ year: r.year, value: r.median, n: r.samples, extra: `${fmt(r.samples, 0)} proovi, ${fmt(r.sites, 0)} seirekohta` })) }));
         lines(holder, { title: `${name} pinna- ja rannikuvees`, subtitle: `Proovide mediaan aastas, ${unit}; üle 5 proovi grupis.`, unit, dec: 2, axisDec: 2, nName: 'proove', series, note: 'Proovide mediaan, mitte vooluhulgaga kaalutud; seirekohtade koosseis muutub aastati; ühikud on teisendatud (µmol/l, µg/l ja mg/m³ → mg/l).' });
@@ -123,6 +126,13 @@
       C.natureBars(host, { rows, unit: 'rida', title: 'Seireandmete maht näitajate rühma järgi', subtitle: 'Seiretabeli ridade arv rühmati; sulgudes esimene ja viimane aasta.', color: SLOTS[0],
         note: `Kokku ${fmt(cov.rows, 0)} rida. Rida on üks mõõdetud väärtus või vaatlus; maht ei näita keskkonnaseisundit.` });
       C.punch(host, `Suurimad rühmad on ${cov.groups[0].name.toLowerCase()} (${fmt(cov.groups[0].rows / 1e6, 1)} mln rida) ja ${cov.groups[1].name.toLowerCase()} (${fmt(cov.groups[1].rows / 1e6, 1)} mln); ${cov.groups.length} rühmast ainult ${cov.groups.filter((g) => g.last_year >= 2024).length} on andmeid aastast 2024 või hilisemast.`);
+    },
+    wqmethods(host) {
+      const w = d.water_quality; if (!w) return;
+      host.innerHTML = `<div class="methods"><b>Andmed ja meetod</b> <span class="review-flag">valdkonnaekspert ülevaatamata</span>
+        <p><b>Allikas ja päritolu:</b> Keskkonnaagentuuri avaandmed (keskkonnaandmed.envir.ee), keskkonnaseire tabel (KESE); vee kvaliteedi näitajad (nitraat, üldlämmastik, üldfosfor). Tegu on seireandmetega, mitte veekogumi seisundi hinnanguga.</p>
+        <p><b>Tõlgendus (kinnitamata):</b> ${w.meta.interpretation.join(' ')}</p>
+        <p><b>Piirangud:</b> seirekohtade arv ja koosseis muutub aastati (aastate muutus võib kajastada valimit); osa väärtustest on märgitud „<“ (alla määramispiiri) ja mediaanid sõltuksid määramispiirist; mitte-täieliku käesoleva aasta andmed on välja jäetud; veekogumi seisundi hinnang nõuab ametlikku klassifitseerimismetoodikat, mida siin ei rakendatud. Genereeritud ${d.meta.generated_utc.slice(0, 10)} (UTC).</p></div>`;
     },
     mmethods(host) {
       host.innerHTML = `<div class="methods"><b>Andmed ja meetod</b> <span class="review-flag">valdkonnaekspert ülevaatamata</span>

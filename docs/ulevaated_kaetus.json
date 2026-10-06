@@ -4,16 +4,16 @@
   "n_views": 54,
   "by_status": {
    "olemas": {
-    "n": 20,
-    "views": 6833
+    "n": 21,
+    "views": 7019
    },
    "osaliselt": {
-    "n": 11,
-    "views": 4008
+    "n": 12,
+    "views": 4164
    },
    "puudub": {
-    "n": 23,
-    "views": 7047
+    "n": 21,
+    "views": 6705
    }
   },
   "themes": {
@@ -86,13 +86,13 @@
    "vesi": {
     "views": 2132,
     "n": 7,
-    "olemas": 2,
-    "osaliselt": 3,
-    "puudub": 2,
-    "views_olemas": 418,
-    "views_osaliselt": 1372,
-    "views_puudub": 342,
-    "share_views_uncovered": 0.16
+    "olemas": 3,
+    "osaliselt": 4,
+    "puudub": 0,
+    "views_olemas": 604,
+    "views_osaliselt": 1528,
+    "views_puudub": 0,
+    "share_views_uncovered": 0.0
    },
    "valisohk": {
     "views": 1932,
@@ -468,9 +468,9 @@
   {
    "workbook": "Keskkonnalevaade-Vesi-Eutrofeerumine",
    "teema": "vesi",
-   "meie": "puudub",
-   "andmed": "API:f_veekogumi_seisundid",
-   "markus": "Tabelis on FÜKE üldlämmastik/-fosfor (alla 8% ridadest); ühik kinnitamata.",
+   "meie": "osaliselt",
+   "andmed": "API:f_keskkonnaseire",
+   "markus": "Üldlämmastiku ja -fosfori mediaanid jõgedes, järvedes ja rannikuvees; veekogumite eutrofeerumise hinnang (klassifitseerimine) puudub.",
    "title": "Keskkonnaülevaade - Vesi - Eutrofeerumine",
    "views": 156
   },
@@ -486,9 +486,9 @@
   {
    "workbook": "Keskkonnalevaade-Vesi-NO3phjavees",
    "teema": "vesi",
-   "meie": "puudub",
-   "andmed": "teadmata",
-   "markus": "Nitraat põhjavees (seire).",
+   "meie": "olemas",
+   "andmed": "API:f_keskkonnaseire",
+   "markus": "Põhjavee nitraadi 90. protsentiil ja normi ületanute osakaal aastati (seireandmed); seirekohtade koosseis muutub aastati.",
    "title": "Keskkonnaülevaade - Vesi - NO3 põhjavees",
    "views": 186
   },

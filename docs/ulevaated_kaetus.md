@@ -7,7 +7,7 @@ Genereeritud `analyse_ulevaated.py` poolt failidest `data/ulevaate_kaetus.toml` 
 | Jäätmed | 10 | 3509 | 7 | 1 | 2 | 19 |
 | Liigid | 4 | 2627 | 0 | 0 | 4 | 100 |
 | Ilm ja kliima | 6 | 2371 | 4 | 0 | 2 | 18 |
-| Vesi | 7 | 2132 | 2 | 3 | 2 | 16 |
+| Vesi | 7 | 2132 | 3 | 4 | 0 | 0 |
 | Välisõhk | 7 | 1932 | 2 | 3 | 2 | 24 |
 | Mets | 5 | 1849 | 2 | 2 | 1 | 21 |
 | Seire (RKSP) | 7 | 1259 | 3 | 0 | 4 | 53 |
@@ -69,7 +69,7 @@ Genereeritud `analyse_ulevaated.py` poolt failidest `data/ulevaate_kaetus.toml` 
 | Vesi | Põhjaveebilanss | 1011 | osaliselt | API:f_pohjaveevarud | Meil kinnitatud varud lasundi järgi ja põhjaveevõtt; bilanssi (varu vs võtt) ei saa ehitada ilma seoseta. |
 | Vesi | Keskkonnaülevaade - Vesi - Pinnaveekogumite koondseisund | 245 | olemas | API:f_veekogumi_seisundid | Pinnaveekogumite seisund (paaritatud võrdlus). |
 | Vesi | Keskkonnaülevaade - Vesi - Põhjaveekogumite koondseisund | 223 | osaliselt | API:f_pohjaveekogumi_seisud | Põhjaveekogumid 2014 ja 2020, hulgad ei kattu. |
-| Vesi | Keskkonnaülevaade - Vesi - NO3 põhjavees | 186 | puudub | teadmata | Nitraat põhjavees (seire). |
+| Vesi | Keskkonnaülevaade - Vesi - NO3 põhjavees | 186 | olemas | API:f_keskkonnaseire | Põhjavee nitraadi 90. protsentiil ja normi ületanute osakaal aastati (seireandmed); seirekohtade koosseis muutub aastati. |
 | Vesi | Keskkonnaülevaade - Vesi - Veekasutus | 173 | olemas | API:t_awtabel004_curr | Veekasutus sektori ja veeliigi järgi 2022-2025 (veearuanded); neli aastat. |
-| Vesi | Keskkonnaülevaade - Vesi - Eutrofeerumine | 156 | puudub | API:f_veekogumi_seisundid | Tabelis on FÜKE üldlämmastik/-fosfor (alla 8% ridadest); ühik kinnitamata. |
+| Vesi | Keskkonnaülevaade - Vesi - Eutrofeerumine | 156 | osaliselt | API:f_keskkonnaseire | Üldlämmastiku ja -fosfori mediaanid jõgedes, järvedes ja rannikuvees; veekogumite eutrofeerumise hinnang (klassifitseerimine) puudub. |
 | Vesi | Keskkonnaülevaade - Vesi - Reostuskoormused merre | 138 | osaliselt | API:f_reoveealad_koormus | Meil väljalaskmete heitvee koormus (N, P jt) kokku, mitte merre jõudev koormus. |
