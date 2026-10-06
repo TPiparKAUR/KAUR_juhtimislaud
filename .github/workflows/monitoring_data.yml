@@ -1,0 +1,76 @@
+name: Monitoring data (aggregated)
+
+# Reads the national environmental monitoring table (f_keskkonnaseire, ~10 M rows) one calendar year
+# per job (year 0 = before 1995), aggregates each page to counts and numeric summaries per indicator
+# and species, and uploads each part as an artifact; `combine` merges the parts, names missing years
+# and publishes only the small log to the `monitoring-data-log` branch. If some years fail, use
+# "Re-run failed jobs". Concurrency is kept low (2 jobs x 3 requests) like the waste matrix.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: kaur-api  # one job at a time against the shared public API
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        year: [2025, 2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011, 2010, 2009, 2008, 2007, 2006, 2005, 2004, 2003, 2002, 2001, 2000, 1999, 1998, 1997, 1996, 1995, 0]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync --frozen
+      - run: uv run python monitoring_fetch.py --out out/parts --years ${{ matrix.year }} --workers 3 --budget-min 38
+        timeout-minutes: 42
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: monitoring-part-${{ matrix.year }}
+          path: out/parts/
+          retention-days: 30
+          if-no-files-found: warn
+
+  combine:
+    needs: fetch
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync --frozen
+      - uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          pattern: monitoring-part-*
+          merge-multiple: true
+          path: out/parts
+      - run: mkdir -p out/parts
+      - run: uv run python monitoring_combine.py --parts out/parts --out out/monitoring_agg --first 1995 --last 2025
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: monitoring-agg
+          path: out/monitoring_agg/
+          retention-days: 30
+      - name: Publish fetch log
+        if: always()
+        run: |
+          cp out/monitoring_agg/monitoring_fetch_log.json "$RUNNER_TEMP/monitoring_fetch_log.json"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan monitoring-data-log
+          git rm -rf --quiet .
+          cp "$RUNNER_TEMP/monitoring_fetch_log.json" monitoring_fetch_log.json
+          git add -- monitoring_fetch_log.json
+          git commit -m "Monitoring data log $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push --force origin monitoring-data-log

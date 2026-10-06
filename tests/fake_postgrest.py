@@ -30,7 +30,25 @@ class FakeState:
         self.lock = threading.Lock()
 
 
+def _compare(value: Any, op: str, ref: str) -> bool:
+    if op == "gte":
+        return value is not None and str(value) >= ref
+    if op == "lt":
+        return value is not None and str(value) < ref
+    if op == "eq":
+        return str(value) == ref
+    raise ValueError(f"unsupported operator {op}")
+
+
 def _matches(row: dict[str, Any], key: str, spec: str) -> bool:
+    if key == "and":  # and=(col.op.value,col.op.value)
+        parts = spec.strip("()").split(",")
+        return all(_compare(row.get(p.split(".", 2)[0]), *p.split(".", 2)[1:]) for p in parts)
+    if spec == "not.is.null":
+        return row.get(key) is not None
+    if spec.startswith(("gte.", "lt.")):
+        op, _, ref = spec.partition(".")
+        return _compare(row.get(key), op, ref)
     if spec.startswith("eq."):
         return str(row.get(key)) == spec[3:]
     if spec.startswith("not.in.("):
