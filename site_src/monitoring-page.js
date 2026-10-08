@@ -129,6 +129,50 @@
         <p><b>Tõlgendus (kinnitamata):</b> ${so.meta.interpretation.join(' ')}</p>
         <p><b>Piirangud:</b> proovialad ei ole perioodide vahel samad, proovivõtusügavus ja horisont erinevad (andmeväljad on enamasti täitmata); põllumuld ja muud mullaseire alad pole siin eristatud; metaboolsed näitajad, normid ja tõlgendus vajavad pedoloogi kinnitust. Genereeritud ${d.meta.generated_utc.slice(0, 10)} (UTC).</p></div>`;
     },
+    afindings(host) {
+      const a = d.air; if (!a) { host.innerHTML = '<p class="viz-note">Välisõhu seire andmeid ei ole.</p>'; return; }
+      const I = a.indicators, li = [];
+      const yrs = (n) => (I[n] ? I[n].years.filter((r) => r.year <= maxY) : []);
+      li.push(`<li><b>Mida see on:</b> riikliku välisõhu kvaliteedi seire (KESE) mõõtmised ${fmt(a.checks.stations, 0)} jaamas: ${fmt(a.checks.rows, 0)} väärtust. Read on tõlgendatud jaamade päevakeskmistena (kinnitamata); jaama aastakeskmine arvutatakse ainult piisava andmekattega aastatel, jaama tüüpi (linn, liiklus, taust) tabelis ei ole. Tulemus on jaamade aastakeskmiste mediaan ning vähim ja suurim jaam, mitte elanike kokkupuude.</li>`);
+      for (const n of ['Lämmastikdioksiid', 'Peened osakesed (PM 10)', 'Eriti peened osakesed (PM 2,5)', 'Osoon']) {
+        const y = yrs(n); if (!y.length) continue; const f = first(y), l = last(y), p = I[n].paired;
+        li.push(`<li><b>${n}:</b> jaamade aastakeskmiste mediaan ${fmt(f.median, 1)} (${f.year}) → ${fmt(l.median, 1)} ${I[n].unit} (${l.year}); suurim jaam ${fmt(l.max, 1)}${I[n].limit ? `, EL aastapiirväärtus ${fmt(I[n].limit, 0)}` : ''}${p ? `; samadel ${fmt(p.stations, 0)} jaamal ${p.first_years[0]}–${p.first_years[1]} → ${p.last_years[0]}–${p.last_years[1]} mediaanmuutus ${p.median_change_pct == null ? '–' : `${sgn(p.median_change_pct)}%`}` : ''}.</li>`);
+      }
+      host.innerHTML = `<ul class="findings">${li.join('')}</ul>`;
+    },
+    anorm(host) {
+      const a = d.air; if (!a) return;
+      const names = Object.keys(a.indicators).filter((n) => a.indicators[n].years.some((r) => r.year <= maxY));
+      if (!names.length) return;
+      C.selectable(host, names.map((n) => ({ value: n, text: n })), names.includes('Lämmastikdioksiid') ? 'Lämmastikdioksiid' : names[0], 'Näitaja:', (holder, key) => {
+        const I = a.indicators[key], rows = I.years.filter((r) => r.year <= maxY);
+        const mk = (label, color, f) => ({ label, color, data: rows.map((r) => ({ year: r.year, value: f(r), n: r.stations, extra: `${fmt(r.stations, 0)} jaama, ${fmt(r.days, 0)} päeva${r.loq_share > 0 ? `, alla määramispiiri ${fmt(100 * r.loq_share, 0)}%` : ''}` })) });
+        lines(holder, { title: `${key}: jaamade aastakeskmised`, subtitle: `${I.unit}; jaamade aastakeskmiste mediaan ning vähim ja suurim jaam aastas (${I.kind === 'indicative' ? 'indikatiivne mõõtmine, vähemalt 52 päeva' : 'vähemalt 75% aasta päevi'}).`, unit: I.unit, dec: 2, axisDec: 1, nName: 'jaamu', series: [mk('Mediaan', SLOTS[0], (r) => r.median), mk('Vähim jaam', SLOTS[2], (r) => r.min), mk('Suurim jaam', SLOTS[1], (r) => r.max)], ref: I.limit ? { value: I.limit, label: `EL aastapiir/sihtväärtus ${fmt(I.limit, 1)}` } : null,
+          note: `Jaamade hulk muutub aastate vahel; jaama tüüp ei ole tabelis.${I.limit2030 != null && I.limit2030 !== I.limit ? ` EL 2030. aasta tase ${fmt(I.limit2030, 1)}.` : ''}${I.who ? ` WHO 2021 soovituslik tase ${fmt(I.who, 0)}.` : ''} Võrdlustasemed on käsitsi sisestatud ja kinnitamata; need ei ole vastavushinnang. Välja jäetud read: muu ühik ${fmt(I.left_out.other_unit, 0)}, negatiivne või puuduva väärtuse kood ${fmt(I.left_out.negative_or_sentinel, 0)} (kokku ${fmt(I.left_out.rows, 0)} rida).` });
+        if (rows.length) {
+          const f = first(rows), l = last(rows), p = I.paired;
+          const rel = I.limit ? `, suurim jaam ${fmt(100 * l.max / I.limit, 0)}% EL tasemest ${fmt(I.limit, 1)}` : '';
+          C.punch(holder, `${key}: jaamade aastakeskmiste mediaan ${fmt(f.median, 2)} (${f.year}) → ${fmt(l.median, 2)} ${I.unit} (${l.year})${rel}; ${p ? `samadel ${fmt(p.stations, 0)} jaamal on mediaanmuutus ${p.median_change_pct == null ? 'arvutamatu' : `${sgn(p.median_change_pct)}%`} (${p.first_years[0]}–${p.first_years[1]} → ${p.last_years[0]}–${p.last_years[1]}), ${fmt(100 * p.share_decreased, 0)}% jaamadest langes` : 'paaritatud võrdlust ei saa teha'}; jaamade tüüp on teadmata.`);
+        }
+      });
+    },
+    apm10(host) {
+      const a = d.air; const I = a && a.indicators['Peened osakesed (PM 10)']; if (!I) return;
+      const rows = I.years.filter((r) => r.year <= maxY && r.over50_max != null);
+      if (!rows.length) return;
+      lines(host, { title: 'PM10 päevakeskmine üle 50 µg/m³: päevi aastas', subtitle: 'Enim ületuspäevi ühel jaamal aastas; EL lubab kuni 35 päeva.', unit: 'päeva', dec: 0, axisDec: 0, nName: 'jaamu',
+        series: [{ label: 'Enim päevi ühel jaamal', color: SLOTS[1], data: rows.map((r) => ({ year: r.year, value: r.over50_max, n: r.stations, extra: `${fmt(r.stations, 0)} jaama, neist üle lubatud ${fmt(r.over50_stations_above_allowed, 0)}` })) }],
+        ref: { value: 35, label: 'lubatud 35 päeva' }, note: 'Päevakeskmised on tõlgendus (kinnitamata); ületuspäevad loetakse ainult jaamadel, millel on aastas vähemalt 75% päevi. Eestis võivad ületused tuleneda ka loodusest ja kaugkandest (nt suitsu- ja liivatolm), mida siin ei eristata.' });
+      const l = last(rows), mx = rows.reduce((b, r) => (r.over50_max > b.over50_max ? r : b), rows[0]);
+      C.punch(host, `PM10 päevakeskmine ületas 50 µg/m³ ${l.year}. aastal kõige rohkem ${fmt(l.over50_max, 0)} päeval (${l.over50_stations_above_allowed ? `${l.over50_stations_above_allowed} jaamas üle lubatud 35` : 'ühelgi jaamal üle lubatud 35'}); perioodi maksimum oli ${fmt(mx.over50_max, 0)} päeva (${mx.year}).`);
+    },
+    amethods(host) {
+      const a = d.air; if (!a) return;
+      host.innerHTML = `<div class="methods"><b>Andmed ja meetod</b> <span class="review-flag">valdkonnaekspert ülevaatamata</span>
+        <p><b>Allikas ja päritolu:</b> Keskkonnaagentuuri avaandmed (keskkonnaandmed.envir.ee), keskkonnaseire tabel (KESE), programmid ${a.meta.programmes.join('; ')}; mõõdetud väärtused (mitte mudelid).</p>
+        <p><b>Tõlgendus (kinnitamata):</b> ${a.meta.interpretation.join(' ')}</p>
+        <p><b>Piirangud:</b> jaama tüüp, mõõtmise ajaline samm ja kvaliteedimärked puuduvad; jaamade koosseis muutub; EL õhukvaliteedi vastavuse hindamiseks on vaja jaamatüüpe ja ametlikku aruandlust. Genereeritud ${d.meta.generated_utc.slice(0, 10)} (UTC).</p></div>`;
+    },
     wqfindings(host) {
       const w = d.water_quality;
       if (!w) { host.innerHTML = '<p class="viz-note">Veekvaliteedi andmeid ei ole.</p>'; return; }

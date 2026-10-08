@@ -112,6 +112,15 @@ ANALYSES: dict[str, list[tuple[str, list[tuple[str, str]]]]] = {
                 ("methods", ""),
             ],
         ),
+        (
+            "monitoring",
+            [
+                ("afindings", "Välisõhu kvaliteedi seire: jaamade mõõtmised"),
+                ("anorm", ""),
+                ("apm10", ""),
+                ("amethods", ""),
+            ],
+        ),
     ],
     "energeetika": [
         (

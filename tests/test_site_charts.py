@@ -26,6 +26,7 @@ import run_monitoring as rmo
 import run_nature as rna
 import run_waste as rw
 import run_water as rwa
+from tests import test_air_analysis as tai
 from tests import test_crown_analysis as tcr
 from tests import test_monitoring_catalog as tma
 from tests import test_nature_analysis as tna
@@ -128,7 +129,7 @@ def site(tmp_path_factory: pytest.TempPathFactory) -> Iterator[str]:
         json.dumps(
             rmo.build(
                 mc.catalog(tma.agg()),
-                pl.concat([tcr.frame(), tso.frame()], how="diagonal_relaxed"),
+                pl.concat([tcr.frame(), tso.frame(), tai.frame()], how="diagonal_relaxed"),
                 "2026-01-01",
             )
         ),
