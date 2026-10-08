@@ -39,7 +39,7 @@ def frame() -> pl.DataFrame:
     ):
         for i in range(365):
             day = date(year, 1, 1) + timedelta(days=i)
-            for st in ("A", "B"):
+            for st in ("A", "B", "C"):
                 add("Lämmastikdioksiid", level, "µg/m³", day, st)
     for year in (2010, 2011, 2012, 2020, 2021, 2022):
         for i in range(365):
@@ -65,21 +65,20 @@ def test_units_and_sentinels_are_left_out_and_counted() -> None:
     assert g["v"].max() == 20.0
 
 
-def test_microgram_lead_is_converted_to_nanogram() -> None:
-    g, _ = aa.value_column(aa.prepare(frame()), "Plii")
-    assert sorted(set(g["v"].round(6).to_list())) == [5.0, 10.0]
+def test_lead_in_other_unit_is_not_converted() -> None:
+    g, left = aa.value_column(aa.prepare(frame()), "Plii")
+    assert g["v"].to_list() == [5.0] and left["other_unit"] == 60
 
 
 def test_completeness_rule_and_paired_change() -> None:
     b = aa.build(frame())
     no2 = b["indicators"]["Lämmastikdioksiid"]
     assert [r["year"] for r in no2["years"]][:2] == [2010, 2011]
-    assert no2["years"][0]["stations"] == 2
+    assert no2["years"][0]["stations"] == 3
     p = no2["paired"]
-    assert p["stations"] == 2 and p["median_change_pct"] == pytest.approx(-50.0)
+    assert p["stations"] == 3 and p["median_change_pct"] == pytest.approx(-50.0)
     assert p["share_decreased"] == 1.0
-    assert "Plii" in b["indicators"]  # 60 days >= 52 for station A
-    assert b["indicators"]["Plii"]["years"][0]["stations"] == 1
+    assert "Plii" not in b["indicators"]  # 1 usable day only
     assert aa.has_air(frame()) and not aa.has_air(frame().drop("seirekoht_kood"))
     json.dumps(b)
 
@@ -101,3 +100,8 @@ def test_pm10_exceedance_days() -> None:
     r = aa.build(pl.DataFrame(rows, schema_overrides={"vaartus_erimark": pl.Utf8}))
     y = r["indicators"]["Peened osakesed (PM 10)"]["years"][0]
     assert y["over50_max"] == 40 and y["over50_stations_above_allowed"] == 1
+
+
+def test_paired_needs_enough_stations() -> None:
+    f = frame().filter(pl.col("seirekoht_kood") != "C")
+    assert aa.build(f)["indicators"]["Lämmastikdioksiid"]["paired"] is None

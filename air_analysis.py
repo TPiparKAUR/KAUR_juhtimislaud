@@ -22,6 +22,7 @@ GROUP = "Saasteained välisõhus"
 CONTINUOUS_MIN_SHARE = 0.75  # of 365 days
 INDICATIVE_MIN_DAYS = 52  # about 14 % of the year
 PAIR_YEARS = 3
+MIN_PAIRED_STATIONS = 3
 
 # name -> target unit, annual EU limit/target now and from 2030, WHO 2021 level, measurement kind
 SPEC: dict[str, dict[str, Any]] = {
@@ -42,10 +43,6 @@ SPEC: dict[str, dict[str, Any]] = {
     "Kaadmium": {"unit": "ng/m³", "limit": 5.0, "limit2030": 5.0, "kind": "indicative"},
     "Nikkel": {"unit": "ng/m³", "limit": 20.0, "limit2030": 20.0, "kind": "indicative"},
     "Plii": {"unit": "ng/m³", "limit": 500.0, "limit2030": 500.0, "kind": "indicative"},
-}
-FACTORS = {
-    ("ng/m³", "µg/m³"): 1e-3,
-    ("µg/m³", "ng/m³"): 1e3,
 }
 PM10_DAILY_LIMIT = 50.0
 PM10_ALLOWED_DAYS = 35
@@ -75,11 +72,11 @@ def value_column(d: pl.DataFrame, name: str) -> tuple[pl.DataFrame, dict[str, in
     target = SPEC[name]["unit"]
     g = d.filter(pl.col("naitaja_nimetus") == name)
     total = g.height
-    to_target = {target: 1.0} | {src: f for (src, dst), f in FACTORS.items() if dst == target}
-    factor = pl.col("naitaja_abr_unit").replace_strict(
-        to_target, default=None, return_dtype=pl.Float64
+    g = g.with_columns(
+        pl.when(pl.col("naitaja_abr_unit") == target)
+        .then(pl.col("vaartus_arv_moodetud"))
+        .alias("v")
     )
-    g = g.with_columns((pl.col("vaartus_arv_moodetud") * factor).alias("v"))
     wrong_unit = g.filter(pl.col("v").is_null()).height
     g = g.filter(pl.col("v").is_not_null())
     negative = g.filter(pl.col("v") < 0).height
@@ -141,7 +138,7 @@ def paired(sy: pl.DataFrame) -> dict[str, Any] | None:
         .agg(b=pl.col("mean").mean())
     )
     w = a.join(b, on="seirekoht_kood", how="inner")
-    if w.is_empty():
+    if w.height < MIN_PAIRED_STATIONS:
         return None
     change = (w["b"] / w["a"] - 1.0) * 100.0 if (w["a"] > 0).all() else None
     return {
@@ -180,7 +177,13 @@ def build(df: pl.DataFrame) -> dict[str, Any]:
         }
     return {
         "meta": {
-            "programmes": sorted(d["seiretoo_nimetus"].str.strip_chars().unique().to_list()),
+            "programmes": sorted(
+                d["seiretoo_nimetus"]
+                .str.replace(r"\s*\d{4}\.?\s*a?\.?\s*$", "")
+                .str.strip_chars()
+                .unique()
+                .to_list()
+            ),
             "interpretation": [
                 "Read on tõlgendatud kui jaamade päevakeskmised (eeldus: ridade arv ≈ 365 päeva "
                 "kohta jaama ja aasta kohta); mõõtmise ajaline samm ei ole tabelis kinnitatud.",
@@ -191,9 +194,11 @@ def build(df: pl.DataFrame) -> dict[str, Any]:
                 "koode ei avaldata.",
                 "Jaama tüüp (linn, liiklus, taust) ei ole tabelis; väärtused ei kirjelda "
                 "elanikkonna kokkupuudet ja jaamade hulk muutub aastate vahel.",
-                "Ühikud: ainult µg/m³ read gaaside ja tahkete osakeste puhul (ppbv read on välja "
-                "jäetud, sest teisendus vajab temperatuuri ja rõhku); raskmetallid on ng/m³ "
-                "(µg/m³ read korrutatud 1000-ga; ühiku märgistuse õigsus on kinnitamata). "
+                "Ühikud: kasutatud on ainult näitaja põhiühikus (gaasid ja osakesed µg/m³, "
+                "raskmetallid ja benso(a)püreen ng/m³) read. Teise ühiku read on välja jäetud: "
+                "ppbv teisendus vajab temperatuuri ja rõhku ning raskmetallide µg/m³ märgisega "
+                "read on osal aastatel (nt plii 2022, 2024) tõenäoliselt ng/m³ väärtused "
+                "valesti märgitud (sajakordne erinevus), mistõttu neid ei teisendata. "
                 "Negatiivsed ja puuduvate väärtuste koodid (näiteks -999) on välja jäetud.",
                 "Võrdlustasemed (EL aastapiir- ja sihtväärtused ning 2030. aasta tasemed, WHO "
                 "2021 soovituslikud tasemed) on sisestatud käsitsi ja tuleb enne kasutamist "

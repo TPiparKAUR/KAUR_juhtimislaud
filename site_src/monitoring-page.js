@@ -138,6 +138,8 @@
         const y = yrs(n); if (!y.length) continue; const f = first(y), l = last(y), p = I[n].paired;
         li.push(`<li><b>${n}:</b> jaamade aastakeskmiste mediaan ${fmt(f.median, 1)} (${f.year}) → ${fmt(l.median, 1)} ${I[n].unit} (${l.year}); suurim jaam ${fmt(l.max, 1)}${I[n].limit ? `, EL aastapiirväärtus ${fmt(I[n].limit, 0)}` : ''}${p ? `; samadel ${fmt(p.stations, 0)} jaamal ${p.first_years[0]}–${p.first_years[1]} → ${p.last_years[0]}–${p.last_years[1]} mediaanmuutus ${p.median_change_pct == null ? '–' : `${sgn(p.median_change_pct)}%`}` : ''}.</li>`);
       }
+      const pb = I['Plii'];
+      if (pb && pb.left_out.other_unit) li.push(`<li><b>Andmekvaliteet:</b> plii ${fmt(pb.left_out.other_unit, 0)} rida on märgitud ühikuga µg/m³, kuid osal aastatel (nt 2022, 2024) on väärtused ng/m³ suurusjärgus (sajakordne erinevus); need read on välja jäetud ega ole teisendatud. Ühiku märgistus tuleb andmeomanikul üle kontrollida.</li>`);
       host.innerHTML = `<ul class="findings">${li.join('')}</ul>`;
     },
     anorm(host) {
