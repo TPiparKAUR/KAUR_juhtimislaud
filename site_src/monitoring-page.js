@@ -17,6 +17,7 @@
   const cr = d.crown, cov = d.coverage;
   const maxY = +d.meta.generated_utc.slice(0, 4) - 1; // the running year is incomplete
   const MINN = 30; // fewer samples per year are not shown
+  const MINST = 3; // years with fewer stations are not shown (min and max would be single stations)
   const NAMES = { 'harilik mänd': 'Harilik mänd', 'harilik kuusk': 'Harilik kuusk', arukask: 'Arukask' };
   const COLS = [SLOTS[1], SLOTS[2], SLOTS[0]];
   const pctv = (v) => `${fmt(100 * v, 0)}%`;
@@ -132,24 +133,25 @@
     afindings(host) {
       const a = d.air; if (!a) { host.innerHTML = '<p class="viz-note">Välisõhu seire andmeid ei ole.</p>'; return; }
       const I = a.indicators, li = [];
-      const yrs = (n) => (I[n] ? I[n].years.filter((r) => r.year <= maxY) : []);
+      const yrs = (n) => (I[n] ? I[n].years.filter((r) => r.year <= maxY && r.stations >= MINST) : []);
       li.push(`<li><b>Mida see on:</b> riikliku välisõhu kvaliteedi seire (KESE) mõõtmised ${fmt(a.checks.stations, 0)} jaamas: ${fmt(a.checks.rows, 0)} väärtust. Read on tõlgendatud jaamade päevakeskmistena (kinnitamata); jaama aastakeskmine arvutatakse ainult piisava andmekattega aastatel, jaama tüüpi (linn, liiklus, taust) tabelis ei ole. Tulemus on jaamade aastakeskmiste mediaan ning vähim ja suurim jaam, mitte elanike kokkupuude.</li>`);
       for (const n of ['Lämmastikdioksiid', 'Peened osakesed (PM 10)', 'Eriti peened osakesed (PM 2,5)', 'Osoon']) {
         const y = yrs(n); if (!y.length) continue; const f = first(y), l = last(y), p = I[n].paired;
         li.push(`<li><b>${n}:</b> jaamade aastakeskmiste mediaan ${fmt(f.median, 1)} (${f.year}) → ${fmt(l.median, 1)} ${I[n].unit} (${l.year}); suurim jaam ${fmt(l.max, 1)}${I[n].limit ? `, EL aastapiirväärtus ${fmt(I[n].limit, 0)}` : ''}${p ? `; samadel ${fmt(p.stations, 0)} jaamal ${p.first_years[0]}–${p.first_years[1]} → ${p.last_years[0]}–${p.last_years[1]} mediaanmuutus ${p.median_change_pct == null ? '–' : `${sgn(p.median_change_pct)}%`}` : ''}.</li>`);
       }
       const pb = I['Plii'];
-      if (pb && pb.left_out.other_unit) li.push(`<li><b>Andmekvaliteet:</b> plii ${fmt(pb.left_out.other_unit, 0)} rida on märgitud ühikuga µg/m³, kuid osal aastatel (nt 2022, 2024) on väärtused ng/m³ suurusjärgus (sajakordne erinevus); need read on välja jäetud ega ole teisendatud. Ühiku märgistus tuleb andmeomanikul üle kontrollida.</li>`);
+      if (pb && pb.left_out.other_unit) li.push(`<li><b>Andmekvaliteet:</b> plii ridadest ${fmt(pb.left_out.other_unit, 0)} (${fmt(100 * pb.left_out.other_unit / pb.left_out.rows, 0)}%) on märgitud ühikuga µg/m³, kuid väärtused on ng/m³ suurusjärgus (teisendamisel sajakordne erinevus võrreldes ng/m³ märgisega ridadega); need read on välja jäetud ega ole teisendatud, mistõttu plii jada ${pb.years.length ? `lõpeb ${last(pb.years).year}` : 'puudub'} ja viimaste aastate plii ei ole siin nähtav. Ühiku märgistus tuleb andmeomanikul üle kontrollida.</li>`);
       host.innerHTML = `<ul class="findings">${li.join('')}</ul>`;
     },
     anorm(host) {
       const a = d.air; if (!a) return;
-      const names = Object.keys(a.indicators).filter((n) => a.indicators[n].years.some((r) => r.year <= maxY));
+      const ok = (r) => r.year <= maxY && r.stations >= MINST;
+      const names = Object.keys(a.indicators).filter((n) => a.indicators[n].years.some(ok));
       if (!names.length) return;
       C.selectable(host, names.map((n) => ({ value: n, text: n })), names.includes('Lämmastikdioksiid') ? 'Lämmastikdioksiid' : names[0], 'Näitaja:', (holder, key) => {
-        const I = a.indicators[key], rows = I.years.filter((r) => r.year <= maxY);
+        const I = a.indicators[key], rows = I.years.filter(ok);
         const mk = (label, color, f) => ({ label, color, data: rows.map((r) => ({ year: r.year, value: f(r), n: r.stations, extra: `${fmt(r.stations, 0)} jaama, ${fmt(r.days, 0)} päeva${r.loq_share > 0 ? `, alla määramispiiri ${fmt(100 * r.loq_share, 0)}%` : ''}` })) });
-        lines(holder, { title: `${key}: jaamade aastakeskmised`, subtitle: `${I.unit}; jaamade aastakeskmiste mediaan ning vähim ja suurim jaam aastas (${I.kind === 'indicative' ? 'indikatiivne mõõtmine, vähemalt 52 päeva' : 'vähemalt 75% aasta päevi'}).`, unit: I.unit, dec: 2, axisDec: 1, nName: 'jaamu', series: [mk('Mediaan', SLOTS[0], (r) => r.median), mk('Vähim jaam', SLOTS[2], (r) => r.min), mk('Suurim jaam', SLOTS[1], (r) => r.max)], ref: I.limit ? { value: I.limit, label: `EL aastapiir/sihtväärtus ${fmt(I.limit, 1)}` } : null,
+        lines(holder, { title: `${key}: jaamade aastakeskmised`, subtitle: `${I.unit}; jaamade aastakeskmiste mediaan ning vähim ja suurim jaam aastas; aastad vähemalt 3 jaamaga (${I.kind === 'indicative' ? 'indikatiivne mõõtmine, vähemalt 52 päeva' : 'vähemalt 75% aasta päevi'}).`, unit: I.unit, dec: 2, axisDec: 1, nName: 'jaamu', series: [mk('Mediaan', SLOTS[0], (r) => r.median), mk('Vähim jaam', SLOTS[2], (r) => r.min), mk('Suurim jaam', SLOTS[1], (r) => r.max)], ref: I.limit ? { value: I.limit, label: `EL aastapiir/sihtväärtus ${fmt(I.limit, 1)}` } : null,
           note: `Jaamade hulk muutub aastate vahel; jaama tüüp ei ole tabelis.${I.limit2030 != null && I.limit2030 !== I.limit ? ` EL 2030. aasta tase ${fmt(I.limit2030, 1)}.` : ''}${I.who ? ` WHO 2021 soovituslik tase ${fmt(I.who, 0)}.` : ''} Võrdlustasemed on käsitsi sisestatud ja kinnitamata; need ei ole vastavushinnang. Välja jäetud read: muu ühik ${fmt(I.left_out.other_unit, 0)}, negatiivne või puuduva väärtuse kood ${fmt(I.left_out.negative_or_sentinel, 0)} (kokku ${fmt(I.left_out.rows, 0)} rida).` });
         if (rows.length) {
           const f = first(rows), l = last(rows), p = I.paired;

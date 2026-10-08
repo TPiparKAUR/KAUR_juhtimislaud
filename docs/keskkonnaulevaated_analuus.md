@@ -21,9 +21,9 @@ töövihikute loetelu koos vaatamiste arvuga (`data/tableau_public_workbooks.csv
 
 | Katvus | Vaateid | Vaatamisi | Osakaal vaatamistest |
 |---|---|---|---|
-| olemas | 22 | 7 288 | 41% |
+| olemas | 23 | 7 429 | 42% |
 | osaliselt | 13 | 4 366 | 24% |
-| puudub | 19 | 6 234 | 35% |
+| puudub | 18 | 6 093 | 34% |
 
 Teemati (vaatamised; katmata osa vaatamistest):
 
@@ -35,7 +35,7 @@ Teemati (vaatamised; katmata osa vaatamistest):
 | Vesi | 2 132 | 0% katmata (osaliselt kaetud: põhjaveebilanss, eutrofeerumine, reostuskoormus merre, põhjavee koondseisund) |
 | Välisõhk | 1 932 | 24% |
 | Mets | 1 849 | 21% |
-| Seire (RKSP) | 1 259 | 31% (metsaseire lisandus) |
+| Seire (RKSP) | 1 259 | 20% (metsa-, mulla- ja välisõhuseire lisandus) |
 | Energeetika | 772 | 71% |
 | Ökosüsteemid | 761 | 35% |
 | Muld ja maahõive | 676 | **100%** |
@@ -106,3 +106,13 @@ Mullaseire (pH, orgaaniline süsinik, huumus, P, K, Cu, Zn, Pb, Cd, Cr, Ni, Hg) 
 vajavad välist allikat ja jäävad katmata. **Hoiatus:** analüüsimeetodid on perioodide jooksul muutunud
 (pH KCl → ISO 10390, P Egner-Riehm → Mehlich III, Corg Tjurin → Dumas), seega perioodide erinevus ei ole
 puhas ajatrend; korduvalt mõõdetud proovialasid on pH ja Corg paarisvõrdluseks alla 20.
+
+## Täiendus 2026-10-08: välisõhu seire seiretabelist
+
+Lehele „Välisõhk“ lisandus jaamade mõõtmiste plokk (`air_analysis.py`): NO2, PM10, PM2,5, O3, SO2, CO,
+benseen, benso(a)püreen ja metallid jaamade aastakeskmiste mediaanina (ning vähim ja suurim jaam), PM10
+päevakeskmise ületuspäevad ja paaritatud muutus samade jaamade vahel (vähemalt 3 jaama). Eeldused:
+read on päevakeskmised (tuletatud ridade arvust), jaama tüüpi tabelis ei ole, EL ja WHO võrdlustasemed on
+käsitsi sisestatud ning kinnitamata. **Andmekvaliteet:** plii read on suures osas märgitud µg/m³, kuid väärtused
+on ng/m³ suurusjärgus; need on välja jäetud, mistõttu plii jada lõpeb 2019. Õhukvaliteedi vastavushinnang
+vajab ametlikku aruandlust ja jaamatüüpe.

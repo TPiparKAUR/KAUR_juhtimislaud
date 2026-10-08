@@ -170,3 +170,9 @@ koordinaatide ja vabatekstita). Tegu on registritega, mitte seirega.
 Graafikud: pH, orgaaniline süsinik/huumus, toitained, raskmetallid perioodide kaupa (mediaan, p10–p90) ning
 meetodite loetelu. Puänt on andmetest tuletatud ja märgib meetodimuutust; paarisvõrdlus puudub, kui korduvaid
 proovialasid on alla 20. Ülevaatamata valdkonnaekspertide poolt.
+
+## Välisõhu kvaliteet (seiretabel, päris andmetega)
+
+Graafikud: jaamade aastakeskmiste mediaan ning vähim ja suurim jaam näitajate kaupa (valik), PM10
+ületuspäevad aastas, meetodite plokk. Puänt võrdleb viimast aastat esimese aastaga, EL tasemega ja samade
+jaamade muutust; ülevaatamata valdkonnaekspertide poolt, jaamatüüp teadmata.

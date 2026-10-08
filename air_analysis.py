@@ -197,7 +197,7 @@ def build(df: pl.DataFrame) -> dict[str, Any]:
                 "Ühikud: kasutatud on ainult näitaja põhiühikus (gaasid ja osakesed µg/m³, "
                 "raskmetallid ja benso(a)püreen ng/m³) read. Teise ühiku read on välja jäetud: "
                 "ppbv teisendus vajab temperatuuri ja rõhku ning raskmetallide µg/m³ märgisega "
-                "read on osal aastatel (nt plii 2022, 2024) tõenäoliselt ng/m³ väärtused "
+                "read on paljudel aastatel (plii: enamik ridu) tõenäoliselt ng/m³ väärtused "
                 "valesti märgitud (sajakordne erinevus), mistõttu neid ei teisendata. "
                 "Negatiivsed ja puuduvate väärtuste koodid (näiteks -999) on välja jäetud.",
                 "Võrdlustasemed (EL aastapiir- ja sihtväärtused ning 2030. aasta tasemed, WHO "

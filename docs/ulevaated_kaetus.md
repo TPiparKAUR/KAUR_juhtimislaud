@@ -10,7 +10,7 @@ Genereeritud `analyse_ulevaated.py` poolt failidest `data/ulevaate_kaetus.toml` 
 | Vesi | 7 | 2132 | 3 | 4 | 0 | 0 |
 | Välisõhk | 7 | 1932 | 2 | 3 | 2 | 24 |
 | Mets | 5 | 1849 | 2 | 2 | 1 | 21 |
-| Seire (RKSP) | 7 | 1259 | 4 | 0 | 3 | 31 |
+| Seire (RKSP) | 7 | 1259 | 5 | 0 | 2 | 20 |
 | Energeetika | 3 | 772 | 0 | 1 | 2 | 71 |
 | Ökosüsteemid | 2 | 761 | 0 | 1 | 1 | 35 |
 | Muld ja maahõive | 3 | 676 | 0 | 1 | 2 | 70 |
@@ -55,7 +55,7 @@ Genereeritud `analyse_ulevaated.py` poolt failidest `data/ulevaate_kaetus.toml` 
 | Seire (RKSP) | RKSP - meteoroloogiline seire | 439 | olemas | API:f_kliima_* | Meteoroloogiline seire. |
 | Seire (RKSP) | RKSP - Mullaseire | 269 | olemas | API:f_keskkonnaseire | Mulla pH, orgaaniline süsinik, toitained ja mikroelemendid (mullaseire); meetodid muutunud, normidega ei ole võrreldud. |
 | Seire (RKSP) | RKSP - Kiirgusseire | 155 | puudub | teadmata | Kiirgusseire. |
-| Seire (RKSP) | RKSP - Välisõhu seire | 141 | puudub | teadmata | Välisõhu seire. |
+| Seire (RKSP) | RKSP - Välisõhu seire | 141 | olemas | API:f_keskkonnaseire | Välisõhu kvaliteedi seire: NO2, PM10, PM2,5, O3, SO2, CO, benseen, BaP, metallid jaamade aastakeskmistena; jaama tüüp ja mõõtmise samm kinnitamata. |
 | Seire (RKSP) | RKSP - Kompleksseire | 99 | puudub | teadmata | Kompleksseire. |
 | Seire (RKSP) | RKSP - Metsaseire | 79 | olemas | API:f_keskkonnaseire | Metsaseire okka-/lehekadu (puude võra seisund) 1993-2025 klassidena; ICP Forests klassipiirid kinnitamata. |
 | Seire (RKSP) | RKSP - Hüdroloogiline seire | 77 | olemas | API:f_hydroseire | Hüdroloogiline seire. |

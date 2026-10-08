@@ -4,16 +4,16 @@
   "n_views": 54,
   "by_status": {
    "olemas": {
-    "n": 22,
-    "views": 7288
+    "n": 23,
+    "views": 7429
    },
    "osaliselt": {
     "n": 13,
     "views": 4366
    },
    "puudub": {
-    "n": 19,
-    "views": 6234
+    "n": 18,
+    "views": 6093
    }
   },
   "themes": {
@@ -119,13 +119,13 @@
    "seire": {
     "views": 1259,
     "n": 7,
-    "olemas": 4,
+    "olemas": 5,
     "osaliselt": 0,
-    "puudub": 3,
-    "views_olemas": 864,
+    "puudub": 2,
+    "views_olemas": 1005,
     "views_osaliselt": 0,
-    "views_puudub": 395,
-    "share_views_uncovered": 0.314
+    "views_puudub": 254,
+    "share_views_uncovered": 0.202
    }
   },
   "top_gaps": [
@@ -576,9 +576,9 @@
   {
    "workbook": "RKSP-Vlishuseire",
    "teema": "seire",
-   "meie": "puudub",
-   "andmed": "teadmata",
-   "markus": "Välisõhu seire.",
+   "meie": "olemas",
+   "andmed": "API:f_keskkonnaseire",
+   "markus": "Välisõhu kvaliteedi seire: NO2, PM10, PM2,5, O3, SO2, CO, benseen, BaP, metallid jaamade aastakeskmistena; jaama tüüp ja mõõtmise samm kinnitamata.",
    "title": "RKSP - Välisõhu seire",
    "views": 141
   },
