@@ -17,6 +17,7 @@ from playwright.sync_api import Error as PlaywrightError
 
 import build_site as b
 import climate_analysis as ca
+import energy_analysis as ea
 import monitoring_catalog as mc
 import run_airenergy as ra
 import run_climate as rc
@@ -29,6 +30,7 @@ import run_water as rwa
 from tests import test_air_analysis as tai
 from tests import test_bird_analysis as tbi
 from tests import test_crown_analysis as tcr
+from tests import test_energy_analysis as ten
 from tests import test_monitoring_catalog as tma
 from tests import test_nature_analysis as tna
 from tests import test_predator_analysis as tpr
@@ -142,9 +144,21 @@ def site(tmp_path_factory: pytest.TempPathFactory) -> Iterator[str]:
     )
     uj = tmp / "wateruse.json"
     uj.write_text(json.dumps(twu.sample_build()), encoding="utf-8")
+    ej = tmp / "energy.json"
+    ej.write_text(
+        json.dumps(
+            ea.build(
+                ten.balance_frame(),
+                ten.electricity_frame(),
+                ten.capacity_frame(),
+                "2026-01-01",
+            )
+        ),
+        encoding="utf-8",
+    )
     topics = b.load_topics(Path("data/teemad.toml"), Path("data/kaur_viz_inventar.csv"))
     out = tmp / "_site"
-    b.build(topics, out, cj, hj, aj, wj, fj, wtj, nj, uj, mj)
+    b.build(topics, out, cj, hj, aj, wj, fj, wtj, nj, uj, mj, ej)
     handler = functools.partial(http.server.SimpleHTTPRequestHandler, directory=str(out))
     handler.log_message = lambda *a, **k: None  # type: ignore[attr-defined]
     with socketserver.TCPServer(("127.0.0.1", 0), handler) as srv:
@@ -233,7 +247,7 @@ def test_every_chart_has_a_punchline(browser: Browser, site: str, path: str) -> 
     page.wait_for_selector("svg[role=img]")
     page.wait_for_timeout(300)
     missing = page.evaluate(
-        """() => [...document.querySelectorAll('[data-climate],[data-hydro],[data-airenergy],[data-waste],[data-forest],[data-water],[data-nature],[data-wateruse],[data-monitoring]')]
+        """() => [...document.querySelectorAll('[data-climate],[data-hydro],[data-airenergy],[data-waste],[data-forest],[data-water],[data-nature],[data-wateruse],[data-monitoring],[data-energy]')]
             .filter((h) => h.querySelector('svg[role=img]') && !h.querySelector('.viz-punch'))
             .map((h) => Object.values(h.dataset).join(':'))"""
     )

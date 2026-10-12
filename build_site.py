@@ -135,6 +135,18 @@ ANALYSES: dict[str, list[tuple[str, list[tuple[str, str]]]]] = {
                 ("methods", ""),
             ],
         ),
+        (
+            "energy",
+            [
+                ("enfindings", "Energiabilanss ja elektritootmine: peamised tulemused"),
+                ("enprod", ""),
+                ("endep", ""),
+                ("enfinal", ""),
+                ("enelec", "Elektritootmine"),
+                ("encap", ""),
+                ("enmethods", ""),
+            ],
+        ),
     ],
     "mets": [
         (
@@ -261,7 +273,15 @@ SCRIPTS = {
         "hydro-charts.js",
         "airenergy-charts.js",
         "nature-charts.js",
+        "lines-chart.js",
         "monitoring-page.js",
+    ],
+    "energy": [
+        "charts.js",
+        "hydro-charts.js",
+        "airenergy-charts.js",
+        "lines-chart.js",
+        "energy-page.js",
     ],
     "wateruse": [
         "charts.js",
@@ -427,6 +447,7 @@ def layout(
         "nature",
         "wateruse",
         "monitoring",
+        "energy",
     ):
         if feat in features:
             names += [n for n in SCRIPTS[feat] if n not in names]
@@ -558,6 +579,7 @@ def build(
     nature_json: Path | None = None,
     wateruse_json: Path | None = None,
     monitoring_json: Path | None = None,
+    energy_json: Path | None = None,
 ) -> list[Path]:
     """Write the site; analysis sections appear only for the JSON inputs that exist."""
     out.mkdir(parents=True, exist_ok=True)
@@ -572,6 +594,7 @@ def build(
         "nature": nature_json,
         "wateruse": wateruse_json,
         "monitoring": monitoring_json,
+        "energy": energy_json,
     }
     features: set[str] = set()
     for name, path in inputs.items():
@@ -609,6 +632,7 @@ def main() -> None:
     ap.add_argument("--nature", type=Path, default=None, help="aggregated nature.json to embed")
     ap.add_argument("--wateruse", type=Path, default=None, help="aggregated wateruse.json to embed")
     ap.add_argument("--monitoring", type=Path, default=None, help="monitoring.json to embed")
+    ap.add_argument("--energy", type=Path, default=None, help="energy.json to embed")
     args = ap.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
     topics = load_topics(args.topics, args.inventory)
@@ -624,6 +648,7 @@ def main() -> None:
         args.nature,
         args.wateruse,
         args.monitoring,
+        args.energy,
     )
     LOG.info("wrote %d pages to %s", len(files), args.out)
 
