@@ -72,9 +72,9 @@ def reserve_by_body(res: pl.DataFrame) -> pl.DataFrame:
 
 
 def latest_status(states: pl.DataFrame) -> pl.DataFrame:
-    s = states.filter((pl.col("tyyp") == "S") & (pl.col("keht_staatus") == "Kehtiv"))
-    s = (
-        s.sort("aasta")
+    """Latest assessment per groundwater body (the status table has one row per body and year)."""
+    return (
+        states.sort("aasta", "muut_aeg", nulls_last=False)
         .group_by("pohjaveekogum_id")
         .agg(
             kood=pl.col("kood").last(),
@@ -82,7 +82,6 @@ def latest_status(states: pl.DataFrame) -> pl.DataFrame:
             aasta=pl.col("aasta").last(),
         )
     )
-    return s
 
 
 def shares(g: pl.DataFrame) -> list[dict[str, Any]]:

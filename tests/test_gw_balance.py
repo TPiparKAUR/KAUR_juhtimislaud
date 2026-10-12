@@ -42,9 +42,8 @@ def inputs() -> tuple[pl.DataFrame, ...]:
     states = pl.DataFrame(
         {
             "pohjaveekogum_id": [10, 20],
-            "tyyp": ["S", "S"],
-            "keht_staatus": ["Kehtiv", "Kehtiv"],
             "aasta": [2020, 2020],
+            "muut_aeg": ["2021-01-01", "2021-01-01"],
             "kood": ["A", "B"],
             "seis_kog": ["1", "3"],
         }
