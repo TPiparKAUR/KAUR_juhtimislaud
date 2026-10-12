@@ -182,3 +182,8 @@ jaamade muutust; ülevaatamata valdkonnaekspertide poolt, jaamatüüp teadmata.
 Graafikud: põhjaveevõtt veehaarde veeliigi järgi; võtt kinnitatud olmevaru suhtes põhjaveekogumi kaupa
 (koos koguselise seisundiga). Puänt toob välja kaevandus-/karjäärivee osakaalu ja kogumid, kus võtt
 ületab varu; ühik ja varu tõlgendus kinnitamata, valdkonnaekspert ülevaatamata.
+
+## Haudelinnustiku indeks (seiretabel, päris andmetega)
+
+Graafikud: koondindeks (geomeetriline keskmine liikidest, bootstrap-vahemik) ja liikide lõpuindeksid. Puänt
+ütleb, kas vahemik sisaldab 100; indeks on esialgne ja meetod ekspertide poolt kinnitamata.

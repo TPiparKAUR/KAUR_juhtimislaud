@@ -114,9 +114,9 @@ markus = "Tabelis on hundi ja karu vaatluste/jälgede ridu, kuid arvukuse hinnan
 [[vaade]]
 workbook = "Keskkonnalevaade-Liigid-Lindudeindeks"
 teema = "liigid"
-meie = "puudub"
+meie = "osaliselt"
 andmed = "API:f_keskkonnaseire"
-markus = "Linnuloenduse haudepaaride ridu on 189 tuhat (2008-2025), kuid indeksi arvutus vajab seiremeetodi tundmist; ei ole arvutatud."
+markus = "Esialgne haudelinnustiku koondindeks punktloendustest (lihtsustatud ahelindeks, mitte TRIM ega ametlik indeks); ekspert peab meetodi kinnitama."
 
 [[vaade]]
 workbook = "Keskkonnalevaade-Mets-Metsamaapindala"

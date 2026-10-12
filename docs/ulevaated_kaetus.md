@@ -5,7 +5,7 @@ Genereeritud `analyse_ulevaated.py` poolt failidest `data/ulevaate_kaetus.toml` 
 | Teema | Vaateid | Vaatamisi | Olemas | Osaliselt | Puudub | Vaatamistest katmata, % |
 |---|---|---|---|---|---|---|
 | Jäätmed | 10 | 3509 | 7 | 1 | 2 | 19 |
-| Liigid | 4 | 2627 | 0 | 0 | 4 | 100 |
+| Liigid | 4 | 2627 | 0 | 1 | 3 | 75 |
 | Ilm ja kliima | 6 | 2371 | 4 | 0 | 2 | 18 |
 | Vesi | 7 | 2132 | 4 | 3 | 0 | 0 |
 | Välisõhk | 7 | 1932 | 2 | 3 | 2 | 24 |
@@ -39,7 +39,7 @@ Genereeritud `analyse_ulevaated.py` poolt failidest `data/ulevaate_kaetus.toml` 
 | Jäätmed | Jäätmearuandlus_KKP jäätmete teemalehtede valdkonnad_Ehitus - lammutusjäätmed | 260 | olemas | API:f_jaatmeliikumine_fix_riik | Ehitus- ja lammutusjäätmed on peatükk 17 jäätmetekke graafikul. |
 | Jäätmed | Keskkonnaülevaade - Jäätmed - Kogujäätme teke valdkonniti | 252 | olemas | API:f_jaatmeliikumine_fix_riik | Teke peatükkide kaupa. |
 | Liigid | Keskkonnaülevaade - Liigid - Liikide seisund | 785 | puudub | teadmata | Seiretabelis on liikide kohta ridu (liikide arv aastas), kuid liikide seisundi hinnang (nt EL aruandlus) ei ole selles tabelis tuvastatud. |
-| Liigid | Keskkonnaülevaade - Liigid - Lindude indeks | 649 | puudub | API:f_keskkonnaseire | Linnuloenduse haudepaaride ridu on 189 tuhat (2008-2025), kuid indeksi arvutus vajab seiremeetodi tundmist; ei ole arvutatud. |
+| Liigid | Keskkonnaülevaade - Liigid - Lindude indeks | 649 | osaliselt | API:f_keskkonnaseire | Esialgne haudelinnustiku koondindeks punktloendustest (lihtsustatud ahelindeks, mitte TRIM ega ametlik indeks); ekspert peab meetodi kinnitama. |
 | Liigid | Keskkonnaülevaade - Liigid - Punase nimestiku liigid | 631 | puudub | teadmata | Punane nimestik; API-s ei ole tuvastatud. |
 | Liigid | Keskkonnaülevaade - Liigid - Suurkiskjate arvukus | 562 | puudub | API:f_keskkonnaseire | Tabelis on hundi ja karu vaatluste/jälgede ridu, kuid arvukuse hinnang vajab seiremeetodi tundmist; ei ole arvutatud. |
 | Mets | Keskkonnaülevaade - Mets - Metsamaa pindala | 429 | olemas | API:f_smi_tulemused | Metsamaa pindala (SMI). |

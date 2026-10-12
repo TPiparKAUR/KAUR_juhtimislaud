@@ -8,12 +8,12 @@
     "views": 8440
    },
    "osaliselt": {
-    "n": 12,
-    "views": 3355
+    "n": 13,
+    "views": 4004
    },
    "puudub": {
-    "n": 18,
-    "views": 6093
+    "n": 17,
+    "views": 5444
    }
   },
   "themes": {
@@ -54,12 +54,12 @@
     "views": 2627,
     "n": 4,
     "olemas": 0,
-    "osaliselt": 0,
-    "puudub": 4,
+    "osaliselt": 1,
+    "puudub": 3,
     "views_olemas": 0,
-    "views_osaliselt": 0,
-    "views_puudub": 2627,
-    "share_views_uncovered": 1.0
+    "views_osaliselt": 649,
+    "views_puudub": 1978,
+    "share_views_uncovered": 0.753
    },
    "mets": {
     "views": 1849,
@@ -141,9 +141,9 @@
    {
     "workbook": "Keskkonnalevaade-Liigid-Lindudeindeks",
     "teema": "liigid",
-    "meie": "puudub",
+    "meie": "osaliselt",
     "andmed": "API:f_keskkonnaseire",
-    "markus": "Linnuloenduse haudepaaride ridu on 189 tuhat (2008-2025), kuid indeksi arvutus vajab seiremeetodi tundmist; ei ole arvutatud.",
+    "markus": "Esialgne haudelinnustiku koondindeks punktloendustest (lihtsustatud ahelindeks, mitte TRIM ega ametlik indeks); ekspert peab meetodi kinnitama.",
     "title": "Keskkonnaülevaade - Liigid - Lindude indeks",
     "views": 649
    },
@@ -378,9 +378,9 @@
   {
    "workbook": "Keskkonnalevaade-Liigid-Lindudeindeks",
    "teema": "liigid",
-   "meie": "puudub",
+   "meie": "osaliselt",
    "andmed": "API:f_keskkonnaseire",
-   "markus": "Linnuloenduse haudepaaride ridu on 189 tuhat (2008-2025), kuid indeksi arvutus vajab seiremeetodi tundmist; ei ole arvutatud.",
+   "markus": "Esialgne haudelinnustiku koondindeks punktloendustest (lihtsustatud ahelindeks, mitte TRIM ega ametlik indeks); ekspert peab meetodi kinnitama.",
    "title": "Keskkonnaülevaade - Liigid - Lindude indeks",
    "views": 649
   },

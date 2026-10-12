@@ -62,6 +62,8 @@ Leht ehitatakse `pages.yml` poolt kõigist harudest; lisatud tulemused ilmuvad a
 - Natura SDF säilimishinnangu seos EL aruandluse seisundiga.
 - Mullaseire meetodimuutused (pH, P, Cu, Corg): mediaan 2002–2006 → 2022–2026 pH 6,6 → 6,3 ja Corg 1,86% → 2,60% ei ole paarisvõrdlus (alad ja meetodid erinevad); ekspert peab kinnitama.
 - Välisõhu seire: jaama tüüp (linn/liiklus/taust) ja mõõtmise samm tabelis puuduvad; plii µg/m³ märgisega read on tõenäoliselt ng/m³ (ühiku märgistus tuleb andmeomanikul kinnitada); ppbv read on välja jäetud.
+- Lindude indeks: lihtsustatud ahelindeks punktloendustest; ekspert peab kinnitama meetodi (TRIM vs ahelindeks), punktide valiku, liigivaliku ja äärmuslike liikide (nt piiritaja, aed-roolind) käsitluse.
+- Üraskid: allikat avaandmetes ei leitud (otsitud API tabelite ja KESE kataloogi nimedest); vajab Metsaameti/Keskkonnaagentuuri metsakaitse seire andmeallikat.
 - Aastaraamatute PDF-id ei ole repos (artefakt `yearbooks-raw`, 30 päeva); Soome, Island, Rootsi Skogsdata puuduvad.
 
 ## Seire (KESE) töövoog: kuidas jätkata

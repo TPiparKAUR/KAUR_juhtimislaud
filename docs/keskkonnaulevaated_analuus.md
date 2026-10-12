@@ -22,15 +22,15 @@ töövihikute loetelu koos vaatamiste arvuga (`data/tableau_public_workbooks.csv
 | Katvus | Vaateid | Vaatamisi | Osakaal vaatamistest |
 |---|---|---|---|
 | olemas | 24 | 8 440 | 47% |
-| osaliselt | 12 | 3 355 | 19% |
-| puudub | 18 | 6 093 | 34% |
+| osaliselt | 13 | 4 004 | 22% |
+| puudub | 17 | 5 444 | 30% |
 
 Teemati (vaatamised; katmata osa vaatamistest):
 
 | Teema | Vaatamisi | Katmata |
 |---|---|---|
 | Jäätmed | 3 509 | 19% (oli 38% enne olme-, pakendi- ja biojäätmete vooge) |
-| Liigid | 2 627 | **100%** |
+| Liigid | 2 627 | 75% (esialgne lindude indeks lisandus) |
 | Ilm ja kliima | 2 371 | 18% |
 | Vesi | 2 132 | 0% katmata (osaliselt kaetud: põhjaveebilanss, eutrofeerumine, reostuskoormus merre, põhjavee koondseisund) |
 | Välisõhk | 1 932 | 24% |
@@ -128,3 +128,14 @@ varasema avatud küsimuse veevõtu ja veekasutuse veeliikide erinevuse kohta; (2
 ainult ühes kogumis üle varu. Piirangud: varu ühik (m³/ööpäevas) on eeldatud, varu kehtib veemaardlatele
 (mitte kogu kogumile), mitme kogumiga veehaarded on välja jäetud. Raskus: algselt arvasin, et seost ei ole
 (koodid ei ühtinud varutabeli koodidega); see oli õige vaid otse varu tabeliga, registri kaudu seos on olemas.
+
+## Täiendus 2026-10-12 (hiljem): lindude esialgne indeks; üraskid puuduvad avaandmetest
+
+Haudelinnustiku punktloendustest (KESE, „Liigi haudepaaride arv“, 147 tuhat rida programmis „Haudelinnustiku
+punktloendused“) on ehitatud lihtsustatud ahelindeks (`bird_analysis.py`, mitte TRIM ega ametlik indeks).
+Koondindeks (74 liiki, 2 äärmusliku ahelaga liiki välja jäetud) on 2025. aastal 109 (2010 = 100), 95%
+bootstrap-vahemik 96–118, st muutus ei ole eristatav; kõigi 76 kehtiva ahelaga liigiga oleks 117 (tundlik kahe
+äärmusliku liigi suhtes, mida meetod ei suuda eristada artefaktist). Punktid ei ole juhuvalim ega elupaigati kaalutud.
+**Üraskid ja kaitstav mets:** avaandmete tabelites ega seirekataloogis (400 näitajat, 54 tabelit „mets/kaitse“)
+üraskite andmeid ei leitud; „Päevane püügiarv“ on linnujaamade rõngastuspüük, mitte üraskite püük.
+Üraskite vaade jääb katmata kuni allika (metsakaitse seire, mitte KESE) leidmiseni.
