@@ -165,7 +165,7 @@ def main(argv: list[str] | None = None) -> None:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--indicator", action="append", default=[], help="naitaja_nimetus (exact)")
     ap.add_argument("--group", action="append", default=[], help="naitaja_grupp_selg (exact)")
-    ap.add_argument("--species", default=None, help="liik_est (exact)")
+    ap.add_argument("--species", action="append", default=[], help="liik_est (exact), repeatable")
     ap.add_argument("--out", type=Path, default=Path("out/extract"))
     ap.add_argument("--workers", type=int, default=3)
     ap.add_argument("--base-url", default=BASE_URL)
@@ -179,11 +179,12 @@ def main(argv: list[str] | None = None) -> None:
     if not selections:
         ap.error("give at least one --indicator or --group")
     for column, name in selections:
-        filters = {column: f"eq.{name}"}
-        if args.species:
-            filters["liik_est"] = f"eq.{args.species}"
-        LOG.info("extracting %s = %s", column, name)
-        frames.append(extract(client, filters, args.workers))
+        for species in args.species or [None]:
+            filters = {column: f"eq.{name}"}
+            if species:
+                filters["liik_est"] = f"eq.{species}"
+            LOG.info("extracting %s = %s (species %s)", column, name, species)
+            frames.append(extract(client, filters, args.workers))
     df = pl.concat(frames, how="diagonal") if frames else pl.DataFrame()
     args.out.mkdir(parents=True, exist_ok=True)
     df.write_parquet(args.out / "monitoring_extract.parquet")

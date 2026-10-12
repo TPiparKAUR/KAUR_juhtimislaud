@@ -85,3 +85,23 @@ def test_group_selection_reads_all_indicators_of_the_group(tmp_path: Path) -> No
         me.main(["--group", "Muld", "--out", str(tmp_path), "--base-url", url])
     df = pl.read_parquet(tmp_path / "monitoring_extract.parquet")
     assert df.height == 6 and set(df["naitaja_grupp_selg"]) == {"Muld"}
+
+
+def test_several_species_are_read_separately_and_combined(tmp_path: Path) -> None:
+    with fake_server({me.TABLE: table()}, max_rows=5) as (url, _s):
+        me.main(
+            [
+                "--indicator",
+                "Okka/lehekadu kogu võra ulatuses",
+                "--species",
+                "harilik mänd",
+                "--species",
+                "harilik kuusk",
+                "--out",
+                str(tmp_path),
+                "--base-url",
+                url,
+            ]
+        )
+    df = pl.read_parquet(tmp_path / "monitoring_extract.parquet")
+    assert df.height == 17 and set(df["liik_est"]) == {"harilik mänd", "harilik kuusk"}

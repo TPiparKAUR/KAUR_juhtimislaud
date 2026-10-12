@@ -16,6 +16,10 @@ on:
         description: "naitaja_grupp_selg values separated by | (optional)"
         required: false
         default: ""
+      species:
+        description: "liik_est values separated by | (optional; each indicator/group is read once per species)"
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -36,12 +40,15 @@ jobs:
         env:
           INDICATORS: ${{ inputs.indicators }}
           GROUPS_IN: ${{ inputs.groups }}
+          SPECIES_IN: ${{ inputs.species }}
         run: |
           args=()
           IFS='|' read -ra names <<< "$INDICATORS"
           for n in "${names[@]}"; do if [ -n "$n" ]; then args+=(--indicator "$n"); fi; done
           IFS='|' read -ra gnames <<< "$GROUPS_IN"
           for g in "${gnames[@]}"; do if [ -n "$g" ]; then args+=(--group "$g"); fi; done
+          IFS='|' read -ra snames <<< "$SPECIES_IN"
+          for s in "${snames[@]}"; do if [ -n "$s" ]; then args+=(--species "$s"); fi; done
           uv run python monitoring_extract.py "${args[@]}" --out out/extract --workers 3
         timeout-minutes: 35
       - uses: actions/upload-artifact@v4
