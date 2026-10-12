@@ -1,0 +1,54 @@
+{
+ "abstraction_rows": 9227,
+ "reserve_rows": 947,
+ "pairs": [
+  {
+   "abstraction_column": "veehaardekood",
+   "reserve_column": "kood",
+   "distinct_abstraction": 2364,
+   "distinct_reserve": 919,
+   "matching_codes": 0,
+   "matching_volume_share": 0.0
+  },
+  {
+   "abstraction_column": "veehaardekood",
+   "reserve_column": "kkr_kood",
+   "distinct_abstraction": 2364,
+   "distinct_reserve": 758,
+   "matching_codes": 0,
+   "matching_volume_share": 0.0
+  },
+  {
+   "abstraction_column": "veehaardekood",
+   "reserve_column": "veemaardla_kood",
+   "distinct_abstraction": 2364,
+   "distinct_reserve": 124,
+   "matching_codes": 0,
+   "matching_volume_share": 0.0
+  },
+  {
+   "abstraction_column": "jaamakood",
+   "reserve_column": "kood",
+   "distinct_abstraction": 851,
+   "distinct_reserve": 919,
+   "matching_codes": 0,
+   "matching_volume_share": 0.0
+  },
+  {
+   "abstraction_column": "jaamakood",
+   "reserve_column": "kkr_kood",
+   "distinct_abstraction": 851,
+   "distinct_reserve": 758,
+   "matching_codes": 0,
+   "matching_volume_share": 0.0
+  },
+  {
+   "abstraction_column": "jaamakood",
+   "reserve_column": "veemaardla_kood",
+   "distinct_abstraction": 851,
+   "distinct_reserve": 124,
+   "matching_codes": 0,
+   "matching_volume_share": 0.0
+  }
+ ]
+}
