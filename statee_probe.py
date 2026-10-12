@@ -27,7 +27,7 @@ from typing import Any
 LOG = logging.getLogger("statee_probe")
 BASE = "https://andmed.stat.ee/api/v1/et/stat"
 KEYWORDS = ("energi", "elektri", "taastuv", "kütus", "soojus", "gaas", "põlevkivi", "kasvuhoone")
-MAX_DEPTH = 3
+MAX_DEPTH = 5
 MAX_NODES = 400
 PAUSE_S = 0.4
 
@@ -49,6 +49,7 @@ def walk(base: str = BASE, fetch: Any = get_json) -> dict[str, Any]:
         "base": base,
         "first_level": [],
         "second_level": [],
+        "tree": [],
         "matches": [],
         "errors": [],
     }
@@ -77,6 +78,8 @@ def walk(base: str = BASE, fetch: Any = get_json) -> dict[str, Any]:
                 out["first_level"].append({"id": nid, "text": text})
             if depth == 1:
                 out["second_level"].append({"parent": trail, "id": nid, "text": text, "type": typ})
+            if depth >= 2 and matches(label):
+                out["tree"].append({"path": sub, "text": text, "type": typ})
             if typ == "t" and (matches(text) or matches(trail)):
                 out["matches"].append({"path": sub, "id": nid, "text": text, "trail": trail})
             elif typ in ("l", "s") and depth + 1 < MAX_DEPTH + 1 and (depth < 2 or matches(label)):
