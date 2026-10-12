@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import http.client
 from typing import Any
 
 import statee_probe as sp
@@ -42,3 +43,18 @@ def test_describe_adds_variables_without_values() -> None:
     sp.PAUSE_S = 0.0
     sp.describe_tables(r, fetch)
     assert r["matches"][0]["variables"] == [{"code": "Aasta", "text": "Aasta", "n": 3}]
+
+
+def test_ids_with_spaces_are_quoted_and_bad_urls_are_recorded() -> None:
+    tree: dict[str, Any] = {
+        "https://x/api": [{"id": "Eri valdkonnad. Arhiiv", "text": "Energia", "type": "l"}],
+        "https://x/api/Eri%20valdkonnad.%20Arhiiv": [{"id": "T.px", "text": "Tabel", "type": "t"}],
+    }
+    r = sp.walk("https://x/api", lambda url: tree[url])
+    assert [m["id"] for m in r["matches"]] == ["T.px"]
+    assert r["matches"][0]["path"] == "Eri%20valdkonnad.%20Arhiiv/T.px"
+
+    def bad(url: str) -> Any:
+        raise http.client.InvalidURL("control characters")
+
+    assert sp.walk("https://x/api", bad)["errors"]

@@ -14,10 +14,12 @@ Usage
 from __future__ import annotations
 
 import argparse
+import http.client
 import json
 import logging
 import time
 import urllib.error
+import urllib.parse
 import urllib.request
 from pathlib import Path
 from typing import Any
@@ -57,7 +59,7 @@ def walk(base: str = BASE, fetch: Any = get_json) -> dict[str, Any]:
         url = f"{base}/{path}".rstrip("/")
         try:
             nodes = fetch(url)
-        except (urllib.error.URLError, TimeoutError, ValueError) as exc:
+        except (urllib.error.URLError, http.client.HTTPException, TimeoutError, ValueError) as exc:
             out["errors"].append({"path": path, "error": str(exc)[:200]})
             continue
         visited += 1
@@ -67,8 +69,10 @@ def walk(base: str = BASE, fetch: Any = get_json) -> dict[str, Any]:
             continue
         for n in nodes:
             nid, text, typ = str(n.get("id", "")), str(n.get("text", "")), str(n.get("type", ""))
-            sub = f"{path}/{nid}".strip("/")
+            sub = f"{path}/{urllib.parse.quote(nid, safe='')}".strip("/")
             label = f"{trail} > {text}".strip(" >")
+            if depth == 0 and "lõpetatud" in text.lower():
+                continue  # archived tables
             if depth == 0:
                 out["first_level"].append({"id": nid, "text": text})
             if depth == 1:
@@ -91,7 +95,7 @@ def describe_tables(result: dict[str, Any], fetch: Any = get_json, limit: int = 
                 for v in meta.get("variables", [])
             ]
             m["title"] = meta.get("title")
-        except (urllib.error.URLError, TimeoutError, ValueError) as exc:
+        except (urllib.error.URLError, http.client.HTTPException, TimeoutError, ValueError) as exc:
             m["error"] = str(exc)[:200]
         time.sleep(PAUSE_S)
 
