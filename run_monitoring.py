@@ -23,6 +23,7 @@ from typing import Any
 import polars as pl
 
 import air_analysis as aa
+import bird_analysis as ba
 import crown_analysis as ca
 import soil_analysis as sa
 import wq_analysis as wq
@@ -85,6 +86,7 @@ def build(
         "crown": ca.build(extract),
         "soil": sa.build(extract) if "naitaja_proovimaatriks_nimi" in extract.columns else None,
         "air": aa.build(extract) if aa.has_air(extract) else None,
+        "birds": ba.build(extract) if ba.has_birds(extract) else None,
         "water_quality": wq.build(extract) if "pohjaveekogum_kood" in extract.columns else None,
     }
 

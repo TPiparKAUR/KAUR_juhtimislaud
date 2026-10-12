@@ -130,6 +130,33 @@
         <p><b>Tõlgendus (kinnitamata):</b> ${so.meta.interpretation.join(' ')}</p>
         <p><b>Piirangud:</b> proovialad ei ole perioodide vahel samad, proovivõtusügavus ja horisont erinevad (andmeväljad on enamasti täitmata); põllumuld ja muud mullaseire alad pole siin eristatud; metaboolsed näitajad, normid ja tõlgendus vajavad pedoloogi kinnitust. Genereeritud ${d.meta.generated_utc.slice(0, 10)} (UTC).</p></div>`;
     },
+    bfindings(host) {
+      const b = d.birds; if (!b) { host.innerHTML = '<p class="viz-note">Linnuloenduste andmeid ei ole.</p>'; return; }
+      const c = b.composite, f = first(c), l = last(c), li = [];
+      const pts = b.checks.points_per_year;
+      li.push(`<li><b>Mida see on:</b> haudelinnustiku punktloenduste (KESE) esialgne koondindeks ${f.year}–${l.year}: ${fmt(b.checks.rows, 0)} rida, ${fmt(b.checks.points, 0)} loenduspunkti, ${fmt(b.species_used, 0)} liiki ${fmt(b.species_total, 0)}-st (ainult liigid, mille ahel on igal aastal kehtiv). See on lihtsustatud ahelindeks, <b>mitte</b> ametlik lindude indeks ega TRIM; punktid ei ole juhuvalim.</li>`);
+      li.push(`<li><b>Koondindeks:</b> ${fmt(f.index, 0)} (${f.year}) → ${fmt(l.index, 0)} (${l.year}), 95% bootstrap-vahemik ${fmt(l.lo, 0)}–${fmt(l.hi, 0)}; loendatud punkte aastas ${fmt(Math.min(...pts), 0)}–${fmt(Math.max(...pts), 0)}.</li>`);
+      const sp = b.species, down = sp.filter((s) => s.last < 100).length;
+      li.push(`<li><b>Liigid:</b> ${fmt(down, 0)} liigi indeks on lõpuaastaks alla 100 ja ${fmt(sp.length - down, 0)} üle 100 (esimene aasta = 100); üksikliikide vahemikke ei ole näidatud, sest sagedaste liikide valik ja punktide koosseis mõjutavad tulemust.</li>`);
+      host.innerHTML = `<ul class="findings">${li.join('')}</ul>`;
+    },
+    bindex(host) {
+      const b = d.birds; if (!b) return;
+      const c = b.composite.filter((r) => r.year <= maxY);
+      const mk = (label, color, f) => ({ label, color, data: c.map((r, i) => ({ year: r.year, value: f(r), n: b.points_per_link[Math.max(0, i - 1)] || 0, extra: `${fmt(b.checks.points_per_year[b.years.indexOf(r.year)], 0)} punkti` })) });
+      lines(host, { title: 'Haudelinnustiku koondindeks (esialgne)', subtitle: 'Liikide geomeetriline keskmine, esimene aasta = 100; keskmine ning 95% bootstrap-vahemiku piirid.', unit: '', dec: 0, axisDec: 0, nName: 'punkti (lüli)', series: [mk('Koondindeks', SLOTS[0], (r) => r.index), mk('Alumine 95%', SLOTS[2], (r) => r.lo), mk('Ülemine 95%', SLOTS[1], (r) => r.hi)],
+        ref: { value: 100, label: 'esimene aasta = 100' }, note: `Lihtsustatud ahelindeks (mitte TRIM): järjestikuste aastate paarisummad samades punktides; ${fmt(b.species_used, 0)} liiki. Seirevõrgu punktid ei ole Eesti juhuvalim ega elupaikade kaupa kaalutud; meetodimuutused ja loendajate vahetused ei ole nähtavad. Vahemik arvestab ainult punktide valimit.` });
+      const f = first(c), l = last(c);
+      C.punch(host, `Haudelinnustiku punktloenduste koondindeks on ${fmt(l.index, 0)} (${l.year}; ${f.year} = 100), 95% bootstrap-vahemik ${fmt(l.lo, 0)}–${fmt(l.hi, 0)}; ${l.lo > 100 ? 'vahemik jääb üle 100, ' : l.hi < 100 ? 'vahemik jääb alla 100, ' : 'vahemik sisaldab 100, '}kuid punktid ei ole juhuvalim ja indeks on esialgne.`);
+    },
+    bspecies(host) {
+      const b = d.birds; if (!b || !b.species.length) return;
+      const sp = b.species, pick = [...sp.slice(0, 8), ...sp.slice(-8)];
+      C.natureBars(host, { rows: pick.map((s) => ({ name: s.name, value: s.last, note: `${fmt(s.pairs_total, 0)} paari kokku` })), unit: 'indeks', fmt: (v) => fmt(v, 0), title: `Liigid indeksi lõpuaastal (esimene aasta = 100): 8 madalaimat ja 8 kõrgeimat`, subtitle: `${fmt(sp.length, 0)} liigist, mille ahel on kehtiv; liigi indeks lõpuaastal.`, color: SLOTS[3],
+        note: 'Üksikliigi indeksil ei ole usaldusvahemikku näidatud; väikese arvukusega liikide indeks kõigub tugevalt. Tulemus ei ole kaitsestaatuse ega Punase nimestiku hinnang.' });
+      const up = sp.filter((s) => s.last > 100).length;
+      C.punch(host, `${fmt(up, 0)} liiki ${fmt(sp.length, 0)}-st on lõpuaastaks üle algaasta taseme ja ${fmt(sp.length - up, 0)} sellel või madalamal; kõrgeim liik on ${sp[sp.length - 1].name} (${fmt(sp[sp.length - 1].last, 0)}), madalaim ${sp[0].name} (${fmt(sp[0].last, 0)}); suuri väärtusi põhjustab sageli väike algne arvukus.`);
+    },
     afindings(host) {
       const a = d.air; if (!a) { host.innerHTML = '<p class="viz-note">Välisõhu seire andmeid ei ole.</p>'; return; }
       const I = a.indicators, li = [];
