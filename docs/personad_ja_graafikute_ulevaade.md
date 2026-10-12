@@ -176,3 +176,9 @@ proovialasid on alla 20. Ülevaatamata valdkonnaekspertide poolt.
 Graafikud: jaamade aastakeskmiste mediaan ning vähim ja suurim jaam näitajate kaupa (valik), PM10
 ületuspäevad aastas, meetodite plokk. Puänt võrdleb viimast aastat esimese aastaga, EL tasemega ja samade
 jaamade muutust; ülevaatamata valdkonnaekspertide poolt, jaamatüüp teadmata.
+
+## Põhjaveebilanss (veearuanded + registrid, päris andmetega)
+
+Graafikud: põhjaveevõtt veehaarde veeliigi järgi; võtt kinnitatud olmevaru suhtes põhjaveekogumi kaupa
+(koos koguselise seisundiga). Puänt toob välja kaevandus-/karjäärivee osakaalu ja kogumid, kus võtt
+ületab varu; ühik ja varu tõlgendus kinnitamata, valdkonnaekspert ülevaatamata.

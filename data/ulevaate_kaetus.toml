@@ -297,9 +297,9 @@ markus = "Mulla pH, orgaaniline süsinik, toitained ja mikroelemendid (mullaseir
 [[vaade]]
 workbook = "Phjaveebilanss"
 teema = "vesi"
-meie = "osaliselt"
-andmed = "API:f_pohjaveevarud"
-markus = "Meil kinnitatud varud lasundi järgi ja põhjaveevõtt; bilanssi (varu vs võtt) ei saa ehitada ilma seoseta."
+meie = "olemas"
+andmed = "API:f_pohjaveevarud + t_awtabel002_01_curr + f_veehaarded + f_veehaarded_puurauk"
+markus = "Põhjaveevõtt vs kinnitatud olmevaru põhjaveekogumi kaupa veehaarete registri kaudu; varu ühik (m³/ööpäevas) kinnitamata, varu kehtib ainult veemaardlatele."
 
 [[vaade]]
 workbook = "Jtmearuandlus_KKPjtmeteteemalehtedevaldkonnad_Olmejtmed"

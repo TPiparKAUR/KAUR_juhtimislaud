@@ -6,8 +6,10 @@ import json
 
 import polars as pl
 
+import gw_balance as gb
 import run_wateruse as rw
 import wateruse_analysis as wu
+from tests.test_gw_balance import inputs
 
 
 def use_frame() -> pl.DataFrame:
@@ -187,4 +189,5 @@ def sample_build() -> dict[str, object]:
             "pindala": [1.0, 1.0],
         }
     )
-    return rw.build(use, gw, gw, dis, res, ra, "2026-01-01")
+    balance = gb.build(*inputs())
+    return rw.build(use, gw, gw, dis, res, ra, "2026-01-01", balance=balance)

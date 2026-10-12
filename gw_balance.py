@@ -152,7 +152,11 @@ def by_intake_type(g: pl.DataFrame, intakes: pl.DataFrame) -> list[dict[str, Any
     out = (
         j.with_columns(pl.col("veeliik_selg").fill_null("Märkimata"))
         .group_by("veeliik_selg")
-        .agg(m3=pl.col("aastakokku").sum(), intakes=pl.col("code").n_unique())
+        .agg(
+            m3=pl.col("aastakokku").sum(),
+            intakes=pl.col("code").n_unique(),
+            m3_single=pl.col("aastakokku").filter(pl.col("class") == "single").sum(),
+        )
         .sort("m3", descending=True)
     )
     return [{"year": year, **r} for r in out.to_dicts()]

@@ -21,8 +21,8 @@ töövihikute loetelu koos vaatamiste arvuga (`data/tableau_public_workbooks.csv
 
 | Katvus | Vaateid | Vaatamisi | Osakaal vaatamistest |
 |---|---|---|---|
-| olemas | 23 | 7 429 | 42% |
-| osaliselt | 13 | 4 366 | 24% |
+| olemas | 24 | 8 440 | 47% |
+| osaliselt | 12 | 3 355 | 19% |
 | puudub | 18 | 6 093 | 34% |
 
 Teemati (vaatamised; katmata osa vaatamistest):
@@ -116,3 +116,15 @@ read on päevakeskmised (tuletatud ridade arvust), jaama tüüpi tabelis ei ole,
 käsitsi sisestatud ning kinnitamata. **Andmekvaliteet:** plii read on suures osas märgitud µg/m³, kuid väärtused
 on ng/m³ suurusjärgus; need on välja jäetud, mistõttu plii jada lõpeb 2019. Õhukvaliteedi vastavushinnang
 vajab ametlikku aruandlust ja jaamatüüpe.
+
+## Täiendus 2026-10-12: põhjaveebilanss
+
+Kõige vaadatum katmata vaade (Põhjaveebilanss, 1 011 vaatamist) on ehitatud (`gw_balance.py`). Veearuande
+veehaarde kood ühtib registri (`f_veehaarded.kkr_kood`) koodiga 100% võetud mahust; registri puuraugud
+(`f_veehaarded_puurauk.pohjaveekogum_id`) seovad veehaarde põhjaveekogumiga. Tulemus: (1) 2025. aasta
+„põhjaveevõtust“ (252 Mm³) on 45% kaevandusvesi, 35% karjäärivesi ja 19% põhjavesi (48 Mm³), mis lahendab
+varasema avatud küsimuse veevõtu ja veekasutuse veeliikide erinevuse kohta; (2) põhjaveekogumiga seotav võtt
+(~19–24% kogumahust, ülejäänu kaevandus- ja karjäärivesi) on 20 kogumis kokku ~52% kinnitatud olmevarust ja
+ainult ühes kogumis üle varu. Piirangud: varu ühik (m³/ööpäevas) on eeldatud, varu kehtib veemaardlatele
+(mitte kogu kogumile), mitme kogumiga veehaarded on välja jäetud. Raskus: algselt arvasin, et seost ei ole
+(koodid ei ühtinud varutabeli koodidega); see oli õige vaid otse varu tabeliga, registri kaudu seos on olemas.

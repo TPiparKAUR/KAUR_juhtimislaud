@@ -70,7 +70,7 @@
       const ab = d.abstraction, ys = ab.groundwater.map((r) => String(r.year));
       const series = [{ key: 'gw', label: 'Põhjavesi', color: SLOTS[0], values: new Map(ab.groundwater.map((r) => [String(r.year), r.m3])) }, { key: 'sw', label: 'Pinnavesi', color: SLOTS[2], values: new Map(ab.surface.map((r) => [String(r.year), r.m3])) }];
       C.stackedBars(host, { years: ys, scale: M, unit: 'Mm³', dec: 0, height: 280, series, title: 'Veevõtt aastas', subtitle: 'Veevõtt põhja- ja pinnaveest aruannete järgi, Mm³ aastas.', coverage: new Map(ab.groundwater.map((r) => [String(r.year), r.reports])),
-        note: `n = põhjaveevõtu aruannete arv. Põhja- ja pinnaveevõtu summa ühtib deklareeritud veekasutuse kogusummaga (erinevus ${sgn(matchPct(last.year), 1)}% aastal ${last.year}), kuid veeliikide jaotus erineb: veevõtu „põhjavesi“ ja veekasutuse „Põhjavesi“ ei ole sama (tõenäoliselt kaevandus- ja karjäärivesi; kinnitamata).` });
+        note: `n = põhjaveevõtu aruannete arv. Põhja- ja pinnaveevõtu summa ühtib deklareeritud veekasutuse kogusummaga (erinevus ${sgn(matchPct(last.year), 1)}% aastal ${last.year}), kuid veeliikide jaotus erineb: veevõtu „põhjavesi“ ja veekasutuse „Põhjavesi“ ei ole sama${d.gw_balance ? ' (veevõtt hõlmab ka kaevandus- ja karjäärivett, vt järgmist graafikut)' : ' (tõenäoliselt kaevandus- ja karjäärivesi; kinnitamata)'}.` });
       const g = ab.groundwater, a = g[g.length - 2], b = g[g.length - 1];
       C.punch(host, `Põhjaveevõtt oli ${mm(b.m3)} (${b.year}), ${sgn(pctChange(a.m3, b.m3), 0)}% võrreldes aastaga ${a.year}, aruannete arv peaaegu sama (${a.reports} → ${b.reports}); aastate muutuse põhjus (aruandlus või tegelik) on andmetest nähtamatu.`);
     },
@@ -102,14 +102,32 @@
     wreserves(host) {
       const r = d.reserves, rows = r.by_aquifer.map((x) => ({ name: `${x.geol_indeks} (${fmt(x.deposits, 0)} varu)`, value: x.t1_olme }));
       C.natureBars(host, { rows, unit: 'T1 olme', title: 'Kinnitatud põhjaveevarud lasundi järgi (kehtivad kirjed)', subtitle: 'Varu kategooria T1 „olme“ summa lasundiindeksi (geoloogiline indeks) järgi; ühik eeldatud m³/ööpäevas.', color: C.SLOTS[0],
-        note: `Kehtivaid kirjeid ${fmt(r.valid_records, 0)} / ${fmt(r.all_records, 0)}; kategooria T1 on täidetud ainult osal kirjetest. Varu ei ole võrreldav veevõtuga (veevõtu tabelil puudub seos varuga), seega see ei ole põhjaveebilanss.` });
-      C.punch(host, `Suurim kinnitatud T1 olmevaru on lasundil ${r.by_aquifer[0].geol_indeks} (${fmt(r.by_aquifer[0].t1_olme, 0)}, ${fmt(100 * r.by_aquifer[0].t1_olme / r.t1_olme_total, 0)}% kogusummast); see ei ole veevõtuga võrreldav põhjaveebilanss.`);
+        note: `Kehtivaid kirjeid ${fmt(r.valid_records, 0)} / ${fmt(r.all_records, 0)}; kategooria T1 on täidetud ainult osal kirjetest. ${d.gw_balance ? 'Võrdlus põhjaveevõtuga on järgmises graafikus.' : 'Varu ei ole võrreldav veevõtuga (veevõtu tabelil puudub seos varuga), seega see ei ole põhjaveebilanss.'}` });
+      C.punch(host, `Suurim kinnitatud T1 olmevaru on lasundil ${r.by_aquifer[0].geol_indeks} (${fmt(r.by_aquifer[0].t1_olme, 0)}, ${fmt(100 * r.by_aquifer[0].t1_olme / r.t1_olme_total, 0)}% kogusummast); ${d.gw_balance ? 'veevõtuga võrdlus on järgmises graafikus.' : 'see ei ole veevõtuga võrreldav põhjaveebilanss.'}`);
+    },
+    wgwtype(host) {
+      const b = d.gw_balance; if (!b) return;
+      const tot = b.intake_types.reduce((a, r) => a + r.m3, 0), y = b.intake_types[0].year;
+      const rows = b.intake_types.map((r) => ({ name: `${r.veeliik_selg} (${fmt(r.intakes, 0)} veehaaret)`, value: r.m3 / M, note: `${fmt(100 * r.m3 / tot, 0)}% põhjaveevõtust` }));
+      C.natureBars(host, { rows, unit: 'Mm³', fmt: (v) => fmt(v, 1), title: `Põhjaveevõtt veehaarde veeliigi järgi (${y})`, subtitle: 'Veearuannete põhjaveevõtt (Mm³ aastas), seotud veehaarete registriga KKR koodi alusel; veeliik on registri väli.', color: C.SLOTS[2],
+        note: 'Seos veearuande ja registri vahel: kõik veearuande veehaarete koodid leiti registrist. Veeliik on registris märgitud veehaarde kohta; kaevandus- ja karjäärivesi on enamasti kuivendusvesi ega ole joogiveevaru kasutus.' });
+      const pick = (n) => (b.intake_types.find((r) => r.veeliik_selg === n) || { m3: 0 }).m3;
+      C.punch(host, `${y}. aastal oli „põhjaveevõtust“ ${fmt(100 * (pick('Kaevandusvesi') + pick('Karjäärivesi')) / tot, 0)}% kaevandus- ja karjäärivesi ning ${fmt(100 * pick('Põhjavesi') / tot, 0)}% põhjavesi (${fmt(pick('Põhjavesi') / M, 0)} Mm³); veevõtu ja veekasutuse „põhjavee“ erinevus tuleneb sellest, mitte veearuannete veast.`);
+    },
+    wbalance(host) {
+      const b = d.gw_balance; if (!b) return;
+      const l = b.latest, KOG = { 1: 'koguseline seisund hea', 2: 'koguseline seisund ohustatud', 3: 'koguseline seisund halb' };
+      const rows = l.bodies.slice(0, 20).map((r) => ({ name: `${r.kood}${r.quantity_status ? ` · ${KOG[r.quantity_status] || 'seisund ' + r.quantity_status}` : ''}`, value: 100 * r.ratio, note: `võtt ${fmt(r.abstraction_m3_d, 0)} m³/ööpäevas, varu ${fmt(r.reserve_t1_olme, 0)}, ${fmt(r.deposits, 0)} varukirjet` }));
+      C.natureBars(host, { rows, unit: '% varust', fmt: (v) => fmt(v, 0), title: `Põhjaveevõtt kinnitatud olmevaru suhtes põhjaveekogumi kaupa (${l.year})`, subtitle: `Kogumi põhjaveevõtt (aastamaht / 365) protsendina kehtivate varukirjete T1 „olme“ summast; ${l.bodies.length} kogumit, kus on nii võtt kui varu (20 suurimat suhet).`, color: C.SLOTS[0],
+        note: `Ühikud eeldatud: võtt m³ aastas, varu m³ ööpäevas (kinnitamata). Varu kehtib kinnitatud veemaardlatele, mitte kogu põhjaveekogumile, ja võtt hõlmab ainult veehaardeid, mille kõik puuraugud asuvad ühes kogumis; suhe üle 100% ei tähenda üleekspluateerimist. Kogumite lõikes: üle 100% ${l.ratio_gt1}, 50–100% ${l.ratio_05_1}, alla 50% ${l.ratio_lt05}. Varuta kogumitesse jääb võttu ${fmt(l.abstraction_without_reserve_m3_d, 0)} m³/ööpäevas. Koguseline seisund on veekogumite hindamise tulemus (viimane hindamisaasta tabelis).` });
+      const share = (b.intake_types.reduce((a, r) => a + r.m3_single, 0)) / b.intake_types.reduce((a, r) => a + r.m3, 0);
+      C.punch(host, `${l.bodies_with_both} põhjaveekogumi kokku on ${l.year}. aastal võetud ${fmt(l.abstraction_in_both_m3_d, 0)} m³/ööpäevas ehk ${fmt(100 * l.abstraction_in_both_m3_d / l.reserve_in_both, 0)}% kinnitatud olmevarust (${fmt(l.reserve_in_both, 0)}); ${l.ratio_gt1 ? `ainult ${l.ratio_gt1} kogumis ületab võtt varu` : 'ühelgi kogumil ei ületa võtt varu'}, aga kogumiga seotav võtt on ${fmt(100 * share, 0)}% kogumahust (ülejäänu on kaevandus- ja karjäärivesi).`);
     },
     wmethods(host) {
       host.innerHTML = `<div class="methods"><b>Andmed ja meetod</b> <span class="review-flag">valdkonnaekspert ülevaatamata</span>
         <p><b>Allikas ja päritolu:</b> Keskkonnaagentuuri avaandmed (keskkonnaandmed.envir.ee): veearuannete tabelid (veekasutus, veevõtt, heitvesi) aruandeaastatel ${d.meta.years[0]}–${d.meta.years[d.meta.years.length - 1]}, põhjaveevarude ja reoveekogumisalade registrid. Veearuanded on käitajate endi deklareeritud andmed.</p>
         <p><b>Tõlgendus (kinnitamata):</b> ${d.meta.interpretation.join(' ')}</p>
-        <p><b>Piirangud:</b> neli aruandeaastat ei võimalda trendi hinnata; osa väärtustest on arvutuslikud; kontrollikontsentratsioonide tõlgendus (kvartal vs aasta) on kinnitamata; põhjaveebilanssi ei ole võimalik ehitada ilma veevõtu ja varu sidumiseta. Genereeritud ${d.meta.generated_utc.slice(0, 10)} (UTC).</p></div>`;
+        <p><b>Piirangud:</b> neli aruandeaastat ei võimalda trendi hinnata; osa väärtustest on arvutuslikud; kontrollikontsentratsioonide tõlgendus (kvartal vs aasta) on kinnitamata; põhjaveebilanss on ehitatud veehaarete registri kaudu, kuid varu ühik (eeldatud m³/ööpäevas) ja varu kehtivus (ainult kinnitatud veemaardlad) piiravad tõlgendust. Genereeritud ${d.meta.generated_utc.slice(0, 10)} (UTC).</p></div>`;
     },
   };
   for (const h of hosts) {

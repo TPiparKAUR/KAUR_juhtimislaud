@@ -84,6 +84,8 @@ ANALYSES: dict[str, list[tuple[str, list[tuple[str, str]]]]] = {
                 ("wcompliance", ""),
                 ("wagglo", "Reoveekogumisalad"),
                 ("wreserves", "Põhjaveevarud"),
+                ("wgwtype", "Põhjaveebilanss"),
+                ("wbalance", ""),
                 ("wmethods", ""),
             ],
         ),

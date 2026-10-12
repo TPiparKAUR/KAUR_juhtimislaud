@@ -73,4 +73,6 @@ def test_balance_ratio_uses_valid_reserves_only() -> None:
     assert latest["bodies_with_reserve"] == 3
     types = {r["veeliik_selg"]: r["m3"] for r in b["intake_types"]}
     assert types["Karjäärivesi"] == 1000.0 and types["Märkimata"] == 42_500.0
+    single = {r["veeliik_selg"]: r["m3_single"] for r in b["intake_types"]}
+    assert single["Põhjavesi"] == 365_000.0 and single["Karjäärivesi"] == 0.0
     json.dumps(b)

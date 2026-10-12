@@ -7,7 +7,7 @@ Genereeritud `analyse_ulevaated.py` poolt failidest `data/ulevaate_kaetus.toml` 
 | Jäätmed | 10 | 3509 | 7 | 1 | 2 | 19 |
 | Liigid | 4 | 2627 | 0 | 0 | 4 | 100 |
 | Ilm ja kliima | 6 | 2371 | 4 | 0 | 2 | 18 |
-| Vesi | 7 | 2132 | 3 | 4 | 0 | 0 |
+| Vesi | 7 | 2132 | 4 | 3 | 0 | 0 |
 | Välisõhk | 7 | 1932 | 2 | 3 | 2 | 24 |
 | Mets | 5 | 1849 | 2 | 2 | 1 | 21 |
 | Seire (RKSP) | 7 | 1259 | 5 | 0 | 2 | 20 |
@@ -66,7 +66,7 @@ Genereeritud `analyse_ulevaated.py` poolt failidest `data/ulevaate_kaetus.toml` 
 | Välisõhk | Keskkonnaülevaade - Õhk - Peamiste saasteainete heitkogused | 254 | olemas | API:t_heitkogus_allikas_curr | Saasteained käitiste aruannetes. |
 | Välisõhk | Välisõhk - Heitkogused - NEC eesmärgid | 241 | puudub | väline | NEC eesmärgid (riiklik vähendamiskohustus). |
 | Välisõhk | Keskkonnaülevaade - Õhk - Õhusaaste tervisemõju | 228 | puudub | väline | Tervisemõju (EEA hinnangud). |
-| Vesi | Põhjaveebilanss | 1011 | osaliselt | API:f_pohjaveevarud | Meil kinnitatud varud lasundi järgi ja põhjaveevõtt; bilanssi (varu vs võtt) ei saa ehitada ilma seoseta. |
+| Vesi | Põhjaveebilanss | 1011 | olemas | API:f_pohjaveevarud + t_awtabel002_01_curr + f_veehaarded + f_veehaarded_puurauk | Põhjaveevõtt vs kinnitatud olmevaru põhjaveekogumi kaupa veehaarete registri kaudu; varu ühik (m³/ööpäevas) kinnitamata, varu kehtib ainult veemaardlatele. |
 | Vesi | Keskkonnaülevaade - Vesi - Pinnaveekogumite koondseisund | 245 | olemas | API:f_veekogumi_seisundid | Pinnaveekogumite seisund (paaritatud võrdlus). |
 | Vesi | Keskkonnaülevaade - Vesi - Põhjaveekogumite koondseisund | 223 | osaliselt | API:f_pohjaveekogumi_seisud | Põhjaveekogumid 2014 ja 2020, hulgad ei kattu. |
 | Vesi | Keskkonnaülevaade - Vesi - NO3 põhjavees | 186 | olemas | API:f_keskkonnaseire | Põhjavee nitraadi 90. protsentiil ja normi ületanute osakaal aastati (seireandmed); seirekohtade koosseis muutub aastati. |

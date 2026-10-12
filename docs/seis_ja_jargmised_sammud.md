@@ -55,7 +55,8 @@ Leht ehitatakse `pages.yml` poolt kõigist harudest; lisatud tulemused ilmuvad a
 
 - Vee koondhinnangu koostis (ÖSE/KESE, ökoloogiline seisund vs potentsiaal); seisundiklassi muutus järvedes.
 - SMI suhtelise vea tõlgendus (95% pool-laius) ja `periood` tähendus.
-- Veevõtu ja veekasutuse veeliikide erinevus (põhjavesi 237 vs 45 Mm³ 2022; summa ühtib ±0,1%): kas kaevandus- ja karjäärivesi?
+- ~~Veevõtu ja veekasutuse veeliikide erinevus~~ lahendatud 2026-10-12: registri veeliigi järgi on põhjaveevõtust enamus kaevandus- ja karjäärivesi.
+- Põhjaveebilanss: varu (`varu_t1_olme`) ühik m³/ööpäevas kinnitamata; varu kehtib veemaardlatele; ekspert peab kinnitama, kas suhe võtt/varu on kasutatav näitaja.
 - Jäätmetabeli märked (`biojaatmed_lipp` jt) hõlmavad kirjeid, mille liik pole selle voo jäätmed (nt segaolmejäätmed ja sõnnik biojäätmete märkega).
 - Jäätmetabeli ühik (t), negatiivsed read, ohtlike jäätmete osakaalu hüpe 2019 → 2020.
 - Natura SDF säilimishinnangu seos EL aruandluse seisundiga.

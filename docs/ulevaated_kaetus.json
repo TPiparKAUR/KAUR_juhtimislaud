@@ -4,12 +4,12 @@
   "n_views": 54,
   "by_status": {
    "olemas": {
-    "n": 23,
-    "views": 7429
+    "n": 24,
+    "views": 8440
    },
    "osaliselt": {
-    "n": 13,
-    "views": 4366
+    "n": 12,
+    "views": 3355
    },
    "puudub": {
     "n": 18,
@@ -86,11 +86,11 @@
    "vesi": {
     "views": 2132,
     "n": 7,
-    "olemas": 3,
-    "osaliselt": 4,
+    "olemas": 4,
+    "osaliselt": 3,
     "puudub": 0,
-    "views_olemas": 604,
-    "views_osaliselt": 1528,
+    "views_olemas": 1615,
+    "views_osaliselt": 517,
     "views_puudub": 0,
     "share_views_uncovered": 0.0
    },
@@ -129,15 +129,6 @@
    }
   },
   "top_gaps": [
-   {
-    "workbook": "Phjaveebilanss",
-    "teema": "vesi",
-    "meie": "osaliselt",
-    "andmed": "API:f_pohjaveevarud",
-    "markus": "Meil kinnitatud varud lasundi järgi ja põhjaveevõtt; bilanssi (varu vs võtt) ei saa ehitada ilma seoseta.",
-    "title": "Põhjaveebilanss",
-    "views": 1011
-   },
    {
     "workbook": "Keskkonnalevaade-Liigid-Liikideseisund",
     "teema": "liigid",
@@ -236,6 +227,15 @@
     "markus": "Nõuab SKP andmeid (Statistikaamet).",
     "title": "Keskkonnaülevaade - Jäätmed - Jäätmed ja SKP",
     "views": 331
+   },
+   {
+    "workbook": "Keskkonnalevaade-Jtmed-Ringlevamaterjalimr",
+    "teema": "jaatmed",
+    "meie": "puudub",
+    "andmed": "väline",
+    "markus": "Ringleva materjali määr on Eurostati näitaja.",
+    "title": "Keskkonnaülevaade - Jäätmed - Ringleva materjali määr",
+    "views": 321
    }
   ]
  },
@@ -612,9 +612,9 @@
   {
    "workbook": "Phjaveebilanss",
    "teema": "vesi",
-   "meie": "osaliselt",
-   "andmed": "API:f_pohjaveevarud",
-   "markus": "Meil kinnitatud varud lasundi järgi ja põhjaveevõtt; bilanssi (varu vs võtt) ei saa ehitada ilma seoseta.",
+   "meie": "olemas",
+   "andmed": "API:f_pohjaveevarud + t_awtabel002_01_curr + f_veehaarded + f_veehaarded_puurauk",
+   "markus": "Põhjaveevõtt vs kinnitatud olmevaru põhjaveekogumi kaupa veehaarete registri kaudu; varu ühik (m³/ööpäevas) kinnitamata, varu kehtib ainult veemaardlatele.",
    "title": "Põhjaveebilanss",
    "views": 1011
   },
