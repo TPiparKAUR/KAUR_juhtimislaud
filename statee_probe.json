@@ -1,0 +1,868 @@
+{
+ "base": "https://andmed.stat.ee/api/v1/et/stat",
+ "first_level": [
+  {
+   "id": "keskkond",
+   "text": "Keskkond"
+  },
+  {
+   "id": "majandus",
+   "text": "Majandus"
+  },
+  {
+   "id": "rahvastik",
+   "text": "Rahvastik"
+  },
+  {
+   "id": "sotsiaalelu",
+   "text": "Sotsiaalelu"
+  },
+  {
+   "id": "eri-valdkondade-statistika",
+   "text": "Eri valdkondade statistika"
+  },
+  {
+   "id": "rahvaloendus",
+   "text": "Rahva ja eluruumide loendus"
+  }
+ ],
+ "second_level": [
+  {
+   "parent": "Keskkond",
+   "id": "keskonna-arvepidamine",
+   "text": "Keskkonna arvepidamine",
+   "type": "l"
+  },
+  {
+   "parent": "Keskkond",
+   "id": "keskkonnakaitse-ja-jarelevalve",
+   "text": "Keskkonnakaitse ja -järelevalve",
+   "type": "l"
+  },
+  {
+   "parent": "Keskkond",
+   "id": "keskkonnaseisund",
+   "text": "Keskkonnaseisund",
+   "type": "l"
+  },
+  {
+   "parent": "Keskkond",
+   "id": "loodusvarad-ja-nende-kasutamine",
+   "text": "Loodusvarad ja nende kasutamine",
+   "type": "l"
+  },
+  {
+   "parent": "Keskkond",
+   "id": "pollumajanduskeskkond",
+   "text": "Põllumajanduskeskkonna näitajad",
+   "type": "l"
+  },
+  {
+   "parent": "Keskkond",
+   "id": "surve-keskkonnaseisundile",
+   "text": "Surve keskkonnaseisundile",
+   "type": "l"
+  },
+  {
+   "parent": "Majandus",
+   "id": "ehitus",
+   "text": "Ehitus",
+   "type": "l"
+  },
+  {
+   "parent": "Majandus",
+   "id": "energeetika",
+   "text": "Energeetika",
+   "type": "l"
+  },
+  {
+   "parent": "Majandus",
+   "id": "ettevetete-majandusnaitajad",
+   "text": "Ettevõtete majandusnäitajad",
+   "type": "l"
+  },
+  {
+   "parent": "Majandus",
+   "id": "hinnad",
+   "text": "Hinnad",
+   "type": "l"
+  },
+  {
+   "parent": "Majandus",
+   "id": "infotehnoloogia",
+   "text": "Infotehnoloogia ja side",
+   "type": "l"
+  },
+  {
+   "parent": "Majandus",
+   "id": "kalandus",
+   "text": "Kalandus",
+   "type": "l"
+  },
+  {
+   "parent": "Majandus",
+   "id": "majandusuksused",
+   "text": "Majandusüksused",
+   "type": "l"
+  },
+  {
+   "parent": "Majandus",
+   "id": "metsamajandus",
+   "text": "Metsamajandus",
+   "type": "l"
+  },
+  {
+   "parent": "Majandus",
+   "id": "palk-ja-toojeukulu",
+   "text": "Palk ja tööjõukulu",
+   "type": "l"
+  },
+  {
+   "parent": "Majandus",
+   "id": "pellumajandus",
+   "text": "Põllumajandus",
+   "type": "l"
+  },
+  {
+   "parent": "Majandus",
+   "id": "rahandus",
+   "text": "Rahandus",
+   "type": "l"
+  },
+  {
+   "parent": "Majandus",
+   "id": "rahvamajanduse-arvepidamine",
+   "text": "Rahvamajanduse arvepidamine",
+   "type": "l"
+  },
+  {
+   "parent": "Majandus",
+   "id": "sisekaubandus",
+   "text": "Sisekaubandus",
+   "type": "l"
+  },
+  {
+   "parent": "Majandus",
+   "id": "teadus-tehnoloogia-innovatsioon",
+   "text": "Teadus. Tehnoloogia. Innovatsioon",
+   "type": "l"
+  },
+  {
+   "parent": "Majandus",
+   "id": "teenindus",
+   "text": "Teenindus",
+   "type": "l"
+  },
+  {
+   "parent": "Majandus",
+   "id": "transport",
+   "text": "Transport",
+   "type": "l"
+  },
+  {
+   "parent": "Majandus",
+   "id": "turism-ja-majutus",
+   "text": "Turism, majutus ja toitlustus",
+   "type": "l"
+  },
+  {
+   "parent": "Majandus",
+   "id": "toostus",
+   "text": "Tööstus",
+   "type": "l"
+  },
+  {
+   "parent": "Majandus",
+   "id": "valiskaubandus",
+   "text": "Väliskaubandus",
+   "type": "l"
+  },
+  {
+   "parent": "Rahvastik",
+   "id": "rahvastikunaitajad-ja-koosseis",
+   "text": "Rahvastikunäitajad ja koosseis",
+   "type": "l"
+  },
+  {
+   "parent": "Rahvastik",
+   "id": "rahvastikusundmused",
+   "text": "Rahvastikusündmused",
+   "type": "l"
+  },
+  {
+   "parent": "Sotsiaalelu",
+   "id": "ajakasutus",
+   "text": "Ajakasutus",
+   "type": "l"
+  },
+  {
+   "parent": "Sotsiaalelu",
+   "id": "haridus",
+   "text": "Haridus",
+   "type": "l"
+  },
+  {
+   "parent": "Sotsiaalelu",
+   "id": "kultuur",
+   "text": "Kultuur",
+   "type": "l"
+  },
+  {
+   "parent": "Sotsiaalelu",
+   "id": "laste-heaolu",
+   "text": "Laste heaolu",
+   "type": "l"
+  },
+  {
+   "parent": "Sotsiaalelu",
+   "id": "leibkonnad",
+   "text": "Leibkonnad",
+   "type": "l"
+  },
+  {
+   "parent": "Sotsiaalelu",
+   "id": "sissetulek",
+   "text": "Sissetulek",
+   "type": "l"
+  },
+  {
+   "parent": "Sotsiaalelu",
+   "id": "sotsiaalne-kaitse",
+   "text": "Sotsiaalne kaitse",
+   "type": "l"
+  },
+  {
+   "parent": "Sotsiaalelu",
+   "id": "sotsiaalne-terjutus-laekeni-indikaatorid",
+   "text": "Sotsiaalne tõrjutus ja vaesus",
+   "type": "l"
+  },
+  {
+   "parent": "Sotsiaalelu",
+   "id": "tervishoid",
+   "text": "Tervis",
+   "type": "l"
+  },
+  {
+   "parent": "Sotsiaalelu",
+   "id": "tooelukvaliteet",
+   "text": "Tööelukvaliteet",
+   "type": "l"
+  },
+  {
+   "parent": "Sotsiaalelu",
+   "id": "tooturg",
+   "text": "Tööturg",
+   "type": "l"
+  },
+  {
+   "parent": "Sotsiaalelu",
+   "id": "eigus-ja-turvalisus",
+   "text": "Õigus ja turvalisus",
+   "type": "l"
+  },
+  {
+   "parent": "Eri valdkondade statistika",
+   "id": "eksperimentaalstatistika",
+   "text": "Eksperimentaalstatistika",
+   "type": "l"
+  },
+  {
+   "parent": "Eri valdkondade statistika",
+   "id": "Konjunktuuribaromeetrid",
+   "text": "Konjunktuuribaromeetrid",
+   "type": "l"
+  },
+  {
+   "parent": "Eri valdkondade statistika",
+   "id": "loimumine",
+   "text": "Lõimumine",
+   "type": "l"
+  },
+  {
+   "parent": "Eri valdkondade statistika",
+   "id": "noorteseire",
+   "text": "Noorteseire",
+   "type": "l"
+  },
+  {
+   "parent": "Eri valdkondade statistika",
+   "id": "piirkondlik-rahulolu",
+   "text": "Piirkondlik rahulolu elukeskkonnaga",
+   "type": "l"
+  },
+  {
+   "parent": "Eri valdkondade statistika",
+   "id": "saastev-areng",
+   "text": "Säästev areng ja Eesti 2035 strateegia",
+   "type": "l"
+  },
+  {
+   "parent": "Eri valdkondade statistika",
+   "id": "tallinna-statistika",
+   "text": "Tallinna statistika",
+   "type": "l"
+  },
+  {
+   "parent": "Eri valdkondade statistika",
+   "id": "share-ee",
+   "text": "Üleeuroopaline tervise, vananemise ja tööjätu uuring (SHARE)",
+   "type": "l"
+  },
+  {
+   "parent": "Rahva ja eluruumide loendus",
+   "id": "rel2000",
+   "text": "Rahva ja eluruumide loendus 2000",
+   "type": "l"
+  },
+  {
+   "parent": "Rahva ja eluruumide loendus",
+   "id": "rel2011",
+   "text": "Rahva ja eluruumide loendus 2011",
+   "type": "l"
+  },
+  {
+   "parent": "Rahva ja eluruumide loendus",
+   "id": "rel2021",
+   "text": "Rahva ja eluruumide loendus 2021",
+   "type": "l"
+  },
+  {
+   "parent": "Rahva ja eluruumide loendus",
+   "id": "rel_vordlus",
+   "text": "Rahva ja eluruumide loendused: võrdlusandmed",
+   "type": "l"
+  }
+ ],
+ "tree": [
+  {
+   "path": "keskkond/keskonna-arvepidamine/energia-arvepidamine",
+   "text": "Energia arvepidamine",
+   "type": "l"
+  },
+  {
+   "path": "majandus/energeetika/energia-tarbimine-ja-tootmine",
+   "text": "Energia tarbimine ja tootmine",
+   "type": "l"
+  },
+  {
+   "path": "majandus/energeetika/energia-tehususe-naitajad",
+   "text": "Energia tõhususe näitajad",
+   "type": "l"
+  },
+  {
+   "path": "keskkond/keskonna-arvepidamine/energia-arvepidamine/KK11.PX",
+   "text": "KK11: FÜÜSILISE ENERGIAVOO PAKKUMINE JA KASUTAMINE",
+   "type": "t"
+  },
+  {
+   "path": "keskkond/keskonna-arvepidamine/energia-arvepidamine/KK12.PX",
+   "text": "KK12: ENERGIA VÕTMENÄITAJAD",
+   "type": "t"
+  },
+  {
+   "path": "keskkond/keskonna-arvepidamine/energia-arvepidamine/KK13.PX",
+   "text": "KK13: ENERGIABILANSI JA ENERGIA ARVEPIDAMISE ÜLEMINEKUTABEL",
+   "type": "t"
+  },
+  {
+   "path": "majandus/energeetika/energia-tarbimine-ja-tootmine/aastastatistika",
+   "text": "Aastastatistika",
+   "type": "l"
+  },
+  {
+   "path": "majandus/energeetika/energia-tarbimine-ja-tootmine/luhiajastatistika",
+   "text": "Lühiajastatistika",
+   "type": "l"
+  },
+  {
+   "path": "majandus/energeetika/energia-tehususe-naitajad/KE31.PX",
+   "text": "KE31: MAAGAASI LÕPPTARBIMISE HIND ÄRITARBIJALE TARBIMISKOGUSE JÄRGI",
+   "type": "t"
+  },
+  {
+   "path": "majandus/energeetika/energia-tehususe-naitajad/KE32.PX",
+   "text": "KE32: MAAGAASI LÕPPTARBIMISE HIND KODUTARBIJALE TARBIMISKOGUSE JÄRGI",
+   "type": "t"
+  },
+  {
+   "path": "majandus/energeetika/energia-tehususe-naitajad/KE33.PX",
+   "text": "KE33: ELEKTRIENERGIA LÕPPTARBIMISE HIND ÄRITARBIJALE TARBIMISKOGUSE JÄRGI",
+   "type": "t"
+  },
+  {
+   "path": "majandus/energeetika/energia-tehususe-naitajad/KE34.PX",
+   "text": "KE34: ELEKTRIENERGIA LÕPPTARBIMISE HIND KODUTARBIJALE TARBIMISKOGUSE JÄRGI",
+   "type": "t"
+  },
+  {
+   "path": "majandus/energeetika/energia-tehususe-naitajad/KE36.PX",
+   "text": "KE36: ENERGIA EFEKTIIVSUSE SUHTARVUD",
+   "type": "t"
+  },
+  {
+   "path": "majandus/energeetika/energia-tarbimine-ja-tootmine/aastastatistika/KE0230.PX",
+   "text": "KE0230: ENERGIABILANSS KÜTUSE VÕI ENERGIA LIIGI JÄRGI (EUROSTATI METOODIKA)",
+   "type": "t"
+  },
+  {
+   "path": "majandus/energeetika/energia-tarbimine-ja-tootmine/aastastatistika/KE0240.PX",
+   "text": "KE0240: ENERGIABILANSS KÜTUSE VÕI ENERGIA LIIGI JÄRGI, TERADŽAULI (EUROSTATI METOODIKA)",
+   "type": "t"
+  },
+  {
+   "path": "majandus/energeetika/energia-tarbimine-ja-tootmine/aastastatistika/KE032.PX",
+   "text": "KE032: ELEKTRIJAAMADE VÕIMSUS",
+   "type": "t"
+  },
+  {
+   "path": "majandus/energeetika/energia-tarbimine-ja-tootmine/aastastatistika/KE033.PX",
+   "text": "KE033: ELEKTRIJAAMADE TOODANG JA ENERGIA TOOTMISEKS TARBITUD KÜTUS",
+   "type": "t"
+  },
+  {
+   "path": "majandus/energeetika/energia-tarbimine-ja-tootmine/aastastatistika/KE034.PX",
+   "text": "KE034: KOOSTOOTMISJAAMADE VÕIMSUS JA TOODANG",
+   "type": "t"
+  },
+  {
+   "path": "majandus/energeetika/energia-tarbimine-ja-tootmine/aastastatistika/KE035.PX",
+   "text": "KE035: KOOSTOOTMISJAAMADES KASUTATUD KÜTUS",
+   "type": "t"
+  },
+  {
+   "path": "majandus/energeetika/energia-tarbimine-ja-tootmine/aastastatistika/KE062.PX",
+   "text": "KE062: KÜTUSE TARBIMINE TEGEVUSALA JA KÜTUSE LIIGI JÄRGI",
+   "type": "t"
+  },
+  {
+   "path": "majandus/energeetika/energia-tarbimine-ja-tootmine/aastastatistika/KE08.PX",
+   "text": "KE08: ETTEVÕTETES TARBITUD KÜTUSE JA ENERGIA KESKMINE MAKSUMUS",
+   "type": "t"
+  },
+  {
+   "path": "majandus/energeetika/energia-tarbimine-ja-tootmine/luhiajastatistika/KE20.PX",
+   "text": "KE20: ELEKTRIENERGIA JA SOOJUSE TOOTMINE NING TOODANGUINDEKS (KUUD)",
+   "type": "t"
+  },
+  {
+   "path": "majandus/energeetika/energia-tarbimine-ja-tootmine/luhiajastatistika/KE21.PX",
+   "text": "KE21: ELEKTRIENERGIA TOOTMINE, IMPORT, EKSPORT JA MÜÜK (KUUD)",
+   "type": "t"
+  },
+  {
+   "path": "majandus/energeetika/energia-tarbimine-ja-tootmine/luhiajastatistika/KE22.PX",
+   "text": "KE22: KÜTUSE TARBIMINE ENERGIA TOOTMISEKS JA LAOVARU KÜTUSE LIIGI JÄRGI (KUUD)",
+   "type": "t"
+  },
+  {
+   "path": "majandus/energeetika/energia-tarbimine-ja-tootmine/luhiajastatistika/KE23.PX",
+   "text": "KE23: VEDELKÜTUSE JA MAAGAASIGA VARUSTATUS (KUUD)",
+   "type": "t"
+  }
+ ],
+ "matches": [
+  {
+   "path": "keskkond/keskonna-arvepidamine/energia-arvepidamine/KK11.PX",
+   "id": "KK11.PX",
+   "text": "KK11: FÜÜSILISE ENERGIAVOO PAKKUMINE JA KASUTAMINE",
+   "trail": "Keskkond > Keskkonna arvepidamine > Energia arvepidamine",
+   "variables": [
+    {
+     "code": "Näitaja",
+     "text": "Näitaja",
+     "n": 3
+    },
+    {
+     "code": "Tegevusala (EMTAK 2008)/ Kategooria",
+     "text": "Tegevusala (EMTAK 2008)/ Kategooria",
+     "n": 86
+    },
+    {
+     "code": "Aasta",
+     "text": "Aasta",
+     "n": 11
+    },
+    {
+     "code": "Toode",
+     "text": "Toode",
+     "n": 36
+    }
+   ],
+   "title": "KK11: FÜÜSILISE ENERGIAVOO PAKKUMINE JA KASUTAMINE"
+  },
+  {
+   "path": "keskkond/keskonna-arvepidamine/energia-arvepidamine/KK12.PX",
+   "id": "KK12.PX",
+   "text": "KK12: ENERGIA VÕTMENÄITAJAD",
+   "trail": "Keskkond > Keskkonna arvepidamine > Energia arvepidamine",
+   "variables": [
+    {
+     "code": "Tegevusala (EMTAK 2008)/ Kategooria",
+     "text": "Tegevusala (EMTAK 2008)/ Kategooria",
+     "n": 86
+    },
+    {
+     "code": "Aasta",
+     "text": "Aasta",
+     "n": 11
+    },
+    {
+     "code": "Näitaja",
+     "text": "Näitaja",
+     "n": 24
+    }
+   ],
+   "title": "KK12: ENERGIA VÕTMENÄITAJAD"
+  },
+  {
+   "path": "keskkond/keskonna-arvepidamine/energia-arvepidamine/KK13.PX",
+   "id": "KK13.PX",
+   "text": "KK13: ENERGIABILANSI JA ENERGIA ARVEPIDAMISE ÜLEMINEKUTABEL",
+   "trail": "Keskkond > Keskkonna arvepidamine > Energia arvepidamine",
+   "variables": [
+    {
+     "code": "Näitaja",
+     "text": "Näitaja",
+     "n": 13
+    },
+    {
+     "code": "Aasta",
+     "text": "Aasta",
+     "n": 11
+    }
+   ],
+   "title": "KK13: ENERGIABILANSI JA ENERGIA ARVEPIDAMISE ÜLEMINEKUTABEL"
+  },
+  {
+   "path": "majandus/energeetika/energia-tehususe-naitajad/KE31.PX",
+   "id": "KE31.PX",
+   "text": "KE31: MAAGAASI LÕPPTARBIMISE HIND ÄRITARBIJALE TARBIMISKOGUSE JÄRGI",
+   "trail": "Majandus > Energeetika > Energia tõhususe näitajad",
+   "variables": [
+    {
+     "code": "Näitaja",
+     "text": "Näitaja",
+     "n": 1
+    },
+    {
+     "code": "Tarbimiskogus",
+     "text": "Tarbimiskogus",
+     "n": 5
+    },
+    {
+     "code": "Vaatlusperiood",
+     "text": "Vaatlusperiood",
+     "n": 38
+    }
+   ],
+   "title": "KE31: MAAGAASI LÕPPTARBIMISE HIND ÄRITARBIJALE TARBIMISKOGUSE JÄRGI"
+  },
+  {
+   "path": "majandus/energeetika/energia-tehususe-naitajad/KE32.PX",
+   "id": "KE32.PX",
+   "text": "KE32: MAAGAASI LÕPPTARBIMISE HIND KODUTARBIJALE TARBIMISKOGUSE JÄRGI",
+   "trail": "Majandus > Energeetika > Energia tõhususe näitajad",
+   "variables": [
+    {
+     "code": "Näitaja",
+     "text": "Näitaja",
+     "n": 1
+    },
+    {
+     "code": "Tarbimiskogus",
+     "text": "Tarbimiskogus",
+     "n": 3
+    },
+    {
+     "code": "Vaatlusperiood",
+     "text": "Vaatlusperiood",
+     "n": 38
+    }
+   ],
+   "title": "KE32: MAAGAASI LÕPPTARBIMISE HIND KODUTARBIJALE TARBIMISKOGUSE JÄRGI"
+  },
+  {
+   "path": "majandus/energeetika/energia-tehususe-naitajad/KE33.PX",
+   "id": "KE33.PX",
+   "text": "KE33: ELEKTRIENERGIA LÕPPTARBIMISE HIND ÄRITARBIJALE TARBIMISKOGUSE JÄRGI",
+   "trail": "Majandus > Energeetika > Energia tõhususe näitajad",
+   "variables": [
+    {
+     "code": "Näitaja",
+     "text": "Näitaja",
+     "n": 1
+    },
+    {
+     "code": "Tarbimiskogus",
+     "text": "Tarbimiskogus",
+     "n": 6
+    },
+    {
+     "code": "Vaatlusperiood",
+     "text": "Vaatlusperiood",
+     "n": 38
+    }
+   ],
+   "title": "KE33: ELEKTRIENERGIA LÕPPTARBIMISE HIND ÄRITARBIJALE TARBIMISKOGUSE JÄRGI"
+  },
+  {
+   "path": "majandus/energeetika/energia-tehususe-naitajad/KE34.PX",
+   "id": "KE34.PX",
+   "text": "KE34: ELEKTRIENERGIA LÕPPTARBIMISE HIND KODUTARBIJALE TARBIMISKOGUSE JÄRGI",
+   "trail": "Majandus > Energeetika > Energia tõhususe näitajad",
+   "variables": [
+    {
+     "code": "Näitaja",
+     "text": "Näitaja",
+     "n": 1
+    },
+    {
+     "code": "Tarbimiskogus",
+     "text": "Tarbimiskogus",
+     "n": 5
+    },
+    {
+     "code": "Vaatlusperiood",
+     "text": "Vaatlusperiood",
+     "n": 38
+    }
+   ],
+   "title": "KE34: ELEKTRIENERGIA LÕPPTARBIMISE HIND KODUTARBIJALE TARBIMISKOGUSE JÄRGI"
+  },
+  {
+   "path": "majandus/energeetika/energia-tehususe-naitajad/KE36.PX",
+   "id": "KE36.PX",
+   "text": "KE36: ENERGIA EFEKTIIVSUSE SUHTARVUD",
+   "trail": "Majandus > Energeetika > Energia tõhususe näitajad",
+   "variables": [
+    {
+     "code": "Näitaja",
+     "text": "Näitaja",
+     "n": 12
+    },
+    {
+     "code": "Aasta",
+     "text": "Aasta",
+     "n": 26
+    }
+   ],
+   "title": "KE36: ENERGIA EFEKTIIVSUSE SUHTARVUD"
+  },
+  {
+   "path": "majandus/energeetika/energia-tarbimine-ja-tootmine/aastastatistika/KE0230.PX",
+   "id": "KE0230.PX",
+   "text": "KE0230: ENERGIABILANSS KÜTUSE VÕI ENERGIA LIIGI JÄRGI (EUROSTATI METOODIKA)",
+   "trail": "Majandus > Energeetika > Energia tarbimine ja tootmine > Aastastatistika",
+   "variables": [
+    {
+     "code": "Aasta",
+     "text": "Aasta",
+     "n": 35
+    },
+    {
+     "code": "Näitaja",
+     "text": "Näitaja",
+     "n": 64
+    },
+    {
+     "code": "Kütuse/energia liik",
+     "text": "Kütuse/energia liik",
+     "n": 30
+    }
+   ],
+   "title": "KE0230: ENERGIABILANSS KÜTUSE VÕI ENERGIA LIIGI JÄRGI (EUROSTATI METOODIKA)"
+  },
+  {
+   "path": "majandus/energeetika/energia-tarbimine-ja-tootmine/aastastatistika/KE0240.PX",
+   "id": "KE0240.PX",
+   "text": "KE0240: ENERGIABILANSS KÜTUSE VÕI ENERGIA LIIGI JÄRGI, TERADŽAULI (EUROSTATI METOODIKA)",
+   "trail": "Majandus > Energeetika > Energia tarbimine ja tootmine > Aastastatistika",
+   "variables": [
+    {
+     "code": "Aasta",
+     "text": "Aasta",
+     "n": 35
+    },
+    {
+     "code": "Näitaja",
+     "text": "Näitaja",
+     "n": 64
+    },
+    {
+     "code": "Kütuse/energia liik",
+     "text": "Kütuse/energia liik",
+     "n": 32
+    }
+   ],
+   "title": "KE0240: ENERGIABILANSS KÜTUSE VÕI ENERGIA LIIGI JÄRGI, TERADŽAULI (EUROSTATI METOODIKA)"
+  },
+  {
+   "path": "majandus/energeetika/energia-tarbimine-ja-tootmine/aastastatistika/KE032.PX",
+   "id": "KE032.PX",
+   "text": "KE032: ELEKTRIJAAMADE VÕIMSUS",
+   "trail": "Majandus > Energeetika > Energia tarbimine ja tootmine > Aastastatistika",
+   "variables": [
+    {
+     "code": "Näitaja",
+     "text": "Näitaja",
+     "n": 8
+    },
+    {
+     "code": "Elektritootja liik",
+     "text": "Elektritootja liik",
+     "n": 3
+    },
+    {
+     "code": "Vaatlusperiood",
+     "text": "Vaatlusperiood",
+     "n": 27
+    }
+   ],
+   "title": "KE032: ELEKTRIJAAMADE VÕIMSUS"
+  },
+  {
+   "path": "majandus/energeetika/energia-tarbimine-ja-tootmine/aastastatistika/KE033.PX",
+   "id": "KE033.PX",
+   "text": "KE033: ELEKTRIJAAMADE TOODANG JA ENERGIA TOOTMISEKS TARBITUD KÜTUS",
+   "trail": "Majandus > Energeetika > Energia tarbimine ja tootmine > Aastastatistika",
+   "variables": [
+    {
+     "code": "Kütuse/energia liik",
+     "text": "Kütuse/energia liik",
+     "n": 16
+    },
+    {
+     "code": "Näitaja",
+     "text": "Näitaja",
+     "n": 5
+    },
+    {
+     "code": "Aasta",
+     "text": "Aasta",
+     "n": 27
+    },
+    {
+     "code": "Elektritootja liik",
+     "text": "Elektritootja liik",
+     "n": 3
+    }
+   ],
+   "title": "KE033: ELEKTRIJAAMADE TOODANG JA ENERGIA TOOTMISEKS TARBITUD KÜTUS"
+  },
+  {
+   "path": "majandus/energeetika/energia-tarbimine-ja-tootmine/aastastatistika/KE034.PX",
+   "id": "KE034.PX",
+   "text": "KE034: KOOSTOOTMISJAAMADE VÕIMSUS JA TOODANG",
+   "trail": "Majandus > Energeetika > Energia tarbimine ja tootmine > Aastastatistika",
+   "variables": [
+    {
+     "code": "Näitaja",
+     "text": "Näitaja",
+     "n": 5
+    },
+    {
+     "code": "Generaatori liik",
+     "text": "Generaatori liik",
+     "n": 4
+    },
+    {
+     "code": "Vaatlusperiood",
+     "text": "Vaatlusperiood",
+     "n": 23
+    }
+   ],
+   "title": "KE034: KOOSTOOTMISJAAMADE VÕIMSUS JA TOODANG"
+  },
+  {
+   "path": "majandus/energeetika/energia-tarbimine-ja-tootmine/aastastatistika/KE035.PX",
+   "id": "KE035.PX",
+   "text": "KE035: KOOSTOOTMISJAAMADES KASUTATUD KÜTUS",
+   "trail": "Majandus > Energeetika > Energia tarbimine ja tootmine > Aastastatistika",
+   "variables": [
+    {
+     "code": "Näitaja",
+     "text": "Näitaja",
+     "n": 2
+    },
+    {
+     "code": "Kütuse/energia liik",
+     "text": "Kütuse/energia liik",
+     "n": 11
+    },
+    {
+     "code": "Generaatori liik",
+     "text": "Generaatori liik",
+     "n": 4
+    },
+    {
+     "code": "Vaatlusperiood",
+     "text": "Vaatlusperiood",
+     "n": 23
+    }
+   ],
+   "title": "KE035: KOOSTOOTMISJAAMADES KASUTATUD KÜTUS"
+  },
+  {
+   "path": "majandus/energeetika/energia-tarbimine-ja-tootmine/aastastatistika/KE062.PX",
+   "id": "KE062.PX",
+   "text": "KE062: KÜTUSE TARBIMINE TEGEVUSALA JA KÜTUSE LIIGI JÄRGI",
+   "trail": "Majandus > Energeetika > Energia tarbimine ja tootmine > Aastastatistika",
+   "variables": [
+    {
+     "code": "Aasta",
+     "text": "Aasta",
+     "n": 15
+    },
+    {
+     "code": "Tegevusala",
+     "text": "Tegevusala",
+     "n": 40
+    },
+    {
+     "code": "Kütuse liik",
+     "text": "Kütuse liik",
+     "n": 28
+    }
+   ],
+   "title": "KE062: KÜTUSE TARBIMINE TEGEVUSALA JA KÜTUSE LIIGI JÄRGI"
+  },
+  {
+   "path": "majandus/energeetika/energia-tarbimine-ja-tootmine/aastastatistika/KE08.PX",
+   "id": "KE08.PX",
+   "text": "KE08: ETTEVÕTETES TARBITUD KÜTUSE JA ENERGIA KESKMINE MAKSUMUS",
+   "trail": "Majandus > Energeetika > Energia tarbimine ja tootmine > Aastastatistika"
+  },
+  {
+   "path": "majandus/energeetika/energia-tarbimine-ja-tootmine/luhiajastatistika/KE20.PX",
+   "id": "KE20.PX",
+   "text": "KE20: ELEKTRIENERGIA JA SOOJUSE TOOTMINE NING TOODANGUINDEKS (KUUD)",
+   "trail": "Majandus > Energeetika > Energia tarbimine ja tootmine > Lühiajastatistika"
+  },
+  {
+   "path": "majandus/energeetika/energia-tarbimine-ja-tootmine/luhiajastatistika/KE21.PX",
+   "id": "KE21.PX",
+   "text": "KE21: ELEKTRIENERGIA TOOTMINE, IMPORT, EKSPORT JA MÜÜK (KUUD)",
+   "trail": "Majandus > Energeetika > Energia tarbimine ja tootmine > Lühiajastatistika"
+  },
+  {
+   "path": "majandus/energeetika/energia-tarbimine-ja-tootmine/luhiajastatistika/KE22.PX",
+   "id": "KE22.PX",
+   "text": "KE22: KÜTUSE TARBIMINE ENERGIA TOOTMISEKS JA LAOVARU KÜTUSE LIIGI JÄRGI (KUUD)",
+   "trail": "Majandus > Energeetika > Energia tarbimine ja tootmine > Lühiajastatistika"
+  },
+  {
+   "path": "majandus/energeetika/energia-tarbimine-ja-tootmine/luhiajastatistika/KE23.PX",
+   "id": "KE23.PX",
+   "text": "KE23: VEDELKÜTUSE JA MAAGAASIGA VARUSTATUS (KUUD)",
+   "trail": "Majandus > Energeetika > Energia tarbimine ja tootmine > Lühiajastatistika"
+  }
+ ],
+ "errors": [
+  {
+   "path": "keskkond/keskkonnaseisund",
+   "error": "HTTP Error 400: Bad Request"
+  }
+ ],
+ "visited": 62
+}
