@@ -10,6 +10,14 @@ on:
       run_id:
         description: "Run id of a successful 'Water use data' run"
         required: true
+      registry_run_id:
+        description: "Optional: run id of a 'Groundwater registry probe' run (artifact gwregistry-raw)"
+        required: false
+        default: ""
+      water_run_id:
+        description: "Optional: run id of a 'Water data' run (artifact water-raw), needed with registry_run_id"
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -34,8 +42,22 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           RUN_ID: ${{ inputs.run_id }}
         run: gh run download "$RUN_ID" --repo "$GITHUB_REPOSITORY" -n wateruse-raw -D out/wateruse
+      - name: Download registry and water-body artifacts (optional)
+        if: ${{ inputs.registry_run_id != '' && inputs.water_run_id != '' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REG_RUN: ${{ inputs.registry_run_id }}
+          WATER_RUN: ${{ inputs.water_run_id }}
+        run: |
+          gh run download "$REG_RUN" --repo "$GITHUB_REPOSITORY" -n gwregistry-raw -D out/gwregistry
+          gh run download "$WATER_RUN" --repo "$GITHUB_REPOSITORY" -n water-raw -D out/water
       - name: Analyse
-        run: uv run python run_wateruse.py --raw out/wateruse --out out/wateruse
+        env:
+          WITH_BALANCE: ${{ inputs.registry_run_id != '' && inputs.water_run_id != '' }}
+        run: |
+          extra=()
+          if [ "$WITH_BALANCE" = "true" ]; then extra=(--registry out/gwregistry --water-raw out/water); fi
+          uv run python run_wateruse.py --raw out/wateruse --out out/wateruse "${extra[@]}"
       - name: Publish aggregated results
         run: |
           cp out/wateruse/wateruse.json "$RUNNER_TEMP/wateruse.json"

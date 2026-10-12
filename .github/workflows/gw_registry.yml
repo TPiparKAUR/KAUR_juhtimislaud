@@ -55,6 +55,6 @@ jobs:
           git checkout --orphan gw-registry
           git rm -rf --quiet .
           cp "$RUNNER_TEMP"/pub/* .
-          git add -- .
+          git add -- gw_link.json gwregistry_diagnostics.json
           git commit -m "Groundwater registry probe $(date -u +%Y-%m-%dT%H:%MZ)"
           git push --force origin gw-registry

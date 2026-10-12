@@ -17,6 +17,7 @@ from typing import Any
 
 import polars as pl
 
+import gw_balance as gb
 import wateruse_analysis as wu
 
 LOG = logging.getLogger("run_wateruse")
@@ -38,6 +39,7 @@ def build(
     res: pl.DataFrame,
     ra: pl.DataFrame,
     generated: str | None = None,
+    balance: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     return {
         "meta": {
@@ -57,7 +59,8 @@ def build(
                 "arvutuslikud, mitte mõõdetud.",
                 "Põhja- ja pinnaveevõtu summa ühtib veekasutuse kogusummaga, kuid veeliikide "
                 "jaotus erineb (tõenäoliselt kaevandus- ja karjäärivesi; kinnitamata).",
-                "Põhjaveevarusid ei võrrelda veevõtuga: veevõtu tabel ei seo veehaaret varuga.",
+                "Põhjaveevõttu ja -varusid võrreldakse ainult põhjaveekogumite lõikes registri "
+                "kaudu (vt põhjaveebilanss); veevõtu tabel ise ei seo veehaaret varuga.",
                 "Käitiste, väljalaskmete ja veehaarete nimesid ei laeta ega avaldata.",
             ],
         },
@@ -67,6 +70,7 @@ def build(
         "discharge": wu.discharge(dis),
         "agglomerations": wu.agglomerations(ra),
         "reserves": wu.reserves(res),
+        "gw_balance": balance,
         "checks": {
             "sector_tiling": wu.sector_tiling(use),
             "use_duplicates": wu.duplicates(use),
@@ -78,11 +82,24 @@ def build(
 def main(argv: list[str] | None = None) -> None:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--raw", type=Path, default=Path("out/wateruse"))
+    ap.add_argument("--registry", type=Path, default=None, help="intake/borehole parquet dir")
+    ap.add_argument(
+        "--water-raw", type=Path, default=None, help="water-raw dir (groundwater status)"
+    )
     ap.add_argument("--out", type=Path, default=Path("out/wateruse"))
     args = ap.parse_args(argv)
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
     use, gw, sw, dis, res, ra = (pl.read_parquet(args.raw / f"{n}.parquet") for n in NAMES)
-    result = build(use, gw, sw, dis, res, ra)
+    balance = None
+    if args.registry is not None and args.water_raw is not None:
+        balance = gb.build(
+            gw,
+            pl.read_parquet(args.registry / "f_veehaarded.parquet"),
+            pl.read_parquet(args.registry / "f_veehaarded_puurauk.parquet"),
+            res,
+            pl.read_parquet(args.water_raw / "f_pohjaveekogumi_seisud.parquet"),
+        )
+    result = build(use, gw, sw, dis, res, ra, balance=balance)
     args.out.mkdir(parents=True, exist_ok=True)
     (args.out / "wateruse.json").write_text(
         json.dumps(result, ensure_ascii=False, separators=(",", ":")), encoding="utf-8"

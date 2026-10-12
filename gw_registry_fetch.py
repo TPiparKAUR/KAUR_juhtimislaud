@@ -47,6 +47,8 @@ DROP = (
     "vesikond_kuulub_nimi",
     "pohjaveekogum_nimi",
     "veekiht_nimi",
+    "puur_org",
+    "tehn_seisund",
     "kivimikiht_nimi",
 )
 
