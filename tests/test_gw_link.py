@@ -39,3 +39,14 @@ def test_main_writes_counts_only(tmp_path: Path) -> None:
     gl.main(["--raw", str(tmp_path), "--out", str(tmp_path / "o")])
     text = (tmp_path / "o" / "gw_link.json").read_text(encoding="utf-8")
     assert "A1" not in text and json.loads(text)["pairs"]
+
+
+def test_registry_report_counts_matches_and_boreholes() -> None:
+    gw, _ = tables()
+    intakes = pl.DataFrame({"id": [1, 2, 3], "id_text": ["a1", "B2", "zz"], "kkr_kood": [None] * 3})
+    boreholes = pl.DataFrame({"veehaare_id": [1, 1, 2], "pohjaveekogum_id": [7, None, None]})
+    rep = {r["intake_column"]: r for r in gl.registry_report(gw, intakes, boreholes)}
+    r = rep["id_text"]
+    assert r["matching_codes"] == 2 and r["matched_intakes"] == 2
+    assert r["matched_intakes_with_borehole_body"] == 1
+    assert rep["kkr_kood"]["matching_codes"] == 0

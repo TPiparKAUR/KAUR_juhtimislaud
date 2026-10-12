@@ -1,0 +1,60 @@
+name: Groundwater registry probe
+
+# Fetches the water-intake register and its boreholes (no names, addresses or coordinates), then
+# tests how abstraction intake codes of an earlier "Water use data" run (artifact wateruse-raw)
+# match the register. Diagnostics and match counts go to the `gw-registry` branch; Parquet stays
+# in the artifact `gwregistry-raw`.
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: "Run id of a successful 'Water use data' run"
+        required: true
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: kaur-api  # one job at a time against the shared public API
+  cancel-in-progress: false
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync --frozen
+      - run: uv run python gw_registry_fetch.py --out out/gwregistry --workers 3
+        timeout-minutes: 30
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: gwregistry-raw
+          path: out/gwregistry/
+          retention-days: 30
+      - name: Download water-use raw artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_ID: ${{ inputs.run_id }}
+        run: gh run download "$RUN_ID" --repo "$GITHUB_REPOSITORY" -n wateruse-raw -D out/wateruse
+      - run: uv run python gw_link.py --raw out/wateruse --registry out/gwregistry --out out/gwlink
+      - name: Publish diagnostics and counts
+        if: always()
+        run: |
+          mkdir -p "$RUNNER_TEMP/pub"
+          cp out/gwregistry/gwregistry_diagnostics.json "$RUNNER_TEMP/pub/" || true
+          cp out/gwlink/gw_link.json "$RUNNER_TEMP/pub/" || true
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan gw-registry
+          git rm -rf --quiet .
+          cp "$RUNNER_TEMP"/pub/* .
+          git add -- .
+          git commit -m "Groundwater registry probe $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push --force origin gw-registry
