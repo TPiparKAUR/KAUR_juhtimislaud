@@ -136,6 +136,6 @@ punktloendused“) on ehitatud lihtsustatud ahelindeks (`bird_analysis.py`, mitt
 Koondindeks (74 liiki, 2 äärmusliku ahelaga liiki välja jäetud) on 2025. aastal 109 (2010 = 100), 95%
 bootstrap-vahemik 96–118, st muutus ei ole eristatav; kõigi 76 kehtiva ahelaga liigiga oleks 117 (tundlik kahe
 äärmusliku liigi suhtes, mida meetod ei suuda eristada artefaktist). Punktid ei ole juhuvalim ega elupaigati kaalutud.
-**Üraskid ja kaitstav mets:** avaandmete tabelites ega seirekataloogis (400 näitajat, 54 tabelit „mets/kaitse“)
-üraskite andmeid ei leitud; „Päevane püügiarv“ on linnujaamade rõngastuspüük, mitte üraskite püük.
+**Üraskid ja kaitstav mets:** avaandmete tabelites ega seirekataloogis (400 näitajat)
+üraskite andmeid ei leitud (otsitud tabelite nimedest ja kirjeldustest ning seirekataloogi näitajate nimedest); „Päevane püügiarv“ on linnujaamade rõngastuspüük, mitte üraskite püük.
 Üraskite vaade jääb katmata kuni allika (metsakaitse seire, mitte KESE) leidmiseni.
