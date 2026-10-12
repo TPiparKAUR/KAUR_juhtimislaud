@@ -1,0 +1,55 @@
+name: Statistics Estonia fetch
+
+# Fetches the given Statistics Estonia PxWeb tables (metadata and, if small enough, all cells).
+# Metadata (variable codes and value labels) goes to the `statee-meta` branch; the Parquet files
+# stay in the artifact `statee-raw`.
+
+on:
+  workflow_dispatch:
+    inputs:
+      tables:
+        description: "PxWeb table paths separated by | (from the statee-probe branch)"
+        required: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: statee-fetch
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync --frozen
+      - name: Fetch
+        env:
+          TABLES: ${{ inputs.tables }}
+        run: |
+          args=()
+          IFS='|' read -ra paths <<< "$TABLES"
+          for p in "${paths[@]}"; do if [ -n "$p" ]; then args+=(--table "$p"); fi; done
+          uv run python statee_fetch.py "${args[@]}" --out out/statee
+        timeout-minutes: 20
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: statee-raw
+          path: out/statee/
+          retention-days: 30
+      - name: Publish metadata
+        if: always()
+        run: |
+          cp out/statee/statee_meta.json "$RUNNER_TEMP/statee_meta.json"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan statee-meta
+          git rm -rf --quiet .
+          cp "$RUNNER_TEMP/statee_meta.json" statee_meta.json
+          git add -- statee_meta.json
+          git commit -m "Statistics Estonia metadata $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push --force origin statee-meta
