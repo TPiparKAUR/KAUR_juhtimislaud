@@ -1,0 +1,1126 @@
+{
+ "majandus/energeetika/energia-tarbimine-ja-tootmine/aastastatistika/KE0240.PX": {
+  "title": "KE0240: ENERGIABILANSS KÜTUSE VÕI ENERGIA LIIGI JÄRGI, TERADŽAULI (EUROSTATI METOODIKA)",
+  "variables": [
+   {
+    "code": "Aasta",
+    "text": "Aasta",
+    "elimination": false,
+    "time": true,
+    "n": 35,
+    "values": [
+     {
+      "code": "1990",
+      "text": "1990"
+     },
+     {
+      "code": "1991",
+      "text": "1991"
+     },
+     {
+      "code": "1992",
+      "text": "1992"
+     },
+     {
+      "code": "1993",
+      "text": "1993"
+     },
+     {
+      "code": "1994",
+      "text": "1994"
+     },
+     {
+      "code": "1995",
+      "text": "1995"
+     },
+     {
+      "code": "1996",
+      "text": "1996"
+     },
+     {
+      "code": "1997",
+      "text": "1997"
+     },
+     {
+      "code": "1998",
+      "text": "1998"
+     },
+     {
+      "code": "1999",
+      "text": "1999"
+     },
+     {
+      "code": "2000",
+      "text": "2000"
+     },
+     {
+      "code": "2001",
+      "text": "2001"
+     },
+     {
+      "code": "2002",
+      "text": "2002"
+     },
+     {
+      "code": "2003",
+      "text": "2003"
+     },
+     {
+      "code": "2004",
+      "text": "2004"
+     },
+     {
+      "code": "2005",
+      "text": "2005"
+     },
+     {
+      "code": "2006",
+      "text": "2006"
+     },
+     {
+      "code": "2007",
+      "text": "2007"
+     },
+     {
+      "code": "2008",
+      "text": "2008"
+     },
+     {
+      "code": "2009",
+      "text": "2009"
+     },
+     {
+      "code": "2010",
+      "text": "2010"
+     },
+     {
+      "code": "2011",
+      "text": "2011"
+     },
+     {
+      "code": "2012",
+      "text": "2012"
+     },
+     {
+      "code": "2013",
+      "text": "2013"
+     },
+     {
+      "code": "2014",
+      "text": "2014"
+     },
+     {
+      "code": "2015",
+      "text": "2015"
+     },
+     {
+      "code": "2016",
+      "text": "2016"
+     },
+     {
+      "code": "2017",
+      "text": "2017"
+     },
+     {
+      "code": "2018",
+      "text": "2018"
+     },
+     {
+      "code": "2019",
+      "text": "2019"
+     },
+     {
+      "code": "2020",
+      "text": "2020"
+     },
+     {
+      "code": "2021",
+      "text": "2021"
+     },
+     {
+      "code": "2022",
+      "text": "2022"
+     },
+     {
+      "code": "2023",
+      "text": "2023"
+     },
+     {
+      "code": "2024",
+      "text": "2024"
+     }
+    ]
+   },
+   {
+    "code": "Näitaja",
+    "text": "Näitaja",
+    "elimination": false,
+    "time": false,
+    "n": 64,
+    "values": [
+     {
+      "code": "PPRD",
+      "text": "Primaarenergia tootmine"
+     },
+     {
+      "code": "IMP",
+      "text": "Import"
+     },
+     {
+      "code": "EXP",
+      "text": "Eksport"
+     },
+     {
+      "code": "STK_CHG",
+      "text": "Varude muutus"
+     },
+     {
+      "code": "GAE",
+      "text": "Energiaressursid"
+     },
+     {
+      "code": "INTMARB",
+      "text": "Merelaevade punkerdamine"
+     },
+     {
+      "code": "GIC",
+      "text": "Sisemaine tarbimine"
+     },
+     {
+      "code": "INTAVI",
+      "text": "Rahvusvaheline lennundus"
+     },
+     {
+      "code": "NRGSUP",
+      "text": "Energiaga varustatus"
+     },
+     {
+      "code": "TI_E",
+      "text": "Tarbitud muundamissektoris"
+     },
+     {
+      "code": "TI_EHG_E",
+      "text": "Tarbitud elektri ja soojuse tootmiseks"
+     },
+     {
+      "code": "TI_EHG_MAPE_E",
+      "text": "..tarbitud põhitegevusena tootvates elektrijaamades"
+     },
+     {
+      "code": "TI_EHG_MAPCHP_E",
+      "text": "..tarbitud põhitegevusena elektrit ja soojust tootvates koostootmisjaamades"
+     },
+     {
+      "code": "TI_EHG_MAPH_E",
+      "text": "..tarbitud põhitegevusena tootvates soojusjaamades"
+     },
+     {
+      "code": "TI_EHG_APE_E",
+      "text": "..tarbitud oma tarbeks tootvates elektrijaamades"
+     },
+     {
+      "code": "TI_EHG_APCHP_E",
+      "text": "..tarbitud oma tarbeks elektrit ja soojust tootvates koostootmisjaamades"
+     },
+     {
+      "code": "TI_EHG_APH_E",
+      "text": "..tarbitud oma tarbeks tootvates soojusjaamades"
+     },
+     {
+      "code": "TI_CL_E",
+      "text": "Tarbitud tahke kütuse veeldamistehastes"
+     },
+     {
+      "code": "TO",
+      "text": "Toodetud muundamissektoris"
+     },
+     {
+      "code": "TO_EHG",
+      "text": "Elektri ja soojuse toodang"
+     },
+     {
+      "code": "TO_EHG_MAPE",
+      "text": "..põhitegevusena tootvate elektrijaamade toodang"
+     },
+     {
+      "code": "TO_EHG_MAPCHP",
+      "text": "..põhitegevusena elektrit ja soojust tootvate koostootmisjaamade toodang"
+     },
+     {
+      "code": "TO_EHG_MAPH",
+      "text": "..põhitegevusena tootvate soojusjaamade toodang"
+     },
+     {
+      "code": "TO_EHG_APE",
+      "text": "..oma tarbeks tootvate elektrijaamade toodang"
+     },
+     {
+      "code": "TO_EHG_APCHP",
+      "text": "..oma tarbeks elektrit ja soojust tootvate koostootmisjaamade toodang"
+     },
+     {
+      "code": "TO_EHG_APH",
+      "text": "..oma tarbeks tootvate soojusjaamade toodang"
+     },
+     {
+      "code": "TO_CL",
+      "text": "Tahke kütuse veeldamistehaste toodang"
+     },
+     {
+      "code": "NRG_E",
+      "text": "Energiasektori omatarve"
+     },
+     {
+      "code": "NRG_EHG_E",
+      "text": "..Elektrijaamade, elektri ja soojuse koostootmisjaamade ning soojusjaamade omatarve"
+     },
+     {
+      "code": "NRG_CM_E",
+      "text": "..Kaevanduste omatarve"
+     },
+     {
+      "code": "NRG_BKBPB_E",
+      "text": "..Turba tootmise omatarve"
+     },
+     {
+      "code": "NRG_CL_E",
+      "text": "..Tahke kütuse veeldamistehaste omatarve"
+     },
+     {
+      "code": "NRG_NSP_E",
+      "text": "..Energiasektori muu omatarve"
+     },
+     {
+      "code": "DL",
+      "text": "Kaod"
+     },
+     {
+      "code": "AFC",
+      "text": "Arvutuslik lõpptarbimine"
+     },
+     {
+      "code": "FC_NE",
+      "text": "Tarbitud tooraineks"
+     },
+     {
+      "code": "FC_E",
+      "text": "Tegelik lõpptarbimine"
+     },
+     {
+      "code": "FC_IND_E",
+      "text": "Lõpptarbimine tööstussektoris"
+     },
+     {
+      "code": "FC_IND_IS_E",
+      "text": "..lõpptarbimine raua- ja terasetööstuses"
+     },
+     {
+      "code": "FC_IND_CPC_E",
+      "text": "..lõpptarbimine keemiatööstuses"
+     },
+     {
+      "code": "FC_IND_NFM_E",
+      "text": "..lõpptarbimine mitteraudmetallide tööstuses"
+     },
+     {
+      "code": "FC_IND_NMM_E",
+      "text": "..lõpptarbimine muude mittemetalsetest mineraalidest toodete tootmises"
+     },
+     {
+      "code": "FC_IND_TE_E",
+      "text": "..lõpptarbimine transpordivahendite tootmises"
+     },
+     {
+      "code": "FC_IND_MAC_E",
+      "text": "..lõpptarbimine masinaehituses"
+     },
+     {
+      "code": "FC_IND_MQ_E",
+      "text": "..lõpptarbimine mäetööstuses"
+     },
+     {
+      "code": "FC_IND_FBT_E",
+      "text": "..lõpptarbimine toiduaine- ja tubakatööstuses"
+     },
+     {
+      "code": "FC_IND_PPP_E",
+      "text": "..lõpptarbimine paberitööstuses ja trükinduses"
+     },
+     {
+      "code": "FC_IND_WP_E",
+      "text": "..lõpptarbimine puidutööstuses"
+     },
+     {
+      "code": "FC_IND_CON_E",
+      "text": "..lõpptarbimine ehituses"
+     },
+     {
+      "code": "FC_IND_TL_E",
+      "text": "..lõpptarbimine tekstiili- ja nahatööstuses"
+     },
+     {
+      "code": "FC_IND_NSP_E",
+      "text": "..lõpptarbimine mujal liigitamata tööstuses"
+     },
+     {
+      "code": "FC_TRA_E",
+      "text": "Lõpptarbimine transpordisektoris"
+     },
+     {
+      "code": "FC_TRA_RAIL_E",
+      "text": "..lõpptarbimine raudteeveonduses"
+     },
+     {
+      "code": "FC_TRA_ROAD_E",
+      "text": "..lõpptarbimine maismaaveonduses"
+     },
+     {
+      "code": "FC_TRA_DAVI_E",
+      "text": "..lõpptarbimine riigisiseses õhutranspordis"
+     },
+     {
+      "code": "FC_TRA_DNAVI_E",
+      "text": "..lõpptarbimine riigisiseses veetranspordis"
+     },
+     {
+      "code": "FC_TRA_NSP_E",
+      "text": "..lõpptarbimine mujal liigitamata transpordis"
+     },
+     {
+      "code": "FC_OTH_E",
+      "text": "Lõpptarbimine teistes sektorites"
+     },
+     {
+      "code": "FC_OTH_CP_E",
+      "text": "..lõpptarbimine äri- ja avaliku teeninduse sektoris"
+     },
+     {
+      "code": "FC_OTH_HH_E",
+      "text": "..lõpptarbimine kodumajapidamises"
+     },
+     {
+      "code": "FC_OTH_AF_E",
+      "text": "..lõpptarbimine põllumajandus- ja metsandussektoris"
+     },
+     {
+      "code": "FC_OTH_FISH_E",
+      "text": "..lõpptarbimine kalandussektoris"
+     },
+     {
+      "code": "FC_OTH_NSP_E",
+      "text": "..lõpptarbimine mujal liigitamata sektorites"
+     },
+     {
+      "code": "STATDIFF",
+      "text": "Statistiline vahe"
+     }
+    ]
+   },
+   {
+    "code": "Kütuse/energia liik",
+    "text": "Kütuse/energia liik",
+    "elimination": false,
+    "time": false,
+    "n": 32,
+    "values": [
+     {
+      "code": "C0129",
+      "text": "Muu bituumenkivisüsi, TJ"
+     },
+     {
+      "code": "C0311",
+      "text": "Koksiahju koks, TJ"
+     },
+     {
+      "code": "C0360",
+      "text": "Gaasitehasegaas (põlevkivigaas), TJ"
+     },
+     {
+      "code": "C0350",
+      "text": "Koksiahjugaas, TJ"
+     },
+     {
+      "code": "P1100",
+      "text": "Turvas, TJ"
+     },
+     {
+      "code": "P1200",
+      "text": "Turbatooted, TJ"
+     },
+     {
+      "code": "S2000",
+      "text": "Põlevkivi / õliliivad, TJ"
+     },
+     {
+      "code": "O4500",
+      "text": "Muud süsivesinikud (põlevkiviõli), TJ"
+     },
+     {
+      "code": "O4630",
+      "text": "Vedelgaas (propaan, butaan), TJ"
+     },
+     {
+      "code": "O4652XR5210B",
+      "text": "Mootoribensiin (autobensiin), v.a biokütuse osa, TJ"
+     },
+     {
+      "code": "O4661XR5230B",
+      "text": "Lennukipetrool (reaktiivkütus), v.a biokütuse osa, TJ"
+     },
+     {
+      "code": "O4671XR5220B",
+      "text": "Gaasiõli ja diisliõli, v.a biokütuse osa, TJ"
+     },
+     {
+      "code": "O4680",
+      "text": "Raske kütteõli, TJ"
+     },
+     {
+      "code": "O4692",
+      "text": "Määrdeained, TJ"
+     },
+     {
+      "code": "O4695",
+      "text": "Bituumen, TJ"
+     },
+     {
+      "code": "G3000",
+      "text": "Maagaas, TJ"
+     },
+     {
+      "code": "RA100",
+      "text": "Hüdroenergia, TJ"
+     },
+     {
+      "code": "RA300",
+      "text": "Tuuleenergia, TJ"
+     },
+     {
+      "code": "RA420",
+      "text": "Päikeseelektrienergia, TJ"
+     },
+     {
+      "code": "R5110-5150_W6000RI",
+      "text": "Primaarsed tahked biokütused (sh küttepuit), TJ"
+     },
+     {
+      "code": "R5300",
+      "text": "Biogaas, TJ"
+     },
+     {
+      "code": "W6210",
+      "text": "Taastuvast toorainest olmejäätmed, TJ"
+     },
+     {
+      "code": "R5210P",
+      "text": "Puhas biobensiin, TJ"
+     },
+     {
+      "code": "R5210B",
+      "text": "Biobensiin segus, TJ"
+     },
+     {
+      "code": "R5220P",
+      "text": "Puhas biodiisel, TJ"
+     },
+     {
+      "code": "R5220B",
+      "text": "Biodiisel segus, TJ"
+     },
+     {
+      "code": "W6100",
+      "text": "Mittetaastuvast toorainest tööstusjäätmed, TJ"
+     },
+     {
+      "code": "W6220",
+      "text": "Mittetaastuvast toorainest olmejäätmed, TJ"
+     },
+     {
+      "code": "TOT_FUEL",
+      "text": "Kütused kokku, TJ"
+     },
+     {
+      "code": "H8000",
+      "text": "Soojusenergia, TJ"
+     },
+     {
+      "code": "E7000",
+      "text": "Elektrienergia, TJ"
+     },
+     {
+      "code": "TOTAL",
+      "text": "KOKKU TJ"
+     }
+    ]
+   }
+  ],
+  "cells": 71680,
+  "data": {
+   "rows": 71680,
+   "file": "KE0240.parquet"
+  },
+  "dimension_labels": {
+   "Aasta": "Aasta",
+   "Näitaja": "Näitaja",
+   "Kütuse/energia liik": "Kütuse/energia liik"
+  }
+ },
+ "majandus/energeetika/energia-tarbimine-ja-tootmine/aastastatistika/KE0230.PX": {
+  "title": "KE0230: ENERGIABILANSS KÜTUSE VÕI ENERGIA LIIGI JÄRGI (EUROSTATI METOODIKA)",
+  "variables": [
+   {
+    "code": "Aasta",
+    "text": "Aasta",
+    "elimination": false,
+    "time": true,
+    "n": 35,
+    "values": [
+     {
+      "code": "1990",
+      "text": "1990"
+     },
+     {
+      "code": "1991",
+      "text": "1991"
+     },
+     {
+      "code": "1992",
+      "text": "1992"
+     },
+     {
+      "code": "1993",
+      "text": "1993"
+     },
+     {
+      "code": "1994",
+      "text": "1994"
+     },
+     {
+      "code": "1995",
+      "text": "1995"
+     },
+     {
+      "code": "1996",
+      "text": "1996"
+     },
+     {
+      "code": "1997",
+      "text": "1997"
+     },
+     {
+      "code": "1998",
+      "text": "1998"
+     },
+     {
+      "code": "1999",
+      "text": "1999"
+     },
+     {
+      "code": "2000",
+      "text": "2000"
+     },
+     {
+      "code": "2001",
+      "text": "2001"
+     },
+     {
+      "code": "2002",
+      "text": "2002"
+     },
+     {
+      "code": "2003",
+      "text": "2003"
+     },
+     {
+      "code": "2004",
+      "text": "2004"
+     },
+     {
+      "code": "2005",
+      "text": "2005"
+     },
+     {
+      "code": "2006",
+      "text": "2006"
+     },
+     {
+      "code": "2007",
+      "text": "2007"
+     },
+     {
+      "code": "2008",
+      "text": "2008"
+     },
+     {
+      "code": "2009",
+      "text": "2009"
+     },
+     {
+      "code": "2010",
+      "text": "2010"
+     },
+     {
+      "code": "2011",
+      "text": "2011"
+     },
+     {
+      "code": "2012",
+      "text": "2012"
+     },
+     {
+      "code": "2013",
+      "text": "2013"
+     },
+     {
+      "code": "2014",
+      "text": "2014"
+     },
+     {
+      "code": "2015",
+      "text": "2015"
+     },
+     {
+      "code": "2016",
+      "text": "2016"
+     },
+     {
+      "code": "2017",
+      "text": "2017"
+     },
+     {
+      "code": "2018",
+      "text": "2018"
+     },
+     {
+      "code": "2019",
+      "text": "2019"
+     },
+     {
+      "code": "2020",
+      "text": "2020"
+     },
+     {
+      "code": "2021",
+      "text": "2021"
+     },
+     {
+      "code": "2022",
+      "text": "2022"
+     },
+     {
+      "code": "2023",
+      "text": "2023"
+     },
+     {
+      "code": "2024",
+      "text": "2024"
+     }
+    ]
+   },
+   {
+    "code": "Näitaja",
+    "text": "Näitaja",
+    "elimination": false,
+    "time": false,
+    "n": 64,
+    "values": [
+     {
+      "code": "PPRD",
+      "text": "Primaarenergia tootmine"
+     },
+     {
+      "code": "IMP",
+      "text": "Import"
+     },
+     {
+      "code": "EXP",
+      "text": "Eksport"
+     },
+     {
+      "code": "STK_CHG",
+      "text": "Varude muutus"
+     },
+     {
+      "code": "GAE",
+      "text": "Energiaressursid"
+     },
+     {
+      "code": "INTMARB",
+      "text": "Merelaevade punkerdamine"
+     },
+     {
+      "code": "GIC",
+      "text": "Sisemaine tarbimine"
+     },
+     {
+      "code": "INTAVI",
+      "text": "Rahvusvaheline lennundus"
+     },
+     {
+      "code": "NRGSUP",
+      "text": "Energiaga varustatus"
+     },
+     {
+      "code": "TI_E",
+      "text": "Tarbitud muundamissektoris"
+     },
+     {
+      "code": "TI_EHG_E",
+      "text": "Tarbitud elektri ja soojuse tootmiseks"
+     },
+     {
+      "code": "TI_EHG_MAPE_E",
+      "text": "..tarbitud põhitegevusena tootvates elektrijaamades"
+     },
+     {
+      "code": "TI_EHG_MAPCHP_E",
+      "text": "..tarbitud põhitegevusena elektrit ja soojust tootvates koostootmisjaamades"
+     },
+     {
+      "code": "TI_EHG_MAPH_E",
+      "text": "..tarbitud põhitegevusena tootvates soojusjaamades"
+     },
+     {
+      "code": "TI_EHG_APE_E",
+      "text": "..tarbitud oma tarbeks tootvates elektrijaamades"
+     },
+     {
+      "code": "TI_EHG_APCHP_E",
+      "text": "..tarbitud oma tarbeks elektrit ja soojust tootvates koostootmisjaamades"
+     },
+     {
+      "code": "TI_EHG_APH_E",
+      "text": "..tarbitud oma tarbeks tootvates soojusjaamades"
+     },
+     {
+      "code": "TI_CL_E",
+      "text": "Tarbitud tahke kütuse veeldamistehastes"
+     },
+     {
+      "code": "TO",
+      "text": "Toodetud muundamissektoris"
+     },
+     {
+      "code": "TO_EHG",
+      "text": "Elektri ja soojuse toodang"
+     },
+     {
+      "code": "TO_EHG_MAPE",
+      "text": "..põhitegevusena tootvate elektrijaamade toodang"
+     },
+     {
+      "code": "TO_EHG_MAPCHP",
+      "text": "..põhitegevusena elektrit ja soojust tootvate koostootmisjaamade toodang"
+     },
+     {
+      "code": "TO_EHG_MAPH",
+      "text": "..põhitegevusena tootvate soojusjaamade toodang"
+     },
+     {
+      "code": "TO_EHG_APE",
+      "text": "..oma tarbeks tootvate elektrijaamade toodang"
+     },
+     {
+      "code": "TO_EHG_APCHP",
+      "text": "..oma tarbeks elektrit ja soojust tootvate koostootmisjaamade toodang"
+     },
+     {
+      "code": "TO_EHG_APH",
+      "text": "..oma tarbeks tootvate soojusjaamade toodang"
+     },
+     {
+      "code": "TO_CL",
+      "text": "Tahke kütuse veeldamistehaste toodang"
+     },
+     {
+      "code": "NRG_E",
+      "text": "Energiasektori omatarve"
+     },
+     {
+      "code": "NRG_EHG_E",
+      "text": "..Elektrijaamade, elektri ja soojuse koostootmisjaamade ning soojusjaamade omatarve"
+     },
+     {
+      "code": "NRG_CM_E",
+      "text": "..Kaevanduste omatarve"
+     },
+     {
+      "code": "NRG_BKBPB_E",
+      "text": "..Turba tootmise omatarve"
+     },
+     {
+      "code": "NRG_CL_E",
+      "text": "..Tahke kütuse veeldamistehaste omatarve"
+     },
+     {
+      "code": "NRG_NSP_E",
+      "text": "..Energiasektori muu omatarve"
+     },
+     {
+      "code": "DL",
+      "text": "Kaod"
+     },
+     {
+      "code": "AFC",
+      "text": "Arvutuslik lõpptarbimine"
+     },
+     {
+      "code": "FC_NE",
+      "text": "Tarbitud tooraineks"
+     },
+     {
+      "code": "FC_E",
+      "text": "Tegelik lõpptarbimine"
+     },
+     {
+      "code": "FC_IND_E",
+      "text": "Lõpptarbimine tööstussektoris"
+     },
+     {
+      "code": "FC_IND_IS_E",
+      "text": "..lõpptarbimine raua- ja terasetööstuses"
+     },
+     {
+      "code": "FC_IND_CPC_E",
+      "text": "..lõpptarbimine keemiatööstuses"
+     },
+     {
+      "code": "FC_IND_NFM_E",
+      "text": "..lõpptarbimine mitteraudmetallide tööstuses"
+     },
+     {
+      "code": "FC_IND_NMM_E",
+      "text": "..lõpptarbimine muude mittemetalsetest mineraalidest toodete tootmises"
+     },
+     {
+      "code": "FC_IND_TE_E",
+      "text": "..lõpptarbimine transpordivahendite tootmises"
+     },
+     {
+      "code": "FC_IND_MAC_E",
+      "text": "..lõpptarbimine masinaehituses"
+     },
+     {
+      "code": "FC_IND_MQ_E",
+      "text": "..lõpptarbimine mäetööstuses"
+     },
+     {
+      "code": "FC_IND_FBT_E",
+      "text": "..lõpptarbimine toiduaine- ja tubakatööstuses"
+     },
+     {
+      "code": "FC_IND_PPP_E",
+      "text": "..lõpptarbimine paberitööstuses ja trükinduses"
+     },
+     {
+      "code": "FC_IND_WP_E",
+      "text": "..lõpptarbimine puidutööstuses"
+     },
+     {
+      "code": "FC_IND_CON_E",
+      "text": "..lõpptarbimine ehituses"
+     },
+     {
+      "code": "FC_IND_TL_E",
+      "text": "..lõpptarbimine tekstiili- ja nahatööstuses"
+     },
+     {
+      "code": "FC_IND_NSP_E",
+      "text": "..lõpptarbimine mujal liigitamata tööstuses"
+     },
+     {
+      "code": "FC_TRA_E",
+      "text": "Lõpptarbimine transpordisektoris"
+     },
+     {
+      "code": "FC_TRA_RAIL_E",
+      "text": "..lõpptarbimine raudteeveonduses"
+     },
+     {
+      "code": "FC_TRA_ROAD_E",
+      "text": "..lõpptarbimine maismaaveonduses"
+     },
+     {
+      "code": "FC_TRA_DAVI_E",
+      "text": "..lõpptarbimine riigisiseses õhutranspordis"
+     },
+     {
+      "code": "FC_TRA_DNAVI_E",
+      "text": "..lõpptarbimine riigisiseses veetranspordis"
+     },
+     {
+      "code": "FC_TRA_NSP_E",
+      "text": "..lõpptarbimine mujal liigitamata transpordis"
+     },
+     {
+      "code": "FC_OTH_E",
+      "text": "Lõpptarbimine teistes sektorites"
+     },
+     {
+      "code": "FC_OTH_CP_E",
+      "text": "..lõpptarbimine äri- ja avaliku teeninduse sektoris"
+     },
+     {
+      "code": "FC_OTH_HH_E",
+      "text": "..lõpptarbimine kodumajapidamises"
+     },
+     {
+      "code": "FC_OTH_AF_E",
+      "text": "..lõpptarbimine põllumajandus- ja metsandussektoris"
+     },
+     {
+      "code": "FC_OTH_FISH_E",
+      "text": "..lõpptarbimine kalandussektoris"
+     },
+     {
+      "code": "FC_OTH_NSP_E",
+      "text": "..lõpptarbimine mujal liigitamata sektorites"
+     },
+     {
+      "code": "STATDIFF",
+      "text": "Statistiline vahe"
+     }
+    ]
+   },
+   {
+    "code": "Kütuse/energia liik",
+    "text": "Kütuse/energia liik",
+    "elimination": false,
+    "time": false,
+    "n": 30,
+    "values": [
+     {
+      "code": "C0129",
+      "text": "Muu bituumenkivisüsi, tuhat t"
+     },
+     {
+      "code": "C0311",
+      "text": "Koksiahju koks, tuhat t"
+     },
+     {
+      "code": "C0360",
+      "text": "Gaasitehasegaas (põlevkivigaas), TJ"
+     },
+     {
+      "code": "C0350",
+      "text": "Koksiahjugaas, TJ"
+     },
+     {
+      "code": "P1100",
+      "text": "Turvas, tuhat t"
+     },
+     {
+      "code": "P1200",
+      "text": "Turbatooted, tuhat t"
+     },
+     {
+      "code": "S2000",
+      "text": "Põlevkivi / õliliivad, tuhat t"
+     },
+     {
+      "code": "O4500",
+      "text": "Muud süsivesinikud (põlevkiviõli), tuhat t"
+     },
+     {
+      "code": "O4630",
+      "text": "Vedelgaas (propaan, butaan), tuhat t"
+     },
+     {
+      "code": "O4652XR5210B",
+      "text": "Mootoribensiin (autobensiin), v.a biokütuse osa, tuhat t"
+     },
+     {
+      "code": "O4661XR5230B",
+      "text": "Lennukipetrool (reaktiivkütus), v.a biokütuse osa, tuhat t"
+     },
+     {
+      "code": "O4671XR5220B",
+      "text": "Gaasiõli ja diisliõli, v.a biokütuse osa, tuhat t"
+     },
+     {
+      "code": "O4680",
+      "text": "Raske kütteõli, tuhat t"
+     },
+     {
+      "code": "O4692",
+      "text": "Määrdeained, tuhat t"
+     },
+     {
+      "code": "O4695",
+      "text": "Bituumen, tuhat t"
+     },
+     {
+      "code": "G3000",
+      "text": "Maagaas, TJ"
+     },
+     {
+      "code": "RA100",
+      "text": "Hüdroenergia, GWh"
+     },
+     {
+      "code": "RA300",
+      "text": "Tuuleenergia, GWh"
+     },
+     {
+      "code": "RA420",
+      "text": "Päikeseelektrienergia, GWh"
+     },
+     {
+      "code": "R5110-5150_W6000RI",
+      "text": "Primaarsed tahked biokütused (sh küttepuit), TJ"
+     },
+     {
+      "code": "R5300",
+      "text": "Biogaas, TJ"
+     },
+     {
+      "code": "W6210",
+      "text": "Taastuvast toorainest olmejäätmed, TJ"
+     },
+     {
+      "code": "R5210P",
+      "text": "Puhas biobensiin, tuhat t"
+     },
+     {
+      "code": "R5210B",
+      "text": "Biobensiin segus, tuhat t"
+     },
+     {
+      "code": "R5220P",
+      "text": "Puhas biodiisel, tuhat t"
+     },
+     {
+      "code": "R5220B",
+      "text": "Biodiisel segus, tuhat t"
+     },
+     {
+      "code": "W6100",
+      "text": "Mittetaastuvast toorainest tööstusjäätmed, TJ"
+     },
+     {
+      "code": "W6220",
+      "text": "Mittetaastuvast toorainest olmejäätmed, TJ"
+     },
+     {
+      "code": "H8000",
+      "text": "Soojusenergia, TJ"
+     },
+     {
+      "code": "E7000",
+      "text": "Elektrienergia, GWh"
+     }
+    ]
+   }
+  ],
+  "cells": 67200,
+  "data": {
+   "rows": 67200,
+   "file": "KE0230.parquet"
+  },
+  "dimension_labels": {
+   "Aasta": "Aasta",
+   "Näitaja": "Näitaja",
+   "Kütuse/energia liik": "Kütuse/energia liik"
+  }
+ }
+}
