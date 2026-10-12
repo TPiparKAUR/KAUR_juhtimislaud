@@ -5,7 +5,6 @@ from __future__ import annotations
 import json
 
 import polars as pl
-import pytest
 
 import predator_analysis as pa
 
@@ -36,16 +35,14 @@ def frame() -> pl.DataFrame:
     return pl.DataFrame(rows)
 
 
-def test_effort_group_juvenile_and_paired_minimum() -> None:
+def test_effort_and_indicator_structure() -> None:
     b = pa.build(frame())
     h = b["species"]["hunt"]
     assert set(b["species"]) == {"hunt"}
     assert h["effort"][0] == {"year": 2010, "districts": 25, "observations": 25}
-    assert h["group"][0]["mean"] == pytest.approx(1.48)  # 13 districts report 1 and 12 report 2
-    assert h["juvenile"][0]["share"] == pytest.approx(0.25)
-    p = h["minimum"]["paired"]
-    assert p["districts"] == 25 and p["mean_first"] == pytest.approx(2.0)
-    assert p["mean_last"] == pytest.approx(3.0) and p["share_increased"] == 1.0
+    ind = {r["naitaja_nimetus"]: r for r in h["by_indicator"]}
+    assert ind[pa.IND_MIN]["districts"] == 25 and ind[pa.IND_AD]["rows"] == 8
+    assert "minimum" not in h and "juvenile" not in h
     json.dumps(b)
 
 

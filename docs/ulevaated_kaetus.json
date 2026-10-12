@@ -161,7 +161,7 @@
     "teema": "liigid",
     "meie": "puudub",
     "andmed": "API:f_keskkonnaseire",
-    "markus": "Tabelis on hundi ja karu vaatluste/jälgede ridu, kuid arvukuse hinnang vajab seiremeetodi tundmist; ei ole arvutatud.",
+    "markus": "Seiretabelis on jahipiirkondade vaatlusaruanded, kuid aruandluse struktuur muutub aastate vahel nii tugevalt (aruandvaid piirkondi sadadest üheni), et arvukust ega trendi ei saa hinnata; lehel on ainult aruandluse struktuur.",
     "title": "Keskkonnaülevaade - Liigid - Suurkiskjate arvukus",
     "views": 562
    },
@@ -371,7 +371,7 @@
    "teema": "liigid",
    "meie": "puudub",
    "andmed": "API:f_keskkonnaseire",
-   "markus": "Tabelis on hundi ja karu vaatluste/jälgede ridu, kuid arvukuse hinnang vajab seiremeetodi tundmist; ei ole arvutatud.",
+   "markus": "Seiretabelis on jahipiirkondade vaatlusaruanded, kuid aruandluse struktuur muutub aastate vahel nii tugevalt (aruandvaid piirkondi sadadest üheni), et arvukust ega trendi ei saa hinnata; lehel on ainult aruandluse struktuur.",
    "title": "Keskkonnaülevaade - Liigid - Suurkiskjate arvukus",
    "views": 562
   },

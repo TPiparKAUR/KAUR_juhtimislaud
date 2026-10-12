@@ -139,3 +139,11 @@ bootstrap-vahemik 96–118, st muutus ei ole eristatav; kõigi 76 kehtiva ahelag
 **Üraskid ja kaitstav mets:** avaandmete tabelites ega seirekataloogis (400 näitajat)
 üraskite andmeid ei leitud (otsitud tabelite nimedest ja kirjeldustest ning seirekataloogi näitajate nimedest); „Päevane püügiarv“ on linnujaamade rõngastuspüük, mitte üraskite püük.
 Üraskite vaade jääb katmata kuni allika (metsakaitse seire, mitte KESE) leidmiseni.
+
+## Täiendus 2026-10-12 (hiljem): suurkiskjad ei anna arvukust
+
+Hundi-, karu- ja ilvesevaatluste (112 tuhat rida, 329 jahipiirkonda) esmane analüüs näitas, et aruandluse struktuur
+muutub: nt karu aruandvaid piirkondi oli 268 (2022) ja 1 (2025), samal ajal kui vaatlusi 3 958 ja 5 510; ilvese
+„Liigi isendite arv“ on ainult 2025. aasta kohta. Noorloomade osakaal ligi 100% (karu) viitab sellele, et „ad“
+ja „juv“ read ei ole sama vaatluse osad. Seega ei ole arvukust, „min“ keskmist ega noorloomade osakaalu avaldatud;
+lehel on ainult aruandluse struktuur. Vaade jääb „puudub“ kuni ametliku meetodi ja tabelistruktuuri selgituseni.

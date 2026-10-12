@@ -41,7 +41,7 @@ Genereeritud `analyse_ulevaated.py` poolt failidest `data/ulevaate_kaetus.toml` 
 | Liigid | Keskkonnaülevaade - Liigid - Liikide seisund | 785 | puudub | teadmata | Seiretabelis on liikide kohta ridu (liikide arv aastas), kuid liikide seisundi hinnang (nt EL aruandlus) ei ole selles tabelis tuvastatud. |
 | Liigid | Keskkonnaülevaade - Liigid - Lindude indeks | 649 | osaliselt | API:f_keskkonnaseire | Esialgne haudelinnustiku koondindeks punktloendustest (lihtsustatud ahelindeks, mitte TRIM ega ametlik indeks); ekspert peab meetodi kinnitama. |
 | Liigid | Keskkonnaülevaade - Liigid - Punase nimestiku liigid | 631 | puudub | teadmata | Punane nimestik; API-s ei ole tuvastatud. |
-| Liigid | Keskkonnaülevaade - Liigid - Suurkiskjate arvukus | 562 | puudub | API:f_keskkonnaseire | Tabelis on hundi ja karu vaatluste/jälgede ridu, kuid arvukuse hinnang vajab seiremeetodi tundmist; ei ole arvutatud. |
+| Liigid | Keskkonnaülevaade - Liigid - Suurkiskjate arvukus | 562 | puudub | API:f_keskkonnaseire | Seiretabelis on jahipiirkondade vaatlusaruanded, kuid aruandluse struktuur muutub aastate vahel nii tugevalt (aruandvaid piirkondi sadadest üheni), et arvukust ega trendi ei saa hinnata; lehel on ainult aruandluse struktuur. |
 | Mets | Keskkonnaülevaade - Mets - Metsamaa pindala | 429 | olemas | API:f_smi_tulemused | Metsamaa pindala (SMI). |
 | Mets | Keskkonnaülevaade - Mets - Lehtpuu_Okaspuu | 400 | olemas | API:f_smi_tulemused | Puuliigid (tagavara enamuspuuliigi järgi). |
 | Mets | Keskkonnaülevaade - Mets - Üraskid | 391 | puudub | teadmata | Kuuse-kooreüraskid (metsakaitse seire). |

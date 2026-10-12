@@ -194,8 +194,6 @@ ANALYSES: dict[str, list[tuple[str, list[tuple[str, str]]]]] = {
             [
                 ("pfindings", "Suurkiskjad: jahipiirkondade vaatlused"),
                 ("peffort", ""),
-                ("pmin", ""),
-                ("pjuv", ""),
                 ("pmethods", ""),
             ],
         ),
