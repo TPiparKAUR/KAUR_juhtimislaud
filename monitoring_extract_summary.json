@@ -1,0 +1,1230 @@
+{
+ "per_indicator": {
+  "Liigi isendite arv": {
+   "per_indicator": {},
+   "rows": 53907,
+   "years": [
+    2000,
+    2026
+   ],
+   "rows_by_year": [
+    {
+     "year": 2000,
+     "rows": 2
+    },
+    {
+     "year": 2003,
+     "rows": 1
+    },
+    {
+     "year": 2006,
+     "rows": 307
+    },
+    {
+     "year": 2007,
+     "rows": 1155
+    },
+    {
+     "year": 2008,
+     "rows": 1553
+    },
+    {
+     "year": 2009,
+     "rows": 1705
+    },
+    {
+     "year": 2010,
+     "rows": 1320
+    },
+    {
+     "year": 2011,
+     "rows": 1194
+    },
+    {
+     "year": 2012,
+     "rows": 2117
+    },
+    {
+     "year": 2013,
+     "rows": 1210
+    },
+    {
+     "year": 2014,
+     "rows": 548
+    },
+    {
+     "year": 2015,
+     "rows": 421
+    },
+    {
+     "year": 2016,
+     "rows": 781
+    },
+    {
+     "year": 2017,
+     "rows": 264
+    },
+    {
+     "year": 2018,
+     "rows": 2115
+    },
+    {
+     "year": 2019,
+     "rows": 822
+    },
+    {
+     "year": 2020,
+     "rows": 4808
+    },
+    {
+     "year": 2021,
+     "rows": 3239
+    },
+    {
+     "year": 2022,
+     "rows": 7379
+    },
+    {
+     "year": 2023,
+     "rows": 8195
+    },
+    {
+     "year": 2024,
+     "rows": 6584
+    },
+    {
+     "year": 2025,
+     "rows": 6994
+    },
+    {
+     "year": 2026,
+     "rows": 1193
+    }
+   ],
+   "species": [
+    {
+     "liik_est": "pruunkaru",
+     "count": 25670
+    },
+    {
+     "liik_est": "hunt",
+     "count": 25560
+    },
+    {
+     "liik_est": "ilves",
+     "count": 2677
+    }
+   ],
+   "plots": 328,
+   "null_value": 0,
+   "text_values": [
+    {
+     "vaartus_tapsustus_extra_tekst": null,
+     "count": 53907
+    }
+   ],
+   "matrix": [
+    {
+     "naitaja_proovimaatriks_nimi": null,
+     "count": 53907
+    }
+   ],
+   "soil_types": [
+    {
+     "proov_vaatlus_mullatyyp_selg": null,
+     "count": 53907
+    }
+   ],
+   "horizons": [
+    {
+     "proov_vaatlus_mullahorisont": null,
+     "count": 53907
+    }
+   ],
+   "depths": [
+    {
+     "mullaproov_sygavus": null,
+     "count": 53907
+    }
+   ],
+   "programmes": [
+    {
+     "seiretoo_nimetus": "Karuvaatlused jahipiirkondades ",
+     "count": 25670
+    },
+    {
+     "seiretoo_nimetus": "Hundivaatlused jahipiirkondades ",
+     "count": 25560
+    },
+    {
+     "seiretoo_nimetus": "Ilvesevaatlused jahipiirkondades ",
+     "count": 2677
+    }
+   ],
+   "other_values": [
+    {
+     "vaartus_muu": null,
+     "count": 53907
+    }
+   ],
+   "other_value_details": [
+    {
+     "vaartus_muu_tapsustus": null,
+     "count": 53907
+    }
+   ],
+   "extra_numeric_non_null": 0,
+   "quantiles": {
+    "p0": 1.0,
+    "p5": 1.0,
+    "p25": 1.0,
+    "p50": 1.0,
+    "p75": 2.0,
+    "p95": 5.0,
+    "p100": 13.0
+   },
+   "distinct_values": 13,
+   "value_counts_top": [
+    {
+     "vaartus_arv_moodetud": 1.0,
+     "count": 33962
+    },
+    {
+     "vaartus_arv_moodetud": 2.0,
+     "count": 10051
+    },
+    {
+     "vaartus_arv_moodetud": 3.0,
+     "count": 4476
+    },
+    {
+     "vaartus_arv_moodetud": 4.0,
+     "count": 2470
+    },
+    {
+     "vaartus_arv_moodetud": 5.0,
+     "count": 1535
+    },
+    {
+     "vaartus_arv_moodetud": 6.0,
+     "count": 709
+    },
+    {
+     "vaartus_arv_moodetud": 7.0,
+     "count": 385
+    },
+    {
+     "vaartus_arv_moodetud": 8.0,
+     "count": 195
+    },
+    {
+     "vaartus_arv_moodetud": 9.0,
+     "count": 66
+    },
+    {
+     "vaartus_arv_moodetud": 10.0,
+     "count": 40
+    },
+    {
+     "vaartus_arv_moodetud": 11.0,
+     "count": 13
+    },
+    {
+     "vaartus_arv_moodetud": 12.0,
+     "count": 3
+    },
+    {
+     "vaartus_arv_moodetud": 13.0,
+     "count": 2
+    }
+   ],
+   "units": [
+    {
+     "naitaja_abr_unit": "is",
+     "count": 53907
+    }
+   ],
+   "special_marks": [
+    {
+     "vaartus_erimark": null,
+     "count": 53907
+    }
+   ],
+   "plot_types": [
+    {
+     "seirekogum_tyyp": null,
+     "count": 53907
+    }
+   ]
+  },
+  "Liigi isendite arv (juv)": {
+   "per_indicator": {},
+   "rows": 14924,
+   "years": [
+    2007,
+    2026
+   ],
+   "rows_by_year": [
+    {
+     "year": 2007,
+     "rows": 1
+    },
+    {
+     "year": 2008,
+     "rows": 1
+    },
+    {
+     "year": 2009,
+     "rows": 2
+    },
+    {
+     "year": 2010,
+     "rows": 1
+    },
+    {
+     "year": 2011,
+     "rows": 2
+    },
+    {
+     "year": 2012,
+     "rows": 189
+    },
+    {
+     "year": 2013,
+     "rows": 157
+    },
+    {
+     "year": 2014,
+     "rows": 273
+    },
+    {
+     "year": 2015,
+     "rows": 254
+    },
+    {
+     "year": 2016,
+     "rows": 232
+    },
+    {
+     "year": 2017,
+     "rows": 14
+    },
+    {
+     "year": 2018,
+     "rows": 706
+    },
+    {
+     "year": 2019,
+     "rows": 1005
+    },
+    {
+     "year": 2020,
+     "rows": 1414
+    },
+    {
+     "year": 2021,
+     "rows": 1627
+    },
+    {
+     "year": 2022,
+     "rows": 1694
+    },
+    {
+     "year": 2023,
+     "rows": 1893
+    },
+    {
+     "year": 2024,
+     "rows": 2295
+    },
+    {
+     "year": 2025,
+     "rows": 2382
+    },
+    {
+     "year": 2026,
+     "rows": 782
+    }
+   ],
+   "species": [
+    {
+     "liik_est": "pruunkaru",
+     "count": 10307
+    },
+    {
+     "liik_est": "ilves",
+     "count": 3490
+    },
+    {
+     "liik_est": "hunt",
+     "count": 1127
+    }
+   ],
+   "plots": 303,
+   "null_value": 0,
+   "text_values": [
+    {
+     "vaartus_tapsustus_extra_tekst": null,
+     "count": 14924
+    }
+   ],
+   "matrix": [
+    {
+     "naitaja_proovimaatriks_nimi": null,
+     "count": 14924
+    }
+   ],
+   "soil_types": [
+    {
+     "proov_vaatlus_mullatyyp_selg": null,
+     "count": 14924
+    }
+   ],
+   "horizons": [
+    {
+     "proov_vaatlus_mullahorisont": null,
+     "count": 14924
+    }
+   ],
+   "depths": [
+    {
+     "mullaproov_sygavus": null,
+     "count": 14924
+    }
+   ],
+   "programmes": [
+    {
+     "seiretoo_nimetus": "Karuvaatlused jahipiirkondades ",
+     "count": 10307
+    },
+    {
+     "seiretoo_nimetus": "Ilvesevaatlused jahipiirkondades ",
+     "count": 3490
+    },
+    {
+     "seiretoo_nimetus": "Hundivaatlused jahipiirkondades ",
+     "count": 1127
+    }
+   ],
+   "other_values": [
+    {
+     "vaartus_muu": null,
+     "count": 14924
+    }
+   ],
+   "other_value_details": [
+    {
+     "vaartus_muu_tapsustus": null,
+     "count": 14924
+    }
+   ],
+   "extra_numeric_non_null": 0,
+   "quantiles": {
+    "p0": 1.0,
+    "p5": 1.0,
+    "p25": 1.0,
+    "p50": 2.0,
+    "p75": 3.0,
+    "p95": 4.0,
+    "p100": 15.0
+   },
+   "distinct_values": 10,
+   "value_counts_top": [
+    {
+     "vaartus_arv_moodetud": 2.0,
+     "count": 5722
+    },
+    {
+     "vaartus_arv_moodetud": 1.0,
+     "count": 4475
+    },
+    {
+     "vaartus_arv_moodetud": 3.0,
+     "count": 3728
+    },
+    {
+     "vaartus_arv_moodetud": 4.0,
+     "count": 840
+    },
+    {
+     "vaartus_arv_moodetud": 5.0,
+     "count": 101
+    },
+    {
+     "vaartus_arv_moodetud": 6.0,
+     "count": 44
+    },
+    {
+     "vaartus_arv_moodetud": 7.0,
+     "count": 8
+    },
+    {
+     "vaartus_arv_moodetud": 9.0,
+     "count": 4
+    },
+    {
+     "vaartus_arv_moodetud": 8.0,
+     "count": 1
+    },
+    {
+     "vaartus_arv_moodetud": 15.0,
+     "count": 1
+    }
+   ],
+   "units": [
+    {
+     "naitaja_abr_unit": "is",
+     "count": 14924
+    }
+   ],
+   "special_marks": [
+    {
+     "vaartus_erimark": null,
+     "count": 14924
+    }
+   ],
+   "plot_types": [
+    {
+     "seirekogum_tyyp": null,
+     "count": 14924
+    }
+   ]
+  },
+  "Liigi isendite arv, min": {
+   "per_indicator": {},
+   "rows": 9979,
+   "years": [
+    2001,
+    2026
+   ],
+   "rows_by_year": [
+    {
+     "year": 2001,
+     "rows": 1
+    },
+    {
+     "year": 2002,
+     "rows": 2
+    },
+    {
+     "year": 2006,
+     "rows": 448
+    },
+    {
+     "year": 2007,
+     "rows": 2154
+    },
+    {
+     "year": 2008,
+     "rows": 1495
+    },
+    {
+     "year": 2009,
+     "rows": 799
+    },
+    {
+     "year": 2010,
+     "rows": 594
+    },
+    {
+     "year": 2011,
+     "rows": 207
+    },
+    {
+     "year": 2012,
+     "rows": 870
+    },
+    {
+     "year": 2013,
+     "rows": 460
+    },
+    {
+     "year": 2014,
+     "rows": 269
+    },
+    {
+     "year": 2015,
+     "rows": 281
+    },
+    {
+     "year": 2016,
+     "rows": 283
+    },
+    {
+     "year": 2017,
+     "rows": 251
+    },
+    {
+     "year": 2018,
+     "rows": 360
+    },
+    {
+     "year": 2019,
+     "rows": 5
+    },
+    {
+     "year": 2020,
+     "rows": 44
+    },
+    {
+     "year": 2021,
+     "rows": 19
+    },
+    {
+     "year": 2022,
+     "rows": 408
+    },
+    {
+     "year": 2023,
+     "rows": 619
+    },
+    {
+     "year": 2024,
+     "rows": 218
+    },
+    {
+     "year": 2025,
+     "rows": 181
+    },
+    {
+     "year": 2026,
+     "rows": 11
+    }
+   ],
+   "species": [
+    {
+     "liik_est": "ilves",
+     "count": 8330
+    },
+    {
+     "liik_est": "pruunkaru",
+     "count": 1104
+    },
+    {
+     "liik_est": "hunt",
+     "count": 545
+    }
+   ],
+   "plots": 257,
+   "null_value": 0,
+   "text_values": [
+    {
+     "vaartus_tapsustus_extra_tekst": null,
+     "count": 9979
+    }
+   ],
+   "matrix": [
+    {
+     "naitaja_proovimaatriks_nimi": null,
+     "count": 9979
+    }
+   ],
+   "soil_types": [
+    {
+     "proov_vaatlus_mullatyyp_selg": null,
+     "count": 9979
+    }
+   ],
+   "horizons": [
+    {
+     "proov_vaatlus_mullahorisont": null,
+     "count": 9979
+    }
+   ],
+   "depths": [
+    {
+     "mullaproov_sygavus": null,
+     "count": 9979
+    }
+   ],
+   "programmes": [
+    {
+     "seiretoo_nimetus": "Ilvesevaatlused jahipiirkondades ",
+     "count": 8330
+    },
+    {
+     "seiretoo_nimetus": "Karuvaatlused jahipiirkondades ",
+     "count": 1104
+    },
+    {
+     "seiretoo_nimetus": "Hundivaatlused jahipiirkondades ",
+     "count": 545
+    }
+   ],
+   "other_values": [
+    {
+     "vaartus_muu": null,
+     "count": 9979
+    }
+   ],
+   "other_value_details": [
+    {
+     "vaartus_muu_tapsustus": null,
+     "count": 9979
+    }
+   ],
+   "extra_numeric_non_null": 0,
+   "quantiles": {
+    "p0": 1.0,
+    "p5": 1.0,
+    "p25": 1.0,
+    "p50": 2.0,
+    "p75": 3.0,
+    "p95": 4.0,
+    "p100": 9.0
+   },
+   "distinct_values": 9,
+   "value_counts_top": [
+    {
+     "vaartus_arv_moodetud": 1.0,
+     "count": 4569
+    },
+    {
+     "vaartus_arv_moodetud": 2.0,
+     "count": 2779
+    },
+    {
+     "vaartus_arv_moodetud": 3.0,
+     "count": 2066
+    },
+    {
+     "vaartus_arv_moodetud": 4.0,
+     "count": 460
+    },
+    {
+     "vaartus_arv_moodetud": 5.0,
+     "count": 69
+    },
+    {
+     "vaartus_arv_moodetud": 6.0,
+     "count": 21
+    },
+    {
+     "vaartus_arv_moodetud": 7.0,
+     "count": 10
+    },
+    {
+     "vaartus_arv_moodetud": 8.0,
+     "count": 3
+    },
+    {
+     "vaartus_arv_moodetud": 9.0,
+     "count": 2
+    }
+   ],
+   "units": [
+    {
+     "naitaja_abr_unit": "is",
+     "count": 9979
+    }
+   ],
+   "special_marks": [
+    {
+     "vaartus_erimark": null,
+     "count": 9979
+    }
+   ],
+   "plot_types": [
+    {
+     "seirekogum_tyyp": null,
+     "count": 9979
+    }
+   ]
+  },
+  "Liigi isendite arv (ad)": {
+   "per_indicator": {},
+   "rows": 33765,
+   "years": [
+    2007,
+    2026
+   ],
+   "rows_by_year": [
+    {
+     "year": 2007,
+     "rows": 6
+    },
+    {
+     "year": 2011,
+     "rows": 1
+    },
+    {
+     "year": 2017,
+     "rows": 3
+    },
+    {
+     "year": 2018,
+     "rows": 1840
+    },
+    {
+     "year": 2019,
+     "rows": 4891
+    },
+    {
+     "year": 2020,
+     "rows": 1492
+    },
+    {
+     "year": 2021,
+     "rows": 6190
+    },
+    {
+     "year": 2022,
+     "rows": 2472
+    },
+    {
+     "year": 2023,
+     "rows": 2994
+    },
+    {
+     "year": 2024,
+     "rows": 6243
+    },
+    {
+     "year": 2025,
+     "rows": 6015
+    },
+    {
+     "year": 2026,
+     "rows": 1618
+    }
+   ],
+   "species": [
+    {
+     "liik_est": "ilves",
+     "count": 13010
+    },
+    {
+     "liik_est": "hunt",
+     "count": 11407
+    },
+    {
+     "liik_est": "pruunkaru",
+     "count": 9348
+    }
+   ],
+   "plots": 324,
+   "null_value": 0,
+   "text_values": [
+    {
+     "vaartus_tapsustus_extra_tekst": null,
+     "count": 33765
+    }
+   ],
+   "matrix": [
+    {
+     "naitaja_proovimaatriks_nimi": null,
+     "count": 33765
+    }
+   ],
+   "soil_types": [
+    {
+     "proov_vaatlus_mullatyyp_selg": null,
+     "count": 33765
+    }
+   ],
+   "horizons": [
+    {
+     "proov_vaatlus_mullahorisont": null,
+     "count": 33765
+    }
+   ],
+   "depths": [
+    {
+     "mullaproov_sygavus": null,
+     "count": 33765
+    }
+   ],
+   "programmes": [
+    {
+     "seiretoo_nimetus": "Ilvesevaatlused jahipiirkondades ",
+     "count": 13010
+    },
+    {
+     "seiretoo_nimetus": "Hundivaatlused jahipiirkondades ",
+     "count": 11407
+    },
+    {
+     "seiretoo_nimetus": "Karuvaatlused jahipiirkondades ",
+     "count": 9348
+    }
+   ],
+   "other_values": [
+    {
+     "vaartus_muu": null,
+     "count": 33765
+    }
+   ],
+   "other_value_details": [
+    {
+     "vaartus_muu_tapsustus": null,
+     "count": 33765
+    }
+   ],
+   "extra_numeric_non_null": 0,
+   "quantiles": {
+    "p0": 0.0,
+    "p5": 1.0,
+    "p25": 1.0,
+    "p50": 1.0,
+    "p75": 1.0,
+    "p95": 3.0,
+    "p100": 20.0
+   },
+   "distinct_values": 15,
+   "value_counts_top": [
+    {
+     "vaartus_arv_moodetud": 1.0,
+     "count": 26870
+    },
+    {
+     "vaartus_arv_moodetud": 2.0,
+     "count": 4652
+    },
+    {
+     "vaartus_arv_moodetud": 3.0,
+     "count": 1082
+    },
+    {
+     "vaartus_arv_moodetud": 4.0,
+     "count": 554
+    },
+    {
+     "vaartus_arv_moodetud": 5.0,
+     "count": 310
+    },
+    {
+     "vaartus_arv_moodetud": 6.0,
+     "count": 126
+    },
+    {
+     "vaartus_arv_moodetud": 7.0,
+     "count": 69
+    },
+    {
+     "vaartus_arv_moodetud": 8.0,
+     "count": 49
+    },
+    {
+     "vaartus_arv_moodetud": 0.0,
+     "count": 16
+    },
+    {
+     "vaartus_arv_moodetud": 10.0,
+     "count": 14
+    },
+    {
+     "vaartus_arv_moodetud": 9.0,
+     "count": 12
+    },
+    {
+     "vaartus_arv_moodetud": 11.0,
+     "count": 7
+    },
+    {
+     "vaartus_arv_moodetud": 12.0,
+     "count": 2
+    },
+    {
+     "vaartus_arv_moodetud": 15.0,
+     "count": 1
+    },
+    {
+     "vaartus_arv_moodetud": 20.0,
+     "count": 1
+    }
+   ],
+   "units": [
+    {
+     "naitaja_abr_unit": "is",
+     "count": 33765
+    }
+   ],
+   "special_marks": [
+    {
+     "vaartus_erimark": null,
+     "count": 33765
+    }
+   ],
+   "plot_types": [
+    {
+     "seirekogum_tyyp": null,
+     "count": 33765
+    }
+   ]
+  }
+ },
+ "rows": 112575,
+ "years": [
+  2000,
+  2026
+ ],
+ "rows_by_year": [
+  {
+   "year": 2000,
+   "rows": 2
+  },
+  {
+   "year": 2001,
+   "rows": 1
+  },
+  {
+   "year": 2002,
+   "rows": 2
+  },
+  {
+   "year": 2003,
+   "rows": 1
+  },
+  {
+   "year": 2006,
+   "rows": 755
+  },
+  {
+   "year": 2007,
+   "rows": 3316
+  },
+  {
+   "year": 2008,
+   "rows": 3049
+  },
+  {
+   "year": 2009,
+   "rows": 2506
+  },
+  {
+   "year": 2010,
+   "rows": 1915
+  },
+  {
+   "year": 2011,
+   "rows": 1404
+  },
+  {
+   "year": 2012,
+   "rows": 3176
+  },
+  {
+   "year": 2013,
+   "rows": 1827
+  },
+  {
+   "year": 2014,
+   "rows": 1090
+  },
+  {
+   "year": 2015,
+   "rows": 956
+  },
+  {
+   "year": 2016,
+   "rows": 1296
+  },
+  {
+   "year": 2017,
+   "rows": 532
+  },
+  {
+   "year": 2018,
+   "rows": 5021
+  },
+  {
+   "year": 2019,
+   "rows": 6723
+  },
+  {
+   "year": 2020,
+   "rows": 7758
+  },
+  {
+   "year": 2021,
+   "rows": 11075
+  },
+  {
+   "year": 2022,
+   "rows": 11953
+  },
+  {
+   "year": 2023,
+   "rows": 13701
+  },
+  {
+   "year": 2024,
+   "rows": 15340
+  },
+  {
+   "year": 2025,
+   "rows": 15572
+  },
+  {
+   "year": 2026,
+   "rows": 3604
+  }
+ ],
+ "species": [
+  {
+   "liik_est": "pruunkaru",
+   "count": 46429
+  },
+  {
+   "liik_est": "hunt",
+   "count": 38639
+  },
+  {
+   "liik_est": "ilves",
+   "count": 27507
+  }
+ ],
+ "plots": 329,
+ "null_value": 0,
+ "text_values": [
+  {
+   "vaartus_tapsustus_extra_tekst": null,
+   "count": 112575
+  }
+ ],
+ "matrix": [
+  {
+   "naitaja_proovimaatriks_nimi": null,
+   "count": 112575
+  }
+ ],
+ "soil_types": [
+  {
+   "proov_vaatlus_mullatyyp_selg": null,
+   "count": 112575
+  }
+ ],
+ "horizons": [
+  {
+   "proov_vaatlus_mullahorisont": null,
+   "count": 112575
+  }
+ ],
+ "depths": [
+  {
+   "mullaproov_sygavus": null,
+   "count": 112575
+  }
+ ],
+ "programmes": [
+  {
+   "seiretoo_nimetus": "Karuvaatlused jahipiirkondades ",
+   "count": 46429
+  },
+  {
+   "seiretoo_nimetus": "Hundivaatlused jahipiirkondades ",
+   "count": 38639
+  },
+  {
+   "seiretoo_nimetus": "Ilvesevaatlused jahipiirkondades ",
+   "count": 27507
+  }
+ ],
+ "other_values": [
+  {
+   "vaartus_muu": null,
+   "count": 112575
+  }
+ ],
+ "other_value_details": [
+  {
+   "vaartus_muu_tapsustus": null,
+   "count": 112575
+  }
+ ],
+ "extra_numeric_non_null": 0,
+ "quantiles": {
+  "p0": 0.0,
+  "p5": 1.0,
+  "p25": 1.0,
+  "p50": 1.0,
+  "p75": 2.0,
+  "p95": 4.0,
+  "p100": 20.0
+ },
+ "distinct_values": 16,
+ "value_counts_top": [
+  {
+   "vaartus_arv_moodetud": 1.0,
+   "count": 69876
+  },
+  {
+   "vaartus_arv_moodetud": 2.0,
+   "count": 23204
+  },
+  {
+   "vaartus_arv_moodetud": 3.0,
+   "count": 11352
+  },
+  {
+   "vaartus_arv_moodetud": 4.0,
+   "count": 4324
+  },
+  {
+   "vaartus_arv_moodetud": 5.0,
+   "count": 2015
+  },
+  {
+   "vaartus_arv_moodetud": 6.0,
+   "count": 900
+  },
+  {
+   "vaartus_arv_moodetud": 7.0,
+   "count": 472
+  },
+  {
+   "vaartus_arv_moodetud": 8.0,
+   "count": 248
+  },
+  {
+   "vaartus_arv_moodetud": 9.0,
+   "count": 84
+  },
+  {
+   "vaartus_arv_moodetud": 10.0,
+   "count": 54
+  },
+  {
+   "vaartus_arv_moodetud": 11.0,
+   "count": 20
+  },
+  {
+   "vaartus_arv_moodetud": 0.0,
+   "count": 16
+  },
+  {
+   "vaartus_arv_moodetud": 12.0,
+   "count": 5
+  },
+  {
+   "vaartus_arv_moodetud": 13.0,
+   "count": 2
+  },
+  {
+   "vaartus_arv_moodetud": 15.0,
+   "count": 2
+  },
+  {
+   "vaartus_arv_moodetud": 20.0,
+   "count": 1
+  }
+ ],
+ "units": [
+  {
+   "naitaja_abr_unit": "is",
+   "count": 112575
+  }
+ ],
+ "special_marks": [
+  {
+   "vaartus_erimark": null,
+   "count": 112575
+  }
+ ],
+ "plot_types": [
+  {
+   "seirekogum_tyyp": null,
+   "count": 112575
+  }
+ ]
+}
