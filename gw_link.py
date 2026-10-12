@@ -1,0 +1,86 @@
+#!/usr/bin/env python3
+"""Can groundwater abstraction be linked to approved groundwater reserves?
+
+``t_awtabel002_01_curr`` (abstraction by intake) and ``f_pohjaveevarud`` (approved reserves per
+deposit) have no documented foreign key.  This probe tests whether the code columns of the two
+tables share values (after trimming and upper-casing) and reports, per column pair, how many
+distinct codes match and which share of the abstracted volume sits on matching intakes.  Only
+counts and shares are written: no codes, names or coordinates.
+
+Usage
+-----
+    uv run python gw_link.py --raw out/wateruse --out out/gwlink
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+import logging
+from pathlib import Path
+from typing import Any
+
+import polars as pl
+
+LOG = logging.getLogger("gw_link")
+ABSTRACTION_CODES = ("veehaardekood", "jaamakood")
+RESERVE_CODES = ("kood", "kkr_kood", "veemaardla_kood")
+
+
+def norm(s: pl.Series) -> pl.Series:
+    return s.cast(pl.Utf8).str.strip_chars().str.to_uppercase()
+
+
+def link_report(gw: pl.DataFrame, res: pl.DataFrame) -> list[dict[str, Any]]:
+    """One row per (abstraction column, reserve column) pair with match counts."""
+    total_m3 = float(gw["aastakokku"].sum() or 0.0)
+    out = []
+    for a in ABSTRACTION_CODES:
+        if a not in gw.columns:
+            continue
+        g = gw.with_columns(norm(gw[a]).alias("_k")).filter(pl.col("_k").is_not_null())
+        keys_a = set(g["_k"].unique().to_list())
+        for r in RESERVE_CODES:
+            if r not in res.columns:
+                continue
+            keys_r = set(norm(res[r]).drop_nulls().unique().to_list())
+            common = keys_a & keys_r
+            m3 = float(g.filter(pl.col("_k").is_in(list(common)))["aastakokku"].sum() or 0.0)
+            out.append(
+                {
+                    "abstraction_column": a,
+                    "reserve_column": r,
+                    "distinct_abstraction": len(keys_a),
+                    "distinct_reserve": len(keys_r),
+                    "matching_codes": len(common),
+                    "matching_volume_share": m3 / total_m3 if total_m3 else None,
+                }
+            )
+    return out
+
+
+def build(gw: pl.DataFrame, res: pl.DataFrame) -> dict[str, Any]:
+    return {
+        "abstraction_rows": gw.height,
+        "reserve_rows": res.height,
+        "pairs": link_report(gw, res),
+    }
+
+
+def main(argv: list[str] | None = None) -> None:
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--raw", type=Path, default=Path("out/wateruse"))
+    ap.add_argument("--out", type=Path, default=Path("out/gwlink"))
+    args = ap.parse_args(argv)
+    logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
+    gw = pl.read_parquet(args.raw / "t_awtabel002_01_curr.parquet")
+    res = pl.read_parquet(args.raw / "f_pohjaveevarud.parquet")
+    args.out.mkdir(parents=True, exist_ok=True)
+    (args.out / "gw_link.json").write_text(
+        json.dumps(build(gw, res), ensure_ascii=False, indent=1), encoding="utf-8"
+    )
+    LOG.info("wrote %s", args.out / "gw_link.json")
+
+
+if __name__ == "__main__":
+    main()
