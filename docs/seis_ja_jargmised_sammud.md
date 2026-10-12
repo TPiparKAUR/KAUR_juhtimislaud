@@ -65,6 +65,7 @@ Leht ehitatakse `pages.yml` poolt kõigist harudest; lisatud tulemused ilmuvad a
 - Lindude indeks: lihtsustatud ahelindeks punktloendustest; ekspert peab kinnitama meetodi (TRIM vs ahelindeks), punktide valiku, liigivaliku ja äärmuslike liikide (nt piiritaja, aed-roolind) käsitluse.
 - Suurkiskjad: jahipiirkondade vaatlustabelis muutub aruandluse struktuur (aruandvaid piirkondi sadadest üheni, indikaatorid ainult mõnel aastal); vaja meetodi kirjeldust ja struktuurimuutuste selgitust Keskkonnaagentuurilt.
 - Üraskid: allikat avaandmetes ei leitud (otsitud API tabelite ja KESE kataloogi nimedest); vajab Metsaameti/Keskkonnaagentuuri metsakaitse seire andmeallikat.
+- Energeetika: taastuvate osakaal ja energiasõltuvus on bilansist arvutatud (mitte SHARES / Eurostat); ekspert peab kinnitama definitsioonid ja Statistikaameti andmete litsentsi ja viitamise. Energiasektori KHG ja soojatootmise tabelid (KE20–KE23) on kasutamata.
 - Aastaraamatute PDF-id ei ole repos (artefakt `yearbooks-raw`, 30 päeva); Soome, Island, Rootsi Skogsdata puuduvad.
 
 ## Seire (KESE) töövoog: kuidas jätkata

@@ -21,9 +21,9 @@ töövihikute loetelu koos vaatamiste arvuga (`data/tableau_public_workbooks.csv
 
 | Katvus | Vaateid | Vaatamisi | Osakaal vaatamistest |
 |---|---|---|---|
-| olemas | 24 | 8 440 | 47% |
-| osaliselt | 13 | 4 004 | 22% |
-| puudub | 17 | 5 444 | 30% |
+| olemas | 25 | 8 667 | 48% |
+| osaliselt | 13 | 4 063 | 23% |
+| puudub | 16 | 5 158 | 29% |
 
 Teemati (vaatamised; katmata osa vaatamistest):
 
@@ -36,7 +36,7 @@ Teemati (vaatamised; katmata osa vaatamistest):
 | Välisõhk | 1 932 | 24% |
 | Mets | 1 849 | 21% |
 | Seire (RKSP) | 1 259 | 20% (metsa-, mulla- ja välisõhuseire lisandus) |
-| Energeetika | 772 | 71% |
+| Energeetika | 772 | 34% (Statistikaameti energiabilanss lisandus) |
 | Ökosüsteemid | 761 | 35% |
 | Muld ja maahõive | 676 | **100%** |
 
@@ -147,3 +147,15 @@ muutub: nt karu aruandvaid piirkondi oli 268 (2022) ja 1 (2025), samal ajal kui 
 „Liigi isendite arv“ on ainult 2025. aasta kohta. Noorloomade osakaal ligi 100% (karu) viitab sellele, et „ad“
 ja „juv“ read ei ole sama vaatluse osad. Seega ei ole arvukust, „min“ keskmist ega noorloomade osakaalu avaldatud;
 lehel on ainult aruandluse struktuur. Vaade jääb „puudub“ kuni ametliku meetodi ja tabelistruktuuri selgituseni.
+
+## Täiendus 2026-10-12 (hiljem): energeetika Statistikaameti andmetest
+
+Avalikus Statistikaameti PxWeb API-s (`andmed.stat.ee/api/v1/et/stat`) leiti energiabilanss Eurostati metoodikaga
+(KE0240, TJ, 1990–2024), elektrijaamade toodang kütuse järgi (KE033) ja paigaldatud võimsus (KE032). Leht
+„Energeetika“ näitab primaarenergia tootmist (põlevkivi osa 94% (1990) → 52% (2024)), taastuvate osakaalu
+energiabilansi GAE-s (2% → 33%), energiasõltuvust (netoimport / GAE, 1–41%, 2024: 5,7%), lõpptarbimist sektorite
+kaupa ja elektritootmist (taastuvate osakaal 8% (2010) → 62% (2025), viimane aasta võib olla esialgne). **Piirangud:**
+osakaalud on arvutatud bilansist ega ole ametlik SHARES-osakaal; elektri- ja soojuskaubandus on netona sees;
+ekspordi märk tuvastati samasusest (jääk 0,008%); litsents (Statistikaameti avaandmed) ja viitamise nõue on
+kinnitamata. Taastuvenergia osakaal on nüüd „osaliselt“, elektrienergia hulk „olemas“; energiasektori KHG inventuur
+jääb katmata.

@@ -4,29 +4,29 @@
   "n_views": 54,
   "by_status": {
    "olemas": {
-    "n": 24,
-    "views": 8440
+    "n": 25,
+    "views": 8667
    },
    "osaliselt": {
     "n": 13,
-    "views": 4004
+    "views": 4063
    },
    "puudub": {
-    "n": 17,
-    "views": 5444
+    "n": 16,
+    "views": 5158
    }
   },
   "themes": {
    "energeetika": {
     "views": 772,
     "n": 3,
-    "olemas": 0,
+    "olemas": 1,
     "osaliselt": 1,
-    "puudub": 2,
-    "views_olemas": 0,
-    "views_osaliselt": 227,
-    "views_puudub": 545,
-    "share_views_uncovered": 0.706
+    "puudub": 1,
+    "views_olemas": 227,
+    "views_osaliselt": 286,
+    "views_puudub": 259,
+    "share_views_uncovered": 0.335
    },
    "ilm-ja-kliima": {
     "views": 2371,
@@ -243,18 +243,18 @@
   {
    "workbook": "Keskkonnalevaade-Energeetika-Taastuvenergiaosakaal",
    "teema": "energeetika",
-   "meie": "puudub",
-   "andmed": "väline",
-   "markus": "Taastuvenergia osakaal on ametlikult energiabilansist (nt Statistikaamet); API-s puudub.",
+   "meie": "osaliselt",
+   "andmed": "Statistikaamet PxWeb: KE0240",
+   "markus": "Taastuvate osakaal on arvutatud Statistikaameti energiabilansist (GAE-s ja primaarenergia tootmises); ei ole ametlik SHARES-osakaal.",
    "title": "Keskkonnaülevaade - Energeetika - Taastuvenergia osakaal",
    "views": 286
   },
   {
    "workbook": "Keskkonnalevaade-Energeetika-Elektrienergiahulk",
    "teema": "energeetika",
-   "meie": "osaliselt",
-   "andmed": "API:t_soojatoodang_curr",
-   "markus": "Käitiste soojus- ja elektritoodang õhuaruandest; riiklik elektrienergia hulk puudub.",
+   "meie": "olemas",
+   "andmed": "Statistikaamet PxWeb: KE033, KE032 + API:t_soojatoodang_curr",
+   "markus": "Riiklik elektritootmine kütuse järgi ja paigaldatud võimsus (Statistikaamet) lisaks käitiste soojus- ja elektritoodangule õhuaruandest.",
    "title": "Keskkonnaülevaade - Energeetika - Elektrienergia hulk",
    "views": 227
   },

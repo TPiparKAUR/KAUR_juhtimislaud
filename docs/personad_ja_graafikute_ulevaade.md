@@ -187,3 +187,9 @@ Graafikud: põhjaveevõtt veehaarde veeliigi järgi; võtt kinnitatud olmevaru s
 
 Graafikud: koondindeks (geomeetriline keskmine liikidest, bootstrap-vahemik) ja liikide lõpuindeksid. Puänt
 ütleb, kas vahemik sisaldab 100; indeks on esialgne ja meetod ekspertide poolt kinnitamata.
+
+## Energiabilanss ja elektritootmine (Statistikaamet, päris andmetega)
+
+Graafikud: primaarenergia tootmine, energiasõltuvus ja taastuvate osakaal, lõpptarbimine sektoriti,
+elektritootmine allikate kaupa, paigaldatud võimsus. Puänt on andmetest tuletatud; osakaalud ei ole ametlikud
+SHARES-osakaalud; ülevaatamata valdkonnaekspertide poolt.

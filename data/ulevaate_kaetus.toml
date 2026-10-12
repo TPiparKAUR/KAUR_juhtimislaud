@@ -9,16 +9,16 @@
 [[vaade]]
 workbook = "Keskkonnalevaade-Energeetika-Taastuvenergiaosakaal"
 teema = "energeetika"
-meie = "puudub"
-andmed = "väline"
-markus = "Taastuvenergia osakaal on ametlikult energiabilansist (nt Statistikaamet); API-s puudub."
+meie = "osaliselt"
+andmed = "Statistikaamet PxWeb: KE0240"
+markus = "Taastuvate osakaal on arvutatud Statistikaameti energiabilansist (GAE-s ja primaarenergia tootmises); ei ole ametlik SHARES-osakaal."
 
 [[vaade]]
 workbook = "Keskkonnalevaade-Energeetika-Elektrienergiahulk"
 teema = "energeetika"
-meie = "osaliselt"
-andmed = "API:t_soojatoodang_curr"
-markus = "Käitiste soojus- ja elektritoodang õhuaruandest; riiklik elektrienergia hulk puudub."
+meie = "olemas"
+andmed = "Statistikaamet PxWeb: KE033, KE032 + API:t_soojatoodang_curr"
+markus = "Riiklik elektritootmine kütuse järgi ja paigaldatud võimsus (Statistikaamet) lisaks käitiste soojus- ja elektritoodangule õhuaruandest."
 
 [[vaade]]
 workbook = "Rohemdikud-Energeetika-detail-energeetika-Energeetikasektorikasvuhoonegaasideheitkogused"

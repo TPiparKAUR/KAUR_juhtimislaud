@@ -64,8 +64,8 @@
       const mk = (code, label, color) => ({ label, color, data: CAP.filter((r) => r[code] != null).map((r) => ({ year: r.year, value: r[code], n: 0, extra: '' })) });
       C.lines(host, { title: 'Elektrijaamade paigaldatud võimsus', subtitle: 'Paigaldatud elektrivõimsus, MW (kõik elektrijaamad); soojuselektrijaamad, tuule- ja hüdroelektrijaamad.', unit: 'MW', dec: 0, axisDec: 0, nName: '–', series: [mk('ELCAP_I_THRM', 'Soojuselektrijaamad', SLOTS[3]), mk('CAP_I_WIND', 'Tuuleelektrijaamad', SLOTS[0]), mk('CAP_I_HYDR', 'Hüdroelektrijaamad', SLOTS[4] || SLOTS[2])],
         note: 'Päikeseelektrijaamade võimsust tabelis KE032 ei ole. Paigaldatud võimsus ei ole tootmisvõime kättesaadavus; tuule võimsus on tootmisvõime nimivõimsus, mitte keskmine toodang.' });
-      const w = CAP.filter((r) => r.CAP_I_WIND != null), a = first(w), b = last(w);
-      C.punch(host, `Tuuleelektrijaamade paigaldatud võimsus kasvas ${fmt(a.CAP_I_WIND, 0)} MW-lt (${a.year}) ${fmt(b.CAP_I_WIND, 0)} MW-ni (${b.year}); soojuselektrijaamade paigaldatud elektrivõimsus on ${fmt(last(CAP).ELCAP_I_THRM, 0)} MW (${last(CAP).year}).`);
+      const w = CAP.filter((r) => r.CAP_I_WIND > 0), a = first(w), b = last(w);
+      C.punch(host, `Tuuleelektrijaamade paigaldatud võimsus kasvas ${fmt(a.CAP_I_WIND, 0)} MW-lt (${a.year}, esimene aasta, mil võimsust on) ${fmt(b.CAP_I_WIND, 0)} MW-ni (${b.year}); soojuselektrijaamade paigaldatud elektrivõimsus on ${fmt(last(CAP).ELCAP_I_THRM, 0)} MW (${last(CAP).year}).`);
     },
     enmethods(host) {
       host.innerHTML = `<div class="methods"><b>Andmed ja meetod</b> <span class="review-flag">valdkonnaekspert ülevaatamata</span>
