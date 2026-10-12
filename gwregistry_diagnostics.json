@@ -1,0 +1,2456 @@
+{
+ "f_veehaarded": {
+  "rows": 24113,
+  "columns": {
+   "id": {
+    "dtype": "Int64",
+    "null_share": 0.0,
+    "distinct": 24113,
+    "min": -2147354483,
+    "max": 2147351595
+   },
+   "id_text": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 24113
+   },
+   "tyyp": {
+    "dtype": "String",
+    "null_share": 0.0003,
+    "distinct": 5,
+    "values": [
+     {
+      "value": "poh",
+      "rows": 23437
+     },
+     {
+      "value": "pin",
+      "rows": 653
+     },
+     {
+      "value": "mer",
+      "rows": 13
+     },
+     {
+      "value": null,
+      "rows": 8
+     },
+     {
+      "value": "tar",
+      "rows": 2
+     }
+    ]
+   },
+   "tyyp_selg": {
+    "dtype": "String",
+    "null_share": 0.0003,
+    "distinct": 5,
+    "values": [
+     {
+      "value": "P\u00f5hjaveehaare",
+      "rows": 23437
+     },
+     {
+      "value": "Pinnaveehaare",
+      "rows": 653
+     },
+     {
+      "value": "Mereveehaare",
+      "rows": 13
+     },
+     {
+      "value": null,
+      "rows": 8
+     },
+     {
+      "value": "Tarbepuurkaev",
+      "rows": 2
+     }
+    ]
+   },
+   "staatus": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 6,
+    "values": [
+     {
+      "value": "TAR",
+      "rows": 19243
+     },
+     {
+      "value": "T",
+      "rows": 2704
+     },
+     {
+      "value": "E",
+      "rows": 1848
+     },
+     {
+      "value": "TA",
+      "rows": 308
+     },
+     {
+      "value": "P",
+      "rows": 9
+     },
+     {
+      "value": null,
+      "rows": 1
+     }
+    ]
+   },
+   "staatus_selg": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 6,
+    "values": [
+     {
+      "value": "Teadmata",
+      "rows": 19243
+     },
+     {
+      "value": "T\u00f6\u00f6tav",
+      "rows": 2704
+     },
+     {
+      "value": "Endine",
+      "rows": 1848
+     },
+     {
+      "value": "T\u00f6\u00f6tav, aruannet ei esita",
+      "rows": 308
+     },
+     {
+      "value": "Planeeritav",
+      "rows": 9
+     },
+     {
+      "value": null,
+      "rows": 1
+     }
+    ]
+   },
+   "keht_staatus": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 2,
+    "values": [
+     {
+      "value": "Kehtetu",
+      "rows": 21130
+     },
+     {
+      "value": "Kehtiv",
+      "rows": 2983
+     }
+    ]
+   },
+   "lopp_aasta": {
+    "dtype": "Int64",
+    "null_share": 0.9268,
+    "distinct": 16,
+    "values": [
+     {
+      "value": null,
+      "rows": 22348
+     },
+     {
+      "value": 2015,
+      "rows": 629
+     },
+     {
+      "value": 2014,
+      "rows": 507
+     },
+     {
+      "value": 2008,
+      "rows": 117
+     },
+     {
+      "value": 2016,
+      "rows": 100
+     },
+     {
+      "value": 2009,
+      "rows": 83
+     },
+     {
+      "value": 2018,
+      "rows": 72
+     },
+     {
+      "value": 2017,
+      "rows": 62
+     },
+     {
+      "value": 2019,
+      "rows": 58
+     },
+     {
+      "value": 2010,
+      "rows": 44
+     },
+     {
+      "value": 2011,
+      "rows": 32
+     },
+     {
+      "value": 2012,
+      "rows": 27
+     },
+     {
+      "value": 2020,
+      "rows": 17
+     },
+     {
+      "value": 2013,
+      "rows": 8
+     },
+     {
+      "value": 2021,
+      "rows": 8
+     },
+     {
+      "value": 2022,
+      "rows": 1
+     }
+    ],
+    "min": 2008,
+    "max": 2022
+   },
+   "kkr_kood": {
+    "dtype": "String",
+    "null_share": 0.0188,
+    "distinct": 23661
+   },
+   "kood_grupp": {
+    "dtype": "String",
+    "null_share": 0.9873,
+    "distinct": 76
+   },
+   "puhastamine": {
+    "dtype": "String",
+    "null_share": 0.8788,
+    "distinct": 3,
+    "values": [
+     {
+      "value": null,
+      "rows": 21190
+     },
+     {
+      "value": "ei",
+      "rows": 1562
+     },
+     {
+      "value": "jah",
+      "rows": 1361
+     }
+    ]
+   },
+   "puhastamine_selg": {
+    "dtype": "String",
+    "null_share": 0.8788,
+    "distinct": 3,
+    "values": [
+     {
+      "value": null,
+      "rows": 21190
+     },
+     {
+      "value": "ei",
+      "rows": 1562
+     },
+     {
+      "value": "jah",
+      "rows": 1361
+     }
+    ]
+   },
+   "veeliik": {
+    "dtype": "String",
+    "null_share": 0.7968,
+    "distinct": 11,
+    "values": [
+     {
+      "value": null,
+      "rows": 19213
+     },
+     {
+      "value": "poh",
+      "rows": 4111
+     },
+     {
+      "value": "jv",
+      "rows": 476
+     },
+     {
+      "value": "vv",
+      "rows": 163
+     },
+     {
+      "value": "kar",
+      "rows": 75
+     },
+     {
+      "value": "kae",
+      "rows": 28
+     },
+     {
+      "value": "mer",
+      "rows": 17
+     },
+     {
+      "value": "min",
+      "rows": 12
+     },
+     {
+      "value": "teh",
+      "rows": 9
+     },
+     {
+      "value": "pin",
+      "rows": 5
+     },
+     {
+      "value": "al",
+      "rows": 4
+     }
+    ]
+   },
+   "veeliik_selg": {
+    "dtype": "String",
+    "null_share": 0.7968,
+    "distinct": 11,
+    "values": [
+     {
+      "value": null,
+      "rows": 19213
+     },
+     {
+      "value": "P\u00f5hjavesi",
+      "rows": 4111
+     },
+     {
+      "value": "J\u00e4rvevesi",
+      "rows": 476
+     },
+     {
+      "value": "J\u00f5evesi",
+      "rows": 163
+     },
+     {
+      "value": "Karj\u00e4\u00e4rivesi",
+      "rows": 75
+     },
+     {
+      "value": "Kaevandusvesi",
+      "rows": 28
+     },
+     {
+      "value": "Merevesi",
+      "rows": 17
+     },
+     {
+      "value": "Mineraalvesi",
+      "rows": 12
+     },
+     {
+      "value": "Tehnoloogiline vesi",
+      "rows": 9
+     },
+     {
+      "value": "Pinnavesi (j\u00f5ed, j\u00e4rved)",
+      "rows": 5
+     },
+     {
+      "value": "Allikavesi",
+      "rows": 4
+     }
+    ]
+   },
+   "veekogu_id": {
+    "dtype": "Int64",
+    "null_share": 0.9726,
+    "distinct": 552,
+    "min": -2141440460,
+    "max": 2144466497
+   },
+   "veekogu_kkr_kood": {
+    "dtype": "String",
+    "null_share": 0.9735,
+    "distinct": 530
+   },
+   "veekogu_tyyp_selg": {
+    "dtype": "String",
+    "null_share": 0.9727,
+    "distinct": 15,
+    "values": [
+     {
+      "value": null,
+      "rows": 23455
+     },
+     {
+      "value": "Paisj\u00e4rv",
+      "rows": 335
+     },
+     {
+      "value": "J\u00f5gi",
+      "rows": 127
+     },
+     {
+      "value": "Tehisj\u00e4rv",
+      "rows": 102
+     },
+     {
+      "value": "Looduslik j\u00e4rv",
+      "rows": 32
+     },
+     {
+      "value": "Oja",
+      "rows": 11
+     },
+     {
+      "value": "Kraav",
+      "rows": 10
+     },
+     {
+      "value": "Lahe osa",
+      "rows": 10
+     },
+     {
+      "value": "Peakraav",
+      "rows": 9
+     },
+     {
+      "value": "Kanal",
+      "rows": 7
+     },
+     {
+      "value": "Allikas",
+      "rows": 5
+     },
+     {
+      "value": "Rajatis",
+      "rows": 5
+     },
+     {
+      "value": "Lihtlaht",
+      "rows": 3
+     },
+     {
+      "value": "V\u00e4ina osa",
+      "rows": 1
+     },
+     {
+      "value": "Liitlaht",
+      "rows": 1
+     }
+    ]
+   },
+   "veekogu_keht_staatus": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 2,
+    "values": [
+     {
+      "value": "Kehtiv",
+      "rows": 24047
+     },
+     {
+      "value": "Kehtetu",
+      "rows": 66
+     }
+    ]
+   },
+   "vesikond_id": {
+    "dtype": "Int64",
+    "null_share": 0.8578,
+    "distinct": 9,
+    "values": [
+     {
+      "value": null,
+      "rows": 20685
+     },
+     {
+      "value": 494232159,
+      "rows": 886
+     },
+     {
+      "value": 1852031905,
+      "rows": 854
+     },
+     {
+      "value": 2084932182,
+      "rows": 540
+     },
+     {
+      "value": -16432206,
+      "rows": 490
+     },
+     {
+      "value": -2050232235,
+      "rows": 233
+     },
+     {
+      "value": -1418232033,
+      "rows": 198
+     },
+     {
+      "value": -837032005,
+      "rows": 186
+     },
+     {
+      "value": -1289832055,
+      "rows": 41
+     }
+    ],
+    "min": -2050232235,
+    "max": 2084932182
+   },
+   "vesikond_selg": {
+    "dtype": "String",
+    "null_share": 0.8578,
+    "distinct": 9,
+    "values": [
+     {
+      "value": null,
+      "rows": 20685
+     },
+     {
+      "value": "Peipsi alamvesikond",
+      "rows": 886
+     },
+     {
+      "value": "Harju alamvesikond",
+      "rows": 854
+     },
+     {
+      "value": "P\u00e4rnu alamvesikond",
+      "rows": 540
+     },
+     {
+      "value": "Viru alamvesikond",
+      "rows": 490
+     },
+     {
+      "value": "V\u00f5rtsj\u00e4rve alamvesikond",
+      "rows": 233
+     },
+     {
+      "value": "Matsalu alamvesikond",
+      "rows": 198
+     },
+     {
+      "value": "L\u00e4\u00e4nesaarte alamvesikond",
+      "rows": 186
+     },
+     {
+      "value": "Mustj\u00f5e alamvesikond",
+      "rows": 41
+     }
+    ]
+   },
+   "vesikond_kuulub_id": {
+    "dtype": "String",
+    "null_share": 0.8578,
+    "distinct": 4,
+    "values": [
+     {
+      "value": null,
+      "rows": 20685
+     },
+     {
+      "value": "-1756131876",
+      "rows": 1778
+     },
+     {
+      "value": "1571931858",
+      "rows": 1609
+     },
+     {
+      "value": "-503231884",
+      "rows": 41
+     }
+    ]
+   },
+   "muut_aeg": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 22131
+   }
+  }
+ },
+ "f_veehaarded_puurauk": {
+  "rows": 23097,
+  "columns": {
+   "id": {
+    "dtype": "Int64",
+    "null_share": 0.0,
+    "distinct": 23096,
+    "min": -2147333010,
+    "max": 2147129763
+   },
+   "tyyp": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 13,
+    "values": [
+     {
+      "value": "04",
+      "rows": 22164
+     },
+     {
+      "value": "02",
+      "rows": 335
+     },
+     {
+      "value": "11",
+      "rows": 221
+     },
+     {
+      "value": "05",
+      "rows": 152
+     },
+     {
+      "value": "07",
+      "rows": 113
+     },
+     {
+      "value": "03",
+      "rows": 65
+     },
+     {
+      "value": "09",
+      "rows": 20
+     },
+     {
+      "value": "10",
+      "rows": 14
+     },
+     {
+      "value": "12",
+      "rows": 5
+     },
+     {
+      "value": "08",
+      "rows": 4
+     },
+     {
+      "value": "01",
+      "rows": 2
+     },
+     {
+      "value": "06",
+      "rows": 1
+     },
+     {
+      "value": "13",
+      "rows": 1
+     }
+    ]
+   },
+   "tyyp_selg": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 13,
+    "values": [
+     {
+      "value": "puurkaev olmevee saamiseks",
+      "rows": 22164
+     },
+     {
+      "value": "\u00fchisveev\u00e4rgi puurkaev olmevee saamiseks",
+      "rows": 335
+     },
+     {
+      "value": "puurkaev p\u00f5llumajandustootmise tarbeks",
+      "rows": 221
+     },
+     {
+      "value": "puurkaev tootmisvee saamiseks",
+      "rows": 152
+     },
+     {
+      "value": "h\u00fcdrogeoloogilise uuringu puurkaev",
+      "rows": 113
+     },
+     {
+      "value": "\u00fchisveev\u00e4rgi puurkaev olmevee saamiseks (O-Cm, Cm-V p\u00f5hjaveekihist)",
+      "rows": 65
+     },
+     {
+      "value": "avatud soojuss\u00fcsteemi puurkaev",
+      "rows": 20
+     },
+     {
+      "value": "puurkaev mineraalvee saamiseks",
+      "rows": 14
+     },
+     {
+      "value": "kaevanduse puurkaev",
+      "rows": 5
+     },
+     {
+      "value": "kinnise soojuss\u00fcsteemi puurauk",
+      "rows": 4
+     },
+     {
+      "value": "salvkaev",
+      "rows": 2
+     },
+     {
+      "value": "h\u00fcdrogeoloogilise uuringu puurauk",
+      "rows": 1
+     },
+     {
+      "value": "riikliku keskkonnaseire kaev",
+      "rows": 1
+     }
+    ]
+   },
+   "keht_staatus": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 2,
+    "values": [
+     {
+      "value": "Kehtiv",
+      "rows": 20704
+     },
+     {
+      "value": "Kehtetu",
+      "rows": 2393
+     }
+    ]
+   },
+   "kkr_kood": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 23096
+   },
+   "veehaare_id": {
+    "dtype": "Int64",
+    "null_share": 0.0,
+    "distinct": 23089,
+    "min": -2147354483,
+    "max": 2147351595
+   },
+   "maasoojussysteem_id": {
+    "dtype": "Int64",
+    "null_share": 0.999,
+    "distinct": 21,
+    "values": [
+     {
+      "value": null,
+      "rows": 23074
+     },
+     {
+      "value": -2010868087,
+      "rows": 2
+     },
+     {
+      "value": -1987496203,
+      "rows": 2
+     },
+     {
+      "value": -1980365278,
+      "rows": 2
+     },
+     {
+      "value": -1996007198,
+      "rows": 1
+     },
+     {
+      "value": -1988987255,
+      "rows": 1
+     },
+     {
+      "value": 5379532,
+      "rows": 1
+     },
+     {
+      "value": -1671026963,
+      "rows": 1
+     },
+     {
+      "value": -1949381119,
+      "rows": 1
+     },
+     {
+      "value": -1930332403,
+      "rows": 1
+     },
+     {
+      "value": -1965518096,
+      "rows": 1
+     },
+     {
+      "value": -1959037864,
+      "rows": 1
+     },
+     {
+      "value": -255862527,
+      "rows": 1
+     },
+     {
+      "value": -600688470,
+      "rows": 1
+     },
+     {
+      "value": -1993673907,
+      "rows": 1
+     },
+     {
+      "value": -1991335455,
+      "rows": 1
+     },
+     {
+      "value": -1989938712,
+      "rows": 1
+     },
+     {
+      "value": -1949962895,
+      "rows": 1
+     },
+     {
+      "value": -1949577957,
+      "rows": 1
+     },
+     {
+      "value": -1934948311,
+      "rows": 1
+     },
+     {
+      "value": -1928806937,
+      "rows": 1
+     }
+    ],
+    "min": -2010868087,
+    "max": 5379532
+   },
+   "voond_toiteala_id": {
+    "dtype": "Int64",
+    "null_share": 0.9675,
+    "distinct": 747,
+    "min": -1972965097,
+    "max": 1704040633
+   },
+   "on_pandivere_pv": {
+    "dtype": "Boolean",
+    "null_share": 0.0,
+    "distinct": 2,
+    "values": [
+     {
+      "value": false,
+      "rows": 21413
+     },
+     {
+      "value": true,
+      "rows": 1684
+     }
+    ]
+   },
+   "kivimikiht_id": {
+    "dtype": "Int64",
+    "null_share": 0.9385,
+    "distinct": 28,
+    "values": [
+     {
+      "value": null,
+      "rows": 21676
+     },
+     {
+      "value": 1952445062,
+      "rows": 567
+     },
+     {
+      "value": 595844984,
+      "rows": 243
+     },
+     {
+      "value": -70945003,
+      "rows": 172
+     },
+     {
+      "value": -1822504351,
+      "rows": 148
+     },
+     {
+      "value": -825845062,
+      "rows": 91
+     },
+     {
+      "value": 1921445134,
+      "rows": 88
+     },
+     {
+      "value": 1956245062,
+      "rows": 25
+     },
+     {
+      "value": 1151344984,
+      "rows": 15
+     },
+     {
+      "value": 642944999,
+      "rows": 13
+     },
+     {
+      "value": -2036645062,
+      "rows": 12
+     },
+     {
+      "value": -1036945139,
+      "rows": 9
+     },
+     {
+      "value": 899145134,
+      "rows": 7
+     },
+     {
+      "value": -700145134,
+      "rows": 6
+     },
+     {
+      "value": 2013144984,
+      "rows": 5
+     },
+     {
+      "value": -1514044984,
+      "rows": 4
+     },
+     {
+      "value": 559045003,
+      "rows": 2
+     },
+     {
+      "value": 78545062,
+      "rows": 2
+     },
+     {
+      "value": 1623945134,
+      "rows": 2
+     },
+     {
+      "value": -562144999,
+      "rows": 2
+     },
+     {
+      "value": 1464545134,
+      "rows": 1
+     },
+     {
+      "value": -1754845134,
+      "rows": 1
+     },
+     {
+      "value": -1713245134,
+      "rows": 1
+     },
+     {
+      "value": 1674545134,
+      "rows": 1
+     },
+     {
+      "value": -1430653598,
+      "rows": 1
+     },
+     {
+      "value": 1907045134,
+      "rows": 1
+     },
+     {
+      "value": 1767845003,
+      "rows": 1
+     },
+     {
+      "value": 1844644984,
+      "rows": 1
+     }
+    ],
+    "min": -2036645062,
+    "max": 2013144984
+   },
+   "kivimikiht_tyyp": {
+    "dtype": "String",
+    "null_share": 0.9395,
+    "distinct": 2,
+    "values": [
+     {
+      "value": null,
+      "rows": 21700
+     },
+     {
+      "value": "V",
+      "rows": 1397
+     }
+    ]
+   },
+   "kivimikiht_kood": {
+    "dtype": "String",
+    "null_share": 0.9385,
+    "distinct": 28,
+    "values": [
+     {
+      "value": null,
+      "rows": 21676
+     },
+     {
+      "value": "V2vr",
+      "rows": 567
+     },
+     {
+      "value": "V2gd",
+      "rows": 243
+     },
+     {
+      "value": "D2pr",
+      "rows": 172
+     },
+     {
+      "value": "Q",
+      "rows": 148
+     },
+     {
+      "value": "D2ar",
+      "rows": 91
+     },
+     {
+      "value": "O2rk",
+      "rows": 88
+     },
+     {
+      "value": "D2br",
+      "rows": 25
+     },
+     {
+      "value": "Ca1",
+      "rows": 15
+     },
+     {
+      "value": "O3vr",
+      "rows": 13
+     },
+     {
+      "value": "D2gj",
+      "rows": 12
+     },
+     {
+      "value": "O2",
+      "rows": 9
+     },
+     {
+      "value": "S1hl",
+      "rows": 7
+     },
+     {
+      "value": "S2jg",
+      "rows": 6
+     },
+     {
+      "value": "Ca1ts",
+      "rows": 5
+     },
+     {
+      "value": "V2",
+      "rows": 4
+     },
+     {
+      "value": "O3rg",
+      "rows": 2
+     },
+     {
+      "value": "O3mo",
+      "rows": 2
+     },
+     {
+      "value": "S2rt",
+      "rows": 2
+     },
+     {
+      "value": "D2am",
+      "rows": 2
+     },
+     {
+      "value": "Ca1sr",
+      "rows": 1
+     },
+     {
+      "value": "S3pd",
+      "rows": 1
+     },
+     {
+      "value": "Ca1ir",
+      "rows": 1
+     },
+     {
+      "value": "S2jn",
+      "rows": 1
+     },
+     {
+      "value": "Ca1sl",
+      "rows": 1
+     },
+     {
+      "value": "O3sn",
+      "rows": 1
+     },
+     {
+      "value": "O2kl-kk",
+      "rows": 1
+     },
+     {
+      "value": "Ca1lk",
+      "rows": 1
+     }
+    ]
+   },
+   "kivimikiht_tx_lisainfo": {
+    "dtype": "String",
+    "null_share": 0.9449,
+    "distinct": 27,
+    "values": [
+     {
+      "value": null,
+      "rows": 21824
+     },
+     {
+      "value": "Ediacara ladestu (Vendi kompleksi) Voronka kihistu liivakivi, aleuroliit, savi.",
+      "rows": 567
+     },
+     {
+      "value": "Ediacara ladestu (Vendi kompleksi) Gdovi kihistu segateraline pol\u00fcmineraalne liivakivi, kirju aleuroliit, savi.",
+      "rows": 243
+     },
+     {
+      "value": "Kesk-Devoni ladestiku P\u00e4rnu kihistu liivakivi aleuroliidi ja savi vahekihtidega, lamamis tihti \u00f5huke dolokivikiht.",
+      "rows": 172
+     },
+     {
+      "value": "Kesk-Devoni ladestiku Aruk\u00fcla kihistu v\u00e4ga peeneteraline ja peeneteraline liivakivi aleuroliidi, savi ja domeriidi vahekihtidega.",
+      "rows": 91
+     },
+     {
+      "value": "Kesk-Ordoviitsiumi ladestiku Roki\u0161kise kihistu punaselaiguline ooidne lubjakivi.",
+      "rows": 88
+     },
+     {
+      "value": "Kesk-Devoni ladestiku Burtnieki kihistu, liivakivi aleuroliidi ja savi vahekihtidega.",
+      "rows": 25
+     },
+     {
+      "value": "Varasemast Kambriumi ladestu kolmikjaotusest l\u00e4htunud Alam-Kambriumi ladestiku rohekas-hall ja kirju savi, v\u00e4ga peene- ja peeneteraline liivakivi, aleuriitne liivakivi.",
+      "rows": 15
+     },
+     {
+      "value": "\u00dclem-Ordoviitsiumi ladestiku Variku kihistu mergel, mikrokristalliline ja biomorfne lubjakivi.",
+      "rows": 13
+     },
+     {
+      "value": "Kesk-Devoni ladestiku Gauja kihistu liivakivi \u00f5hukeste aleuroliidi ja savi vahekihtidega.",
+      "rows": 12
+     },
+     {
+      "value": "Kesk-Ordoviitsiumi lubjakividest koosnev kivimkeha.",
+      "rows": 9
+     },
+     {
+      "value": "Siluri ladestu Llandovery ladestiku Hilliste kihistu biohermne lubjakivi.",
+      "rows": 7
+     },
+     {
+      "value": "Siluri ladestu Wenlocki ladestiku Jaagarahu kihistu biohermne lubjakivi ja dolokivi.",
+      "rows": 6
+     },
+     {
+      "value": "Alam-Kambriumi ladestiku Tiskre kihistu hele v\u00e4ga peene ja peeneteraline pol\u00fcmineraalne liivakivi, rohekashallide savikate vahekihtidega (P\u00f5hja-Eesti struktuur-fatsiaalses v\u00f6\u00f6ndis); pol\u00fcmineraalne v\u00e4ga peenteraline liivakivi (L\u00e4\u00e4ne-Eesti struktuur-fatsiaalses v\u00f6\u00f6ndis)",
+      "rows": 5
+     },
+     {
+      "value": "Peene- ja keskmiseteraline liivakivi ja aleuroliit, savi.",
+      "rows": 4
+     },
+     {
+      "value": "Siluri ladestu Wenlocki ladestiku Rootsik\u00fcla kihistu dolomiidistunud lubjakivi ja dolokivi, stromatoliidid.",
+      "rows": 2
+     },
+     {
+      "value": "\u00dclem-Ordoviitsiumi ladestiku R\u00e4gavere kihistu peit- ja mikrokristalliline lubjakivi.",
+      "rows": 2
+     },
+     {
+      "value": "Kesk-Devoni ladestiku Amata kihistu aleuroliit, liivakivi ja savi.",
+      "rows": 2
+     },
+     {
+      "value": "\u00dclem-Ordoviitsiumi ladestiku Moe kihistu hallikas ja pruunikashall muguljas lubjakivi.",
+      "rows": 2
+     },
+     {
+      "value": "Siluri ladestu Ludlow' ladestiku Paadla kihistu lubjakivi, dolokivi ja mergel.",
+      "rows": 1
+     },
+     {
+      "value": "\u00dclem-Ordoviitsiumi ladestiku Saunja kihistu afaniitne lubjakivi.",
+      "rows": 1
+     },
+     {
+      "value": "Alam-Kambriumi ladestiku Irbeni kihistu aleuriitne savi liivakivi vahekihtidega, g\u00f6tiit-ooidid.",
+      "rows": 1
+     },
+     {
+      "value": "savikas, detriit- ja rifilubjakivi, savikas detriitlubjakivi ja p\u00f5levkivi.",
+      "rows": 1
+     },
+     {
+      "value": "Alam-Kambriumi ladestiku S\u00f5ru kihistu liivakivi, aleuroliit ja savi.",
+      "rows": 1
+     },
+     {
+      "value": "Alam-Kambriumi ladestiku L\u00fckati kihistu rohekashall aleuriitne savi ja aleuriitne liivakivi (P\u00f5hja-Eesti struktuur-fatsiaalses v\u00f6\u00f6ndis); rohekashall savi ja hall aleuroliit (L\u00e4\u00e4ne-Eesti struktuur-fatsiaalses v\u00f6\u00f6ndis).",
+      "rows": 1
+     },
+     {
+      "value": "Alam-Kambriumi ladestiku Soela kihistu hele liivakivi aleuriitse savi vahekihtidega.",
+      "rows": 1
+     },
+     {
+      "value": "Siluri ladestu Wenlocki ladestiku Jaani kihistu mergel ja biohermne lubjakivi.",
+      "rows": 1
+     }
+    ]
+   },
+   "kivimikiht_tx_leviala": {
+    "dtype": "String",
+    "null_share": 0.9992,
+    "distinct": 2,
+    "values": [
+     {
+      "value": null,
+      "rows": 23078
+     },
+     {
+      "value": "Kaardistatakse ainult akvatooriumis, kui detailsem liigestus pole v\u00f5imalik.",
+      "rows": 19
+     }
+    ]
+   },
+   "veekiht": {
+    "dtype": "String",
+    "null_share": 0.6149,
+    "distinct": 394
+   },
+   "veekogum": {
+    "dtype": "String",
+    "null_share": 0.0407,
+    "distinct": 41
+   },
+   "pohjaveekogum_id": {
+    "dtype": "Int64",
+    "null_share": 0.0201,
+    "distinct": 71,
+    "min": -2136627166,
+    "max": 1972152354
+   },
+   "pohjaveekogum_pealmine_id": {
+    "dtype": "Int64",
+    "null_share": 0.9929,
+    "distinct": 11,
+    "values": [
+     {
+      "value": null,
+      "rows": 22934
+     },
+     {
+      "value": -1277253598,
+      "rows": 108
+     },
+     {
+      "value": -1375127804,
+      "rows": 19
+     },
+     {
+      "value": -51337182,
+      "rows": 13
+     },
+     {
+      "value": -1330010078,
+      "rows": 8
+     },
+     {
+      "value": 37001764,
+      "rows": 5
+     },
+     {
+      "value": -1055973702,
+      "rows": 3
+     },
+     {
+      "value": 951455812,
+      "rows": 3
+     },
+     {
+      "value": -1151162334,
+      "rows": 2
+     },
+     {
+      "value": -1332066580,
+      "rows": 1
+     },
+     {
+      "value": 1748636622,
+      "rows": 1
+     }
+    ],
+    "min": -1375127804,
+    "max": 1748636622
+   },
+   "vesikond_id": {
+    "dtype": "Int64",
+    "null_share": 0.0043,
+    "distinct": 12,
+    "values": [
+     {
+      "value": 1852031905,
+      "rows": 7941
+     },
+     {
+      "value": 494232159,
+      "rows": 3684
+     },
+     {
+      "value": 2084932182,
+      "rows": 2996
+     },
+     {
+      "value": -837032005,
+      "rows": 2740
+     },
+     {
+      "value": -16432206,
+      "rows": 2700
+     },
+     {
+      "value": -1418232033,
+      "rows": 2027
+     },
+     {
+      "value": -2050232235,
+      "rows": 730
+     },
+     {
+      "value": -1289832055,
+      "rows": 163
+     },
+     {
+      "value": null,
+      "rows": 99
+     },
+     {
+      "value": 1571931858,
+      "rows": 11
+     },
+     {
+      "value": -1756131876,
+      "rows": 5
+     },
+     {
+      "value": -503231884,
+      "rows": 1
+     }
+    ],
+    "min": -2050232235,
+    "max": 2084932182
+   },
+   "z_abs": {
+    "dtype": "Float64",
+    "null_share": 0.0162,
+    "distinct": 1739,
+    "min": 0.0,
+    "max": 34307.0
+   },
+   "sygavus": {
+    "dtype": "Float64",
+    "null_share": 0.01,
+    "distinct": 1141,
+    "min": 3.4,
+    "max": 787.4
+   },
+   "kasutus": {
+    "dtype": "String",
+    "null_share": 0.0055,
+    "distinct": 12,
+    "values": [
+     {
+      "value": "T",
+      "rows": 22426
+     },
+     {
+      "value": "X",
+      "rows": 142
+     },
+     {
+      "value": null,
+      "rows": 128
+     },
+     {
+      "value": "K",
+      "rows": 125
+     },
+     {
+      "value": "H",
+      "rows": 119
+     },
+     {
+      "value": "R",
+      "rows": 41
+     },
+     {
+      "value": "V",
+      "rows": 36
+     },
+     {
+      "value": "E",
+      "rows": 26
+     },
+     {
+      "value": "Y",
+      "rows": 19
+     },
+     {
+      "value": "U",
+      "rows": 15
+     },
+     {
+      "value": "M",
+      "rows": 14
+     },
+     {
+      "value": "\u00dc",
+      "rows": 6
+     }
+    ]
+   },
+   "kasutus_selg": {
+    "dtype": "String",
+    "null_share": 0.0055,
+    "distinct": 12,
+    "values": [
+     {
+      "value": "tarbepuurkaev",
+      "rows": 22426
+     },
+     {
+      "value": "tarbe-vaatluskaev",
+      "rows": 142
+     },
+     {
+      "value": null,
+      "rows": 128
+     },
+     {
+      "value": "kastmisvee puurkaev",
+      "rows": 125
+     },
+     {
+      "value": "tehnilise vee puurkaev",
+      "rows": 119
+     },
+     {
+      "value": "riiklik seire",
+      "rows": 41
+     },
+     {
+      "value": "vaatluspuurkaev",
+      "rows": 36
+     },
+     {
+      "value": "ettev\u00f5tte seire",
+      "rows": 26
+     },
+     {
+      "value": "energeetilise vee puurkaev",
+      "rows": 19
+     },
+     {
+      "value": "uuringupuurkaev",
+      "rows": 15
+     },
+     {
+      "value": "mineraalvee puurkaev",
+      "rows": 14
+     },
+     {
+      "value": "\u00fclevoolupuurkaev",
+      "rows": 6
+     }
+    ]
+   },
+   "rajam_kp": {
+    "dtype": "String",
+    "null_share": 0.9993,
+    "distinct": 17,
+    "values": [
+     {
+      "value": null,
+      "rows": 23080
+     },
+     {
+      "value": "2009-04-20T00:00:00",
+      "rows": 2
+     },
+     {
+      "value": "2017-07-01T00:00:00",
+      "rows": 1
+     },
+     {
+      "value": "2009-05-04T00:00:00",
+      "rows": 1
+     },
+     {
+      "value": "2007-07-31T00:00:00",
+      "rows": 1
+     },
+     {
+      "value": "2010-06-04T00:00:00",
+      "rows": 1
+     },
+     {
+      "value": "2010-03-28T00:00:00",
+      "rows": 1
+     },
+     {
+      "value": "2008-04-16T00:00:00",
+      "rows": 1
+     },
+     {
+      "value": "2010-05-07T00:00:00",
+      "rows": 1
+     },
+     {
+      "value": "2009-06-18T00:00:00",
+      "rows": 1
+     },
+     {
+      "value": "1995-08-24T00:00:00",
+      "rows": 1
+     },
+     {
+      "value": "2017-07-21T00:00:00",
+      "rows": 1
+     },
+     {
+      "value": "2009-06-03T00:00:00",
+      "rows": 1
+     },
+     {
+      "value": "2009-07-24T00:00:00",
+      "rows": 1
+     },
+     {
+      "value": "2001-04-09T00:00:00",
+      "rows": 1
+     },
+     {
+      "value": "2008-01-04T00:00:00",
+      "rows": 1
+     },
+     {
+      "value": "1997-06-19T00:00:00",
+      "rows": 1
+     }
+    ]
+   },
+   "puur_aasta": {
+    "dtype": "Int64",
+    "null_share": 0.0798,
+    "distinct": 126,
+    "min": 1875,
+    "max": 2026
+   },
+   "renov_aasta": {
+    "dtype": "Int64",
+    "null_share": 0.8718,
+    "distinct": 40,
+    "values": [
+     {
+      "value": null,
+      "rows": 20137
+     },
+     {
+      "value": 2004,
+      "rows": 345
+     },
+     {
+      "value": 2005,
+      "rows": 307
+     },
+     {
+      "value": 2001,
+      "rows": 296
+     },
+     {
+      "value": 2003,
+      "rows": 276
+     },
+     {
+      "value": 2006,
+      "rows": 265
+     },
+     {
+      "value": 2002,
+      "rows": 248
+     },
+     {
+      "value": 2008,
+      "rows": 235
+     },
+     {
+      "value": 2007,
+      "rows": 211
+     },
+     {
+      "value": 2000,
+      "rows": 183
+     },
+     {
+      "value": 2009,
+      "rows": 153
+     },
+     {
+      "value": 1999,
+      "rows": 109
+     },
+     {
+      "value": 2010,
+      "rows": 93
+     },
+     {
+      "value": 1998,
+      "rows": 86
+     },
+     {
+      "value": 1997,
+      "rows": 64
+     },
+     {
+      "value": 1996,
+      "rows": 10
+     },
+     {
+      "value": 2015,
+      "rows": 10
+     },
+     {
+      "value": 1995,
+      "rows": 7
+     },
+     {
+      "value": 2012,
+      "rows": 6
+     },
+     {
+      "value": 2022,
+      "rows": 5
+     },
+     {
+      "value": 2014,
+      "rows": 5
+     },
+     {
+      "value": 2019,
+      "rows": 5
+     },
+     {
+      "value": 2013,
+      "rows": 4
+     },
+     {
+      "value": 1988,
+      "rows": 3
+     },
+     {
+      "value": 2020,
+      "rows": 3
+     },
+     {
+      "value": 1994,
+      "rows": 3
+     },
+     {
+      "value": 2017,
+      "rows": 3
+     },
+     {
+      "value": 2025,
+      "rows": 3
+     },
+     {
+      "value": 2021,
+      "rows": 3
+     },
+     {
+      "value": 2016,
+      "rows": 3
+     },
+     {
+      "value": 2018,
+      "rows": 2
+     },
+     {
+      "value": 1987,
+      "rows": 2
+     },
+     {
+      "value": 2024,
+      "rows": 2
+     },
+     {
+      "value": 2011,
+      "rows": 2
+     },
+     {
+      "value": 2023,
+      "rows": 2
+     },
+     {
+      "value": 1991,
+      "rows": 2
+     },
+     {
+      "value": 1989,
+      "rows": 1
+     },
+     {
+      "value": 1981,
+      "rows": 1
+     },
+     {
+      "value": 2026,
+      "rows": 1
+     },
+     {
+      "value": 1971,
+      "rows": 1
+     }
+    ],
+    "min": 1971,
+    "max": 2026
+   },
+   "likv_aasta": {
+    "dtype": "Int64",
+    "null_share": 0.9656,
+    "distinct": 58,
+    "min": 1965,
+    "max": 2026
+   },
+   "puur_org": {
+    "dtype": "String",
+    "null_share": 0.2053,
+    "distinct": 132
+   },
+   "puur_viis": {
+    "dtype": "String",
+    "null_share": 0.4436,
+    "distinct": 22,
+    "values": [
+     {
+      "value": null,
+      "rows": 10246
+     },
+     {
+      "value": "12",
+      "rows": 3630
+     },
+     {
+      "value": "13",
+      "rows": 3628
+     },
+     {
+      "value": "10",
+      "rows": 2888
+     },
+     {
+      "value": "20",
+      "rows": 679
+     },
+     {
+      "value": "11",
+      "rows": 603
+     },
+     {
+      "value": "23",
+      "rows": 285
+     },
+     {
+      "value": "06",
+      "rows": 245
+     },
+     {
+      "value": "02",
+      "rows": 188
+     },
+     {
+      "value": "25",
+      "rows": 160
+     },
+     {
+      "value": "09",
+      "rows": 152
+     },
+     {
+      "value": "03",
+      "rows": 141
+     },
+     {
+      "value": "16",
+      "rows": 80
+     },
+     {
+      "value": "14",
+      "rows": 58
+     },
+     {
+      "value": "21",
+      "rows": 46
+     },
+     {
+      "value": "15",
+      "rows": 42
+     },
+     {
+      "value": "22",
+      "rows": 6
+     },
+     {
+      "value": "41",
+      "rows": 6
+     },
+     {
+      "value": "40",
+      "rows": 6
+     },
+     {
+      "value": "01",
+      "rows": 4
+     },
+     {
+      "value": "30",
+      "rows": 3
+     },
+     {
+      "value": "00",
+      "rows": 1
+     }
+    ]
+   },
+   "puur_viis_selg": {
+    "dtype": "String",
+    "null_share": 0.4436,
+    "distinct": 22,
+    "values": [
+     {
+      "value": null,
+      "rows": 10246
+     },
+     {
+      "value": "rootorpuurimine",
+      "rows": 3630
+     },
+     {
+      "value": "n\u00e4ritspuurimine",
+      "rows": 3628
+     },
+     {
+      "value": "keerdpuurimine",
+      "rows": 2888
+     },
+     {
+      "value": "l\u00f6\u00f6kpuurimine",
+      "rows": 679
+     },
+     {
+      "value": "s\u00fcdamikpuurimine",
+      "rows": 603
+     },
+     {
+      "value": "keerd-l\u00f6\u00f6kpuurimine",
+      "rows": 285
+     },
+     {
+      "value": "puurvasaraga",
+      "rows": 245
+     },
+     {
+      "value": "k\u00e4rniga",
+      "rows": 188
+     },
+     {
+      "value": "l\u00f6\u00f6k-p\u00f6\u00f6rdpuurimine",
+      "rows": 160
+     },
+     {
+      "value": "l\u00f6\u00f6k-keerdpuurimine",
+      "rows": 152
+     },
+     {
+      "value": "topeltp\u00f6\u00f6rdpeaga",
+      "rows": 141
+     },
+     {
+      "value": "ODEX System",
+      "rows": 80
+     },
+     {
+      "value": "pneumovasaraga",
+      "rows": 58
+     },
+     {
+      "value": "tross-l\u00f6\u00f6kpuurimine",
+      "rows": 46
+     },
+     {
+      "value": "k\u00f5rgsurve haamer",
+      "rows": 42
+     },
+     {
+      "value": "H\u00fcdrol\u00f6\u00f6kpuurimine",
+      "rows": 6
+     },
+     {
+      "value": "vibropuurimine",
+      "rows": 6
+     },
+     {
+      "value": "varras-l\u00f6\u00f6kpuurimine",
+      "rows": 6
+     },
+     {
+      "value": "Hammer Drilling",
+      "rows": 4
+     },
+     {
+      "value": "tigupuurimine",
+      "rows": 3
+     },
+     {
+      "value": "Ei ole teada",
+      "rows": 1
+     }
+    ]
+   },
+   "puur_mark": {
+    "dtype": "String",
+    "null_share": 0.9762,
+    "distinct": 89
+   },
+   "pump_liik": {
+    "dtype": "String",
+    "null_share": 0.341,
+    "distinct": 4,
+    "values": [
+     {
+      "value": "101",
+      "rows": 15211
+     },
+     {
+      "value": null,
+      "rows": 7877
+     },
+     {
+      "value": "211",
+      "rows": 5
+     },
+     {
+      "value": "111",
+      "rows": 4
+     }
+    ]
+   },
+   "pump_liik_selg": {
+    "dtype": "String",
+    "null_share": 0.341,
+    "distinct": 4,
+    "values": [
+     {
+      "value": "\u00fcksikproovipumpamine",
+      "rows": 15211
+     },
+     {
+      "value": null,
+      "rows": 7877
+     },
+     {
+      "value": "\u00fcksikprooviveelask",
+      "rows": 5
+     },
+     {
+      "value": "r\u00fchmkatsepumpamine",
+      "rows": 4
+     }
+    ]
+   },
+   "pump_viis": {
+    "dtype": "String",
+    "null_share": 0.2967,
+    "distinct": 31,
+    "values": [
+     {
+      "value": "03",
+      "rows": 7645
+     },
+     {
+      "value": null,
+      "rows": 6853
+     },
+     {
+      "value": "09",
+      "rows": 5486
+     },
+     {
+      "value": "02",
+      "rows": 2081
+     },
+     {
+      "value": "01",
+      "rows": 273
+     },
+     {
+      "value": "10",
+      "rows": 178
+     },
+     {
+      "value": "73",
+      "rows": 155
+     },
+     {
+      "value": "08",
+      "rows": 114
+     },
+     {
+      "value": "04",
+      "rows": 71
+     },
+     {
+      "value": "12",
+      "rows": 69
+     },
+     {
+      "value": "06",
+      "rows": 45
+     },
+     {
+      "value": "70",
+      "rows": 43
+     },
+     {
+      "value": "17",
+      "rows": 33
+     },
+     {
+      "value": "71",
+      "rows": 11
+     },
+     {
+      "value": "07",
+      "rows": 8
+     },
+     {
+      "value": "69",
+      "rows": 7
+     },
+     {
+      "value": "11",
+      "rows": 5
+     },
+     {
+      "value": "62",
+      "rows": 3
+     },
+     {
+      "value": "77",
+      "rows": 2
+     },
+     {
+      "value": "05",
+      "rows": 2
+     },
+     {
+      "value": "65",
+      "rows": 2
+     },
+     {
+      "value": "74",
+      "rows": 2
+     },
+     {
+      "value": "72",
+      "rows": 1
+     },
+     {
+      "value": "75",
+      "rows": 1
+     },
+     {
+      "value": "64",
+      "rows": 1
+     },
+     {
+      "value": "76",
+      "rows": 1
+     },
+     {
+      "value": "63",
+      "rows": 1
+     },
+     {
+      "value": "28",
+      "rows": 1
+     },
+     {
+      "value": "67",
+      "rows": 1
+     },
+     {
+      "value": "16",
+      "rows": 1
+     },
+     {
+      "value": "66",
+      "rows": 1
+     }
+    ]
+   },
+   "pump_viis_selg": {
+    "dtype": "String",
+    "null_share": 0.3067,
+    "distinct": 16,
+    "values": [
+     {
+      "value": "\u00f5hkt\u00f5stuk (aerolift)",
+      "rows": 7645
+     },
+     {
+      "value": null,
+      "rows": 7085
+     },
+     {
+      "value": "kompressor",
+      "rows": 5486
+     },
+     {
+      "value": "s\u00fcvaveepump",
+      "rows": 2081
+     },
+     {
+      "value": "tsentrifugaalpump",
+      "rows": 273
+     },
+     {
+      "value": "vibropump",
+      "rows": 178
+     },
+     {
+      "value": "veeautomaat",
+      "rows": 114
+     },
+     {
+      "value": "kolbpump",
+      "rows": 71
+     },
+     {
+      "value": "h\u00fcdrofor",
+      "rows": 69
+     },
+     {
+      "value": "mootorpump",
+      "rows": 45
+     },
+     {
+      "value": "k\u00e4sipump",
+      "rows": 33
+     },
+     {
+      "value": "\u00fclevoolul (isevoolul)",
+      "rows": 8
+     },
+     {
+      "value": "vaakumpump",
+      "rows": 5
+     },
+     {
+      "value": "m\u00f5\u00f5teanum, klapptoru",
+      "rows": 2
+     },
+     {
+      "value": "rootorpump",
+      "rows": 1
+     },
+     {
+      "value": "keerispump",
+      "rows": 1
+     }
+    ]
+   },
+   "tehn_seisund": {
+    "dtype": "String",
+    "null_share": 0.1163,
+    "distinct": 139
+   },
+   "san_seisund": {
+    "dtype": "String",
+    "null_share": 0.6889,
+    "distinct": 14,
+    "values": [
+     {
+      "value": null,
+      "rows": 15912
+     },
+     {
+      "value": "22",
+      "rows": 3263
+     },
+     {
+      "value": "21",
+      "rows": 2329
+     },
+     {
+      "value": "23",
+      "rows": 1064
+     },
+     {
+      "value": "13",
+      "rows": 405
+     },
+     {
+      "value": "11",
+      "rows": 77
+     },
+     {
+      "value": "14",
+      "rows": 16
+     },
+     {
+      "value": "30",
+      "rows": 10
+     },
+     {
+      "value": "12",
+      "rows": 8
+     },
+     {
+      "value": "36",
+      "rows": 4
+     },
+     {
+      "value": "34",
+      "rows": 3
+     },
+     {
+      "value": "39",
+      "rows": 3
+     },
+     {
+      "value": "10",
+      "rows": 2
+     },
+     {
+      "value": "38",
+      "rows": 1
+     }
+    ]
+   },
+   "san_seisund_selg": {
+    "dtype": "String",
+    "null_share": 0.6889,
+    "distinct": 14,
+    "values": [
+     {
+      "value": null,
+      "rows": 15912
+     },
+     {
+      "value": "rahuldav",
+      "rows": 3263
+     },
+     {
+      "value": "hea",
+      "rows": 2329
+     },
+     {
+      "value": "ebarahuldav",
+      "rows": 1064
+     },
+     {
+      "value": "t\u00f6\u00f6tav",
+      "rows": 405
+     },
+     {
+      "value": "likvideeritud",
+      "rows": 77
+     },
+     {
+      "value": "ei t\u00f6\u00f6ta",
+      "rows": 16
+     },
+     {
+      "value": "ebam\u00e4\u00e4rane",
+      "rows": 10
+     },
+     {
+      "value": "konserveeritud",
+      "rows": 8
+     },
+     {
+      "value": "t\u00f6\u00f6tav (tegutsev), seisund ebarahuldav",
+      "rows": 4
+     },
+     {
+      "value": "t\u00f6\u00f6tav (tegutsev), seisund hea",
+      "rows": 3
+     },
+     {
+      "value": "ei t\u00f6\u00f6ta (tegutse), seisund ebarahuldav",
+      "rows": 3
+     },
+     {
+      "value": "tehniline",
+      "rows": 2
+     },
+     {
+      "value": "ei t\u00f6\u00f6ta(tegutse), seisund rahuldav",
+      "rows": 1
+     }
+    ]
+   },
+   "san_kaitseala": {
+    "dtype": "String",
+    "null_share": 0.754,
+    "distinct": 29,
+    "values": [
+     {
+      "value": null,
+      "rows": 17416
+     },
+     {
+      "value": "10",
+      "rows": 4985
+     },
+     {
+      "value": "50",
+      "rows": 338
+     },
+     {
+      "value": "30",
+      "rows": 126
+     },
+     {
+      "value": "10 m",
+      "rows": 90
+     },
+     {
+      "value": "0",
+      "rows": 27
+     },
+     {
+      "value": "10 ",
+      "rows": 26
+     },
+     {
+      "value": "10m",
+      "rows": 25
+     },
+     {
+      "value": "15",
+      "rows": 9
+     },
+     {
+      "value": "40",
+      "rows": 9
+     },
+     {
+      "value": "20",
+      "rows": 8
+     },
+     {
+      "value": "100",
+      "rows": 7
+     },
+     {
+      "value": "60",
+      "rows": 5
+     },
+     {
+      "value": "30m",
+      "rows": 4
+     },
+     {
+      "value": "50 ",
+      "rows": 3
+     },
+     {
+      "value": "50 m",
+      "rows": 3
+     },
+     {
+      "value": "500",
+      "rows": 3
+     },
+     {
+      "value": "30 m",
+      "rows": 2
+     },
+     {
+      "value": "25",
+      "rows": 1
+     },
+     {
+      "value": "<10",
+      "rows": 1
+     },
+     {
+      "value": "70",
+      "rows": 1
+     },
+     {
+      "value": "10 m.",
+      "rows": 1
+     },
+     {
+      "value": "90",
+      "rows": 1
+     },
+     {
+      "value": "50m",
+      "rows": 1
+     },
+     {
+      "value": " 10",
+      "rows": 1
+     },
+     {
+      "value": "3",
+      "rows": 1
+     },
+     {
+      "value": "12",
+      "rows": 1
+     },
+     {
+      "value": "30 m (projektis nr 9696; 1987)",
+      "rows": 1
+     },
+     {
+      "value": "800",
+      "rows": 1
+     }
+    ]
+   },
+   "muut_aeg": {
+    "dtype": "String",
+    "null_share": 0.0,
+    "distinct": 22905
+   }
+  }
+ }
+}
