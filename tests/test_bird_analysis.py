@@ -65,3 +65,23 @@ def test_species_with_too_few_pairs_are_dropped() -> None:
 
 def test_has_birds() -> None:
     assert ba.has_birds(frame()) and not ba.has_birds(frame().drop("liik_est"))
+
+
+def test_extreme_chains_are_excluded_from_the_composite() -> None:
+    rows = frame(decline=False).to_dicts()
+    for year in (2010, 2011, 2012):  # species E grows 20x per year: far beyond the 10x limit
+        for p in range(30):
+            rows.append(
+                {
+                    "seiretoo_nimetus": "Haudelinnustiku punktloendused ",
+                    "liik_est": "E",
+                    "seirekoht_kood": f"P{p}",
+                    "seireaeg_algus": f"{year}-06-05T00:00:00",
+                    "vaartus_arv_moodetud": 0.05 * 20.0 ** (year - 2010),
+                }
+            )
+    b = ba.build(pl.DataFrame(rows))
+    assert b["species_extreme"] == 1 and b["species_used"] == 2
+    assert {s["name"] for s in b["species"] if s["extreme"]} == {"E"}
+    assert b["composite"][-1]["index"] == pytest.approx(100.0)
+    assert b["species_all_chain"] == 3

@@ -24,6 +24,7 @@ PROGRAMME = "Haudelinnustiku punktloendused"
 FIRST_YEAR = 2010  # earlier years have very few points
 MIN_LINK_COUNT = 10.0  # minimum summed pairs (both years) for a valid link ratio
 MIN_POINTS_LINK = 20  # minimum points surveyed in both years
+MAX_FACTOR = 10.0  # species whose index leaves [100/MAX, 100*MAX] are not used in the composite
 BOOTSTRAP = 300
 SEED = 20260412
 
@@ -113,25 +114,32 @@ def build(df: pl.DataFrame) -> dict[str, Any]:
     w1 = np.ones(n_points)
     ratio, _, npts = links(counts, mask, w1)
     idx = chain(ratio)
-    comp, n_sp = composite(idx)
-    valid_species = ~np.isnan(idx).any(axis=1)
+    chain_ok = ~np.isnan(idx).any(axis=1)
+    with np.errstate(invalid="ignore"):
+        high = (idx > 100.0 * MAX_FACTOR).any(axis=1)
+        low = (idx < 100.0 / MAX_FACTOR).any(axis=1)
+        extreme = chain_ok & (high | low)
+    valid_species = chain_ok & ~extreme
+    comp_all, n_all = composite(idx)
+    comp, n_sp = composite(idx[valid_species])
     rng = np.random.default_rng(SEED)
     boots = []
     for _ in range(BOOTSTRAP):
         w = np.bincount(rng.integers(0, n_points, n_points), minlength=n_points).astype(float)
         r, _, _ = links(counts, mask, w)
-        i, _ = composite(chain(r)[valid_species]) if valid_species.any() else (comp, 0)
+        i, _ = composite(chain(r)[valid_species])
         boots.append(i)
     b = np.array(boots)
     lo, hi = np.nanpercentile(b, 2.5, axis=0), np.nanpercentile(b, 97.5, axis=0)
     species: list[dict[str, Any]] = []
-    for s in np.flatnonzero(valid_species):
+    for s in np.flatnonzero(chain_ok):
         species.append(
             {
                 "name": sp[s],
                 "first": 100.0,
                 "last": float(idx[s, -1]),
                 "pairs_total": float(counts[s].sum()),
+                "extreme": bool(extreme[s]),
             }
         )
     species.sort(key=lambda r: r["last"])
@@ -147,8 +155,10 @@ def build(df: pl.DataFrame) -> dict[str, Any]:
                 "aastavahe on kahel järjestikusel aastal loendatud punktide paarisummade suhe; "
                 "korduskülastuste suurim väärtus; ahel algab 100-st esimesel aastal.",
                 "Koondindeks on geomeetriline keskmine liikidest, mille ahel on kõigil aastatel "
-                "kehtiv (vähemalt 10 paari ja 20 punkti iga lüli kohta); 95% vahemik on "
-                "punktide bootstrap.",
+                "kehtiv (vähemalt 10 paari ja 20 punkti iga lüli kohta) ja mille indeks ei lähe "
+                "kunagi üle 10-kordse tõusu või languse (äärmuslikud ahelad on tõenäoliselt "
+                "loendusmeetodi või punktide koosseisu artefakt ja on välja jäetud); 95% "
+                "vahemik on punktide bootstrap.",
                 "Punktid ei ole Eesti juhuvalim ning elupaigad ei ole kihistatud: tulemus "
                 "kirjeldab seirevõrgu punkte, mitte kogu Eesti arvukust. Liikide valik "
                 "(ainult liigid, mille ahel on kõigil aastatel kehtiv) võib kallutada "
@@ -164,6 +174,11 @@ def build(df: pl.DataFrame) -> dict[str, Any]:
             for y, c, a, h in zip(years, comp, lo, hi, strict=True)
         ],
         "species_used": n_sp,
+        "species_extreme": int(extreme.sum()),
+        "composite_all_chain_species": [
+            {"year": y, "index": float(c)} for y, c in zip(years, comp_all, strict=True)
+        ],
+        "species_all_chain": n_all,
         "species_total": len(sp),
         "species": species,
         "checks": {
