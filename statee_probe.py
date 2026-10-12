@@ -43,7 +43,13 @@ def matches(text: str) -> bool:
 
 def walk(base: str = BASE, fetch: Any = get_json) -> dict[str, Any]:
     """Breadth-first walk; returns visited count, first-level names and matching nodes."""
-    out: dict[str, Any] = {"base": base, "first_level": [], "matches": [], "errors": []}
+    out: dict[str, Any] = {
+        "base": base,
+        "first_level": [],
+        "second_level": [],
+        "matches": [],
+        "errors": [],
+    }
     queue: list[tuple[str, str, int]] = [("", "", 0)]
     visited = 0
     while queue and visited < MAX_NODES:
@@ -65,9 +71,11 @@ def walk(base: str = BASE, fetch: Any = get_json) -> dict[str, Any]:
             label = f"{trail} > {text}".strip(" >")
             if depth == 0:
                 out["first_level"].append({"id": nid, "text": text})
+            if depth == 1:
+                out["second_level"].append({"parent": trail, "id": nid, "text": text, "type": typ})
             if typ == "t" and (matches(text) or matches(trail)):
                 out["matches"].append({"path": sub, "id": nid, "text": text, "trail": trail})
-            elif typ in ("l", "s") and depth + 1 < MAX_DEPTH + 1 and (depth < 1 or matches(label)):
+            elif typ in ("l", "s") and depth + 1 < MAX_DEPTH + 1 and (depth < 2 or matches(label)):
                 queue.append((sub, label, depth + 1))
     out["visited"] = visited
     return out
