@@ -157,6 +157,53 @@
       const up = sp.filter((s) => s.last > 100).length;
       C.punch(host, `${fmt(up, 0)} liiki ${fmt(sp.length, 0)}-st on lõpuaastaks üle algaasta taseme ja ${fmt(sp.length - up, 0)} sellel või madalamal; kõrgeim liik on ${sp[sp.length - 1].name} (${fmt(sp[sp.length - 1].last, 0)}), madalaim ${sp[0].name} (${fmt(sp[0].last, 0)}); suuri väärtusi põhjustab sageli väike algne arvukus.`);
     },
+    pfindings(host) {
+      const p = d.predators; if (!p) { host.innerHTML = '<p class="viz-note">Suurkiskjate vaatluste andmeid ei ole.</p>'; return; }
+      const li = [], ks = Object.keys(p.species);
+      li.push(`<li><b>Mida see on:</b> jahipiirkondade vaatlusaruanded ja piirkondlikud hinnangud hundi, pruunkaru ja ilvese kohta (KESE, ${fmt(p.checks.rows, 0)} rida, ${fmt(p.checks.districts, 0)} jahipiirkonda). Need on vaatlusaruanded, <b>mitte loendus ega arvukuse indeks</b>: aruannete ja aruandvate piirkondade arv kasvas tugevalt (vt järgmist graafikut), mistõttu aastasummasid ei näidata.</li>`);
+      for (const k of ks) {
+        const S = p.species[k], e = S.effort.filter((r) => r.year <= maxY), f = first(e), l = last(e);
+        const mn = S.minimum.years.filter((r) => r.districts >= 20 && r.year <= maxY), pr = S.minimum.paired;
+        li.push(`<li><b>${S.label}:</b> aruandvaid piirkondi ${fmt(f.districts, 0)} (${f.year}) → ${fmt(l.districts, 0)} (${l.year}), vaatlusi ${fmt(f.observations, 0)} → ${fmt(l.observations, 0)}${mn.length ? `; piirkonna minimaalne isendite arv keskmiselt ${fmt(first(mn).mean, 2)} (${first(mn).year}) → ${fmt(last(mn).mean, 2)} (${last(mn).year})` : ''}${pr ? `; samades ${fmt(pr.districts, 0)} piirkonnas ${fmt(pr.mean_first, 2)} → ${fmt(pr.mean_last, 2)} (${fmt(100 * pr.share_increased, 0)}% piirkondadest kasvas)` : ''}.</li>`);
+      }
+      host.innerHTML = `<ul class="findings">${li.join('')}</ul>`;
+    },
+    peffort(host) {
+      const p = d.predators; if (!p) return;
+      const ks = Object.keys(p.species);
+      const series = ks.map((k, i) => ({ label: p.species[k].label, color: COLS[i % COLS.length], data: p.species[k].effort.filter((r) => r.year <= maxY).map((r) => ({ year: r.year, value: r.districts, n: r.observations, extra: `${fmt(r.districts, 0)} piirkonda, ${fmt(r.observations, 0)} vaatlust` })) }));
+      lines(host, { title: 'Aruandvad jahipiirkonnad aastas', subtitle: 'Piirkondi, millest on vähemalt üks vaatlus; tooltipis vaatluste arv.', unit: '', dec: 0, axisDec: 0, nName: 'vaatlust', series,
+        note: 'Aruandluse maht (mitte arvukus): piirkondade ja vaatluste arv kasvab tugevalt, seega vaatluste summad ei ole aastate vahel võrreldavad. Põhjus (tegelik seire laienemine, aruandluse kohustus või andmesisestus) ei ole andmetest nähtav.' });
+      const S = p.species.hunt || p.species[ks[0]], e = S.effort.filter((r) => r.year <= maxY);
+      C.punch(host, `${S.label}: aruandvaid jahipiirkondi ${fmt(first(e).districts, 0)} (${first(e).year}) → ${fmt(last(e).districts, 0)} (${last(e).year}) ja vaatlusi ${fmt(first(e).observations, 0)} → ${fmt(last(e).observations, 0)}; vaatluste summa muutus peegeldab seetõttu eelkõige aruandlust, mitte arvukust.`);
+    },
+    pmin(host) {
+      const p = d.predators; if (!p) return;
+      const ks = Object.keys(p.species).filter((k) => p.species[k].minimum.years.some((r) => r.districts >= 20));
+      if (!ks.length) return;
+      const series = ks.map((k, i) => ({ label: p.species[k].label, color: COLS[i % COLS.length], data: p.species[k].minimum.years.filter((r) => r.districts >= 20 && r.year <= maxY).map((r) => ({ year: r.year, value: r.mean, n: r.districts, extra: `${fmt(r.districts, 0)} piirkonda, summa ${fmt(r.total, 0)}, 90. protsentiil ${fmt(r.p90, 1)}` })) }));
+      lines(host, { title: 'Minimaalne isendite arv jahipiirkonna kohta', subtitle: 'Piirkonna aastane minimaalne isendite arv („min“), keskmine aruandva piirkonna kohta; aastad vähemalt 20 piirkonnaga.', unit: 'is', dec: 2, axisDec: 1, nName: 'piirkonda', series,
+        note: '„Min“ tõlgendus (piirkonna aastane minimaalne arv) on kinnitamata; keskmine on aruandvate piirkondade kohta ega ole kogu Eesti arvukus, sest aruandvate piirkondade hulk muutub. Paarisvõrdlus (samad piirkonnad esimestel ja viimastel aastatel) on graafiku all.' });
+      const rows = ks.filter((k) => p.species[k].minimum.paired).map((k) => { const pr = p.species[k].minimum.paired; return `${p.species[k].label.toLowerCase()} ${fmt(pr.mean_first, 2)} → ${fmt(pr.mean_last, 2)} (${fmt(pr.districts, 0)} piirkonda, ${fmt(100 * pr.share_increased, 0)}% kasvas)`; });
+      C.punch(host, rows.length ? `Samades jahipiirkondades (${ks.filter((k) => p.species[k].minimum.paired).map((k) => `${p.species[k].minimum.paired.first_years[0]}–${p.species[k].minimum.paired.first_years[1]} → ${p.species[k].minimum.paired.last_years[0]}–${p.species[k].minimum.paired.last_years[1]}`)[0]}) on piirkonna minimaalne isendite arv: ${rows.join('; ')}; tulemus sõltub „min“ tõlgendusest ja piirkondade valikust.` : 'Paaritatud võrdlust ei saa teha (liiga vähe samu piirkondi mõlemal perioodil).');
+    },
+    pjuv(host) {
+      const p = d.predators; if (!p) return;
+      const ks = Object.keys(p.species).filter((k) => p.species[k].juvenile.filter((r) => r.n >= 30).length >= 3);
+      if (!ks.length) return;
+      const series = ks.map((k, i) => ({ label: p.species[k].label, color: COLS[i % COLS.length], data: p.species[k].juvenile.filter((r) => r.n >= 30 && r.year <= maxY).map((r) => ({ year: r.year, value: 100 * r.share, n: r.n, extra: `${fmt(r.juveniles, 0)} noorloomad, ${fmt(r.adults, 0)} täiskasvanud, ${fmt(r.n, 0)} rida` })) }));
+      lines(host, { title: 'Noorloomade osakaal vaatlustes', subtitle: 'Noorloomad jagatud täiskasvanute ja noorloomade summaga, %; aastad vähemalt 30 reaga.', unit: '%', dec: 0, axisDec: 0, nName: 'rida', series,
+        note: 'Eeldus: „ad“ ja „juv“ read kirjeldavad samasugust vaatlust; sama isendit võidakse mitu korda registreerida, mistõttu osakaal ei ole sündimuse hinnang.' });
+      const k0 = ks[0], r = p.species[k0].juvenile.filter((x) => x.n >= 30 && x.year <= maxY);
+      C.punch(host, `${p.species[k0].label}: noorloomade osakaal vaatlustes ${fmt(100 * first(r).share, 0)}% (${first(r).year}) → ${fmt(100 * last(r).share, 0)}% (${last(r).year}); aastate kõikumine võib peegeldada vaatluste jaotust, mitte sündimust.`);
+    },
+    pmethods(host) {
+      const p = d.predators; if (!p) return;
+      host.innerHTML = `<div class="methods"><b>Andmed ja meetod</b> <span class="review-flag">valdkonnaekspert ülevaatamata</span>
+        <p><b>Allikas ja päritolu:</b> Keskkonnaagentuuri avaandmed (keskkonnaandmed.envir.ee), keskkonnaseire tabel (KESE), hundi-, karu- ja ilvesevaatlused jahipiirkondades; vaatlusaruanded ja piirkondlikud hinnangud (mitte mudelid).</p>
+        <p><b>Tõlgendus (kinnitamata):</b> ${p.meta.interpretation.join(' ')}</p>
+        <p><b>Piirangud:</b> arvukuse hinnangut ei ole arvutatud; selleks on vaja ametlikku meetodit (nt jälgede loendus, geneetika, jahistatistika) ja eksperdi kinnitust. Genereeritud ${d.meta.generated_utc.slice(0, 10)} (UTC).</p></div>`;
+    },
     afindings(host) {
       const a = d.air; if (!a) { host.innerHTML = '<p class="viz-note">Välisõhu seire andmeid ei ole.</p>'; return; }
       const I = a.indicators, li = [];

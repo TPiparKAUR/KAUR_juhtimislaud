@@ -31,6 +31,7 @@ from tests import test_bird_analysis as tbi
 from tests import test_crown_analysis as tcr
 from tests import test_monitoring_catalog as tma
 from tests import test_nature_analysis as tna
+from tests import test_predator_analysis as tpr
 from tests import test_soil_analysis as tso
 from tests import test_water_analysis as twa
 from tests import test_wateruse_analysis as twu
@@ -131,7 +132,8 @@ def site(tmp_path_factory: pytest.TempPathFactory) -> Iterator[str]:
             rmo.build(
                 mc.catalog(tma.agg()),
                 pl.concat(
-                    [tcr.frame(), tso.frame(), tai.frame(), tbi.frame()], how="diagonal_relaxed"
+                    [tcr.frame(), tso.frame(), tai.frame(), tbi.frame(), tpr.frame()],
+                    how="diagonal_relaxed",
                 ),
                 "2026-01-01",
             )

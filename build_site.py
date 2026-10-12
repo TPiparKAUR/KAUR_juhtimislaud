@@ -192,6 +192,16 @@ ANALYSES: dict[str, list[tuple[str, list[tuple[str, str]]]]] = {
         (
             "monitoring",
             [
+                ("pfindings", "Suurkiskjad: jahipiirkondade vaatlused"),
+                ("peffort", ""),
+                ("pmin", ""),
+                ("pjuv", ""),
+                ("pmethods", ""),
+            ],
+        ),
+        (
+            "monitoring",
+            [
                 ("bfindings", "Haudelinnustik: esialgne koondindeks"),
                 ("bindex", ""),
                 ("bspecies", ""),
