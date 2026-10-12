@@ -1,0 +1,37 @@
+name: Statistics Estonia probe
+
+# Lists energy-related tables of the Statistics Estonia PxWeb API (catalogue and variable names
+# only, no values) and publishes statee_probe.json to the `statee-probe` branch.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: statee-probe
+  cancel-in-progress: false
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync --frozen
+      - run: uv run python statee_probe.py --out out/statee
+        timeout-minutes: 15
+      - name: Publish probe result
+        if: always()
+        run: |
+          cp out/statee/statee_probe.json "$RUNNER_TEMP/statee_probe.json"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan statee-probe
+          git rm -rf --quiet .
+          cp "$RUNNER_TEMP/statee_probe.json" statee_probe.json
+          git add -- statee_probe.json
+          git commit -m "Statistics Estonia probe $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push --force origin statee-probe
