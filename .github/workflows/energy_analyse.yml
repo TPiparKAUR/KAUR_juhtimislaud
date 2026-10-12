@@ -33,8 +33,10 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           RUN_IDS: ${{ inputs.run_ids }}
         run: |
+          mkdir -p out/statee
           for id in $RUN_IDS; do
-            gh run download "$id" --repo "$GITHUB_REPOSITORY" -n statee-raw -D out/statee
+            gh run download "$id" --repo "$GITHUB_REPOSITORY" -n statee-raw -D "out/dl/$id"
+            cp -f "out/dl/$id"/*.parquet out/statee/
           done
       - run: uv run python run_energy.py --raw out/statee --out out/energy
       - name: Publish aggregated results
