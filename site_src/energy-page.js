@@ -67,10 +67,46 @@
       const w = CAP.filter((r) => r.CAP_I_WIND > 0), a = first(w), b = last(w);
       C.punch(host, `Tuuleelektrijaamade paigaldatud võimsus kasvas ${fmt(a.CAP_I_WIND, 0)} MW-lt (${a.year}, esimene aasta, mil võimsust on) ${fmt(b.CAP_I_WIND, 0)} MW-ni (${b.year}); soojuselektrijaamade paigaldatud elektrivõimsus on ${fmt(last(CAP).ELCAP_I_THRM, 0)} MW (${last(CAP).year}).`);
     },
+    hchp(host) {
+      const H = d.heat; if (!H) return;
+      const mk = (code, label, color) => ({ label, color, data: H.chp.filter((r) => r[code] != null).map((r) => ({ year: r.year, value: r[code], n: 0, extra: '' })) });
+      C.lines(host, { title: 'Koostootmisjaamade toodang', subtitle: 'Koostootmisjaamade toodetud soojus- ja elektrienergia, GWh aastas (Statistikaamet, KE034).', unit: 'GWh', dec: 0, axisDec: 0, nName: '–', series: [mk('PROD_H_CHP', 'Soojusenergia', SLOTS[3]), mk('PROD_E_CHP', 'Elektrienergia', SLOTS[0])],
+        note: 'Koostootmisjaamade genereerimisseadmed kokku; aastad on tabelis puudu (nt 2003). Viimane aasta võib olla esialgne.' });
+      const h = H.chp.filter((r) => r.PROD_H_CHP != null), a = at(h, 2010) || first(h), b = last(h);
+      const t = last(H.chp), bt = Object.entries(t.heat_by_generator || {}).sort((x, y) => y[1] - x[1])[0];
+      C.punch(host, `Koostootmisjaamade soojatoodang oli ${fmt(a.PROD_H_CHP, 0)} GWh (${a.year}) ja ${fmt(b.PROD_H_CHP, 0)} GWh (${b.year}); elektritoodang ${fmt(a.PROD_E_CHP, 0)} → ${fmt(b.PROD_E_CHP, 0)} GWh${bt ? `; ${t.year}. aastal toodab enim soojust seadmetüüp „${{ BP_TURB: 'vasturõhuauruturbiinid', SC_TURB: 'vaheltvõtuauru-kondensatsiooniturbiinid', INT_COMB: 'sisepõlemismootorid' }[bt[0]] || bt[0]}“ (${fmt(100 * bt[1] / t.PROD_H_CHP, 0)}%)` : ''}.`);
+    },
+    hfuel(host) {
+      const H = d.heat; if (!H) return;
+      const keys = ['Põlevkivi ja põlevkiviproduktid', 'Maagaas', 'Biomass ja biogaas', 'Kivisüsi ja turvas', 'Jäätmekütus', 'Muud taastuvad'];
+      const colors = { 'Põlevkivi ja põlevkiviproduktid': SLOTS[3], Maagaas: GREY, 'Biomass ja biogaas': SLOTS[1], 'Kivisüsi ja turvas': '#6b7280', 'Jäätmekütus': SLOTS[2], 'Muud taastuvad': SLOTS[0] };
+      stack(host, H.fuels, keys, { scale: 1000, unit: 'PJ', dec: 1, colors, title: 'Koostootmisjaamade kütus', subtitle: 'Koostootmisjaamades tarbitud kütuse energia kütuseliigi järgi, PJ aastas (Statistikaamet, KE035).', note: 'Taastuvaks on loetud biomass, biogaas ja muud taastuvad allikad; jäätmekütust ei loeta taastuvaks (taastuv osa ei ole tabelis eraldatud). Viimane aasta võib olla esialgne ning kütuse struktuur võib aastate vahel muutuda tabeli täienduste tõttu.' });
+      const a = first(H.fuels), b = last(H.fuels);
+      C.punch(host, `Taastuvate (biomass, biogaas, muud) osa koostootmisjaamade kütuses oli ${fmt(a.renewable_share_pct, 0)}% (${a.year}) ja ${fmt(b.renewable_share_pct, 0)}% (${b.year}); põlevkivi ja põlevkiviproduktide osa ${fmt(100 * a['Põlevkivi ja põlevkiviproduktid'] / a.total_tj, 0)}% → ${fmt(100 * b['Põlevkivi ja põlevkiviproduktid'] / b.total_tj, 0)}%, maagaasi osa ${b.year}. aastal ${fmt(100 * b['Maagaas'] / b.total_tj, 0)}% (${fmt(b.total_tj / 1000, 1)} PJ kokku).`);
+    },
+    hyear(host) {
+      const H = d.heat; if (!H) return;
+      const A = H.monthly.annual;
+      const mk = (key, label, color) => ({ label, color, data: A.filter((r) => r[key] != null).map((r) => ({ year: r.year, value: r[key], n: 0, extra: '' })) });
+      C.lines(host, { title: 'Soojus- ja elektrienergia toodang', subtitle: 'Kuise toodangu aastasumma (ainult täisaastad), GWh (Statistikaamet, KE20).', unit: 'GWh', dec: 0, axisDec: 0, nName: '–', series: [mk('heat_gwh', 'Soojusenergia', SLOTS[3]), mk('electricity_gwh', 'Elektrienergia', SLOTS[0])],
+        note: 'KE20 on toodanguindeksi aluseks olev tootmine; ei ole jaotatud tootja tüübi järgi, seega ei ole võrreldav koostootmise tabeliga täpselt. Soojatoodang sõltub talvede külmusest (kütteperiood) ning ei ole kliimakorrigeeritud.' });
+      const h = A.filter((r) => r.heat_gwh != null), a = first(h), b = last(h);
+      const mn = h.reduce((x, r) => (r.heat_gwh < x.heat_gwh ? r : x), h[0]), mx = h.reduce((x, r) => (r.heat_gwh > x.heat_gwh ? r : x), h[0]);
+      C.punch(host, `Soojatoodang oli ${fmt(a.heat_gwh, 0)} GWh (${a.year}) ja ${fmt(b.heat_gwh, 0)} GWh (${b.year}); vahemik ${fmt(mn.heat_gwh, 0)} (${mn.year}) kuni ${fmt(mx.heat_gwh, 0)} GWh (${mx.year}); elektritoodang ${fmt(a.electricity_gwh, 0)} → ${fmt(b.electricity_gwh, 0)} GWh, aastate muutus sõltub talvede külmusest ja elektrituru muutustest.`);
+    },
+    hmonth(host) {
+      const H = d.heat; if (!H || !H.monthly.profile.length) return;
+      const cols = [SLOTS[2], SLOTS[1], SLOTS[0]];
+      const series = H.monthly.profile.map((p, i) => ({ label: String(p.year), color: cols[i % cols.length], data: p.months.map((v, m) => ({ year: m + 1, value: v, n: 0, extra: '' })) }));
+      C.lines(host, { title: 'Soojatoodang kuude kaupa', subtitle: 'Kuine soojatoodang, GWh; kolm viimast täisaastat (x-telg: kuu number, 1 = jaanuar).', unit: 'GWh', dec: 0, axisDec: 0, nName: '–', series,
+        note: 'Soojatoodang on tugevalt hooajaline (kütteperiood); kuude erinevus aastate vahel peegeldab ilma. Viimane kuu tabelis: ' + H.monthly.last_month + '.' });
+      const p = last(H.monthly.profile), mx = Math.max(...p.months), mn = Math.min(...p.months);
+      C.punch(host, `${p.year}. aastal oli soojatoodang suurim ${fmt(mx, 0)} GWh (kuu ${p.months.indexOf(mx) + 1}) ja väikseim ${fmt(mn, 0)} GWh (kuu ${p.months.indexOf(mn) + 1}); suurima ja väikseima kuu suhe ${fmt(mx / mn, 1)} korda.`);
+    },
     enmethods(host) {
       host.innerHTML = `<div class="methods"><b>Andmed ja meetod</b> <span class="review-flag">valdkonnaekspert ülevaatamata</span>
         <p><b>Allikas ja päritolu:</b> ${d.meta.source}; ametlik energiastatistika (energiabilanss Eurostati metoodikaga), mitte Keskkonnaagentuuri mõõtmine.</p>
-        <p><b>Tõlgendus (kinnitamata):</b> ${d.meta.interpretation.join(' ')}</p>
+        <p><b>Tõlgendus (kinnitamata):</b> ${d.meta.interpretation.concat(d.heat ? d.heat.meta.interpretation : []).join(' ')}</p>
         <p><b>Piirangud:</b> osakaalud on arvutatud bilansitoodete põhjal (ekspordi märk tuvastati samasusest, jääk ${(100 * d.signs.residual_share).toFixed(3)}%); ei ole ametlik taastuvenergia osakaal ega kasvuhoonegaaside inventuur. Genereeritud ${d.meta.generated_utc.slice(0, 10)} (UTC).</p></div>`;
     },
   };

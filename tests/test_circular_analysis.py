@@ -43,6 +43,7 @@ def kk99_frame() -> pl.DataFrame:
     for y, dmc in (("2010", 500.0), ("2011", 450.0)):
         rows.append({"Näitaja": "9", "Aasta": y, "value": dmc, "status": None})
         rows.append({"Näitaja": "2", "Aasta": y, "value": dmc * 1.1, "status": None})
+        rows.append({"Näitaja": "11", "Aasta": y, "value": 0.7, "status": None})
     return pl.DataFrame(rows)
 
 

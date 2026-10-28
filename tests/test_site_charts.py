@@ -18,6 +18,7 @@ from playwright.sync_api import Error as PlaywrightError
 import build_site as b
 import climate_analysis as ca
 import energy_analysis as ea
+import heat_analysis as ha
 import monitoring_catalog as mc
 import run_airenergy as ra
 import run_climate as rc
@@ -29,8 +30,10 @@ import run_waste as rw
 import run_water as rwa
 from tests import test_air_analysis as tai
 from tests import test_bird_analysis as tbi
+from tests import test_circular_analysis as tci
 from tests import test_crown_analysis as tcr
 from tests import test_energy_analysis as ten
+from tests import test_heat_analysis as the
 from tests import test_monitoring_catalog as tma
 from tests import test_nature_analysis as tna
 from tests import test_predator_analysis as tpr
@@ -153,12 +156,15 @@ def site(tmp_path_factory: pytest.TempPathFactory) -> Iterator[str]:
                 ten.capacity_frame(),
                 "2026-01-01",
             )
+            | {"heat": ha.build(the.ke034(), the.ke035(), the.ke20())}
         ),
         encoding="utf-8",
     )
+    cij = tmp / "circular.json"
+    cij.write_text(json.dumps(tci.build()), encoding="utf-8")
     topics = b.load_topics(Path("data/teemad.toml"), Path("data/kaur_viz_inventar.csv"))
     out = tmp / "_site"
-    b.build(topics, out, cj, hj, aj, wj, fj, wtj, nj, uj, mj, ej)
+    b.build(topics, out, cj, hj, aj, wj, fj, wtj, nj, uj, mj, ej, cij)
     handler = functools.partial(http.server.SimpleHTTPRequestHandler, directory=str(out))
     handler.log_message = lambda *a, **k: None  # type: ignore[attr-defined]
     with socketserver.TCPServer(("127.0.0.1", 0), handler) as srv:
@@ -247,7 +253,7 @@ def test_every_chart_has_a_punchline(browser: Browser, site: str, path: str) -> 
     page.wait_for_selector("svg[role=img]")
     page.wait_for_timeout(300)
     missing = page.evaluate(
-        """() => [...document.querySelectorAll('[data-climate],[data-hydro],[data-airenergy],[data-waste],[data-forest],[data-water],[data-nature],[data-wateruse],[data-monitoring],[data-energy]')]
+        """() => [...document.querySelectorAll('[data-climate],[data-hydro],[data-airenergy],[data-waste],[data-forest],[data-water],[data-nature],[data-wateruse],[data-monitoring],[data-energy],[data-circular]')]
             .filter((h) => h.querySelector('svg[role=img]') && !h.querySelector('.viz-punch'))
             .map((h) => Object.values(h.dataset).join(':'))"""
     )

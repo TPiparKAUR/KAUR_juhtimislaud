@@ -144,6 +144,10 @@ ANALYSES: dict[str, list[tuple[str, list[tuple[str, str]]]]] = {
                 ("enfinal", ""),
                 ("enelec", "Elektritootmine"),
                 ("encap", ""),
+                ("hchp", "Soojatootmine"),
+                ("hfuel", ""),
+                ("hyear", ""),
+                ("hmonth", ""),
                 ("enmethods", ""),
             ],
         ),
@@ -255,6 +259,19 @@ ANALYSES: dict[str, list[tuple[str, list[tuple[str, str]]]]] = {
                 ("methods", ""),
             ],
         ),
+        (
+            "circular",
+            [
+                ("cfindings", "Ringmajandus ja ressursikasutus: peamised tulemused"),
+                ("cdecouple", ""),
+                ("cwaste", ""),
+                ("crecovery", ""),
+                ("ccmu", "Ringleva materjali määr"),
+                ("cmat", "Materjalivoog"),
+                ("cactivity", "Jäätmeteke tegevusalade kaupa"),
+                ("cmethods", ""),
+            ],
+        ),
     ],
 }
 SCRIPTS = {
@@ -275,6 +292,14 @@ SCRIPTS = {
         "nature-charts.js",
         "lines-chart.js",
         "monitoring-page.js",
+    ],
+    "circular": [
+        "charts.js",
+        "hydro-charts.js",
+        "airenergy-charts.js",
+        "nature-charts.js",
+        "lines-chart.js",
+        "circular-page.js",
     ],
     "energy": [
         "charts.js",
@@ -448,6 +473,7 @@ def layout(
         "wateruse",
         "monitoring",
         "energy",
+        "circular",
     ):
         if feat in features:
             names += [n for n in SCRIPTS[feat] if n not in names]
@@ -580,6 +606,7 @@ def build(
     wateruse_json: Path | None = None,
     monitoring_json: Path | None = None,
     energy_json: Path | None = None,
+    circular_json: Path | None = None,
 ) -> list[Path]:
     """Write the site; analysis sections appear only for the JSON inputs that exist."""
     out.mkdir(parents=True, exist_ok=True)
@@ -595,6 +622,7 @@ def build(
         "wateruse": wateruse_json,
         "monitoring": monitoring_json,
         "energy": energy_json,
+        "circular": circular_json,
     }
     features: set[str] = set()
     for name, path in inputs.items():
@@ -633,6 +661,7 @@ def main() -> None:
     ap.add_argument("--wateruse", type=Path, default=None, help="aggregated wateruse.json to embed")
     ap.add_argument("--monitoring", type=Path, default=None, help="monitoring.json to embed")
     ap.add_argument("--energy", type=Path, default=None, help="energy.json to embed")
+    ap.add_argument("--circular", type=Path, default=None, help="circular.json to embed")
     args = ap.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
     topics = load_topics(args.topics, args.inventory)
@@ -649,6 +678,7 @@ def main() -> None:
         args.wateruse,
         args.monitoring,
         args.energy,
+        args.circular,
     )
     LOG.info("wrote %d pages to %s", len(files), args.out)
 
