@@ -26,7 +26,16 @@ from typing import Any
 
 LOG = logging.getLogger("statee_probe")
 BASE = "https://andmed.stat.ee/api/v1/et/stat"
-KEYWORDS = ("energi", "elektri", "taastuv", "kütus", "soojus", "gaas", "põlevkivi", "kasvuhoone")
+KEYWORDS: tuple[str, ...] = (
+    "energi",
+    "elektri",
+    "taastuv",
+    "kütus",
+    "soojus",
+    "gaas",
+    "põlevkivi",
+    "kasvuhoone",
+)
 MAX_DEPTH = 5
 MAX_NODES = 400
 PAUSE_S = 0.4
@@ -41,6 +50,12 @@ def get_json(url: str) -> Any:
 def matches(text: str) -> bool:
     t = text.lower()
     return any(k in t for k in KEYWORDS)
+
+
+def set_keywords(words: list[str]) -> None:
+    """Replace the keyword list (lower case, substring match)."""
+    global KEYWORDS
+    KEYWORDS = tuple(w.strip().lower() for w in words if w.strip())
 
 
 def walk(base: str = BASE, fetch: Any = get_json) -> dict[str, Any]:
@@ -106,7 +121,10 @@ def describe_tables(result: dict[str, Any], fetch: Any = get_json, limit: int = 
 def main(argv: list[str] | None = None) -> None:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--out", type=Path, default=Path("out/statee"))
+    ap.add_argument("--keywords", default=None, help="comma-separated substrings (lower case)")
     args = ap.parse_args(argv)
+    if args.keywords:
+        set_keywords(args.keywords.split(","))
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
     result = walk()
     describe_tables(result)

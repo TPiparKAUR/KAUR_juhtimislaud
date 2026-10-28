@@ -58,3 +58,12 @@ def test_ids_with_spaces_are_quoted_and_bad_urls_are_recorded() -> None:
         raise http.client.InvalidURL("control characters")
 
     assert sp.walk("https://x/api", bad)["errors"]
+
+
+def test_keywords_can_be_replaced() -> None:
+    old = sp.KEYWORDS
+    try:
+        sp.set_keywords(["Jäätme", " ringlus "])
+        assert sp.matches("Ringlusse võetud JÄÄTMED") and not sp.matches("Energia")
+    finally:
+        sp.KEYWORDS = old

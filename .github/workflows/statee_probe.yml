@@ -5,6 +5,11 @@ name: Statistics Estonia probe
 
 on:
   workflow_dispatch:
+    inputs:
+      keywords:
+        description: "Comma-separated lower-case substrings (default: energy words)"
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -21,7 +26,15 @@ jobs:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v5
       - run: uv sync --frozen
-      - run: uv run python statee_probe.py --out out/statee
+      - name: Probe
+        env:
+          KEYWORDS_IN: ${{ inputs.keywords }}
+        run: |
+          if [ -n "$KEYWORDS_IN" ]; then
+            uv run python statee_probe.py --out out/statee --keywords "$KEYWORDS_IN"
+          else
+            uv run python statee_probe.py --out out/statee
+          fi
         timeout-minutes: 15
       - name: Publish probe result
         if: always()
