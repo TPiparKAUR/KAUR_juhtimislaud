@@ -67,6 +67,30 @@
       const w = CAP.filter((r) => r.CAP_I_WIND > 0), a = first(w), b = last(w);
       C.punch(host, `Tuuleelektrijaamade paigaldatud võimsus kasvas ${fmt(a.CAP_I_WIND, 0)} MW-lt (${a.year}, esimene aasta, mil võimsust on) ${fmt(b.CAP_I_WIND, 0)} MW-ni (${b.year}); soojuselektrijaamade paigaldatud elektrivõimsus on ${fmt(last(CAP).ELCAP_I_THRM, 0)} MW (${last(CAP).year}).`);
     },
+    ghgsec(host) {
+      const G = d.ghg; if (!G) return;
+      const keys = ['Energia', 'Tööstusprotsessid ja tootekasutus', 'Põllumajandus', 'Jäätmed', 'Muu'];
+      stack(host, G.sectors, keys, { scale: 1, unit: 'Mt CO₂e', dec: 1, colors: { Energia: SLOTS[3], 'Tööstusprotsessid ja tootekasutus': GREY, 'Põllumajandus': SLOTS[1], 'Jäätmed': SLOTS[2], Muu: '#c9ced4' }, title: 'Kasvuhoonegaaside heide sektoriti', subtitle: 'Eesti kasvuhoonegaaside heide ilma LULUCF-ita, Mt CO₂ ekvivalenti aastas (Eurostat, UNFCCC CRF).', note: 'Riiklik inventuur (mitte Keskkonnaagentuuri mõõtmine); viimane aasta võib olla esialgne. Rahvusvaheline lennundus ja laevandus ei ole kogusummas. LULUCF (netonõrist) on eraldi ja kogusummast väljas.' });
+      const a = first(G.sectors), b = last(G.sectors), L = G.lulucf.filter((r) => r.lulucf != null), lb = last(L);
+      C.punch(host, `Kasvuhoonegaaside heide ilma LULUCF-ita oli ${fmt(a.total, 1)} Mt CO₂e (${a.year}) ja ${fmt(b.total, 1)} Mt (${b.year}), muutus ${sgn(100 * (b.total / a.total - 1), 0)}%; energiasektori osa ${fmt(100 * a.Energia / a.total, 0)}% → ${fmt(100 * b.Energia / b.total, 0)}%; LULUCF ${lb.year}: ${fmt(lb.lulucf, 1)} Mt (${lb.lulucf < 0 ? 'netonõrist' : 'netoallikas'}).`);
+    },
+    ghgen(host) {
+      const G = d.ghg; if (!G) return;
+      const keys = ['Energiatööstus (elekter, soojus, rafineerimine)', 'Töötlev tööstus ja ehitus', 'Transport', 'Kodumajapidamised, teenindus, põllumajandus', 'Fugitiivsed heited', 'Muu'];
+      const colors = { [keys[0]]: SLOTS[3], [keys[1]]: GREY, Transport: SLOTS[0], [keys[3]]: SLOTS[1], [keys[4]]: SLOTS[2], Muu: '#c9ced4' };
+      stack(host, G.energy, keys, { scale: 1, unit: 'Mt CO₂e', dec: 1, colors, title: 'Energiasektori kasvuhoonegaaside heide', subtitle: 'Energiasektori (CRF 1) heide alamsektorite kaupa, Mt CO₂ ekvivalenti aastas.', note: 'Energiatööstus hõlmab avaliku elektri- ja soojatootmise ning rafineerimise; põlevkivi töötlemine on energiatööstuses. Heide on kütuse põletamisest (CRF 1A) ja fugitiivsed heited (CRF 1B); tulemus ei ole eraldatav elektrienergia tarbimise järgi.' });
+      const a = first(G.energy), b = last(G.energy);
+      const top = keys.slice(0, 5).map((k) => [k, b[k]]).sort((x, y) => y[1] - x[1])[0];
+      C.punch(host, `Energiasektori heide oli ${fmt(a.energy, 1)} Mt CO₂e (${a.year}) ja ${fmt(b.energy, 1)} Mt (${b.year}), ${sgn(100 * (b.energy / a.energy - 1), 0)}%; ${b.year}. aastal on suurim alamsektor „${top[0].toLowerCase()}“ (${fmt(100 * top[1] / b.energy, 0)}% energiasektori heitest).`);
+    },
+    ghgidx(host) {
+      const G = d.ghg; if (!G) return;
+      const mk = (key, label, color) => ({ label, color, data: G.comparison.filter((r) => r[key] != null).map((r) => ({ year: r.year, value: r[key], n: 0, extra: '' })) });
+      C.lines(host, { title: 'Kasvuhoonegaaside heide võrreldes 1990. aastaga', subtitle: 'Indeks, 1990 = 100: Eesti koguheide ilma LULUCF-ita, Eesti energiasektor ja EL27 koguheide ilma LULUCF-ita.', unit: '', dec: 0, axisDec: 0, nName: '–', series: [mk('ee_total', 'Eesti kokku', SLOTS[3]), mk('ee_energy', 'Eesti energiasektor', SLOTS[2]), mk('eu_total', 'EL27 kokku', GREY)], ref: { value: 100, label: '1990 = 100' },
+        note: 'Indeks ei näita absoluutset taset ega põhjuseid. Baasaasta, metoodika parandused ja LULUCF-i käsitlus mõjutavad võrdlust.' });
+      const b = last(G.comparison);
+      C.punch(host, `Eesti kasvuhoonegaaside heide (ilma LULUCF-ita) on ${fmt(b.ee_total, 0)} (${b.year}; 1990 = 100) ja energiasektori heide ${fmt(b.ee_energy, 0)}, EL27 keskmine ${fmt(b.eu_total, 0)}; vahepeal oli indeks ${fmt((G.comparison.find((r) => r.year === 2000) || b).ee_total, 0)} aastal 2000 ja ${fmt((G.comparison.find((r) => r.year === 2010) || b).ee_total, 0)} aastal 2010.`);
+    },
     hchp(host) {
       const H = d.heat; if (!H) return;
       const mk = (code, label, color) => ({ label, color, data: H.chp.filter((r) => r[code] != null).map((r) => ({ year: r.year, value: r[code], n: 0, extra: '' })) });
@@ -108,7 +132,7 @@
     enmethods(host) {
       host.innerHTML = `<div class="methods"><b>Andmed ja meetod</b> <span class="review-flag">valdkonnaekspert ülevaatamata</span>
         <p><b>Allikas ja päritolu:</b> ${d.meta.source}; ametlik energiastatistika (energiabilanss Eurostati metoodikaga), mitte Keskkonnaagentuuri mõõtmine.</p>
-        <p><b>Tõlgendus (kinnitamata):</b> ${d.meta.interpretation.concat(d.heat ? d.heat.meta.interpretation : []).join(' ')}</p>
+        <p><b>Tõlgendus (kinnitamata):</b> ${d.meta.interpretation.concat(d.heat ? d.heat.meta.interpretation : [], d.ghg ? d.ghg.meta.interpretation : []).join(' ')}</p>
         <p><b>Piirangud:</b> osakaalud on arvutatud bilansitoodete põhjal (ekspordi märk tuvastati samasusest, jääk ${(100 * d.signs.residual_share).toFixed(3)}%); ei ole ametlik taastuvenergia osakaal ega kasvuhoonegaaside inventuur. Genereeritud ${d.meta.generated_utc.slice(0, 10)} (UTC).</p></div>`;
     },
   };

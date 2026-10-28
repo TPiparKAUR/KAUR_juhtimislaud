@@ -18,6 +18,7 @@ from playwright.sync_api import Error as PlaywrightError
 import build_site as b
 import climate_analysis as ca
 import energy_analysis as ea
+import ghg_analysis as ga
 import heat_analysis as ha
 import monitoring_catalog as mc
 import run_airenergy as ra
@@ -33,6 +34,7 @@ from tests import test_bird_analysis as tbi
 from tests import test_circular_analysis as tci
 from tests import test_crown_analysis as tcr
 from tests import test_energy_analysis as ten
+from tests import test_ghg_analysis as tg
 from tests import test_heat_analysis as the
 from tests import test_monitoring_catalog as tma
 from tests import test_nature_analysis as tna
@@ -157,6 +159,7 @@ def site(tmp_path_factory: pytest.TempPathFactory) -> Iterator[str]:
                 "2026-01-01",
             )
             | {"heat": ha.build(the.ke034(), the.ke035(), the.ke20())}
+            | {"ghg": ga.build(tg.frame(), "2026-01-01")}
         ),
         encoding="utf-8",
     )

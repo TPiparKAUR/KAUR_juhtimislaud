@@ -9,6 +9,10 @@ on:
       run_ids:
         description: "Run ids of successful 'Statistics Estonia fetch' runs, separated by spaces"
         required: true
+      eurostat_run_id:
+        description: "Optional: run id of an 'Eurostat fetch' run with env_air_gge (greenhouse gases)"
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -38,7 +42,17 @@ jobs:
             gh run download "$id" --repo "$GITHUB_REPOSITORY" -n statee-raw -D "out/dl/$id"
             cp -f "out/dl/$id"/*.parquet out/statee/
           done
-      - run: uv run python run_energy.py --raw out/statee --out out/energy
+      - name: Download Eurostat artifact (optional)
+        if: ${{ inputs.eurostat_run_id != '' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EUROSTAT_ID: ${{ inputs.eurostat_run_id }}
+        run: gh run download "$EUROSTAT_ID" --repo "$GITHUB_REPOSITORY" -n eurostat-raw -D out/eurostat
+      - name: Analyse
+        run: |
+          extra=()
+          if [ -d out/eurostat ]; then extra=(--eurostat out/eurostat); fi
+          uv run python run_energy.py --raw out/statee --out out/energy "${extra[@]}"
       - name: Publish aggregated results
         run: |
           cp out/energy/energy.json "$RUNNER_TEMP/energy.json"
