@@ -1,0 +1,3284 @@
+{
+ "keskkond/keskonna-arvepidamine/materjalivoo-arvepidamine/KK99.PX": {
+  "title": "KK99: MATERJALIVOO NÄITAJAD",
+  "variables": [
+   {
+    "code": "Näitaja",
+    "text": "Näitaja",
+    "elimination": false,
+    "time": false,
+    "n": 15,
+    "values": [
+     {
+      "code": "1",
+      "text": "Füüsilise väliskaubanduse tasakaal, tuhat tonni"
+     },
+     {
+      "code": "2",
+      "text": "Kodumaise toorme kasutus, tuhat tonni"
+     },
+     {
+      "code": "3",
+      "text": "Kodumaise toorme kasutus elaniku kohta, tonni"
+     },
+     {
+      "code": "4",
+      "text": "..biomass elaniku kohta, tonni"
+     },
+     {
+      "code": "5",
+      "text": "..mittemetalsed mineraalid elaniku kohta, tonni"
+     },
+     {
+      "code": "6",
+      "text": "..fossiilsed kütused elaniku kohta, tonni"
+     },
+     {
+      "code": "7",
+      "text": "Vahetu materjalisisend, tuhat tonni"
+     },
+     {
+      "code": "8",
+      "text": "Vahetu materjalisisend elaniku kohta, tonni"
+     },
+     {
+      "code": "9",
+      "text": "Kodumaine materjalitarbimine, tuhat tonni"
+     },
+     {
+      "code": "10",
+      "text": "Kodumaine materjalitarbimine elaniku kohta, tonni"
+     },
+     {
+      "code": "11",
+      "text": "Ressursitootlikkus*, eurot kg kohta"
+     },
+     {
+      "code": "12",
+      "text": "Vahetu ressursitootlikkus*, eurot kg kohta"
+     },
+     {
+      "code": "13",
+      "text": "Pindala intensiivsus, kodumaine toormekasutus, kg/km2"
+     },
+     {
+      "code": "14",
+      "text": "Kodumaine materjalitarbimise intensiivsus*, kg SKP euro kohta"
+     },
+     {
+      "code": "15",
+      "text": "Vahetu materjalikasutuse intensiivsus*, kg SKP euro kohta"
+     }
+    ]
+   },
+   {
+    "code": "Aasta",
+    "text": "Aasta",
+    "elimination": false,
+    "time": true,
+    "n": 25,
+    "values": [
+     {
+      "code": "2000",
+      "text": "2000"
+     },
+     {
+      "code": "2001",
+      "text": "2001"
+     },
+     {
+      "code": "2002",
+      "text": "2002"
+     },
+     {
+      "code": "2003",
+      "text": "2003"
+     },
+     {
+      "code": "2004",
+      "text": "2004"
+     },
+     {
+      "code": "2005",
+      "text": "2005"
+     },
+     {
+      "code": "2006",
+      "text": "2006"
+     },
+     {
+      "code": "2007",
+      "text": "2007"
+     },
+     {
+      "code": "2008",
+      "text": "2008"
+     },
+     {
+      "code": "2009",
+      "text": "2009"
+     },
+     {
+      "code": "2010",
+      "text": "2010"
+     },
+     {
+      "code": "2011",
+      "text": "2011"
+     },
+     {
+      "code": "2012",
+      "text": "2012"
+     },
+     {
+      "code": "2013",
+      "text": "2013"
+     },
+     {
+      "code": "2014",
+      "text": "2014"
+     },
+     {
+      "code": "2015",
+      "text": "2015"
+     },
+     {
+      "code": "2016",
+      "text": "2016"
+     },
+     {
+      "code": "2017",
+      "text": "2017"
+     },
+     {
+      "code": "2018",
+      "text": "2018"
+     },
+     {
+      "code": "2019",
+      "text": "2019"
+     },
+     {
+      "code": "2020",
+      "text": "2020"
+     },
+     {
+      "code": "2021",
+      "text": "2021"
+     },
+     {
+      "code": "2022",
+      "text": "2022"
+     },
+     {
+      "code": "2023",
+      "text": "2023"
+     },
+     {
+      "code": "2024",
+      "text": "2024"
+     }
+    ]
+   }
+  ],
+  "cells": 375,
+  "data": {
+   "rows": 375,
+   "file": "KK99.parquet"
+  },
+  "units": {},
+  "notes": [],
+  "dimension_labels": {
+   "Näitaja": "Näitaja",
+   "Aasta": "Aasta"
+  }
+ },
+ "keskkond/surve-keskkonnaseisundile/jaatmete-teke/KK610.PX": {
+  "title": "KK610: JÄÄTMEBILANSS JÄÄTMELIIGI JÄRGI",
+  "variables": [
+   {
+    "code": "Aasta",
+    "text": "Aasta",
+    "elimination": false,
+    "time": true,
+    "n": 24,
+    "values": [
+     {
+      "code": "2002",
+      "text": "2002"
+     },
+     {
+      "code": "2003",
+      "text": "2003"
+     },
+     {
+      "code": "2004",
+      "text": "2004"
+     },
+     {
+      "code": "2005",
+      "text": "2005"
+     },
+     {
+      "code": "2006",
+      "text": "2006"
+     },
+     {
+      "code": "2007",
+      "text": "2007"
+     },
+     {
+      "code": "2008",
+      "text": "2008"
+     },
+     {
+      "code": "2009",
+      "text": "2009"
+     },
+     {
+      "code": "2010",
+      "text": "2010"
+     },
+     {
+      "code": "2011",
+      "text": "2011"
+     },
+     {
+      "code": "2012",
+      "text": "2012"
+     },
+     {
+      "code": "2013",
+      "text": "2013"
+     },
+     {
+      "code": "2014",
+      "text": "2014"
+     },
+     {
+      "code": "2015",
+      "text": "2015"
+     },
+     {
+      "code": "2016",
+      "text": "2016"
+     },
+     {
+      "code": "2017",
+      "text": "2017"
+     },
+     {
+      "code": "2018",
+      "text": "2018"
+     },
+     {
+      "code": "2019",
+      "text": "2019"
+     },
+     {
+      "code": "2020",
+      "text": "2020"
+     },
+     {
+      "code": "2021",
+      "text": "2021"
+     },
+     {
+      "code": "2022",
+      "text": "2022"
+     },
+     {
+      "code": "2023",
+      "text": "2023"
+     },
+     {
+      "code": "2024",
+      "text": "2024"
+     },
+     {
+      "code": "2025",
+      "text": "2025"
+     }
+    ]
+   },
+   {
+    "code": "Jäätmeliik",
+    "text": "Jäätmeliik",
+    "elimination": true,
+    "time": false,
+    "n": 124,
+    "values": [
+     {
+      "code": "1",
+      "text": "Jäätmed kokku"
+     },
+     {
+      "code": "2",
+      "text": "010000 Maavarade ja maa-ainese uuringutel, kaevandamisel ..."
+     },
+     {
+      "code": "3",
+      "text": "010100 Maavarade kaevandamisjäätmed"
+     },
+     {
+      "code": "4",
+      "text": "010300 Metalle sisaldavate maavarade füüsikalise ja keemilise töötlemise jäätmed"
+     },
+     {
+      "code": "5",
+      "text": "010400 Mittemaaksete maavarade füüsikalise ja keemilise ..."
+     },
+     {
+      "code": "6",
+      "text": "020000 Põllumajanduses, aianduses, vesiviljeluses, ..."
+     },
+     {
+      "code": "7",
+      "text": "020100 Põllumajanduses, aianduses, vesiviljeluses, ..."
+     },
+     {
+      "code": "8",
+      "text": "020200 Liha, kala ja muude loomsete toiduainete valmistamisel ..."
+     },
+     {
+      "code": "9",
+      "text": "020300 Puu-, köögi- ja teravilja, toiduõli, kakao, kohvi, tee ja ..."
+     },
+     {
+      "code": "125",
+      "text": "020400 Suhkrutootmisjäätmed"
+     },
+     {
+      "code": "10",
+      "text": "020500 Piimatööstusjäätmed"
+     },
+     {
+      "code": "11",
+      "text": "020600 Pagari- ja kondiitritööstusjäätmed"
+     },
+     {
+      "code": "12",
+      "text": "020700 Alkohoolsete ja alkoholivabade jookide (v.a kohv, tee ..."
+     },
+     {
+      "code": "13",
+      "text": "030000 Puidu töötlemisel, plaatide ja mööbli ning tselluloosi, ..."
+     },
+     {
+      "code": "14",
+      "text": "030100 Puidu töötlemise ning plaatide ja mööbli tootmise jäätmed"
+     },
+     {
+      "code": "15",
+      "text": "030200 Puidukaitseainejäätmed"
+     },
+     {
+      "code": "16",
+      "text": "030300 Tselluloosi, paberi ja kartongi tootmise ja töötlemise jäätmed"
+     },
+     {
+      "code": "17",
+      "text": "040000 Naha-, karusnaha- ja tekstiilitööstusjäätmed"
+     },
+     {
+      "code": "18",
+      "text": "040100 Naha- ja karusnahatööstusjäätmed"
+     },
+     {
+      "code": "19",
+      "text": "040200 Tekstiilitööstusjäätmed"
+     },
+     {
+      "code": "20",
+      "text": "050000 Nafta ja õli rafineerimisel ning fraktsioneerimisel, ..."
+     },
+     {
+      "code": "21",
+      "text": "050100 Nafta ja õli rafineerimise ning fraktsioneerimise jäätmed"
+     },
+     {
+      "code": "22",
+      "text": "050600 Kivisöe ja põlevkivi utmisjäätmed"
+     },
+     {
+      "code": "23",
+      "text": "050700 Maagaasi ning kivisöe ja põlevkivi uttegaasi puhastusjäätmed"
+     },
+     {
+      "code": "24",
+      "text": "060000 Anorgaanilistes keemiaprotsessides tekkinud jäätmed"
+     },
+     {
+      "code": "25",
+      "text": "060100 Hapete valmistamisel, kokkusegamisel, jaotamisel ja ..."
+     },
+     {
+      "code": "26",
+      "text": "060200 Aluste valmistamisel, kokkusegamisel, jaotamisel ja ..."
+     },
+     {
+      "code": "27",
+      "text": "060300 Soolade ja soolalahuste ning metallioksiidide ..."
+     },
+     {
+      "code": "28",
+      "text": "060400 Metalle sisaldavad jäätmed, mida ei ole nimetatud ..."
+     },
+     {
+      "code": "29",
+      "text": "060500 Reovee kohtpuhastussetted"
+     },
+     {
+      "code": "30",
+      "text": "060600 Väävliühendite valmistamisel, kokkusegamisel, ..."
+     },
+     {
+      "code": "31",
+      "text": "061000 Lämmastikuühendite valmistamisel, kokkusegamisel, ..."
+     },
+     {
+      "code": "32",
+      "text": "061300 Muudes anorgaanilistes keemiaprotsessides tekkinud jäätmed"
+     },
+     {
+      "code": "33",
+      "text": "070000 Orgaanilistes keemiaprotsessides tekkinud jäätmed"
+     },
+     {
+      "code": "34",
+      "text": "070100 Orgaaniliste põhikemikaalide valmistamisel, ..."
+     },
+     {
+      "code": "35",
+      "text": "070200 Plasti, sünteetilise kummi ja tehiskiu valmistamisel, ..."
+     },
+     {
+      "code": "36",
+      "text": "070300 Orgaaniliste värvainete ja pigmentide valmistamisel, ..."
+     },
+     {
+      "code": "37",
+      "text": "070400 Orgaaniliste taimekaitsevahendite (v.a..."
+     },
+     {
+      "code": "38",
+      "text": "070500 Ravimite valmistamisel, kokkusegamisel, jaotamisel ja ..."
+     },
+     {
+      "code": "39",
+      "text": "070600 Rasvade, määrete, seepide, puhastus-, desinfitseerimis- ..."
+     },
+     {
+      "code": "40",
+      "text": "070700 Peenkemikaalide ja nimistus mujal nimetamata ..."
+     },
+     {
+      "code": "41",
+      "text": "080000 Pinnakatete (värvide, lakkide ja klaasjate emailide), ..."
+     },
+     {
+      "code": "42",
+      "text": "080100 Värvide ja lakkide valmistamisel, kokkusegamisel, ..."
+     },
+     {
+      "code": "43",
+      "text": "080200 Muude pinnakatete (sh keraamiliste materjalide) ..."
+     },
+     {
+      "code": "44",
+      "text": "080300 Trükivärvide valmistamisel, kokkusegamisel, jaotamisel ..."
+     },
+     {
+      "code": "45",
+      "text": "080400 Liimide ja hermeetikute (sh veekindlust tõstvate ainete) ..."
+     },
+     {
+      "code": "46",
+      "text": "080500 Mujal jaotises 08 nimetamata jäätmed"
+     },
+     {
+      "code": "47",
+      "text": "090000 Fotograafiajäätmed"
+     },
+     {
+      "code": "48",
+      "text": "090100 Fotograafiajäätmed"
+     },
+     {
+      "code": "49",
+      "text": "100000 Termilistes protsessides tekkinud jäätmed"
+     },
+     {
+      "code": "50",
+      "text": "100100 Jõujaamades ja muudes põletusseadmetes tekkinud ..."
+     },
+     {
+      "code": "51",
+      "text": "100200 Raua- ja terasetootmisjäätmed"
+     },
+     {
+      "code": "52",
+      "text": "100300 Alumiiniumi termometallurgiaprotsessides tekkinud jäätmed"
+     },
+     {
+      "code": "53",
+      "text": "100400 Plii termometallurgiaprotsessides tekkinud jäätmed"
+     },
+     {
+      "code": "54",
+      "text": "100500 Tsingi termometallurgiaprotsessides tekkinud jäätmed"
+     },
+     {
+      "code": "55",
+      "text": "100600 Vase termometallurgiaprotsessides tekkinud jäätmed"
+     },
+     {
+      "code": "56",
+      "text": "100800 Muude värviliste metallide termometallurgiaprotsessides ..."
+     },
+     {
+      "code": "57",
+      "text": "100900 Mustmetallide valujäätmed"
+     },
+     {
+      "code": "58",
+      "text": "101000 Värviliste metallide valujäätmed"
+     },
+     {
+      "code": "59",
+      "text": "101100 Klaasi ja klaastoodete valmistamisel tekkinud jäätmed"
+     },
+     {
+      "code": "60",
+      "text": "101200 Keraamikatoodete, telliste, plaatide ja ehitustoodete ..."
+     },
+     {
+      "code": "61",
+      "text": "101300 Tsemendi, lubja, krohvisegu ning nende toodete ..."
+     },
+     {
+      "code": "62",
+      "text": "110000 Metallide ja muude materjalide pinnatöötlusel ja ..."
+     },
+     {
+      "code": "63",
+      "text": "110100 Metallide ja muude materjalide pinnatöötlusel ja ..."
+     },
+     {
+      "code": "64",
+      "text": "110200 Värviliste metallide hüdrometallurgiaprotsessides ..."
+     },
+     {
+      "code": "65",
+      "text": "110300 Karastamisel tekkinud setted ja tahked jäätmed"
+     },
+     {
+      "code": "66",
+      "text": "110500 Kuumgalvaanimisjäätmed"
+     },
+     {
+      "code": "67",
+      "text": "120000 Metallide ja plastide mehaanilisel vormimisel ning ..."
+     },
+     {
+      "code": "68",
+      "text": "120100 Metallide ja plastide mehaanilisel vormimisel ning ..."
+     },
+     {
+      "code": "69",
+      "text": "120300 Rasva vesi- ja aurärastamisel tekkinud jäätmed ..."
+     },
+     {
+      "code": "70",
+      "text": "130000 Õli- ja vedelkütusejäätmed (v.a toiduõlid ning jaotistes ..."
+     },
+     {
+      "code": "71",
+      "text": "130100 Hüdraulikaõlijäätmed"
+     },
+     {
+      "code": "72",
+      "text": "130200 Mootori-, käigukasti- ja määrdeõlid"
+     },
+     {
+      "code": "73",
+      "text": "130300 Isolatsiooni- ja soojusvahetusvanaõlid"
+     },
+     {
+      "code": "74",
+      "text": "130400 Pilsivesi"
+     },
+     {
+      "code": "75",
+      "text": "130500 Õlipüünisejäätmed"
+     },
+     {
+      "code": "76",
+      "text": "130700 Vedelkütusejäätmed"
+     },
+     {
+      "code": "77",
+      "text": "130800 Nimistus mujal nimetamata õlijäätmed"
+     },
+     {
+      "code": "78",
+      "text": "140000 Orgaaniliste lahustite, külmutusagensi- ja vahu- või ..."
+     },
+     {
+      "code": "79",
+      "text": "140600 Orgaaniliste lahustite, külmutusagensi- ja vahu- või ..."
+     },
+     {
+      "code": "80",
+      "text": "150000 Pakendijäätmed nimistus mujal nimetamata ..."
+     },
+     {
+      "code": "81",
+      "text": "150100 Pakendid (sh lahus kogutud olmepakendijäätmed)"
+     },
+     {
+      "code": "82",
+      "text": "150200 Absorbendid, filtermaterjalid, puhastuskaltsud ja ..."
+     },
+     {
+      "code": "83",
+      "text": "160000 Nimistus mujal nimetamata jäätmed"
+     },
+     {
+      "code": "84",
+      "text": "160100 Romusõidukid mitmesugustest liiklusvaldkondadest ..."
+     },
+     {
+      "code": "85",
+      "text": "160200 Elektri- ja elektroonikaseadmete ning muude seadmete ..."
+     },
+     {
+      "code": "86",
+      "text": "160300 Praaktootepartiid ja kasutamata tooted"
+     },
+     {
+      "code": "87",
+      "text": "160400 Lõhkeainejäägid"
+     },
+     {
+      "code": "88",
+      "text": "160500 Survemahutis gaasid ja kasutuselt kõrvaldatud kemikaalid"
+     },
+     {
+      "code": "89",
+      "text": "160600 Patareid ja akud"
+     },
+     {
+      "code": "90",
+      "text": "160700 Veo- ja hoiumahutite ning vaatide puhastusjäätmed ..."
+     },
+     {
+      "code": "91",
+      "text": "160800 Kasutatud katalüsaatorid"
+     },
+     {
+      "code": "92",
+      "text": "160900 Oksüdeerivad ained"
+     },
+     {
+      "code": "93",
+      "text": "161000 Väljaspool ettevõtet töödeldavad vesipõhised vedeljäätmed"
+     },
+     {
+      "code": "94",
+      "text": "161100 Vooderdise- ja tulekindlate materjalide jäätmed"
+     },
+     {
+      "code": "95",
+      "text": "170000 Ehitus- ja lammutuspraht (sh saastunud maa-aladelt ..."
+     },
+     {
+      "code": "96",
+      "text": "170100 Betoon, tellised, plaadid ja keraamikatooted"
+     },
+     {
+      "code": "97",
+      "text": "170200 Puit, klaas ja plast"
+     },
+     {
+      "code": "98",
+      "text": "170300 Bituumenitaolised segud ning kivisöe- või põlevkivitõrv ..."
+     },
+     {
+      "code": "99",
+      "text": "170400 Metallid (sh sulamid)"
+     },
+     {
+      "code": "100",
+      "text": "170500 Pinnas (sh saastunud maa-aladelt eemaldatud pinnas), ..."
+     },
+     {
+      "code": "101",
+      "text": "170600 Isolatsioonimaterjalid ja asbesti sisaldavad ehitusmaterjalid"
+     },
+     {
+      "code": "102",
+      "text": "170800 Kipsipõhised ehitusmaterjalid"
+     },
+     {
+      "code": "103",
+      "text": "170900 Muu ehitus- ja lammutuspraht"
+     },
+     {
+      "code": "104",
+      "text": "180000 Inimeste ja loomade tervishoiul või sellega seonduvatel ..."
+     },
+     {
+      "code": "105",
+      "text": "180100 Inimese sünnitushooldel ning haiguste diagnoosimisel, ..."
+     },
+     {
+      "code": "106",
+      "text": "180200 Loomahaiguste uurimisel, diagnoosimisel, ravimisel ..."
+     },
+     {
+      "code": "107",
+      "text": "190000 Jäätmekäitlusettevõtete, ettevõtteväliste reoveepuhastite ..."
+     },
+     {
+      "code": "108",
+      "text": "190100 Jäätmete põletamisel või pürolüüsil tekkinud jäätmed"
+     },
+     {
+      "code": "109",
+      "text": "190200 Jäätmete füüsikalis-keemilisel töötlemisel (nt kroomi- ..."
+     },
+     {
+      "code": "110",
+      "text": "190300 Stabiliseeritud ja tahkestatud jäätmed"
+     },
+     {
+      "code": "111",
+      "text": "190500 Tahkete jäätmete aeroobsel töötlemisel tekkinud jäätmed"
+     },
+     {
+      "code": "112",
+      "text": "190600 Tahkete jäätmete anaeroobsel töötlemisel tekkinud jäätmed"
+     },
+     {
+      "code": "113",
+      "text": "190700 Prügilanõrgvesi"
+     },
+     {
+      "code": "114",
+      "text": "190800 Nimistus mujal nimetamata reoveepuhastusjäätmed"
+     },
+     {
+      "code": "115",
+      "text": "190900 Joogi- ja tööstusvee käitlusjäätmed"
+     },
+     {
+      "code": "116",
+      "text": "191000 Metalli sisaldavate jäätmete purustamisjäätmed"
+     },
+     {
+      "code": "117",
+      "text": "191100 Õli regenereerimisjäätmed"
+     },
+     {
+      "code": "118",
+      "text": "191200 Jäätmete mehaanilise töötlemise jäätmed, nt nimistus ..."
+     },
+     {
+      "code": "119",
+      "text": "191300 Pinnase ja põhjavee tervendustöödel tekkinud jäätmed"
+     },
+     {
+      "code": "120",
+      "text": "200000 Olmejäätmed (kodumajapidamisjäätmed ja ..."
+     },
+     {
+      "code": "121",
+      "text": "200100 Olmejäätmete hulgast väljanopitud või liigiti kogutud ..."
+     },
+     {
+      "code": "122",
+      "text": "200200 Aia- ja haljastujäätmed (sh kalmistujäätmed)"
+     },
+     {
+      "code": "123",
+      "text": "200300 Muud olmejäätmed"
+     }
+    ]
+   },
+   {
+    "code": "Näitaja",
+    "text": "Näitaja",
+    "elimination": false,
+    "time": false,
+    "n": 12,
+    "values": [
+     {
+      "code": "1",
+      "text": "Kogus aasta algul"
+     },
+     {
+      "code": "2",
+      "text": "Sissetulek"
+     },
+     {
+      "code": "3",
+      "text": "..jäätmeteke (sh kogutud)"
+     },
+     {
+      "code": "4",
+      "text": "..import"
+     },
+     {
+      "code": "5",
+      "text": "Väljaminek"
+     },
+     {
+      "code": "6",
+      "text": "..töötlus ettevõttes"
+     },
+     {
+      "code": "7",
+      "text": "....taaskasutamine"
+     },
+     {
+      "code": "8",
+      "text": "....kõrvaldamine"
+     },
+     {
+      "code": "9",
+      "text": "..ladestatud prügilasse"
+     },
+     {
+      "code": "10",
+      "text": "..antud teistele ja muu"
+     },
+     {
+      "code": "11",
+      "text": "..eksport"
+     },
+     {
+      "code": "12",
+      "text": "Kogus aasta lõpus"
+     }
+    ]
+   }
+  ],
+  "cells": 35712,
+  "data": {
+   "rows": 35712,
+   "file": "KK610.parquet"
+  },
+  "units": {},
+  "notes": [],
+  "dimension_labels": {
+   "Aasta": "Aasta",
+   "Jäätmeliik": "Jäätmeliik",
+   "Näitaja": "Näitaja"
+  }
+ },
+ "keskkond/surve-keskkonnaseisundile/jaatmete-teke/KK068.PX": {
+  "title": "KK068: JÄÄTMETEKE JÄÄTMELIIGI JA TEGEVUSALA (EMTAK 2008) JÄRGI",
+  "variables": [
+   {
+    "code": "Aasta",
+    "text": "Aasta",
+    "elimination": false,
+    "time": true,
+    "n": 9,
+    "values": [
+     {
+      "code": "2008",
+      "text": "2008"
+     },
+     {
+      "code": "2010",
+      "text": "2010"
+     },
+     {
+      "code": "2012",
+      "text": "2012"
+     },
+     {
+      "code": "2014",
+      "text": "2014"
+     },
+     {
+      "code": "2016",
+      "text": "2016"
+     },
+     {
+      "code": "2018",
+      "text": "2018"
+     },
+     {
+      "code": "2020",
+      "text": "2020"
+     },
+     {
+      "code": "2022",
+      "text": "2022"
+     },
+     {
+      "code": "2024",
+      "text": "2024"
+     }
+    ]
+   },
+   {
+    "code": "Jäätmeliik",
+    "text": "Jäätmeliik",
+    "elimination": true,
+    "time": false,
+    "n": 69,
+    "values": [
+     {
+      "code": "1",
+      "text": "Jäätmed kokku"
+     },
+     {
+      "code": "2",
+      "text": "Tavajäätmed kokku"
+     },
+     {
+      "code": "3",
+      "text": "..happe-, leelise- ja soolajäätmed (tavajäätmed)"
+     },
+     {
+      "code": "4",
+      "text": "..kemikaalide jäätmed (tavajäätmed)"
+     },
+     {
+      "code": "5",
+      "text": "..kasutatud keemilised katalüsaatorid (tavajäätmed)"
+     },
+     {
+      "code": "6",
+      "text": "..valmististe jäätmed (tavajäätmed)"
+     },
+     {
+      "code": "7",
+      "text": "..kemikaalisetted ja -jäägid (tavajäätmed)"
+     },
+     {
+      "code": "8",
+      "text": "..tööstusreoveesetted (tavajäätmed)*"
+     },
+     {
+      "code": "9",
+      "text": "..setted ja vedelikud jäätmekäitlusest (tavajäätmed)*"
+     },
+     {
+      "code": "10",
+      "text": "..tervishoiu- ja bioloogilised jäätmed (tavajäätmed)"
+     },
+     {
+      "code": "11",
+      "text": "..metallijäätmed (tavajäätmed)"
+     },
+     {
+      "code": "12",
+      "text": "....mustmetallijäätmed (tavajäätmed)"
+     },
+     {
+      "code": "13",
+      "text": "....mittemustmetallijäätmed (tavajäätmed)"
+     },
+     {
+      "code": "14",
+      "text": "....segametallijäätmed (tavajäätmed)"
+     },
+     {
+      "code": "15",
+      "text": "..klaasijäätmed (tavajäätmed)"
+     },
+     {
+      "code": "16",
+      "text": "..paberi- ja kartongijäätmed (tavajäätmed)"
+     },
+     {
+      "code": "17",
+      "text": "..kummijäätmed (tavajäätmed)"
+     },
+     {
+      "code": "18",
+      "text": "..plastijäätmed (tavajäätmed)"
+     },
+     {
+      "code": "19",
+      "text": "..puidujäätmed (tavajäätmed)"
+     },
+     {
+      "code": "20",
+      "text": "..tekstiilijäätmed (tavajäätmed)"
+     },
+     {
+      "code": "21",
+      "text": "..kasutuselt kõrvaldatud seadmed (tavajäätmed)"
+     },
+     {
+      "code": "22",
+      "text": "..romusõidukid (tavajäätmed)"
+     },
+     {
+      "code": "23",
+      "text": "..patarei- ja akujäätmed (tavajäätmed)"
+     },
+     {
+      "code": "24",
+      "text": "..taimsed ja loomsed jäätmed (tavajäätmed)"
+     },
+     {
+      "code": "25",
+      "text": "..loomsed toiduainete valmistamis- ja toiduainejäätmed (tavajäätmed)"
+     },
+     {
+      "code": "26",
+      "text": "..loomsed ja toiduainete segajäätmed (tavajäätmed)"
+     },
+     {
+      "code": "27",
+      "text": "..taimsed jäätmed (tavajäätmed)"
+     },
+     {
+      "code": "28",
+      "text": "..läga ja sõnnik (tavajäätmed)"
+     },
+     {
+      "code": "29",
+      "text": "..kodumajapidamis- ja samalaadsed jäätmed (tavajäätmed)"
+     },
+     {
+      "code": "30",
+      "text": "..sega- ja eristamata materjalid (tavajäätmed)"
+     },
+     {
+      "code": "31",
+      "text": "..sortimisjäägid (tavajäätmed)"
+     },
+     {
+      "code": "32",
+      "text": "..tavasetted (tavajäätmed)*"
+     },
+     {
+      "code": "33",
+      "text": "..saastumata süvenduspinnas (tavajäätmed)*"
+     },
+     {
+      "code": "34",
+      "text": "..mineraaljäätmed (v.a põletusjäätmed) (tavajäätmed)"
+     },
+     {
+      "code": "35",
+      "text": "..mineraalsed ehitus- ja lammutusjäätmed (tavajäätmed)"
+     },
+     {
+      "code": "36",
+      "text": "..muud mineraaljäätmed (v.a põletus-, ehitus- ja lammutusjäätmed, pinnas, süvenduspinnas ...**"
+     },
+     {
+      "code": "37",
+      "text": "..põletusjäätmed (tavajäätmed)"
+     },
+     {
+      "code": "38",
+      "text": "..pinnas (tavajäätmed)"
+     },
+     {
+      "code": "39",
+      "text": "..tahkestatud või stabiliseeritud jäätmed (tavajäätmed)"
+     },
+     {
+      "code": "40",
+      "text": "..jäätmekäitluses tekkivad mineraalsed jäätmed ja stabiliseeritud jäätmed (tavajäätmed)"
+     },
+     {
+      "code": "41",
+      "text": "Ohtlikud jäätmed kokku"
+     },
+     {
+      "code": "42",
+      "text": "..vanalahustid (ohtlikud jäätmed)"
+     },
+     {
+      "code": "43",
+      "text": "..happe-, leelise- ja soolajäätmed (ohtlikud jäätmed)"
+     },
+     {
+      "code": "44",
+      "text": "..vanaõli (ohtlikud jäätmed)"
+     },
+     {
+      "code": "45",
+      "text": "..kemikaalide jäätmed (ohtlikud jäätmed)"
+     },
+     {
+      "code": "46",
+      "text": "..kasutatud keemilised katalüsaatorid (ohtlikud jäätmed)"
+     },
+     {
+      "code": "47",
+      "text": "..valmististe jäätmed (ohtlikud jäätmed)"
+     },
+     {
+      "code": "48",
+      "text": "..kemikaalisetted ja -jäägid (ohtlikud jäätmed)"
+     },
+     {
+      "code": "49",
+      "text": "..tööstusreoveesetted (ohtlikud jäätmed)*"
+     },
+     {
+      "code": "50",
+      "text": "..setted ja vedelikud jäätmekäitlusest (ohtlikud jäätmed)*"
+     },
+     {
+      "code": "51",
+      "text": "..tervishoiu- ja bioloogilised jäätmed (ohtlikud jäätmed)"
+     },
+     {
+      "code": "52",
+      "text": "..metallijäätmed (ohtlikud jäätmed)"
+     },
+     {
+      "code": "53",
+      "text": "..klaasijäätmed (ohtlikud jäätmed)"
+     },
+     {
+      "code": "54",
+      "text": "..puidujäätmed (ohtlikud jäätmed)"
+     },
+     {
+      "code": "55",
+      "text": "..PCB-sid sisaldavad jäätmed (ohtlikud jäätmed)"
+     },
+     {
+      "code": "56",
+      "text": "..kasutuselt kõrvaldatud seadmed (ohtlikud jäätmed)"
+     },
+     {
+      "code": "57",
+      "text": "..romusõidukid (ohtlikud jäätmed)"
+     },
+     {
+      "code": "58",
+      "text": "..patarei- ja akujäätmed (ohtlikud jäätmed)"
+     },
+     {
+      "code": "59",
+      "text": "..sega- ja eristamata materjalid (ohtlikud jäätmed)"
+     },
+     {
+      "code": "60",
+      "text": "..sortimisjäägid (ohtlikud jäätmed)"
+     },
+     {
+      "code": "61",
+      "text": "..mineraaljäätmed (v.a põletusjäätmed) (ohtlikud jäätmed)"
+     },
+     {
+      "code": "62",
+      "text": "..mineraalsed ehitus- ja lammutusjäätmed (ohtlikud jäätmed)"
+     },
+     {
+      "code": "63",
+      "text": "..muud ohtlikud mineraaljäätmed (v.a põletus-, ehitus- ja lammutusjäätmed, pinnas, süvenduspinnas ...**"
+     },
+     {
+      "code": "64",
+      "text": "..põletusjäätmed (ohtlikud jäätmed)"
+     },
+     {
+      "code": "65",
+      "text": "..saastunud pinnas ja süvenduspinnas (ohtlikud jäätmed)"
+     },
+     {
+      "code": "66",
+      "text": "....saastunud pinnas (ohtlikud jäätmed)"
+     },
+     {
+      "code": "67",
+      "text": "....saastunud süvenduspinnas (ohtlikud jäätmed)*"
+     },
+     {
+      "code": "68",
+      "text": "..tahkestatud või stabiliseeritud jäätmed (ohtlikud jäätmed)"
+     },
+     {
+      "code": "69",
+      "text": "..jäätmekäitluses tekkivad mineraalsed jäätmed ja stabiliseeritud jäätmed (ohtlikud jäätmed)"
+     }
+    ]
+   },
+   {
+    "code": "Tegevusala (EMTAK 2008)",
+    "text": "Tegevusala (EMTAK 2008)",
+    "elimination": true,
+    "time": false,
+    "n": 22,
+    "values": [
+     {
+      "code": "1",
+      "text": "Tegevusalad kokku"
+     },
+     {
+      "code": "2",
+      "text": "Põllumajandus, metsamajandus, kalapüük ja kalakasvatus"
+     },
+     {
+      "code": "3",
+      "text": "..põllumajandus ja metsamajandus"
+     },
+     {
+      "code": "4",
+      "text": "..kalapüük ja kalakasvatus"
+     },
+     {
+      "code": "5",
+      "text": "Mäetööstus"
+     },
+     {
+      "code": "6",
+      "text": "Toiduainete ja jookide tootmine"
+     },
+     {
+      "code": "7",
+      "text": "Tekstiili-, rõiva- ja nahktoodete tootmine; naha töötlemine"
+     },
+     {
+      "code": "8",
+      "text": "Puidutöötlemine ja puittoodete tootmine"
+     },
+     {
+      "code": "9",
+      "text": "Paberimassi, paberi ja pabertoodete tootmine; trükindus ja salvestiste paljundus"
+     },
+     {
+      "code": "10",
+      "text": "Koksi ja puhastatud naftatoodete tootmine"
+     },
+     {
+      "code": "11",
+      "text": "Keemia-, farmaatsia-, kummi- ja plasttoodete tootmine"
+     },
+     {
+      "code": "12",
+      "text": "Muude mittemetalsete mineraalidest toodete tootmine"
+     },
+     {
+      "code": "13",
+      "text": "Metalli ja metalltoodete tootmine"
+     },
+     {
+      "code": "14",
+      "text": "Arvutite, elektroonika-, optika- ja elektriseadmete ning transpordivahendite tootmine"
+     },
+     {
+      "code": "15",
+      "text": "Mööbli, juveelitoodete, muusikariistade ja mänguasjade tootmine; masinate ja seadmete remont ja paigaldamine"
+     },
+     {
+      "code": "16",
+      "text": "Elektrienergia, gaasi, auru ja konditsioneeritud õhuga varustamine"
+     },
+     {
+      "code": "17",
+      "text": "Veekogumine, -töötlus ja -varustus; kanalisatsioon"
+     },
+     {
+      "code": "18",
+      "text": "Jäätmekogumine, -töötlus ja -kõrvaldus; materjalide taaskasutusele võtmine"
+     },
+     {
+      "code": "19",
+      "text": "Ehitus"
+     },
+     {
+      "code": "20",
+      "text": "Teenindus, v.a jäätmete ja jääkide hulgikaubandus**"
+     },
+     {
+      "code": "21",
+      "text": "Jäätmete ja jääkide hulgikaubandus"
+     },
+     {
+      "code": "22",
+      "text": "Kodumajapidamised"
+     }
+    ]
+   }
+  ],
+  "cells": 13662,
+  "data": {
+   "rows": 13662,
+   "file": "KK068.parquet"
+  },
+  "units": {},
+  "notes": [],
+  "dimension_labels": {
+   "Aasta": "Aasta",
+   "Jäätmeliik": "Jäätmeliik",
+   "Tegevusala (EMTAK 2008)": "Tegevusala (EMTAK 2008)"
+  }
+ },
+ "majandus/rahvamajanduse-arvepidamine/sisemajanduse-koguprodukt-%28skp%29/pehilised-rahvamajanduse-arvepidamise-naitajad/RAA0012.PX": {
+  "title": "RAA0012: SISEMAJANDUSE KOGUPRODUKT JA KOGURAHVATULU (ESA 2010) (KVARTALID)",
+  "variables": [
+   {
+    "code": "Aasta",
+    "text": "Aasta",
+    "elimination": false,
+    "time": true,
+    "n": 32,
+    "values": [
+     {
+      "code": "1995",
+      "text": "1995"
+     },
+     {
+      "code": "1996",
+      "text": "1996"
+     },
+     {
+      "code": "1997",
+      "text": "1997"
+     },
+     {
+      "code": "1998",
+      "text": "1998"
+     },
+     {
+      "code": "1999",
+      "text": "1999"
+     },
+     {
+      "code": "2000",
+      "text": "2000"
+     },
+     {
+      "code": "2001",
+      "text": "2001"
+     },
+     {
+      "code": "2002",
+      "text": "2002"
+     },
+     {
+      "code": "2003",
+      "text": "2003"
+     },
+     {
+      "code": "2004",
+      "text": "2004"
+     },
+     {
+      "code": "2005",
+      "text": "2005"
+     },
+     {
+      "code": "2006",
+      "text": "2006"
+     },
+     {
+      "code": "2007",
+      "text": "2007"
+     },
+     {
+      "code": "2008",
+      "text": "2008"
+     },
+     {
+      "code": "2009",
+      "text": "2009"
+     },
+     {
+      "code": "2010",
+      "text": "2010"
+     },
+     {
+      "code": "2011",
+      "text": "2011"
+     },
+     {
+      "code": "2012",
+      "text": "2012"
+     },
+     {
+      "code": "2013",
+      "text": "2013"
+     },
+     {
+      "code": "2014",
+      "text": "2014"
+     },
+     {
+      "code": "2015",
+      "text": "2015"
+     },
+     {
+      "code": "2016",
+      "text": "2016"
+     },
+     {
+      "code": "2017",
+      "text": "2017"
+     },
+     {
+      "code": "2018",
+      "text": "2018"
+     },
+     {
+      "code": "2019",
+      "text": "2019"
+     },
+     {
+      "code": "2020",
+      "text": "2020"
+     },
+     {
+      "code": "2021",
+      "text": "2021"
+     },
+     {
+      "code": "2022",
+      "text": "2022"
+     },
+     {
+      "code": "2023",
+      "text": "2023"
+     },
+     {
+      "code": "2024",
+      "text": "2024"
+     },
+     {
+      "code": "2025",
+      "text": "2025"
+     },
+     {
+      "code": "2026",
+      "text": "2026"
+     }
+    ]
+   },
+   {
+    "code": "Kvartal",
+    "text": "Kvartal",
+    "elimination": false,
+    "time": false,
+    "n": 5,
+    "values": [
+     {
+      "code": "1",
+      "text": "I-IV kvartal"
+     },
+     {
+      "code": "I",
+      "text": "I kvartal"
+     },
+     {
+      "code": "II",
+      "text": "II kvartal"
+     },
+     {
+      "code": "III",
+      "text": "III kvartal"
+     },
+     {
+      "code": "IV",
+      "text": "IV kvartal"
+     }
+    ]
+   },
+   {
+    "code": "Sesoonne korrigeerimine",
+    "text": "Sesoonne korrigeerimine",
+    "elimination": false,
+    "time": false,
+    "n": 2,
+    "values": [
+     {
+      "code": "1",
+      "text": "Sesoonselt ja tööpäevade arvuga korrigeerimata"
+     },
+     {
+      "code": "2",
+      "text": "Sesoonselt ja tööpäevade arvuga korrigeeritud"
+     }
+    ]
+   },
+   {
+    "code": "Näitaja",
+    "text": "Näitaja",
+    "elimination": false,
+    "time": false,
+    "n": 6,
+    "values": [
+     {
+      "code": "1",
+      "text": "SKP jooksevhindades, miljonit eurot"
+     },
+     {
+      "code": "2",
+      "text": "SKP aheldatud väärtus (referentsaasta 2020), miljonit eurot"
+     },
+     {
+      "code": "3",
+      "text": "SKP ahelindeks, referentsaasta 2020 = 100"
+     },
+     {
+      "code": "4",
+      "text": "SKP aheldatud väärtuse muutus võrreldes eelmise perioodiga, %"
+     },
+     {
+      "code": "5",
+      "text": "SKP aheldatud väärtuse muutus võrreldes eelmise aasta sama perioodiga, %"
+     },
+     {
+      "code": "6",
+      "text": "Kogurahvatulu jooksevhindades, miljonit eurot"
+     }
+    ]
+   }
+  ],
+  "cells": 1920,
+  "data": {
+   "rows": 1920,
+   "file": "RAA0012.parquet"
+  },
+  "units": {},
+  "notes": [],
+  "dimension_labels": {
+   "Aasta": "Aasta",
+   "Kvartal": "Kvartal",
+   "Sesoonne korrigeerimine": "Sesoonne korrigeerimine",
+   "Näitaja": "Näitaja"
+  }
+ },
+ "majandus/energeetika/energia-tarbimine-ja-tootmine/aastastatistika/KE034.PX": {
+  "title": "KE034: KOOSTOOTMISJAAMADE VÕIMSUS JA TOODANG",
+  "variables": [
+   {
+    "code": "Näitaja",
+    "text": "Näitaja",
+    "elimination": false,
+    "time": false,
+    "n": 5,
+    "values": [
+     {
+      "code": "TURBINES",
+      "text": "Turbiinide arv"
+     },
+     {
+      "code": "CAP_E",
+      "text": "Elektrivõimsus aasta lõpul, MW"
+     },
+     {
+      "code": "CAP_H",
+      "text": "Soojusvõimsus aasta lõpul, MW"
+     },
+     {
+      "code": "PROD_E_CHP",
+      "text": "Toodetud elektrienergia, GWh"
+     },
+     {
+      "code": "PROD_H_CHP",
+      "text": "Toodetud soojusenergia, GWh"
+     }
+    ]
+   },
+   {
+    "code": "Generaatori liik",
+    "text": "Generaatori liik",
+    "elimination": true,
+    "time": false,
+    "n": 4,
+    "values": [
+     {
+      "code": "CHP_T",
+      "text": "Koostootmisjaamade genereerimisseadmed kokku"
+     },
+     {
+      "code": "BP_TURB",
+      "text": "Vasturõhuauruturbiinid"
+     },
+     {
+      "code": "SC_TURB",
+      "text": "Vaheltvõtuauru-kondensatsiooniturbiinid"
+     },
+     {
+      "code": "INT_COMB",
+      "text": "Sisepõlemismootorid"
+     }
+    ]
+   },
+   {
+    "code": "Vaatlusperiood",
+    "text": "Vaatlusperiood",
+    "elimination": false,
+    "time": true,
+    "n": 23,
+    "values": [
+     {
+      "code": "2002",
+      "text": "2002"
+     },
+     {
+      "code": "2004",
+      "text": "2004"
+     },
+     {
+      "code": "2005",
+      "text": "2005"
+     },
+     {
+      "code": "2006",
+      "text": "2006"
+     },
+     {
+      "code": "2007",
+      "text": "2007"
+     },
+     {
+      "code": "2008",
+      "text": "2008"
+     },
+     {
+      "code": "2009",
+      "text": "2009"
+     },
+     {
+      "code": "2010",
+      "text": "2010"
+     },
+     {
+      "code": "2011",
+      "text": "2011"
+     },
+     {
+      "code": "2012",
+      "text": "2012"
+     },
+     {
+      "code": "2013",
+      "text": "2013"
+     },
+     {
+      "code": "2014",
+      "text": "2014"
+     },
+     {
+      "code": "2015",
+      "text": "2015"
+     },
+     {
+      "code": "2016",
+      "text": "2016"
+     },
+     {
+      "code": "2017",
+      "text": "2017"
+     },
+     {
+      "code": "2018",
+      "text": "2018"
+     },
+     {
+      "code": "2019",
+      "text": "2019"
+     },
+     {
+      "code": "2020",
+      "text": "2020"
+     },
+     {
+      "code": "2021",
+      "text": "2021"
+     },
+     {
+      "code": "2022",
+      "text": "2022"
+     },
+     {
+      "code": "2023",
+      "text": "2023"
+     },
+     {
+      "code": "2024",
+      "text": "2024"
+     },
+     {
+      "code": "2025",
+      "text": "2025"
+     }
+    ]
+   }
+  ],
+  "cells": 460,
+  "data": {
+   "rows": 460,
+   "file": "KE034.parquet"
+  },
+  "units": {},
+  "notes": [],
+  "dimension_labels": {
+   "Näitaja": "Näitaja",
+   "Generaatori liik": "Generaatori liik",
+   "Vaatlusperiood": "Vaatlusperiood"
+  }
+ },
+ "majandus/energeetika/energia-tarbimine-ja-tootmine/aastastatistika/KE035.PX": {
+  "title": "KE035: KOOSTOOTMISJAAMADES KASUTATUD KÜTUS",
+  "variables": [
+   {
+    "code": "Näitaja",
+    "text": "Näitaja",
+    "elimination": false,
+    "time": false,
+    "n": 2,
+    "values": [
+     {
+      "code": "CONS_FUEL",
+      "text": "Tarbitud kütuse kogus"
+     },
+     {
+      "code": "CONS_FUEL_NRG",
+      "text": "Tarbitud kütuse energia, TJ"
+     }
+    ]
+   },
+   {
+    "code": "Kütuse/energia liik",
+    "text": "Kütuse/energia liik",
+    "elimination": false,
+    "time": false,
+    "n": 11,
+    "values": [
+     {
+      "code": "C0100",
+      "text": "Kivisüsi, tuhat t"
+     },
+     {
+      "code": "S2100_EE",
+      "text": "Põlevkivi, tuhat t"
+     },
+     {
+      "code": "P1120",
+      "text": "Freesturvas, tuhat t"
+     },
+     {
+      "code": "B51151_EE",
+      "text": "Puiduhake, tuhat tm"
+     },
+     {
+      "code": "B5110_W_NVA",
+      "text": "Puitkütus (väärindamata), tuhat tm"
+     },
+     {
+      "code": "O4510_EE",
+      "text": "Põlevkivikütteõli (raske fraktsioon), tuhat t"
+     },
+     {
+      "code": "G3000X3100_3200",
+      "text": "Maagaas, v.a surugaas ja veeldatud maagaas, miljonit m³"
+     },
+     {
+      "code": "C0361_EE",
+      "text": "Põlevkivigaas, TJ"
+     },
+     {
+      "code": "B5300",
+      "text": "Biogaasid, TJ"
+     },
+     {
+      "code": "W6220_EE",
+      "text": "Jäätmekütus, TJ"
+     },
+     {
+      "code": "N9940_EE",
+      "text": "Muud taastuvad allikad, TJ"
+     }
+    ]
+   },
+   {
+    "code": "Generaatori liik",
+    "text": "Generaatori liik",
+    "elimination": true,
+    "time": false,
+    "n": 4,
+    "values": [
+     {
+      "code": "CHP_T",
+      "text": "Koostootmisjaamade genereerimisseadmed kokku"
+     },
+     {
+      "code": "BP_TURB",
+      "text": "Vasturõhuauruturbiinid"
+     },
+     {
+      "code": "SC_TURB",
+      "text": "Vaheltvõtuauru-kondensatsiooniturbiinid"
+     },
+     {
+      "code": "INT_COMB",
+      "text": "Sisepõlemismootorid"
+     }
+    ]
+   },
+   {
+    "code": "Vaatlusperiood",
+    "text": "Vaatlusperiood",
+    "elimination": false,
+    "time": true,
+    "n": 23,
+    "values": [
+     {
+      "code": "2002",
+      "text": "2002"
+     },
+     {
+      "code": "2004",
+      "text": "2004"
+     },
+     {
+      "code": "2005",
+      "text": "2005"
+     },
+     {
+      "code": "2006",
+      "text": "2006"
+     },
+     {
+      "code": "2007",
+      "text": "2007"
+     },
+     {
+      "code": "2008",
+      "text": "2008"
+     },
+     {
+      "code": "2009",
+      "text": "2009"
+     },
+     {
+      "code": "2010",
+      "text": "2010"
+     },
+     {
+      "code": "2011",
+      "text": "2011"
+     },
+     {
+      "code": "2012",
+      "text": "2012"
+     },
+     {
+      "code": "2013",
+      "text": "2013"
+     },
+     {
+      "code": "2014",
+      "text": "2014"
+     },
+     {
+      "code": "2015",
+      "text": "2015"
+     },
+     {
+      "code": "2016",
+      "text": "2016"
+     },
+     {
+      "code": "2017",
+      "text": "2017"
+     },
+     {
+      "code": "2018",
+      "text": "2018"
+     },
+     {
+      "code": "2019",
+      "text": "2019"
+     },
+     {
+      "code": "2020",
+      "text": "2020"
+     },
+     {
+      "code": "2021",
+      "text": "2021"
+     },
+     {
+      "code": "2022",
+      "text": "2022"
+     },
+     {
+      "code": "2023",
+      "text": "2023"
+     },
+     {
+      "code": "2024",
+      "text": "2024"
+     },
+     {
+      "code": "2025",
+      "text": "2025"
+     }
+    ]
+   }
+  ],
+  "cells": 2024,
+  "data": {
+   "rows": 2024,
+   "file": "KE035.parquet"
+  },
+  "units": {},
+  "notes": [],
+  "dimension_labels": {
+   "Näitaja": "Näitaja",
+   "Kütuse/energia liik": "Kütuse/energia liik",
+   "Generaatori liik": "Generaatori liik",
+   "Vaatlusperiood": "Vaatlusperiood"
+  }
+ },
+ "majandus/energeetika/energia-tarbimine-ja-tootmine/luhiajastatistika/KE20.PX": {
+  "title": "KE20: ELEKTRIENERGIA JA SOOJUSE TOOTMINE NING TOODANGUINDEKS (KUUD)",
+  "variables": [
+   {
+    "code": "Näitaja",
+    "text": "Näitaja",
+    "elimination": false,
+    "time": false,
+    "n": 2,
+    "values": [
+     {
+      "code": "PROD",
+      "text": "Toodang, GWh"
+     },
+     {
+      "code": "PROD_SM",
+      "text": "Toodanguindeksi muutus võrreldes eelmise aasta sama perioodiga, %"
+     }
+    ]
+   },
+   {
+    "code": "Energia liik",
+    "text": "Energia liik",
+    "elimination": false,
+    "time": false,
+    "n": 2,
+    "values": [
+     {
+      "code": "E7000",
+      "text": "Elektrienergia"
+     },
+     {
+      "code": "H8000",
+      "text": "Soojusenergia"
+     }
+    ]
+   },
+   {
+    "code": "Vaatlusperiood",
+    "text": "Vaatlusperiood",
+    "elimination": false,
+    "time": true,
+    "n": 320,
+    "values": [
+     {
+      "code": "2000M01",
+      "text": "2000 jaanuar"
+     },
+     {
+      "code": "2000M02",
+      "text": "2000 veebruar"
+     },
+     {
+      "code": "2000M03",
+      "text": "2000 märts"
+     },
+     {
+      "code": "2000M04",
+      "text": "2000 aprill"
+     },
+     {
+      "code": "2000M05",
+      "text": "2000 mai"
+     },
+     {
+      "code": "2000M06",
+      "text": "2000 juuni"
+     },
+     {
+      "code": "2000M07",
+      "text": "2000 juuli"
+     },
+     {
+      "code": "2000M08",
+      "text": "2000 august"
+     },
+     {
+      "code": "2000M09",
+      "text": "2000 september"
+     },
+     {
+      "code": "2000M10",
+      "text": "2000 oktoober"
+     },
+     {
+      "code": "2000M11",
+      "text": "2000 november"
+     },
+     {
+      "code": "2000M12",
+      "text": "2000 detsember"
+     },
+     {
+      "code": "2001M01",
+      "text": "2001 jaanuar"
+     },
+     {
+      "code": "2001M02",
+      "text": "2001 veebruar"
+     },
+     {
+      "code": "2001M03",
+      "text": "2001 märts"
+     },
+     {
+      "code": "2001M04",
+      "text": "2001 aprill"
+     },
+     {
+      "code": "2001M05",
+      "text": "2001 mai"
+     },
+     {
+      "code": "2001M06",
+      "text": "2001 juuni"
+     },
+     {
+      "code": "2001M07",
+      "text": "2001 juuli"
+     },
+     {
+      "code": "2001M08",
+      "text": "2001 august"
+     },
+     {
+      "code": "2001M09",
+      "text": "2001 september"
+     },
+     {
+      "code": "2001M10",
+      "text": "2001 oktoober"
+     },
+     {
+      "code": "2001M11",
+      "text": "2001 november"
+     },
+     {
+      "code": "2001M12",
+      "text": "2001 detsember"
+     },
+     {
+      "code": "2002M01",
+      "text": "2002 jaanuar"
+     },
+     {
+      "code": "2002M02",
+      "text": "2002 veebruar"
+     },
+     {
+      "code": "2002M03",
+      "text": "2002 märts"
+     },
+     {
+      "code": "2002M04",
+      "text": "2002 aprill"
+     },
+     {
+      "code": "2002M05",
+      "text": "2002 mai"
+     },
+     {
+      "code": "2002M06",
+      "text": "2002 juuni"
+     },
+     {
+      "code": "2002M07",
+      "text": "2002 juuli"
+     },
+     {
+      "code": "2002M08",
+      "text": "2002 august"
+     },
+     {
+      "code": "2002M09",
+      "text": "2002 september"
+     },
+     {
+      "code": "2002M10",
+      "text": "2002 oktoober"
+     },
+     {
+      "code": "2002M11",
+      "text": "2002 november"
+     },
+     {
+      "code": "2002M12",
+      "text": "2002 detsember"
+     },
+     {
+      "code": "2003M01",
+      "text": "2003 jaanuar"
+     },
+     {
+      "code": "2003M02",
+      "text": "2003 veebruar"
+     },
+     {
+      "code": "2003M03",
+      "text": "2003 märts"
+     },
+     {
+      "code": "2003M04",
+      "text": "2003 aprill"
+     },
+     {
+      "code": "2003M05",
+      "text": "2003 mai"
+     },
+     {
+      "code": "2003M06",
+      "text": "2003 juuni"
+     },
+     {
+      "code": "2003M07",
+      "text": "2003 juuli"
+     },
+     {
+      "code": "2003M08",
+      "text": "2003 august"
+     },
+     {
+      "code": "2003M09",
+      "text": "2003 september"
+     },
+     {
+      "code": "2003M10",
+      "text": "2003 oktoober"
+     },
+     {
+      "code": "2003M11",
+      "text": "2003 november"
+     },
+     {
+      "code": "2003M12",
+      "text": "2003 detsember"
+     },
+     {
+      "code": "2004M01",
+      "text": "2004 jaanuar"
+     },
+     {
+      "code": "2004M02",
+      "text": "2004 veebruar"
+     },
+     {
+      "code": "2004M03",
+      "text": "2004 märts"
+     },
+     {
+      "code": "2004M04",
+      "text": "2004 aprill"
+     },
+     {
+      "code": "2004M05",
+      "text": "2004 mai"
+     },
+     {
+      "code": "2004M06",
+      "text": "2004 juuni"
+     },
+     {
+      "code": "2004M07",
+      "text": "2004 juuli"
+     },
+     {
+      "code": "2004M08",
+      "text": "2004 august"
+     },
+     {
+      "code": "2004M09",
+      "text": "2004 september"
+     },
+     {
+      "code": "2004M10",
+      "text": "2004 oktoober"
+     },
+     {
+      "code": "2004M11",
+      "text": "2004 november"
+     },
+     {
+      "code": "2004M12",
+      "text": "2004 detsember"
+     },
+     {
+      "code": "2005M01",
+      "text": "2005 jaanuar"
+     },
+     {
+      "code": "2005M02",
+      "text": "2005 veebruar"
+     },
+     {
+      "code": "2005M03",
+      "text": "2005 märts"
+     },
+     {
+      "code": "2005M04",
+      "text": "2005 aprill"
+     },
+     {
+      "code": "2005M05",
+      "text": "2005 mai"
+     },
+     {
+      "code": "2005M06",
+      "text": "2005 juuni"
+     },
+     {
+      "code": "2005M07",
+      "text": "2005 juuli"
+     },
+     {
+      "code": "2005M08",
+      "text": "2005 august"
+     },
+     {
+      "code": "2005M09",
+      "text": "2005 september"
+     },
+     {
+      "code": "2005M10",
+      "text": "2005 oktoober"
+     },
+     {
+      "code": "2005M11",
+      "text": "2005 november"
+     },
+     {
+      "code": "2005M12",
+      "text": "2005 detsember"
+     },
+     {
+      "code": "2006M01",
+      "text": "2006 jaanuar"
+     },
+     {
+      "code": "2006M02",
+      "text": "2006 veebruar"
+     },
+     {
+      "code": "2006M03",
+      "text": "2006 märts"
+     },
+     {
+      "code": "2006M04",
+      "text": "2006 aprill"
+     },
+     {
+      "code": "2006M05",
+      "text": "2006 mai"
+     },
+     {
+      "code": "2006M06",
+      "text": "2006 juuni"
+     },
+     {
+      "code": "2006M07",
+      "text": "2006 juuli"
+     },
+     {
+      "code": "2006M08",
+      "text": "2006 august"
+     },
+     {
+      "code": "2006M09",
+      "text": "2006 september"
+     },
+     {
+      "code": "2006M10",
+      "text": "2006 oktoober"
+     },
+     {
+      "code": "2006M11",
+      "text": "2006 november"
+     },
+     {
+      "code": "2006M12",
+      "text": "2006 detsember"
+     },
+     {
+      "code": "2007M01",
+      "text": "2007 jaanuar"
+     },
+     {
+      "code": "2007M02",
+      "text": "2007 veebruar"
+     },
+     {
+      "code": "2007M03",
+      "text": "2007 märts"
+     },
+     {
+      "code": "2007M04",
+      "text": "2007 aprill"
+     },
+     {
+      "code": "2007M05",
+      "text": "2007 mai"
+     },
+     {
+      "code": "2007M06",
+      "text": "2007 juuni"
+     },
+     {
+      "code": "2007M07",
+      "text": "2007 juuli"
+     },
+     {
+      "code": "2007M08",
+      "text": "2007 august"
+     },
+     {
+      "code": "2007M09",
+      "text": "2007 september"
+     },
+     {
+      "code": "2007M10",
+      "text": "2007 oktoober"
+     },
+     {
+      "code": "2007M11",
+      "text": "2007 november"
+     },
+     {
+      "code": "2007M12",
+      "text": "2007 detsember"
+     },
+     {
+      "code": "2008M01",
+      "text": "2008 jaanuar"
+     },
+     {
+      "code": "2008M02",
+      "text": "2008 veebruar"
+     },
+     {
+      "code": "2008M03",
+      "text": "2008 märts"
+     },
+     {
+      "code": "2008M04",
+      "text": "2008 aprill"
+     },
+     {
+      "code": "2008M05",
+      "text": "2008 mai"
+     },
+     {
+      "code": "2008M06",
+      "text": "2008 juuni"
+     },
+     {
+      "code": "2008M07",
+      "text": "2008 juuli"
+     },
+     {
+      "code": "2008M08",
+      "text": "2008 august"
+     },
+     {
+      "code": "2008M09",
+      "text": "2008 september"
+     },
+     {
+      "code": "2008M10",
+      "text": "2008 oktoober"
+     },
+     {
+      "code": "2008M11",
+      "text": "2008 november"
+     },
+     {
+      "code": "2008M12",
+      "text": "2008 detsember"
+     },
+     {
+      "code": "2009M01",
+      "text": "2009 jaanuar"
+     },
+     {
+      "code": "2009M02",
+      "text": "2009 veebruar"
+     },
+     {
+      "code": "2009M03",
+      "text": "2009 märts"
+     },
+     {
+      "code": "2009M04",
+      "text": "2009 aprill"
+     },
+     {
+      "code": "2009M05",
+      "text": "2009 mai"
+     },
+     {
+      "code": "2009M06",
+      "text": "2009 juuni"
+     },
+     {
+      "code": "2009M07",
+      "text": "2009 juuli"
+     },
+     {
+      "code": "2009M08",
+      "text": "2009 august"
+     },
+     {
+      "code": "2009M09",
+      "text": "2009 september"
+     },
+     {
+      "code": "2009M10",
+      "text": "2009 oktoober"
+     },
+     {
+      "code": "2009M11",
+      "text": "2009 november"
+     },
+     {
+      "code": "2009M12",
+      "text": "2009 detsember"
+     },
+     {
+      "code": "2010M01",
+      "text": "2010 jaanuar"
+     },
+     {
+      "code": "2010M02",
+      "text": "2010 veebruar"
+     },
+     {
+      "code": "2010M03",
+      "text": "2010 märts"
+     },
+     {
+      "code": "2010M04",
+      "text": "2010 aprill"
+     },
+     {
+      "code": "2010M05",
+      "text": "2010 mai"
+     },
+     {
+      "code": "2010M06",
+      "text": "2010 juuni"
+     },
+     {
+      "code": "2010M07",
+      "text": "2010 juuli"
+     },
+     {
+      "code": "2010M08",
+      "text": "2010 august"
+     },
+     {
+      "code": "2010M09",
+      "text": "2010 september"
+     },
+     {
+      "code": "2010M10",
+      "text": "2010 oktoober"
+     },
+     {
+      "code": "2010M11",
+      "text": "2010 november"
+     },
+     {
+      "code": "2010M12",
+      "text": "2010 detsember"
+     },
+     {
+      "code": "2011M01",
+      "text": "2011 jaanuar"
+     },
+     {
+      "code": "2011M02",
+      "text": "2011 veebruar"
+     },
+     {
+      "code": "2011M03",
+      "text": "2011 märts"
+     },
+     {
+      "code": "2011M04",
+      "text": "2011 aprill"
+     },
+     {
+      "code": "2011M05",
+      "text": "2011 mai"
+     },
+     {
+      "code": "2011M06",
+      "text": "2011 juuni"
+     },
+     {
+      "code": "2011M07",
+      "text": "2011 juuli"
+     },
+     {
+      "code": "2011M08",
+      "text": "2011 august"
+     },
+     {
+      "code": "2011M09",
+      "text": "2011 september"
+     },
+     {
+      "code": "2011M10",
+      "text": "2011 oktoober"
+     },
+     {
+      "code": "2011M11",
+      "text": "2011 november"
+     },
+     {
+      "code": "2011M12",
+      "text": "2011 detsember"
+     },
+     {
+      "code": "2012M01",
+      "text": "2012 jaanuar"
+     },
+     {
+      "code": "2012M02",
+      "text": "2012 veebruar"
+     },
+     {
+      "code": "2012M03",
+      "text": "2012 märts"
+     },
+     {
+      "code": "2012M04",
+      "text": "2012 aprill"
+     },
+     {
+      "code": "2012M05",
+      "text": "2012 mai"
+     },
+     {
+      "code": "2012M06",
+      "text": "2012 juuni"
+     },
+     {
+      "code": "2012M07",
+      "text": "2012 juuli"
+     },
+     {
+      "code": "2012M08",
+      "text": "2012 august"
+     },
+     {
+      "code": "2012M09",
+      "text": "2012 september"
+     },
+     {
+      "code": "2012M10",
+      "text": "2012 oktoober"
+     },
+     {
+      "code": "2012M11",
+      "text": "2012 november"
+     },
+     {
+      "code": "2012M12",
+      "text": "2012 detsember"
+     },
+     {
+      "code": "2013M01",
+      "text": "2013 jaanuar"
+     },
+     {
+      "code": "2013M02",
+      "text": "2013 veebruar"
+     },
+     {
+      "code": "2013M03",
+      "text": "2013 märts"
+     },
+     {
+      "code": "2013M04",
+      "text": "2013 aprill"
+     },
+     {
+      "code": "2013M05",
+      "text": "2013 mai"
+     },
+     {
+      "code": "2013M06",
+      "text": "2013 juuni"
+     },
+     {
+      "code": "2013M07",
+      "text": "2013 juuli"
+     },
+     {
+      "code": "2013M08",
+      "text": "2013 august"
+     },
+     {
+      "code": "2013M09",
+      "text": "2013 september"
+     },
+     {
+      "code": "2013M10",
+      "text": "2013 oktoober"
+     },
+     {
+      "code": "2013M11",
+      "text": "2013 november"
+     },
+     {
+      "code": "2013M12",
+      "text": "2013 detsember"
+     },
+     {
+      "code": "2014M01",
+      "text": "2014 jaanuar"
+     },
+     {
+      "code": "2014M02",
+      "text": "2014 veebruar"
+     },
+     {
+      "code": "2014M03",
+      "text": "2014 märts"
+     },
+     {
+      "code": "2014M04",
+      "text": "2014 aprill"
+     },
+     {
+      "code": "2014M05",
+      "text": "2014 mai"
+     },
+     {
+      "code": "2014M06",
+      "text": "2014 juuni"
+     },
+     {
+      "code": "2014M07",
+      "text": "2014 juuli"
+     },
+     {
+      "code": "2014M08",
+      "text": "2014 august"
+     },
+     {
+      "code": "2014M09",
+      "text": "2014 september"
+     },
+     {
+      "code": "2014M10",
+      "text": "2014 oktoober"
+     },
+     {
+      "code": "2014M11",
+      "text": "2014 november"
+     },
+     {
+      "code": "2014M12",
+      "text": "2014 detsember"
+     },
+     {
+      "code": "2015M01",
+      "text": "2015 jaanuar"
+     },
+     {
+      "code": "2015M02",
+      "text": "2015 veebruar"
+     },
+     {
+      "code": "2015M03",
+      "text": "2015 märts"
+     },
+     {
+      "code": "2015M04",
+      "text": "2015 aprill"
+     },
+     {
+      "code": "2015M05",
+      "text": "2015 mai"
+     },
+     {
+      "code": "2015M06",
+      "text": "2015 juuni"
+     },
+     {
+      "code": "2015M07",
+      "text": "2015 juuli"
+     },
+     {
+      "code": "2015M08",
+      "text": "2015 august"
+     },
+     {
+      "code": "2015M09",
+      "text": "2015 september"
+     },
+     {
+      "code": "2015M10",
+      "text": "2015 oktoober"
+     },
+     {
+      "code": "2015M11",
+      "text": "2015 november"
+     },
+     {
+      "code": "2015M12",
+      "text": "2015 detsember"
+     },
+     {
+      "code": "2016M01",
+      "text": "2016 jaanuar"
+     },
+     {
+      "code": "2016M02",
+      "text": "2016 veebruar"
+     },
+     {
+      "code": "2016M03",
+      "text": "2016 märts"
+     },
+     {
+      "code": "2016M04",
+      "text": "2016 aprill"
+     },
+     {
+      "code": "2016M05",
+      "text": "2016 mai"
+     },
+     {
+      "code": "2016M06",
+      "text": "2016 juuni"
+     },
+     {
+      "code": "2016M07",
+      "text": "2016 juuli"
+     },
+     {
+      "code": "2016M08",
+      "text": "2016 august"
+     },
+     {
+      "code": "2016M09",
+      "text": "2016 september"
+     },
+     {
+      "code": "2016M10",
+      "text": "2016 oktoober"
+     },
+     {
+      "code": "2016M11",
+      "text": "2016 november"
+     },
+     {
+      "code": "2016M12",
+      "text": "2016 detsember"
+     },
+     {
+      "code": "2017M01",
+      "text": "2017 jaanuar"
+     },
+     {
+      "code": "2017M02",
+      "text": "2017 veebruar"
+     },
+     {
+      "code": "2017M03",
+      "text": "2017 märts"
+     },
+     {
+      "code": "2017M04",
+      "text": "2017 aprill"
+     },
+     {
+      "code": "2017M05",
+      "text": "2017 mai"
+     },
+     {
+      "code": "2017M06",
+      "text": "2017 juuni"
+     },
+     {
+      "code": "2017M07",
+      "text": "2017 juuli"
+     },
+     {
+      "code": "2017M08",
+      "text": "2017 august"
+     },
+     {
+      "code": "2017M09",
+      "text": "2017 september"
+     },
+     {
+      "code": "2017M10",
+      "text": "2017 oktoober"
+     },
+     {
+      "code": "2017M11",
+      "text": "2017 november"
+     },
+     {
+      "code": "2017M12",
+      "text": "2017 detsember"
+     },
+     {
+      "code": "2018M01",
+      "text": "2018 jaanuar"
+     },
+     {
+      "code": "2018M02",
+      "text": "2018 veebruar"
+     },
+     {
+      "code": "2018M03",
+      "text": "2018 märts"
+     },
+     {
+      "code": "2018M04",
+      "text": "2018 aprill"
+     },
+     {
+      "code": "2018M05",
+      "text": "2018 mai"
+     },
+     {
+      "code": "2018M06",
+      "text": "2018 juuni"
+     },
+     {
+      "code": "2018M07",
+      "text": "2018 juuli"
+     },
+     {
+      "code": "2018M08",
+      "text": "2018 august"
+     },
+     {
+      "code": "2018M09",
+      "text": "2018 september"
+     },
+     {
+      "code": "2018M10",
+      "text": "2018 oktoober"
+     },
+     {
+      "code": "2018M11",
+      "text": "2018 november"
+     },
+     {
+      "code": "2018M12",
+      "text": "2018 detsember"
+     },
+     {
+      "code": "2019M01",
+      "text": "2019 jaanuar"
+     },
+     {
+      "code": "2019M02",
+      "text": "2019 veebruar"
+     },
+     {
+      "code": "2019M03",
+      "text": "2019 märts"
+     },
+     {
+      "code": "2019M04",
+      "text": "2019 aprill"
+     },
+     {
+      "code": "2019M05",
+      "text": "2019 mai"
+     },
+     {
+      "code": "2019M06",
+      "text": "2019 juuni"
+     },
+     {
+      "code": "2019M07",
+      "text": "2019 juuli"
+     },
+     {
+      "code": "2019M08",
+      "text": "2019 august"
+     },
+     {
+      "code": "2019M09",
+      "text": "2019 september"
+     },
+     {
+      "code": "2019M10",
+      "text": "2019 oktoober"
+     },
+     {
+      "code": "2019M11",
+      "text": "2019 november"
+     },
+     {
+      "code": "2019M12",
+      "text": "2019 detsember"
+     },
+     {
+      "code": "2020M01",
+      "text": "2020 jaanuar"
+     },
+     {
+      "code": "2020M02",
+      "text": "2020 veebruar"
+     },
+     {
+      "code": "2020M03",
+      "text": "2020 märts"
+     },
+     {
+      "code": "2020M04",
+      "text": "2020 aprill"
+     },
+     {
+      "code": "2020M05",
+      "text": "2020 mai"
+     },
+     {
+      "code": "2020M06",
+      "text": "2020 juuni"
+     },
+     {
+      "code": "2020M07",
+      "text": "2020 juuli"
+     },
+     {
+      "code": "2020M08",
+      "text": "2020 august"
+     },
+     {
+      "code": "2020M09",
+      "text": "2020 september"
+     },
+     {
+      "code": "2020M10",
+      "text": "2020 oktoober"
+     },
+     {
+      "code": "2020M11",
+      "text": "2020 november"
+     },
+     {
+      "code": "2020M12",
+      "text": "2020 detsember"
+     },
+     {
+      "code": "2021M01",
+      "text": "2021 jaanuar"
+     },
+     {
+      "code": "2021M02",
+      "text": "2021 veebruar"
+     },
+     {
+      "code": "2021M03",
+      "text": "2021 märts"
+     },
+     {
+      "code": "2021M04",
+      "text": "2021 aprill"
+     },
+     {
+      "code": "2021M05",
+      "text": "2021 mai"
+     },
+     {
+      "code": "2021M06",
+      "text": "2021 juuni"
+     },
+     {
+      "code": "2021M07",
+      "text": "2021 juuli"
+     },
+     {
+      "code": "2021M08",
+      "text": "2021 august"
+     },
+     {
+      "code": "2021M09",
+      "text": "2021 september"
+     },
+     {
+      "code": "2021M10",
+      "text": "2021 oktoober"
+     },
+     {
+      "code": "2021M11",
+      "text": "2021 november"
+     },
+     {
+      "code": "2021M12",
+      "text": "2021 detsember"
+     },
+     {
+      "code": "2022M01",
+      "text": "2022 jaanuar"
+     },
+     {
+      "code": "2022M02",
+      "text": "2022 veebruar"
+     },
+     {
+      "code": "2022M03",
+      "text": "2022 märts"
+     },
+     {
+      "code": "2022M04",
+      "text": "2022 aprill"
+     },
+     {
+      "code": "2022M05",
+      "text": "2022 mai"
+     },
+     {
+      "code": "2022M06",
+      "text": "2022 juuni"
+     },
+     {
+      "code": "2022M07",
+      "text": "2022 juuli"
+     },
+     {
+      "code": "2022M08",
+      "text": "2022 august"
+     },
+     {
+      "code": "2022M09",
+      "text": "2022 september"
+     },
+     {
+      "code": "2022M10",
+      "text": "2022 oktoober"
+     },
+     {
+      "code": "2022M11",
+      "text": "2022 november"
+     },
+     {
+      "code": "2022M12",
+      "text": "2022 detsember"
+     },
+     {
+      "code": "2023M01",
+      "text": "2023 jaanuar"
+     },
+     {
+      "code": "2023M02",
+      "text": "2023 veebruar"
+     },
+     {
+      "code": "2023M03",
+      "text": "2023 märts"
+     },
+     {
+      "code": "2023M04",
+      "text": "2023 aprill"
+     },
+     {
+      "code": "2023M05",
+      "text": "2023 mai"
+     },
+     {
+      "code": "2023M06",
+      "text": "2023 juuni"
+     },
+     {
+      "code": "2023M07",
+      "text": "2023 juuli"
+     },
+     {
+      "code": "2023M08",
+      "text": "2023 august"
+     },
+     {
+      "code": "2023M09",
+      "text": "2023 september"
+     },
+     {
+      "code": "2023M10",
+      "text": "2023 oktoober"
+     },
+     {
+      "code": "2023M11",
+      "text": "2023 november"
+     },
+     {
+      "code": "2023M12",
+      "text": "2023 detsember"
+     },
+     {
+      "code": "2024M01",
+      "text": "2024 jaanuar"
+     },
+     {
+      "code": "2024M02",
+      "text": "2024 veebruar"
+     },
+     {
+      "code": "2024M03",
+      "text": "2024 märts"
+     },
+     {
+      "code": "2024M04",
+      "text": "2024 aprill"
+     },
+     {
+      "code": "2024M05",
+      "text": "2024 mai"
+     },
+     {
+      "code": "2024M06",
+      "text": "2024 juuni"
+     },
+     {
+      "code": "2024M07",
+      "text": "2024 juuli"
+     },
+     {
+      "code": "2024M08",
+      "text": "2024 august"
+     },
+     {
+      "code": "2024M09",
+      "text": "2024 september"
+     },
+     {
+      "code": "2024M10",
+      "text": "2024 oktoober"
+     },
+     {
+      "code": "2024M11",
+      "text": "2024 november"
+     },
+     {
+      "code": "2024M12",
+      "text": "2024 detsember"
+     },
+     {
+      "code": "2025M01",
+      "text": "2025 jaanuar"
+     },
+     {
+      "code": "2025M02",
+      "text": "2025 veebruar"
+     },
+     {
+      "code": "2025M03",
+      "text": "2025 märts"
+     },
+     {
+      "code": "2025M04",
+      "text": "2025 aprill"
+     },
+     {
+      "code": "2025M05",
+      "text": "2025 mai"
+     },
+     {
+      "code": "2025M06",
+      "text": "2025 juuni"
+     },
+     {
+      "code": "2025M07",
+      "text": "2025 juuli"
+     },
+     {
+      "code": "2025M08",
+      "text": "2025 august"
+     },
+     {
+      "code": "2025M09",
+      "text": "2025 september"
+     },
+     {
+      "code": "2025M10",
+      "text": "2025 oktoober"
+     },
+     {
+      "code": "2025M11",
+      "text": "2025 november"
+     },
+     {
+      "code": "2025M12",
+      "text": "2025 detsember"
+     },
+     {
+      "code": "2026M01",
+      "text": "2026 jaanuar"
+     },
+     {
+      "code": "2026M02",
+      "text": "2026 veebruar"
+     },
+     {
+      "code": "2026M03",
+      "text": "2026 märts"
+     },
+     {
+      "code": "2026M04",
+      "text": "2026 aprill"
+     },
+     {
+      "code": "2026M05",
+      "text": "2026 mai"
+     },
+     {
+      "code": "2026M06",
+      "text": "2026 juuni"
+     },
+     {
+      "code": "2026M07",
+      "text": "2026 juuli"
+     },
+     {
+      "code": "2026M08",
+      "text": "2026 august"
+     }
+    ]
+   }
+  ],
+  "cells": 1280,
+  "data": {
+   "rows": 1280,
+   "file": "KE20.parquet"
+  },
+  "units": {},
+  "notes": [],
+  "dimension_labels": {
+   "Näitaja": "Näitaja",
+   "Energia liik": "Energia liik",
+   "Vaatlusperiood": "Vaatlusperiood"
+  }
+ }
+}
