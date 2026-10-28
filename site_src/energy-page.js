@@ -78,7 +78,7 @@
       const G = d.ghg; if (!G) return;
       const keys = ['Energiatööstus (elekter, soojus, rafineerimine)', 'Töötlev tööstus ja ehitus', 'Transport', 'Kodumajapidamised, teenindus, põllumajandus', 'Fugitiivsed heited', 'Muu'];
       const colors = { [keys[0]]: SLOTS[3], [keys[1]]: GREY, Transport: SLOTS[0], [keys[3]]: SLOTS[1], [keys[4]]: SLOTS[2], Muu: '#c9ced4' };
-      stack(host, G.energy, keys, { scale: 1, unit: 'Mt CO₂e', dec: 1, colors, title: 'Energiasektori kasvuhoonegaaside heide', subtitle: 'Energiasektori (CRF 1) heide alamsektorite kaupa, Mt CO₂ ekvivalenti aastas.', note: 'Energiatööstus hõlmab avaliku elektri- ja soojatootmise ning rafineerimise; põlevkivi töötlemine on energiatööstuses. Heide on kütuse põletamisest (CRF 1A) ja fugitiivsed heited (CRF 1B); tulemus ei ole eraldatav elektrienergia tarbimise järgi.' });
+      stack(host, G.energy, keys, { scale: 1, unit: 'Mt CO₂e', dec: 1, colors, title: 'Energiasektori kasvuhoonegaaside heide', subtitle: 'Energiasektori (CRF 1) heide alamsektorite kaupa, Mt CO₂ ekvivalenti aastas.', note: 'Energiatööstus hõlmab avaliku elektri- ja soojatootmise, rafineerimise ning tahkete kütuste tootmise (CRF 1A1). Heide on kütuse põletamisest (CRF 1A) ja fugitiivsed heited (CRF 1B); tulemus ei ole eraldatav elektrienergia tarbimise järgi.' });
       const a = first(G.energy), b = last(G.energy);
       const top = keys.slice(0, 5).map((k) => [k, b[k]]).sort((x, y) => y[1] - x[1])[0];
       C.punch(host, `Energiasektori heide oli ${fmt(a.energy, 1)} Mt CO₂e (${a.year}) ja ${fmt(b.energy, 1)} Mt (${b.year}), ${sgn(100 * (b.energy / a.energy - 1), 0)}%; ${b.year}. aastal on suurim alamsektor „${top[0].toLowerCase()}“ (${fmt(100 * top[1] / b.energy, 0)}% energiasektori heitest).`);
