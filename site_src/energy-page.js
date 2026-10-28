@@ -80,8 +80,10 @@
       const H = d.heat; if (!H) return;
       const keys = ['Põlevkivi ja põlevkiviproduktid', 'Maagaas', 'Biomass ja biogaas', 'Kivisüsi ja turvas', 'Jäätmekütus', 'Muud taastuvad'];
       const colors = { 'Põlevkivi ja põlevkiviproduktid': SLOTS[3], Maagaas: GREY, 'Biomass ja biogaas': SLOTS[1], 'Kivisüsi ja turvas': '#6b7280', 'Jäätmekütus': SLOTS[2], 'Muud taastuvad': SLOTS[0] };
-      stack(host, H.fuels, keys, { scale: 1000, unit: 'PJ', dec: 1, colors, title: 'Koostootmisjaamade kütus', subtitle: 'Koostootmisjaamades tarbitud kütuse energia kütuseliigi järgi, PJ aastas (Statistikaamet, KE035).', note: 'Taastuvaks on loetud biomass, biogaas ja muud taastuvad allikad; jäätmekütust ei loeta taastuvaks (taastuv osa ei ole tabelis eraldatud). Viimane aasta võib olla esialgne ning kütuse struktuur võib aastate vahel muutuda tabeli täienduste tõttu.' });
-      const a = first(H.fuels), b = last(H.fuels);
+      const FU = H.fuels.filter((r) => r.output_to_fuel == null || r.output_to_fuel <= 1.2);
+      if (!FU.length) { host.innerHTML = '<p class="viz-note">Koostootmisjaamade kütuse andmed on kõigil aastatel puudulikud.</p>'; return; }
+      stack(host, FU, keys, { scale: 1000, unit: 'PJ', dec: 1, colors, title: 'Koostootmisjaamade kütus', subtitle: 'Koostootmisjaamades tarbitud kütuse energia kütuseliigi järgi, PJ aastas (Statistikaamet, KE035).', note: 'Taastuvaks on loetud biomass, biogaas ja muud taastuvad allikad; jäätmekütust ei loeta taastuvaks (taastuv osa ei ole tabelis eraldatud). Aastad, mil koostootmise kasulik toodang ületab kütuse energia (puudulikud kütuseandmed, nt enne 2011), on välja jäetud. Viimane aasta võib olla esialgne.' });
+      const a = first(FU), b = last(FU);
       C.punch(host, `Taastuvate (biomass, biogaas, muud) osa koostootmisjaamade kütuses oli ${fmt(a.renewable_share_pct, 0)}% (${a.year}) ja ${fmt(b.renewable_share_pct, 0)}% (${b.year}); põlevkivi ja põlevkiviproduktide osa ${fmt(100 * a['Põlevkivi ja põlevkiviproduktid'] / a.total_tj, 0)}% → ${fmt(100 * b['Põlevkivi ja põlevkiviproduktid'] / b.total_tj, 0)}%, maagaasi osa ${b.year}. aastal ${fmt(100 * b['Maagaas'] / b.total_tj, 0)}% (${fmt(b.total_tj / 1000, 1)} PJ kokku).`);
     },
     hyear(host) {

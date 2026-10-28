@@ -49,7 +49,7 @@ def chp(df: pl.DataFrame) -> list[dict[str, Any]]:
     return out
 
 
-def fuels(df: pl.DataFrame) -> list[dict[str, Any]]:
+def fuels(df: pl.DataFrame, chp_rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
     t = df.filter(
         (pl.col("Generaatori liik") == TOTAL_GEN) & (pl.col("Näitaja") == "CONS_FUEL_NRG")
     ).drop_nulls("value")
@@ -66,6 +66,10 @@ def fuels(df: pl.DataFrame) -> list[dict[str, Any]]:
         row["Muu"] = max(0.0, total - used)
         ren = float(g.filter(pl.col("Kütuse/energia liik").is_in(RENEWABLE))["value"].sum())
         row["renewable_share_pct"] = 100.0 * ren / total if total else None
+        c = next((r for r in chp_rows if r["year"] == row["year"]), None)
+        if c and c["PROD_E_CHP"] is not None and c["PROD_H_CHP"] is not None and total:
+            # useful output (GWh x 3.6 = TJ) per fuel energy; above 1 the fuel data are incomplete
+            row["output_to_fuel"] = (c["PROD_E_CHP"] + c["PROD_H_CHP"]) * 3.6 / total
         out.append(row)
     return out
 
@@ -109,9 +113,10 @@ def monthly(df: pl.DataFrame) -> dict[str, Any]:
 
 
 def build(ke034: pl.DataFrame, ke035: pl.DataFrame, ke20: pl.DataFrame) -> dict[str, Any]:
+    chp_rows = chp(clean(ke034))
     return {
-        "chp": chp(clean(ke034)),
-        "fuels": fuels(clean(ke035)),
+        "chp": chp_rows,
+        "fuels": fuels(clean(ke035), chp_rows),
         "monthly": monthly(clean(ke20)),
         "meta": {
             "interpretation": [
@@ -122,6 +127,9 @@ def build(ke034: pl.DataFrame, ke035: pl.DataFrame, ke20: pl.DataFrame) -> dict[
                 "on loetud biomass, biogaas ja muud taastuvad allikad, jäätmekütus ei ole "
                 "taastuvaks arvatud.",
                 "Aastasummad (KE20) on arvutatud ainult aastatele, millel on kõik 12 kuud.",
+                "Kui koostootmise kasulik toodang (soojus + elekter) ületab kütuse energia "
+                "(suhe üle 1,2), loetakse kütuse andmed puudulikuks ja aasta jäetakse kütuse "
+                "graafikult välja.",
             ]
         },
     }

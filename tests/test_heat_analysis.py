@@ -109,6 +109,7 @@ def test_chp_and_fuel_groups() -> None:
     f = r["fuels"][0]
     assert f["total_tj"] == 10500.0 and f["Maagaas"] == 6000.0 and f["Muu"] == pytest.approx(500.0)
     assert f["renewable_share_pct"] == pytest.approx(100 * 3000 / 10500)
+    assert f["output_to_fuel"] == pytest.approx((1000 + 3000) * 3.6 / 10500)
 
 
 def test_monthly_uses_complete_years_only() -> None:

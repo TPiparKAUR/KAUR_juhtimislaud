@@ -44,14 +44,16 @@
       C.punch(host, `Jäätmeteke oli ${Mt(a.generated)} (${a.year}) ja ${Mt(b.generated)} (${b.year}); mäetööstuse ning termiliste protsesside osa ${fmt(share(a.mining_energy, a.generated), 0)}% → ${fmt(share(b.mining_energy, b.generated), 0)}%, ülejäänud jäätmeid ${Mt(a.generated_other)} → ${Mt(b.generated_other)}.`);
     },
     crecovery(host) {
-      const all = W.filter((r) => r.treated > 0).map((r) => ({ year: r.year, value: (100 * r.recovery) / r.treated, n: 0, extra: `taaskasutatud ${Mt(r.recovery)} / töödeldud ${Mt(r.treated)}` }));
-      const other = W.filter((r) => r.treated - r.treated_mining_energy > 0).map((r) => ({ year: r.year, value: (100 * (r.recovery - r.recovery_mining_energy)) / (r.treated - r.treated_mining_energy), n: 0, extra: `ilma 01 ja 10` }));
-      const lf = W.filter((r) => r.generated_other > 0).map((r) => ({ year: r.year, value: (100 * (r.landfilled - r.landfilled_mining_energy)) / r.generated_other, n: 0, extra: `ladestatud ${Mt(r.landfilled - r.landfilled_mining_energy)} / teke ${Mt(r.generated_other)}` }));
-      C.lines(host, { title: 'Jäätmete taaskasutus ja ladestamine', subtitle: 'Taaskasutatud osa töödeldud jäätmetest (kõik jäätmed; ilma peatükkideta 01 ja 10) ning ladestatud jäätmed ilma peatükkideta 01 ja 10 jäätmetekke suhtes, %.', unit: '%', dec: 0, axisDec: 0, nName: '–',
-        series: [{ label: 'Taaskasutus, kõik jäätmed', color: SLOTS[1], data: all }, { label: 'Taaskasutus, ilma 01 ja 10', color: SLOTS[0], data: other }, { label: 'Ladestatud, ilma 01 ja 10 (jäätmetekke suhtes)', color: SLOTS[3], data: lf }],
-        note: 'Taaskasutus hõlmab kõiki taaskasutustoiminguid (energiakasutus ei ole eraldatav); aastas töödeldud kogus võib sisaldada varasemate aastate varusid ning ladestatud kogus ei ole sama, mis aastas tekkinud jäätmete ladestamine. Osakaal ei ole ELi ringlusmäär.' });
-      const o = last(other), p = first(other);
-      C.punch(host, `Taaskasutatud osa töödeldud jäätmetest (ilma peatükkideta 01 ja 10) oli ${fmt(p.value, 0)}% (${p.year}) ja ${fmt(o.value, 0)}% (${o.year}); ladestatud kogus ilma nende peatükkideta on ${fmt(last(lf).value, 0)}% jäätmetekkest (${last(lf).year}); see on tabelist arvutatud osakaal, mitte ELi ringlusmäär.`);
+      const pts = (f) => W.map((r) => { const o = f(r); return o ? { year: r.year, value: o[0], n: 0, extra: o[1] } : null; }).filter(Boolean);
+      const out = (r, o) => r.treated - o.treated + r.landfilled - o.landfilled; // outflow: treated in company + landfilled
+      const all = pts((r) => (r.treated + r.landfilled > 0 ? [(100 * r.recovery) / (r.treated + r.landfilled), `taaskasutatud ${Mt(r.recovery)}, töödeldud ${Mt(r.treated)}, ladestatud ${Mt(r.landfilled)}`] : null));
+      const other = pts((r) => { const m = { treated: r.treated_mining_energy, landfilled: r.landfilled_mining_energy }, t = out(r, m); return t > 0 ? [(100 * (r.recovery - r.recovery_mining_energy)) / t, `ilma 01 ja 10: taaskasutatud ${Mt(r.recovery - r.recovery_mining_energy)}, väljaminek ${Mt(t)}`] : null; });
+      const lf = pts((r) => { const m = { treated: r.treated_mining_energy, landfilled: r.landfilled_mining_energy }, t = out(r, m); return t > 0 ? [(100 * (r.landfilled - r.landfilled_mining_energy)) / t, `ilma 01 ja 10: ladestatud ${Mt(r.landfilled - r.landfilled_mining_energy)}, väljaminek ${Mt(t)}`] : null; });
+      C.lines(host, { title: 'Jäätmete taaskasutus ja ladestamine', subtitle: 'Taaskasutatud ja ladestatud osa jäätmete väljaminekust (ettevõttes töödeldud + ladestatud prügilasse), %; kõik jäätmed ning ilma peatükkideta 01 ja 10.', unit: '%', dec: 0, axisDec: 0, nName: '–',
+        series: [{ label: 'Taaskasutus, kõik jäätmed', color: SLOTS[1], data: all }, { label: 'Taaskasutus, ilma 01 ja 10', color: SLOTS[0], data: other }, { label: 'Ladestatud, ilma 01 ja 10', color: SLOTS[3], data: lf }],
+        note: 'Väljaminek = ettevõttes töödeldud kogus (taaskasutus + kõrvaldamine) + prügilasse ladestatud kogus; teistele antud ja eksporditud kogused ei ole nimetajas. Taaskasutus hõlmab kõiki taaskasutustoiminguid (sh energiakasutus); aasta kogus võib sisaldada varasemate aastate varusid. Osakaal ei ole ELi ringlusmäär.' });
+      const o = last(other), p0 = first(other), l = last(lf);
+      C.punch(host, `Taaskasutatud osa jäätmete väljaminekust (ilma peatükkideta 01 ja 10) oli ${fmt(p0.value, 0)}% (${p0.year}) ja ${fmt(o.value, 0)}% (${o.year}), ladestatud osa ${fmt(first(lf).value, 0)}% → ${fmt(l.value, 0)}%; see on tabelist arvutatud osakaal (energiakasutus on taaskasutuses sees), mitte ELi ringlusmäär.`);
     },
     cmat(host) {
       const rp = MAT.filter((r) => r.resource_productivity != null).map((r) => ({ year: r.year, value: r.resource_productivity, n: r.dmc / 1000, extra: `DMC ${fmt(r.dmc / 1000, 1)} Mt` }));
