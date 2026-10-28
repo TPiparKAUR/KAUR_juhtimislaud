@@ -11,7 +11,7 @@ Genereeritud `analyse_ulevaated.py` poolt failidest `data/ulevaate_kaetus.toml` 
 | Välisõhk | 7 | 1932 | 2 | 3 | 2 | 24 |
 | Mets | 5 | 1849 | 2 | 2 | 1 | 21 |
 | Seire (RKSP) | 7 | 1259 | 5 | 0 | 2 | 20 |
-| Energeetika | 3 | 772 | 1 | 1 | 1 | 34 |
+| Energeetika | 3 | 772 | 2 | 1 | 0 | 0 |
 | Ökosüsteemid | 2 | 761 | 0 | 1 | 1 | 35 |
 | Muld ja maahõive | 3 | 676 | 0 | 1 | 2 | 70 |
 
@@ -20,7 +20,7 @@ Genereeritud `analyse_ulevaated.py` poolt failidest `data/ulevaate_kaetus.toml` 
 | Teema | Vaade | Vaatamisi | Meie | Andmed | Märkus |
 |---|---|---|---|---|---|
 | Energeetika | Keskkonnaülevaade - Energeetika - Taastuvenergia osakaal | 286 | osaliselt | Statistikaamet PxWeb: KE0240 | Taastuvate osakaal on arvutatud Statistikaameti energiabilansist (GAE-s ja primaarenergia tootmises); ei ole ametlik SHARES-osakaal. |
-| Energeetika | Rohemõõdikud - Energeetika - detail- energeetika - Energeetikasektori kasvuhoonegaaside heitkogused | 259 | puudub | teadmata | Sektori KHG inventuur; API-s ei ole tuvastatud vastavat tabelit. |
+| Energeetika | Rohemõõdikud - Energeetika - detail- energeetika - Energeetikasektori kasvuhoonegaaside heitkogused | 259 | olemas | Eurostat: env_air_gge | Energiasektori (CRF 1) kasvuhoonegaaside heide alamsektoriti 1990-2024 UNFCCC inventuuri põhjal (Eurostati koondatud); viimane aasta võib olla esialgne. |
 | Energeetika | Keskkonnaülevaade - Energeetika - Elektrienergia hulk | 227 | olemas | Statistikaamet PxWeb: KE033, KE032 + API:t_soojatoodang_curr | Riiklik elektritootmine kütuse järgi ja paigaldatud võimsus (Statistikaamet) lisaks käitiste soojus- ja elektritoodangule õhuaruandest. |
 | Ilm ja kliima | Keskkonnaülevaade - Ilm ja kliima - Ilm ja kliima anomaaliad | 667 | olemas | API:f_kliima_* | Anomaaliad ja aastakeskmised kliimalehel. |
 | Ilm ja kliima | Keskkonnaülevaade - Ilm ja kliima - Ilm ja kliima Külm_kuum | 531 | olemas | API:f_kliima_* | Äärmusnäitajad (kuum/külm) kliimalehel. |

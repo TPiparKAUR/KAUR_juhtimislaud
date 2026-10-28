@@ -49,7 +49,7 @@ def rows(df: pl.DataFrame, geo: str, codes: dict[str, str]) -> list[dict[str, An
         for label, v in s.items():
             row[label] = v.get(y)
             used += v.get(y) or 0.0
-        row["Muu"] = total[y] - used
+        row["Muu"] = max(0.0, total[y] - used)
         out.append(row)
     return out
 
@@ -82,7 +82,7 @@ def build(df: pl.DataFrame, generated: str) -> dict[str, Any]:
                 "võib olla esialgne (proxy) hinnang.",
                 "Ühik on miljonit tonni CO2 ekvivalenti (kõik kasvuhoonegaasid, GWP kaalutud). "
                 "Sektorite osakaalud on arvutatud kogusummast ilma LULUCF-ita (maakasutus, "
-                "maakasutuse muutus ja metsandus, tavaliselt netonõristi).",
+                "maakasutuse muutus ja metsandus; netonõrist või netoallikas, sõltuvalt aastast).",
                 "Energiasektori alamsektorid (CRF 1A1, 1A2, 1A3, 1A4, 1B); rahvusvaheline "
                 "lennundus ja laevandus on memo-kirjed ja kogusummas ei sisaldu.",
                 "Võrdlus EL27-ga on indeksina (1990 = 100), mitte absoluutse tasemena; "
@@ -110,6 +110,6 @@ def rows_energy(df: pl.DataFrame) -> list[dict[str, Any]]:
         for label, v in s.items():
             row[label] = v.get(y)
             used += v.get(y) or 0.0
-        row["Muu"] = energy[y] - used
+        row["Muu"] = max(0.0, energy[y] - used)
         out.append(row)
     return out

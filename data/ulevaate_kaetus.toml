@@ -23,9 +23,9 @@ markus = "Riiklik elektritootmine kütuse järgi ja paigaldatud võimsus (Statis
 [[vaade]]
 workbook = "Rohemdikud-Energeetika-detail-energeetika-Energeetikasektorikasvuhoonegaasideheitkogused"
 teema = "energeetika"
-meie = "puudub"
-andmed = "teadmata"
-markus = "Sektori KHG inventuur; API-s ei ole tuvastatud vastavat tabelit."
+meie = "olemas"
+andmed = "Eurostat: env_air_gge"
+markus = "Energiasektori (CRF 1) kasvuhoonegaaside heide alamsektoriti 1990-2024 UNFCCC inventuuri põhjal (Eurostati koondatud); viimane aasta võib olla esialgne."
 
 [[vaade]]
 workbook = "Keskkonnalevaade-Ilmjakliima-Ilmjakliimaanomaaliad"

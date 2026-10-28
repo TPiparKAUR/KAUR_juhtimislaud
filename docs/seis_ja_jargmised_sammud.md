@@ -67,6 +67,7 @@ Leht ehitatakse `pages.yml` poolt kõigist harudest; lisatud tulemused ilmuvad a
 - Üraskid: allikat avaandmetes ei leitud (otsitud API tabelite ja KESE kataloogi nimedest); vajab Metsaameti/Keskkonnaagentuuri metsakaitse seire andmeallikat.
 - Energeetika: taastuvate osakaal ja energiasõltuvus on bilansist arvutatud (mitte SHARES / Eurostat); ekspert peab kinnitama definitsioonid ja Statistikaameti andmete litsentsi ja viitamise. Energiasektori KHG ja soojatootmise tabelid (KE20–KE23) on kasutamata.
 - Ringmajandus: jäätmete ühik (t) ja jäätmenimistu peatükkide 01/10 tõlgendus on eeldatud; ringleva materjali määr on Eurostatilt (ei ole Statistikaameti tabelist arvutatav). Soojatootmise kütuseandmed enne 2011 on puudulikud (Statistikaameti selgitus vajalik).
+- KHG inventuur: viimase aasta (proxy) ja LULUCF-i (netoallikas 2024) tõlgendus vajab kliimaeksperdi kinnitust; EL27 võrdlus on indeksina.
 - Aastaraamatute PDF-id ei ole repos (artefakt `yearbooks-raw`, 30 päeva); Soome, Island, Rootsi Skogsdata puuduvad.
 
 ## Seire (KESE) töövoog: kuidas jätkata

@@ -21,9 +21,9 @@ töövihikute loetelu koos vaatamiste arvuga (`data/tableau_public_workbooks.csv
 
 | Katvus | Vaateid | Vaatamisi | Osakaal vaatamistest |
 |---|---|---|---|
-| olemas | 27 | 9 319 | 52% |
+| olemas | 28 | 9 578 | 54% |
 | osaliselt | 13 | 4 063 | 23% |
-| puudub | 14 | 4 506 | 25% |
+| puudub | 13 | 4 247 | 24% |
 
 Teemati (vaatamised; katmata osa vaatamistest):
 
@@ -36,7 +36,7 @@ Teemati (vaatamised; katmata osa vaatamistest):
 | Välisõhk | 1 932 | 24% |
 | Mets | 1 849 | 21% |
 | Seire (RKSP) | 1 259 | 20% (metsa-, mulla- ja välisõhuseire lisandus) |
-| Energeetika | 772 | 34% (Statistikaameti energiabilanss lisandus) |
+| Energeetika | 772 | 0% (energiabilanss, soojatootmine ja KHG inventuur lisandusid) |
 | Ökosüsteemid | 761 | 35% |
 | Muld ja maahõive | 676 | **100%** |
 
@@ -173,3 +173,11 @@ sobib materjalivooga), millest 52% on mäetööstuse ja termiliste protsesside j
 soojatoodang 3 792 GWh (2025), kütuse taastuvate osakaal 56% (2025); enne 2011 on koostootmise kütuse energia puudulik
 (kasulik toodang ületab kütuse energia) ja need aastad on kütusegraafikult välja jäetud. Piirangud: ühik eeldatud, SKP
 aheldatud hinnad, lahtisidumine kirjeldav; litsents (Statistikaamet, Eurostat) ja viitamise nõue kinnitamata.
+
+## Täiendus 2026-10-28 (hiljem): energiasektori KHG inventuur
+
+Eurostati `env_air_gge` (UNFCCC CRF, Mt CO2e, Eesti ja EL27, 1990–2024): kasvuhoonegaaside heide ilma LULUCF-ita langes
+40,3 Mt-lt (1990) 10,2 Mt-ni (2024) ehk 75% (EL27 keskmine −38%); energiasektori heide 36,2 → 8,1 Mt, millest 2024. aastal
+on energiatööstus 4,7 Mt ja transport 2,7 Mt; LULUCF on 2024. aastal netoallikas (+1,9 Mt), mistõttu kogusumma koos
+LULUCF-iga (12,1 Mt) on suurem kui ilma. Andmed on riiklik inventuur, viimane aasta võib olla esialgne; Eurostati litsents
+ja viitamise nõue kinnitamata. Energeetika vaated on nüüd kõik kaetud (energiasektori KHG vaade „olemas“).

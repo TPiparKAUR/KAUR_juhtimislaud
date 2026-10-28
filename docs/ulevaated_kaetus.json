@@ -4,29 +4,29 @@
   "n_views": 54,
   "by_status": {
    "olemas": {
-    "n": 27,
-    "views": 9319
+    "n": 28,
+    "views": 9578
    },
    "osaliselt": {
     "n": 13,
     "views": 4063
    },
    "puudub": {
-    "n": 14,
-    "views": 4506
+    "n": 13,
+    "views": 4247
    }
   },
   "themes": {
    "energeetika": {
     "views": 772,
     "n": 3,
-    "olemas": 1,
+    "olemas": 2,
     "osaliselt": 1,
-    "puudub": 1,
-    "views_olemas": 227,
+    "puudub": 0,
+    "views_olemas": 486,
     "views_osaliselt": 286,
-    "views_puudub": 259,
-    "share_views_uncovered": 0.335
+    "views_puudub": 0,
+    "share_views_uncovered": 0.0
    },
    "ilm-ja-kliima": {
     "views": 2371,
@@ -261,9 +261,9 @@
   {
    "workbook": "Rohemdikud-Energeetika-detail-energeetika-Energeetikasektorikasvuhoonegaasideheitkogused",
    "teema": "energeetika",
-   "meie": "puudub",
-   "andmed": "teadmata",
-   "markus": "Sektori KHG inventuur; API-s ei ole tuvastatud vastavat tabelit.",
+   "meie": "olemas",
+   "andmed": "Eurostat: env_air_gge",
+   "markus": "Energiasektori (CRF 1) kasvuhoonegaaside heide alamsektoriti 1990-2024 UNFCCC inventuuri põhjal (Eurostati koondatud); viimane aasta võib olla esialgne.",
    "title": "Rohemõõdikud - Energeetika - detail- energeetika - Energeetikasektori kasvuhoonegaaside heitkogused",
    "views": 259
   },
