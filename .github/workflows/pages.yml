@@ -94,7 +94,19 @@ jobs:
     timeout-minutes: 15
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url || steps.deployment_retry.outputs.page_url }}
     steps:
+      # GitHub rejects a new Pages deployment while the previous one is still being
+      # finalised ("due to in progress deployment", HTTP 400), even when the earlier
+      # job has already finished, so `concurrency` above cannot prevent it. A push and
+      # an analysis workflow_run can land seconds apart (run 40778902033 failed this
+      # way and left the site one commit behind). Wait and try once more.
       - id: deployment
+        uses: actions/deploy-pages@v4
+        continue-on-error: true
+      - name: Wait for the previous deployment to finish
+        if: steps.deployment.outcome == 'failure'
+        run: sleep 90
+      - id: deployment_retry
+        if: steps.deployment.outcome == 'failure'
         uses: actions/deploy-pages@v4
