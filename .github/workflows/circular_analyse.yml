@@ -1,0 +1,58 @@
+name: Circular economy analysis (from existing data)
+
+# Builds circular.json from Statistics Estonia tables (artifact statee-raw: KK99, KK610, KK068,
+# RAA0012) and the Eurostat circular material use rate (artifact eurostat-raw: cei_srm030) and
+# publishes it to `circular-analysis`.
+
+on:
+  workflow_dispatch:
+    inputs:
+      statee_run_ids:
+        description: "Run ids of successful 'Statistics Estonia fetch' runs, separated by spaces"
+        required: true
+      eurostat_run_id:
+        description: "Run id of a successful 'Eurostat fetch' run (cei_srm030)"
+        required: true
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: circular-analyse
+  cancel-in-progress: false
+
+jobs:
+  analyse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync --frozen
+      - name: Download raw artifacts
+        env:
+          GH_TOKEN: ${{ github.token }}
+          STATEE_IDS: ${{ inputs.statee_run_ids }}
+          EUROSTAT_ID: ${{ inputs.eurostat_run_id }}
+        run: |
+          mkdir -p out/statee
+          for id in $STATEE_IDS; do
+            gh run download "$id" --repo "$GITHUB_REPOSITORY" -n statee-raw -D "out/dl/$id"
+            cp -f "out/dl/$id"/* out/statee/
+          done
+          gh run download "$EUROSTAT_ID" --repo "$GITHUB_REPOSITORY" -n eurostat-raw -D out/eurostat
+      - run: uv run python run_circular.py --statee out/statee --eurostat out/eurostat --out out/circular
+      - name: Publish aggregated results
+        run: |
+          cp out/circular/circular.json "$RUNNER_TEMP/circular.json"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan circular-analysis
+          git rm -rf --quiet .
+          cp "$RUNNER_TEMP/circular.json" circular.json
+          git add -- circular.json
+          git commit -m "Circular economy analysis $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push --force origin circular-analysis

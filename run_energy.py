@@ -17,6 +17,7 @@ from pathlib import Path
 import polars as pl
 
 import energy_analysis as ea
+import heat_analysis as ha
 
 LOG = logging.getLogger("run_energy")
 
@@ -31,6 +32,9 @@ def main(argv: list[str] | None = None) -> None:
     e = pl.read_parquet(args.raw / "KE033.parquet")
     c = pl.read_parquet(args.raw / "KE032.parquet")
     result = ea.build(b, e, c, datetime.now(UTC).isoformat(timespec="seconds"))
+    heat_files = [args.raw / f"{n}.parquet" for n in ("KE034", "KE035", "KE20")]
+    if all(f.exists() for f in heat_files):
+        result["heat"] = ha.build(*(pl.read_parquet(f) for f in heat_files))
     args.out.mkdir(parents=True, exist_ok=True)
     (args.out / "energy.json").write_text(
         json.dumps(result, ensure_ascii=False, separators=(",", ":")), encoding="utf-8"
