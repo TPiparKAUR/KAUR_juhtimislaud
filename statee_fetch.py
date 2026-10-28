@@ -110,6 +110,12 @@ def fetch_table(path: str, out: Path, max_cells: int) -> dict[str, Any]:
     name = urllib.parse.unquote(path.rsplit("/", 1)[-1]).replace(".PX", "")
     df.write_parquet(out / f"{name}.parquet")
     summary["data"] = {"rows": df.height, "file": f"{name}.parquet"}
+    summary["units"] = {
+        d: js["dimension"][d]["category"]["unit"]
+        for d in js["id"]
+        if "unit" in js["dimension"].get(d, {}).get("category", {})
+    }
+    summary["notes"] = (js.get("note") or [])[:5]
     summary["dimension_labels"] = {
         d: js["dimension"][d].get("label") for d in js["id"] if d in js.get("dimension", {})
     }
