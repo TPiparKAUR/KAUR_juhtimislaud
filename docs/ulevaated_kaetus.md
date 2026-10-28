@@ -4,7 +4,7 @@ Genereeritud `analyse_ulevaated.py` poolt failidest `data/ulevaate_kaetus.toml` 
 
 | Teema | Vaateid | Vaatamisi | Olemas | Osaliselt | Puudub | Vaatamistest katmata, % |
 |---|---|---|---|---|---|---|
-| Jäätmed | 10 | 3509 | 7 | 1 | 2 | 19 |
+| Jäätmed | 10 | 3509 | 9 | 1 | 0 | 0 |
 | Liigid | 4 | 2627 | 0 | 1 | 3 | 75 |
 | Ilm ja kliima | 6 | 2371 | 4 | 0 | 2 | 18 |
 | Vesi | 7 | 2132 | 4 | 3 | 0 | 0 |
@@ -32,8 +32,8 @@ Genereeritud `analyse_ulevaated.py` poolt failidest `data/ulevaate_kaetus.toml` 
 | Jäätmed | Jäätmearuandlus_KKP jäätmete teemalehtede valdkonnad_Üldine ülevaade | 478 | olemas | API:f_jaatmeliikumine_fix_riik | Üldine ülevaade. |
 | Jäätmed | Jäätmearuandlus_KKP jäätmete teemalehtede valdkonnad_Pakendijäätmed | 359 | olemas | API:f_jaatmeliikumine_fix_riik | Pakendijäätmed (liik 15 01): vood ja materjalid 2004-2025. |
 | Jäätmed | Jäätmearuandlus_KKP jäätmete teemalehtede valdkonnad_Biojäätmed | 341 | osaliselt | API:f_jaatmeliikumine_fix_riik | Biojäätmete märkega kirjed (märke tähendus kinnitamata, hõlmab nt segaolmejäätmeid ja sõnnikut); eraldi biojäätmete definitsioon puudub. |
-| Jäätmed | Keskkonnaülevaade - Jäätmed - Jäätmed ja SKP | 331 | puudub | väline | Nõuab SKP andmeid (Statistikaamet). |
-| Jäätmed | Keskkonnaülevaade - Jäätmed - Ringleva materjali määr | 321 | puudub | väline | Ringleva materjali määr on Eurostati näitaja. |
+| Jäätmed | Keskkonnaülevaade - Jäätmed - Jäätmed ja SKP | 331 | olemas | Statistikaamet PxWeb: KK610, KK99, RAA0012 | Jäätmeteke, materjalitarbimine (DMC) ja reaalne SKP indeksitena (lahtisidumine, kirjeldav); mäetööstuse ja termiliste protsesside jäätmed eraldi. |
+| Jäätmed | Keskkonnaülevaade - Jäätmed - Ringleva materjali määr | 321 | olemas | Eurostat: cei_srm030 | Ringleva materjali määr (Eesti ja EL27) Eurostati arvutatud näitajana; ei ole Statistikaameti tabelitest tuletatud. |
 | Jäätmed | Jäätmearuandlus_KKP jäätmete teemalehtede valdkonnad_Ohtlikud jäätmed | 304 | olemas | API:f_jaatmeliikumine_fix_riik | Ohtlikud jäätmed. |
 | Jäätmed | Keskkonnaülevaade - Jäätmed - Olmejäätmed | 284 | olemas | API:f_jaatmeliikumine_fix_riik | Olmejäätmete (peatükk 20) vood 2004-2025 ja suurimad liigid; olmejäätmete ametlik määratlus võib erineda peatükist 20. |
 | Jäätmed | Jäätmearuandlus_KKP jäätmete teemalehtede valdkonnad_Ehitus - lammutusjäätmed | 260 | olemas | API:f_jaatmeliikumine_fix_riik | Ehitus- ja lammutusjäätmed on peatükk 17 jäätmetekke graafikul. |

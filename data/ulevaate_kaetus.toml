@@ -65,16 +65,16 @@ markus = "KHG 2024."
 [[vaade]]
 workbook = "Keskkonnalevaade-Jtmed-JtmedjaSKP"
 teema = "jaatmed"
-meie = "puudub"
-andmed = "väline"
-markus = "Nõuab SKP andmeid (Statistikaamet)."
+meie = "olemas"
+andmed = "Statistikaamet PxWeb: KK610, KK99, RAA0012"
+markus = "Jäätmeteke, materjalitarbimine (DMC) ja reaalne SKP indeksitena (lahtisidumine, kirjeldav); mäetööstuse ja termiliste protsesside jäätmed eraldi."
 
 [[vaade]]
 workbook = "Keskkonnalevaade-Jtmed-Ringlevamaterjalimr"
 teema = "jaatmed"
-meie = "puudub"
-andmed = "väline"
-markus = "Ringleva materjali määr on Eurostati näitaja."
+meie = "olemas"
+andmed = "Eurostat: cei_srm030"
+markus = "Ringleva materjali määr (Eesti ja EL27) Eurostati arvutatud näitajana; ei ole Statistikaameti tabelitest tuletatud."
 
 [[vaade]]
 workbook = "Keskkonnalevaade-Jtmed-Olmejtmed"

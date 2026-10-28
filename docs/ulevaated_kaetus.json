@@ -4,16 +4,16 @@
   "n_views": 54,
   "by_status": {
    "olemas": {
-    "n": 25,
-    "views": 8667
+    "n": 27,
+    "views": 9319
    },
    "osaliselt": {
     "n": 13,
     "views": 4063
    },
    "puudub": {
-    "n": 16,
-    "views": 5158
+    "n": 14,
+    "views": 4506
    }
   },
   "themes": {
@@ -42,13 +42,13 @@
    "jaatmed": {
     "views": 3509,
     "n": 10,
-    "olemas": 7,
+    "olemas": 9,
     "osaliselt": 1,
-    "puudub": 2,
-    "views_olemas": 2516,
+    "puudub": 0,
+    "views_olemas": 3168,
     "views_osaliselt": 341,
-    "views_puudub": 652,
-    "share_views_uncovered": 0.186
+    "views_puudub": 0,
+    "share_views_uncovered": 0.0
    },
    "liigid": {
     "views": 2627,
@@ -220,22 +220,22 @@
     "views": 333
    },
    {
-    "workbook": "Keskkonnalevaade-Jtmed-JtmedjaSKP",
-    "teema": "jaatmed",
+    "workbook": "Keskkonnalevaade-Maahive-Maahive",
+    "teema": "muld-ja-maahoive",
     "meie": "puudub",
     "andmed": "väline",
-    "markus": "Nõuab SKP andmeid (Statistikaamet).",
-    "title": "Keskkonnaülevaade - Jäätmed - Jäätmed ja SKP",
-    "views": 331
+    "markus": "Maahõive jaotus.",
+    "title": "Keskkonnaülevaade - Maahõive - Maahõive",
+    "views": 296
    },
    {
-    "workbook": "Keskkonnalevaade-Jtmed-Ringlevamaterjalimr",
-    "teema": "jaatmed",
-    "meie": "puudub",
-    "andmed": "väline",
-    "markus": "Ringleva materjali määr on Eurostati näitaja.",
-    "title": "Keskkonnaülevaade - Jäätmed - Ringleva materjali määr",
-    "views": 321
+    "workbook": "Keskkonnalevaade-Energeetika-Taastuvenergiaosakaal",
+    "teema": "energeetika",
+    "meie": "osaliselt",
+    "andmed": "Statistikaamet PxWeb: KE0240",
+    "markus": "Taastuvate osakaal on arvutatud Statistikaameti energiabilansist (GAE-s ja primaarenergia tootmises); ei ole ametlik SHARES-osakaal.",
+    "title": "Keskkonnaülevaade - Energeetika - Taastuvenergia osakaal",
+    "views": 286
    }
   ]
  },
@@ -315,18 +315,18 @@
   {
    "workbook": "Keskkonnalevaade-Jtmed-JtmedjaSKP",
    "teema": "jaatmed",
-   "meie": "puudub",
-   "andmed": "väline",
-   "markus": "Nõuab SKP andmeid (Statistikaamet).",
+   "meie": "olemas",
+   "andmed": "Statistikaamet PxWeb: KK610, KK99, RAA0012",
+   "markus": "Jäätmeteke, materjalitarbimine (DMC) ja reaalne SKP indeksitena (lahtisidumine, kirjeldav); mäetööstuse ja termiliste protsesside jäätmed eraldi.",
    "title": "Keskkonnaülevaade - Jäätmed - Jäätmed ja SKP",
    "views": 331
   },
   {
    "workbook": "Keskkonnalevaade-Jtmed-Ringlevamaterjalimr",
    "teema": "jaatmed",
-   "meie": "puudub",
-   "andmed": "väline",
-   "markus": "Ringleva materjali määr on Eurostati näitaja.",
+   "meie": "olemas",
+   "andmed": "Eurostat: cei_srm030",
+   "markus": "Ringleva materjali määr (Eesti ja EL27) Eurostati arvutatud näitajana; ei ole Statistikaameti tabelitest tuletatud.",
    "title": "Keskkonnaülevaade - Jäätmed - Ringleva materjali määr",
    "views": 321
   },

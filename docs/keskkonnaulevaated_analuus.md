@@ -21,15 +21,15 @@ töövihikute loetelu koos vaatamiste arvuga (`data/tableau_public_workbooks.csv
 
 | Katvus | Vaateid | Vaatamisi | Osakaal vaatamistest |
 |---|---|---|---|
-| olemas | 25 | 8 667 | 48% |
+| olemas | 27 | 9 319 | 52% |
 | osaliselt | 13 | 4 063 | 23% |
-| puudub | 16 | 5 158 | 29% |
+| puudub | 14 | 4 506 | 25% |
 
 Teemati (vaatamised; katmata osa vaatamistest):
 
 | Teema | Vaatamisi | Katmata |
 |---|---|---|
-| Jäätmed | 3 509 | 19% (oli 38% enne olme-, pakendi- ja biojäätmete vooge) |
+| Jäätmed | 3 509 | 0% (SKP ja ringleva materjali määra vaated lisandusid) |
 | Liigid | 2 627 | 75% (esialgne lindude indeks lisandus) |
 | Ilm ja kliima | 2 371 | 18% |
 | Vesi | 2 132 | 0% katmata (osaliselt kaetud: põhjaveebilanss, eutrofeerumine, reostuskoormus merre, põhjavee koondseisund) |
@@ -159,3 +159,17 @@ osakaalud on arvutatud bilansist ega ole ametlik SHARES-osakaal; elektri- ja soo
 ekspordi märk tuvastati samasusest (jääk 0,008%); litsents (Statistikaameti avaandmed) ja viitamise nõue on
 kinnitamata. Taastuvenergia osakaal on nüüd „osaliselt“, elektrienergia hulk „olemas“; energiasektori KHG inventuur
 jääb katmata.
+
+## Täiendus 2026-10-28: ringmajandus, jäätmed vs SKP ja soojatootmine
+
+**Allikad:** Statistikaameti materjalivoo arvepidamine (KK99), jäätmebilanss (KK610), jäätmeteke tegevusala järgi (KK068), SKP
+(RAA0012) ja Eurostati ringleva materjali määr (`cei_srm030`; Statistikaameti tabelites seda ei ole, otsisin ka võtmesõnadega
+„ringlus“ ja „ringmajandus“). **Tulemused:** jäätmeteke 2025: 16,7 Mt (eeldatud tonnid; PxWeb-tabelis ühikut ei ole, suurusjärk
+sobib materjalivooga), millest 52% on mäetööstuse ja termiliste protsesside jäätmed (jäätmenimistu peatükid 01 ja 10);
+2002 = 100 korral on 2024. aastal reaalne SKP 177, DMC 143, jäätmeteke kokku 101 ja jäätmeteke ilma peatükkideta 01 ja 10
+173 (st ilma mäetööstuse ja energeetika jäätmeteta ei ole lahtisidumist). Ringleva materjali määr Eestis 20,5% (2024), EL27
+12,2% (Eurostat). Jäätmete taaskasutuse osakaal arvutati väljaminekust (töödeldud + ladestatud); esimene versioon
+(taaskasutus / töödeldud) oli ~99% ja ei kandnud infot, seega asendati. **Soojatootmine** (KE034, KE035, KE20): koostootmise
+soojatoodang 3 792 GWh (2025), kütuse taastuvate osakaal 56% (2025); enne 2011 on koostootmise kütuse energia puudulik
+(kasulik toodang ületab kütuse energia) ja need aastad on kütusegraafikult välja jäetud. Piirangud: ühik eeldatud, SKP
+aheldatud hinnad, lahtisidumine kirjeldav; litsents (Statistikaamet, Eurostat) ja viitamise nõue kinnitamata.

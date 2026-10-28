@@ -193,3 +193,9 @@ Graafikud: koondindeks (geomeetriline keskmine liikidest, bootstrap-vahemik) ja 
 Graafikud: primaarenergia tootmine, energiasõltuvus ja taastuvate osakaal, lõpptarbimine sektoriti,
 elektritootmine allikate kaupa, paigaldatud võimsus. Puänt on andmetest tuletatud; osakaalud ei ole ametlikud
 SHARES-osakaalud; ülevaatamata valdkonnaekspertide poolt.
+
+## Ringmajandus ja soojatootmine (Statistikaamet, Eurostat, päris andmetega)
+
+Graafikud: majandus, materjalitarbimine ja jäätmeteke indeksitena; jäätmeteke peatükkide kaupa; taaskasutuse ja
+ladestamise osakaal; ringleva materjali määr; ressursitootlikkus; jäätmeteke tegevusala järgi; koostootmise toodang ja
+kütus; kuine soojatoodang. Puänt on andmetest tuletatud; ülevaatamata valdkonnaekspertide poolt.
