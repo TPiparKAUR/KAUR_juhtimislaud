@@ -1,0 +1,976 @@
+{
+ "base": "https://andmed.stat.ee/api/v1/et/stat",
+ "first_level": [
+  {
+   "id": "keskkond",
+   "text": "Keskkond"
+  },
+  {
+   "id": "majandus",
+   "text": "Majandus"
+  },
+  {
+   "id": "rahvastik",
+   "text": "Rahvastik"
+  },
+  {
+   "id": "sotsiaalelu",
+   "text": "Sotsiaalelu"
+  },
+  {
+   "id": "eri-valdkondade-statistika",
+   "text": "Eri valdkondade statistika"
+  },
+  {
+   "id": "rahvaloendus",
+   "text": "Rahva ja eluruumide loendus"
+  }
+ ],
+ "second_level": [
+  {
+   "parent": "Keskkond",
+   "id": "keskonna-arvepidamine",
+   "text": "Keskkonna arvepidamine",
+   "type": "l"
+  },
+  {
+   "parent": "Keskkond",
+   "id": "keskkonnakaitse-ja-jarelevalve",
+   "text": "Keskkonnakaitse ja -järelevalve",
+   "type": "l"
+  },
+  {
+   "parent": "Keskkond",
+   "id": "keskkonnaseisund",
+   "text": "Keskkonnaseisund",
+   "type": "l"
+  },
+  {
+   "parent": "Keskkond",
+   "id": "loodusvarad-ja-nende-kasutamine",
+   "text": "Loodusvarad ja nende kasutamine",
+   "type": "l"
+  },
+  {
+   "parent": "Keskkond",
+   "id": "pollumajanduskeskkond",
+   "text": "Põllumajanduskeskkonna näitajad",
+   "type": "l"
+  },
+  {
+   "parent": "Keskkond",
+   "id": "surve-keskkonnaseisundile",
+   "text": "Surve keskkonnaseisundile",
+   "type": "l"
+  },
+  {
+   "parent": "Majandus",
+   "id": "ehitus",
+   "text": "Ehitus",
+   "type": "l"
+  },
+  {
+   "parent": "Majandus",
+   "id": "energeetika",
+   "text": "Energeetika",
+   "type": "l"
+  },
+  {
+   "parent": "Majandus",
+   "id": "ettevetete-majandusnaitajad",
+   "text": "Ettevõtete majandusnäitajad",
+   "type": "l"
+  },
+  {
+   "parent": "Majandus",
+   "id": "hinnad",
+   "text": "Hinnad",
+   "type": "l"
+  },
+  {
+   "parent": "Majandus",
+   "id": "infotehnoloogia",
+   "text": "Infotehnoloogia ja side",
+   "type": "l"
+  },
+  {
+   "parent": "Majandus",
+   "id": "kalandus",
+   "text": "Kalandus",
+   "type": "l"
+  },
+  {
+   "parent": "Majandus",
+   "id": "majandusuksused",
+   "text": "Majandusüksused",
+   "type": "l"
+  },
+  {
+   "parent": "Majandus",
+   "id": "metsamajandus",
+   "text": "Metsamajandus",
+   "type": "l"
+  },
+  {
+   "parent": "Majandus",
+   "id": "palk-ja-toojeukulu",
+   "text": "Palk ja tööjõukulu",
+   "type": "l"
+  },
+  {
+   "parent": "Majandus",
+   "id": "pellumajandus",
+   "text": "Põllumajandus",
+   "type": "l"
+  },
+  {
+   "parent": "Majandus",
+   "id": "rahandus",
+   "text": "Rahandus",
+   "type": "l"
+  },
+  {
+   "parent": "Majandus",
+   "id": "rahvamajanduse-arvepidamine",
+   "text": "Rahvamajanduse arvepidamine",
+   "type": "l"
+  },
+  {
+   "parent": "Majandus",
+   "id": "sisekaubandus",
+   "text": "Sisekaubandus",
+   "type": "l"
+  },
+  {
+   "parent": "Majandus",
+   "id": "teadus-tehnoloogia-innovatsioon",
+   "text": "Teadus. Tehnoloogia. Innovatsioon",
+   "type": "l"
+  },
+  {
+   "parent": "Majandus",
+   "id": "teenindus",
+   "text": "Teenindus",
+   "type": "l"
+  },
+  {
+   "parent": "Majandus",
+   "id": "transport",
+   "text": "Transport",
+   "type": "l"
+  },
+  {
+   "parent": "Majandus",
+   "id": "turism-ja-majutus",
+   "text": "Turism, majutus ja toitlustus",
+   "type": "l"
+  },
+  {
+   "parent": "Majandus",
+   "id": "toostus",
+   "text": "Tööstus",
+   "type": "l"
+  },
+  {
+   "parent": "Majandus",
+   "id": "valiskaubandus",
+   "text": "Väliskaubandus",
+   "type": "l"
+  },
+  {
+   "parent": "Rahvastik",
+   "id": "rahvastikunaitajad-ja-koosseis",
+   "text": "Rahvastikunäitajad ja koosseis",
+   "type": "l"
+  },
+  {
+   "parent": "Rahvastik",
+   "id": "rahvastikusundmused",
+   "text": "Rahvastikusündmused",
+   "type": "l"
+  },
+  {
+   "parent": "Sotsiaalelu",
+   "id": "ajakasutus",
+   "text": "Ajakasutus",
+   "type": "l"
+  },
+  {
+   "parent": "Sotsiaalelu",
+   "id": "haridus",
+   "text": "Haridus",
+   "type": "l"
+  },
+  {
+   "parent": "Sotsiaalelu",
+   "id": "kultuur",
+   "text": "Kultuur",
+   "type": "l"
+  },
+  {
+   "parent": "Sotsiaalelu",
+   "id": "laste-heaolu",
+   "text": "Laste heaolu",
+   "type": "l"
+  },
+  {
+   "parent": "Sotsiaalelu",
+   "id": "leibkonnad",
+   "text": "Leibkonnad",
+   "type": "l"
+  },
+  {
+   "parent": "Sotsiaalelu",
+   "id": "sissetulek",
+   "text": "Sissetulek",
+   "type": "l"
+  },
+  {
+   "parent": "Sotsiaalelu",
+   "id": "sotsiaalne-kaitse",
+   "text": "Sotsiaalne kaitse",
+   "type": "l"
+  },
+  {
+   "parent": "Sotsiaalelu",
+   "id": "sotsiaalne-terjutus-laekeni-indikaatorid",
+   "text": "Sotsiaalne tõrjutus ja vaesus",
+   "type": "l"
+  },
+  {
+   "parent": "Sotsiaalelu",
+   "id": "tervishoid",
+   "text": "Tervis",
+   "type": "l"
+  },
+  {
+   "parent": "Sotsiaalelu",
+   "id": "tooelukvaliteet",
+   "text": "Tööelukvaliteet",
+   "type": "l"
+  },
+  {
+   "parent": "Sotsiaalelu",
+   "id": "tooturg",
+   "text": "Tööturg",
+   "type": "l"
+  },
+  {
+   "parent": "Sotsiaalelu",
+   "id": "eigus-ja-turvalisus",
+   "text": "Õigus ja turvalisus",
+   "type": "l"
+  },
+  {
+   "parent": "Eri valdkondade statistika",
+   "id": "eksperimentaalstatistika",
+   "text": "Eksperimentaalstatistika",
+   "type": "l"
+  },
+  {
+   "parent": "Eri valdkondade statistika",
+   "id": "Konjunktuuribaromeetrid",
+   "text": "Konjunktuuribaromeetrid",
+   "type": "l"
+  },
+  {
+   "parent": "Eri valdkondade statistika",
+   "id": "loimumine",
+   "text": "Lõimumine",
+   "type": "l"
+  },
+  {
+   "parent": "Eri valdkondade statistika",
+   "id": "noorteseire",
+   "text": "Noorteseire",
+   "type": "l"
+  },
+  {
+   "parent": "Eri valdkondade statistika",
+   "id": "piirkondlik-rahulolu",
+   "text": "Piirkondlik rahulolu elukeskkonnaga",
+   "type": "l"
+  },
+  {
+   "parent": "Eri valdkondade statistika",
+   "id": "saastev-areng",
+   "text": "Säästev areng ja Eesti 2035 strateegia",
+   "type": "l"
+  },
+  {
+   "parent": "Eri valdkondade statistika",
+   "id": "tallinna-statistika",
+   "text": "Tallinna statistika",
+   "type": "l"
+  },
+  {
+   "parent": "Eri valdkondade statistika",
+   "id": "share-ee",
+   "text": "Üleeuroopaline tervise, vananemise ja tööjätu uuring (SHARE)",
+   "type": "l"
+  },
+  {
+   "parent": "Rahva ja eluruumide loendus",
+   "id": "rel2000",
+   "text": "Rahva ja eluruumide loendus 2000",
+   "type": "l"
+  },
+  {
+   "parent": "Rahva ja eluruumide loendus",
+   "id": "rel2011",
+   "text": "Rahva ja eluruumide loendus 2011",
+   "type": "l"
+  },
+  {
+   "parent": "Rahva ja eluruumide loendus",
+   "id": "rel2021",
+   "text": "Rahva ja eluruumide loendus 2021",
+   "type": "l"
+  },
+  {
+   "parent": "Rahva ja eluruumide loendus",
+   "id": "rel_vordlus",
+   "text": "Rahva ja eluruumide loendused: võrdlusandmed",
+   "type": "l"
+  }
+ ],
+ "tree": [
+  {
+   "path": "keskkond/keskonna-arvepidamine/materjalivoo-arvepidamine",
+   "text": "Materjalivoo arvepidamine",
+   "type": "l"
+  },
+  {
+   "path": "keskkond/surve-keskkonnaseisundile/jaatmete-teke",
+   "text": "Jäätmete teke",
+   "type": "l"
+  },
+  {
+   "path": "majandus/rahvamajanduse-arvepidamine/sisemajanduse-koguprodukt-%28skp%29",
+   "text": "Sisemajanduse koguprodukt (SKP)",
+   "type": "l"
+  },
+  {
+   "path": "keskkond/keskonna-arvepidamine/materjalivoo-arvepidamine/KK91.PX",
+   "text": "KK91: KODUMAISE TOORME KASUTUS TOORME LIIGI JÄRGI",
+   "type": "t"
+  },
+  {
+   "path": "keskkond/keskonna-arvepidamine/materjalivoo-arvepidamine/KK92.PX",
+   "text": "KK92: KASUTAMATA KODUMAINE TOORE LIIGI JÄRGI",
+   "type": "t"
+  },
+  {
+   "path": "keskkond/keskonna-arvepidamine/materjalivoo-arvepidamine/KK93.PX",
+   "text": "KK93: MATERJALISISENDI TASAKAALUSTAVAD MATERJALIVOOD",
+   "type": "t"
+  },
+  {
+   "path": "keskkond/keskonna-arvepidamine/materjalivoo-arvepidamine/KK94.PX",
+   "text": "KK94: KODUMAINE MATERJALIVÄLJUND",
+   "type": "t"
+  },
+  {
+   "path": "keskkond/keskonna-arvepidamine/materjalivoo-arvepidamine/KK95.PX",
+   "text": "KK95: MATERJALIVÄLJUNDI TASAKAALUSTAVAD MATERJALIVOOD",
+   "type": "t"
+  },
+  {
+   "path": "keskkond/keskonna-arvepidamine/materjalivoo-arvepidamine/KK956.PX",
+   "text": "KK956: FÜÜSILINE IMPORT MATERJALI LIIGI JÄRGI",
+   "type": "t"
+  },
+  {
+   "path": "keskkond/keskonna-arvepidamine/materjalivoo-arvepidamine/KK957.PX",
+   "text": "KK957: FÜÜSILINE EKSPORT MATERJALI LIIGI JÄRGI",
+   "type": "t"
+  },
+  {
+   "path": "keskkond/keskonna-arvepidamine/materjalivoo-arvepidamine/KK958.PX",
+   "text": "KK958: FÜÜSILISE VÄLISKAUBANDUSE TASAKAAL MATERJALI LIIGI JÄRGI",
+   "type": "t"
+  },
+  {
+   "path": "keskkond/keskonna-arvepidamine/materjalivoo-arvepidamine/KK99.PX",
+   "text": "KK99: MATERJALIVOO NÄITAJAD",
+   "type": "t"
+  },
+  {
+   "path": "keskkond/surve-keskkonnaseisundile/jaatmete-teke/KK068.PX",
+   "text": "KK068: JÄÄTMETEKE JÄÄTMELIIGI JA TEGEVUSALA (EMTAK 2008) JÄRGI",
+   "type": "t"
+  },
+  {
+   "path": "keskkond/surve-keskkonnaseisundile/jaatmete-teke/KK610.PX",
+   "text": "KK610: JÄÄTMEBILANSS JÄÄTMELIIGI JÄRGI",
+   "type": "t"
+  },
+  {
+   "path": "keskkond/surve-keskkonnaseisundile/jaatmete-teke/KK6115.PX",
+   "text": "KK6115: OHTLIKE JÄÄTMETE BILANSS JÄÄTMELIIGI JÄRGI",
+   "type": "t"
+  },
+  {
+   "path": "majandus/rahvamajanduse-arvepidamine/sisemajanduse-koguprodukt-%28skp%29/pehilised-rahvamajanduse-arvepidamise-naitajad",
+   "text": "Põhilised rahvamajanduse arvepidamise näitajad",
+   "type": "l"
+  },
+  {
+   "path": "majandus/rahvamajanduse-arvepidamine/sisemajanduse-koguprodukt-%28skp%29/regionaalne-sisemajanduse-koguprodukt",
+   "text": "Regionaalne sisemajanduse koguprodukt",
+   "type": "l"
+  },
+  {
+   "path": "majandus/rahvamajanduse-arvepidamine/sisemajanduse-koguprodukt-%28skp%29/sisemajanduse-koguprodukt-sissetulekute-meetodil",
+   "text": "Sisemajanduse koguprodukt sissetulekute meetodil",
+   "type": "l"
+  },
+  {
+   "path": "majandus/rahvamajanduse-arvepidamine/sisemajanduse-koguprodukt-%28skp%29/sisemajanduse-koguprodukt-tarbimise-meetodil",
+   "text": "Sisemajanduse koguprodukt tarbimise meetodil",
+   "type": "l"
+  },
+  {
+   "path": "majandus/rahvamajanduse-arvepidamine/sisemajanduse-koguprodukt-%28skp%29/sisemajanduse-koguprodukt-tootmise-meetodil",
+   "text": "Sisemajanduse koguprodukt tootmise meetodil",
+   "type": "l"
+  },
+  {
+   "path": "majandus/rahvamajanduse-arvepidamine/sisemajanduse-koguprodukt-%28skp%29/pehilised-rahvamajanduse-arvepidamise-naitajad/RAA0012.PX",
+   "text": "RAA0012: SISEMAJANDUSE KOGUPRODUKT JA KOGURAHVATULU (ESA 2010) (KVARTALID)",
+   "type": "t"
+  },
+  {
+   "path": "majandus/rahvamajanduse-arvepidamine/sisemajanduse-koguprodukt-%28skp%29/pehilised-rahvamajanduse-arvepidamise-naitajad/RAA0013.PX",
+   "text": "RAA0013: SISEMAJANDUSE KOGUPRODUKT JA KOGURAHVATULU ÜHE ELANIKU KOHTA (ESA 2010)",
+   "type": "t"
+  },
+  {
+   "path": "majandus/rahvamajanduse-arvepidamine/sisemajanduse-koguprodukt-%28skp%29/pehilised-rahvamajanduse-arvepidamise-naitajad/RAA0014.PX",
+   "text": "RAA0014: KOGUMAJANDUSE KASUTATAV TULU, SÄÄST JA NETOLAENUANDMINE/-VÕTMINE JOOKSEVHINDADES (ESA 2010) (KVARTALID)",
+   "type": "t"
+  },
+  {
+   "path": "majandus/rahvamajanduse-arvepidamine/sisemajanduse-koguprodukt-%28skp%29/pehilised-rahvamajanduse-arvepidamise-naitajad/RAA0015.px",
+   "text": "RAA0015: SISEMAJANDUSE KOGUPRODUKTI KIIRHINNANG (ESA 2010) (KVARTALID)",
+   "type": "t"
+  },
+  {
+   "path": "majandus/rahvamajanduse-arvepidamine/sisemajanduse-koguprodukt-%28skp%29/regionaalne-sisemajanduse-koguprodukt/RAA0050.PX",
+   "text": "RAA0050: SISEMAJANDUSE KOGUPRODUKT MAAKONNA JÄRGI (ESA 2010)",
+   "type": "t"
+  },
+  {
+   "path": "majandus/rahvamajanduse-arvepidamine/sisemajanduse-koguprodukt-%28skp%29/regionaalne-sisemajanduse-koguprodukt/RAA0051.PX",
+   "text": "RAA0051: SISEMAJANDUSE KOGUPRODUKT MAAKONNA JA MAJANDUSSEKTORI JÄRGI (ESA 2010)",
+   "type": "t"
+  },
+  {
+   "path": "majandus/rahvamajanduse-arvepidamine/sisemajanduse-koguprodukt-%28skp%29/regionaalne-sisemajanduse-koguprodukt/RAA0052.PX",
+   "text": "RAA0052: SISEMAJANDUSE KOGUPRODUKT PIIRKONNA JA TEGEVUSALA JÄRGI (ESA 2010)",
+   "type": "t"
+  },
+  {
+   "path": "majandus/rahvamajanduse-arvepidamine/sisemajanduse-koguprodukt-%28skp%29/regionaalne-sisemajanduse-koguprodukt/RAA0053.PX",
+   "text": "RAA0053: SISEMAJANDUSE KOGUPRODUKT AHELDAMISE MEETODIL PIIRKONNA JÄRGI (ESA 2010)",
+   "type": "t"
+  },
+  {
+   "path": "majandus/rahvamajanduse-arvepidamine/sisemajanduse-koguprodukt-%28skp%29/sisemajanduse-koguprodukt-sissetulekute-meetodil/RAA0024.PX",
+   "text": "RAA0024: SISEMAJANDUSE KOGUPRODUKT SISSETULEKUTE MEETODIL (ESA 2010) (KVARTALID)",
+   "type": "t"
+  },
+  {
+   "path": "majandus/rahvamajanduse-arvepidamine/sisemajanduse-koguprodukt-%28skp%29/sisemajanduse-koguprodukt-tarbimise-meetodil/RAA0061.PX",
+   "text": "RAA0061: SISEMAJANDUSE KOGUPRODUKT TARBIMISE MEETODIL (ESA 2010) (KVARTALID)",
+   "type": "t"
+  },
+  {
+   "path": "majandus/rahvamajanduse-arvepidamine/sisemajanduse-koguprodukt-%28skp%29/sisemajanduse-koguprodukt-tarbimise-meetodil/RAA0062.PX",
+   "text": "RAA0062: KAPITALI KOGUMAHUTUS PÕHIVARASSE NING VÄÄRISESEMED VARA LIIGI JA TEGEVUSALA JÄRGI (ESA 2010)",
+   "type": "t"
+  },
+  {
+   "path": "majandus/rahvamajanduse-arvepidamine/sisemajanduse-koguprodukt-%28skp%29/sisemajanduse-koguprodukt-tarbimise-meetodil/RAA0063.PX",
+   "text": "RAA0063: KODUMAJAPIDAMISTE LÕPPTARBIMISKULUTUSED KULULIIGI JÄRGI (ESA 2010) (KVARTALID)",
+   "type": "t"
+  },
+  {
+   "path": "majandus/rahvamajanduse-arvepidamine/sisemajanduse-koguprodukt-%28skp%29/sisemajanduse-koguprodukt-tarbimise-meetodil/RAA00630.px",
+   "text": "RAA00630: KODUMAJAPIDAMISTE LÕPPTARBIMISKULUTUSED KULULIIGI JÄRGI (ESA 2010)",
+   "type": "t"
+  },
+  {
+   "path": "majandus/rahvamajanduse-arvepidamine/sisemajanduse-koguprodukt-%28skp%29/sisemajanduse-koguprodukt-tarbimise-meetodil/RAA0064.PX",
+   "text": "RAA0064: KAUPADE JA TEENUSTE EKSPORT SIHTKOHA NING IMPORT SAATJAKOHA JÄRGI JOOKSEVHINDADES (ESA 2010) (KVARTALID)",
+   "type": "t"
+  },
+  {
+   "path": "majandus/rahvamajanduse-arvepidamine/sisemajanduse-koguprodukt-%28skp%29/sisemajanduse-koguprodukt-tarbimise-meetodil/RAA0065.PX",
+   "text": "RAA0065: PÕHIVARA (MITTEFINANTSVARA) LIIGI JA TEGEVUSALA (EMTAK 2008) JÄRGI (ESA 2010)",
+   "type": "t"
+  },
+  {
+   "path": "majandus/rahvamajanduse-arvepidamine/sisemajanduse-koguprodukt-%28skp%29/sisemajanduse-koguprodukt-tarbimise-meetodil/RAA0066.PX",
+   "text": "RAA0066: MITTEFINANTSVARA JOOKSEVHINNAS (ESA 2010)",
+   "type": "t"
+  },
+  {
+   "path": "majandus/rahvamajanduse-arvepidamine/sisemajanduse-koguprodukt-%28skp%29/sisemajanduse-koguprodukt-tootmise-meetodil/RAA0042.PX",
+   "text": "RAA0042: LISANDVÄÄRTUS TEGEVUSALA JÄRGI (ESA 2010) (KVARTALID)",
+   "type": "t"
+  },
+  {
+   "path": "majandus/rahvamajanduse-arvepidamine/sisemajanduse-koguprodukt-%28skp%29/sisemajanduse-koguprodukt-tootmise-meetodil/RAA0043.PX",
+   "text": "RAA0043: TOODANG, VAHETARBIMINE JA LISANDVÄÄRTUS TEGEVUSALA (EMTAK 2008) JA INSTITUTSIONAALSE SEKTORI JÄRGI (ESA 2010)",
+   "type": "t"
+  },
+  {
+   "path": "majandus/rahvamajanduse-arvepidamine/sisemajanduse-koguprodukt-%28skp%29/sisemajanduse-koguprodukt-tootmise-meetodil/RAA0044.PX",
+   "text": "RAA0044: TOODANG, VAHETARBIMINE JA LISANDVÄÄRTUS INSTITUTSIONAALSE SEKTORI JÄRGI (ESA 2010) (KVARTALID)",
+   "type": "t"
+  },
+  {
+   "path": "majandus/rahvamajanduse-arvepidamine/sisemajanduse-koguprodukt-%28skp%29/sisemajanduse-koguprodukt-tootmise-meetodil/RAA0045.PX",
+   "text": "RAA0045: LISANDVÄÄRTUS TEGEVUSALA JÄRGI (ESA 2010)",
+   "type": "t"
+  },
+  {
+   "path": "majandus/rahvamajanduse-arvepidamine/sisemajanduse-koguprodukt-%28skp%29/sisemajanduse-koguprodukt-tootmise-meetodil/RAA0046.PX",
+   "text": "RAA0046: LISANDVÄÄRTUS TEGEVUSALA (EMTAK 2008, 2-KOHALINE KOOD) JÄRGI (ESA 2010)",
+   "type": "t"
+  }
+ ],
+ "matches": [
+  {
+   "path": "keskkond/keskonna-arvepidamine/materjalivoo-arvepidamine/KK91.PX",
+   "id": "KK91.PX",
+   "text": "KK91: KODUMAISE TOORME KASUTUS TOORME LIIGI JÄRGI",
+   "trail": "Keskkond > Keskkonna arvepidamine > Materjalivoo arvepidamine",
+   "variables": [
+    {
+     "code": "Toorme liik",
+     "text": "Toorme liik",
+     "n": 40
+    },
+    {
+     "code": "Aasta",
+     "text": "Aasta",
+     "n": 25
+    }
+   ],
+   "title": "KK91: KODUMAISE TOORME KASUTUS TOORME LIIGI JÄRGI"
+  },
+  {
+   "path": "keskkond/keskonna-arvepidamine/materjalivoo-arvepidamine/KK92.PX",
+   "id": "KK92.PX",
+   "text": "KK92: KASUTAMATA KODUMAINE TOORE LIIGI JÄRGI",
+   "trail": "Keskkond > Keskkonna arvepidamine > Materjalivoo arvepidamine",
+   "variables": [
+    {
+     "code": "Toorme liik",
+     "text": "Toorme liik",
+     "n": 6
+    },
+    {
+     "code": "Aasta",
+     "text": "Aasta",
+     "n": 25
+    }
+   ],
+   "title": "KK92: KASUTAMATA KODUMAINE TOORE LIIGI JÄRGI"
+  },
+  {
+   "path": "keskkond/keskonna-arvepidamine/materjalivoo-arvepidamine/KK93.PX",
+   "id": "KK93.PX",
+   "text": "KK93: MATERJALISISENDI TASAKAALUSTAVAD MATERJALIVOOD",
+   "trail": "Keskkond > Keskkonna arvepidamine > Materjalivoo arvepidamine",
+   "variables": [
+    {
+     "code": "Tasakaalustav voog",
+     "text": "Tasakaalustav voog",
+     "n": 5
+    },
+    {
+     "code": "Aasta",
+     "text": "Aasta",
+     "n": 25
+    }
+   ],
+   "title": "KK93: MATERJALISISENDI TASAKAALUSTAVAD MATERJALIVOOD"
+  },
+  {
+   "path": "keskkond/keskonna-arvepidamine/materjalivoo-arvepidamine/KK94.PX",
+   "id": "KK94.PX",
+   "text": "KK94: KODUMAINE MATERJALIVÄLJUND",
+   "trail": "Keskkond > Keskkonna arvepidamine > Materjalivoo arvepidamine",
+   "variables": [
+    {
+     "code": "Materjaliväljund",
+     "text": "Materjaliväljund",
+     "n": 39
+    },
+    {
+     "code": "Aasta",
+     "text": "Aasta",
+     "n": 24
+    }
+   ],
+   "title": "KK94: KODUMAINE MATERJALIVÄLJUND"
+  },
+  {
+   "path": "keskkond/keskonna-arvepidamine/materjalivoo-arvepidamine/KK95.PX",
+   "id": "KK95.PX",
+   "text": "KK95: MATERJALIVÄLJUNDI TASAKAALUSTAVAD MATERJALIVOOD",
+   "trail": "Keskkond > Keskkonna arvepidamine > Materjalivoo arvepidamine",
+   "variables": [
+    {
+     "code": "Tasakaalustav voog",
+     "text": "Tasakaalustav voog",
+     "n": 8
+    },
+    {
+     "code": "Aasta",
+     "text": "Aasta",
+     "n": 25
+    }
+   ],
+   "title": "KK95: MATERJALIVÄLJUNDI TASAKAALUSTAVAD MATERJALIVOOD"
+  },
+  {
+   "path": "keskkond/keskonna-arvepidamine/materjalivoo-arvepidamine/KK956.PX",
+   "id": "KK956.PX",
+   "text": "KK956: FÜÜSILINE IMPORT MATERJALI LIIGI JÄRGI",
+   "trail": "Keskkond > Keskkonna arvepidamine > Materjalivoo arvepidamine",
+   "variables": [
+    {
+     "code": "Materjali liik",
+     "text": "Materjali liik",
+     "n": 69
+    },
+    {
+     "code": "Aasta",
+     "text": "Aasta",
+     "n": 25
+    }
+   ],
+   "title": "KK956: FÜÜSILINE IMPORT MATERJALI LIIGI JÄRGI"
+  },
+  {
+   "path": "keskkond/keskonna-arvepidamine/materjalivoo-arvepidamine/KK957.PX",
+   "id": "KK957.PX",
+   "text": "KK957: FÜÜSILINE EKSPORT MATERJALI LIIGI JÄRGI",
+   "trail": "Keskkond > Keskkonna arvepidamine > Materjalivoo arvepidamine",
+   "variables": [
+    {
+     "code": "Materjali liik",
+     "text": "Materjali liik",
+     "n": 69
+    },
+    {
+     "code": "Aasta",
+     "text": "Aasta",
+     "n": 25
+    }
+   ],
+   "title": "KK957: FÜÜSILINE EKSPORT MATERJALI LIIGI JÄRGI"
+  },
+  {
+   "path": "keskkond/keskonna-arvepidamine/materjalivoo-arvepidamine/KK958.PX",
+   "id": "KK958.PX",
+   "text": "KK958: FÜÜSILISE VÄLISKAUBANDUSE TASAKAAL MATERJALI LIIGI JÄRGI",
+   "trail": "Keskkond > Keskkonna arvepidamine > Materjalivoo arvepidamine",
+   "variables": [
+    {
+     "code": "Materjali liik",
+     "text": "Materjali liik",
+     "n": 7
+    },
+    {
+     "code": "Aasta",
+     "text": "Aasta",
+     "n": 25
+    }
+   ],
+   "title": "KK958: FÜÜSILISE VÄLISKAUBANDUSE TASAKAAL MATERJALI LIIGI JÄRGI"
+  },
+  {
+   "path": "keskkond/keskonna-arvepidamine/materjalivoo-arvepidamine/KK99.PX",
+   "id": "KK99.PX",
+   "text": "KK99: MATERJALIVOO NÄITAJAD",
+   "trail": "Keskkond > Keskkonna arvepidamine > Materjalivoo arvepidamine",
+   "variables": [
+    {
+     "code": "Näitaja",
+     "text": "Näitaja",
+     "n": 15
+    },
+    {
+     "code": "Aasta",
+     "text": "Aasta",
+     "n": 25
+    }
+   ],
+   "title": "KK99: MATERJALIVOO NÄITAJAD"
+  },
+  {
+   "path": "keskkond/surve-keskkonnaseisundile/jaatmete-teke/KK068.PX",
+   "id": "KK068.PX",
+   "text": "KK068: JÄÄTMETEKE JÄÄTMELIIGI JA TEGEVUSALA (EMTAK 2008) JÄRGI",
+   "trail": "Keskkond > Surve keskkonnaseisundile > Jäätmete teke",
+   "variables": [
+    {
+     "code": "Aasta",
+     "text": "Aasta",
+     "n": 9
+    },
+    {
+     "code": "Jäätmeliik",
+     "text": "Jäätmeliik",
+     "n": 69
+    },
+    {
+     "code": "Tegevusala (EMTAK 2008)",
+     "text": "Tegevusala (EMTAK 2008)",
+     "n": 22
+    }
+   ],
+   "title": "KK068: JÄÄTMETEKE JÄÄTMELIIGI JA TEGEVUSALA (EMTAK 2008) JÄRGI"
+  },
+  {
+   "path": "keskkond/surve-keskkonnaseisundile/jaatmete-teke/KK610.PX",
+   "id": "KK610.PX",
+   "text": "KK610: JÄÄTMEBILANSS JÄÄTMELIIGI JÄRGI",
+   "trail": "Keskkond > Surve keskkonnaseisundile > Jäätmete teke",
+   "variables": [
+    {
+     "code": "Aasta",
+     "text": "Aasta",
+     "n": 24
+    },
+    {
+     "code": "Jäätmeliik",
+     "text": "Jäätmeliik",
+     "n": 124
+    },
+    {
+     "code": "Näitaja",
+     "text": "Näitaja",
+     "n": 12
+    }
+   ],
+   "title": "KK610: JÄÄTMEBILANSS JÄÄTMELIIGI JÄRGI"
+  },
+  {
+   "path": "keskkond/surve-keskkonnaseisundile/jaatmete-teke/KK6115.PX",
+   "id": "KK6115.PX",
+   "text": "KK6115: OHTLIKE JÄÄTMETE BILANSS JÄÄTMELIIGI JÄRGI",
+   "trail": "Keskkond > Surve keskkonnaseisundile > Jäätmete teke",
+   "variables": [
+    {
+     "code": "Aasta",
+     "text": "Aasta",
+     "n": 24
+    },
+    {
+     "code": "Jäätmeliik",
+     "text": "Jäätmeliik",
+     "n": 372
+    },
+    {
+     "code": "Näitaja",
+     "text": "Näitaja",
+     "n": 12
+    }
+   ],
+   "title": "KK6115: OHTLIKE JÄÄTMETE BILANSS JÄÄTMELIIGI JÄRGI"
+  },
+  {
+   "path": "majandus/rahvamajanduse-arvepidamine/sisemajanduse-koguprodukt-%28skp%29/pehilised-rahvamajanduse-arvepidamise-naitajad/RAA0012.PX",
+   "id": "RAA0012.PX",
+   "text": "RAA0012: SISEMAJANDUSE KOGUPRODUKT JA KOGURAHVATULU (ESA 2010) (KVARTALID)",
+   "trail": "Majandus > Rahvamajanduse arvepidamine > Sisemajanduse koguprodukt (SKP) > Põhilised rahvamajanduse arvepidamise näitajad",
+   "variables": [
+    {
+     "code": "Aasta",
+     "text": "Aasta",
+     "n": 32
+    },
+    {
+     "code": "Kvartal",
+     "text": "Kvartal",
+     "n": 5
+    },
+    {
+     "code": "Sesoonne korrigeerimine",
+     "text": "Sesoonne korrigeerimine",
+     "n": 2
+    },
+    {
+     "code": "Näitaja",
+     "text": "Näitaja",
+     "n": 6
+    }
+   ],
+   "title": "RAA0012: SISEMAJANDUSE KOGUPRODUKT JA KOGURAHVATULU (ESA 2010) (KVARTALID)"
+  },
+  {
+   "path": "majandus/rahvamajanduse-arvepidamine/sisemajanduse-koguprodukt-%28skp%29/pehilised-rahvamajanduse-arvepidamise-naitajad/RAA0013.PX",
+   "id": "RAA0013.PX",
+   "text": "RAA0013: SISEMAJANDUSE KOGUPRODUKT JA KOGURAHVATULU ÜHE ELANIKU KOHTA (ESA 2010)",
+   "trail": "Majandus > Rahvamajanduse arvepidamine > Sisemajanduse koguprodukt (SKP) > Põhilised rahvamajanduse arvepidamise näitajad",
+   "variables": [
+    {
+     "code": "Aasta",
+     "text": "Aasta",
+     "n": 31
+    },
+    {
+     "code": "Näitaja",
+     "text": "Näitaja",
+     "n": 3
+    }
+   ],
+   "title": "RAA0013: SISEMAJANDUSE KOGUPRODUKT JA KOGURAHVATULU ÜHE ELANIKU KOHTA (ESA 2010)"
+  },
+  {
+   "path": "majandus/rahvamajanduse-arvepidamine/sisemajanduse-koguprodukt-%28skp%29/pehilised-rahvamajanduse-arvepidamise-naitajad/RAA0014.PX",
+   "id": "RAA0014.PX",
+   "text": "RAA0014: KOGUMAJANDUSE KASUTATAV TULU, SÄÄST JA NETOLAENUANDMINE/-VÕTMINE JOOKSEVHINDADES (ESA 2010) (KVARTALID)",
+   "trail": "Majandus > Rahvamajanduse arvepidamine > Sisemajanduse koguprodukt (SKP) > Põhilised rahvamajanduse arvepidamise näitajad",
+   "variables": [
+    {
+     "code": "Aasta",
+     "text": "Aasta",
+     "n": 32
+    },
+    {
+     "code": "Kvartal",
+     "text": "Kvartal",
+     "n": 5
+    },
+    {
+     "code": "Näitaja",
+     "text": "Näitaja",
+     "n": 18
+    }
+   ],
+   "title": "RAA0014: KOGUMAJANDUSE KASUTATAV TULU, SÄÄST JA NETOLAENUANDMINE/-VÕTMINE JOOKSEVHINDADES (ESA 2010) (KVARTALID)"
+  },
+  {
+   "path": "majandus/rahvamajanduse-arvepidamine/sisemajanduse-koguprodukt-%28skp%29/pehilised-rahvamajanduse-arvepidamise-naitajad/RAA0015.px",
+   "id": "RAA0015.px",
+   "text": "RAA0015: SISEMAJANDUSE KOGUPRODUKTI KIIRHINNANG (ESA 2010) (KVARTALID)",
+   "trail": "Majandus > Rahvamajanduse arvepidamine > Sisemajanduse koguprodukt (SKP) > Põhilised rahvamajanduse arvepidamise näitajad"
+  },
+  {
+   "path": "majandus/rahvamajanduse-arvepidamine/sisemajanduse-koguprodukt-%28skp%29/regionaalne-sisemajanduse-koguprodukt/RAA0050.PX",
+   "id": "RAA0050.PX",
+   "text": "RAA0050: SISEMAJANDUSE KOGUPRODUKT MAAKONNA JÄRGI (ESA 2010)",
+   "trail": "Majandus > Rahvamajanduse arvepidamine > Sisemajanduse koguprodukt (SKP) > Regionaalne sisemajanduse koguprodukt"
+  },
+  {
+   "path": "majandus/rahvamajanduse-arvepidamine/sisemajanduse-koguprodukt-%28skp%29/regionaalne-sisemajanduse-koguprodukt/RAA0051.PX",
+   "id": "RAA0051.PX",
+   "text": "RAA0051: SISEMAJANDUSE KOGUPRODUKT MAAKONNA JA MAJANDUSSEKTORI JÄRGI (ESA 2010)",
+   "trail": "Majandus > Rahvamajanduse arvepidamine > Sisemajanduse koguprodukt (SKP) > Regionaalne sisemajanduse koguprodukt"
+  },
+  {
+   "path": "majandus/rahvamajanduse-arvepidamine/sisemajanduse-koguprodukt-%28skp%29/regionaalne-sisemajanduse-koguprodukt/RAA0052.PX",
+   "id": "RAA0052.PX",
+   "text": "RAA0052: SISEMAJANDUSE KOGUPRODUKT PIIRKONNA JA TEGEVUSALA JÄRGI (ESA 2010)",
+   "trail": "Majandus > Rahvamajanduse arvepidamine > Sisemajanduse koguprodukt (SKP) > Regionaalne sisemajanduse koguprodukt"
+  },
+  {
+   "path": "majandus/rahvamajanduse-arvepidamine/sisemajanduse-koguprodukt-%28skp%29/regionaalne-sisemajanduse-koguprodukt/RAA0053.PX",
+   "id": "RAA0053.PX",
+   "text": "RAA0053: SISEMAJANDUSE KOGUPRODUKT AHELDAMISE MEETODIL PIIRKONNA JÄRGI (ESA 2010)",
+   "trail": "Majandus > Rahvamajanduse arvepidamine > Sisemajanduse koguprodukt (SKP) > Regionaalne sisemajanduse koguprodukt"
+  },
+  {
+   "path": "majandus/rahvamajanduse-arvepidamine/sisemajanduse-koguprodukt-%28skp%29/sisemajanduse-koguprodukt-sissetulekute-meetodil/RAA0024.PX",
+   "id": "RAA0024.PX",
+   "text": "RAA0024: SISEMAJANDUSE KOGUPRODUKT SISSETULEKUTE MEETODIL (ESA 2010) (KVARTALID)",
+   "trail": "Majandus > Rahvamajanduse arvepidamine > Sisemajanduse koguprodukt (SKP) > Sisemajanduse koguprodukt sissetulekute meetodil"
+  },
+  {
+   "path": "majandus/rahvamajanduse-arvepidamine/sisemajanduse-koguprodukt-%28skp%29/sisemajanduse-koguprodukt-tarbimise-meetodil/RAA0061.PX",
+   "id": "RAA0061.PX",
+   "text": "RAA0061: SISEMAJANDUSE KOGUPRODUKT TARBIMISE MEETODIL (ESA 2010) (KVARTALID)",
+   "trail": "Majandus > Rahvamajanduse arvepidamine > Sisemajanduse koguprodukt (SKP) > Sisemajanduse koguprodukt tarbimise meetodil"
+  },
+  {
+   "path": "majandus/rahvamajanduse-arvepidamine/sisemajanduse-koguprodukt-%28skp%29/sisemajanduse-koguprodukt-tarbimise-meetodil/RAA0062.PX",
+   "id": "RAA0062.PX",
+   "text": "RAA0062: KAPITALI KOGUMAHUTUS PÕHIVARASSE NING VÄÄRISESEMED VARA LIIGI JA TEGEVUSALA JÄRGI (ESA 2010)",
+   "trail": "Majandus > Rahvamajanduse arvepidamine > Sisemajanduse koguprodukt (SKP) > Sisemajanduse koguprodukt tarbimise meetodil"
+  },
+  {
+   "path": "majandus/rahvamajanduse-arvepidamine/sisemajanduse-koguprodukt-%28skp%29/sisemajanduse-koguprodukt-tarbimise-meetodil/RAA0063.PX",
+   "id": "RAA0063.PX",
+   "text": "RAA0063: KODUMAJAPIDAMISTE LÕPPTARBIMISKULUTUSED KULULIIGI JÄRGI (ESA 2010) (KVARTALID)",
+   "trail": "Majandus > Rahvamajanduse arvepidamine > Sisemajanduse koguprodukt (SKP) > Sisemajanduse koguprodukt tarbimise meetodil"
+  },
+  {
+   "path": "majandus/rahvamajanduse-arvepidamine/sisemajanduse-koguprodukt-%28skp%29/sisemajanduse-koguprodukt-tarbimise-meetodil/RAA00630.px",
+   "id": "RAA00630.px",
+   "text": "RAA00630: KODUMAJAPIDAMISTE LÕPPTARBIMISKULUTUSED KULULIIGI JÄRGI (ESA 2010)",
+   "trail": "Majandus > Rahvamajanduse arvepidamine > Sisemajanduse koguprodukt (SKP) > Sisemajanduse koguprodukt tarbimise meetodil"
+  },
+  {
+   "path": "majandus/rahvamajanduse-arvepidamine/sisemajanduse-koguprodukt-%28skp%29/sisemajanduse-koguprodukt-tarbimise-meetodil/RAA0064.PX",
+   "id": "RAA0064.PX",
+   "text": "RAA0064: KAUPADE JA TEENUSTE EKSPORT SIHTKOHA NING IMPORT SAATJAKOHA JÄRGI JOOKSEVHINDADES (ESA 2010) (KVARTALID)",
+   "trail": "Majandus > Rahvamajanduse arvepidamine > Sisemajanduse koguprodukt (SKP) > Sisemajanduse koguprodukt tarbimise meetodil"
+  },
+  {
+   "path": "majandus/rahvamajanduse-arvepidamine/sisemajanduse-koguprodukt-%28skp%29/sisemajanduse-koguprodukt-tarbimise-meetodil/RAA0065.PX",
+   "id": "RAA0065.PX",
+   "text": "RAA0065: PÕHIVARA (MITTEFINANTSVARA) LIIGI JA TEGEVUSALA (EMTAK 2008) JÄRGI (ESA 2010)",
+   "trail": "Majandus > Rahvamajanduse arvepidamine > Sisemajanduse koguprodukt (SKP) > Sisemajanduse koguprodukt tarbimise meetodil"
+  },
+  {
+   "path": "majandus/rahvamajanduse-arvepidamine/sisemajanduse-koguprodukt-%28skp%29/sisemajanduse-koguprodukt-tarbimise-meetodil/RAA0066.PX",
+   "id": "RAA0066.PX",
+   "text": "RAA0066: MITTEFINANTSVARA JOOKSEVHINNAS (ESA 2010)",
+   "trail": "Majandus > Rahvamajanduse arvepidamine > Sisemajanduse koguprodukt (SKP) > Sisemajanduse koguprodukt tarbimise meetodil"
+  },
+  {
+   "path": "majandus/rahvamajanduse-arvepidamine/sisemajanduse-koguprodukt-%28skp%29/sisemajanduse-koguprodukt-tootmise-meetodil/RAA0042.PX",
+   "id": "RAA0042.PX",
+   "text": "RAA0042: LISANDVÄÄRTUS TEGEVUSALA JÄRGI (ESA 2010) (KVARTALID)",
+   "trail": "Majandus > Rahvamajanduse arvepidamine > Sisemajanduse koguprodukt (SKP) > Sisemajanduse koguprodukt tootmise meetodil"
+  },
+  {
+   "path": "majandus/rahvamajanduse-arvepidamine/sisemajanduse-koguprodukt-%28skp%29/sisemajanduse-koguprodukt-tootmise-meetodil/RAA0043.PX",
+   "id": "RAA0043.PX",
+   "text": "RAA0043: TOODANG, VAHETARBIMINE JA LISANDVÄÄRTUS TEGEVUSALA (EMTAK 2008) JA INSTITUTSIONAALSE SEKTORI JÄRGI (ESA 2010)",
+   "trail": "Majandus > Rahvamajanduse arvepidamine > Sisemajanduse koguprodukt (SKP) > Sisemajanduse koguprodukt tootmise meetodil"
+  },
+  {
+   "path": "majandus/rahvamajanduse-arvepidamine/sisemajanduse-koguprodukt-%28skp%29/sisemajanduse-koguprodukt-tootmise-meetodil/RAA0044.PX",
+   "id": "RAA0044.PX",
+   "text": "RAA0044: TOODANG, VAHETARBIMINE JA LISANDVÄÄRTUS INSTITUTSIONAALSE SEKTORI JÄRGI (ESA 2010) (KVARTALID)",
+   "trail": "Majandus > Rahvamajanduse arvepidamine > Sisemajanduse koguprodukt (SKP) > Sisemajanduse koguprodukt tootmise meetodil"
+  },
+  {
+   "path": "majandus/rahvamajanduse-arvepidamine/sisemajanduse-koguprodukt-%28skp%29/sisemajanduse-koguprodukt-tootmise-meetodil/RAA0045.PX",
+   "id": "RAA0045.PX",
+   "text": "RAA0045: LISANDVÄÄRTUS TEGEVUSALA JÄRGI (ESA 2010)",
+   "trail": "Majandus > Rahvamajanduse arvepidamine > Sisemajanduse koguprodukt (SKP) > Sisemajanduse koguprodukt tootmise meetodil"
+  },
+  {
+   "path": "majandus/rahvamajanduse-arvepidamine/sisemajanduse-koguprodukt-%28skp%29/sisemajanduse-koguprodukt-tootmise-meetodil/RAA0046.PX",
+   "id": "RAA0046.PX",
+   "text": "RAA0046: LISANDVÄÄRTUS TEGEVUSALA (EMTAK 2008, 2-KOHALINE KOOD) JÄRGI (ESA 2010)",
+   "trail": "Majandus > Rahvamajanduse arvepidamine > Sisemajanduse koguprodukt (SKP) > Sisemajanduse koguprodukt tootmise meetodil"
+  }
+ ],
+ "errors": [
+  {
+   "path": "keskkond/keskkonnaseisund",
+   "error": "HTTP Error 400: Bad Request"
+  }
+ ],
+ "visited": 65
+}
