@@ -87,6 +87,8 @@ def flatten(js: dict[str, Any]) -> pl.DataFrame:
     values = js["value"]
     status = js.get("status") or {}
     out: dict[str, list[Any]] = {d: [r[i] for r in rows] for i, d in enumerate(ids)}
+    if isinstance(values, dict):  # sparse json-stat: position -> value
+        values = [values.get(str(i)) for i in range(len(rows))]
     out["value"] = list(values)
     out["status"] = [
         status.get(str(i)) if isinstance(status, dict) else None for i in range(len(rows))

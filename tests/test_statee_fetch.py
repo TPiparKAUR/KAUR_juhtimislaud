@@ -45,3 +45,9 @@ def test_flatten_gives_codes_values_and_status_in_cell_order() -> None:
     assert df.row(0) == ("2020", "A", 1.0, None)
     assert df.row(2) == ("2020", "C", None, "..")
     assert df.row(5) == ("2021", "C", 6.0, None)
+
+
+def test_flatten_accepts_sparse_value_objects() -> None:
+    js = dict(JS) | {"value": {"0": 1, "5": 6}, "status": {}}
+    df = sf.flatten(js)
+    assert df.height == 6 and df["value"].to_list() == [1.0, None, None, None, None, 6.0]

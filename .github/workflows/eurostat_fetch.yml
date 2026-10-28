@@ -1,0 +1,60 @@
+name: Eurostat fetch
+
+# Fetches Eurostat datasets (JSON-stat via the dissemination API) as long Parquet. Metadata
+# (labels and row counts) goes to the `eurostat-meta` branch; Parquet stays in the artifact
+# `eurostat-raw`.
+
+on:
+  workflow_dispatch:
+    inputs:
+      datasets:
+        description: "Dataset codes separated by spaces (e.g. cei_srm030)"
+        required: true
+      filters:
+        description: "Filters name=value separated by spaces (e.g. 'geo=EE geo=EU27_2020')"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: eurostat-fetch
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync --frozen
+      - name: Fetch
+        env:
+          DATASETS: ${{ inputs.datasets }}
+          FILTERS: ${{ inputs.filters }}
+        run: |
+          args=()
+          for d in $DATASETS; do args+=(--dataset "$d"); done
+          for f in $FILTERS; do args+=(--filter "$f"); done
+          uv run python eurostat_fetch.py "${args[@]}" --out out/eurostat
+        timeout-minutes: 15
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: eurostat-raw
+          path: out/eurostat/
+          retention-days: 30
+      - name: Publish metadata
+        if: always()
+        run: |
+          cp out/eurostat/eurostat_meta.json "$RUNNER_TEMP/eurostat_meta.json"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan eurostat-meta
+          git rm -rf --quiet .
+          cp "$RUNNER_TEMP/eurostat_meta.json" eurostat_meta.json
+          git add -- eurostat_meta.json
+          git commit -m "Eurostat metadata $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push --force origin eurostat-meta
