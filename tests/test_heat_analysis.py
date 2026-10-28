@@ -118,3 +118,9 @@ def test_monthly_uses_complete_years_only() -> None:
     assert len(m["profile"]) == 2 and len(m["profile"][0]["months"]) == 12
     assert m["last_month"] == "2025M03"
     json.dumps(ha.build(ke034(), ke035(), ke20()))
+
+
+def test_non_breaking_space_in_column_names_is_normalised() -> None:
+    f = ke20().rename({"Energia liik": "Energia\u00a0liik"})
+    m = ha.build(ke034(), ke035(), f)["monthly"]
+    assert [a["year"] for a in m["annual"]] == [2023, 2024]

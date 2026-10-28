@@ -24,6 +24,11 @@ FUEL_GROUPS: dict[str, tuple[str, ...]] = {
 RENEWABLE = ("B51151_EE", "B5110_W_NVA", "B5300", "N9940_EE")
 
 
+def clean(df: pl.DataFrame) -> pl.DataFrame:
+    """PxWeb variable codes can contain non-breaking spaces; use plain spaces."""
+    return df.rename({c: c.replace("\u00a0", " ") for c in df.columns})
+
+
 def chp(df: pl.DataFrame) -> list[dict[str, Any]]:
     t = df.filter(pl.col("Generaatori liik") == TOTAL_GEN).drop_nulls("value")
     out = []
@@ -105,9 +110,9 @@ def monthly(df: pl.DataFrame) -> dict[str, Any]:
 
 def build(ke034: pl.DataFrame, ke035: pl.DataFrame, ke20: pl.DataFrame) -> dict[str, Any]:
     return {
-        "chp": chp(ke034),
-        "fuels": fuels(ke035),
-        "monthly": monthly(ke20),
+        "chp": chp(clean(ke034)),
+        "fuels": fuels(clean(ke035)),
+        "monthly": monthly(clean(ke20)),
         "meta": {
             "interpretation": [
                 "Koostootmisjaamade (KE034, KE035) ja kuise elektri- ja soojatoodangu (KE20) "
