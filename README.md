@@ -38,6 +38,24 @@ Topic metadata (summary, source, provenance level, update frequency, verified re
 `data/teemad.toml`; the build warns about every unfilled field and renders only filled ones. The
 topic-to-topic links there are a proposal and need expert confirmation.
 
+### Quality gates (`tests/test_site_quality.py`, run by CI on every push)
+
+Browser tests load every page at 1280 px and 375 px and fail on:
+
+- any **axe-core** violation (WCAG 2.0/2.1/2.2 A and AA plus best practice; via the dev-only
+  `axe-playwright-python`, which bundles Deque's axe-core engine). Automated rules find only part
+  of the problems, so this is a floor, not a conformance claim; contrast of chart marks
+  (WCAG 1.4.11) and screen-reader use still need a human.
+- **Cumulative Layout Shift > 0.1**, the Core Web Vitals "good" limit. Chart placeholders are
+  filled by scripts after a fetch, so `page-ready.js` keeps the body hidden until they are
+  mounted (see the comment at the top of that file). Do not reserve fixed heights instead:
+  chart blocks range from 140 to 1300 px and that was measured not to help.
+- more than **one Tab stop per chart**. `chart-keys.js` makes the first data mark tabbable and
+  moves focus with the arrow keys, Home/End and PageUp/PageDown (roving tabindex).
+
+A new chart module needs nothing special: it only has to put its placeholder in a
+`class="chart-slot"` element and give marks `tabindex="0"`.
+
 Workflows in `.github/workflows/`:
 
 - `ci.yml` – Ruff, MyPy, pytest on every push/PR.
