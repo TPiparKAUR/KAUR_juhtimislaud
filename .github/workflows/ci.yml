@@ -22,4 +22,16 @@ jobs:
       - run: uv run ruff check .
       - run: uv run ruff format --check .
       - run: uv run mypy .
-      - run: uv run pytest
+      - name: pytest
+        run: |
+          set -o pipefail
+          uv run pytest -q -rf 2>&1 | tee pytest.log
+      # Failures as annotations and in the job summary, so they are readable from the run page
+      # and the API without downloading the log.
+      - name: Report test failures
+        if: failure()
+        run: |
+          grep -E '^(FAILED|ERROR) ' pytest.log | head -40 | while IFS= read -r line; do
+            echo "::error::${line:0:400}"
+          done
+          { echo '```'; grep -E '^(FAILED|ERROR) ' pytest.log | head -60; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
