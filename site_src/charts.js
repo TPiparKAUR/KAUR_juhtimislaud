@@ -198,7 +198,7 @@
       years.forEach((yr, i) => {
         if (mean[i] === null) return;
         const above = mean[i] >= base;
-        const g = el('g', { tabindex: 0, 'aria-label': `${yr}: ${fmt(mean[i], opt.dec)} ${opt.unit}` }, svg);
+        const g = el('g', { tabindex: 0, role: 'img', 'aria-label': `${yr}: ${fmt(mean[i], opt.dec)} ${opt.unit}` }, svg);
         if (p10 && p10[i] !== null) el('line', { x1: x(i), x2: x(i), y1: y(p10[i]), y2: y(p90[i]), class: 'whisk' }, g);
         el('rect', { x: x(i) - bw / 2, width: bw, y: Math.min(y(mean[i]), y(base)), height: Math.max(1, Math.abs(y(mean[i]) - y(base))), rx: 2, class: above ? 'bar-pos' : 'bar-neg' }, g);
         const hit = el('rect', { x: x(i) - band / 2, width: band, y: m.t, height: h - m.t - m.b, fill: 'transparent' }, g);

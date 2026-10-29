@@ -358,6 +358,8 @@ height:100%}
 .card h3{margin-top:0}.muted{color:var(--muted)}
 figure.viz{margin:2rem 0}figure.viz iframe{width:100%;height:42rem;border:1px solid var(--line);
 border-radius:.5rem;background:#fff}
+.js-loading main>:not(h1):not(.chart-status){visibility:hidden}
+.chart-status{display:none;color:var(--muted)}.js-loading .chart-status{display:block}
 .skip{position:absolute;left:-999px}.skip:focus{left:1rem;top:1rem;background:var(--bg);
 padding:.5rem}
 footer{border-top:1px solid var(--line);margin-top:3rem;padding:1rem 0;color:var(--muted)}
@@ -480,11 +482,31 @@ def layout(
     ):
         if feat in features:
             names += [n for n in SCRIPTS[feat] if n not in names]
+    if names:
+        names = ["page-ready.js", "chart-keys.js", *names]
     scripts = "".join(f'<script src="assets/{n}"></script>' for n in names)
+    # Pages with charts hold their body back until the charts are mounted (see page-ready.js).
+    # The timer is the failsafe if that script never runs; without JS the class is never set.
+    loading = (
+        "<script>document.documentElement.classList.add('js-loading');"
+        "setTimeout(function(){document.documentElement.classList.remove('js-loading')},6000)"
+        "</script>"
+        if names
+        else ""
+    )
+    if names:
+        body = body.replace(
+            "</h1>",
+            "</h1>"
+            '<p class="chart-status" role="status">Laen graafikuid…</p>'
+            '<p class="muted">Klaviatuuriga: Tab liigub graafikult graafikule, '
+            "nooleklahvid liiguvad andmepunktide vahel.</p>",
+            1,
+        )
     return f"""<!doctype html>
 <html lang="et"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{e(title)}</title><style>{CSS}</style>
+<title>{e(title)}</title><style>{CSS}</style>{loading}
 {'<link rel="stylesheet" href="assets/charts.css">' if features else ""}</head><body>
 <a class="skip" href="#main">Mine põhisisu juurde</a>
 <header class="site"><div class="wrap">
@@ -520,8 +542,9 @@ def render_index(topics: list[Topic], features: frozenset[str] = frozenset()) ->
         hero += (
             '<section aria-labelledby="kliima">'
             '<h2 id="kliima">Kliima: mis on viimase 35 aastaga muutunud?</h2>'
-            '<div data-climate="kpis"></div><div data-climate="annual"></div>'
-            '<div data-climate="forest"></div>'
+            '<div class="chart-slot" data-climate="kpis"></div>'
+            '<div class="chart-slot" data-climate="annual"></div>'
+            '<div class="chart-slot" data-climate="forest"></div>'
             '<p><a href="ilm-ja-kliima.html">Kogu kliimaanalüüs: kuud, jaamad, sademed, äärmused, '
             "andmete kvaliteet →</a></p></section>"
         )
@@ -529,7 +552,7 @@ def render_index(topics: list[Topic], features: frozenset[str] = frozenset()) ->
         hero += (
             '<section aria-labelledby="vesi">'
             '<h2 id="vesi">Kliima ja vesi: kuidas sademed jõgedesse jõuavad?</h2>'
-            '<div data-hydro="link"></div>'
+            '<div class="chart-slot" data-hydro="link"></div>'
             '<p><a href="vesi.html">Kogu hüdroloogia analüüs: režiim, erivool, kestvuskõver, '
             "ekstreemid, veetemperatuur →</a></p></section>"
         )
@@ -575,7 +598,7 @@ def render_topic(topic: Topic, topics: list[Topic], features: frozenset[str] = f
             for key, heading in parts:
                 sections += (
                     f"<h2>{e(heading)}</h2>" if heading else ""
-                ) + f'<div data-{kind}="{key}"></div>'
+                ) + f'<div class="chart-slot" data-{kind}="{key}"></div>'
         figs = "<h2>Keskkonnaportaali vaated (Tableau)</h2>" + figs
     body = (
         f"<h1>{e(topic.title)}</h1>"
