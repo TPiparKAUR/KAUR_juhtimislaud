@@ -166,6 +166,40 @@ def test_arrow_keys_move_between_marks_and_keep_a_single_tab_stop(
 
 
 @pytest.mark.browser
+def test_slow_data_does_not_shift_the_layout(browser: Browser, site: str) -> None:
+    """On a slow connection the data arrives late; the visible part must still not move.
+
+    While loading, the heading and lead text are shown (they sit above every chart and so
+    cannot move) and the headings below are held back; once the data is in, CLS stays <= 0.1.
+    Latency is emulated through the DevTools protocol, which delays every request without
+    blocking the test (a sleeping route handler would stall Playwright's own event loop).
+    """
+    context = browser.new_context(viewport=VIEWPORTS["desktop"])  # type: ignore[arg-type]
+    page = context.new_page()
+    page.route("**/public.tableau.com/**", lambda r: r.abort())
+    page.add_init_script(CLS_PROBE)
+    cdp = context.new_cdp_session(page)
+    cdp.send(
+        "Network.emulateNetworkConditions",
+        {"offline": False, "latency": 600, "downloadThroughput": -1, "uploadThroughput": -1},
+    )
+    page.goto(f"{site}/vesi.html", wait_until="domcontentloaded")
+    # DOMContentLoaded has fired but the data requests are still 600 ms away.
+    assert page.locator("main h1").is_visible()
+    assert page.locator("main .lead").first.is_visible()
+    assert not page.locator("main h2").first.is_visible()  # held back until charts mount
+    page.wait_for_function(
+        "!document.documentElement.classList.contains('js-loading')", timeout=9000
+    )
+    page.wait_for_load_state("networkidle")
+    page.wait_for_timeout(500)
+    assert page.locator("main h2").first.is_visible()
+    cls = float(page.evaluate("window.__cls"))
+    assert cls <= CLS_LIMIT, f"CLS {cls:.3f} with delayed data"
+    context.close()
+
+
+@pytest.mark.browser
 def test_page_is_readable_without_javascript(browser: Browser, site: str) -> None:
     """Without JS the loading class is never set, so nothing may be hidden."""
     ctx = browser.new_context(java_script_enabled=False)

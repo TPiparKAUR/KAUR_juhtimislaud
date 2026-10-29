@@ -358,8 +358,7 @@ height:100%}
 .card h3{margin-top:0}.muted{color:var(--muted)}
 figure.viz{margin:2rem 0}figure.viz iframe{width:100%;height:42rem;border:1px solid var(--line);
 border-radius:.5rem;background:#fff}
-.js-loading main>:not(h1):not(.chart-status){visibility:hidden}
-.chart-status{display:none;color:var(--muted)}.js-loading .chart-status{display:block}
+.js-loading main>:not(h1):not(.lead):not(.chart-first){visibility:hidden}
 .skip{position:absolute;left:-999px}.skip:focus{left:1rem;top:1rem;background:var(--bg);
 padding:.5rem}
 footer{border-top:1px solid var(--line);margin-top:3rem;padding:1rem 0;color:var(--muted)}
@@ -498,8 +497,7 @@ def layout(
         body = body.replace(
             "</h1>",
             "</h1>"
-            '<p class="chart-status" role="status">Laen graafikuid…</p>'
-            '<p class="muted">Klaviatuuriga: Tab liigub graafikult graafikule, '
+            '<p class="muted lead">Klaviatuuriga: Tab liigub graafikult graafikule, '
             "nooleklahvid liiguvad andmepunktide vahel.</p>",
             1,
         )
@@ -558,8 +556,8 @@ def render_index(topics: list[Topic], features: frozenset[str] = frozenset()) ->
         )
     body = (
         "<h1>Keskkonnaülevaade</h1>"
-        "<p>Eesti keskkonnaseisundi teemad ühes kohas: iga teema all on vaated ja teemade "
-        "omavahelised seosed.</p>"
+        '<p class="lead">Eesti keskkonnaseisundi teemad ühes kohas: iga teema all on vaated ja '
+        "teemade omavahelised seosed.</p>"
         f"{hero}<h2>Teemad</h2>"
         f'<ul class="grid">{cards}</ul>'
     )
@@ -591,19 +589,24 @@ def render_topic(topic: Topic, topics: list[Topic], features: frozenset[str] = f
         related = f"<h2>Seotud teemad</h2><p>{e(topic.related_reason)}</p><ul>{items}</ul>"
     sections = ""
     used: frozenset[str] = frozenset()
+    first_slot = True
     blocks = [(k, p) for k, p in ANALYSES.get(topic.slug, []) if k in features]
     if blocks:
         used = frozenset(k for k, _ in blocks)
         for kind, parts in blocks:
             for key, heading in parts:
+                # The first slot stays visible while loading: nothing visible sits below
+                # it, so it cannot shift anything, and its content is the earliest paint.
+                cls = "chart-slot chart-first" if first_slot else "chart-slot"
+                first_slot = False
                 sections += (
                     f"<h2>{e(heading)}</h2>" if heading else ""
-                ) + f'<div class="chart-slot" data-{kind}="{key}"></div>'
+                ) + f'<div class="{cls}" data-{kind}="{key}"></div>'
         figs = "<h2>Keskkonnaportaali vaated (Tableau)</h2>" + figs
     body = (
         f"<h1>{e(topic.title)}</h1>"
-        + (f"<p>{e(topic.summary)}</p>" if topic.summary else "")
-        + (f"<dl>{meta}</dl>" if meta else "")
+        + (f'<p class="lead">{e(topic.summary)}</p>' if topic.summary else "")
+        + (f'<dl class="lead">{meta}</dl>' if meta else "")
         + sections
         + figs
         + related

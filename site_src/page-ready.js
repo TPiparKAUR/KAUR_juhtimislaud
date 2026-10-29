@@ -5,16 +5,16 @@
  * that arrives pushes them down: measured Cumulative Layout Shift 0.4-1.0 against Google's
  * "good" limit of 0.1. Reserving a fixed height does not help because chart blocks range from
  * 140 to 1300 px. Instead the head script marks <html> "js-loading", CSS hides everything but
- * the <h1> (visibility:hidden, so layout still settles but nothing visible shifts), and this
- * file removes the mark once the slots are filled.
+ * the <h1>, the lead text and the first slot (visibility:hidden, so layout still settles but
+ * nothing visible shifts), and this file removes the mark once the slots are filled.
  *
  * Without JavaScript the class is never set and the page is shown as served. If this file
  * fails to run, the timer in the head script removes the mark after six seconds. */
 (() => {
   'use strict';
   const root = document.documentElement;
-  const MAX_WAIT_MS = 4000;
-  const QUIET_MS = 500;
+  const MAX_WAIT_MS = 5000; // below the head script's 6 s failsafe
+  const QUIET_MS = 250;
   const slots = [...document.querySelectorAll('.chart-slot')];
   let timer = 0;
   let observer = null;
