@@ -233,6 +233,7 @@ def test_hover_shows_tooltip(browser: Browser, site: str) -> None:
     page.goto(f"{site}/index.html")
     page.wait_for_selector("svg[role=img]")
     svg = page.locator("[data-climate=annual] svg").first
+    svg.scroll_into_view_if_needed()  # the chart may start below the fold, depending on fonts
     box = svg.bounding_box()
     assert box is not None
     page.mouse.move(box["x"] + box["width"] * 0.5, box["y"] + 100)
